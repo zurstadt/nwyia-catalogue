@@ -1,0 +1,692 @@
+{
+  "source": "/Users/jfireland05/Downloads/data.json",
+  "clusters": {
+    "c000": {
+      "canonical_ar": "الحكيم الترمذي",
+      "canonical_translit": "al-Ḥakīm al-Tirmiḏī",
+      "user_confirmed": true
+    },
+    "c001": {
+      "canonical_ar": "أبو عبد الرحمن السلمي",
+      "canonical_translit": "Abū ʿAbd al-Raḥmān al-Sulamī",
+      "user_confirmed": true
+    },
+    "c002": {
+      "canonical_ar": "ابن عطاء الله الإسكندري",
+      "canonical_translit": "Ibn ʿAṭāʾ Allāh al-Iskandarī",
+      "user_confirmed": true
+    },
+    "c003": {
+      "canonical_ar": "صدر الدين القونوي",
+      "canonical_translit": "Ṣadr al-Dīn al-Qūnawī",
+      "user_confirmed": true
+    },
+    "c004": {
+      "canonical_ar": "ابن ابي الدنيا",
+      "canonical_translit": "Ibn Abī al-Dunyā",
+      "user_confirmed": true
+    },
+    "c005": {
+      "canonical_ar": "ابن العربي",
+      "canonical_translit": "Ibn al-ʿArabī",
+      "user_confirmed": true
+    },
+    "c006": {
+      "canonical_ar": "الحلاج",
+      "canonical_translit": "al-Ḥallāǧ",
+      "user_confirmed": true
+    },
+    "c007": {
+      "canonical_ar": "أبو القاسم القشيري",
+      "canonical_translit": "Abū al-Qāsim al-Qušayrī",
+      "user_confirmed": true
+    },
+    "c008": {
+      "canonical_ar": "فخر الدين أبو الحسن علي بن أحمد الحرّالي",
+      "canonical_translit": "Faḫr al-Dīn Abū al-Ḥasan ʿAlī b. Aḥmad al-Ḥarrālī",
+      "user_confirmed": true
+    },
+    "c009": {
+      "canonical_ar": "الحسن البصري",
+      "canonical_translit": "al-Ḥasan al-Baṣrī",
+      "user_confirmed": true
+    },
+    "c010": {
+      "canonical_ar": "محمد بن عبد الله النفري",
+      "canonical_translit": "Muḥammad b. ʿAbd Allāh al-Niffarī",
+      "user_confirmed": true
+    },
+    "c011": {
+      "canonical_ar": "بولس نويا",
+      "canonical_translit": "Paul Nwyia",
+      "user_confirmed": true
+    },
+    "c012": {
+      "canonical_ar": "إسماعيل بن سودكين النوري",
+      "canonical_translit": "Ismaʿīl b. Sawdakīn al-Nūrī",
+      "user_confirmed": true
+    },
+    "c013": {
+      "canonical_ar": "أبو حامد الغزالي",
+      "canonical_translit": "Abū Ḥāmid al-Ġazālī",
+      "user_confirmed": true
+    },
+    "c014": {
+      "canonical_ar": "ابن عبّاد الرندي",
+      "canonical_translit": "Ibn ʿAbbād al-Rundī",
+      "user_confirmed": true
+    },
+    "c015": {
+      "canonical_ar": "الحارث المحاسبي",
+      "canonical_translit": "al-Ḥāriṯ al-Muḥāsibī",
+      "user_confirmed": true
+    },
+    "c016": {
+      "canonical_ar": "أبو سعد الخركوشي",
+      "canonical_translit": "Abū Saʿd al-Ḫargūšī",
+      "user_confirmed": true
+    },
+    "c017": {
+      "canonical_ar": "شقيق البلخي",
+      "canonical_translit": "Šaqīq al-Balḫī",
+      "user_confirmed": true
+    },
+    "c018": {
+      "canonical_ar": "أبو القاسم عبد الرحمن بن محمد الصقلي",
+      "canonical_translit": "Abū al-Qāsim ʿAbd al-Raḥman b. Muḥammad al-Ṣiqillī",
+      "user_confirmed": true
+    },
+    "c019": {
+      "canonical_ar": "ميشال آلار",
+      "canonical_translit": "Michel Allard",
+      "user_confirmed": true
+    },
+    "c020": {
+      "canonical_ar": "أبو نصر الفارابي",
+      "canonical_translit": "Abū Naṣr al-Fārābī",
+      "user_confirmed": true
+    },
+    "c021": {
+      "canonical_ar": "روزبهان البقلى الشيرازي",
+      "canonical_translit": "Rūzbihān Baqlī al-Šīrāzī",
+      "user_confirmed": true
+    },
+    "c023": {
+      "canonical_ar": "جعفر الصادق",
+      "canonical_translit": "Ǧaʿfar al-Ṣādiq",
+      "user_confirmed": true
+    },
+    "c024": {
+      "canonical_ar": "أبو طالب المكي",
+      "canonical_translit": "Abū Ṭālib al-Makkī",
+      "user_confirmed": true
+    },
+    "c025": {
+      "canonical_ar": "سهل التستري",
+      "canonical_translit": "Sahl al-Tustarī",
+      "user_confirmed": false
+    },
+    "c026": {
+      "canonical_ar": "أبو مدين شعيب",
+      "canonical_translit": "Abū Madyan Šuʿayb",
+      "user_confirmed": true
+    },
+    "c027": {
+      "canonical_ar": "ابن عجيبة",
+      "canonical_translit": "Ibn ʿAǧība",
+      "user_confirmed": true
+    },
+    "c028": {
+      "canonical_ar": "ابن سينا",
+      "canonical_translit": "Ibn Sīnā",
+      "user_confirmed": true
+    },
+    "c029": {
+      "canonical_ar": "صدر الدين الشيرازي",
+      "canonical_translit": "Ṣadr al-Dīn al-Šīrāzī",
+      "user_confirmed": true
+    },
+    "c030": {
+      "canonical_ar": "داود بن محمود القيصري",
+      "canonical_translit": "Dāwūd b. Maḥmūd al-Qayṣarī",
+      "user_confirmed": true
+    },
+    "c032": {
+      "canonical_ar": "أبو منصور الماتريدي",
+      "canonical_translit": "Abū Manṣūr al-Māturīdī",
+      "user_confirmed": true
+    },
+    "c033": {
+      "canonical_ar": "ابن برجان",
+      "canonical_translit": "Ibn Barraǧān",
+      "user_confirmed": true
+    },
+    "c034": {
+      "canonical_ar": "عفيف الدين التلمساني",
+      "canonical_translit": "ʿAfīf al-Dīn al-Tilimsānī",
+      "user_confirmed": true
+    },
+    "c035": {
+      "canonical_ar": "ابن الجوزي",
+      "canonical_translit": "Ibn al-Ǧawzī",
+      "user_confirmed": true
+    },
+    "c036": {
+      "canonical_ar": "أبو الحسن النوري",
+      "canonical_translit": "Abū al-Ḥasan al-Nūrī",
+      "user_confirmed": true
+    },
+    "c037": {
+      "canonical_ar": "أبو علي الروذباري",
+      "canonical_translit": "Abū ʿAlī al-Rūdhbārī",
+      "user_confirmed": true
+    },
+    "c038": {
+      "canonical_ar": "ابن خميس الموصلي",
+      "canonical_translit": "Ibn Ḫamīs al-Mawṣilī",
+      "user_confirmed": true
+    },
+    "c039": {
+      "canonical_ar": "ابو سعيد الخراز",
+      "canonical_translit": "Abū Saʿīd al-Ḫarrāz",
+      "user_confirmed": true
+    },
+    "c040": {
+      "canonical_ar": "أبو العباس ابن العريف",
+      "canonical_translit": "Abū al-ʿAbbās Ibn al-ʿArīf",
+      "user_confirmed": true
+    },
+    "c041": {
+      "canonical_ar": "عبد الرحمن الجامي",
+      "canonical_translit": "ʿAbd al-Raḥmān Ǧāmī",
+      "user_confirmed": true
+    },
+    "c042": {
+      "canonical_ar": "محمد بن شعبة الحرّاني",
+      "canonical_translit": "Muḥammad b. Šuʿbah al-Ḥarrānī",
+      "user_confirmed": true
+    },
+    "c043": {
+      "canonical_ar": "عبد الكريم الجيلي",
+      "canonical_translit": "ʿAbd al-Karīm al-Ǧīlī",
+      "user_confirmed": true
+    },
+    "c044": {
+      "canonical_ar": "الاب عضم",
+      "canonical_translit": "al-Ab ʿAḍam(?)",
+      "user_confirmed": false
+    },
+    "c045": {
+      "canonical_ar": "ابن مكزون (؟)",
+      "canonical_translit": "Ibn Makzūn (?)",
+      "user_confirmed": false
+    },
+    "c046": {
+      "canonical_ar": "ابن تيمية",
+      "canonical_translit": "Ibn Taymīyah",
+      "user_confirmed": true
+    },
+    "c047": {
+      "canonical_ar": "ابو العلاء المعرّي",
+      "canonical_translit": "Abū al-ʿAlāʾ al-Maʿarrī",
+      "user_confirmed": true
+    },
+    "c048": {
+      "canonical_ar": "أرسطو",
+      "canonical_translit": "Arisṭū (Aristotle)",
+      "user_confirmed": true
+    },
+    "c049": {
+      "canonical_ar": "جورج المقدسي (محقق)",
+      "canonical_translit": "George Makdisi (ed.)",
+      "user_confirmed": true
+    },
+    "c050": {
+      "canonical_ar": "مقاتل بن سليمان",
+      "canonical_translit": "Muqātil b. Sulaymān",
+      "user_confirmed": true
+    },
+    "c051": {
+      "canonical_ar": "فخر الدين الرازي",
+      "canonical_translit": "Faḫr al-Dīn al-Rāzī",
+      "user_confirmed": true
+    },
+    "c052": {
+      "canonical_ar": "أبو حيان الغرناطي",
+      "canonical_translit": "Abū Ḥayyān al-Ġarnāṭī",
+      "user_confirmed": true
+    },
+    "c053": {
+      "canonical_ar": "Hellmut Ritter",
+      "canonical_translit": "Hellmut Ritter",
+      "user_confirmed": true
+    },
+    "c054": {
+      "canonical_ar": "ابو الفرج عبد الرحمن بن نصر الشيزري",
+      "canonical_translit": "Abū al-Faraǧ ʿAbd al-Raḥmān b. Naṣr al-Šayzarī",
+      "user_confirmed": true
+    },
+    "c055": {
+      "canonical_ar": "ابو الحسن محمد بن أبي يعلى",
+      "canonical_translit": "Abū al-Ḥasan Muḥammad Ibn Abī Yaʿlā",
+      "user_confirmed": true
+    },
+    "c056": {
+      "canonical_ar": "ابن سبعين",
+      "canonical_translit": "Ibn Sabʿīn",
+      "user_confirmed": true
+    },
+    "c057": {
+      "canonical_ar": "ابن عباد الرندي",
+      "canonical_translit": "Ibn ʿAbbād al-Rundī",
+      "user_confirmed": true
+    },
+    "c058": {
+      "canonical_ar": "ابن طلموس",
+      "canonical_translit": "Ibn Ṭumlūs",
+      "user_confirmed": true
+    },
+    "c059": {
+      "canonical_ar": "محمد بن جعفر الكتاني",
+      "canonical_translit": "Muḥammad b. Ǧaʿfar al-Kattānī",
+      "user_confirmed": true
+    },
+    "c060": {
+      "canonical_ar": "فيض القاشاني",
+      "canonical_translit": "Fayḍ al-Qāšānī",
+      "user_confirmed": true
+    },
+    "c061": {
+      "canonical_ar": "أبو عبد الرحمن السلمي",
+      "canonical_translit": "Abū ʿAbd al-Raḥmān al-Sulamī",
+      "user_confirmed": true
+    },
+    "c062": {
+      "canonical_ar": "أحمد البوني",
+      "canonical_translit": "Aḥmad al-Būnī",
+      "user_confirmed": true
+    },
+    "c063": {
+      "canonical_ar": "ست عجم بنت النفيس",
+      "canonical_translit": "Sitt ʿAǧam Bint al-Nafīs",
+      "user_confirmed": true
+    },
+    "c064": {
+      "canonical_ar": "داود الباخلي الإسكندري",
+      "canonical_translit": "Dāwūd al-Bāḫilī al-Iskandarī",
+      "user_confirmed": true
+    },
+    "c065": {
+      "canonical_ar": "محمود الكازواني",
+      "canonical_translit": "Maḥmūd al-Kāzawānī",
+      "user_confirmed": true
+    },
+    "c066": {
+      "canonical_ar": "فيض القاشاني",
+      "canonical_translit": "Fayḍ al-Qāšānī",
+      "user_confirmed": true
+    },
+    "c067": {
+      "canonical_ar": "محمد بن محمد الغمري",
+      "canonical_translit": "Muḥammad b. Muḥammad al-Ġumarī",
+      "user_confirmed": true
+    },
+    "c068": {
+      "canonical_ar": "ابن غانم المقدسي",
+      "canonical_translit": "Ibn Ġānim al-Maqdisī",
+      "user_confirmed": true
+    },
+    "c069": {
+      "canonical_ar": "أبو حفص محمد بن الحسين بن أحمد بن يزدانيار",
+      "canonical_translit": "Abū Hafṣ Muḥammad b. al-Ḥusayn b. Aḥmad Ibn Yazdānyār",
+      "user_confirmed": true
+    },
+    "c070": {
+      "canonical_ar": "عبد القادر الجيلاني",
+      "canonical_translit": "ʿAbd al-Qādir al-Ǧīlānī",
+      "user_confirmed": true
+    },
+    "c072": {
+      "canonical_ar": "خالد بن عيسى بن أحمد البلوي",
+      "canonical_translit": "Ḫālid b. ʿĪsā b. Aḥmad al-Balawī",
+      "user_confirmed": true
+    },
+    "c073": {
+      "canonical_ar": "أبو زيد عبد الرحمن بن عبد القادر الفاسي",
+      "canonical_translit": "Abū Zayd ʿAbd al-Raḥmān b. ʿAbd al-Qādir al-Fāsī",
+      "user_confirmed": true
+    },
+    "c074": {
+      "canonical_ar": "محمد بن سعيد بن حمادى البوصيري",
+      "canonical_translit": "Muḥammad b. Saʿīd b. Ḥammmādī al-Būṣīrī",
+      "user_confirmed": true
+    },
+    "c075": {
+      "canonical_ar": "أبو القاسم الجنيد",
+      "canonical_translit": "Abū al-Qāsim al-Ǧunayd",
+      "user_confirmed": true
+    },
+    "c076": {
+      "canonical_ar": "فايز المقدسي",
+      "canonical_translit": "Fāyiz al-Maqdisī",
+      "user_confirmed": true
+    },
+    "c077": {
+      "canonical_ar": "أبو بكر المروذي",
+      "canonical_translit": "Abū Bakr al-Marrūḏī",
+      "user_confirmed": true
+    },
+    "c078": {
+      "canonical_ar": "أبو علي الأهوازي",
+      "canonical_translit": "Abū ʿAlī al-Ahwāzī",
+      "user_confirmed": true
+    },
+    "c079": {
+      "canonical_ar": "عبد الملك بن مروان",
+      "canonical_translit": "ʿAbd al-Malik b. Marwān",
+      "user_confirmed": true
+    },
+    "c080": {
+      "canonical_ar": "إمام الحرمين الجويني",
+      "canonical_translit": "Imām al-Ḥaramayn al-Ǧuwaynī",
+      "user_confirmed": true
+    },
+    "c081": {
+      "canonical_ar": "ابن البناء المراكشي",
+      "canonical_translit": "Ibn al-Bannāʾ al-Marrākušī",
+      "user_confirmed": true
+    },
+    "c082": {
+      "canonical_ar": "ابن الفارض",
+      "canonical_translit": "Ibn al-Fāriḍ",
+      "user_confirmed": true
+    },
+    "c083": {
+      "canonical_ar": "أبو جعفر محمد بن الحسين أحمد بن يزدانيار",
+      "canonical_translit": "Abū",
+      "user_confirmed": true
+    },
+    "c084": {
+      "canonical_ar": "أبو النحيب السهروردي",
+      "canonical_translit": "Abū al-Naǧīb al-Suhrawardī",
+      "user_confirmed": true
+    },
+    "c085": {
+      "canonical_ar": "ابن باكويه الشيرازي",
+      "canonical_translit": "Ibn Bākōyeh al-Šīrāzī",
+      "user_confirmed": true
+    },
+    "c086": {
+      "canonical_ar": "...الخواص، التستري،",
+      "canonical_translit": "alḫwaṣ altstry",
+      "user_confirmed": false
+    },
+    "c087": {
+      "canonical_ar": "أبو الفرج ابن عبد المحسن الأنصاري",
+      "canonical_translit": "Abū al-Faraǧ Ibn ʿAbd al-Muḥsin al-Anṣārī",
+      "user_confirmed": true
+    },
+    "c088": {
+      "canonical_ar": "ابو زكرياء يحيى بن شرف الدين النووي",
+      "canonical_translit": "Abū Zakariyyāʾ Yaḥyā b. Šaraf al-Dīn al-Nawawī",
+      "user_confirmed": true
+    },
+    "c089": {
+      "canonical_ar": "عبد الرحمن ابن أحمد",
+      "canonical_translit": "عبد الرحمن بن أحمد",
+      "user_confirmed": true
+    },
+    "c090": {
+      "canonical_ar": "عبد الرحمن بن محمد بن محمد الإسفرايني",
+      "canonical_translit": "ʿAbd al-Raḥmān b. Muḥammad b. Muḥammad al-Isfārayīnī",
+      "user_confirmed": true
+    },
+    "c091": {
+      "canonical_ar": "عبد الله الأنصاري",
+      "canonical_translit": "ʿAbd Allāh al-Anṣārī",
+      "user_confirmed": true
+    },
+    "c092": {
+      "canonical_ar": "أبو القاسم أحمد بن قسي المغربي",
+      "canonical_translit": "Abū al-Qāsim Aḥmad b. Qasī al-Maġribī",
+      "user_confirmed": true
+    },
+    "c093": {
+      "canonical_ar": "أبو بكر جعفر بن المستفاض القريابي",
+      "canonical_translit": "Abū Bakr Ǧaʿfar b. Musrtafāḍ al-Faryābī",
+      "user_confirmed": true
+    },
+    "c094": {
+      "canonical_ar": "أبو محمد الحسن بن أحمد السمرقندي",
+      "canonical_translit": "Abū Muḥammad al-Ḥasan b. Aḥmad al-Samarqandī",
+      "user_confirmed": true
+    },
+    "c095": {
+      "canonical_ar": "أبو زيد الدبوسي الحنفي",
+      "canonical_translit": "Abū Zayd al-Dabbūsī al-Ḥanafī",
+      "user_confirmed": true
+    },
+    "c096": {
+      "canonical_ar": "عبد الوهاب بن أحمد بن علي الأنصاري",
+      "canonical_translit": "ʿAbd al-Wahhāb a. Aḥmad b. ʿAlī al-Anṣārī",
+      "user_confirmed": true
+    },
+    "c098": {
+      "canonical_ar": "رسلان دمشقي",
+      "canonical_translit": "Ruslān al-Dimašqī",
+      "user_confirmed": true
+    },
+    "c100": {
+      "canonical_ar": "ابن الصلاح الشهرزوري",
+      "canonical_translit": "Ibn al-Ṣalāḥ al-Šahrazūrī",
+      "user_confirmed": true
+    },
+    "c101": {
+      "canonical_ar": "",
+      "canonical_translit": "Gabriel Qaṭraya",
+      "user_confirmed": true
+    },
+    "c102": {
+      "canonical_ar": "محمد بن أحمد المديني",
+      "canonical_translit": "Muḥammad b. Aḥmad al-Madyanī",
+      "user_confirmed": true
+    },
+    "c103": {
+      "canonical_ar": "ابو سعيد الخادمي",
+      "canonical_translit": "Abū Saʿīd al-Ḫādimī",
+      "user_confirmed": true
+    },
+    "c104": {
+      "canonical_ar": "مفتي الخادم",
+      "canonical_translit": "Muftī al-Ḫādim",
+      "user_confirmed": true
+    },
+    "c107": {
+      "canonical_ar": "عز الدين ابن الطيب",
+      "canonical_translit": "ʿIzz al-Dīn Ibn al-Ṭayyib",
+      "user_confirmed": true
+    },
+    "c108": {
+      "canonical_ar": "عبد الغفار بن أحمد بن عبد المجيد القوصي",
+      "canonical_translit": "ʿAbd al-Ġaffār b. Aḥmad b. ʿAbd al-Maǧīd al-Qūṣī",
+      "user_confirmed": true
+    },
+    "c109": {
+      "canonical_ar": "أبو بكر الكلاباذي",
+      "canonical_translit": "Abū Bakr al-Kalābāḏī",
+      "user_confirmed": true
+    },
+    "c110": {
+      "canonical_ar": "علاء الدولة السمناني",
+      "canonical_translit": "ʿAlāʾ al-Dawlah al-Simnānī",
+      "user_confirmed": true
+    },
+    "c111": {
+      "canonical_ar": "عبد المجيد الزبادي",
+      "canonical_translit": "ʿAbd al-Maǧīd al-Zabādī",
+      "user_confirmed": true
+    },
+    "c112": {
+      "canonical_ar": "الشستري",
+      "canonical_translit": "al-Šustarī",
+      "user_confirmed": true
+    },
+    "c113": {
+      "canonical_ar": "محمد بن عبد القادر الفاسي",
+      "canonical_translit": "Muḥammad b. ʿAbd al-Qādir al-Fāsī",
+      "user_confirmed": true
+    },
+    "c114": {
+      "canonical_ar": "أبو عمرو ابن المحلي",
+      "canonical_translit": "Abū ʿAmr Ibn al-Maḥallī",
+      "user_confirmed": true
+    },
+    "c115": {
+      "canonical_ar": "أبو العباس أحمد بن قاسم الجذامي القباب",
+      "canonical_translit": "Abū al-ʿAbbās Aḥmad b. Qāsim al-Juḏāmī al-Qabbāb",
+      "user_confirmed": true
+    },
+    "c116": {
+      "canonical_ar": "الطوسي- القونوي",
+      "canonical_translit": "alṭwsy- alqwnwy",
+      "user_confirmed": false
+    },
+    "c117": {
+      "canonical_ar": "",
+      "canonical_translit": "Dadīšūʿ Bar Qaṭraya",
+      "user_confirmed": false
+    }
+  },
+  "variant_to_cluster": {
+    "البصري": "c009",
+    "بولس نويا": "c011",
+    "ميشال الار": "c019",
+    "الاب عضم": "c044",
+    "ابو نصر الفارابي": "c020",
+    "ابن مكزون": "c045",
+    "ابن تيميه": "c046",
+    "ابو العلاء المعري": "c047",
+    "ابن عربي": "c005",
+    "ارسطو": "c048",
+    "الحلاج": "c006",
+    "ابن سينا": "c028",
+    "جورج المقدسي (محقق)": "c049",
+    "مقاتل": "c050",
+    "فخر الدين الرازي": "c051",
+    "ابو حيان الغرناطي": "c052",
+    "Hellmut Ritter": "c053",
+    "ابو الفرج عبد الرحمن بن نصر الشيزري": "c054",
+    "ابو الحسن محمد بن ابي يعلي": "c055",
+    "ابن سبعين": "c056",
+    "الخركوشي": "c016",
+    "سيدي الصبرجي": "c057",
+    "ابن طلموس": "c058",
+    "روزبهان الشيرازي": "c021",
+    "السلمي": "c001",
+    "صدر الدين الشيرازي": "c029",
+    "محمد الكتاني": "c059",
+    "الترمذي": "c000",
+    "جعفر الصادق": "c023",
+    "القلشاني": "c060",
+    "القونوي": "c003",
+    "ابن عطاء": "c002",
+    "ابو عبد الرحمن": "c061",
+    "احمد البوني": "c062",
+    "ابن سودكين": "c012",
+    "ست عجم بنت النفيس": "c063",
+    "داود الباخلي الاسكندري": "c064",
+    "محمود الكازواني": "c065",
+    "ابو طالب المكي": "c024",
+    "عبد الرزاق بن ابي الغنائم القاشاني": "c066",
+    "داود بن محمود القيصري": "c030",
+    "الغزالي": "c013",
+    "محمد بن محمد الغمري": "c067",
+    "ابن غانم المقدسي": "c068",
+    "ابو حفص محمد بن الحسين احمد بن يازدانيار": "c069",
+    "عبد القادر الجيلاني": "c070",
+    "خالد بن عيسي بن احمد البلوي ... بن": "c072",
+    "ابو زيد عبد الرحمن بن عبد القادر الفاسي": "c073",
+    "محمد بن سعيد بن حمادي البصيري": "c074",
+    "شقيق البلخي": "c017",
+    "ابو القاسم الجنيد": "c075",
+    "النفري": "c010",
+    "الماتريدي": "c032",
+    "فايز المقدسي": "c076",
+    "ابو بكر المزودي": "c077",
+    "التستري": "c025",
+    "علي الاهوازي": "c078",
+    "ابن عباد": "c014",
+    "حسن البصري": "c009",
+    "عبد الملك بن مروان": "c079",
+    "ابو مدين شعيب": "c026",
+    "القشيري": "c007",
+    "ابن برجان": "c033",
+    "الجويني": "c080",
+    "ابن البنا": "c081",
+    "ابن الفارض": "c082",
+    "ابو القاسم عبد الرحمن بن محمد الصقلي": "c018",
+    "التلمساني": "c034",
+    "ابن ابي الدنيا": "c004",
+    "ابو جعفر محمد بن الحسين احمد بن يزدانيار الانباري": "c083",
+    "ابن الجوزي": "c035",
+    "السهروردي": "c084",
+    "ابن باكويه الشيرازي": "c085",
+    "...الخواص، التستري،": "c086",
+    "ابو الحسن البصري": "c009",
+    "ابو الفرج ابن عبد المحسن الانصاري": "c087",
+    "ابو زكريا يحيي بن شرف الدين النووي": "c088",
+    "الحارث المحاسبي": "c015",
+    "عبد الرحمن ابن احمد": "c089",
+    "محمد الصقلي": "c018",
+    "عبد الرحمن محمد بن محمد الاسفاريني": "c090",
+    "عبدالله الانصاري": "c091",
+    "ابو محمد روزبهان البقلي الشيرازي": "c021",
+    "النوري": "c036",
+    "الروزباري": "c037",
+    "ابو الحسن النوري": "c036",
+    "ابو القاسم احمد بن قسي المغربي": "c092",
+    "ابو بكر جعفر بن محيي الحسن بن المستفاص الفيزيائي": "c093",
+    "السمرقندي": "c094",
+    "ابن خميس": "c038",
+    "ابو زيد الدبوسي الحنفي": "c095",
+    "عبد الوهاب بن احمد بن علي الانصاري": "c096",
+    "ابن عطاء الله": "c002",
+    "رسلان دمشقي": "c098",
+    "ابن الصلاح الشهرزوري": "c100",
+    "ابو سعيد الخراز": "c039",
+    "ابو سعيد الخراز، الوسي، التستري": "c025",
+    "Qatraya Gabriel": "c101",
+    "ابن العريف": "c040",
+    "محمد بن احمد المدني": "c102",
+    "ابو سعيد الخادمي": "c103",
+    "مفتي الخادم": "c104",
+    "عبد الرحمن الجامي": "c041",
+    "فخر الدين ابو الحسن علي بن احمد حرالي": "c008",
+    "محمد بن شعبه الحراني": "c042",
+    "عز الدين ابن الطيب": "c107",
+    "عبد الكريم الجيلي": "c043",
+    "عبد الغفار بن عبد المجيد القوصي": "c108",
+    "الكلاباذي": "c109",
+    "السمناني": "c110",
+    "ابو زيد عبد الرحمن بن احمد الجامي": "c041",
+    "عبد المجيد الزبادي": "c111",
+    "ابن عجيبه": "c027",
+    "الشستري": "c112",
+    "الفاسي.م": "c113",
+    "ابن محلي– ابو عمرو": "c114",
+    "القباب": "c115",
+    "الطوسي- القونوي": "c116",
+    "Dadiso’ Bar Qatraya": "c117",
+    "محمد بن علي الاندلسي": "c005",
+    "عبد القادر الكيلاني": "c070",
+    "عبد الكريم الكيلاني": "c043"
+  },
+  "row_overrides": {
+    "r0001": {
+      "discrepancy_note": "Nwyia calls this a \"glossaire\" in a marginal note, suggesting it is not the well-known work by al-Ḥārith al-Muḥāsibī. "
+    },
+    "r0042": {
+      "city": "Boston"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '%s\\n' '📍 Nwyia adjudicator — resume here:' '• Layout: app/ data/ source/ scripts/ backups/' '• Serve (from project root): python3 -m http.server 8000  → http://127.0.0.1:8000/app/index.html' '• Live data: data/data.json  (app source of truth; reload after edits)' '• Adopt baseline (once): in-app Export → Revert → reload' '• Loop: adjudicate → Export → python3 scripts/harvest_authority.py ~/Downloads/data.json → python3 scripts/cluster.py → reload (+Revert)' '• Pending: c083 translit; BnF work_url via SRU; publication statuses' '• Full notes: project memory (MEMORY.md → nwyia-adjudicator-state)'"
+          }
+        ]
+      }
+    ]
+  }
+}

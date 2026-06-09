@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Local safety snapshots (redundant once under version control)
+backups/
+
+# Claude Code local permissions (machine-specific)
+.claude/settings.local.json

@@ -1,0 +1,1623 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fonds P. Nwyia — Index Lieux (adjudicator)</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --card: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #6b6b6b;
+    --rule: #d8d3c8;
+    --accent: #842b1a;
+    --accent-soft: #f1e3df;
+    --dirty: #b58900;
+    --published: #2c6e3f;
+    --manuscript: #6a4f9c;
+    --partial: #8a6d1a;
+    --unknown: #8c8c8c;
+    --green: #2c6e3f;
+    --orange: #b58900;
+    --red: #c1432a;
+    --hit: #fff3a8;
+    font-family: "Helvetica Neue", "Arial", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+
+  /* Arabic text */
+  .ar { font-family: "Scheherazade New", "Amiri", "Geeza Pro", "Times New Roman", serif;
+        direction: rtl; text-align: right; }
+  .ar.large { font-size: 1.6rem; line-height: 1.7; }
+  .ar.medium { font-size: 1.15rem; line-height: 1.5; }
+  .translit { color: var(--muted); font-style: italic; font-size: 0.9rem; }
+
+  /* Top bar */
+  header {
+    background: var(--bg); border-bottom: 1px solid var(--rule);
+    padding: 0.6rem 1rem 0 1rem;
+  }
+  .topline { display: flex; align-items: center; gap: 0.6rem; }
+  h1.brand { margin: 0; font-size: 0.85rem; color: var(--accent);
+             letter-spacing: 0.05em; text-transform: uppercase; flex: 1; }
+  .topbtns button { padding: 0.35rem 0.7rem; border: 1px solid var(--rule);
+    background: white; border-radius: 3px; cursor: pointer; font-size: 0.82rem;
+    margin-left: 0.3rem; }
+  .topbtns button.primary { background: var(--accent); color: white; border-color: var(--accent); }
+  .topbtns button.primary[disabled] { background: var(--muted); border-color: var(--muted); cursor: not-allowed; }
+  .dirty-badge { display: inline-block; margin-left: 0.4em;
+    background: var(--dirty); color: white; border-radius: 2em; padding: 0 0.5em;
+    font-size: 0.75rem; }
+
+  /* Tab bar */
+  .tabs { display: flex; gap: 0; margin-top: 0.5rem; border-bottom: 0; }
+  .tabs button { background: none; border: 0; border-bottom: 2px solid transparent;
+    padding: 0.5rem 0.9rem; cursor: pointer; font-size: 0.9rem;
+    color: var(--muted); font-family: inherit; }
+  .tabs button.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+  .tabs button .count { color: var(--muted); font-size: 0.8em; margin-left: 0.3em; font-weight: normal; }
+
+  /* Views */
+  main { flex: 1; padding: 0; }
+  .view { display: none; }
+  .view.active { display: block; }
+
+  /* --- Browse view --- */
+  #view-browse { padding: 0.8rem 1rem 4rem 1rem; }
+  .browse-controls { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+  .browse-controls input[type="search"] { flex: 1; min-width: 240px;
+    padding: 0.4rem 0.6rem; border: 1px solid var(--rule);
+    background: white; border-radius: 3px; font-size: 0.95rem; }
+  .browse-controls select { padding: 0.35rem 0.4rem; border: 1px solid var(--rule);
+    background: white; border-radius: 3px; max-width: 200px; font-size: 0.85rem; }
+  .stats { color: var(--muted); font-size: 0.8rem; margin: 0.5rem 0; }
+  table { width: 100%; border-collapse: collapse; background: var(--card);
+          font-size: 0.88rem; margin-top: 0.5rem; }
+  th, td { border-bottom: 1px solid var(--rule); padding: 0.4rem 0.5rem; vertical-align: top; }
+  th { text-align: left; font-weight: 600; font-size: 0.74rem;
+       text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted);
+       background: var(--bg); }
+  tr { cursor: pointer; }
+  tr:hover td { background: #fffce8; }
+  tr.dirty td { background: #fff8d0; }
+  tr.decided td { box-shadow: inset 3px 0 0 var(--green); }
+  td.col-archive, td.col-page, td.col-id { font-variant-numeric: tabular-nums;
+                                        color: var(--muted); font-size: 0.82rem; }
+  .status-chip { display: inline-block; padding: 0.05em 0.55em; border-radius: 2em;
+                 font-size: 0.72rem; color: white; }
+  .status-published   { background: var(--published); }
+  .status-manuscript  { background: var(--manuscript); }
+  .status-partial     { background: var(--partial); }
+  .status-unknown     { background: var(--unknown); }
+  mark { background: var(--hit); padding: 0 0.1em; }
+
+  /* --- Adjudicate views (single-entry) --- */
+  #view-rows, #view-clusters { padding: 1.2rem 1.5rem 5rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+  .adj-header { display: flex; align-items: center; gap: 0.8rem;
+    margin-bottom: 0.8rem; }
+  .progress { flex: 1; color: var(--muted); font-size: 0.85rem; }
+  .progress strong { color: var(--fg); font-weight: 600; }
+  .adj-nav { display: flex; gap: 0.3rem; align-items: center; }
+  .adj-nav button { padding: 0.3rem 0.6rem; border: 1px solid var(--rule);
+    background: white; border-radius: 3px; cursor: pointer; font-size: 0.85rem; }
+  .adj-nav input[type="number"] { width: 5em; padding: 0.3rem; border: 1px solid var(--rule);
+    border-radius: 3px; font-size: 0.85rem; }
+  .adj-filter { padding: 0.3rem 0.4rem; border: 1px solid var(--rule);
+    background: white; border-radius: 3px; font-size: 0.82rem; }
+
+  .card { background: var(--card); border: 1px solid var(--rule);
+          border-radius: 4px; padding: 1rem 1.2rem; margin-bottom: 0.8rem; }
+  .card h2 { margin: 0 0 0.6rem 0; font-size: 0.78rem; text-transform: uppercase;
+             letter-spacing: 0.05em; color: var(--muted); font-weight: 600; }
+  .card .field { display: flex; gap: 0.6rem; margin: 0.3rem 0; align-items: baseline; }
+  .card .field label { flex: 0 0 7em; color: var(--muted); font-size: 0.82rem; }
+  .card .field .val { flex: 1; }
+  .prompt { background: var(--accent-soft); border-left: 4px solid var(--accent);
+            padding: 0.6rem 0.9rem; font-size: 0.95rem; border-radius: 2px;
+            margin-bottom: 0.8rem; }
+  .prompt strong { color: var(--accent); }
+
+  .decision-bar { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+  .decision-bar button.act { padding: 0.5rem 0.9rem; border: 1px solid var(--rule);
+    background: white; border-radius: 4px; cursor: pointer; font-size: 0.92rem;
+    font-family: inherit; }
+  .decision-bar button.act:hover { background: var(--accent-soft); }
+  .decision-bar button.act.chosen { background: var(--accent); color: white; border-color: var(--accent); }
+  .decision-bar .kbd { font-family: ui-monospace, monospace; font-size: 0.8em;
+    background: var(--bg); padding: 0 0.3em; border-radius: 2px; border: 1px solid var(--rule);
+    margin-right: 0.3em; color: var(--muted); }
+  .decision-bar button.act.chosen .kbd { background: rgba(255,255,255,0.25);
+    color: white; border-color: transparent; }
+
+  .row-inputs { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.7rem; }
+  .row-inputs label { font-size: 0.78rem; color: var(--muted); display: block; margin-bottom: 0.2rem; }
+  .row-inputs textarea, .row-inputs input[type="text"], .row-inputs input[type="url"] {
+    width: 100%; padding: 0.45rem 0.6rem; border: 1px solid var(--rule);
+    border-radius: 3px; font-size: 0.92rem; font-family: inherit; background: white;
+  }
+  .row-inputs textarea { min-height: 4em; resize: vertical; }
+  .row-inputs input[type="url"] { font-family: ui-monospace, "SF Mono", monospace; font-size: 0.86rem; }
+
+  /* Editable manuscript-record grid */
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem; }
+  .meta-grid > div { display: flex; flex-direction: column; gap: 0.2rem; }
+  .meta-grid label { font-size: 0.78rem; color: var(--muted); }
+  .meta-grid input { width: 100%; padding: 0.4rem 0.6rem; border: 1px solid var(--rule);
+    border-radius: 3px; font-size: 0.92rem; font-family: inherit; background: white; }
+
+  /* Title/author tri-column grid: Arabic · transliteration · translation */
+  .tri-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 0.4rem 1rem;
+    margin: 0.5rem 0; }
+  .tri-grid > div { display: flex; flex-direction: column; gap: 0.2rem; }
+  .tri-grid label { font-size: 0.76rem; color: var(--muted); }
+  .tri-grid input { width: 100%; padding: 0.4rem 0.6rem; border: 1px solid var(--rule);
+    border-radius: 3px; font-size: 0.92rem; font-family: inherit; background: white; }
+  .tri-grid input.ar { font-family: "Scheherazade New", "Amiri", "Geeza Pro", serif;
+    direction: rtl; text-align: right; font-size: 1.05rem; }
+  .browse-link { text-decoration: none; font-size: 0.85em; opacity: 0.7; }
+  .browse-link:hover { opacity: 1; }
+
+  /* Cluster view specifics */
+  .cluster-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .variant-list { list-style: none; padding: 0; margin: 0.3rem 0 0 0;
+    max-height: 220px; overflow-y: auto; border: 1px solid var(--rule);
+    border-radius: 3px; background: white; }
+  .variant-list li { padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: baseline; }
+  .variant-list li:last-child { border-bottom: 0; }
+  .variant-list .count-chip { color: var(--muted); font-size: 0.78rem; }
+  .row-list { max-height: 280px; overflow-y: auto; border: 1px solid var(--rule);
+    border-radius: 3px; background: white; font-size: 0.85rem; }
+  .row-list .rl-row { padding: 0.35rem 0.6rem; border-bottom: 1px solid var(--rule);
+    display: grid; grid-template-columns: 4em 1fr 1fr 4em; gap: 0.5rem; cursor: pointer; align-items: baseline; }
+  .row-list .rl-row:hover { background: var(--accent-soft); }
+  .row-list .rl-row:last-child { border-bottom: 0; }
+  .row-list .rl-id { color: var(--muted); font-size: 0.8em; }
+  .confidence-chip { display: inline-block; padding: 0.05em 0.5em; border-radius: 2em;
+    font-size: 0.74rem; background: var(--accent-soft); color: var(--accent); }
+  .confidence-low { background: #fce8b3; color: #6c4d00; }
+
+  /* Keyboard hint bar */
+  .kbd-bar { position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--card); border-top: 1px solid var(--rule);
+    padding: 0.4rem 1rem; font-size: 0.78rem; color: var(--muted);
+    display: flex; gap: 1.2rem; flex-wrap: wrap; z-index: 10; }
+  .kbd-bar code { font-family: ui-monospace, monospace;
+    background: var(--bg); padding: 0 0.3em; border-radius: 2px;
+    border: 1px solid var(--rule); color: var(--fg); margin-right: 0.25em; }
+
+  /* Settings dialog */
+  dialog { border: 1px solid var(--rule); border-radius: 4px; padding: 1.2rem; max-width: 460px; }
+  dialog::backdrop { background: rgba(0,0,0,0.3); }
+  dialog h2 { margin: 0 0 0.6rem 0; }
+  dialog .field { margin: 0.5rem 0; display: flex; flex-direction: column; gap: 0.25rem; }
+  dialog input { padding: 0.35rem 0.5rem; border: 1px solid var(--rule); border-radius: 3px; }
+  dialog .help { font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; }
+  dialog .actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 0.8rem; }
+  dialog button { padding: 0.4rem 0.8rem; border: 1px solid var(--rule); border-radius: 3px;
+                  background: white; cursor: pointer; }
+  dialog button.primary { background: var(--accent); color: white; border-color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <div class="topline">
+    <h1 class="brand">Bibliothèque Orientale — Fonds P. Nwyia — Index Lieux</h1>
+    <div class="topbtns">
+      <button id="btn-settings" title="Configure GitHub repo and PAT">Settings</button>
+      <button id="btn-export" title="Download data.json (offline fallback)">Export</button>
+      <button id="btn-revert" title="Discard all local edits">Revert</button>
+      <button id="btn-save" class="primary" disabled>Save to GitHub<span id="dirty-badge" class="dirty-badge" hidden>0</span></button>
+    </div>
+  </div>
+  <nav class="tabs">
+    <button data-tab="browse" class="active">Browse / search<span id="count-all" class="count"></span></button>
+    <button data-tab="rows">Adjudicate manuscripts<span id="count-rows" class="count"></span></button>
+    <button data-tab="clusters">Adjudicate authors<span id="count-clusters" class="count"></span></button>
+    <button data-tab="columns">Edit columns<span id="count-columns" class="count"></span></button>
+  </nav>
+</header>
+
+<main>
+  <!-- ============== BROWSE ============== -->
+  <section id="view-browse" class="view active">
+    <div class="browse-controls">
+      <input id="q" type="search" placeholder="Search Arabic, transliteration, French, shelfmark… (focus with /)" autofocus />
+      <select id="filter-city"><option value="">All cities</option></select>
+      <select id="filter-biblio"><option value="">All libraries</option></select>
+      <select id="filter-author"><option value="">All authors</option></select>
+      <select id="filter-status">
+        <option value="">Any status</option>
+        <option value="unknown">unknown</option>
+        <option value="published">published</option>
+        <option value="partial">partial edition</option>
+        <option value="manuscript">manuscript only</option>
+      </select>
+      <select id="filter-pending">
+        <option value="all">All entries</option>
+        <option value="undecided">Undecided only</option>
+        <option value="decided">Decided only</option>
+        <option value="lowconf">Low-confidence clusters</option>
+      </select>
+    </div>
+    <div class="stats" id="stats">Loading…</div>
+    <table id="results">
+      <thead>
+        <tr>
+          <th>#</th><th>City</th><th>Library</th><th>Shelfmark</th><th>Folios</th>
+          <th>Title</th><th>Author</th><th>Archive</th><th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- ============== ADJUDICATE ROWS ============== -->
+  <section id="view-rows" class="view">
+    <div class="adj-header">
+      <div class="progress" id="rows-progress"></div>
+      <div class="adj-nav">
+        <select id="rows-filter" class="adj-filter">
+          <option value="undecided">Undecided</option>
+          <option value="all">All rows</option>
+          <option value="decided">Decided</option>
+          <option value="flagged">Flagged / discrepancy notes</option>
+        </select>
+        <button id="rows-prev" title="K or ←">◀ Prev</button>
+        <input id="rows-jump" type="number" min="1" placeholder="Go" />
+        <button id="rows-next" title="J or →">Next ▶</button>
+      </div>
+    </div>
+
+    <div class="prompt" id="rows-prompt"></div>
+
+    <div class="card" id="rows-meta-card">
+      <h2>Manuscript record</h2>
+      <div class="meta-grid">
+        <div><label for="rows-city-edit">City</label>
+          <input id="rows-city-edit" type="text" list="rows-city-list" autocomplete="off" />
+          <datalist id="rows-city-list"></datalist></div>
+        <div><label for="rows-library-edit">Library</label>
+          <input id="rows-library-edit" type="text" list="rows-library-list" autocomplete="off" />
+          <datalist id="rows-library-list"></datalist></div>
+        <div><label for="rows-shelfmark-edit">Shelfmark</label>
+          <input id="rows-shelfmark-edit" type="text" /></div>
+        <div><label for="rows-folios-edit">Folios</label>
+          <input id="rows-folios-edit" type="text" /></div>
+        <div><label for="rows-archive-edit">Archive (Fonds Nwyia)</label>
+          <input id="rows-archive-edit" type="text" /></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Title &amp; author</h2>
+      <label style="font-size:0.74rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);">Title</label>
+      <div class="tri-grid">
+        <div>
+          <label for="rows-title-edit">Arabic (as recorded)</label>
+          <input id="rows-title-edit" type="text" class="ar" />
+        </div>
+        <div>
+          <label for="rows-title-translit">Transliteration (DIN 31635)</label>
+          <input id="rows-title-translit" type="text" placeholder="Kitāb al-…" />
+        </div>
+        <div>
+          <label for="rows-title-translation">Translation</label>
+          <input id="rows-title-translation" type="text" placeholder="The Book of …" />
+        </div>
+      </div>
+      <label style="font-size:0.74rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);">Author</label>
+      <div class="tri-grid">
+        <div>
+          <label for="rows-author-edit">Arabic (as recorded)</label>
+          <input id="rows-author-edit" type="text" class="ar" />
+        </div>
+        <div>
+          <label for="rows-author-translit">Transliteration (DIN 31635)</label>
+          <input id="rows-author-translit" type="text" placeholder="al-Muḥāsibī" />
+        </div>
+        <div>
+          <label for="rows-author-translation">Translation / identification</label>
+          <input id="rows-author-translation" type="text" />
+        </div>
+      </div>
+      <div class="row-inputs" style="margin-top:0.4rem">
+        <div>
+          <label for="rows-catnote">Cataloguer's descriptive comment — focus with <code>d</code>
+            <span style="color:var(--muted)">(glossaire, fragments, نسختان, مطبوع, مقتطفات …)</span></label>
+          <textarea id="rows-catnote" placeholder="Descriptive note as recorded by the cataloguer (kept out of the title)"></textarea>
+        </div>
+      </div>
+      <div class="field" style="margin-top:0.6rem"><label>Cluster</label><div class="val" id="rows-cluster"></div></div>
+      <div class="field"><label>Reassign</label>
+        <div class="val" style="display:flex;gap:0.4rem;align-items:center;flex-wrap:wrap">
+          <select id="rows-cluster-pick" class="adj-filter" style="max-width:360px"></select>
+          <button id="rows-cluster-assign" class="act" style="padding:0.35rem 0.7rem;border:1px solid var(--rule);background:white;border-radius:4px;cursor:pointer;">Assign</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Decision · publication status</h2>
+      <div class="decision-bar" id="rows-decision"></div>
+      <div class="row-inputs">
+        <div>
+          <label for="rows-workurl">Identification URL — focus with <code>u</code>
+            <span style="color:var(--muted)">(catalogue record, digitised ms., or edition — keeps the bibliography linkable)</span></label>
+          <input id="rows-workurl" type="url" placeholder="https://…" />
+        </div>
+        <div>
+          <label for="rows-citation">Edition citation (editor, press, year)
+            — focus with <code>e</code></label>
+          <textarea id="rows-citation" placeholder="ed. ʿA. al-X (Beirut: Dār Y, 2003)"></textarea>
+        </div>
+        <div>
+          <label for="rows-note">Discrepancy note — focus with <code>n</code></label>
+          <textarea id="rows-note" placeholder="Alternative attribution; misreading; etc."></textarea>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== ADJUDICATE CLUSTERS ============== -->
+  <section id="view-clusters" class="view">
+    <div class="adj-header">
+      <div class="progress" id="clu-progress"></div>
+      <div class="adj-nav">
+        <select id="clu-filter" class="adj-filter">
+          <option value="unconfirmed">Unconfirmed</option>
+          <option value="all">All clusters</option>
+          <option value="lowconf">Low confidence (&lt;1.0)</option>
+          <option value="multi">Multi-variant</option>
+          <option value="confirmed">Confirmed</option>
+        </select>
+        <button id="clu-prev" title="K">◀ Prev</button>
+        <input id="clu-jump" type="number" min="1" placeholder="Go" />
+        <button id="clu-next" title="J">Next ▶</button>
+      </div>
+    </div>
+
+    <div class="prompt" id="clu-prompt"></div>
+
+    <div class="card">
+      <h2>Canonical author</h2>
+      <div class="cluster-summary">
+        <div>
+          <div class="field"><label>Canonical (AR)</label>
+            <input id="clu-canon-ar" type="text" class="ar medium" style="flex:1; padding:0.4rem 0.6rem; border:1px solid var(--rule); border-radius:3px;" />
+          </div>
+          <div class="field"><label>Transliteration</label>
+            <input id="clu-canon-translit" type="text" placeholder="DIN 31635" style="flex:1; padding:0.4rem 0.6rem; border:1px solid var(--rule); border-radius:3px;" />
+          </div>
+          <div class="field"><label>Authorities</label>
+            <div class="val" id="clu-authority-list" style="flex:1; display:flex; flex-wrap:wrap; align-items:center;"></div>
+          </div>
+          <div class="field"><label>Add authority</label>
+            <div class="val" style="display:flex; gap:0.4rem; align-items:center; flex-wrap:wrap; flex:1">
+              <input id="clu-authority-add" type="url" placeholder="paste Wikidata / VIAF / TDVİA / EI / Vatican URL" style="flex:1; min-width:220px; padding:0.4rem 0.6rem; border:1px solid var(--rule); border-radius:3px; font-family: ui-monospace, monospace; font-size:0.8rem;" />
+              <button id="clu-authority-addbtn" class="act" style="padding:0.35rem 0.7rem; border:1px solid var(--rule); background:white; border-radius:4px; cursor:pointer;">Add</button>
+            </div>
+          </div>
+          <div class="field"><label>Cluster id</label><div class="val" id="clu-id-info"></div></div>
+        </div>
+        <div>
+          <h2 style="margin-top:0">Recorded variants</h2>
+          <ul class="variant-list" id="clu-variants"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Decision · cluster status</h2>
+      <div class="decision-bar" id="clu-decision"></div>
+      <div class="row-inputs" style="margin-top:0.7rem">
+        <div style="display:flex;gap:0.4rem;align-items:center;flex-wrap:wrap">
+          <label for="clu-merge-pick" style="margin:0">Merge this cluster into</label>
+          <select id="clu-merge-pick" class="adj-filter" style="max-width:360px"></select>
+          <button id="clu-merge" class="act" style="padding:0.4rem 0.8rem;border:1px solid var(--rule);background:white;border-radius:4px;cursor:pointer;">Merge ▸</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Manuscripts assigned to this cluster (<span id="clu-rowcount">0</span>)</h2>
+      <div class="row-list" id="clu-rows"></div>
+    </div>
+  </section>
+
+  <!-- ============== EDIT COLUMNS (one field at a time) ============== -->
+  <section id="view-columns" class="view">
+    <div class="adj-header">
+      <div class="progress" id="cols-progress"></div>
+      <div class="adj-nav">
+        <label for="cols-field" style="color:var(--muted);font-size:0.82rem;">Column</label>
+        <select id="cols-field" class="adj-filter"></select>
+        <select id="cols-filter" class="adj-filter">
+          <option value="all">All rows</option>
+          <option value="blank">Blank in this column</option>
+          <option value="edited">Edited</option>
+        </select>
+        <button id="cols-prev" title="K or ↑">◀ Prev</button>
+        <input id="cols-jump" type="number" min="1" placeholder="Go" />
+        <button id="cols-next" title="J or ↓">Next ▶</button>
+      </div>
+    </div>
+
+    <div class="prompt" id="cols-prompt"></div>
+
+    <div class="card" id="cols-context-card">
+      <h2>Entry context</h2>
+      <div id="cols-context"></div>
+    </div>
+
+    <div class="card">
+      <h2 id="cols-edit-head">Edit field</h2>
+      <div class="row-inputs">
+        <div>
+          <label for="cols-edit" id="cols-edit-label">Value</label>
+          <input id="cols-edit" type="text" list="cols-datalist" autocomplete="off" />
+          <datalist id="cols-datalist"></datalist>
+        </div>
+        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;align-items:center;">
+          <button id="cols-copyprev" class="act" style="padding:0.4rem 0.8rem;border:1px solid var(--rule);background:white;border-radius:4px;cursor:pointer;">↑ Same as previous row</button>
+          <span id="cols-prevval" style="color:var(--muted);font-size:0.82rem;"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Keyboard hint bar (per-view) -->
+<div class="kbd-bar" id="kbd-bar"></div>
+
+<dialog id="settings-dialog">
+  <h2>GitHub Settings</h2>
+  <div class="field"><label for="cfg-owner">Owner</label>
+    <input id="cfg-owner" placeholder="your-github-username" /></div>
+  <div class="field"><label for="cfg-repo">Repository</label>
+    <input id="cfg-repo" placeholder="nwyia-index" /></div>
+  <div class="field"><label for="cfg-branch">Branch</label>
+    <input id="cfg-branch" value="main" /></div>
+  <div class="field"><label for="cfg-pat">Personal access token (fine-grained, Contents: write)</label>
+    <input id="cfg-pat" type="password" placeholder="github_pat_..." /></div>
+  <div class="help">Token stays in your browser only (sessionStorage). Use a fine-grained PAT scoped to this single repo.</div>
+  <div class="actions">
+    <button onclick="closeSettings()">Cancel</button>
+    <button class="primary" onclick="saveSettings()">Save</button>
+  </div>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
+<script>
+"use strict";
+
+// ============================================================
+// State, storage, data model
+// ============================================================
+const DATA_URL = "../data/data.json";
+const LS_KEY = "nwyia-index-edits-v1";
+const SS_KEY_CFG = "nwyia-index-cfg";
+const VIEW_KEY = "nwyia-index-view-v1";
+
+let raw = null;
+let rowsById = new Map();
+let clustersById = new Map();
+let mini = null;
+let edits = loadEdits();
+let cfg = loadCfg();
+let currentQuery = "";
+
+// Per-view cursor state.
+let activeTab = sessionStorage.getItem(VIEW_KEY) || "browse";
+let rowsCursor = 0;
+let cluCursor = 0;
+let rowsList = []; // ids in current filter
+let cluList = [];  // cluster_ids in current filter
+
+function loadEdits() {
+  try { return JSON.parse(localStorage.getItem(LS_KEY) || "null") ||
+    { rows: {}, clusters: {} }; }
+  catch { return { rows: {}, clusters: {} }; }
+}
+function saveEdits() {
+  localStorage.setItem(LS_KEY, JSON.stringify(edits));
+  updateDirtyBadge();
+  updateCounts();
+}
+function loadCfg() {
+  try { return JSON.parse(sessionStorage.getItem(SS_KEY_CFG) || "null") || {}; }
+  catch { return {}; }
+}
+function saveCfg() { sessionStorage.setItem(SS_KEY_CFG, JSON.stringify(cfg)); }
+
+function mergedRow(r) { return { ...r, ...(edits.rows[r.id] || {}) }; }
+function mergedCluster(c) { return { ...c, ...(edits.clusters[c.cluster_id] || {}) }; }
+
+function patchRow(rowId, patch) {
+  const orig = rowsById.get(rowId);
+  const existing = edits.rows[rowId] || {};
+  const merged = { ...existing, ...patch };
+  for (const k of Object.keys(merged)) {
+    if (merged[k] === (orig[k] ?? "")) delete merged[k];
+  }
+  if (Object.keys(merged).length === 0) delete edits.rows[rowId];
+  else edits.rows[rowId] = merged;
+  saveEdits();
+}
+function patchCluster(cid, patch) {
+  const orig = clustersById.get(cid) || {};
+  const existing = edits.clusters[cid] || {};
+  const merged = { ...existing, ...patch };
+  for (const k of Object.keys(merged)) {
+    if (JSON.stringify(merged[k]) === JSON.stringify(orig[k])) delete merged[k];
+  }
+  if (Object.keys(merged).length === 0) delete edits.clusters[cid];
+  else edits.clusters[cid] = merged;
+  saveEdits();
+}
+
+function dirtyCount() {
+  return Object.keys(edits.rows).length + Object.keys(edits.clusters).length;
+}
+
+// ============================================================
+// Predicates
+// ============================================================
+// A row counts as "decided" when the publication status has been set away
+// from the default `unknown`. (Citation/note alone don't close out the row.)
+function isRowDecided(r) {
+  const m = mergedRow(r);
+  return (m.pub_status || "unknown") !== "unknown";
+}
+function rowHasNote(r) {
+  const m = mergedRow(r);
+  return !!(m.discrepancy_note && m.discrepancy_note.trim());
+}
+function isClusterConfirmed(c) {
+  return !!mergedCluster(c).user_confirmed;
+}
+
+// ============================================================
+// Arabic normalization (search-side)
+// ============================================================
+function normalizeAr(s) {
+  if (!s) return "";
+  let t = s.normalize("NFKC");
+  t = [...t].filter(c => !/\p{M}/u.test(c)).join("");
+  t = t.replace(/ـ/g, "").replace(/[آأإٱ]/g, "ا")
+       .replace(/ى/g, "ي").replace(/ة/g, "ه");
+  return t.replace(/\s+/g, " ").trim();
+}
+
+// ============================================================
+// MiniSearch index
+// ============================================================
+function buildIndex() {
+  mini = new MiniSearch({
+    fields: ["title", "title_norm", "title_translit", "title_translation",
+             "author", "author_norm", "author_translit", "author_translation",
+             "canonical_ar", "canonical_ar_norm", "canonical_translit",
+             "city", "library", "shelfmark", "folios", "archive",
+             "catalog_note", "work_url", "discrepancy_note"],
+    storeFields: ["id"],
+    searchOptions: { prefix: true, fuzzy: 0.15, combineWith: "AND" }
+  });
+  const docs = raw.rows.map(r => {
+    const m = mergedRow(r);
+    const cluster = m.author_cluster_id ? mergedCluster(clustersById.get(m.author_cluster_id) || {}) : {};
+    return {
+      id: m.id,
+      title: m.title, title_norm: normalizeAr(m.title),
+      title_translit: m.title_translit || "", title_translation: m.title_translation || "",
+      author: m.author, author_norm: normalizeAr(m.author),
+      author_translit: m.author_translit || "", author_translation: m.author_translation || "",
+      canonical_ar: cluster.canonical_ar || "",
+      canonical_ar_norm: normalizeAr(cluster.canonical_ar || ""),
+      canonical_translit: cluster.canonical_translit || "",
+      city: m.city, library: m.library,
+      shelfmark: m.shelfmark, folios: m.folios, archive: m.archive,
+      catalog_note: m.catalog_note || "", work_url: m.work_url || "",
+      discrepancy_note: m.discrepancy_note || "",
+    };
+  });
+  mini.addAll(docs);
+}
+
+function rebuildIndex() {
+  // Rebuild after edits so the search index reflects local changes.
+  // Cheap at this scale (~350 docs).
+  buildIndex();
+}
+
+// ============================================================
+// Helpers
+// ============================================================
+function $(id) { return document.getElementById(id); }
+function escHtml(s) {
+  return String(s ?? "").replace(/[&<>"']/g, c =>
+    ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c]);
+}
+function escRegex(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+function highlight(text, terms) {
+  if (!terms?.length || !text) return escHtml(text);
+  let s = escHtml(text);
+  for (const t of terms) {
+    if (!t) continue;
+    const re = new RegExp(escRegex(t), "gi");
+    s = s.replace(re, m => `<mark>${m}</mark>`);
+  }
+  return s;
+}
+function statusChip(s) {
+  const label = { unknown:"?", published:"Pub.", partial:"Partial", manuscript:"Ms." }[s] || s;
+  return `<span class="status-chip status-${s}">${label}</span>`;
+}
+
+// ============================================================
+// Browse view
+// ============================================================
+function populateFilters() {
+  const citySet = new Set(), biblioSet = new Set();
+  for (const r of raw.rows) {
+    if (r.city) citySet.add(r.city);
+    if (r.library) biblioSet.add(r.library);
+  }
+  fillSelect("filter-city", [...citySet].sort());
+  fillSelect("filter-biblio", [...biblioSet].sort());
+  const ordered = [...clustersById.values()].map(mergedCluster)
+    .sort((a,b) => (b.count||0) - (a.count||0));
+  fillSelect("filter-author", ordered.map(c => ({
+    value: c.cluster_id,
+    label: `${c.canonical_translit || ""} — ${c.canonical_ar} (${c.count})`
+  })));
+}
+function fillSelect(id, items) {
+  const el = $(id);
+  while (el.options.length > 1) el.remove(1);
+  for (const it of items) {
+    const opt = document.createElement("option");
+    if (typeof it === "string") { opt.value = it; opt.textContent = it; }
+    else { opt.value = it.value; opt.textContent = it.label; }
+    el.appendChild(opt);
+  }
+}
+
+function browseFilteredRows() {
+  const f = {
+    city: $("filter-city").value,
+    biblio: $("filter-biblio").value,
+    author: $("filter-author").value,
+    status: $("filter-status").value,
+    pending: $("filter-pending").value,
+  };
+  const q = currentQuery.trim();
+  let qIds = null, hitTerms = [];
+  if (q) {
+    const normQ = normalizeAr(q);
+    const results = mini.search(q + (normQ && normQ !== q ? " " + normQ : ""));
+    qIds = new Set(results.map(r => r.id));
+    hitTerms = [...q.split(/\s+/), ...(normQ ? normQ.split(/\s+/) : [])].filter(Boolean);
+  }
+  const out = [];
+  for (const r0 of raw.rows) {
+    const r = mergedRow(r0);
+    if (f.city && r.city !== f.city) continue;
+    if (f.biblio && r.library !== f.biblio) continue;
+    if (f.author && r.author_cluster_id !== f.author) continue;
+    if (f.status && (r.pub_status || "unknown") !== f.status) continue;
+    if (f.pending === "undecided" && isRowDecided(r0)) continue;
+    if (f.pending === "decided" && !isRowDecided(r0)) continue;
+    if (f.pending === "lowconf") {
+      const c = r.author_cluster_id ? mergedCluster(clustersById.get(r.author_cluster_id) || {}) : null;
+      if (!c || (c.confidence ?? 1) >= 1.0) continue;
+    }
+    if (qIds && !qIds.has(r.id)) continue;
+    out.push({ r, terms: hitTerms });
+  }
+  return out;
+}
+
+function renderBrowse() {
+  const rows = browseFilteredRows();
+  const tbody = document.querySelector("#results tbody");
+  tbody.innerHTML = "";
+  const frag = document.createDocumentFragment();
+  for (const { r, terms } of rows) {
+    const cluster = r.author_cluster_id ? mergedCluster(clustersById.get(r.author_cluster_id) || {}) : null;
+    const tr = document.createElement("tr");
+    tr.dataset.id = r.id;
+    if (edits.rows[r.id]) tr.classList.add("dirty");
+    if (isRowDecided(r)) tr.classList.add("decided");
+    tr.innerHTML = `
+      <td class="col-id">${escHtml(r.id.slice(1))}</td>
+      <td>${escHtml(r.city || "—")}</td>
+      <td>${escHtml(r.library || "—")}</td>
+      <td>${escHtml(r.shelfmark || "")}</td>
+      <td class="col-folios">${escHtml(r.folios || "")}</td>
+      <td class="ar">${highlight(r.title, terms)}
+        ${r.work_url ? `<a class="browse-link" href="${escHtml(r.work_url)}" target="_blank" rel="noopener" title="Identification / catalogue link" onclick="event.stopPropagation()">🔗</a>` : ""}
+        ${r.title_translit ? `<div class="translit" dir="ltr" style="text-align:left">${highlight(r.title_translit, terms)}</div>` : ""}
+      </td>
+      <td>
+        <span class="ar">${highlight(r.author, terms)}</span><br/>
+        <span class="translit">${escHtml(r.author_translit || (cluster ? cluster.canonical_translit || "" : ""))}</span>
+      </td>
+      <td class="col-archive">${escHtml(r.archive || "")}</td>
+      <td>${statusChip(r.pub_status || "unknown")}</td>`;
+    tr.addEventListener("click", () => jumpToRow(r.id));
+    frag.appendChild(tr);
+  }
+  tbody.appendChild(frag);
+  $("stats").textContent =
+    `Showing ${rows.length} of ${raw.rows.length} entries · ${clustersById.size} clusters · ` +
+    `${countDecided()} decided · ${dirtyCount()} unsaved changes`;
+}
+
+function countDecided() { return raw.rows.filter(isRowDecided).length; }
+function countConfirmed() { return raw.clusters.filter(isClusterConfirmed).length; }
+
+// ============================================================
+// Adjudicate ROWS view
+// ============================================================
+const ROW_ACTS = [
+  { v: "unknown",    k: "1", l: "Unknown",       hint: "no information yet" },
+  { v: "published",  k: "2", l: "Published",     hint: "full edition exists" },
+  { v: "partial",    k: "3", l: "Partial",       hint: "partial / fragmentary edition" },
+  { v: "manuscript", k: "4", l: "Manuscript only", hint: "not yet edited" },
+];
+
+// A row just decided in the "undecided" filter is kept on screen (pinned) so
+// setting a status never bumps you to a different entry. The pin is released as
+// soon as you navigate away.
+let rowsPinId = null;
+
+function buildRowsList() {
+  const f = $("rows-filter").value;
+  rowsList = raw.rows.filter(r => {
+    if (f === "undecided") return !isRowDecided(r);
+    if (f === "decided")   return isRowDecided(r);
+    if (f === "flagged")   return rowHasNote(r);
+    return true;
+  }).map(r => r.id);
+  if (rowsPinId && !rowsList.includes(rowsPinId) && rowsById.has(rowsPinId)) {
+    const at = Math.min(Math.max(rowsCursor, 0), rowsList.length);
+    rowsList.splice(at, 0, rowsPinId);
+    rowsCursor = at;
+  }
+  if (rowsCursor >= rowsList.length) rowsCursor = Math.max(0, rowsList.length - 1);
+}
+
+function renderRowsView() {
+  buildRowsList();
+  if (rowsList.length === 0) {
+    $("rows-progress").innerHTML = `<strong>0 / 0</strong> · no rows in filter`;
+    $("rows-prompt").innerHTML = `<strong>Nothing to adjudicate</strong> — switch the filter to widen the view.`;
+    for (const k of ["city","library","shelfmark","folios","archive"]) $(`rows-${k}-edit`).value = "";
+    return;
+  }
+  const rowId = rowsList[rowsCursor];
+  const r = mergedRow(rowsById.get(rowId));
+  const cluster = r.author_cluster_id ? mergedCluster(clustersById.get(r.author_cluster_id) || {}) : null;
+
+  $("rows-progress").innerHTML =
+    `<strong>${rowsCursor + 1} / ${rowsList.length}</strong> · ` +
+    `${countDecided()} of ${raw.rows.length} total decided · ` +
+    `entry <code>${escHtml(r.id)}</code> (p. ${r.page})`;
+
+  // Decision prompt
+  const decided = isRowDecided(r);
+  $("rows-prompt").innerHTML = decided
+    ? `<strong>Already decided:</strong> ${statusChip(r.pub_status)} ${escHtml(r.pub_citation || "")} — refine or move on.`
+    : `<strong>Question:</strong> What is the publication status of this manuscript? Choose <code>1</code>–<code>4</code>; add an edition citation if known (<code>e</code>), and a discrepancy note (<code>n</code>) if Nwyia's attribution looks wrong.`;
+
+  // Meta card — all fields editable, with autocomplete for city/library.
+  $("rows-city-list").innerHTML = colsDatalistValues("city").map(v => `<option value="${escHtml(v)}"></option>`).join("");
+  $("rows-library-list").innerHTML = colsDatalistValues("library").map(v => `<option value="${escHtml(v)}"></option>`).join("");
+  $("rows-city-edit").value = r.city || "";
+  $("rows-library-edit").value = r.library || "";
+  $("rows-shelfmark-edit").value = r.shelfmark || "";
+  $("rows-folios-edit").value = r.folios || "";
+  $("rows-archive-edit").value = r.archive || "";
+
+  // Title / author — Arabic · transliteration · translation
+  $("rows-title-translit").value = r.title_translit || "";
+  $("rows-title-translation").value = r.title_translation || "";
+  $("rows-author-translit").value = r.author_translit || "";
+  $("rows-author-translation").value = r.author_translation || "";
+  $("rows-catnote").value = r.catalog_note || "";
+  $("rows-cluster").innerHTML = cluster
+    ? `<strong>${escHtml(cluster.canonical_translit || "")}</strong>
+       — <span class="ar">${escHtml(cluster.canonical_ar)}</span>
+       <span class="confidence-chip ${(cluster.confidence ?? 1) < 1 ? "confidence-low" : ""}">conf ${(cluster.confidence ?? 1).toFixed(2)}</span>
+       ${cluster.user_confirmed ? "✓ confirmed" : ""}
+       — <a href="#" onclick="event.preventDefault(); jumpToCluster('${cluster.cluster_id}');">edit cluster ▸</a>`
+    : `<em>unassigned</em>`;
+  fillClusterPicker("rows-cluster-pick", r.author_cluster_id || "", null, true);
+  $("rows-title-edit").value = r.title || "";
+  $("rows-author-edit").value = r.author || "";
+
+  // Decision bar
+  const cur = r.pub_status || "unknown";
+  $("rows-decision").innerHTML = ROW_ACTS.map(a =>
+    `<button class="act ${cur === a.v ? "chosen" : ""}" data-v="${a.v}">
+       <span class="kbd">${a.k}</span>${escHtml(a.l)}
+     </button>`).join("");
+  for (const btn of $("rows-decision").querySelectorAll("button")) {
+    btn.addEventListener("click", () => setRowStatus(btn.dataset.v));
+  }
+
+  $("rows-workurl").value = r.work_url || "";
+  $("rows-citation").value = r.pub_citation || "";
+  $("rows-note").value = r.discrepancy_note || "";
+}
+
+function setRowStatus(v) {
+  if (rowsList.length === 0) return;
+  const rowId = rowsList[rowsCursor];
+  // Stay on this entry — no auto-advance. Pin it so it remains visible even
+  // when the active filter (e.g. "Undecided") would otherwise drop it, letting
+  // you keep adding URL / citation / notes to the same record.
+  rowsPinId = rowId;
+  patchRow(rowId, { pub_status: v });
+  renderRowsView();
+}
+
+function moveRowsCursor(delta) {
+  if (rowsList.length === 0) return;
+  // Resolve the intended neighbour by id from the current list, then release
+  // the pin and rebuild so a just-decided row leaves the filter cleanly without
+  // skipping the next entry.
+  const targetId = rowsList[(rowsCursor + delta + rowsList.length) % rowsList.length];
+  rowsPinId = null;
+  buildRowsList();
+  if (rowsList.length === 0) { rowsCursor = 0; return; }
+  const i = rowsList.indexOf(targetId);
+  rowsCursor = i >= 0 ? i : Math.min(Math.max(rowsCursor, 0), rowsList.length - 1);
+}
+
+function jumpToRow(rowId) {
+  showTab("rows");
+  // Switch to "all" filter so any row is reachable.
+  $("rows-filter").value = "all";
+  rowsPinId = null;
+  buildRowsList();
+  const idx = rowsList.indexOf(rowId);
+  if (idx >= 0) rowsCursor = idx;
+  renderRowsView();
+}
+
+// ============================================================
+// Adjudicate CLUSTERS view
+// ============================================================
+const CLU_ACTS = [
+  { v: "confirm", k: "1", l: "Confirm cluster" },
+  { v: "unconfirm", k: "2", l: "Mark unconfirmed" },
+  { v: "split",   k: "3", l: "Unassign this cluster from all rows" },
+];
+
+function buildCluList() {
+  const f = $("clu-filter").value;
+  cluList = raw.clusters.map(c => mergedCluster(c)).filter(c => {
+    if (f === "unconfirmed") return !c.user_confirmed;
+    if (f === "confirmed")   return c.user_confirmed;
+    if (f === "lowconf")     return (c.confidence ?? 1) < 1.0;
+    if (f === "multi")       return (c.variants || []).length > 1;
+    return true;
+  }).sort((a, b) => (b.count || 0) - (a.count || 0))
+    .map(c => c.cluster_id);
+  if (cluCursor >= cluList.length) cluCursor = Math.max(0, cluList.length - 1);
+}
+
+// --- Author authority links (Wikidata / VIAF / TDVİA / EI / Vatican …) -------
+const AUTH_SOURCES = [
+  [/wikidata\.org/i, "Wikidata"],
+  [/opac\.vatlib\.it/i, "Vatican"],
+  [/viaf\.org/i, "VIAF"],
+  [/islamansiklopedisi\.org\.tr/i, "TDVİA"],
+  [/referenceworks\.brill(online)?\.com/i, "EI"],
+  [/d-nb\.info/i, "GND"],
+];
+function sourceFromUrl(url) {
+  for (const [re, label] of AUTH_SOURCES) {
+    if (re.test(url)) {
+      if (label === "EI") { const m = url.match(/encyclopaedia-of-islam-(\d)/i); return m ? "EI" + m[1] : "EI"; }
+      return label;
+    }
+  }
+  try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return "link"; }
+}
+function renderAuthorityList(c) {
+  const list = c.authorities || [];
+  const el = $("clu-authority-list");
+  if (!list.length) { el.innerHTML = `<span style="color:var(--muted)">—</span>`; return; }
+  el.innerHTML = list.map((a, i) =>
+    `<span style="display:inline-flex; gap:0.45rem; align-items:center; margin:0 0.35rem 0.3rem 0; padding:0.08em 0.55em; border:1px solid var(--rule); border-radius:2em; font-size:0.78rem;">
+       <a href="${escHtml(a.url)}" target="_blank" rel="noopener" title="${escHtml(a.title || "")}">${escHtml(a.source || sourceFromUrl(a.url))} ▸</a>
+       <a href="#" data-i="${i}" class="auth-rm" title="remove" style="text-decoration:none; color:var(--accent);">×</a>
+     </span>`).join("");
+  for (const x of el.querySelectorAll(".auth-rm")) {
+    x.addEventListener("click", ev => { ev.preventDefault(); removeAuthority(parseInt(x.dataset.i, 10)); });
+  }
+}
+function addAuthorityFromInput() {
+  if (cluList.length === 0) return;
+  const url = $("clu-authority-add").value.trim();
+  if (!url) return;
+  const cid = cluList[cluCursor];
+  const cur = mergedCluster(clustersById.get(cid)).authorities || [];
+  if (!cur.some(a => a.url === url)) {
+    patchCluster(cid, { authorities: [...cur, { source: sourceFromUrl(url), url }] });
+  }
+  $("clu-authority-add").value = "";
+  renderClustersView();
+}
+function removeAuthority(i) {
+  if (cluList.length === 0) return;
+  const cid = cluList[cluCursor];
+  const cur = mergedCluster(clustersById.get(cid)).authorities || [];
+  patchCluster(cid, { authorities: cur.filter((_, j) => j !== i) });
+  renderClustersView();
+}
+
+function renderClustersView() {
+  buildCluList();
+  if (cluList.length === 0) {
+    $("clu-progress").innerHTML = `<strong>0 / 0</strong> · no clusters in filter`;
+    $("clu-prompt").innerHTML = `<strong>Nothing to adjudicate</strong> — widen the filter.`;
+    return;
+  }
+  const cid = cluList[cluCursor];
+  const c = mergedCluster(clustersById.get(cid));
+  const assignedRows = raw.rows.map(mergedRow).filter(r => r.author_cluster_id === cid);
+  fillClusterPicker("clu-merge-pick", "", cid, false);
+
+  $("clu-progress").innerHTML =
+    `<strong>${cluCursor + 1} / ${cluList.length}</strong> · ` +
+    `${countConfirmed()} of ${clustersById.size} confirmed · ` +
+    `<code>${escHtml(cid)}</code>`;
+
+  const lowConf = (c.confidence ?? 1) < 1.0;
+  const multi = (c.variants || []).length > 1;
+  $("clu-prompt").innerHTML = c.user_confirmed
+    ? `<strong>Confirmed:</strong> ${escHtml(c.canonical_translit)} (${escHtml(c.canonical_ar)}). Edit if needed; otherwise advance with <code>J</code>.`
+    : multi || lowConf
+      ? `<strong>Question:</strong> Do the ${(c.variants||[]).length} variants below refer to the <em>same person</em>? Edit the canonical Arabic / transliteration above if needed, then confirm with <code>1</code>. To split, reassign rows individually (<code>3</code> empties the cluster).`
+      : `<strong>Question:</strong> Is the canonical form correct? Edit if needed, then confirm with <code>1</code>.`;
+
+  $("clu-canon-ar").value = c.canonical_ar || "";
+  $("clu-canon-translit").value = c.canonical_translit || "";
+  renderAuthorityList(c);
+  $("clu-authority-add").value = "";
+  $("clu-id-info").innerHTML =
+    `<code>${escHtml(c.cluster_id)}</code> · ${c.count} rows · ` +
+    `<span class="confidence-chip ${lowConf ? "confidence-low" : ""}">conf ${(c.confidence ?? 1).toFixed(2)}</span> ` +
+    (c.user_confirmed ? "· ✓ confirmed" : "· unconfirmed");
+
+  // Variant list with per-variant occurrence counts.
+  const variantCounts = new Map();
+  for (const r of raw.rows) {
+    if (r.author_cluster_id === cid && r.author) {
+      variantCounts.set(r.author, (variantCounts.get(r.author) || 0) + 1);
+    }
+  }
+  const variants = [...new Set([...(c.variants || []), ...variantCounts.keys()])];
+  $("clu-variants").innerHTML = variants.map(v =>
+    `<li><span class="ar">${escHtml(v)}</span><span class="count-chip">${variantCounts.get(v) || 0}×</span></li>`
+  ).join("") || `<li style="color:var(--muted); padding:0.5rem;">no variants on record</li>`;
+
+  $("clu-rowcount").textContent = assignedRows.length;
+  $("clu-rows").innerHTML = assignedRows.map(r => `
+    <div class="rl-row" data-id="${r.id}">
+      <span class="rl-id">${escHtml(r.id)}</span>
+      <span class="ar">${escHtml(r.title || "—")}</span>
+      <span>${escHtml(r.city || "—")} / ${escHtml(r.library || "")} / ${escHtml(r.shelfmark || "")}${r.folios ? " " + escHtml(r.folios) : ""}</span>
+      <span>${statusChip(r.pub_status || "unknown")}</span>
+    </div>
+  `).join("") || `<div style="padding:0.6rem; color:var(--muted);">no rows assigned</div>`;
+  for (const el of $("clu-rows").querySelectorAll(".rl-row")) {
+    el.addEventListener("click", () => jumpToRow(el.dataset.id));
+  }
+
+  $("clu-decision").innerHTML = CLU_ACTS.map(a =>
+    `<button class="act ${a.v === "confirm" && c.user_confirmed ? "chosen" : ""}" data-v="${a.v}">
+       <span class="kbd">${a.k}</span>${escHtml(a.l)}
+     </button>`).join("");
+  for (const btn of $("clu-decision").querySelectorAll("button")) {
+    btn.addEventListener("click", () => doClusterAct(btn.dataset.v));
+  }
+}
+
+function doClusterAct(v) {
+  if (cluList.length === 0) return;
+  const cid = cluList[cluCursor];
+  if (v === "confirm") {
+    patchCluster(cid, { user_confirmed: true });
+    // Auto-advance if filter is "unconfirmed".
+    if ($("clu-filter").value === "unconfirmed") {
+      buildCluList();
+      if (cluCursor >= cluList.length) cluCursor = Math.max(0, cluList.length - 1);
+    } else {
+      moveCluCursor(1);
+    }
+  } else if (v === "unconfirm") {
+    patchCluster(cid, { user_confirmed: false });
+  } else if (v === "split") {
+    if (!confirm(`Unassign cluster ${cid} from every row that uses it?`)) return;
+    for (const r of raw.rows) {
+      if (r.author_cluster_id === cid) patchRow(r.id, { author_cluster_id: "" });
+    }
+  }
+  rebuildIndex();
+  renderClustersView();
+}
+function moveCluCursor(delta) {
+  if (cluList.length === 0) return;
+  cluCursor = (cluCursor + delta + cluList.length) % cluList.length;
+}
+function jumpToCluster(cid) {
+  showTab("clusters");
+  $("clu-filter").value = "all";
+  buildCluList();
+  const idx = cluList.indexOf(cid);
+  if (idx >= 0) cluCursor = idx;
+  renderClustersView();
+}
+
+// ============================================================
+// Cluster assignment / merge (shared)
+// ============================================================
+function clusterCounts() {
+  const m = new Map();
+  for (const r of raw.rows) {
+    const cid = mergedRow(r).author_cluster_id;
+    if (cid) m.set(cid, (m.get(cid) || 0) + 1);
+  }
+  return m;
+}
+function fillClusterPicker(selectId, selectedCid, excludeCid, includeBlank) {
+  const counts = clusterCounts();
+  const items = [...clustersById.values()].map(mergedCluster)
+    .filter(c => c.cluster_id !== excludeCid)
+    .sort((a, b) => (a.canonical_translit || "~").localeCompare(b.canonical_translit || "~"));
+  const opts = includeBlank ? [`<option value="">— unassigned —</option>`] : [];
+  for (const c of items) {
+    const label = `${c.canonical_translit || "(no translit)"} — ${c.canonical_ar || ""} (${counts.get(c.cluster_id) || 0})`;
+    opts.push(`<option value="${c.cluster_id}" ${c.cluster_id === selectedCid ? "selected" : ""}>${escHtml(label)}</option>`);
+  }
+  $(selectId).innerHTML = opts.join("");
+}
+function assignRowToCluster() {
+  if (rowsList.length === 0) return;
+  patchRow(rowsList[rowsCursor], { author_cluster_id: $("rows-cluster-pick").value });
+  rebuildIndex();
+  renderRowsView();
+}
+function mergeClusterInto() {
+  if (cluList.length === 0) return;
+  const src = cluList[cluCursor];
+  const dst = $("clu-merge-pick").value;
+  if (!dst || dst === src) return;
+  const srcC = mergedCluster(clustersById.get(src) || {});
+  const dstC = mergedCluster(clustersById.get(dst) || {});
+  const movers = raw.rows.filter(r => mergedRow(r).author_cluster_id === src);
+  if (!confirm(`Merge "${srcC.canonical_translit || src}" (${movers.length} rows) into "${dstC.canonical_translit || dst}"? All its rows will be reassigned.`)) return;
+  for (const r of movers) patchRow(r.id, { author_cluster_id: dst });
+  rebuildIndex();
+  buildCluList();
+  if (cluCursor >= cluList.length) cluCursor = Math.max(0, cluList.length - 1);
+  renderClustersView();
+}
+
+// ============================================================
+// EDIT COLUMNS view (one field across every row)
+// ============================================================
+const COL_FIELDS = [
+  { key: "city",      label: "City",      arabic: false, suggest: true },
+  { key: "library",   label: "Library",   arabic: false, suggest: true },
+  { key: "shelfmark", label: "Shelfmark", arabic: false, suggest: true },
+  { key: "folios",    label: "Folios / extent", arabic: false, suggest: false },
+  { key: "title",     label: "Title",     arabic: true,  suggest: false },
+  { key: "title_translit",    label: "Title (translit.)",   arabic: false, suggest: false },
+  { key: "title_translation", label: "Title (translation)", arabic: false, suggest: false },
+  { key: "author",    label: "Author",    arabic: true,  suggest: false },
+  { key: "author_translit",    label: "Author (translit.)",   arabic: false, suggest: false },
+  { key: "author_translation", label: "Author (translation)", arabic: false, suggest: false },
+  { key: "catalog_note", label: "Cataloguer comment", arabic: false, suggest: false },
+  { key: "work_url",  label: "Identification URL", arabic: false, suggest: false },
+  { key: "archive",   label: "Archive",   arabic: false, suggest: true },
+];
+let colsCursor = 0;
+let colsList = []; // row ids in current filter
+
+function colField() {
+  return COL_FIELDS.find(f => f.key === $("cols-field").value) || COL_FIELDS[0];
+}
+function colBlank(r, fld) { return !((mergedRow(r)[fld] ?? "").toString().trim()); }
+
+function buildColsList() {
+  const fld = colField().key;
+  const f = $("cols-filter").value;
+  colsList = raw.rows.filter(r => {
+    if (f === "blank")  return colBlank(r, fld);
+    if (f === "edited") return !!(edits.rows[r.id] && fld in edits.rows[r.id]);
+    return true;
+  }).map(r => r.id);
+  if (colsCursor >= colsList.length) colsCursor = Math.max(0, colsList.length - 1);
+}
+
+function colsDatalistValues(fld) {
+  const set = new Set();
+  for (const r of raw.rows) {
+    const v = (mergedRow(r)[fld] ?? "").toString().trim();
+    if (v) set.add(v);
+  }
+  return [...set].sort();
+}
+
+function physicalPrevValue(rowId, fld) {
+  const idx = raw.rows.findIndex(r => r.id === rowId);
+  if (idx <= 0) return "";
+  return (mergedRow(raw.rows[idx - 1])[fld] ?? "").toString();
+}
+
+function renderColumnsView() {
+  buildColsList();
+  const fld = colField();
+  const dl = $("cols-datalist");
+  dl.innerHTML = fld.suggest
+    ? colsDatalistValues(fld.key).map(v => `<option value="${escHtml(v)}"></option>`).join("")
+    : "";
+  $("cols-edit-head").textContent = `Edit ${fld.label}`;
+  $("cols-edit-label").textContent = `${fld.label} value`;
+
+  if (colsList.length === 0) {
+    $("cols-progress").innerHTML = `<strong>0 / 0</strong> · no rows in filter`;
+    $("cols-prompt").innerHTML = `<strong>Nothing here</strong> — widen the filter.`;
+    $("cols-context").innerHTML = "";
+    $("cols-edit").value = "";
+    $("cols-prevval").textContent = "";
+    return;
+  }
+  const rowId = colsList[colsCursor];
+  const r = mergedRow(rowsById.get(rowId));
+  const blanks = raw.rows.filter(x => colBlank(x, fld.key)).length;
+
+  $("cols-progress").innerHTML =
+    `<strong>${colsCursor + 1} / ${colsList.length}</strong> · editing <strong>${escHtml(fld.label)}</strong> · ` +
+    `${blanks} blank of ${raw.rows.length} · entry <code>${escHtml(r.id)}</code> (p. ${r.page})`;
+
+  $("cols-prompt").innerHTML =
+    `<strong>Set the ${escHtml(fld.label)} for this entry.</strong> ` +
+    `<code>Enter</code> = next, <code>Shift+Enter</code> = previous, ` +
+    `<code>↑ Same as previous</code> copies the row above.`;
+
+  // Context: every other column, read-only, so you know which entry this is.
+  const ctx = COL_FIELDS.filter(c => c.key !== fld.key).map(c => {
+    const val = (r[c.key] ?? "").toString();
+    return `<div class="field"><label>${escHtml(c.label)}</label><div class="${c.arabic ? "val ar" : "val"}">${escHtml(val || "—")}</div></div>`;
+  }).join("");
+  const cluster = r.author_cluster_id ? mergedCluster(clustersById.get(r.author_cluster_id) || {}) : null;
+  const clusterLine = cluster
+    ? `<div class="field"><label>Cluster</label><div class="val"><span class="translit">${escHtml(cluster.canonical_translit || "")}</span> — <span class="ar">${escHtml(cluster.canonical_ar || "")}</span></div></div>`
+    : "";
+  $("cols-context").innerHTML = ctx + clusterLine;
+
+  const input = $("cols-edit");
+  input.value = (r[fld.key] ?? "").toString();
+  input.classList.toggle("ar", fld.arabic);
+  if (fld.suggest) input.setAttribute("list", "cols-datalist");
+  else input.removeAttribute("list");
+  const prev = physicalPrevValue(rowId, fld.key);
+  $("cols-prevval").textContent = prev ? `previous row: ${prev}` : "previous row: —";
+  input.focus();
+  input.setSelectionRange(input.value.length, input.value.length);
+}
+
+function moveColsCursor(delta) {
+  if (colsList.length === 0) return;
+  colsCursor = (colsCursor + delta + colsList.length) % colsList.length;
+}
+
+// Navigate; when filtering blanks, a row just filled drops out, so hold the
+// index (the next blank shifts into it) instead of skipping forward.
+function colsCommitAndMove(delta) {
+  const fld = colField().key;
+  if (delta > 0 && $("cols-filter").value === "blank" && colsList.length) {
+    const justFilled = !colBlank(rowsById.get(colsList[colsCursor]), fld);
+    if (justFilled) {
+      buildColsList();
+      if (colsCursor >= colsList.length) colsCursor = Math.max(0, colsList.length - 1);
+      renderColumnsView();
+      return;
+    }
+  }
+  moveColsCursor(delta);
+  renderColumnsView();
+}
+
+function colsCopyPrevious() {
+  if (colsList.length === 0) return;
+  const fld = colField().key;
+  const rowId = colsList[colsCursor];
+  patchRow(rowId, { [fld]: physicalPrevValue(rowId, fld) });
+  renderColumnsView();
+}
+
+function jumpToColumn(fieldKey, rowId) {
+  showTab("columns");
+  if (COL_FIELDS.some(f => f.key === fieldKey)) $("cols-field").value = fieldKey;
+  $("cols-filter").value = "all";
+  buildColsList();
+  const idx = colsList.indexOf(rowId);
+  if (idx >= 0) colsCursor = idx;
+  renderColumnsView();
+}
+
+// ============================================================
+// Tabs / view switching
+// ============================================================
+function showTab(name) {
+  activeTab = name;
+  sessionStorage.setItem(VIEW_KEY, name);
+  for (const btn of document.querySelectorAll(".tabs button")) {
+    btn.classList.toggle("active", btn.dataset.tab === name);
+  }
+  for (const v of document.querySelectorAll(".view")) {
+    v.classList.toggle("active", v.id === `view-${name}`);
+  }
+  if (name === "browse") renderBrowse();
+  else if (name === "rows") renderRowsView();
+  else if (name === "clusters") renderClustersView();
+  else if (name === "columns") renderColumnsView();
+  renderKbdHints();
+}
+
+function updateCounts() {
+  $("count-all").textContent = ` (${raw?.rows.length || 0})`;
+  if (!raw) return;
+  const undec = raw.rows.filter(r => !isRowDecided(r)).length;
+  const unconf = raw.clusters.filter(c => !isClusterConfirmed(c)).length;
+  $("count-rows").textContent = ` (${undec} pending)`;
+  $("count-clusters").textContent = ` (${unconf} pending)`;
+  let blankCells = 0;
+  for (const r of raw.rows) {
+    const m = mergedRow(r);
+    for (const f of COL_FIELDS) if (!((m[f.key] ?? "").toString().trim())) blankCells++;
+  }
+  $("count-columns").textContent = ` (${blankCells} blank)`;
+}
+
+function renderKbdHints() {
+  const bar = $("kbd-bar");
+  const common = `<span><code>Ctrl+S</code> save</span>
+                  <span><code>1·2·3</code> switch tabs</span>`;
+  if (activeTab === "browse") {
+    bar.innerHTML = `
+      <span><code>/</code> focus search</span>
+      <span><code>↵</code> open first result in row adjudicator</span>
+      ${common}`;
+  } else if (activeTab === "rows") {
+    bar.innerHTML = `
+      <span><code>J</code> / <code>→</code> next</span>
+      <span><code>K</code> / <code>←</code> prev</span>
+      <span><code>1·2·3·4</code> set status (stays put)</span>
+      <span><code>u</code> URL · <code>e</code> citation · <code>d</code> comment · <code>n</code> note</span>
+      <span><code>c</code> jump to cluster</span>
+      ${common}`;
+  } else if (activeTab === "clusters") {
+    bar.innerHTML = `
+      <span><code>J</code> next · <code>K</code> prev</span>
+      <span><code>1</code> confirm · <code>2</code> unconfirm · <code>3</code> unassign</span>
+      <span><code>a</code> focus AR · <code>t</code> focus translit</span>
+      ${common}`;
+  } else {
+    bar.innerHTML = `
+      <span><code>Enter</code> next row · <code>Shift+Enter</code> prev</span>
+      <span><code>↑ Same as previous</code> copies row above</span>
+      <span>pick a column &amp; filter to blanks to fill gaps fast</span>
+      ${common}`;
+  }
+}
+
+// ============================================================
+// Keyboard handling
+// ============================================================
+function onKey(ev) {
+  // Allow typing in inputs/textareas.
+  const tag = ev.target.tagName;
+  const inField = tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT";
+  if (ev.key === "Escape") {
+    ev.target.blur?.();
+    return;
+  }
+  if (ev.ctrlKey && (ev.key === "s" || ev.key === "S")) {
+    ev.preventDefault();
+    if (!$("btn-save").disabled) saveToGitHub();
+    return;
+  }
+  if (inField) return;
+  // Tab switching (Alt or plain number) — use plain number to keep simple.
+  if (ev.key === "1" && activeTab === "browse") { /* don't hijack browse */ }
+  if (activeTab === "browse") {
+    if (ev.key === "/") { ev.preventDefault(); $("q").focus(); return; }
+    if (ev.key === "Enter") {
+      const first = document.querySelector("#results tbody tr");
+      if (first) jumpToRow(first.dataset.id);
+      return;
+    }
+    // browse number keys are reserved by status filter; skip
+  } else if (activeTab === "rows") {
+    if (ev.key === "j" || ev.key === "ArrowRight" || ev.key === " ") {
+      ev.preventDefault(); moveRowsCursor(1); renderRowsView(); return;
+    }
+    if (ev.key === "k" || ev.key === "ArrowLeft") {
+      ev.preventDefault(); moveRowsCursor(-1); renderRowsView(); return;
+    }
+    if (/^[1-4]$/.test(ev.key)) {
+      const a = ROW_ACTS.find(a => a.k === ev.key);
+      if (a) { ev.preventDefault(); setRowStatus(a.v); return; }
+    }
+    if (ev.key === "n") { ev.preventDefault(); $("rows-note").focus(); return; }
+    if (ev.key === "e") { ev.preventDefault(); $("rows-citation").focus(); return; }
+    if (ev.key === "u") { ev.preventDefault(); $("rows-workurl").focus(); return; }
+    if (ev.key === "d") { ev.preventDefault(); $("rows-catnote").focus(); return; }
+    if (ev.key === "c") {
+      const rowId = rowsList[rowsCursor];
+      const r = rowId ? mergedRow(rowsById.get(rowId)) : null;
+      if (r?.author_cluster_id) jumpToCluster(r.author_cluster_id);
+      return;
+    }
+  } else if (activeTab === "clusters") {
+    if (ev.key === "j" || ev.key === "ArrowRight") {
+      ev.preventDefault(); moveCluCursor(1); renderClustersView(); return;
+    }
+    if (ev.key === "k" || ev.key === "ArrowLeft") {
+      ev.preventDefault(); moveCluCursor(-1); renderClustersView(); return;
+    }
+    if (/^[1-3]$/.test(ev.key)) {
+      const a = CLU_ACTS.find(a => a.k === ev.key);
+      if (a) { ev.preventDefault(); doClusterAct(a.v); return; }
+    }
+    if (ev.key === "a") { ev.preventDefault(); $("clu-canon-ar").focus(); return; }
+    if (ev.key === "t") { ev.preventDefault(); $("clu-canon-translit").focus(); return; }
+  } else if (activeTab === "columns") {
+    // Active only when focus is NOT in the edit field (that case is handled by
+    // the input's own Enter/Shift+Enter listener). Lets arrow/JK work after blur.
+    if (ev.key === "j" || ev.key === "ArrowDown") { ev.preventDefault(); colsCommitAndMove(1); return; }
+    if (ev.key === "k" || ev.key === "ArrowUp")   { ev.preventDefault(); colsCommitAndMove(-1); return; }
+  }
+}
+
+// ============================================================
+// Edit-field bindings (debounced lightly via input event)
+// ============================================================
+function bindEditFields() {
+  // Map each editor input id → the row field it writes. Title/author now carry
+  // Arabic, transliteration and translation; plus the cataloguer comment and the
+  // dedicated identification URL.
+  const ROW_INPUT_FIELDS = {
+    "rows-title-edit": "title",
+    "rows-title-translit": "title_translit",
+    "rows-title-translation": "title_translation",
+    "rows-author-edit": "author",
+    "rows-author-translit": "author_translit",
+    "rows-author-translation": "author_translation",
+    "rows-catnote": "catalog_note",
+    "rows-city-edit": "city",
+    "rows-library-edit": "library",
+    "rows-shelfmark-edit": "shelfmark",
+    "rows-folios-edit": "folios",
+    "rows-archive-edit": "archive",
+    "rows-workurl": "work_url",
+    "rows-citation": "pub_citation",
+    "rows-note": "discrepancy_note",
+  };
+  for (const [id, field] of Object.entries(ROW_INPUT_FIELDS)) {
+    $(id).addEventListener("input", e => {
+      if (rowsList.length === 0) return;
+      patchRow(rowsList[rowsCursor], { [field]: e.target.value });
+      // Title/author feed the search index; refresh it on those edits.
+      if (field === "title" || field === "author") rebuildIndex();
+    });
+  }
+  $("clu-canon-ar").addEventListener("input", e => {
+    if (cluList.length === 0) return;
+    patchCluster(cluList[cluCursor], { canonical_ar: e.target.value });
+    rebuildIndex();
+  });
+  $("clu-canon-translit").addEventListener("input", e => {
+    if (cluList.length === 0) return;
+    patchCluster(cluList[cluCursor], { canonical_translit: e.target.value });
+    rebuildIndex();
+  });
+  $("clu-authority-addbtn").addEventListener("click", addAuthorityFromInput);
+  $("clu-authority-add").addEventListener("keydown", e => {
+    if (e.key === "Enter") { e.preventDefault(); addAuthorityFromInput(); }
+  });
+  // Columns view: live-save the focused field, navigate on Enter.
+  $("cols-edit").addEventListener("input", e => {
+    if (colsList.length === 0) return;
+    patchRow(colsList[colsCursor], { [colField().key]: e.target.value });
+  });
+  $("cols-edit").addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      colsCommitAndMove(e.shiftKey ? -1 : 1);
+    }
+  });
+}
+
+// ============================================================
+// Navigation control wiring
+// ============================================================
+function bindNavControls() {
+  $("rows-prev").addEventListener("click", () => { moveRowsCursor(-1); renderRowsView(); });
+  $("rows-next").addEventListener("click", () => { moveRowsCursor(1); renderRowsView(); });
+  $("rows-jump").addEventListener("change", e => {
+    const n = parseInt(e.target.value, 10);
+    if (n >= 1 && n <= rowsList.length) { rowsPinId = null; rowsCursor = n - 1; renderRowsView(); }
+    e.target.value = "";
+  });
+  $("rows-filter").addEventListener("change", () => { rowsPinId = null; rowsCursor = 0; renderRowsView(); });
+
+  $("clu-prev").addEventListener("click", () => { moveCluCursor(-1); renderClustersView(); });
+  $("clu-next").addEventListener("click", () => { moveCluCursor(1); renderClustersView(); });
+  $("clu-jump").addEventListener("change", e => {
+    const n = parseInt(e.target.value, 10);
+    if (n >= 1 && n <= cluList.length) { cluCursor = n - 1; renderClustersView(); }
+    e.target.value = "";
+  });
+  $("clu-filter").addEventListener("change", () => { cluCursor = 0; renderClustersView(); });
+  $("rows-cluster-assign").addEventListener("click", assignRowToCluster);
+  $("clu-merge").addEventListener("click", mergeClusterInto);
+
+  // Columns view controls.
+  $("cols-field").innerHTML = COL_FIELDS.map(f => `<option value="${f.key}">${f.label}</option>`).join("");
+  $("cols-field").addEventListener("change", () => { colsCursor = 0; renderColumnsView(); });
+  $("cols-filter").addEventListener("change", () => { colsCursor = 0; renderColumnsView(); });
+  $("cols-prev").addEventListener("click", () => colsCommitAndMove(-1));
+  $("cols-next").addEventListener("click", () => colsCommitAndMove(1));
+  $("cols-copyprev").addEventListener("click", colsCopyPrevious);
+  $("cols-jump").addEventListener("change", e => {
+    const n = parseInt(e.target.value, 10);
+    if (n >= 1 && n <= colsList.length) { colsCursor = n - 1; renderColumnsView(); }
+    e.target.value = "";
+  });
+
+  for (const btn of document.querySelectorAll(".tabs button")) {
+    btn.addEventListener("click", () => showTab(btn.dataset.tab));
+  }
+}
+
+// ============================================================
+// GitHub save / settings (unchanged behavior)
+// ============================================================
+function updateDirtyBadge() {
+  const n = dirtyCount();
+  const badge = $("dirty-badge");
+  badge.textContent = n;
+  badge.hidden = n === 0;
+  $("btn-save").disabled = n === 0 || !cfg.owner || !cfg.repo || !cfg.pat;
+}
+function openSettings() {
+  $("cfg-owner").value = cfg.owner || "";
+  $("cfg-repo").value = cfg.repo || "";
+  $("cfg-branch").value = cfg.branch || "main";
+  $("cfg-pat").value = cfg.pat || "";
+  $("settings-dialog").showModal();
+}
+function closeSettings() { $("settings-dialog").close(); }
+function saveSettings() {
+  cfg = {
+    owner: $("cfg-owner").value.trim(),
+    repo: $("cfg-repo").value.trim(),
+    branch: $("cfg-branch").value.trim() || "main",
+    pat: $("cfg-pat").value.trim(),
+  };
+  saveCfg();
+  closeSettings();
+  updateDirtyBadge();
+}
+
+function buildMergedData() {
+  const out = { ...raw };
+  out.rows = raw.rows.map(r => ({ ...r, ...(edits.rows[r.id] || {}) }));
+  // edits.clusters is keyed by cluster_id and holds PATCH objects (no id field).
+  // Apply each patch over its base cluster; only append entries for ids that have
+  // no base cluster, re-attaching the id. (The old code appended every patch as a
+  // phantom id-less cluster.)
+  out.clusters = raw.clusters.map(c => ({ ...c, ...(edits.clusters[c.cluster_id] || {}) }))
+    .concat(Object.entries(edits.clusters)
+      .filter(([cid]) => !clustersById.has(cid))
+      .map(([cid, patch]) => ({ cluster_id: cid, ...patch })));
+  return out;
+}
+
+async function saveToGitHub() {
+  if (!cfg.owner || !cfg.repo || !cfg.pat) { openSettings(); return; }
+  const body = JSON.stringify(buildMergedData(), null, 2);
+  const path = "data/data.json";
+  const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
+  const headers = {
+    "Authorization": `Bearer ${cfg.pat}`,
+    "Accept": "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
+  };
+  try {
+    const cur = await fetch(`${url}?ref=${encodeURIComponent(cfg.branch)}`, { headers });
+    let sha = null;
+    if (cur.ok) sha = (await cur.json()).sha;
+    else if (cur.status !== 404) throw new Error(`GET ${cur.status}: ${await cur.text()}`);
+    const put = await fetch(url, {
+      method: "PUT", headers,
+      body: JSON.stringify({
+        message: `index: edits ${new Date().toISOString()}`,
+        content: btoa(unescape(encodeURIComponent(body))),
+        branch: cfg.branch,
+        ...(sha ? { sha } : {}),
+      }),
+    });
+    if (!put.ok) throw new Error(`PUT ${put.status}: ${await put.text()}`);
+    edits = { rows: {}, clusters: {} };
+    saveEdits();
+    alert(`Saved to ${cfg.owner}/${cfg.repo}@${cfg.branch}. Reloading.`);
+    location.reload();
+  } catch (e) {
+    console.error(e);
+    alert(`Save failed: ${e.message}`);
+  }
+}
+function downloadJson() {
+  const merged = buildMergedData();
+  const blob = new Blob([JSON.stringify(merged, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "data.json";
+  a.click();
+}
+function revert() {
+  if (!confirm(`Discard ${dirtyCount()} local edits?`)) return;
+  edits = { rows: {}, clusters: {} };
+  saveEdits();
+  location.reload();
+}
+
+// ============================================================
+// Boot
+// ============================================================
+async function main() {
+  $("btn-settings").addEventListener("click", openSettings);
+  $("btn-save").addEventListener("click", saveToGitHub);
+  $("btn-export").addEventListener("click", downloadJson);
+  $("btn-revert").addEventListener("click", revert);
+  $("q").addEventListener("input", () => { currentQuery = $("q").value; renderBrowse(); });
+  for (const id of ["filter-city","filter-biblio","filter-author","filter-status","filter-pending"]) {
+    $(id).addEventListener("change", renderBrowse);
+  }
+  document.addEventListener("keydown", onKey);
+
+  try {
+    const resp = await fetch(DATA_URL, { cache: "no-store" });
+    if (!resp.ok) throw new Error(`${resp.status}`);
+    raw = await resp.json();
+  } catch (e) {
+    $("stats").textContent = `Failed to load ${DATA_URL}: ${e.message}.`;
+    return;
+  }
+  for (const r of raw.rows) rowsById.set(r.id, r);
+  for (const c of raw.clusters) clustersById.set(c.cluster_id, c);
+  buildIndex();
+  populateFilters();
+  bindEditFields();
+  bindNavControls();
+  updateDirtyBadge();
+  updateCounts();
+  showTab(activeTab);
+}
+main();
+</script>
+</body>
+</html>
