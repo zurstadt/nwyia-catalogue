@@ -917,16 +917,14 @@ const AUTH_SOURCES = [
   [/opac\.vatlib\.it/i, "Vatican"],
   [/viaf\.org/i, "VIAF"],
   [/islamansiklopedisi\.org\.tr/i, "TDVİA"],
-  [/referenceworks\.brill(online)?\.com/i, "EI"],
   [/d-nb\.info/i, "GND"],
 ];
 function sourceFromUrl(url) {
-  for (const [re, label] of AUTH_SOURCES) {
-    if (re.test(url)) {
-      if (label === "EI") { const m = url.match(/encyclopaedia-of-islam-(\d)/i); return m ? "EI" + m[1] : "EI"; }
-      return label;
-    }
-  }
+  // Brill Encyclopaedia of Islam — DOI (10.1163/1573-3912_<work>_…) or referenceworks URL.
+  if (/1573-3912_ei3_/i.test(url) || /encyclopaedia-of-islam-3/i.test(url)) return "EI3";
+  if (/1573-3912_islam_/i.test(url) || /encyclopaedia-of-islam-2/i.test(url)) return "EI2";
+  if (/1573-3912_ei1_/i.test(url) || /encyclopaedia-of-islam-1/i.test(url)) return "EI1";
+  for (const [re, label] of AUTH_SOURCES) if (re.test(url)) return label;
   try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return "link"; }
 }
 function renderAuthorityList(c) {
