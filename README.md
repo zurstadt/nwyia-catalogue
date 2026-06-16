@@ -21,8 +21,10 @@ scripts/
   cluster.py            (re)build data/data.json from raw_rows.json + authority.json.
   harvest_authority.py  Build data/authority.json from an exported data.json.
 backups/                Timestamped data.json snapshots + stray exports.
+site/                   Public static catalogue site (Home / Catalogue / Authors / About).
 docs/
   findings.md           Provenance & identification notes for the forthcoming publication.
+  PROGRESS.md           Project progress & features log: methods, resources, roadmap.
 ```
 
 All scripts resolve paths from the project root (the parent of `scripts/`), so they
