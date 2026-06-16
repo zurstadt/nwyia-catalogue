@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authors — Fonds P. Nwyia</title>
+<meta name="description" content="The authors represented in Paul Nwyia's manuscript collection, with dates and links to authoritative biographical resources.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">Fonds P.&nbsp;Nwyia <span class="ar">فِهرِس مجموعة نُويا</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="catalogue.html">Catalogue</a>
+      <a href="authors.html" class="active">Authors</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding:2.5rem 0 1.75rem;">
+  <div class="container">
+    <div class="eyebrow">Index des Auteurs</div>
+    <h1 style="font-size:2rem;margin:0;">Authors</h1>
+    <p class="lead" style="margin:.5rem 0 0;">The figures whose works the collection preserves — with their dates and links to authoritative biographical resources.</p>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="container controls-inner">
+    <div class="search"><input type="search" id="q" placeholder="Search authors…" autocomplete="off"></div>
+    <div class="field"><label for="f-sort">Sort</label>
+      <select id="f-sort">
+        <option value="count">By manuscripts</option>
+        <option value="name">By name</option>
+        <option value="date">By date</option>
+      </select>
+    </div>
+    <div class="field"><label for="f-has">Show</label>
+      <select id="f-has">
+        <option value="all">All authors</option>
+        <option value="meta">With metadata</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+  <div class="result-count" id="count"></div>
+  <div id="results"><div class="loading">Loading authors…</div></div>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><strong>Fonds P. Nwyia — Index des Lieux</strong></div>
+    <div>Authority data from Wikidata, VIAF, GND, TDVİA, EI, and Wikipedia.</div>
+  </div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => (s == null ? "" : String(s)).replace(/[&<>"']/g,
+  c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+// modern editors / non-author clusters to omit from the author index
+const SKIP = new Set(["c011","c019","c049","c053","c101","c116","c117"]);
+
+let AUTHORS = [];
+
+function deathYear(dates) {
+  // crude sort key from "d. 412/1021" or "d. c. 295–300/907–912"
+  const m = (dates || "").match(/\/\D*(\d{3,4})/);
+  return m ? parseInt(m[1], 10) : 99999;
+}
+
+function chip(a) {
+  return `<a class="chip" href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.source)}</a>`;
+}
+
+function cardHtml(c) {
+  const links = (c.authorities || []).map(chip).join("");
+  const full = c.full_name ? `<div class="author-full">${esc(c.full_name)}</div>` : "";
+  const dates = c.dates ? `<span class="author-dates">${esc(c.dates)}</span>` : "";
+  const ar = c.canonical_ar ? `<span class="ar-inline">${esc(c.canonical_ar)}</span>` : "";
+  const q = encodeURIComponent(c.canonical_translit || "");
+  return `<article class="author-card">
+    <div class="author-head">
+      <h2 class="author-name">${ar}${esc(c.canonical_translit || "—")}</h2>
+      ${dates}
+    </div>
+    ${full}
+    <div class="author-count"><a href="catalogue.html?author=${q}">${c._count} manuscript${c._count === 1 ? "" : "s"} →</a></div>
+    ${links ? `<div class="chips">${links}</div>` : ""}
+  </article>`;
+}
+
+function render() {
+  const q = $("q").value.trim().toLowerCase();
+  const sort = $("f-sort").value, has = $("f-has").value;
+  let out = AUTHORS.filter(c => {
+    if (has === "meta" && !c.full_name) return false;
+    if (q) {
+      const hay = [c.canonical_translit, c.canonical_ar, c.full_name,
+        ...(c.authorities || []).map(a => a.title)].join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+  if (sort === "name") out.sort((a, b) => (a.canonical_translit || "~").localeCompare(b.canonical_translit || "~"));
+  else if (sort === "date") out.sort((a, b) => deathYear(a.dates) - deathYear(b.dates));
+  else out.sort((a, b) => b._count - a._count);
+  $("count").textContent = `${out.length} authors`;
+  $("results").innerHTML = out.length ? out.map(cardHtml).join("") : `<div class="loading">No authors match.</div>`;
+}
+
+fetch("../data/data.json", { cache: "no-store" })
+  .then(r => r.json())
+  .then(d => {
+    const counts = {};
+    for (const r of d.rows || []) if (r.author_cluster_id) counts[r.author_cluster_id] = (counts[r.author_cluster_id] || 0) + 1;
+    AUTHORS = (d.clusters || [])
+      .filter(c => counts[c.cluster_id] && !SKIP.has(c.cluster_id))
+      .map(c => ({ ...c, _count: counts[c.cluster_id] }));
+    render();
+    $("q").addEventListener("input", render);
+    $("f-sort").addEventListener("change", render);
+    $("f-has").addEventListener("change", render);
+  })
+  .catch(e => { $("results").innerHTML = `<div class="loading">Could not load authors (${esc(e.message)}).</div>`; });
+</script>
+</body>
+</html>

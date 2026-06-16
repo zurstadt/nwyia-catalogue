@@ -15,6 +15,7 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="catalogue.html" class="active">Catalogue</a>
+      <a href="authors.html">Authors</a>
       <a href="about.html">About</a>
     </div>
   </div>
@@ -173,6 +174,9 @@ fetch("../data/data.json", { cache: "no-store" })
     ROWS = d.rows || [];
     (d.clusters || []).forEach(c => CLU.set(c.cluster_id, c));
     populateFilters();
+    // Deep link from the Authors page: ?author=<canonical_translit> pre-selects the filter.
+    const wanted = new URLSearchParams(location.search).get("author");
+    if (wanted && [...$("f-auth").options].some(o => o.value === wanted)) $("f-auth").value = wanted;
     render();
     $("q").addEventListener("input", debounced);
     ["f-city","f-lib","f-auth","f-status","f-sort"].forEach(id => $(id).addEventListener("change", render));

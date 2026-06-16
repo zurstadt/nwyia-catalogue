@@ -168,6 +168,21 @@ input[type="search"]:focus, select:focus { outline: none; border-color: var(--pr
 .cote { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .82rem;
   background: var(--parchment-2); padding: .1rem .45rem; border-radius: 4px; color: var(--ink-soft); }
 
+/* ============================ Authors ============================ */
+.author-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.2rem 1.4rem; margin-bottom: 1rem; box-shadow: var(--shadow); }
+.author-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.author-name { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--primary-dk); margin: 0; }
+.author-name .ar-inline { color: var(--ink); font-weight: 400; margin-right: .5rem; }
+.author-dates { color: var(--muted); font-size: .95rem; white-space: nowrap; }
+.author-full { color: var(--ink-soft); font-size: 1rem; margin: .35rem 0 .2rem; }
+.author-count { font-size: .9rem; }
+.author-count a { font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem; }
+.chip { display: inline-block; padding: .22rem .65rem; border-radius: 999px; font-size: .78rem;
+  font-weight: 600; background: var(--parchment-2); color: var(--primary-dk); border: 1px solid var(--line); }
+.chip:hover { background: var(--primary); color: #fff; border-color: var(--primary); text-decoration: none; }
+
 /* ============================ Footer ============================ */
 footer { border-top: 1px solid var(--line); padding: 2.5rem 0; margin-top: 2rem;
   color: var(--muted); font-size: .9rem; background: var(--parchment-2); }
