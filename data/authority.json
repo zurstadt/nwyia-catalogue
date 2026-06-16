@@ -681,10 +681,10 @@
       "user_confirmed": false
     },
     "c045": {
-      "canonical_ar": "ابن مكزون (؟)",
-      "canonical_translit": "Ibn Makzūn (?)",
+      "canonical_ar": "المكزون السنجاري",
+      "canonical_translit": "al-Makzūn al-Sinjārī",
       "authorities": [],
-      "user_confirmed": false
+      "user_confirmed": true
     },
     "c046": {
       "canonical_ar": "ابن تيمية",
@@ -1106,7 +1106,7 @@
     "ميشال الار": "c019",
     "الاب عضم": "c044",
     "ابو نصر الفارابي": "c020",
-    "ابن مكزون": "c045",
+    "المكزون السنجاري": "c045",
     "ابن تيميه": "c046",
     "ابو العلاء المعري": "c047",
     "ابن عربي": "c005",
@@ -1275,6 +1275,12 @@
     "r0009": {
       "pub_citation": "These appear "
     },
+    "r0011": {
+      "author": "المكزون السنجاري",
+      "work_url": "https://archive.org/details/20210226_20210226_1820",
+      "pub_status": "published",
+      "pub_citation": "al-Makzūn al-Sinjārī, Dīwān Makzūn al-Sinjārī, ed. Sulaymān al-Aḥmad, Beirut: Muʾassasat al-Balāgh, n.d."
+    },
     "r0012": {
       "title": "رسائل ومسائل",
       "catalog_note": "مطبوع",
@@ -1343,7 +1349,9 @@
     },
     "r0059": {
       "library": "Staatsbibliothek zu Berlin",
-      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00024229"
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00024229",
+      "pub_status": "published",
+      "pub_citation": "Ṣadr al-Dīn al-Qūnawī, Sharḥ al-aḥādīth al-arbaʿīn, ed. Hasan Kâmil Yılmaz, Istanbul, 1990."
     },
     "r0060": {
       "library": "Staatsbibliothek zu Berlin",
@@ -1351,7 +1359,8 @@
     },
     "r0061": {
       "library": "Staatsbibliothek zu Berlin",
-      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011740"
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011740",
+      "pub_status": "published"
     },
     "r0062": {
       "library": "Staatsbibliothek zu Berlin",
@@ -1377,7 +1386,9 @@
     },
     "r0066": {
       "library": "Staatsbibliothek zu Berlin",
-      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007594"
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007594",
+      "pub_status": "published",
+      "pub_citation": "al-Fukūk fī asrār mustanadāt ḥikam al-Fuṣūṣ, ed. Muḥammad Khwājawī, Tehran, 1413/1992."
     },
     "r0067": {
       "library": "Staatsbibliothek zu Berlin",
@@ -1423,7 +1434,9 @@
     },
     "r0076": {
       "library": "Staatsbibliothek zu Berlin",
-      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011671"
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011671",
+      "pub_status": "published",
+      "pub_citation": "Miftāḥ al-ghayb (Miftāḥ ghayb al-jamʿ wa-l-wujūd), ed. Muḥammad Khwājawī, Tehran, 1374 hş."
     },
     "r0077": {
       "library": "Staatsbibliothek zu Berlin",
@@ -1466,7 +1479,9 @@
     },
     "r0086": {
       "library": "Staatsbibliothek zu Berlin",
-      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069178"
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069178",
+      "pub_status": "published",
+      "pub_citation": "al-Murāsalāt: the correspondence between al-Qūnawī and Naṣīr al-Dīn al-Ṭūsī, ed. Gudrun Schubert, Beirut, 1995; cf. W. C. Chittick, “Mysticism versus Philosophy… the al-Ṭūsī–al-Qūnawī Correspondence,” Religious Studies 17 (1981)."
     },
     "r0087": {
       "library": "Staatsbibliothek zu Berlin",
@@ -1857,7 +1872,9 @@
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
     },
     "r0278": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905605"
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905605",
+      "pub_status": "published",
+      "pub_citation": "al-Nafaḥāt al-ilāhiyya, ed. Muḥammad Khwājawī, Tehran, 1996."
     },
     "r0279": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90571m"
@@ -2054,6 +2071,13 @@
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 889”: it is Berlin SBB Landberg 889, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+    },
+    "r0338": {
+      "pub_status": "published",
+      "pub_citation": "al-Nuṣūṣ fī taḥqīq al-ṭawr al-makhṣūṣ, ed. S. J. Āshtiyānī, Tehran, 1342 hş."
+    },
+    "r0339": {
+      "pub_status": "published"
     },
     "r0342": {
       "title": "رسالة منازل الأبدال في بيان المقامات والأحوال",
