@@ -2881,6 +2881,45 @@
       ],
       "user_confirmed": true
     },
+    "c123": {
+      "canonical_ar": "جلال الدين الدواني",
+      "canonical_translit": "Jalāl al-Dīn al-Dawānī",
+      "full_name": "Jalāl al-Dīn Muḥammad b. Asʿad al-Dawānī",
+      "dates": "d. 908/1502",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q4116938",
+          "url": "https://www.wikidata.org/wiki/Q4116938"
+        },
+        {
+          "source": "VIAF",
+          "title": "159962989",
+          "url": "https://viaf.org/viaf/159962989"
+        },
+        {
+          "source": "GND",
+          "title": "100643574",
+          "url": "https://d-nb.info/gnd/100643574"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Jalal al-Din Davani",
+          "url": "https://en.wikipedia.org/wiki/Jalal_al-Din_Davani"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Jalal al-Din Dawani",
+          "url": "https://openalex.org/works?search=Jalal%20al-Din%20Dawani"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Jalal al-Din Dawani",
+          "url": "https://scholar.google.com/scholar?q=Jalal%20al-Din%20Dawani"
+        }
+      ],
+      "user_confirmed": true
+    },
     "n000": {
       "canonical_ar": "النيسابوري",
       "canonical_translit": "al-Naysābūrī",
@@ -2932,13 +2971,13 @@
     "الخركوشي": "c016",
     "سيدي الصبرجي": "c014",
     "ابن طلموس": "c058",
+    "الترمذي": "c000",
     "روزبهان الشيرازي": "c021",
     "السلمي": "c001",
     "ابو طالب المكي": "c024",
     "صدر الدين الشيرازي": "c029",
     "محمد الكتاني": "c059",
     "النيسابوري": "n000",
-    "الترمذي": "c000",
     "جعفر الصادق": "c023",
     "القلشاني": "c060",
     "القونوي": "c003",
@@ -3006,6 +3045,7 @@
     "ابو زيد الدبوسي الحنفي": "c095",
     "عبد الوهاب بن احمد بن علي الانصاري": "c096",
     "محمد بن علي الاندلسي": "c005",
+    "الدواني": "c123",
     "ابن عطاء الله": "c002",
     "رسلان دمشقي": "c098",
     "عفيف الدين عبد الكريم": "n002",
@@ -3123,6 +3163,11 @@
     "r0033": {
       "title": "Fragments (sans titre)",
       "catalog_note": "Fragments d'un ms. arabe; écriture maghrébine"
+    },
+    "r0038": {
+      "author": "الترمذي",
+      "pub_status": "manuscript",
+      "discrepancy_note": "= al-Ḥakīm al-Tirmidhī, ʿIlal al-ʿubūdiyya (al-ʿibāda); recorded as extant in manuscript (Berlin Staatsbibl. 3504) and not yet edited per EI²."
     },
     "r0040": {
       "work_url": "http://mc.dlib.nyu.edu/files/books/princeton_aco004748/princeton_aco004748_lo.pdf",
@@ -3616,6 +3661,11 @@
       "pub_status": "published",
       "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. Maqām al-maʿrifa, Osman Yahia RG 413 [Extract from al-Futūḥāt al-Makkiyya]."
     },
+    "r0234": {
+      "author": "الدواني",
+      "pub_status": "published",
+      "pub_citation": "Jalāl al-Dīn al-Dawānī, al-Risāla al-Zawrāʾ (printed in several editions)."
+    },
     "r0235": {
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
@@ -3693,6 +3743,7 @@
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
     },
     "r0270": {
+      "author": "النفري",
       "work_url": "https://www.fihrist.org.uk/catalog/manuscript_11794"
     },
     "r0271": {

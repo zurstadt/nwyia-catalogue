@@ -784,15 +784,15 @@
       "city": "",
       "library": "",
       "title": "علل العبادة",
-      "author": "",
+      "author": "الترمذي",
       "archive": "072",
       "id": "r0038",
       "shelfmark": "",
       "folios": "fol.77-103",
-      "author_cluster_id": "",
-      "pub_status": "unknown",
+      "author_cluster_id": "c000",
+      "pub_status": "manuscript",
       "pub_citation": "",
-      "discrepancy_note": "",
+      "discrepancy_note": "= al-Ḥakīm al-Tirmidhī, ʿIlal al-ʿubūdiyya (al-ʿibāda); recorded as extant in manuscript (Berlin Staatsbibl. 3504) and not yet edited per EI².",
       "title_translit": "",
       "title_translation": "",
       "author_translit": "",
@@ -4900,14 +4900,14 @@
       "city": "Istanbul",
       "library": "Veliyüddin Efendi",
       "title": "رسالة الزوراء",
-      "author": "",
+      "author": "الدواني",
       "archive": "062",
       "id": "r0234",
       "shelfmark": "1821",
       "folios": "fol.169b-173b",
-      "author_cluster_id": "",
-      "pub_status": "unknown",
-      "pub_citation": "",
+      "author_cluster_id": "c123",
+      "pub_status": "published",
+      "pub_citation": "Jalāl al-Dīn al-Dawānī, al-Risāla al-Zawrāʾ (printed in several editions).",
       "discrepancy_note": "",
       "title_translit": "",
       "title_translation": "",
@@ -5656,12 +5656,12 @@
       "city": "Oxford",
       "library": "Bodleian Library",
       "title": "من كلام النفري في التستري",
-      "author": "",
+      "author": "النفري",
       "archive": "092",
       "id": "r0270",
       "shelfmark": "554",
       "folios": "",
-      "author_cluster_id": "",
+      "author_cluster_id": "c010",
       "pub_status": "unknown",
       "pub_citation": "",
       "discrepancy_note": "",
@@ -10740,6 +10740,51 @@
           "source": "Google Scholar",
           "title": "ʿAbd al-Hādī al-Kharsa",
           "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-H%C4%81d%C4%AB%20al-Kharsa"
+        }
+      ]
+    },
+    {
+      "cluster_id": "c123",
+      "canonical_ar": "جلال الدين الدواني",
+      "canonical_translit": "Jalāl al-Dīn al-Dawānī",
+      "variants": [
+        "الدواني"
+      ],
+      "count": 1,
+      "confidence": 1.0,
+      "user_confirmed": true,
+      "full_name": "Jalāl al-Dīn Muḥammad b. Asʿad al-Dawānī",
+      "dates": "d. 908/1502",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q4116938",
+          "url": "https://www.wikidata.org/wiki/Q4116938"
+        },
+        {
+          "source": "VIAF",
+          "title": "159962989",
+          "url": "https://viaf.org/viaf/159962989"
+        },
+        {
+          "source": "GND",
+          "title": "100643574",
+          "url": "https://d-nb.info/gnd/100643574"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Jalal al-Din Davani",
+          "url": "https://en.wikipedia.org/wiki/Jalal_al-Din_Davani"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Jalal al-Din Dawani",
+          "url": "https://openalex.org/works?search=Jalal%20al-Din%20Dawani"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Jalal al-Din Dawani",
+          "url": "https://scholar.google.com/scholar?q=Jalal%20al-Din%20Dawani"
         }
       ]
     }
