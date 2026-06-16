@@ -94,6 +94,8 @@ def main(argv: list[str]) -> int:
         clusters_out[cid] = {
             "canonical_ar": clean(c.get("canonical_ar", "")),
             "canonical_translit": clean(c.get("canonical_translit", "")),
+            "full_name": clean(c.get("full_name", "")),      # fullest romanized name
+            "dates": clean(c.get("dates", "")),              # e.g. "d. 412/1021"
             "authorities": c.get("authorities", []),  # [{source,title,url}, …]
             "user_confirmed": bool(c.get("user_confirmed", False)),
         }

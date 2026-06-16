@@ -401,7 +401,12 @@ def main() -> int:
             "confidence": 1.0,
             "user_confirmed": bool(meta.get("user_confirmed", False)),
         }
-        # Carry curated authority-control links (Wikidata/VIAF/TDVİA/EI/Vatican …).
+        # Carry curated author metadata: fullest name, dates, and authority-control
+        # links (Wikidata/VIAF/GND/TDVİA/EI/Wikipedia …).
+        if meta.get("full_name"):
+            entry["full_name"] = meta["full_name"]
+        if meta.get("dates"):
+            entry["dates"] = meta["dates"]
         if meta.get("authorities"):
             entry["authorities"] = meta["authorities"]
         cluster_meta.append(entry)
