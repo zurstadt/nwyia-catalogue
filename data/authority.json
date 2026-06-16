@@ -1081,6 +1081,12 @@
       "authorities": [],
       "user_confirmed": false
     },
+    "c118": {
+      "canonical_ar": "إسماعيل المستملي البخاري",
+      "canonical_translit": "Ismāʿīl al-Mustamlī al-Buḫārī",
+      "authorities": [],
+      "user_confirmed": true
+    },
     "n000": {
       "canonical_ar": "النيسابوري",
       "canonical_translit": "al-Naysābūrī",
@@ -1141,6 +1147,7 @@
     "داود الباخلي الاسكندري": "c064",
     "علي بن احمد الحموي الشاذلي الكيزواني": "c065",
     "ابو طالب المكي": "c024",
+    "القشيري": "c007",
     "عبد الرزاق بن ابي الغنائم القاشاني": "c060",
     "داود بن محمود القيصري": "c030",
     "الغزالي": "c013",
@@ -1164,7 +1171,6 @@
     "حسن البصري": "c009",
     "عبد الملك بن مروان": "c079",
     "ابو مدين شعيب": "c026",
-    "القشيري": "c007",
     "ابن برجان": "c033",
     "الجويني": "c080",
     "ابن البنا": "c081",
@@ -1185,6 +1191,7 @@
     "عبد الرحمن محمد بن محمد الاسفاريني": "c090",
     "عبدالله الانصاري": "c091",
     "ابو محمد روزبهان البقلي الشيرازي": "c021",
+    "المستملي": "c118",
     "البصري": "c009",
     "النوري": "c036",
     "الروزباري": "c037",
@@ -1462,8 +1469,11 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069107"
     },
     "r0082": {
+      "author": "القشيري",
       "library": "Staatsbibliothek zu Berlin",
-      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011869"
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011869",
+      "pub_status": "published",
+      "pub_citation": "al-Qushayrī, Laṭāʾif al-ishārāt (Qurʾān commentary), ed. Ibrāhīm Basyūnī, Cairo: al-Hayʾa al-Miṣriyya al-ʿĀmma li-l-Kitāb, 1981."
     },
     "r0083": {
       "library": "Staatsbibliothek zu Berlin",
@@ -1710,6 +1720,11 @@
       "work_url": "http://abdelmagidzarrouki.com/2013-05-06-14-45-36/finish/682-/64652-/0",
       "pub_status": "published",
       "pub_citation": "Süleyman Ateş (ed.). \"Bayān al-Zalal,\" pp. ٤٢٩-٤٥٦. Süleyman Ateş (ed.). Tisʿat Kutub fī Uṣūl al-Taṣawwuf wa-l-Zuhd li-Abī ʿAbd al-Raḥmān al-Sulamī / Tasavvufun Ana Ilkeleri Sülemî'nin Risaleleri, ١٨٥-٢٠٧. Ankara: Ankara Üniversitesi Basimevi, 1401/1981; reprint Beirut: Al-Nāshir, 1414/1993."
+    },
+    "r0197": {
+      "author": "المستملي",
+      "pub_status": "published",
+      "pub_citation": "Ismāʿīl b. Muḥammad al-Mustamlī al-Buḫārī, Sharḥ al-Taʿarruf li-madhhab al-taṣawwuf, ed. Muḥammad Rawshan, 5 vols., Tehran: Asāṭīr, 1363–66 hš."
     },
     "r0200": {
       "work_url": "https://archive.org/details/Niffari",
