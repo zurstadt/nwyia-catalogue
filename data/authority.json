@@ -1,564 +1,1107 @@
 {
-  "source": "/Users/jfireland05/Downloads/data.json",
+  "source": "data/data.json",
   "clusters": {
     "c000": {
       "canonical_ar": "الحكيم الترمذي",
       "canonical_translit": "al-Ḥakīm al-Tirmiḏī",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "al-Ḥakīm al-Tirmidhī (Sufi, d. c. 910)",
+          "url": "https://www.wikidata.org/wiki/Q1088315"
+        },
+        {
+          "source": "TDVİA",
+          "title": "Hakîm et-Tirmizî",
+          "url": "https://islamansiklopedisi.org.tr/hakim-et-tirmizi"
+        },
+        {
+          "source": "EI3",
+          "title": "al-Ḥakīm al-Tirmidhī",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_30216"
+        }
+      ],
       "user_confirmed": true
     },
     "c001": {
       "canonical_ar": "أبو عبد الرحمن السلمي",
       "canonical_translit": "Abū ʿAbd al-Raḥmān al-Sulamī",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Muḥammad b. al-Ḥusayn al-Sulamī (Abū ʿAbd al-Raḥmān, d. 1021)",
+          "url": "https://www.wikidata.org/wiki/Q293651"
+        },
+        {
+          "source": "TDVİA",
+          "title": "Ebû Abdurrahman es-Sülemî",
+          "url": "https://islamansiklopedisi.org.tr/ebu-abdurrahman-es-sulemi"
+        },
+        {
+          "source": "EI2",
+          "title": "al-Sulamī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_7148"
+        }
+      ],
       "user_confirmed": true
     },
     "c002": {
       "canonical_ar": "ابن عطاء الله الإسكندري",
       "canonical_translit": "Ibn ʿAṭāʾ Allāh al-Iskandarī",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Ibn ʿAṭāʾ Allāh al-Iskandarī (Shādhilī shaykh, d. 1309)",
+          "url": "https://www.wikidata.org/wiki/Q2827445"
+        },
+        {
+          "source": "TDVİA",
+          "title": "İbn Atâullah el-İskenderî",
+          "url": "https://islamansiklopedisi.org.tr/ibn-ataullah-el-iskenderi"
+        },
+        {
+          "source": "EI3",
+          "title": "Ibn ʿAṭāʾallāh al-Iskandarī",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_30715"
+        }
+      ],
       "user_confirmed": true
     },
     "c003": {
       "canonical_ar": "صدر الدين القونوي",
       "canonical_translit": "Ṣadr al-Dīn al-Qūnawī",
+      "authorities": [
+        {
+          "source": "Vatican",
+          "title": "Ṣadr al-Dīn al-Qūnawī, Muḥammad Ibn Isḥāq (d. 1274)",
+          "url": "https://opac.vatlib.it/auth/detail/495_281787"
+        },
+        {
+          "source": "TDVİA",
+          "title": "Sadreddin Konevî",
+          "url": "https://islamansiklopedisi.org.tr/sadreddin-konevi"
+        },
+        {
+          "source": "EI3",
+          "title": "al-Qūnawī, Ṣadr al-Dīn",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_46456"
+        }
+      ],
       "user_confirmed": true
     },
     "c004": {
       "canonical_ar": "ابن ابي الدنيا",
       "canonical_translit": "Ibn Abī al-Dunyā",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Ibn Abī al-Dunyā (Muslim scholar, d. 894)",
+          "url": "https://www.wikidata.org/wiki/Q6532706"
+        },
+        {
+          "source": "TDVİA",
+          "title": "İbn Ebü'd-Dünyâ",
+          "url": "https://islamansiklopedisi.org.tr/ibn-ebud-dunya"
+        },
+        {
+          "source": "EI3",
+          "title": "Ibn Abī l-Dunyā",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_30663"
+        }
+      ],
       "user_confirmed": true
     },
     "c005": {
       "canonical_ar": "ابن العربي",
       "canonical_translit": "Ibn al-ʿArabī",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Muḥyī al-Dīn Ibn al-ʿArabī (Sufi, 1165–1240)",
+          "url": "https://www.wikidata.org/wiki/Q46420"
+        },
+        {
+          "source": "TDVİA",
+          "title": "İbnü'l-Arabî, Muhyiddin",
+          "url": "https://islamansiklopedisi.org.tr/ibnul-arabi-muhyiddin"
+        },
+        {
+          "source": "EI2",
+          "title": "Ibn al-ʿArabī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_COM_0316"
+        }
+      ],
       "user_confirmed": true
     },
     "c006": {
       "canonical_ar": "الحلاج",
       "canonical_translit": "al-Ḥallāǧ",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "al-Ḥusayn b. Manṣūr al-Ḥallāj (c. 858–922)",
+          "url": "https://www.wikidata.org/wiki/Q172862"
+        },
+        {
+          "source": "TDVİA",
+          "title": "Hallâc-ı Mansûr",
+          "url": "https://islamansiklopedisi.org.tr/hallac-i-mansur"
+        }
+      ],
       "user_confirmed": true
     },
     "c007": {
       "canonical_ar": "أبو القاسم القشيري",
       "canonical_translit": "Abū al-Qāsim al-Qušayrī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Kuşeyrî, Abdülkerîm b. Hevâzin",
+          "url": "https://islamansiklopedisi.org.tr/kuseyri-abdulkerim-b-hevazin"
+        },
+        {
+          "source": "EI2",
+          "title": "al-Ḳus̲h̲ayrī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_COM_0548"
+        }
+      ],
       "user_confirmed": true
     },
     "c008": {
-      "canonical_ar": "فخر الدين أبو الحسن علي بن أحمد الحرّالي",
-      "canonical_translit": "Faḫr al-Dīn Abū al-Ḥasan ʿAlī b. Aḥmad al-Ḥarrālī",
+      "canonical_ar": "علي بن احمد الحرالي",
+      "canonical_translit": "ʿAlī b. Aḥmad al-Ḥarrālī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c009": {
       "canonical_ar": "الحسن البصري",
       "canonical_translit": "al-Ḥasan al-Baṣrī",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "al-Ḥasan al-Baṣrī (Baṣran scholar, d. 728)",
+          "url": "https://www.wikidata.org/wiki/Q293500"
+        },
+        {
+          "source": "TDVİA",
+          "title": "Hasan-ı Basrî",
+          "url": "https://islamansiklopedisi.org.tr/hasan-i-basri"
+        },
+        {
+          "source": "EI3",
+          "title": "al-Ḥasan al-Baṣrī",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_30346"
+        }
+      ],
       "user_confirmed": true
     },
     "c010": {
       "canonical_ar": "محمد بن عبد الله النفري",
       "canonical_translit": "Muḥammad b. ʿAbd Allāh al-Niffarī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Nifferî",
+          "url": "https://islamansiklopedisi.org.tr/nifferi"
+        },
+        {
+          "source": "EI2",
+          "title": "al-Niffarī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_5899"
+        }
+      ],
       "user_confirmed": true
     },
     "c011": {
       "canonical_ar": "بولس نويا",
       "canonical_translit": "Paul Nwyia",
+      "authorities": [],
       "user_confirmed": true
     },
     "c012": {
       "canonical_ar": "إسماعيل بن سودكين النوري",
       "canonical_translit": "Ismaʿīl b. Sawdakīn al-Nūrī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "İbn Sevdekîn",
+          "url": "https://islamansiklopedisi.org.tr/ibn-sevdekin"
+        }
+      ],
       "user_confirmed": true
     },
     "c013": {
       "canonical_ar": "أبو حامد الغزالي",
       "canonical_translit": "Abū Ḥāmid al-Ġazālī",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Abū Ḥāmid al-Ghazālī (1058–1111)",
+          "url": "https://www.wikidata.org/wiki/Q9546"
+        },
+        {
+          "source": "TDVİA",
+          "title": "Gazzâlî",
+          "url": "https://islamansiklopedisi.org.tr/gazzali"
+        },
+        {
+          "source": "EI2",
+          "title": "al-G̲h̲azālī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_COM_0233"
+        }
+      ],
       "user_confirmed": true
     },
     "c014": {
       "canonical_ar": "ابن عبّاد الرندي",
       "canonical_translit": "Ibn ʿAbbād al-Rundī",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Ibn ʿAbbād al-Rundī (Shādhilī, d. 1390)",
+          "url": "https://www.wikidata.org/wiki/Q5293550"
+        },
+        {
+          "source": "TDVİA",
+          "title": "İbn Abbâd er-Rundî",
+          "url": "https://islamansiklopedisi.org.tr/ibn-abbad-er-rundi"
+        },
+        {
+          "source": "EI3",
+          "title": "Ibn ʿAbbād al-Rundī",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_30619"
+        }
+      ],
       "user_confirmed": true
     },
     "c015": {
       "canonical_ar": "الحارث المحاسبي",
       "canonical_translit": "al-Ḥāriṯ al-Muḥāsibī",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "al-Ḥārith al-Muḥāsibī (d. 857)",
+          "url": "https://www.wikidata.org/wiki/Q4116044"
+        },
+        {
+          "source": "TDVİA",
+          "title": "Hâris el-Muhâsibî",
+          "url": "https://islamansiklopedisi.org.tr/haris-el-muhasibi"
+        },
+        {
+          "source": "EI2",
+          "title": "al-Muḥāsibī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_5427"
+        }
+      ],
       "user_confirmed": true
     },
     "c016": {
       "canonical_ar": "أبو سعد الخركوشي",
       "canonical_translit": "Abū Saʿd al-Ḫargūšī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Hargûşî",
+          "url": "https://islamansiklopedisi.org.tr/hargusi"
+        }
+      ],
       "user_confirmed": true
     },
     "c017": {
       "canonical_ar": "شقيق البلخي",
       "canonical_translit": "Šaqīq al-Balḫī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Şakīk-ı Belhî",
+          "url": "https://islamansiklopedisi.org.tr/sakik-i-belhi"
+        },
+        {
+          "source": "EI3",
+          "title": "Shaqīq al-Balkhī",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_23992"
+        }
+      ],
       "user_confirmed": true
     },
     "c018": {
       "canonical_ar": "أبو القاسم عبد الرحمن بن محمد الصقلي",
       "canonical_translit": "Abū al-Qāsim ʿAbd al-Raḥman b. Muḥammad al-Ṣiqillī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c019": {
       "canonical_ar": "ميشال آلار",
       "canonical_translit": "Michel Allard",
+      "authorities": [],
       "user_confirmed": true
     },
     "c020": {
       "canonical_ar": "أبو نصر الفارابي",
       "canonical_translit": "Abū Naṣr al-Fārābī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Fârâbî",
+          "url": "https://islamansiklopedisi.org.tr/farabi"
+        },
+        {
+          "source": "EI2",
+          "title": "al Fārābī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_COM_0212"
+        }
+      ],
       "user_confirmed": true
     },
     "c021": {
       "canonical_ar": "روزبهان البقلى الشيرازي",
       "canonical_translit": "Rūzbihān Baqlī al-Šīrāzī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Rûzbihân-ı Baklî",
+          "url": "https://islamansiklopedisi.org.tr/ruzbihan-i-bakli"
+        }
+      ],
       "user_confirmed": true
     },
     "c023": {
       "canonical_ar": "جعفر الصادق",
       "canonical_translit": "Ǧaʿfar al-Ṣādiq",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Ca‘fer es-Sâdık",
+          "url": "https://islamansiklopedisi.org.tr/cafer-es-sadik"
+        },
+        {
+          "source": "EI3",
+          "title": "Jaʿfar al-Ṣādiq",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_32681"
+        }
+      ],
       "user_confirmed": true
     },
     "c024": {
       "canonical_ar": "أبو طالب المكي",
       "canonical_translit": "Abū Ṭālib al-Makkī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Ebû Tâlib el-Mekkî",
+          "url": "https://islamansiklopedisi.org.tr/ebu-talib-el-mekki"
+        },
+        {
+          "source": "EI3",
+          "title": "Abū Ṭālib al-Makkī",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_23649"
+        }
+      ],
       "user_confirmed": true
     },
     "c025": {
       "canonical_ar": "سهل التستري",
       "canonical_translit": "Sahl al-Tustarī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Sehl et-Tüsterî",
+          "url": "https://islamansiklopedisi.org.tr/sehl-et-tusteri"
+        },
+        {
+          "source": "EI2",
+          "title": "Sahl al-Tustarī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_6472"
+        }
+      ],
       "user_confirmed": false
     },
     "c026": {
       "canonical_ar": "أبو مدين شعيب",
       "canonical_translit": "Abū Madyan Šuʿayb",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Ebû Medyen",
+          "url": "https://islamansiklopedisi.org.tr/ebu-medyen"
+        },
+        {
+          "source": "EI2",
+          "title": "Abū Madyan",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_0226"
+        }
+      ],
       "user_confirmed": true
     },
     "c027": {
       "canonical_ar": "ابن عجيبة",
       "canonical_translit": "Ibn ʿAǧība",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "İbn Acîbe",
+          "url": "https://islamansiklopedisi.org.tr/ibn-acibe"
+        },
+        {
+          "source": "EI3",
+          "title": "Ibn ʿAjība",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_30684"
+        }
+      ],
       "user_confirmed": true
     },
     "c028": {
       "canonical_ar": "ابن سينا",
       "canonical_translit": "Ibn Sīnā",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "İbn Sînâ",
+          "url": "https://islamansiklopedisi.org.tr/ibn-sina"
+        },
+        {
+          "source": "EI2",
+          "title": "Avicenna",
+          "url": "https://doi.org/10.1163/1573-3912_islam_DUM_0467"
+        }
+      ],
       "user_confirmed": true
     },
     "c029": {
       "canonical_ar": "صدر الدين الشيرازي",
       "canonical_translit": "Ṣadr al-Dīn al-Šīrāzī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Molla Sadrâ",
+          "url": "https://islamansiklopedisi.org.tr/molla-sadra"
+        },
+        {
+          "source": "EI2",
+          "title": "Mullā Ṣadrā S̲h̲īrāzī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_5490"
+        }
+      ],
       "user_confirmed": true
     },
     "c030": {
       "canonical_ar": "داود بن محمود القيصري",
       "canonical_translit": "Dāwūd b. Maḥmūd al-Qayṣarī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Dâvûd-i Kayserî",
+          "url": "https://islamansiklopedisi.org.tr/davud-i-kayseri"
+        },
+        {
+          "source": "EI3",
+          "title": "Dāwūd al-Qayṣarī",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_25946"
+        }
+      ],
       "user_confirmed": true
     },
     "c032": {
       "canonical_ar": "أبو منصور الماتريدي",
       "canonical_translit": "Abū Manṣūr al-Māturīdī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Mâtürîdî",
+          "url": "https://islamansiklopedisi.org.tr/maturidi"
+        },
+        {
+          "source": "EI2",
+          "title": "al-Māturīdī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_5045"
+        }
+      ],
       "user_confirmed": true
     },
     "c033": {
       "canonical_ar": "ابن برجان",
       "canonical_translit": "Ibn Barraǧān",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "İbn Berrecân",
+          "url": "https://islamansiklopedisi.org.tr/ibn-berrecan"
+        },
+        {
+          "source": "EI3",
+          "title": "Ibn Barrajān",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_30734"
+        }
+      ],
       "user_confirmed": true
     },
     "c034": {
       "canonical_ar": "عفيف الدين التلمساني",
       "canonical_translit": "ʿAfīf al-Dīn al-Tilimsānī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Tilimsânî, Afîfüddin",
+          "url": "https://islamansiklopedisi.org.tr/tilimsani-afifuddin"
+        },
+        {
+          "source": "EI2",
+          "title": "al-Tilimsānī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_7552"
+        }
+      ],
       "user_confirmed": true
     },
     "c035": {
       "canonical_ar": "ابن الجوزي",
       "canonical_translit": "Ibn al-Ǧawzī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "İbnü'l-Cevzî, Ebü'l-Ferec",
+          "url": "https://islamansiklopedisi.org.tr/ibnul-cevzi-ebul-ferec"
+        },
+        {
+          "source": "EI2",
+          "title": "Ibn al-D̲j̲awzī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_3139"
+        }
+      ],
       "user_confirmed": true
     },
     "c036": {
       "canonical_ar": "أبو الحسن النوري",
       "canonical_translit": "Abū al-Ḥasan al-Nūrī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Ebü'l-Hüseyin en-Nûrî",
+          "url": "https://islamansiklopedisi.org.tr/ebul-huseyin-en-nuri"
+        },
+        {
+          "source": "EI2",
+          "title": "al-Nūrī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_5995"
+        }
+      ],
       "user_confirmed": true
     },
     "c037": {
       "canonical_ar": "أبو علي الروذباري",
       "canonical_translit": "Abū ʿAlī al-Rūdhbārī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Rûzbârî",
+          "url": "https://islamansiklopedisi.org.tr/ruzbari"
+        }
+      ],
       "user_confirmed": true
     },
     "c038": {
       "canonical_ar": "ابن خميس الموصلي",
       "canonical_translit": "Ibn Ḫamīs al-Mawṣilī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c039": {
       "canonical_ar": "ابو سعيد الخراز",
       "canonical_translit": "Abū Saʿīd al-Ḫarrāz",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Ebû Saîd el-Harrâz",
+          "url": "https://islamansiklopedisi.org.tr/ebu-said-el-harraz"
+        },
+        {
+          "source": "EI2",
+          "title": "al-Ḵh̲arrāz",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_4215"
+        }
+      ],
       "user_confirmed": true
     },
     "c040": {
       "canonical_ar": "أبو العباس ابن العريف",
       "canonical_translit": "Abū al-ʿAbbās Ibn al-ʿArīf",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "İbnü'l-Arîf",
+          "url": "https://islamansiklopedisi.org.tr/ibnul-arif"
+        },
+        {
+          "source": "EI2",
+          "title": "Ibn al-ʿArīf",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_3083"
+        }
+      ],
       "user_confirmed": true
     },
     "c041": {
       "canonical_ar": "عبد الرحمن الجامي",
       "canonical_translit": "ʿAbd al-Raḥmān Ǧāmī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Câmî, Abdurrahman",
+          "url": "https://islamansiklopedisi.org.tr/cami-abdurrahman"
+        }
+      ],
       "user_confirmed": true
     },
     "c042": {
       "canonical_ar": "محمد بن شعبة الحرّاني",
       "canonical_translit": "Muḥammad b. Šuʿbah al-Ḥarrānī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c043": {
       "canonical_ar": "عبد الكريم الجيلي",
       "canonical_translit": "ʿAbd al-Karīm al-Ǧīlī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Abdülkerîm el-Cîlî",
+          "url": "https://islamansiklopedisi.org.tr/abdulkerim-el-cili"
+        },
+        {
+          "source": "EI2",
+          "title": "ʿAbd al-Karīm, Ḳuṭb al-Dīn b. Ibrāhīm al-Ḏj̲īlī",
+          "url": "https://doi.org/10.1163/1573-3912_islam_SIM_0099"
+        }
+      ],
       "user_confirmed": true
     },
     "c044": {
       "canonical_ar": "الاب عضم",
       "canonical_translit": "al-Ab ʿAḍam(?)",
+      "authorities": [],
       "user_confirmed": false
     },
     "c045": {
       "canonical_ar": "ابن مكزون (؟)",
       "canonical_translit": "Ibn Makzūn (?)",
+      "authorities": [],
       "user_confirmed": false
     },
     "c046": {
       "canonical_ar": "ابن تيمية",
       "canonical_translit": "Ibn Taymīyah",
+      "authorities": [],
       "user_confirmed": true
     },
     "c047": {
       "canonical_ar": "ابو العلاء المعرّي",
       "canonical_translit": "Abū al-ʿAlāʾ al-Maʿarrī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c048": {
       "canonical_ar": "أرسطو",
       "canonical_translit": "Arisṭū (Aristotle)",
+      "authorities": [],
       "user_confirmed": true
     },
     "c049": {
       "canonical_ar": "جورج المقدسي (محقق)",
       "canonical_translit": "George Makdisi (ed.)",
+      "authorities": [],
       "user_confirmed": true
     },
     "c050": {
       "canonical_ar": "مقاتل بن سليمان",
       "canonical_translit": "Muqātil b. Sulaymān",
+      "authorities": [],
       "user_confirmed": true
     },
     "c051": {
       "canonical_ar": "فخر الدين الرازي",
       "canonical_translit": "Faḫr al-Dīn al-Rāzī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c052": {
       "canonical_ar": "أبو حيان الغرناطي",
       "canonical_translit": "Abū Ḥayyān al-Ġarnāṭī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c053": {
       "canonical_ar": "Hellmut Ritter",
       "canonical_translit": "Hellmut Ritter",
+      "authorities": [],
       "user_confirmed": true
     },
     "c054": {
       "canonical_ar": "ابو الفرج عبد الرحمن بن نصر الشيزري",
       "canonical_translit": "Abū al-Faraǧ ʿAbd al-Raḥmān b. Naṣr al-Šayzarī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c055": {
       "canonical_ar": "ابو الحسن محمد بن أبي يعلى",
       "canonical_translit": "Abū al-Ḥasan Muḥammad Ibn Abī Yaʿlā",
+      "authorities": [],
       "user_confirmed": true
     },
     "c056": {
       "canonical_ar": "ابن سبعين",
       "canonical_translit": "Ibn Sabʿīn",
-      "user_confirmed": true
-    },
-    "c057": {
-      "canonical_ar": "ابن عباد الرندي",
-      "canonical_translit": "Ibn ʿAbbād al-Rundī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c058": {
       "canonical_ar": "ابن طلموس",
       "canonical_translit": "Ibn Ṭumlūs",
+      "authorities": [],
       "user_confirmed": true
     },
     "c059": {
       "canonical_ar": "محمد بن جعفر الكتاني",
       "canonical_translit": "Muḥammad b. Ǧaʿfar al-Kattānī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c060": {
       "canonical_ar": "فيض القاشاني",
       "canonical_translit": "Fayḍ al-Qāšānī",
-      "user_confirmed": true
-    },
-    "c061": {
-      "canonical_ar": "أبو عبد الرحمن السلمي",
-      "canonical_translit": "Abū ʿAbd al-Raḥmān al-Sulamī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Feyz-i Kâşânî",
+          "url": "https://islamansiklopedisi.org.tr/feyz-i-kasani"
+        }
+      ],
       "user_confirmed": true
     },
     "c062": {
       "canonical_ar": "أحمد البوني",
       "canonical_translit": "Aḥmad al-Būnī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c063": {
       "canonical_ar": "ست عجم بنت النفيس",
       "canonical_translit": "Sitt ʿAǧam Bint al-Nafīs",
+      "authorities": [],
       "user_confirmed": true
     },
     "c064": {
       "canonical_ar": "داود الباخلي الإسكندري",
       "canonical_translit": "Dāwūd al-Bāḫilī al-Iskandarī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c065": {
-      "canonical_ar": "محمود الكازواني",
-      "canonical_translit": "Maḥmūd al-Kāzawānī",
-      "user_confirmed": true
-    },
-    "c066": {
-      "canonical_ar": "فيض القاشاني",
-      "canonical_translit": "Fayḍ al-Qāšānī",
+      "canonical_ar": "علي بن احمد الكيزواني",
+      "canonical_translit": "ʿAlī b. Aḥmad al-Kīzwānī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c067": {
       "canonical_ar": "محمد بن محمد الغمري",
       "canonical_translit": "Muḥammad b. Muḥammad al-Ġumarī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c068": {
       "canonical_ar": "ابن غانم المقدسي",
       "canonical_translit": "Ibn Ġānim al-Maqdisī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c069": {
       "canonical_ar": "أبو حفص محمد بن الحسين بن أحمد بن يزدانيار",
       "canonical_translit": "Abū Hafṣ Muḥammad b. al-Ḥusayn b. Aḥmad Ibn Yazdānyār",
+      "authorities": [],
       "user_confirmed": true
     },
     "c070": {
       "canonical_ar": "عبد القادر الجيلاني",
       "canonical_translit": "ʿAbd al-Qādir al-Ǧīlānī",
+      "authorities": [
+        {
+          "source": "TDVİA",
+          "title": "Abdülkādir-i Geylânî",
+          "url": "https://islamansiklopedisi.org.tr/abdulkadir-i-geylani"
+        },
+        {
+          "source": "EI3",
+          "title": "ʿAbd al-Qādir al-Jīlānī",
+          "url": "https://doi.org/10.1163/1573-3912_ei3_COM_22592"
+        }
+      ],
       "user_confirmed": true
     },
     "c072": {
       "canonical_ar": "خالد بن عيسى بن أحمد البلوي",
       "canonical_translit": "Ḫālid b. ʿĪsā b. Aḥmad al-Balawī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c073": {
       "canonical_ar": "أبو زيد عبد الرحمن بن عبد القادر الفاسي",
       "canonical_translit": "Abū Zayd ʿAbd al-Raḥmān b. ʿAbd al-Qādir al-Fāsī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c074": {
       "canonical_ar": "محمد بن سعيد بن حمادى البوصيري",
       "canonical_translit": "Muḥammad b. Saʿīd b. Ḥammmādī al-Būṣīrī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c075": {
       "canonical_ar": "أبو القاسم الجنيد",
       "canonical_translit": "Abū al-Qāsim al-Ǧunayd",
+      "authorities": [],
       "user_confirmed": true
     },
     "c076": {
       "canonical_ar": "فايز المقدسي",
       "canonical_translit": "Fāyiz al-Maqdisī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c077": {
       "canonical_ar": "أبو بكر المروذي",
       "canonical_translit": "Abū Bakr al-Marrūḏī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c078": {
       "canonical_ar": "أبو علي الأهوازي",
       "canonical_translit": "Abū ʿAlī al-Ahwāzī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c079": {
       "canonical_ar": "عبد الملك بن مروان",
       "canonical_translit": "ʿAbd al-Malik b. Marwān",
+      "authorities": [],
       "user_confirmed": true
     },
     "c080": {
       "canonical_ar": "إمام الحرمين الجويني",
       "canonical_translit": "Imām al-Ḥaramayn al-Ǧuwaynī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c081": {
       "canonical_ar": "ابن البناء المراكشي",
       "canonical_translit": "Ibn al-Bannāʾ al-Marrākušī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c082": {
       "canonical_ar": "ابن الفارض",
       "canonical_translit": "Ibn al-Fāriḍ",
+      "authorities": [],
       "user_confirmed": true
     },
     "c083": {
       "canonical_ar": "أبو جعفر محمد بن الحسين أحمد بن يزدانيار",
       "canonical_translit": "Abū",
+      "authorities": [],
       "user_confirmed": true
     },
     "c084": {
       "canonical_ar": "أبو النحيب السهروردي",
       "canonical_translit": "Abū al-Naǧīb al-Suhrawardī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c085": {
       "canonical_ar": "ابن باكويه الشيرازي",
       "canonical_translit": "Ibn Bākōyeh al-Šīrāzī",
+      "authorities": [],
       "user_confirmed": true
-    },
-    "c086": {
-      "canonical_ar": "...الخواص، التستري،",
-      "canonical_translit": "alḫwaṣ altstry",
-      "user_confirmed": false
     },
     "c087": {
       "canonical_ar": "أبو الفرج ابن عبد المحسن الأنصاري",
       "canonical_translit": "Abū al-Faraǧ Ibn ʿAbd al-Muḥsin al-Anṣārī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c088": {
       "canonical_ar": "ابو زكرياء يحيى بن شرف الدين النووي",
       "canonical_translit": "Abū Zakariyyāʾ Yaḥyā b. Šaraf al-Dīn al-Nawawī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c089": {
       "canonical_ar": "عبد الرحمن ابن أحمد",
-      "canonical_translit": "عبد الرحمن بن أحمد",
+      "canonical_translit": "ʿAbd al-Raḥmān b. Aḥmad",
+      "authorities": [],
       "user_confirmed": true
     },
     "c090": {
       "canonical_ar": "عبد الرحمن بن محمد بن محمد الإسفرايني",
       "canonical_translit": "ʿAbd al-Raḥmān b. Muḥammad b. Muḥammad al-Isfārayīnī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c091": {
       "canonical_ar": "عبد الله الأنصاري",
       "canonical_translit": "ʿAbd Allāh al-Anṣārī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c092": {
       "canonical_ar": "أبو القاسم أحمد بن قسي المغربي",
       "canonical_translit": "Abū al-Qāsim Aḥmad b. Qasī al-Maġribī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c093": {
       "canonical_ar": "أبو بكر جعفر بن المستفاض القريابي",
       "canonical_translit": "Abū Bakr Ǧaʿfar b. Musrtafāḍ al-Faryābī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c094": {
       "canonical_ar": "أبو محمد الحسن بن أحمد السمرقندي",
       "canonical_translit": "Abū Muḥammad al-Ḥasan b. Aḥmad al-Samarqandī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c095": {
       "canonical_ar": "أبو زيد الدبوسي الحنفي",
       "canonical_translit": "Abū Zayd al-Dabbūsī al-Ḥanafī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c096": {
       "canonical_ar": "عبد الوهاب بن أحمد بن علي الأنصاري",
       "canonical_translit": "ʿAbd al-Wahhāb a. Aḥmad b. ʿAlī al-Anṣārī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c098": {
       "canonical_ar": "رسلان دمشقي",
       "canonical_translit": "Ruslān al-Dimašqī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c100": {
       "canonical_ar": "ابن الصلاح الشهرزوري",
       "canonical_translit": "Ibn al-Ṣalāḥ al-Šahrazūrī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c101": {
-      "canonical_ar": "",
+      "canonical_ar": "Qatraya Gabriel",
       "canonical_translit": "Gabriel Qaṭraya",
+      "authorities": [],
       "user_confirmed": true
     },
     "c102": {
       "canonical_ar": "محمد بن أحمد المديني",
       "canonical_translit": "Muḥammad b. Aḥmad al-Madyanī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c103": {
       "canonical_ar": "ابو سعيد الخادمي",
       "canonical_translit": "Abū Saʿīd al-Ḫādimī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c104": {
       "canonical_ar": "مفتي الخادم",
       "canonical_translit": "Muftī al-Ḫādim",
+      "authorities": [],
       "user_confirmed": true
     },
     "c107": {
       "canonical_ar": "عز الدين ابن الطيب",
       "canonical_translit": "ʿIzz al-Dīn Ibn al-Ṭayyib",
+      "authorities": [],
       "user_confirmed": true
     },
     "c108": {
       "canonical_ar": "عبد الغفار بن أحمد بن عبد المجيد القوصي",
       "canonical_translit": "ʿAbd al-Ġaffār b. Aḥmad b. ʿAbd al-Maǧīd al-Qūṣī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c109": {
       "canonical_ar": "أبو بكر الكلاباذي",
       "canonical_translit": "Abū Bakr al-Kalābāḏī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c110": {
       "canonical_ar": "علاء الدولة السمناني",
       "canonical_translit": "ʿAlāʾ al-Dawlah al-Simnānī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c111": {
       "canonical_ar": "عبد المجيد الزبادي",
       "canonical_translit": "ʿAbd al-Maǧīd al-Zabādī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c112": {
       "canonical_ar": "الشستري",
       "canonical_translit": "al-Šustarī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c113": {
       "canonical_ar": "محمد بن عبد القادر الفاسي",
       "canonical_translit": "Muḥammad b. ʿAbd al-Qādir al-Fāsī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c114": {
       "canonical_ar": "أبو عمرو ابن المحلي",
       "canonical_translit": "Abū ʿAmr Ibn al-Maḥallī",
+      "authorities": [],
       "user_confirmed": true
     },
     "c115": {
       "canonical_ar": "أبو العباس أحمد بن قاسم الجذامي القباب",
       "canonical_translit": "Abū al-ʿAbbās Aḥmad b. Qāsim al-Juḏāmī al-Qabbāb",
+      "authorities": [],
       "user_confirmed": true
     },
     "c116": {
-      "canonical_ar": "الطوسي- القونوي",
-      "canonical_translit": "alṭwsy- alqwnwy",
-      "user_confirmed": false
+      "canonical_ar": "الطوسي والقونوي",
+      "canonical_translit": "al-Ṭūsī wa-l-Qūnawī",
+      "authorities": [],
+      "user_confirmed": true
     },
     "c117": {
-      "canonical_ar": "",
+      "canonical_ar": "Dadiso’ Bar Qatraya",
       "canonical_translit": "Dadīšūʿ Bar Qaṭraya",
+      "authorities": [],
       "user_confirmed": false
+    },
+    "n000": {
+      "canonical_ar": "النيسابوري",
+      "canonical_translit": "al-Naysābūrī",
+      "authorities": [],
+      "user_confirmed": false
+    },
+    "n002": {
+      "canonical_ar": "عفيف الدين عبد الكريم",
+      "canonical_translit": "ʿAfīf al-Dīn ʿAbd al-Karīm",
+      "authorities": [],
+      "user_confirmed": true
+    },
+    "n003": {
+      "canonical_ar": "الخوئي",
+      "canonical_translit": "al-Khūʾī",
+      "authorities": [],
+      "user_confirmed": true
     }
   },
   "variant_to_cluster": {
-    "البصري": "c009",
+    "الحسن البصري": "c009",
     "بولس نويا": "c011",
     "ميشال الار": "c019",
     "الاب عضم": "c044",
@@ -579,31 +1122,33 @@
     "ابو الحسن محمد بن ابي يعلي": "c055",
     "ابن سبعين": "c056",
     "الخركوشي": "c016",
-    "سيدي الصبرجي": "c057",
+    "سيدي الصبرجي": "c014",
     "ابن طلموس": "c058",
     "روزبهان الشيرازي": "c021",
     "السلمي": "c001",
     "صدر الدين الشيرازي": "c029",
     "محمد الكتاني": "c059",
+    "النيسابوري": "n000",
     "الترمذي": "c000",
     "جعفر الصادق": "c023",
     "القلشاني": "c060",
     "القونوي": "c003",
     "ابن عطاء": "c002",
-    "ابو عبد الرحمن": "c061",
+    "ابو عبد الرحمن": "c001",
     "احمد البوني": "c062",
     "ابن سودكين": "c012",
     "ست عجم بنت النفيس": "c063",
     "داود الباخلي الاسكندري": "c064",
-    "محمود الكازواني": "c065",
+    "علي بن احمد الحموي الشاذلي الكيزواني": "c065",
     "ابو طالب المكي": "c024",
-    "عبد الرزاق بن ابي الغنائم القاشاني": "c066",
+    "عبد الرزاق بن ابي الغنائم القاشاني": "c060",
     "داود بن محمود القيصري": "c030",
     "الغزالي": "c013",
     "محمد بن محمد الغمري": "c067",
     "ابن غانم المقدسي": "c068",
     "ابو حفص محمد بن الحسين احمد بن يازدانيار": "c069",
     "عبد القادر الجيلاني": "c070",
+    "عبد القادر الكيلاني": "c070",
     "خالد بن عيسي بن احمد البلوي ... بن": "c072",
     "ابو زيد عبد الرحمن بن عبد القادر الفاسي": "c073",
     "محمد بن سعيد بن حمادي البصيري": "c074",
@@ -631,7 +1176,6 @@
     "ابن الجوزي": "c035",
     "السهروردي": "c084",
     "ابن باكويه الشيرازي": "c085",
-    "...الخواص، التستري،": "c086",
     "ابو الحسن البصري": "c009",
     "ابو الفرج ابن عبد المحسن الانصاري": "c087",
     "ابو زكريا يحيي بن شرف الدين النووي": "c088",
@@ -641,6 +1185,7 @@
     "عبد الرحمن محمد بن محمد الاسفاريني": "c090",
     "عبدالله الانصاري": "c091",
     "ابو محمد روزبهان البقلي الشيرازي": "c021",
+    "البصري": "c009",
     "النوري": "c036",
     "الروزباري": "c037",
     "ابو الحسن النوري": "c036",
@@ -650,8 +1195,10 @@
     "ابن خميس": "c038",
     "ابو زيد الدبوسي الحنفي": "c095",
     "عبد الوهاب بن احمد بن علي الانصاري": "c096",
+    "محمد بن علي الاندلسي": "c005",
     "ابن عطاء الله": "c002",
     "رسلان دمشقي": "c098",
+    "عفيف الدين عبد الكريم": "n002",
     "ابن الصلاح الشهرزوري": "c100",
     "ابو سعيد الخراز": "c039",
     "ابو سعيد الخراز، الوسي، التستري": "c025",
@@ -660,7 +1207,9 @@
     "محمد بن احمد المدني": "c102",
     "ابو سعيد الخادمي": "c103",
     "مفتي الخادم": "c104",
+    "عبد الكريم الكيلاني": "c043",
     "عبد الرحمن الجامي": "c041",
+    "الخوئي": "n003",
     "فخر الدين ابو الحسن علي بن احمد حرالي": "c008",
     "محمد بن شعبه الحراني": "c042",
     "عز الدين ابن الطيب": "c107",
@@ -676,17 +1225,443 @@
     "ابن محلي– ابو عمرو": "c114",
     "القباب": "c115",
     "الطوسي- القونوي": "c116",
-    "Dadiso’ Bar Qatraya": "c117",
-    "محمد بن علي الاندلسي": "c005",
-    "عبد القادر الكيلاني": "c070",
-    "عبد الكريم الكيلاني": "c043"
+    "Dadiso’ Bar Qatraya": "c117"
   },
   "row_overrides": {
     "r0001": {
-      "discrepancy_note": "Nwyia calls this a \"glossaire\" in a marginal note, suggesting it is not the well-known work by al-Ḥārith al-Muḥāsibī. "
+      "title": "كتاب التوهّم",
+      "author": "NA",
+      "discrepancy_note": "The cataloguers of the Nwyian corpus refer to this a \"glossaire\" in a marginal note, suggesting it is not the well-known work by al-Ḥārith al-Muḥāsibī. "
+    },
+    "r0002": {
+      "title": "مخطوطة سريانية",
+      "pub_status": "manuscript",
+      "discrepancy_note": "No further information about this text is given."
+    },
+    "r0003": {
+      "title": "خمسون خصلة الإمام",
+      "author": "الحسن البصري",
+      "work_url": "https://archive.org/details/slwatarfine/sarfine1/page/n231/mode/1up",
+      "pub_status": "manuscript",
+      "pub_citation": "Likely a reproduction of the text, which specifically refers to *ḫamsūna ḫaṣlatin ḥatrā yakūna fī imāmati-hī muḫliṣan laʾinna-hū ḍāminu l-qawm*, reproduced in Abū Ḥāmid al-Ġazālī (d. 505/1111), *Salwat al-ʿārifīn*, ed. al-Sayyid (Beirut: Dār al-Kutub al-ʿIlmīyah, 1432/2011), 230–36 (§ bāb al-imāmah – risālat li-l-Ḥasan al-Baṣrī fī waṣāyā li-l-imām)"
+    },
+    "r0004": {
+      "title": "Différentes oeuvres de traduction, commentaire, notes sur les différentes oeuvres de [Abū ʿAbd al-Raḥmān al-]Sulami",
+      "pub_status": "manuscript",
+      "discrepancy_note": "These apparently contain the notes that Nwyia himself had extracted from the various works of al-Sulamī, for which check the al-Sulamī cluster in this space."
+    },
+    "r0005": {
+      "title": "Documents divers",
+      "folios": "54 pages",
+      "catalog_note": "sans numéro, écriture maghrébine",
+      "pub_status": "manuscript"
+    },
+    "r0006": {
+      "title": "Ibn ʿAṭāʾ Allāḥ (m. 709/1309), et la naissance de la confrérie šād̲ilite : édition critique et traduction des Ḥikam, précedrees d'une introduction sur le soufisme et suivies de notes sur le vocabulaire mystique",
+      "work_url": "https://archive.org/details/paul-nwiya-ibn-ata-allah/page/n3/mode/2up",
+      "pub_citation": "Paul Nwyia, Ibn ʿAṭāʾ Allāḥ (m. 709/1309), et la naissance de la confrérie šād̲ilite : édition critique et traduction des Ḥikam, précedrees d'une introduction sur le soufisme et suivies de notes sur le vocabulaire mystique, Recherches publiées sous la direction de l'Institu de Lettres Orientales de Beyrouth – Nouvelle Série A. Langue arabe et pensée islamique 2 (Beirut: Dar El-Machreq, 1972); second edition, 1990; third edition, 2007"
+    },
+    "r0007": {
+      "title": "Exégèse coranique et langage mystique",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia, \"Exégèse coranique et langage mystique,\" Ph.D. Diss. supervised by Henri Corbin (Paris: Université de Paris – Faculté des lettres et sciences humaines, 1970).",
+      "discrepancy_note": "This copy represents the text of Nwyia's completed doctoral dissertation (*thèse de doctorat*), which was published under the same title. "
+    },
+    "r0008": {
+      "title": "notes sur la philosophie-théologie musulmanes",
+      "pub_status": "manuscript"
+    },
+    "r0009": {
+      "pub_citation": "These appear "
+    },
+    "r0012": {
+      "title": "رسائل ومسائل",
+      "catalog_note": "مطبوع",
+      "pub_status": "published"
+    },
+    "r0032": {
+      "title": "Fragments (sans titre)",
+      "catalog_note": "Fragments d'un ms. arabe; écriture maghrébine"
+    },
+    "r0033": {
+      "title": "Fragments (sans titre)",
+      "catalog_note": "Fragments d'un ms. arabe; écriture maghrébine"
     },
     "r0042": {
       "city": "Boston"
+    },
+    "r0043": {
+      "work_url": "https://id.lib.harvard.edu/alma/990071977810203941/catalog"
+    },
+    "r0058": {
+      "library": "Staatsbibliothek zu Berlin"
+    },
+    "r0059": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00024229"
+    },
+    "r0060": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007511"
+    },
+    "r0061": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011740"
+    },
+    "r0062": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011708"
+    },
+    "r0063": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011728"
+    },
+    "r0064": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011728"
+    },
+    "r0065": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011770"
+    },
+    "r0066": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007594"
+    },
+    "r0067": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011710"
+    },
+    "r0068": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00023932"
+    },
+    "r0069": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00023932"
+    },
+    "r0070": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00024259"
+    },
+    "r0071": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00024086"
+    },
+    "r0072": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00024253"
+    },
+    "r0073": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00022663"
+    },
+    "r0074": {
+      "title": "آداب الأقطاب",
+      "author": "علي بن احمد الحموي الشاذلي الكيزواني",
+      "library": "Staatsbibliothek zu Berlin",
+      "title_translit": "Ādāb al-aqṭāb",
+      "title_translation": "The Etiquette of the Spiritual Poles (aqṭāb)",
+      "author_translit": "ʿAlī b. Aḥmad al-Ḥamawī al-Shādhilī al-Kīzwānī",
+      "work_url": "https://www.saramusik.org/320/texte/",
+      "discrepancy_note": "Author corrected per saramusik.org (al-Maṣādir al-ʿarabiyya li-l-mūsīqā): the work آداب الأقطاب (taṣawwuf/samāʿ) is by ʿAlī b. Aḥmad b. Muḥammad al-Ḥamawī al-Shādhilī al-Kīzwānī — not «محمود الكازواني» as Nwyia read it. Witness: Berlin Spr. 851, ff. 177a–177b (Ahlwardt 3199). NB the Qalamos auto-match earlier (receive/00059083, Spr 851-15, ff. 88–90, anon.) is a DIFFERENT item in the same majmūʿ."
+    },
+    "r0075": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00068645"
+    },
+    "r0076": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011671"
+    },
+    "r0077": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00068801"
+    },
+    "r0078": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00004038"
+    },
+    "r0079": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00068931"
+    },
+    "r0080": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00059074"
+    },
+    "r0081": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069107"
+    },
+    "r0082": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011869"
+    },
+    "r0083": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069119"
+    },
+    "r0084": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069128"
+    },
+    "r0085": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00068715"
+    },
+    "r0086": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069178"
+    },
+    "r0087": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00067658"
+    },
+    "r0088": {
+      "library": "Staatsbibliothek zu Berlin",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00068714"
+    },
+    "r0122": {
+      "work_url": "https://www.fihrist.org.uk/catalog/manuscript_225"
+    },
+    "r0145": {
+      "title": "من كلام سهل",
+      "catalog_note": "اربعة اجزاء: 2، 3، 4، 5"
+    },
+    "r0167": {
+      "title": "سرور الأسرار",
+      "author": "السلمي",
+      "title_translit": "Surūr al-asrār",
+      "title_translation": "The Delight of the Secrets",
+      "author_translit": "al-Sulamī",
+      "catalog_note": "مقتطفات («من كتاب سرور الأسرار»)",
+      "work_url": "https://ablibrary.net/book_content/8708/388",
+      "discrepancy_note": "Author corrected to Abū ʿAbd al-Raḥmān al-Sulamī (d. 412/1021): Nwyia's index captured a garbled fragment «...الخواص، التستري،» (the nisbas al-Khawwāṣ / al-Tustarī, likely transmitters in the excerpt's isnād). Surūr al-asrār attributed to al-Sulamī per ablibrary.net."
+    },
+    "r0184": {
+      "title": "كتاب الشرح والبيان",
+      "catalog_note": "مع ترجمة الى اللغة الفرنسية"
+    },
+    "r0221": {
+      "title": "كتاب الصيام",
+      "catalog_note": "الجزء الاول"
+    },
+    "r0231": {
+      "title": "رسالة الزيتونية",
+      "catalog_note": "نسختان"
+    },
+    "r0243": {
+      "title": "رسالة",
+      "catalog_note": "نص غير مكتمل"
+    },
+    "r0246": {
+      "title": "كتاب الشفاء والعلل",
+      "catalog_note": "مقتطفات"
+    },
+    "r0258": {
+      "work_url": "https://www.qalamos.net/receive/DE15Book_manuscript_00015600"
+    },
+    "r0261": {
+      "title": "طواسين",
+      "catalog_note": "نسختان"
+    },
+    "r0270": {
+      "work_url": "https://www.fihrist.org.uk/catalog/manuscript_11794"
+    },
+    "r0271": {
+      "work_url": "https://www.fihrist.org.uk/catalog/manuscript_1816"
+    },
+    "r0272": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
+    },
+    "r0273": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
+    },
+    "r0274": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
+    },
+    "r0275": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
+    },
+    "r0276": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905427"
+    },
+    "r0277": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90557n"
+    },
+    "r0278": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905605"
+    },
+    "r0279": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90571m"
+    },
+    "r0280": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90575k"
+    },
+    "r0282": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+    },
+    "r0283": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+    },
+    "r0284": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+    },
+    "r0285": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+    },
+    "r0286": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+    },
+    "r0287": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+    },
+    "r0288": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+    },
+    "r0289": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+    },
+    "r0290": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906599"
+    },
+    "r0291": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90660b"
+    },
+    "r0292": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90660b"
+    },
+    "r0293": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc30356f"
+    },
+    "r0296": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc31125c"
+    },
+    "r0298": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc31421x"
+    },
+    "r0299": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc32644j"
+    },
+    "r0300": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc32885z"
+    },
+    "r0301": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33187c"
+    },
+    "r0302": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33572n"
+    },
+    "r0303": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33572n"
+    },
+    "r0304": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33586t"
+    },
+    "r0305": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc5960x"
+    },
+    "r0306": {
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc19984n"
+    },
+    "r0325": {
+      "title": "رسالة طواسين الازل",
+      "catalog_note": "نسختان"
+    },
+    "r0327": {
+      "city": "Berlin",
+      "library": "Staatsbibliothek zu Berlin",
+      "shelfmark": "Sprenger 1169",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069346",
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 1169”: it is Berlin SBB Sprenger 1169, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+    },
+    "r0328": {
+      "city": "Berlin",
+      "library": "Staatsbibliothek zu Berlin",
+      "shelfmark": "Sprenger 1172",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00013389",
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 1172”: it is Berlin SBB Sprenger 1172, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+    },
+    "r0329": {
+      "city": "Berlin",
+      "library": "Staatsbibliothek zu Berlin",
+      "shelfmark": "Petermann II 159",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069343",
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 159”: it is Berlin SBB Petermann II 159, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+    },
+    "r0330": {
+      "city": "Berlin",
+      "library": "Staatsbibliothek zu Berlin",
+      "shelfmark": "Wetzstein II 1730",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00064293",
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 1730”: it is Berlin SBB Wetzstein II 1730, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+    },
+    "r0331": {
+      "city": "Berlin",
+      "library": "Staatsbibliothek zu Berlin",
+      "shelfmark": "Wetzstein II 1757",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069339",
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 1757”: it is Berlin SBB Wetzstein II 1757, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+    },
+    "r0332": {
+      "city": "Berlin",
+      "library": "Staatsbibliothek zu Berlin",
+      "shelfmark": "Wetzstein II 1771",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069342",
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 1771”: it is Berlin SBB Wetzstein II 1771, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+    },
+    "r0333": {
+      "city": "Berlin",
+      "library": "Staatsbibliothek zu Berlin",
+      "shelfmark": "Sprenger 1982",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069344",
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 1982”: it is Berlin SBB Sprenger 1982, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+    },
+    "r0334": {
+      "city": "Berlin",
+      "library": "Staatsbibliothek zu Berlin",
+      "shelfmark": "Petermann I 275",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00020807",
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 275”: it is Berlin SBB Petermann I 275, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+    },
+    "r0335": {
+      "city": "Berlin",
+      "library": "Staatsbibliothek zu Berlin",
+      "shelfmark": "Landberg 552",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007211",
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 552”: it is Berlin SBB Landberg 552, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+    },
+    "r0336": {
+      "city": "Berlin",
+      "library": "Staatsbibliothek zu Berlin",
+      "shelfmark": "Landberg 553",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007212",
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 553”: it is Berlin SBB Landberg 553, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+    },
+    "r0337": {
+      "city": "Berlin",
+      "library": "Staatsbibliothek zu Berlin",
+      "shelfmark": "Landberg 889",
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00058288",
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 889”: it is Berlin SBB Landberg 889, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+    },
+    "r0342": {
+      "title": "رسالة منازل الأبدال في بيان المقامات والأحوال",
+      "title_translit": "Risālat manāzil al-abdāl fī bayān al-maqāmāt wa-l-aḥwāl",
+      "title_translation": "Treatise on the Abodes of the Abdāl (Substitute-Saints), Explaining the Stations and States",
+      "work_url": "https://digi.vatlib.it/view/MSS_Vat.ar.1436",
+      "discrepancy_note": "Title corrected from the heading at f. 82a of Vat.ar.1436: «رسالة منازل الأبدال في بيان المقامات والأحوال للشيخ صدر الدين القونوي». Nwyia's index recorded it as «منازل العبادة في بيان المقامات والاحوال» — a misreading of الأبدال as العبادة (same text, ff. 82a–85a; author al-Qūnawī confirmed)."
+    },
+    "r0343": {
+      "work_url": "https://digi.vatlib.it/view/MSS_Vat.ar.1453"
+    },
+    "r0344": {
+      "work_url": "https://digi.vatlib.it/view/MSS_Vat.ar.291"
+    },
+    "r0346": {
+      "title": "Petites heures de l'office des moines",
+      "catalog_note": "syriaque"
     }
   }
 }

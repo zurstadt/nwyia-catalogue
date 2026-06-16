@@ -34,6 +34,23 @@ OUT_PATH = ROOT / "data" / "data.json"
 # re-running the pipeline preserves the user's work. Produced by harvest_authority.py.
 AUTH_PATH = ROOT / "data" / "authority.json"
 
+# Adjudicator-side row fields that don't come from the PDF extraction. These are
+# the defaults a freshly-generated row carries *before* any override is applied
+# (pub_status starts at "unknown"; the rest empty). Defined here as the single
+# source of truth so harvest_authority.py can reconstruct the exact pre-override
+# baseline it diffs against — keeping the override round-trip idempotent.
+ROW_FIELD_DEFAULTS = {
+    "pub_status": "unknown",
+    "pub_citation": "",
+    "discrepancy_note": "",
+    "title_translit": "",
+    "title_translation": "",
+    "author_translit": "",
+    "author_translation": "",
+    "catalog_note": "",
+    "work_url": "",
+}
+
 # Curated DIN 31635 (with Farrell modifications) for the most common figures.
 # All other clusters get a mechanical fallback; the user will correct in-app.
 CURATED_TRANSLITS = {
@@ -307,7 +324,7 @@ def cluster_confidence(group: list[str]) -> float:
 
 
 def main() -> int:
-    rows = json.loads(ROWS_PATH.read_text())
+    rows = json.loads(ROWS_PATH.read_text(encoding="utf-8"))
 
     # Step 0: readable-English places, split shelfmark/folios, tidy Latin authors.
     cities, libs = normalize.unmapped_places(rows)
@@ -318,7 +335,7 @@ def main() -> int:
         print(f"  NOTE unmapped libraries (passed through): {sorted(libs)}")
 
     # Step 0b: load harvested adjudications (curated names + groupings + overrides).
-    authority = json.loads(AUTH_PATH.read_text()) if AUTH_PATH.exists() else {}
+    authority = json.loads(AUTH_PATH.read_text(encoding="utf-8")) if AUTH_PATH.exists() else {}
     v2c = authority.get("variant_to_cluster", {})
     auth_clusters = authority.get("clusters", {})
     overrides = authority.get("row_overrides", {})
@@ -327,6 +344,20 @@ def main() -> int:
               f"{len(v2c)} pinned variants, {len(overrides)} row overrides")
     if overrides:
         rows = [{**r, **overrides.get(r["id"], {})} for r in rows]
+        # Safeguard: an edited author that isn't pinned in variant_to_cluster
+        # falls through to the heuristic clusterer below and is given a fresh
+        # n### id — detaching it from the cluster the user intended. Warn so the
+        # operator knows to re-run harvest_authority.py (which re-pins it).
+        detached = [(r["id"], (r.get("author", "") or "").strip())
+                    for r in rows
+                    if "author" in overrides.get(r["id"], {})
+                    and (r.get("author", "") or "").strip()
+                    and normalize_ar((r.get("author", "") or "").strip()) not in v2c]
+        if detached:
+            print("  WARNING — edited author(s) not pinned in variant_to_cluster "
+                  "(will get a fresh n### cluster; re-run harvest_authority.py):")
+            for rid, a in detached:
+                print(f"    {rid}: {a!r}")
 
     # Step 1: bucket originals by normalized form.
     norm_to_originals: dict[str, list[str]] = {}
@@ -378,8 +409,18 @@ def main() -> int:
     folded_bucket = {fk: [o for n in ns for o in leftover[n]]
                      for fk, ns in folded_to_norms.items()}
     leftover_clusters = build_clusters(folded_bucket) if folded_bucket else []
-    for idx, group in enumerate(sorted(leftover_clusters, key=lambda g: -sum(len(folded_bucket[fk]) for fk in g))):
-        cid = f"n{idx:03d}"
+    # Number heuristic clusters n000, n001, … but SKIP any id already held by a
+    # pinned cluster. Authority-pinned clusters can themselves be n### (a former
+    # heuristic cluster the user adjudicated), so naive positional numbering would
+    # mint a duplicate cluster_id and collide. Skipping keeps every id unique.
+    used_ids = set(pinned_groups)
+    next_n = 0
+    for group in sorted(leftover_clusters, key=lambda g: -sum(len(folded_bucket[fk]) for fk in g)):
+        while f"n{next_n:03d}" in used_ids:
+            next_n += 1
+        cid = f"n{next_n:03d}"
+        used_ids.add(cid)
+        next_n += 1
         member_norms = [n for fk in group for n in folded_to_norms[fk]]
         all_originals = [o for fk in group for o in folded_bucket[fk]]
         canonical = pick_canonical(all_originals)
@@ -397,19 +438,14 @@ def main() -> int:
 
     cluster_meta.sort(key=lambda c: -c["count"])
 
-    # Step 3: tag each row with its cluster_id; keep any overridden pub fields.
+    # Step 3: tag each row with its cluster_id; default the adjudicator-side
+    # fields (transliteration, translation, cataloguer comment, identification
+    # URL, publication status) that an override may already have filled.
     for r in rows:
         a = r["author"].strip()
         r["author_cluster_id"] = norm_to_cid.get(normalize_ar(a), "") if a else ""
-        r.setdefault("pub_status", "unknown")
-        r.setdefault("pub_citation", "")
-        r.setdefault("discrepancy_note", "")
-        # Adjudicator-side attributes (transliteration, translation, cataloguer
-        # comment, identification URL). Empty by default; filled in the app.
-        for k in ("title_translit", "title_translation",
-                  "author_translit", "author_translation",
-                  "catalog_note", "work_url"):
-            r.setdefault(k, "")
+        for k, dv in ROW_FIELD_DEFAULTS.items():
+            r.setdefault(k, dv)
 
     data = {
         "version": 1,
@@ -425,7 +461,7 @@ def main() -> int:
             "pub_status_values": ["unknown", "published", "partial", "manuscript"],
         },
     }
-    OUT_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2))
+    normalize.write_json_atomic(OUT_PATH, data)
     print(f"Wrote {OUT_PATH}: {len(rows)} rows, {len(cluster_meta)} clusters")
     print("Largest 12 clusters:")
     for c in sorted(cluster_meta, key=lambda c: -c["count"])[:12]:
