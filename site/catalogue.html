@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catalogue — Fonds P. Nwyia</title>
+<meta name="description" content="Searchable catalogue of the manuscripts in Paul Nwyia's collection, filterable by city, library, author and publication status.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">Fonds P.&nbsp;Nwyia <span class="ar">فِهرِس مجموعة نُويا</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="catalogue.html" class="active">Catalogue</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding:2.5rem 0 1.75rem;">
+  <div class="container">
+    <div class="eyebrow">Index des Lieux</div>
+    <h1 style="font-size:2rem;margin:0;">Catalogue</h1>
+    <p class="lead" style="margin:.5rem 0 0;">Search and filter the collection by place, author and the publication status of each text.</p>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="container controls-inner">
+    <div class="search">
+      <input type="search" id="q" placeholder="Search title, author, shelfmark…" autocomplete="off">
+    </div>
+    <div class="field"><label for="f-city">City</label><select id="f-city"></select></div>
+    <div class="field"><label for="f-lib">Library</label><select id="f-lib"></select></div>
+    <div class="field"><label for="f-auth">Author</label><select id="f-auth"></select></div>
+    <div class="field"><label for="f-status">Status</label><select id="f-status"></select></div>
+    <div class="field"><label for="f-sort">Sort</label>
+      <select id="f-sort">
+        <option value="place">By place</option>
+        <option value="author">By author</option>
+        <option value="status">By status</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+  <div class="result-count" id="count"></div>
+  <div id="results"><div class="loading">Loading catalogue…</div></div>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><strong>Fonds P. Nwyia — Index des Lieux</strong></div>
+    <div>Bibliographic data in part from
+      <a href="https://digitalsufism.github.io/" target="_blank" rel="noopener">Digital Sufism</a>.</div>
+  </div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => (s == null ? "" : String(s)).replace(/[&<>"']/g,
+  c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+const STATUS = { published:"Published edition", manuscript:"Manuscript only", unknown:"Status unknown", partial:"Partially published" };
+
+let ROWS = [], CLU = new Map();
+
+function clusterLabel(r) {
+  const c = CLU.get(r.author_cluster_id);
+  return c ? (c.canonical_translit || "") : "";
+}
+function clusterAr(r) {
+  const c = CLU.get(r.author_cluster_id);
+  return c ? (c.canonical_ar || "") : "";
+}
+
+function fillSelect(el, values, allLabel) {
+  el.innerHTML = `<option value="">${allLabel}</option>` +
+    values.map(v => `<option value="${esc(v)}">${esc(v)}</option>`).join("");
+}
+
+function populateFilters() {
+  const uniq = k => [...new Set(ROWS.map(r => (r[k] || "").trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+  fillSelect($("f-city"), uniq("city"), "All cities");
+  fillSelect($("f-lib"), uniq("library"), "All libraries");
+  const authors = [...new Set(ROWS.map(clusterLabel).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+  fillSelect($("f-auth"), authors, "All authors");
+  fillSelect($("f-status"), Object.keys(STATUS).filter(s => ROWS.some(r => (r.pub_status||"unknown")===s)).map(s=>s),
+    "Any status");
+  // show readable labels for status options
+  [...$("f-status").options].forEach(o => { if (o.value) o.textContent = STATUS[o.value] || o.value; });
+}
+
+function matches(r, q, city, lib, auth, status) {
+  if (city && (r.city||"") !== city) return false;
+  if (lib && (r.library||"") !== lib) return false;
+  if (auth && clusterLabel(r) !== auth) return false;
+  if (status && (r.pub_status||"unknown") !== status) return false;
+  if (q) {
+    const hay = [r.title, r.title_translit, r.title_translation, r.author, clusterLabel(r),
+                 clusterAr(r), r.shelfmark, r.archive, r.city, r.library].join(" ").toLowerCase();
+    if (!q.split(/\s+/).every(t => hay.includes(t))) return false;
+  }
+  return true;
+}
+
+function sortRows(rows, mode) {
+  const by = (...fns) => (a,b) => { for (const f of fns){ const d=f(a,b); if(d) return d; } return 0; };
+  const s = k => (a,b) => (a[k]||"~").localeCompare(b[k]||"~");
+  if (mode === "author") return rows.sort(by((a,b)=>clusterLabel(a).localeCompare(clusterLabel(b)), s("city")));
+  if (mode === "status") {
+    const ord = { published:0, partial:1, manuscript:2, unknown:3 };
+    return rows.sort(by((a,b)=>(ord[a.pub_status||"unknown"]-ord[b.pub_status||"unknown"]), s("city")));
+  }
+  return rows.sort(by(s("city"), s("library"), s("shelfmark")));
+}
+
+function entryHtml(r) {
+  const status = r.pub_status || "unknown";
+  const badge = `<span class="badge badge-${esc(status)}">${esc(STATUS[status]||status)}</span>`;
+  const translit = r.title_translit ? `<div class="entry-translit">${esc(r.title_translit)}</div>` : "";
+  const transln = r.title_translation ? `<div class="entry-translation">${esc(r.title_translation)}</div>` : "";
+  const authTranslit = clusterLabel(r);
+  const authAr = r.author || clusterAr(r);
+  const author = (authAr || authTranslit) ? `<div class="entry-author">
+      ${authAr ? `<span class="ar-inline">${esc(authAr)}</span>` : ""}
+      ${authTranslit ? ` &nbsp;·&nbsp; <span class="translit">${esc(authTranslit)}</span>` : ""}
+    </div>` : "";
+  const meta = [
+    r.city && `<span><b>City:</b> ${esc(r.city)}</span>`,
+    r.library && `<span><b>Library:</b> ${esc(r.library)}</span>`,
+    r.shelfmark && `<span><b>Shelfmark:</b> ${esc(r.shelfmark)}</span>`,
+    r.folios && `<span><b>Folios:</b> ${esc(r.folios)}</span>`,
+    r.archive && `<span><b>Fonds cote:</b> <span class="cote">${esc(r.archive)}</span></span>`,
+  ].filter(Boolean).join("");
+  let cite = "";
+  if (r.pub_citation) cite = `<div class="entry-cite">${esc(r.pub_citation)}` +
+    (r.work_url ? ` — <a href="${esc(r.work_url)}" target="_blank" rel="noopener">view edition ↗</a>` : "") + `</div>`;
+  else if (r.work_url) cite = `<div class="entry-cite"><a href="${esc(r.work_url)}" target="_blank" rel="noopener">identification / catalogue ↗</a></div>`;
+  const note = r.discrepancy_note ? `<div class="entry-cite muted">⚠ ${esc(r.discrepancy_note)}</div>` : "";
+  return `<article class="entry">
+    <div class="entry-head">
+      <div>
+        <h2 class="entry-title">${esc(r.title || "—")}</h2>
+        ${translit}${transln}${author}
+      </div>
+      <div>${badge}</div>
+    </div>
+    <div class="entry-meta">${meta}</div>
+    ${cite}${note}
+  </article>`;
+}
+
+function render() {
+  const q = $("q").value.trim().toLowerCase();
+  const city = $("f-city").value, lib = $("f-lib").value, auth = $("f-auth").value, status = $("f-status").value;
+  let out = ROWS.filter(r => matches(r, q, city, lib, auth, status));
+  out = sortRows(out, $("f-sort").value);
+  $("count").textContent = `${out.length} of ${ROWS.length} manuscripts`;
+  $("results").innerHTML = out.length
+    ? out.map(entryHtml).join("")
+    : `<div class="loading">No manuscripts match these filters.</div>`;
+}
+
+let t; const debounced = () => { clearTimeout(t); t = setTimeout(render, 120); };
+
+fetch("../data/data.json", { cache: "no-store" })
+  .then(r => r.json())
+  .then(d => {
+    ROWS = d.rows || [];
+    (d.clusters || []).forEach(c => CLU.set(c.cluster_id, c));
+    populateFilters();
+    render();
+    $("q").addEventListener("input", debounced);
+    ["f-city","f-lib","f-auth","f-status","f-sort"].forEach(id => $(id).addEventListener("change", render));
+  })
+  .catch(e => { $("results").innerHTML = `<div class="loading">Could not load the catalogue (${esc(e.message)}).</div>`; });
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fonds P. Nwyia — Index des Lieux</title>
+<meta name="description" content="A catalogue of the Sufi manuscripts assembled and studied by Paul Nwyia (1925–1980), indexed by holding institution, with publication status of their texts.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">Fonds P.&nbsp;Nwyia <span class="ar">فِهرِس مجموعة نُويا</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="catalogue.html">Catalogue</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">Index des Lieux · فهرس الأماكن</div>
+    <h1>The Manuscript Collection of Paul Nwyia</h1>
+    <div class="ar-title">مجموعة بولس نويا للمخطوطات الصوفية</div>
+    <p class="lead">
+      A working catalogue of the Sufi manuscripts assembled and studied by the orientalist
+      <strong>Paul Nwyia</strong> (1925–1980), reconstructed from his own index and arranged by
+      holding institution — with each text traced, where possible, to its published critical edition.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="catalogue.html">Browse the catalogue →</a>
+      <a class="btn btn-ghost" href="about.html">About the project</a>
+    </div>
+    <div class="stats" id="stats">
+      <div class="stat"><div class="num" id="s-mss">—</div><div class="lbl">Manuscripts</div></div>
+      <div class="stat"><div class="num" id="s-lib">—</div><div class="lbl">Libraries</div></div>
+      <div class="stat"><div class="num" id="s-city">—</div><div class="lbl">Cities</div></div>
+      <div class="stat"><div class="num" id="s-auth">—</div><div class="lbl">Authors</div></div>
+      <div class="stat"><div class="num" id="s-pub">—</div><div class="lbl">Editions identified</div></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="grid grid-3">
+      <a class="card" href="catalogue.html">
+        <div class="icon">❡</div>
+        <h3>By place</h3>
+        <p>Every manuscript indexed by city, library and shelfmark — from the Bibliothèque
+        Nationale and the Staatsbibliothek zu Berlin to the Süleymaniye and the Vatican.</p>
+      </a>
+      <a class="card" href="catalogue.html">
+        <div class="icon">✸</div>
+        <h3>By author &amp; work</h3>
+        <p>Texts grouped under their authors — al-Sulamī, al-Ḥallāj, al-Niffarī, Ibn ʿAṭāʾ Allāh,
+        al-Qūnawī — with transliteration and translation of each title.</p>
+      </a>
+      <a class="card" href="about.html">
+        <div class="icon">◆</div>
+        <h3>Publication status</h3>
+        <p>Where a work has appeared in a critical edition, the entry links the manuscript to its
+        printed text and citation — drawing on dedicated bibliographies of early Sufism.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="feature-dark">
+  <div class="container">
+    <div class="grid grid-2" style="align-items:center;">
+      <div>
+        <div class="eyebrow" style="color:var(--accent)">Provenance recovered</div>
+        <h2>The Tübingen Depot</h2>
+        <p>Eleven copies of Ibn ʿAṭāʾ Allāh's <em>Ḥikam</em> that Nwyia recorded as held at
+        “Tübingen” are in fact Berlin manuscripts: the oriental holdings of the Preußische
+        Staatsbibliothek were displaced to a depot at Tübingen between 1945 and 1968. Each has
+        been recoded to its true Staatsbibliothek zu Berlin shelfmark and linked to Qalamos.</p>
+        <p class="muted">This and other identification corrections — Vatican and Escorial mislabels,
+        BnF title fixes — are documented in the project's findings.</p>
+      </div>
+      <div>
+        <div class="card" style="background:#222b38;border-color:#33404f;">
+          <h3 style="color:var(--accent)">A note on the index</h3>
+          <p style="color:#c2c9d2">Nwyia's <em>archive</em> numbers refer to his <em>own</em>
+          ordering of the collection, not to a holding library. Works are therefore identified by
+          author and title rather than by shelfmark alone — the principle behind this catalogue.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong>Fonds P. Nwyia — Index des Lieux</strong><br>
+      A scholarly catalogue of Paul Nwyia's Sufi manuscript collection.
+    </div>
+    <div>
+      Built on data adjudicated from Nwyia's index.<br>
+      Bibliographic data in part from
+      <a href="https://digitalsufism.github.io/" target="_blank" rel="noopener">Digital Sufism</a>.
+    </div>
+  </div>
+</footer>
+
+<script>
+fetch("../data/data.json", { cache: "no-store" })
+  .then(r => r.json())
+  .then(d => {
+    const rows = d.rows || [];
+    const uniq = k => new Set(rows.map(r => (r[k] || "").trim()).filter(Boolean)).size;
+    const set = (id, n) => document.getElementById(id).textContent = n.toLocaleString();
+    set("s-mss", rows.length);
+    set("s-lib", uniq("library"));
+    set("s-city", uniq("city"));
+    set("s-auth", (d.clusters || []).filter(c =>
+      rows.some(r => r.author_cluster_id === c.cluster_id)).length);
+    set("s-pub", rows.filter(r => r.pub_status === "published").length);
+  })
+  .catch(() => {});
+</script>
+</body>
+</html>
