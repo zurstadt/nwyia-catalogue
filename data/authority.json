@@ -2505,11 +2505,42 @@
       "user_confirmed": true
     },
     "c096": {
-      "canonical_ar": "عبد الوهاب بن أحمد بن علي الأنصاري",
-      "canonical_translit": "ʿAbd al-Wahhāb a. Aḥmad b. ʿAlī al-Anṣārī",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "canonical_ar": "عبد الوهاب الشعراني",
+      "canonical_translit": "ʿAbd al-Wahhāb al-Shaʿrānī",
+      "full_name": "ʿAbd al-Wahhāb b. Aḥmad b. ʿAlī al-Anṣārī al-Shaʿrānī",
+      "dates": "d. 973/1565",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q3594808",
+          "url": "https://www.wikidata.org/wiki/Q3594808"
+        },
+        {
+          "source": "VIAF",
+          "title": "90042253",
+          "url": "https://viaf.org/viaf/90042253"
+        },
+        {
+          "source": "GND",
+          "title": "119092913",
+          "url": "https://d-nb.info/gnd/119092913"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Al-Sha'rani",
+          "url": "https://en.wikipedia.org/wiki/Al-Sha'rani"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "ʿAbd al-Wahhāb al-Shaʿrānī",
+          "url": "https://openalex.org/works?search=%CA%BFAbd%20al-Wahh%C4%81b%20al-Sha%CA%BFr%C4%81n%C4%AB"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "ʿAbd al-Wahhāb al-Shaʿrānī",
+          "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-Wahh%C4%81b%20al-Sha%CA%BFr%C4%81n%C4%AB"
+        }
+      ],
       "user_confirmed": true
     },
     "c098": {
@@ -2749,6 +2780,88 @@
       "authorities": [],
       "user_confirmed": true
     },
+    "c119": {
+      "canonical_ar": "أبو المعين النسفي",
+      "canonical_translit": "Abū al-Muʿīn al-Nasafī",
+      "full_name": "Abū al-Muʿīn Maymūn b. Muḥammad al-Nasafī",
+      "dates": "d. 508/1114",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q25451679",
+          "url": "https://www.wikidata.org/wiki/Q25451679"
+        },
+        {
+          "source": "VIAF",
+          "title": "69239686",
+          "url": "https://viaf.org/viaf/69239686"
+        },
+        {
+          "source": "GND",
+          "title": "102416893",
+          "url": "https://d-nb.info/gnd/102416893"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Abu al-Mu'in al-Nasafi",
+          "url": "https://en.wikipedia.org/wiki/Abu_al-Mu'in_al-Nasafi"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abū al-Muʿīn al-Nasafī",
+          "url": "https://openalex.org/works?search=Ab%C5%AB%20al-Mu%CA%BF%C4%ABn%20al-Nasaf%C4%AB"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abū al-Muʿīn al-Nasafī",
+          "url": "https://scholar.google.com/scholar?q=Ab%C5%AB%20al-Mu%CA%BF%C4%ABn%20al-Nasaf%C4%AB"
+        }
+      ],
+      "user_confirmed": true
+    },
+    "c120": {
+      "canonical_ar": "مكحول النسفي",
+      "canonical_translit": "Makḥūl al-Nasafī",
+      "full_name": "Abū Muṭīʿ Makḥūl b. al-Faḍl al-Nasafī",
+      "dates": "d. 318/930",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q124773547",
+          "url": "https://www.wikidata.org/wiki/Q124773547"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Makḥūl al-Nasafī",
+          "url": "https://openalex.org/works?search=Mak%E1%B8%A5%C5%ABl%20al-Nasaf%C4%AB"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Makḥūl al-Nasafī",
+          "url": "https://scholar.google.com/scholar?q=Mak%E1%B8%A5%C5%ABl%20al-Nasaf%C4%AB"
+        }
+      ],
+      "user_confirmed": true
+    },
+    "c121": {
+      "canonical_ar": "عبد الله اليافعي",
+      "canonical_translit": "ʿAbd Allāh al-Yāfiʿī",
+      "full_name": "ʿAfīf al-Dīn ʿAbd Allāh b. Asʿad al-Yāfiʿī",
+      "dates": "d. 768/1367",
+      "authorities": [
+        {
+          "source": "OpenAlex",
+          "title": "ʿAbd Allāh al-Yāfiʿī",
+          "url": "https://openalex.org/works?search=%CA%BFAbd%20All%C4%81h%20al-Y%C4%81fi%CA%BF%C4%AB"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "ʿAbd Allāh al-Yāfiʿī",
+          "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20All%C4%81h%20al-Y%C4%81fi%CA%BF%C4%AB"
+        }
+      ],
+      "user_confirmed": true
+    },
     "n000": {
       "canonical_ar": "النيسابوري",
       "canonical_translit": "al-Naysābūrī",
@@ -2775,6 +2888,7 @@
     }
   },
   "variant_to_cluster": {
+    "الحارث المحاسبي": "c015",
     "الحسن البصري": "c009",
     "بولس نويا": "c011",
     "ميشال الار": "c019",
@@ -2800,6 +2914,7 @@
     "ابن طلموس": "c058",
     "روزبهان الشيرازي": "c021",
     "السلمي": "c001",
+    "ابو طالب المكي": "c024",
     "صدر الدين الشيرازي": "c029",
     "محمد الكتاني": "c059",
     "النيسابوري": "n000",
@@ -2814,7 +2929,6 @@
     "ست عجم بنت النفيس": "c063",
     "داود الباخلي الاسكندري": "c064",
     "علي بن احمد الحموي الشاذلي الكيزواني": "c065",
-    "ابو طالب المكي": "c024",
     "القشيري": "c007",
     "عبد الرزاق بن ابي الغنائم القاشاني": "c060",
     "داود بن محمود القيصري": "c030",
@@ -2831,6 +2945,7 @@
     "شقيق البلخي": "c017",
     "ابو القاسم الجنيد": "c075",
     "النفري": "c010",
+    "ابو المعين النسفي": "c119",
     "الماتريدي": "c032",
     "فايز المقدسي": "c076",
     "ابو بكر المزودي": "c077",
@@ -2850,16 +2965,16 @@
     "ابن الجوزي": "c035",
     "السهروردي": "c084",
     "ابن باكويه الشيرازي": "c085",
+    "ابو مطيع مكحول النسفي": "c120",
     "ابو الحسن البصري": "c009",
     "ابو الفرج ابن عبد المحسن الانصاري": "c087",
     "ابو زكريا يحيي بن شرف الدين النووي": "c088",
-    "الحارث المحاسبي": "c015",
+    "المستملي": "c118",
     "عبد الرحمن ابن احمد": "c089",
     "محمد الصقلي": "c018",
     "عبد الرحمن محمد بن محمد الاسفاريني": "c090",
     "عبدالله الانصاري": "c091",
     "ابو محمد روزبهان البقلي الشيرازي": "c021",
-    "المستملي": "c118",
     "البصري": "c009",
     "النوري": "c036",
     "الروزباري": "c037",
@@ -2884,6 +2999,7 @@
     "ابو سعيد الخادمي": "c103",
     "مفتي الخادم": "c104",
     "عبد الكريم الكيلاني": "c043",
+    "اليافعي": "c121",
     "عبد الرحمن الجامي": "c041",
     "الخوئي": "n003",
     "فخر الدين ابو الحسن علي بن احمد حرالي": "c008",
@@ -2906,7 +3022,9 @@
   "row_overrides": {
     "r0001": {
       "title": "كتاب التوهّم",
-      "author": "NA",
+      "author": "الحارث المحاسبي",
+      "pub_status": "published",
+      "pub_citation": "al-Ḥārith al-Muḥāsibī, Kitāb al-Tawahhum, ed. A. J. Arberry, Cairo, 1937.",
       "discrepancy_note": "The cataloguers of the Nwyian corpus refer to this a \"glossaire\" in a marginal note, suggesting it is not the well-known work by al-Ḥārith al-Muḥāsibī. "
     },
     "r0002": {
@@ -2983,6 +3101,11 @@
       "work_url": "http://mc.dlib.nyu.edu/files/books/princeton_aco004748/princeton_aco004748_lo.pdf",
       "pub_status": "published",
       "pub_citation": "Kitāb ʿUyūb al-nafs. Beirut: Dār al-Ahliyah, N.D."
+    },
+    "r0041": {
+      "author": "ابو طالب المكي",
+      "pub_status": "published",
+      "pub_citation": "Abū Ṭālib al-Makkī, Qūt al-qulūb fī muʿāmalat al-maḥbūb, Cairo: al-Maṭbaʿa al-Maymaniyya, 1310/1892 (and later editions)."
     },
     "r0042": {
       "city": "Boston"
@@ -3208,6 +3331,11 @@
       "pub_status": "published",
       "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
     },
+    "r0121": {
+      "author": "أبو المعين النسفي",
+      "pub_status": "published",
+      "pub_citation": "Abū al-Muʿīn al-Nasafī, Tabṣirat al-adilla fī uṣūl al-dīn, ed. Claude Salamé, 2 vols., Damascus: IFEAD, 1990–93."
+    },
     "r0122": {
       "work_url": "https://www.fihrist.org.uk/catalog/manuscript_225"
     },
@@ -3328,6 +3456,11 @@
     "r0174": {
       "pub_status": "published",
       "pub_citation": "ʿAbd al-Qādir Aḥmad ʿAṭā (ed.). al-Masāʾil fī Aʿmāl al-Qulūb wa-l-Jawāriḥ - al-Makāsib - al-ʿAql. Cairo: ʿĀlam al-Kutub, 1969."
+    },
+    "r0175": {
+      "author": "المستملي",
+      "pub_status": "published",
+      "pub_citation": "Ismāʿīl b. Muḥammad al-Mustamlī al-Buḫārī, Sharḥ al-Taʿarruf li-madhhab al-taṣawwuf, ed. Muḥammad Rawshan, 5 vols., Tehran: Asāṭīr, 1363–66 hš."
     },
     "r0176": {
       "pub_status": "published",
@@ -3566,7 +3699,10 @@
       "pub_citation": "al-Nafaḥāt al-ilāhiyya, ed. Muḥammad Khwājawī, Tehran, 1996."
     },
     "r0279": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90571m"
+      "author": "اليافعي",
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90571m",
+      "pub_status": "published",
+      "pub_citation": "ʿAbd Allāh b. Asʿad al-Yāfiʿī, Mirʾāt al-janān wa-ʿibrat al-yaqẓān, 4 vols., Hyderabad: Dāʾirat al-Maʿārif al-Niẓāmiyya, 1337–39/1918–21."
     },
     "r0280": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90575k"
