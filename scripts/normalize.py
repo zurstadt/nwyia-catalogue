@@ -267,13 +267,24 @@ def normalize_latin_author(s: str) -> str:
     return " ".join(_cap_word(w) for w in s.split(" ") if w)
 
 
+# Author strings that mean "not attributed / anonymous" rather than a real name.
+# Nwyia's catalogue marks unattributed works "NA" (occasionally "N/A"); left as-is
+# these seed a spurious one-row author cluster, so we treat them as a blank author.
+AUTHOR_PLACEHOLDERS = {"na", "n/a", "n.a.", "n.a", "n a"}
+
+
+def blank_author_placeholder(s: str) -> str:
+    """Map an unattributed-author placeholder (NA, N/A, …) to an empty string."""
+    return "" if (s or "").strip().lower() in AUTHOR_PLACEHOLDERS else (s or "")
+
+
 def normalize_rows(rows: list[dict]) -> list[dict]:
     """Return new rows with English places, split shelfmark/folios, clean authors."""
     out: list[dict] = []
     for r in rows:
         shelfmark, folios = split_shelfmark(r.get("shelfmark_raw", ""))
         title = space_letters_digits(strip_orphan_marks(r.get("title", "").strip()))
-        author = strip_orphan_marks(r.get("author", "").strip())
+        author = blank_author_placeholder(strip_orphan_marks(r.get("author", "").strip()))
         if author and not has_arabic(author):
             author = normalize_latin_author(author)
         city = display_city(r.get("city", ""))

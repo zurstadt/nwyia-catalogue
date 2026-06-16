@@ -344,6 +344,12 @@ def main() -> int:
               f"{len(v2c)} pinned variants, {len(overrides)} row overrides")
     if overrides:
         rows = [{**r, **overrides.get(r["id"], {})} for r in rows]
+        # Neutralize unattributed-author placeholders ("NA") that arrive via an
+        # override (normalize_rows already blanks them in the raw pass, but an
+        # override is applied on top of that). Keeps anonymous works from seeding
+        # a spurious one-row cluster.
+        rows = [{**r, "author": normalize.blank_author_placeholder(r.get("author", ""))}
+                for r in rows]
         # Safeguard: an edited author that isn't pinned in variant_to_cluster
         # falls through to the heuristic clusterer below and is given a fresh
         # n### id — detaching it from the cluster the user intended. Warn so the
