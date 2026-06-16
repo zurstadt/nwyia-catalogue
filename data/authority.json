@@ -1152,13 +1152,13 @@
     "خالد بن عيسي بن احمد البلوي ... بن": "c072",
     "ابو زيد عبد الرحمن بن عبد القادر الفاسي": "c073",
     "محمد بن سعيد بن حمادي البصيري": "c074",
+    "التستري": "c025",
     "شقيق البلخي": "c017",
     "ابو القاسم الجنيد": "c075",
     "النفري": "c010",
     "الماتريدي": "c032",
     "فايز المقدسي": "c076",
     "ابو بكر المزودي": "c077",
-    "التستري": "c025",
     "علي الاهوازي": "c078",
     "ابن عباد": "c014",
     "حسن البصري": "c009",
@@ -1279,6 +1279,16 @@
       "catalog_note": "مطبوع",
       "pub_status": "published"
     },
+    "r0016": {
+      "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
+      "pub_status": "published",
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. al-Iʿlām bi-ishārāt ahl al-ilhām, Osman Yahia RG 281 [Verified A]."
+    },
+    "r0019": {
+      "work_url": "https://archive.org/details/kitbalawsn00usaiuoft",
+      "pub_status": "published",
+      "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969."
+    },
     "r0032": {
       "title": "Fragments (sans titre)",
       "catalog_note": "Fragments d'un ms. arabe; écriture maghrébine"
@@ -1286,6 +1296,11 @@
     "r0033": {
       "title": "Fragments (sans titre)",
       "catalog_note": "Fragments d'un ms. arabe; écriture maghrébine"
+    },
+    "r0040": {
+      "work_url": "http://mc.dlib.nyu.edu/files/books/princeton_aco004748/princeton_aco004748_lo.pdf",
+      "pub_status": "published",
+      "pub_citation": "Kitāb ʿUyūb al-nafs. Beirut: Dār al-Ahliyah, N.D."
     },
     "r0042": {
       "city": "Boston"
@@ -1314,11 +1329,15 @@
     },
     "r0063": {
       "library": "Staatsbibliothek zu Berlin",
-      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011728"
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011728",
+      "pub_status": "published",
+      "pub_citation": "Etan Kohlberg (ed.).  \"Manāhij al-ʿĀrifīn: A Treatise on Ṣūfism by Abū ʿAbd al-Raḥmān al-Sulamī,\" Jerusalem Studies in Arabic and Islam 1 (1979): pp. 19-39; reprint II, pp. 133-158. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
     },
     "r0064": {
       "library": "Staatsbibliothek zu Berlin",
-      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011728"
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011728",
+      "pub_status": "published",
+      "pub_citation": "Etan Kohlberg (ed.).  \"Manāhij al-ʿĀrifīn: A Treatise on Ṣūfism by Abū ʿAbd al-Raḥmān al-Sulamī,\" Jerusalem Studies in Arabic and Islam 1 (1979): pp. 19-39; reprint II, pp. 133-158. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
     },
     "r0065": {
       "library": "Staatsbibliothek zu Berlin",
@@ -1388,7 +1407,9 @@
     },
     "r0080": {
       "library": "Staatsbibliothek zu Berlin",
-      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00059074"
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00059074",
+      "pub_status": "published",
+      "pub_citation": "Süleyman Ateş (ed.). \"Darajāt al-Muʿāmalāt,\" pp. ٢١-٢٦. In Süleyman Ateş (ed.). Tisʿat Kutub li-Abī ʿAbd al-Raḥmān al-Sulamī / Tasavvufun Ana Ilkeleri Sülemî'nin Risaleleri. Ankara: Ankara Üniversitesi Basimevi, 1401/1981; reprint. Beirut: al-Nāshir, 1414/1993."
     },
     "r0081": {
       "library": "Staatsbibliothek zu Berlin",
@@ -1422,12 +1443,92 @@
       "library": "Staatsbibliothek zu Berlin",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00068714"
     },
+    "r0106": {
+      "author": "التستري",
+      "pub_status": "published"
+    },
+    "r0110": {
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed.). “Šaqīq al-Balḫī, Ādāb al-ʿibādāt,” in Trois œuvres inédites de mystiques musulmans. Beyrouth: Dar el-Machreq, 1973."
+    },
+    "r0111": {
+      "work_url": "http://mc.dlib.nyu.edu/files/books/princeton_aco004748/princeton_aco004748_lo.pdf",
+      "pub_status": "published",
+      "pub_citation": "Kitāb ʿUyūb al-nafs. Beirut: Dār al-Ahliyah, N.D."
+    },
+    "r0112": {
+      "work_url": "http://abdelmagidzarrouki.com/2013-05-06-14-45-36/finish/682-/64652-/0",
+      "pub_status": "published",
+      "pub_citation": "Süleyman Ateş (ed.). \"Sulūk al-ʿĀrifīn,\"pp. ١٥٣-١٧٠. In Tisʿat Kutub fī Uṣūl al-Taṣawwuf wa-l-Zuhd li-Abī ʿAbd al-Raḥmān al-Sulamī / Tasavvufun Ana Ilkeleri Sülemî'nin Risaleleri. Ankara: Ankara Üniversitesi Basimevi, 1401/1981; reprint Beirut: al-Nāshir, 1414/1993 ; reprint III, pp. 557-580. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
+    },
+    "r0119": {
+      "work_url": "https://archive.org/details/Niffari",
+      "pub_status": "published",
+      "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
+    },
+    "r0120": {
+      "work_url": "https://archive.org/details/Niffari",
+      "pub_status": "published",
+      "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
+    },
     "r0122": {
       "work_url": "https://www.fihrist.org.uk/catalog/manuscript_225"
+    },
+    "r0129": {
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed.). Ar-Rasāʾil al-ṣughrā li-Ibn ʿAbbād al-Rundī. Beyrouth: Dar el-Machreq."
+    },
+    "r0130": {
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed.). Ar-Rasāʾil al-ṣughrā li-Ibn ʿAbbād al-Rundī. Beyrouth: Dar el-Machreq."
+    },
+    "r0131": {
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed.). Ar-Rasāʾil al-ṣughrā li-Ibn ʿAbbād al-Rundī. Beyrouth: Dar el-Machreq."
+    },
+    "r0137": {
+      "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
+      "pub_status": "published",
+      "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah."
+    },
+    "r0138": {
+      "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
+      "pub_status": "published",
+      "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah."
+    },
+    "r0139": {
+      "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
+      "pub_status": "published",
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): al-Kawkab al-durrī fī manāqib Dhī al-Nūn al-Miṣrī, Osman Yahia RG 347 [Verified B]."
     },
     "r0145": {
       "title": "من كلام سهل",
       "catalog_note": "اربعة اجزاء: 2، 3، 4، 5"
+    },
+    "r0157": {
+      "work_url": "https://archive.org/details/sufi-works_201905",
+      "pub_status": "published",
+      "pub_citation": "Qāsim Muḥammad ʿAbbās (ed.). “Bustān al-Maʿrifah,\" pp. 213-217. In ʿAbbās. al-Ḥallāj: al-Aʿmāl al-Kāmilah. Beirut: Riyāḍ al-Rayyis, 2002."
+    },
+    "r0160": {
+      "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
+      "pub_status": "published",
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. al-Ḥujub, Osman Yahia RG 247 [Verified A]."
+    },
+    "r0161": {
+      "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
+      "pub_status": "published",
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. al-Khalwa, Osman Yahia RG 255 [Verified A]."
+    },
+    "r0163": {
+      "work_url": "http://kitaplar.ankara.edu.tr/dosyalar/pdf/743.pdf",
+      "pub_status": "published",
+      "pub_citation": "Süleyman Ateş (ed.). \"Kitāb al-Futuwwah,\" pp. ١-١١٥. In Süleyman Ateş (ed.). Tasavvufta Fütüvet. Ankara: Ankara Üniversitesi, 1977 ; reprint II, pp. 207-334. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
+    },
+    "r0165": {
+      "work_url": "http://ensani.ir/file/download/article/20101118190255-259.pdf",
+      "pub_status": "published",
+      "pub_citation": "Najma Rijāyī, \"al-Farq bayna ʿIlm al-Sharīʿah wa-l-Ḥaqīqah,\" Maʿārif-i Islāmī 14/42 (1376^/1998): pp. 398-414."
     },
     "r0167": {
       "title": "سرور الأسرار",
@@ -1437,19 +1538,95 @@
       "author_translit": "al-Sulamī",
       "catalog_note": "مقتطفات («من كتاب سرور الأسرار»)",
       "work_url": "https://ablibrary.net/book_content/8708/388",
+      "pub_status": "published",
       "discrepancy_note": "Author corrected to Abū ʿAbd al-Raḥmān al-Sulamī (d. 412/1021): Nwyia's index captured a garbled fragment «...الخواص، التستري،» (the nisbas al-Khawwāṣ / al-Tustarī, likely transmitters in the excerpt's isnād). Surūr al-asrār attributed to al-Sulamī per ablibrary.net."
+    },
+    "r0173": {
+      "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
+      "pub_status": "published",
+      "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah."
     },
     "r0184": {
       "title": "كتاب الشرح والبيان",
       "catalog_note": "مع ترجمة الى اللغة الفرنسية"
     },
+    "r0187": {
+      "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
+      "pub_status": "published",
+      "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah."
+    },
+    "r0188": {
+      "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
+      "pub_status": "published",
+      "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah."
+    },
+    "r0189": {
+      "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
+      "pub_status": "published",
+      "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah."
+    },
+    "r0190": {
+      "pub_status": "published"
+    },
+    "r0191": {
+      "work_url": "http://abdelmagidzarrouki.com/2013-05-06-14-45-36/finish/682-/64652-/0",
+      "pub_status": "published",
+      "pub_citation": "Süleyman Ateş (ed.). \"Masʿalat Darajāt al-Ṣādiqīn,\" pp. ١٤١-١٥٢. In Süleyman Ateş (ed.). Tisʿat Kutub li-Abī ʿAbd al-Raḥmān al-Sulamī / Tasavvufun Ana Ilkeleri Sülemî'nin Risaleleri. Ankara: Kuliyyat Ilahiyat, 1401/1981; reprint Beirut: al-Nāshir, 1414/1993."
+    },
+    "r0194": {
+      "work_url": "https://archive.org/details/in.ernet.dli.2015.323552/page/n157",
+      "pub_status": "published",
+      "pub_citation": "Louis Massignon. \"Le Dîwân d'al-Ḥallâj. Essai de Reconstitution, Édition, et Traduction,\" Journal Asiatique Vol. CCXVIII (1931): pp. 1-158."
+    },
+    "r0196": {
+      "work_url": "http://abdelmagidzarrouki.com/2013-05-06-14-45-36/finish/682-/64652-/0",
+      "pub_status": "published",
+      "pub_citation": "Süleyman Ateş (ed.). \"Bayān al-Zalal,\" pp. ٤٢٩-٤٥٦. Süleyman Ateş (ed.). Tisʿat Kutub fī Uṣūl al-Taṣawwuf wa-l-Zuhd li-Abī ʿAbd al-Raḥmān al-Sulamī / Tasavvufun Ana Ilkeleri Sülemî'nin Risaleleri, ١٨٥-٢٠٧. Ankara: Ankara Üniversitesi Basimevi, 1401/1981; reprint Beirut: Al-Nāshir, 1414/1993."
+    },
+    "r0200": {
+      "work_url": "https://archive.org/details/Niffari",
+      "pub_status": "published",
+      "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
+    },
+    "r0207": {
+      "work_url": "https://archive.org/details/tisat_kutub_fi_usul_al-tasawuf_waz_zuhd/page/n139/mode/2up?view=theater",
+      "pub_status": "published",
+      "pub_citation": "Süleyman Ateş (ed.). \"Bayān Aḥwāl al-Ṣūfīyah,\"  pp. ١٤١-١٥٠. In Süleyman Ateş (ed.). Tisʿat Kutub fī Uṣūl al-Taṣawwuf wa-l-Zuhd li-Abī ʿAbd al-Raḥmān al-Sulamī / Tasavvufun Ana Ilkeleri Sülemî'nin Risaleleri. Ankara: Ankara Üniversitesi Basimevi, 1401/1981; reprint Beirut: al-Nāshir, 1414/1993."
+    },
+    "r0208": {
+      "pub_status": "published",
+      "pub_citation": "Etan Kohlberg (ed.). Jawāmiʿ Ādāb al-Ṣūfīyah of Abū ʿAbd al-Raḥmān al-Sulamī (d. 412/1021). Jerusalem: Jerusalem Academic Press, 1976; repr. Cairo: Dār Jawāmiʿ al-Kalam, 1420/1999; repr. I, 311-408. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
+    },
     "r0221": {
       "title": "كتاب الصيام",
       "catalog_note": "الجزء الاول"
     },
+    "r0224": {
+      "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
+      "pub_status": "published",
+      "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah."
+    },
+    "r0225": {
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed.). “Šaqīq al-Balḫī, Ādāb al-ʿibādāt,” in Trois œuvres inédites de mystiques musulmans. Beyrouth: Dar el-Machreq, 1973."
+    },
     "r0231": {
       "title": "رسالة الزيتونية",
       "catalog_note": "نسختان"
+    },
+    "r0233": {
+      "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
+      "pub_status": "published",
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. Maqām al-maʿrifa, Osman Yahia RG 413 [Extract from al-Futūḥāt al-Makkiyya]."
+    },
+    "r0235": {
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
+    },
+    "r0241": {
+      "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
+      "pub_status": "published",
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): R. al-Maḥabba, Osman Yahia RG 390 [Extract from al-Futūḥāt; cf. RG 391 R. fī al-Maḥabba]."
     },
     "r0243": {
       "title": "رسالة",
@@ -1459,12 +1636,49 @@
       "title": "كتاب الشفاء والعلل",
       "catalog_note": "مقتطفات"
     },
+    "r0249": {
+      "work_url": "https://archive.org/details/kitbalawsn00usaiuoft",
+      "pub_status": "published",
+      "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969."
+    },
+    "r0256": {
+      "work_url": "https://archive.org/details/Niffari",
+      "pub_status": "published",
+      "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
+    },
+    "r0257": {
+      "work_url": "https://archive.org/details/Niffari",
+      "pub_status": "published",
+      "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
+    },
     "r0258": {
       "work_url": "https://www.qalamos.net/receive/DE15Book_manuscript_00015600"
     },
     "r0261": {
       "title": "طواسين",
-      "catalog_note": "نسختان"
+      "catalog_note": "نسختان",
+      "work_url": "https://archive.org/details/kitbalawsn00usaiuoft",
+      "pub_status": "published",
+      "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969."
+    },
+    "r0262": {
+      "pub_status": "published"
+    },
+    "r0264": {
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
+    },
+    "r0265": {
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
+    },
+    "r0266": {
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
+    },
+    "r0267": {
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
     },
     "r0270": {
       "work_url": "https://www.fihrist.org.uk/catalog/manuscript_11794"
@@ -1488,7 +1702,9 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905427"
     },
     "r0277": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90557n"
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90557n",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
     },
     "r0278": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905605"
@@ -1554,7 +1770,9 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33572n"
     },
     "r0303": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33572n"
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33572n",
+      "pub_status": "published",
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. Inshāʾ al-dawāʾir, Osman Yahia RG 289 [Verified A]."
     },
     "r0304": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33586t"
@@ -1565,15 +1783,32 @@
     "r0306": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc19984n"
     },
+    "r0312": {
+      "pub_status": "published",
+      "pub_citation": "Etan Kohlberg (ed.). Jawāmiʿ Ādāb al-Ṣūfīyah of Abū ʿAbd al-Raḥmān al-Sulamī (d. 412/1021). Jerusalem: Jerusalem Academic Press, 1976; repr. Cairo: Dār Jawāmiʿ al-Kalam, 1420/1999; repr. I, 311-408. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
+    },
+    "r0324": {
+      "pub_status": "published"
+    },
     "r0325": {
       "title": "رسالة طواسين الازل",
-      "catalog_note": "نسختان"
+      "catalog_note": "نسختان",
+      "work_url": "https://archive.org/details/kitbalawsn00usaiuoft",
+      "pub_status": "published",
+      "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969."
+    },
+    "r0326": {
+      "work_url": "https://archive.org/details/Niffari",
+      "pub_status": "published",
+      "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
     },
     "r0327": {
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Sprenger 1169",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069346",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1169”: it is Berlin SBB Sprenger 1169, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0328": {
@@ -1581,6 +1816,8 @@
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Sprenger 1172",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00013389",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1172”: it is Berlin SBB Sprenger 1172, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0329": {
@@ -1588,6 +1825,8 @@
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Petermann II 159",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069343",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 159”: it is Berlin SBB Petermann II 159, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0330": {
@@ -1595,6 +1834,8 @@
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Wetzstein II 1730",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00064293",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1730”: it is Berlin SBB Wetzstein II 1730, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0331": {
@@ -1602,6 +1843,8 @@
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Wetzstein II 1757",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069339",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1757”: it is Berlin SBB Wetzstein II 1757, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0332": {
@@ -1609,6 +1852,8 @@
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Wetzstein II 1771",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069342",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1771”: it is Berlin SBB Wetzstein II 1771, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0333": {
@@ -1616,6 +1861,8 @@
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Sprenger 1982",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069344",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1982”: it is Berlin SBB Sprenger 1982, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0334": {
@@ -1623,6 +1870,8 @@
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Petermann I 275",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00020807",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 275”: it is Berlin SBB Petermann I 275, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0335": {
@@ -1630,6 +1879,8 @@
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Landberg 552",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007211",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 552”: it is Berlin SBB Landberg 552, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0336": {
@@ -1637,6 +1888,8 @@
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Landberg 553",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007212",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 553”: it is Berlin SBB Landberg 553, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0337": {
@@ -1644,6 +1897,8 @@
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Landberg 889",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00058288",
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 889”: it is Berlin SBB Landberg 889, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0342": {
@@ -1662,6 +1917,10 @@
     "r0346": {
       "title": "Petites heures de l'office des moines",
       "catalog_note": "syriaque"
+    },
+    "r0347": {
+      "pub_status": "published",
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
     }
   }
 }
