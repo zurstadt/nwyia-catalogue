@@ -1202,6 +1202,7 @@
     "ابن الصلاح الشهرزوري": "c100",
     "ابو سعيد الخراز": "c039",
     "ابو سعيد الخراز، الوسي، التستري": "c025",
+    "ابن العربي": "c005",
     "Qatraya Gabriel": "c101",
     "ابن العريف": "c040",
     "محمد بن احمد المدني": "c102",
@@ -1308,6 +1309,35 @@
     "r0043": {
       "work_url": "https://id.lib.harvard.edu/alma/990071977810203941/catalog"
     },
+    "r0045": {
+      "pub_status": "published",
+      "pub_citation": "al-Masāʾil al-maknūna, ed. M. I. al-Gayūshī (al-Juyūshī), Cairo, 1980."
+    },
+    "r0047": {
+      "pub_status": "published"
+    },
+    "r0049": {
+      "pub_status": "published",
+      "pub_citation": "Badʾ shaʾn al-Ḥakīm al-Tirmidhī (with Kitāb Khatm al-awliyāʾ), ed. ʿUthmān Ismāʿīl Yaḥyā, Beirut, 1965."
+    },
+    "r0050": {
+      "pub_status": "published",
+      "pub_citation": "al-Ḥakīm al-Tirmidhī, Masāʾil al-taʿbīr, ed. A. J. Arberry, in Rivista degli Studi Orientali xviii (1940), 320–327."
+    },
+    "r0051": {
+      "pub_status": "published"
+    },
+    "r0054": {
+      "pub_status": "published",
+      "pub_citation": "Jawāb Kitāb min al-Rayy, ed. B. Radtke, in Drei Schriften des Theosophen von Tirmiḏ (Thalātha muṣannafāt), Stuttgart–Beirut, 1992."
+    },
+    "r0055": {
+      "pub_status": "published"
+    },
+    "r0056": {
+      "pub_status": "published",
+      "pub_citation": "Kitāb al-Riyāḍa wa-adab al-nafs, ed. A. J. Arberry, Cairo, 1366/1947."
+    },
     "r0058": {
       "library": "Staatsbibliothek zu Berlin"
     },
@@ -1325,7 +1355,9 @@
     },
     "r0062": {
       "library": "Staatsbibliothek zu Berlin",
-      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011708"
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011708",
+      "pub_status": "published",
+      "pub_citation": "Bassām Muḥammad Bārūd (ed.). Tahdhīb al-Asrār. Abu Dhabi: Al-Majmaʿ al-Thaqafī, 1999."
     },
     "r0063": {
       "library": "Staatsbibliothek zu Berlin",
@@ -1395,7 +1427,8 @@
     },
     "r0077": {
       "library": "Staatsbibliothek zu Berlin",
-      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00068801"
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00068801",
+      "pub_status": "published"
     },
     "r0078": {
       "library": "Staatsbibliothek zu Berlin",
@@ -1447,6 +1480,9 @@
       "author": "التستري",
       "pub_status": "published"
     },
+    "r0109": {
+      "pub_status": "published"
+    },
     "r0110": {
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed.). “Šaqīq al-Balḫī, Ādāb al-ʿibādāt,” in Trois œuvres inédites de mystiques musulmans. Beyrouth: Dar el-Machreq, 1973."
@@ -1461,6 +1497,14 @@
       "pub_status": "published",
       "pub_citation": "Süleyman Ateş (ed.). \"Sulūk al-ʿĀrifīn,\"pp. ١٥٣-١٧٠. In Tisʿat Kutub fī Uṣūl al-Taṣawwuf wa-l-Zuhd li-Abī ʿAbd al-Raḥmān al-Sulamī / Tasavvufun Ana Ilkeleri Sülemî'nin Risaleleri. Ankara: Ankara Üniversitesi Basimevi, 1401/1981; reprint Beirut: al-Nāshir, 1414/1993 ; reprint III, pp. 557-580. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
     },
+    "r0114": {
+      "pub_status": "published",
+      "pub_citation": "ʿIlm al-awliyāʾ, ed. Sāmī Naṣr Luṭf, Cairo, 1981 (cf. B. Radtke, ed., Kitāb Sīrat al-awliyāʾ, in Drei Schriften des Theosophen von Tirmiḏ, Stuttgart–Beirut, 1992)."
+    },
+    "r0118": {
+      "pub_status": "published",
+      "pub_citation": "ʿIlm al-awliyāʾ, ed. Sāmī Naṣr Luṭf, Cairo, 1981 (cf. B. Radtke, ed., Kitāb Sīrat al-awliyāʾ, in Drei Schriften des Theosophen von Tirmiḏ, Stuttgart–Beirut, 1992)."
+    },
     "r0119": {
       "work_url": "https://archive.org/details/Niffari",
       "pub_status": "published",
@@ -1473,6 +1517,16 @@
     },
     "r0122": {
       "work_url": "https://www.fihrist.org.uk/catalog/manuscript_225"
+    },
+    "r0124": {
+      "pub_status": "published"
+    },
+    "r0126": {
+      "pub_status": "published",
+      "pub_citation": "Tafsīr al-Qurʾān al-Karīm. Cairo: Dār al-Saʿādah, 1325/1908."
+    },
+    "r0128": {
+      "pub_status": "published"
     },
     "r0129": {
       "pub_status": "published",
@@ -1503,7 +1557,13 @@
     },
     "r0145": {
       "title": "من كلام سهل",
-      "catalog_note": "اربعة اجزاء: 2، 3، 4، 5"
+      "catalog_note": "اربعة اجزاء: 2، 3، 4، 5",
+      "pub_status": "published"
+    },
+    "r0156": {
+      "work_url": "https://drive.google.com/open?id=1DbgmntM_zM5sv7mqcb7IXzhpyi1B5-bi",
+      "pub_status": "published",
+      "pub_citation": "John Alden Williams Rawḍat al-Murīdīn of Shaykh Abū Jaʿfar Ibn Yazdānyār, pp. ١-١١٦. PhD Dissertation: Princeton University, 1960."
     },
     "r0157": {
       "work_url": "https://archive.org/details/sufi-works_201905",
@@ -1519,6 +1579,10 @@
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
       "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. al-Khalwa, Osman Yahia RG 255 [Verified A]."
+    },
+    "r0162": {
+      "pub_status": "manuscript",
+      "discrepancy_note": "al-Furūq wa-manʿ al-tarāduf — recorded as MS (Süleymaniye) by TDVİA / not in the EI² list of published works; a later al-Juyūshī edition may exist (confirm)."
     },
     "r0163": {
       "work_url": "http://kitaplar.ankara.edu.tr/dosyalar/pdf/743.pdf",
@@ -1546,9 +1610,34 @@
       "pub_status": "published",
       "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah."
     },
+    "r0174": {
+      "pub_status": "published",
+      "pub_citation": "ʿAbd al-Qādir Aḥmad ʿAṭā (ed.). al-Masāʾil fī Aʿmāl al-Qulūb wa-l-Jawāriḥ - al-Makāsib - al-ʿAql. Cairo: ʿĀlam al-Kutub, 1969."
+    },
+    "r0176": {
+      "pub_status": "published",
+      "pub_citation": "Muṣṭafā ʿAbd al-Qādir ʿAṭā (ed.). al-Masāʾil fī al-Zuhd. Cairo: Maktabat al-Turāth al-Islāmī, 1406/1986."
+    },
+    "r0177": {
+      "pub_status": "published",
+      "pub_citation": "Muṣṭafā ʿAbd al-Qādir ʿAṭā (ed.). al-Masāʾil fī al-Zuhd. Cairo: Maktabat al-Turāth al-Islāmī, 1406/1986."
+    },
+    "r0178": {
+      "pub_status": "published",
+      "pub_citation": "Hellmut Ritter (ed.). Die Schrift des Ḥāriṯ ibn Asad al-Muḥāsibi über den Anfang der Umkehr zu Gott (Kitāb badʾ man anāba ilā Llāh taʿālā). Glückstadt: J.J. Augustin, 1935."
+    },
+    "r0179": {
+      "work_url": "https://ia802609.us.archive.org/21/items/31705/31705.pdf",
+      "pub_status": "published",
+      "pub_citation": "ʿAbd al-Qādir Aḥmad ʿAṭāʾ (ed.). \"Ādāb al-Nufūs,\" pp. 27-145. In ʿAbd al-Qādir Aḥmad ʿAṭā (ed.). Ādāb al-Nufūs wa-yalīhi Kitāb al-Tawahhum. Beirut: Muʾassasat al-Kutub al-Thaqāfīyah, 1411/1991."
+    },
     "r0184": {
       "title": "كتاب الشرح والبيان",
       "catalog_note": "مع ترجمة الى اللغة الفرنسية"
+    },
+    "r0185": {
+      "pub_status": "published",
+      "pub_citation": "Ghawr al-umūr, ed. & French tr. G. Gobillot, “La pensée d’al-Ḥakīm al-Tirmiḏī”, thèse, Lyon, 1989."
     },
     "r0187": {
       "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
@@ -1573,6 +1662,9 @@
       "pub_status": "published",
       "pub_citation": "Süleyman Ateş (ed.). \"Masʿalat Darajāt al-Ṣādiqīn,\" pp. ١٤١-١٥٢. In Süleyman Ateş (ed.). Tisʿat Kutub li-Abī ʿAbd al-Raḥmān al-Sulamī / Tasavvufun Ana Ilkeleri Sülemî'nin Risaleleri. Ankara: Kuliyyat Ilahiyat, 1401/1981; reprint Beirut: al-Nāshir, 1414/1993."
     },
+    "r0192": {
+      "pub_status": "published"
+    },
     "r0194": {
       "work_url": "https://archive.org/details/in.ernet.dli.2015.323552/page/n157",
       "pub_status": "published",
@@ -1596,6 +1688,14 @@
     "r0208": {
       "pub_status": "published",
       "pub_citation": "Etan Kohlberg (ed.). Jawāmiʿ Ādāb al-Ṣūfīyah of Abū ʿAbd al-Raḥmān al-Sulamī (d. 412/1021). Jerusalem: Jerusalem Academic Press, 1976; repr. Cairo: Dār Jawāmiʿ al-Kalam, 1420/1999; repr. I, 311-408. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
+    },
+    "r0215": {
+      "pub_status": "published",
+      "pub_citation": "Bassām Muḥammad Bārūd (ed.). Tahdhīb al-Asrār. Abu Dhabi: Al-Majmaʿ al-Thaqafī, 1999."
+    },
+    "r0216": {
+      "pub_status": "published",
+      "pub_citation": "Bassām Muḥammad Bārūd (ed.). Tahdhīb al-Asrār. Abu Dhabi: Al-Majmaʿ al-Thaqafī, 1999."
     },
     "r0221": {
       "title": "كتاب الصيام",
@@ -1641,6 +1741,15 @@
       "pub_status": "published",
       "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969."
     },
+    "r0253": {
+      "pub_status": "published"
+    },
+    "r0254": {
+      "pub_status": "published"
+    },
+    "r0255": {
+      "pub_status": "published"
+    },
     "r0256": {
       "work_url": "https://archive.org/details/Niffari",
       "pub_status": "published",
@@ -1652,6 +1761,8 @@
       "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
     },
     "r0258": {
+      "author": "ابن العربي",
+      "catalog_note": "Attributed to Ibn al-ʿArabī al-Ṭāʾī (per JF); a divination-genre work (asʾilat mā kāna wa-mā yakūn), not listed among his works in the MIAS catalogue — publication status open.",
       "work_url": "https://www.qalamos.net/receive/DE15Book_manuscript_00015600"
     },
     "r0261": {
@@ -1761,7 +1872,9 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc32644j"
     },
     "r0300": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc32885z"
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc32885z",
+      "pub_status": "published",
+      "pub_citation": "Muḥammad Ḥasan Ismāʿīl and Aḥmad Farīd Mizyadī (eds.). Baḥr al-Fawaʾid al-mashhūr bi-Maʿānī al-Akhbār. Beirut: Dār al-Kutub al-ʿIlmīyah, 1999."
     },
     "r0301": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33187c"
