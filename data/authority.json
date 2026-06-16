@@ -151,8 +151,8 @@
     "c003": {
       "canonical_ar": "صدر الدين القونوي",
       "canonical_translit": "Ṣadr al-Dīn al-Qūnawī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Ṣadr al-Dīn Muḥammad b. Isḥāq al-Qūnawī",
+      "dates": "d. 673/1274",
       "authorities": [
         {
           "source": "Vatican",
@@ -168,6 +168,36 @@
           "source": "EI3",
           "title": "al-Qūnawī, Ṣadr al-Dīn",
           "url": "https://doi.org/10.1163/1573-3912_ei3_COM_46456"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q770298",
+          "url": "https://www.wikidata.org/wiki/Q770298"
+        },
+        {
+          "source": "VIAF",
+          "title": "261622843",
+          "url": "https://viaf.org/viaf/261622843"
+        },
+        {
+          "source": "GND",
+          "title": "119356376",
+          "url": "https://d-nb.info/gnd/119356376"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Sadr al-Din al-Qunawi",
+          "url": "https://en.wikipedia.org/wiki/Sadr_al-Din_al-Qunawi"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Sadr al-Din al-Qunawi",
+          "url": "https://openalex.org/works?search=Sadr%20al-Din%20al-Qunawi"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Sadr al-Din al-Qunawi",
+          "url": "https://scholar.google.com/scholar?q=Sadr%20al-Din%20al-Qunawi"
         }
       ],
       "user_confirmed": true
@@ -317,8 +347,8 @@
     "c007": {
       "canonical_ar": "أبو القاسم القشيري",
       "canonical_translit": "Abū al-Qāsim al-Qušayrī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū al-Qāsim ʿAbd al-Karīm b. Hawāzin al-Qushayrī",
+      "dates": "d. 465/1072",
       "authorities": [
         {
           "source": "TDVİA",
@@ -329,6 +359,16 @@
           "source": "EI2",
           "title": "al-Ḳus̲h̲ayrī",
           "url": "https://doi.org/10.1163/1573-3912_islam_COM_0548"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu al-Qasim al-Qusayri",
+          "url": "https://openalex.org/works?search=Abu%20al-Qasim%20al-Qusayri"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu al-Qasim al-Qusayri",
+          "url": "https://scholar.google.com/scholar?q=Abu%20al-Qasim%20al-Qusayri"
         }
       ],
       "user_confirmed": true
@@ -399,8 +439,8 @@
     "c010": {
       "canonical_ar": "محمد بن عبد الله النفري",
       "canonical_translit": "Muḥammad b. ʿAbd Allāh al-Niffarī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Muḥammad b. ʿAbd al-Jabbār b. al-Ḥasan al-Niffarī",
+      "dates": "d. after 354/965",
       "authorities": [
         {
           "source": "TDVİA",
@@ -411,6 +451,16 @@
           "source": "EI2",
           "title": "al-Niffarī",
           "url": "https://doi.org/10.1163/1573-3912_islam_SIM_5899"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Muhammad b. ʿAbd Allah al-Niffari",
+          "url": "https://openalex.org/works?search=Muhammad%20b.%20%CA%BFAbd%20Allah%20al-Niffari"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Muhammad b. ʿAbd Allah al-Niffari",
+          "url": "https://scholar.google.com/scholar?q=Muhammad%20b.%20%CA%BFAbd%20Allah%20al-Niffari"
         }
       ],
       "user_confirmed": true
@@ -426,13 +476,38 @@
     "c012": {
       "canonical_ar": "إسماعيل بن سودكين النوري",
       "canonical_translit": "Ismaʿīl b. Sawdakīn al-Nūrī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Ismāʿīl b. Sawdakīn al-Nūrī",
+      "dates": "d. 646/1248",
       "authorities": [
         {
           "source": "TDVİA",
           "title": "İbn Sevdekîn",
           "url": "https://islamansiklopedisi.org.tr/ibn-sevdekin"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q6040890",
+          "url": "https://www.wikidata.org/wiki/Q6040890"
+        },
+        {
+          "source": "VIAF",
+          "title": "90066454",
+          "url": "https://viaf.org/viaf/90066454"
+        },
+        {
+          "source": "GND",
+          "title": "108438813",
+          "url": "https://d-nb.info/gnd/108438813"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Ismaʿil b. Sawdakin al-Nuri",
+          "url": "https://openalex.org/works?search=Isma%CA%BFil%20b.%20Sawdakin%20al-Nuri"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Ismaʿil b. Sawdakin al-Nuri",
+          "url": "https://scholar.google.com/scholar?q=Isma%CA%BFil%20b.%20Sawdakin%20al-Nuri"
         }
       ],
       "user_confirmed": true
@@ -587,13 +662,23 @@
     "c016": {
       "canonical_ar": "أبو سعد الخركوشي",
       "canonical_translit": "Abū Saʿd al-Ḫargūšī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū Saʿd ʿAbd al-Malik b. Muḥammad al-Khargūshī al-Naysābūrī",
+      "dates": "d. 406/1015",
       "authorities": [
         {
           "source": "TDVİA",
           "title": "Hargûşî",
           "url": "https://islamansiklopedisi.org.tr/hargusi"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu Saʿd al-Hargusi",
+          "url": "https://openalex.org/works?search=Abu%20Sa%CA%BFd%20al-Hargusi"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu Saʿd al-Hargusi",
+          "url": "https://scholar.google.com/scholar?q=Abu%20Sa%CA%BFd%20al-Hargusi"
         }
       ],
       "user_confirmed": true
@@ -601,8 +686,8 @@
     "c017": {
       "canonical_ar": "شقيق البلخي",
       "canonical_translit": "Šaqīq al-Balḫī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū ʿAlī Shaqīq b. Ibrāhīm al-Balkhī",
+      "dates": "d. 194/810",
       "authorities": [
         {
           "source": "TDVİA",
@@ -613,6 +698,36 @@
           "source": "EI3",
           "title": "Shaqīq al-Balkhī",
           "url": "https://doi.org/10.1163/1573-3912_ei3_COM_23992"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q3481470",
+          "url": "https://www.wikidata.org/wiki/Q3481470"
+        },
+        {
+          "source": "VIAF",
+          "title": "284427954",
+          "url": "https://viaf.org/viaf/284427954"
+        },
+        {
+          "source": "GND",
+          "title": "139979395",
+          "url": "https://d-nb.info/gnd/139979395"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Shaqiq al-Balkhi",
+          "url": "https://en.wikipedia.org/wiki/Shaqiq_al-Balkhi"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Saqiq al-Balhi",
+          "url": "https://openalex.org/works?search=Saqiq%20al-Balhi"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Saqiq al-Balhi",
+          "url": "https://scholar.google.com/scholar?q=Saqiq%20al-Balhi"
         }
       ],
       "user_confirmed": true
@@ -636,8 +751,8 @@
     "c020": {
       "canonical_ar": "أبو نصر الفارابي",
       "canonical_translit": "Abū Naṣr al-Fārābī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū Naṣr Muḥammad b. Muḥammad al-Fārābī",
+      "dates": "d. 339/950",
       "authorities": [
         {
           "source": "TDVİA",
@@ -648,6 +763,16 @@
           "source": "EI2",
           "title": "al Fārābī",
           "url": "https://doi.org/10.1163/1573-3912_islam_COM_0212"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu Nasr al-Farabi",
+          "url": "https://openalex.org/works?search=Abu%20Nasr%20al-Farabi"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu Nasr al-Farabi",
+          "url": "https://scholar.google.com/scholar?q=Abu%20Nasr%20al-Farabi"
         }
       ],
       "user_confirmed": true
@@ -655,13 +780,43 @@
     "c021": {
       "canonical_ar": "روزبهان البقلى الشيرازي",
       "canonical_translit": "Rūzbihān Baqlī al-Šīrāzī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū Muḥammad Rūzbihān b. Abī Naṣr al-Baqlī al-Shīrāzī",
+      "dates": "d. 606/1209",
       "authorities": [
         {
           "source": "TDVİA",
           "title": "Rûzbihân-ı Baklî",
           "url": "https://islamansiklopedisi.org.tr/ruzbihan-i-bakli"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q3458926",
+          "url": "https://www.wikidata.org/wiki/Q3458926"
+        },
+        {
+          "source": "VIAF",
+          "title": "79080896",
+          "url": "https://viaf.org/viaf/79080896"
+        },
+        {
+          "source": "GND",
+          "title": "11954606X",
+          "url": "https://d-nb.info/gnd/11954606X"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Ruzbihan Baqli",
+          "url": "https://en.wikipedia.org/wiki/Ruzbihan_Baqli"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Ruzbihan Baqli al-Sirazi",
+          "url": "https://openalex.org/works?search=Ruzbihan%20Baqli%20al-Sirazi"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Ruzbihan Baqli al-Sirazi",
+          "url": "https://scholar.google.com/scholar?q=Ruzbihan%20Baqli%20al-Sirazi"
         }
       ],
       "user_confirmed": true
@@ -669,8 +824,8 @@
     "c023": {
       "canonical_ar": "جعفر الصادق",
       "canonical_translit": "Ǧaʿfar al-Ṣādiq",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Jaʿfar al-Ṣādiq b. Muḥammad al-Bāqir",
+      "dates": "d. 148/765",
       "authorities": [
         {
           "source": "TDVİA",
@@ -681,6 +836,36 @@
           "source": "EI3",
           "title": "Jaʿfar al-Ṣādiq",
           "url": "https://doi.org/10.1163/1573-3912_ei3_COM_32681"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q170046",
+          "url": "https://www.wikidata.org/wiki/Q170046"
+        },
+        {
+          "source": "VIAF",
+          "title": "100648969",
+          "url": "https://viaf.org/viaf/100648969"
+        },
+        {
+          "source": "GND",
+          "title": "118680900",
+          "url": "https://d-nb.info/gnd/118680900"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Ja'far al-Sadiq",
+          "url": "https://en.wikipedia.org/wiki/Ja'far_al-Sadiq"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Gaʿfar al-Sadiq",
+          "url": "https://openalex.org/works?search=Ga%CA%BFfar%20al-Sadiq"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Gaʿfar al-Sadiq",
+          "url": "https://scholar.google.com/scholar?q=Ga%CA%BFfar%20al-Sadiq"
         }
       ],
       "user_confirmed": true
@@ -688,8 +873,8 @@
     "c024": {
       "canonical_ar": "أبو طالب المكي",
       "canonical_translit": "Abū Ṭālib al-Makkī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū Ṭālib Muḥammad b. ʿAlī al-Makkī",
+      "dates": "d. 386/996",
       "authorities": [
         {
           "source": "TDVİA",
@@ -700,6 +885,36 @@
           "source": "EI3",
           "title": "Abū Ṭālib al-Makkī",
           "url": "https://doi.org/10.1163/1573-3912_ei3_COM_23649"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q2822179",
+          "url": "https://www.wikidata.org/wiki/Q2822179"
+        },
+        {
+          "source": "VIAF",
+          "title": "19749637",
+          "url": "https://viaf.org/viaf/19749637"
+        },
+        {
+          "source": "GND",
+          "title": "102411573",
+          "url": "https://d-nb.info/gnd/102411573"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Abu Talib al-Makki",
+          "url": "https://en.wikipedia.org/wiki/Abu_Talib_al-Makki"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu Talib al-Makki",
+          "url": "https://openalex.org/works?search=Abu%20Talib%20al-Makki"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu Talib al-Makki",
+          "url": "https://scholar.google.com/scholar?q=Abu%20Talib%20al-Makki"
         }
       ],
       "user_confirmed": true
@@ -707,8 +922,8 @@
     "c025": {
       "canonical_ar": "سهل التستري",
       "canonical_translit": "Sahl al-Tustarī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū Muḥammad Sahl b. ʿAbd Allāh al-Tustarī",
+      "dates": "d. 283/896",
       "authorities": [
         {
           "source": "TDVİA",
@@ -719,6 +934,36 @@
           "source": "EI2",
           "title": "Sahl al-Tustarī",
           "url": "https://doi.org/10.1163/1573-3912_islam_SIM_6472"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q1153185",
+          "url": "https://www.wikidata.org/wiki/Q1153185"
+        },
+        {
+          "source": "VIAF",
+          "title": "100383406",
+          "url": "https://viaf.org/viaf/100383406"
+        },
+        {
+          "source": "GND",
+          "title": "118624784",
+          "url": "https://d-nb.info/gnd/118624784"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Sahl al-Tustari",
+          "url": "https://en.wikipedia.org/wiki/Sahl_al-Tustari"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Sahl al-Tustari",
+          "url": "https://openalex.org/works?search=Sahl%20al-Tustari"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Sahl al-Tustari",
+          "url": "https://scholar.google.com/scholar?q=Sahl%20al-Tustari"
         }
       ],
       "user_confirmed": false
@@ -726,8 +971,8 @@
     "c026": {
       "canonical_ar": "أبو مدين شعيب",
       "canonical_translit": "Abū Madyan Šuʿayb",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū Madyan Shuʿayb b. al-Ḥusayn al-Anṣārī",
+      "dates": "d. 594/1198",
       "authorities": [
         {
           "source": "TDVİA",
@@ -738,6 +983,36 @@
           "source": "EI2",
           "title": "Abū Madyan",
           "url": "https://doi.org/10.1163/1573-3912_islam_SIM_0226"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q590185",
+          "url": "https://www.wikidata.org/wiki/Q590185"
+        },
+        {
+          "source": "VIAF",
+          "title": "95676329",
+          "url": "https://viaf.org/viaf/95676329"
+        },
+        {
+          "source": "GND",
+          "title": "130390143",
+          "url": "https://d-nb.info/gnd/130390143"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Abu Madyan",
+          "url": "https://en.wikipedia.org/wiki/Abu_Madyan"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu Madyan Suʿayb",
+          "url": "https://openalex.org/works?search=Abu%20Madyan%20Su%CA%BFayb"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu Madyan Suʿayb",
+          "url": "https://scholar.google.com/scholar?q=Abu%20Madyan%20Su%CA%BFayb"
         }
       ],
       "user_confirmed": true
@@ -745,8 +1020,8 @@
     "c027": {
       "canonical_ar": "ابن عجيبة",
       "canonical_translit": "Ibn ʿAǧība",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū al-ʿAbbās Aḥmad b. Muḥammad Ibn ʿAjība al-Ḥasanī",
+      "dates": "d. 1224/1809",
       "authorities": [
         {
           "source": "TDVİA",
@@ -757,6 +1032,36 @@
           "source": "EI3",
           "title": "Ibn ʿAjība",
           "url": "https://doi.org/10.1163/1573-3912_ei3_COM_30684"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q2827461",
+          "url": "https://www.wikidata.org/wiki/Q2827461"
+        },
+        {
+          "source": "VIAF",
+          "title": "90047355",
+          "url": "https://viaf.org/viaf/90047355"
+        },
+        {
+          "source": "GND",
+          "title": "130871605",
+          "url": "https://d-nb.info/gnd/130871605"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Ahmad ibn Ajiba",
+          "url": "https://en.wikipedia.org/wiki/Ahmad_ibn_Ajiba"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Ibn ʿAgiba",
+          "url": "https://openalex.org/works?search=Ibn%20%CA%BFAgiba"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Ibn ʿAgiba",
+          "url": "https://scholar.google.com/scholar?q=Ibn%20%CA%BFAgiba"
         }
       ],
       "user_confirmed": true
@@ -764,8 +1069,8 @@
     "c028": {
       "canonical_ar": "ابن سينا",
       "canonical_translit": "Ibn Sīnā",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū ʿAlī al-Ḥusayn b. ʿAbd Allāh Ibn Sīnā",
+      "dates": "d. 428/1037",
       "authorities": [
         {
           "source": "TDVİA",
@@ -776,6 +1081,36 @@
           "source": "EI2",
           "title": "Avicenna",
           "url": "https://doi.org/10.1163/1573-3912_islam_DUM_0467"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q8011",
+          "url": "https://www.wikidata.org/wiki/Q8011"
+        },
+        {
+          "source": "VIAF",
+          "title": "89770781",
+          "url": "https://viaf.org/viaf/89770781"
+        },
+        {
+          "source": "GND",
+          "title": "118505254",
+          "url": "https://d-nb.info/gnd/118505254"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Avicenna",
+          "url": "https://en.wikipedia.org/wiki/Avicenna"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Ibn Sina",
+          "url": "https://openalex.org/works?search=Ibn%20Sina"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Ibn Sina",
+          "url": "https://scholar.google.com/scholar?q=Ibn%20Sina"
         }
       ],
       "user_confirmed": true
@@ -783,8 +1118,8 @@
     "c029": {
       "canonical_ar": "صدر الدين الشيرازي",
       "canonical_translit": "Ṣadr al-Dīn al-Šīrāzī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Ṣadr al-Dīn Muḥammad b. Ibrāhīm al-Shīrāzī (Mullā Ṣadrā)",
+      "dates": "d. 1045/1635",
       "authorities": [
         {
           "source": "TDVİA",
@@ -795,6 +1130,36 @@
           "source": "EI2",
           "title": "Mullā Ṣadrā S̲h̲īrāzī",
           "url": "https://doi.org/10.1163/1573-3912_islam_SIM_5490"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q2010955",
+          "url": "https://www.wikidata.org/wiki/Q2010955"
+        },
+        {
+          "source": "VIAF",
+          "title": "98174078",
+          "url": "https://viaf.org/viaf/98174078"
+        },
+        {
+          "source": "GND",
+          "title": "118895486",
+          "url": "https://d-nb.info/gnd/118895486"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Mulla Sadra",
+          "url": "https://en.wikipedia.org/wiki/Mulla_Sadra"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Sadr al-Din al-Sirazi",
+          "url": "https://openalex.org/works?search=Sadr%20al-Din%20al-Sirazi"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Sadr al-Din al-Sirazi",
+          "url": "https://scholar.google.com/scholar?q=Sadr%20al-Din%20al-Sirazi"
         }
       ],
       "user_confirmed": true
@@ -802,8 +1167,8 @@
     "c030": {
       "canonical_ar": "داود بن محمود القيصري",
       "canonical_translit": "Dāwūd b. Maḥmūd al-Qayṣarī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Sharaf al-Dīn Dāwūd b. Maḥmūd al-Qayṣarī",
+      "dates": "d. 751/1350",
       "authorities": [
         {
           "source": "TDVİA",
@@ -814,6 +1179,31 @@
           "source": "EI3",
           "title": "Dāwūd al-Qayṣarī",
           "url": "https://doi.org/10.1163/1573-3912_ei3_COM_25946"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q4117785",
+          "url": "https://www.wikidata.org/wiki/Q4117785"
+        },
+        {
+          "source": "VIAF",
+          "title": "41688382",
+          "url": "https://viaf.org/viaf/41688382"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Dawūd al-Qayṣarī",
+          "url": "https://en.wikipedia.org/wiki/Dawūd_al-Qayṣarī"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Dawud b. Mahmud al-Qaysari",
+          "url": "https://openalex.org/works?search=Dawud%20b.%20Mahmud%20al-Qaysari"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Dawud b. Mahmud al-Qaysari",
+          "url": "https://scholar.google.com/scholar?q=Dawud%20b.%20Mahmud%20al-Qaysari"
         }
       ],
       "user_confirmed": true
@@ -821,8 +1211,8 @@
     "c032": {
       "canonical_ar": "أبو منصور الماتريدي",
       "canonical_translit": "Abū Manṣūr al-Māturīdī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū Manṣūr Muḥammad b. Muḥammad al-Māturīdī",
+      "dates": "d. 333/944",
       "authorities": [
         {
           "source": "TDVİA",
@@ -833,6 +1223,36 @@
           "source": "EI2",
           "title": "al-Māturīdī",
           "url": "https://doi.org/10.1163/1573-3912_islam_SIM_5045"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q12827721",
+          "url": "https://www.wikidata.org/wiki/Q12827721"
+        },
+        {
+          "source": "VIAF",
+          "title": "72145067131266630830",
+          "url": "https://viaf.org/viaf/72145067131266630830"
+        },
+        {
+          "source": "GND",
+          "title": "11908581X",
+          "url": "https://d-nb.info/gnd/11908581X"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Abu Mansur al-Maturidi",
+          "url": "https://en.wikipedia.org/wiki/Abu_Mansur_al-Maturidi"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu Mansur al-Maturidi",
+          "url": "https://openalex.org/works?search=Abu%20Mansur%20al-Maturidi"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu Mansur al-Maturidi",
+          "url": "https://scholar.google.com/scholar?q=Abu%20Mansur%20al-Maturidi"
         }
       ],
       "user_confirmed": true
@@ -840,8 +1260,8 @@
     "c033": {
       "canonical_ar": "ابن برجان",
       "canonical_translit": "Ibn Barraǧān",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū al-Ḥakam ʿAbd al-Salām Ibn Barrajān",
+      "dates": "d. 536/1141",
       "authorities": [
         {
           "source": "TDVİA",
@@ -852,6 +1272,36 @@
           "source": "EI3",
           "title": "Ibn Barrajān",
           "url": "https://doi.org/10.1163/1573-3912_ei3_COM_30734"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q3827604",
+          "url": "https://www.wikidata.org/wiki/Q3827604"
+        },
+        {
+          "source": "VIAF",
+          "title": "100324876",
+          "url": "https://viaf.org/viaf/100324876"
+        },
+        {
+          "source": "GND",
+          "title": "104180489X",
+          "url": "https://d-nb.info/gnd/104180489X"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Ibn Barrajan",
+          "url": "https://en.wikipedia.org/wiki/Ibn_Barrajan"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Ibn Barragan",
+          "url": "https://openalex.org/works?search=Ibn%20Barragan"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Ibn Barragan",
+          "url": "https://scholar.google.com/scholar?q=Ibn%20Barragan"
         }
       ],
       "user_confirmed": true
@@ -859,8 +1309,8 @@
     "c034": {
       "canonical_ar": "عفيف الدين التلمساني",
       "canonical_translit": "ʿAfīf al-Dīn al-Tilimsānī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "ʿAfīf al-Dīn Sulaymān b. ʿAlī al-Tilimsānī",
+      "dates": "d. 690/1291",
       "authorities": [
         {
           "source": "TDVİA",
@@ -871,6 +1321,31 @@
           "source": "EI2",
           "title": "al-Tilimsānī",
           "url": "https://doi.org/10.1163/1573-3912_islam_SIM_7552"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q12190298",
+          "url": "https://www.wikidata.org/wiki/Q12190298"
+        },
+        {
+          "source": "VIAF",
+          "title": "57002160",
+          "url": "https://viaf.org/viaf/57002160"
+        },
+        {
+          "source": "GND",
+          "title": "102415838",
+          "url": "https://d-nb.info/gnd/102415838"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "ʿAfif al-Din al-Tilimsani",
+          "url": "https://openalex.org/works?search=%CA%BFAfif%20al-Din%20al-Tilimsani"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "ʿAfif al-Din al-Tilimsani",
+          "url": "https://scholar.google.com/scholar?q=%CA%BFAfif%20al-Din%20al-Tilimsani"
         }
       ],
       "user_confirmed": true
@@ -878,8 +1353,8 @@
     "c035": {
       "canonical_ar": "ابن الجوزي",
       "canonical_translit": "Ibn al-Ǧawzī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū al-Faraj ʿAbd al-Raḥmān b. ʿAlī Ibn al-Jawzī",
+      "dates": "d. 597/1201",
       "authorities": [
         {
           "source": "TDVİA",
@@ -890,6 +1365,36 @@
           "source": "EI2",
           "title": "Ibn al-D̲j̲awzī",
           "url": "https://doi.org/10.1163/1573-3912_islam_SIM_3139"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q731866",
+          "url": "https://www.wikidata.org/wiki/Q731866"
+        },
+        {
+          "source": "VIAF",
+          "title": "100186291",
+          "url": "https://viaf.org/viaf/100186291"
+        },
+        {
+          "source": "GND",
+          "title": "11870852X",
+          "url": "https://d-nb.info/gnd/11870852X"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Ibn al-Jawzi",
+          "url": "https://en.wikipedia.org/wiki/Ibn_al-Jawzi"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Ibn al-Gawzi",
+          "url": "https://openalex.org/works?search=Ibn%20al-Gawzi"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Ibn al-Gawzi",
+          "url": "https://scholar.google.com/scholar?q=Ibn%20al-Gawzi"
         }
       ],
       "user_confirmed": true
@@ -897,8 +1402,8 @@
     "c036": {
       "canonical_ar": "أبو الحسن النوري",
       "canonical_translit": "Abū al-Ḥasan al-Nūrī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū al-Ḥasan Aḥmad b. Muḥammad al-Nūrī",
+      "dates": "d. 295/907",
       "authorities": [
         {
           "source": "TDVİA",
@@ -909,6 +1414,36 @@
           "source": "EI2",
           "title": "al-Nūrī",
           "url": "https://doi.org/10.1163/1573-3912_islam_SIM_5995"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q2822100",
+          "url": "https://www.wikidata.org/wiki/Q2822100"
+        },
+        {
+          "source": "VIAF",
+          "title": "43952314",
+          "url": "https://viaf.org/viaf/43952314"
+        },
+        {
+          "source": "GND",
+          "title": "1075869315",
+          "url": "https://d-nb.info/gnd/1075869315"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Abu al-Husain al-Nuri",
+          "url": "https://en.wikipedia.org/wiki/Abu_al-Husain_al-Nuri"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu al-Hasan al-Nuri",
+          "url": "https://openalex.org/works?search=Abu%20al-Hasan%20al-Nuri"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu al-Hasan al-Nuri",
+          "url": "https://scholar.google.com/scholar?q=Abu%20al-Hasan%20al-Nuri"
         }
       ],
       "user_confirmed": true
@@ -916,13 +1451,23 @@
     "c037": {
       "canonical_ar": "أبو علي الروذباري",
       "canonical_translit": "Abū ʿAlī al-Rūdhbārī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū ʿAlī Aḥmad b. Muḥammad al-Rūdhbārī",
+      "dates": "d. 322/934",
       "authorities": [
         {
           "source": "TDVİA",
           "title": "Rûzbârî",
           "url": "https://islamansiklopedisi.org.tr/ruzbari"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu ʿAli al-Rudhbari",
+          "url": "https://openalex.org/works?search=Abu%20%CA%BFAli%20al-Rudhbari"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu ʿAli al-Rudhbari",
+          "url": "https://scholar.google.com/scholar?q=Abu%20%CA%BFAli%20al-Rudhbari"
         }
       ],
       "user_confirmed": true
@@ -938,8 +1483,8 @@
     "c039": {
       "canonical_ar": "ابو سعيد الخراز",
       "canonical_translit": "Abū Saʿīd al-Ḫarrāz",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū Saʿīd Aḥmad b. ʿĪsā al-Kharrāz",
+      "dates": "d. 286/899",
       "authorities": [
         {
           "source": "TDVİA",
@@ -950,6 +1495,36 @@
           "source": "EI2",
           "title": "al-Ḵh̲arrāz",
           "url": "https://doi.org/10.1163/1573-3912_islam_SIM_4215"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q2822175",
+          "url": "https://www.wikidata.org/wiki/Q2822175"
+        },
+        {
+          "source": "VIAF",
+          "title": "7610254",
+          "url": "https://viaf.org/viaf/7610254"
+        },
+        {
+          "source": "GND",
+          "title": "131593080",
+          "url": "https://d-nb.info/gnd/131593080"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Abu Sa'id al-Kharraz",
+          "url": "https://en.wikipedia.org/wiki/Abu_Sa'id_al-Kharraz"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu Saʿid al-Harraz",
+          "url": "https://openalex.org/works?search=Abu%20Sa%CA%BFid%20al-Harraz"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu Saʿid al-Harraz",
+          "url": "https://scholar.google.com/scholar?q=Abu%20Sa%CA%BFid%20al-Harraz"
         }
       ],
       "user_confirmed": true
@@ -957,8 +1532,8 @@
     "c040": {
       "canonical_ar": "أبو العباس ابن العريف",
       "canonical_translit": "Abū al-ʿAbbās Ibn al-ʿArīf",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Abū al-ʿAbbās Aḥmad b. Muḥammad Ibn al-ʿArīf al-Ṣanhājī",
+      "dates": "d. 536/1141",
       "authorities": [
         {
           "source": "TDVİA",
@@ -969,6 +1544,36 @@
           "source": "EI2",
           "title": "Ibn al-ʿArīf",
           "url": "https://doi.org/10.1163/1573-3912_islam_SIM_3083"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q2822178",
+          "url": "https://www.wikidata.org/wiki/Q2822178"
+        },
+        {
+          "source": "VIAF",
+          "title": "96981610",
+          "url": "https://viaf.org/viaf/96981610"
+        },
+        {
+          "source": "GND",
+          "title": "102372535",
+          "url": "https://d-nb.info/gnd/102372535"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Ibn al-Arif",
+          "url": "https://en.wikipedia.org/wiki/Ibn_al-Arif"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu al-ʿAbbas Ibn al-ʿArif",
+          "url": "https://openalex.org/works?search=Abu%20al-%CA%BFAbbas%20Ibn%20al-%CA%BFArif"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu al-ʿAbbas Ibn al-ʿArif",
+          "url": "https://scholar.google.com/scholar?q=Abu%20al-%CA%BFAbbas%20Ibn%20al-%CA%BFArif"
         }
       ],
       "user_confirmed": true
@@ -976,13 +1581,43 @@
     "c041": {
       "canonical_ar": "عبد الرحمن الجامي",
       "canonical_translit": "ʿAbd al-Raḥmān Ǧāmī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Nūr al-Dīn ʿAbd al-Raḥmān b. Aḥmad al-Jāmī",
+      "dates": "d. 898/1492",
       "authorities": [
         {
           "source": "TDVİA",
           "title": "Câmî, Abdurrahman",
           "url": "https://islamansiklopedisi.org.tr/cami-abdurrahman"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q312458",
+          "url": "https://www.wikidata.org/wiki/Q312458"
+        },
+        {
+          "source": "VIAF",
+          "title": "90042997",
+          "url": "https://viaf.org/viaf/90042997"
+        },
+        {
+          "source": "GND",
+          "title": "119077884",
+          "url": "https://d-nb.info/gnd/119077884"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Jami",
+          "url": "https://en.wikipedia.org/wiki/Jami"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "ʿAbd al-Rahman Gami",
+          "url": "https://openalex.org/works?search=%CA%BFAbd%20al-Rahman%20Gami"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "ʿAbd al-Rahman Gami",
+          "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-Rahman%20Gami"
         }
       ],
       "user_confirmed": true
@@ -998,8 +1633,8 @@
     "c043": {
       "canonical_ar": "عبد الكريم الجيلي",
       "canonical_translit": "ʿAbd al-Karīm al-Ǧīlī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "ʿAbd al-Karīm b. Ibrāhīm al-Jīlī",
+      "dates": "d. c. 832/1428",
       "authorities": [
         {
           "source": "TDVİA",
@@ -1010,6 +1645,36 @@
           "source": "EI2",
           "title": "ʿAbd al-Karīm, Ḳuṭb al-Dīn b. Ibrāhīm al-Ḏj̲īlī",
           "url": "https://doi.org/10.1163/1573-3912_islam_SIM_0099"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q317332",
+          "url": "https://www.wikidata.org/wiki/Q317332"
+        },
+        {
+          "source": "VIAF",
+          "title": "98487961",
+          "url": "https://viaf.org/viaf/98487961"
+        },
+        {
+          "source": "GND",
+          "title": "11896478X",
+          "url": "https://d-nb.info/gnd/11896478X"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Abd al-Karim al-Jili",
+          "url": "https://en.wikipedia.org/wiki/Abd_al-Karim_al-Jili"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "ʿAbd al-Karim al-Gili",
+          "url": "https://openalex.org/works?search=%CA%BFAbd%20al-Karim%20al-Gili"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "ʿAbd al-Karim al-Gili",
+          "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-Karim%20al-Gili"
         }
       ],
       "user_confirmed": true
@@ -1033,17 +1698,79 @@
     "c046": {
       "canonical_ar": "ابن تيمية",
       "canonical_translit": "Ibn Taymīyah",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Taqī al-Dīn Aḥmad b. ʿAbd al-Ḥalīm Ibn Taymiyya",
+      "dates": "d. 728/1328",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q491558",
+          "url": "https://www.wikidata.org/wiki/Q491558"
+        },
+        {
+          "source": "VIAF",
+          "title": "12338225",
+          "url": "https://viaf.org/viaf/12338225"
+        },
+        {
+          "source": "GND",
+          "title": "118708546",
+          "url": "https://d-nb.info/gnd/118708546"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Ibn Taymiyya",
+          "url": "https://en.wikipedia.org/wiki/Ibn_Taymiyya"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Ibn Taymiyah",
+          "url": "https://openalex.org/works?search=Ibn%20Taymiyah"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Ibn Taymiyah",
+          "url": "https://scholar.google.com/scholar?q=Ibn%20Taymiyah"
+        }
+      ],
       "user_confirmed": true
     },
     "c047": {
       "canonical_ar": "ابو العلاء المعرّي",
       "canonical_translit": "Abū al-ʿAlāʾ al-Maʿarrī",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Abū al-ʿAlāʾ Aḥmad b. ʿAbd Allāh al-Maʿarrī",
+      "dates": "d. 449/1057",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q277073",
+          "url": "https://www.wikidata.org/wiki/Q277073"
+        },
+        {
+          "source": "VIAF",
+          "title": "68941158",
+          "url": "https://viaf.org/viaf/68941158"
+        },
+        {
+          "source": "GND",
+          "title": "119306883",
+          "url": "https://d-nb.info/gnd/119306883"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Al-Ma'arri",
+          "url": "https://en.wikipedia.org/wiki/Al-Ma'arri"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu al-ʿAlaʾ al-Maʿarri",
+          "url": "https://openalex.org/works?search=Abu%20al-%CA%BFAla%CA%BE%20al-Ma%CA%BFarri"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu al-ʿAlaʾ al-Maʿarri",
+          "url": "https://scholar.google.com/scholar?q=Abu%20al-%CA%BFAla%CA%BE%20al-Ma%CA%BFarri"
+        }
+      ],
       "user_confirmed": true
     },
     "c048": {
@@ -1065,25 +1792,118 @@
     "c050": {
       "canonical_ar": "مقاتل بن سليمان",
       "canonical_translit": "Muqātil b. Sulaymān",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Abū al-Ḥasan Muqātil b. Sulaymān al-Balkhī",
+      "dates": "d. 150/767",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q14095767",
+          "url": "https://www.wikidata.org/wiki/Q14095767"
+        },
+        {
+          "source": "VIAF",
+          "title": "22130480",
+          "url": "https://viaf.org/viaf/22130480"
+        },
+        {
+          "source": "GND",
+          "title": "101185533X",
+          "url": "https://d-nb.info/gnd/101185533X"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Muqatil ibn Sulayman",
+          "url": "https://en.wikipedia.org/wiki/Muqatil_ibn_Sulayman"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Muqatil b. Sulayman",
+          "url": "https://openalex.org/works?search=Muqatil%20b.%20Sulayman"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Muqatil b. Sulayman",
+          "url": "https://scholar.google.com/scholar?q=Muqatil%20b.%20Sulayman"
+        }
+      ],
       "user_confirmed": true
     },
     "c051": {
       "canonical_ar": "فخر الدين الرازي",
       "canonical_translit": "Faḫr al-Dīn al-Rāzī",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Fakhr al-Dīn Muḥammad b. ʿUmar al-Rāzī",
+      "dates": "d. 606/1210",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q333703",
+          "url": "https://www.wikidata.org/wiki/Q333703"
+        },
+        {
+          "source": "VIAF",
+          "title": "90042555",
+          "url": "https://viaf.org/viaf/90042555"
+        },
+        {
+          "source": "GND",
+          "title": "118749390",
+          "url": "https://d-nb.info/gnd/118749390"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Fakhr al-Din al-Razi",
+          "url": "https://en.wikipedia.org/wiki/Fakhr_al-Din_al-Razi"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Fahr al-Din al-Razi",
+          "url": "https://openalex.org/works?search=Fahr%20al-Din%20al-Razi"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Fahr al-Din al-Razi",
+          "url": "https://scholar.google.com/scholar?q=Fahr%20al-Din%20al-Razi"
+        }
+      ],
       "user_confirmed": true
     },
     "c052": {
       "canonical_ar": "أبو حيان الغرناطي",
       "canonical_translit": "Abū Ḥayyān al-Ġarnāṭī",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Abū Ḥayyān Muḥammad b. Yūsuf al-Gharnāṭī",
+      "dates": "d. 745/1344",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q1640082",
+          "url": "https://www.wikidata.org/wiki/Q1640082"
+        },
+        {
+          "source": "VIAF",
+          "title": "73946648",
+          "url": "https://viaf.org/viaf/73946648"
+        },
+        {
+          "source": "GND",
+          "title": "118841327",
+          "url": "https://d-nb.info/gnd/118841327"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Abu Hayyan al-Gharnati",
+          "url": "https://en.wikipedia.org/wiki/Abu_Hayyan_al-Gharnati"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu Hayyan al-Garnati",
+          "url": "https://openalex.org/works?search=Abu%20Hayyan%20al-Garnati"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu Hayyan al-Garnati",
+          "url": "https://scholar.google.com/scholar?q=Abu%20Hayyan%20al-Garnati"
+        }
+      ],
       "user_confirmed": true
     },
     "c053": {
@@ -1113,9 +1933,40 @@
     "c056": {
       "canonical_ar": "ابن سبعين",
       "canonical_translit": "Ibn Sabʿīn",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Quṭb al-Dīn ʿAbd al-Ḥaqq b. Ibrāhīm Ibn Sabʿīn",
+      "dates": "d. 669/1270",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q2719051",
+          "url": "https://www.wikidata.org/wiki/Q2719051"
+        },
+        {
+          "source": "VIAF",
+          "title": "24840958",
+          "url": "https://viaf.org/viaf/24840958"
+        },
+        {
+          "source": "GND",
+          "title": "102373221",
+          "url": "https://d-nb.info/gnd/102373221"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Ibn Sab'in",
+          "url": "https://en.wikipedia.org/wiki/Ibn_Sab'in"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Ibn Sabʿin",
+          "url": "https://openalex.org/works?search=Ibn%20Sab%CA%BFin"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Ibn Sabʿin",
+          "url": "https://scholar.google.com/scholar?q=Ibn%20Sab%CA%BFin"
+        }
+      ],
       "user_confirmed": true
     },
     "c058": {
@@ -1137,13 +1988,43 @@
     "c060": {
       "canonical_ar": "فيض القاشاني",
       "canonical_translit": "Fayḍ al-Qāšānī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Muḥammad b. Murtaḍā, Muḥsin Fayḍ al-Kāshānī",
+      "dates": "d. 1090/1679",
       "authorities": [
         {
           "source": "TDVİA",
           "title": "Feyz-i Kâşânî",
           "url": "https://islamansiklopedisi.org.tr/feyz-i-kasani"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q4119490",
+          "url": "https://www.wikidata.org/wiki/Q4119490"
+        },
+        {
+          "source": "VIAF",
+          "title": "79264636",
+          "url": "https://viaf.org/viaf/79264636"
+        },
+        {
+          "source": "GND",
+          "title": "103591311",
+          "url": "https://d-nb.info/gnd/103591311"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Mohsen Fayz Kashani",
+          "url": "https://en.wikipedia.org/wiki/Mohsen_Fayz_Kashani"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Fayd al-Qasani",
+          "url": "https://openalex.org/works?search=Fayd%20al-Qasani"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Fayd al-Qasani",
+          "url": "https://scholar.google.com/scholar?q=Fayd%20al-Qasani"
         }
       ],
       "user_confirmed": true
@@ -1207,8 +2088,8 @@
     "c070": {
       "canonical_ar": "عبد القادر الجيلاني",
       "canonical_translit": "ʿAbd al-Qādir al-Ǧīlānī",
-      "full_name": "",
-      "dates": "",
+      "full_name": "Muḥyī al-Dīn ʿAbd al-Qādir b. Mūsā al-Jīlānī",
+      "dates": "d. 561/1166",
       "authorities": [
         {
           "source": "TDVİA",
@@ -1219,6 +2100,36 @@
           "source": "EI3",
           "title": "ʿAbd al-Qādir al-Jīlānī",
           "url": "https://doi.org/10.1163/1573-3912_ei3_COM_22592"
+        },
+        {
+          "source": "Wikidata",
+          "title": "Q307365",
+          "url": "https://www.wikidata.org/wiki/Q307365"
+        },
+        {
+          "source": "VIAF",
+          "title": "71359982",
+          "url": "https://viaf.org/viaf/71359982"
+        },
+        {
+          "source": "GND",
+          "title": "118859315",
+          "url": "https://d-nb.info/gnd/118859315"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Abdul Qadir Gilani",
+          "url": "https://en.wikipedia.org/wiki/Abdul_Qadir_Gilani"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "ʿAbd al-Qadir al-Gilani",
+          "url": "https://openalex.org/works?search=%CA%BFAbd%20al-Qadir%20al-Gilani"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "ʿAbd al-Qadir al-Gilani",
+          "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-Qadir%20al-Gilani"
         }
       ],
       "user_confirmed": true
@@ -1250,9 +2161,40 @@
     "c075": {
       "canonical_ar": "أبو القاسم الجنيد",
       "canonical_translit": "Abū al-Qāsim al-Ǧunayd",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Abū al-Qāsim al-Junayd b. Muḥammad al-Baghdādī",
+      "dates": "d. 298/910",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q735601",
+          "url": "https://www.wikidata.org/wiki/Q735601"
+        },
+        {
+          "source": "VIAF",
+          "title": "29521788",
+          "url": "https://viaf.org/viaf/29521788"
+        },
+        {
+          "source": "GND",
+          "title": "119235277",
+          "url": "https://d-nb.info/gnd/119235277"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Junayd of Baghdad",
+          "url": "https://en.wikipedia.org/wiki/Junayd_of_Baghdad"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu al-Qasim al-Gunayd",
+          "url": "https://openalex.org/works?search=Abu%20al-Qasim%20al-Gunayd"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu al-Qasim al-Gunayd",
+          "url": "https://scholar.google.com/scholar?q=Abu%20al-Qasim%20al-Gunayd"
+        }
+      ],
       "user_confirmed": true
     },
     "c076": {
@@ -1290,9 +2232,40 @@
     "c080": {
       "canonical_ar": "إمام الحرمين الجويني",
       "canonical_translit": "Imām al-Ḥaramayn al-Ǧuwaynī",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Imām al-Ḥaramayn Abū al-Maʿālī ʿAbd al-Malik al-Juwaynī",
+      "dates": "d. 478/1085",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q2584074",
+          "url": "https://www.wikidata.org/wiki/Q2584074"
+        },
+        {
+          "source": "VIAF",
+          "title": "19728485",
+          "url": "https://viaf.org/viaf/19728485"
+        },
+        {
+          "source": "GND",
+          "title": "118845772",
+          "url": "https://d-nb.info/gnd/118845772"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Al-Juwayni",
+          "url": "https://en.wikipedia.org/wiki/Al-Juwayni"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Imam al-Haramayn al-Guwayni",
+          "url": "https://openalex.org/works?search=Imam%20al-Haramayn%20al-Guwayni"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Imam al-Haramayn al-Guwayni",
+          "url": "https://scholar.google.com/scholar?q=Imam%20al-Haramayn%20al-Guwayni"
+        }
+      ],
       "user_confirmed": true
     },
     "c081": {
@@ -1306,9 +2279,40 @@
     "c082": {
       "canonical_ar": "ابن الفارض",
       "canonical_translit": "Ibn al-Fāriḍ",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Abū Ḥafṣ ʿUmar b. ʿAlī Ibn al-Fāriḍ",
+      "dates": "d. 632/1235",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q203142",
+          "url": "https://www.wikidata.org/wiki/Q203142"
+        },
+        {
+          "source": "VIAF",
+          "title": "118486738",
+          "url": "https://viaf.org/viaf/118486738"
+        },
+        {
+          "source": "GND",
+          "title": "118860089",
+          "url": "https://d-nb.info/gnd/118860089"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Ibn al-Farid",
+          "url": "https://en.wikipedia.org/wiki/Ibn_al-Farid"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Ibn al-Farid",
+          "url": "https://openalex.org/works?search=Ibn%20al-Farid"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Ibn al-Farid",
+          "url": "https://scholar.google.com/scholar?q=Ibn%20al-Farid"
+        }
+      ],
       "user_confirmed": true
     },
     "c083": {
@@ -1322,9 +2326,40 @@
     "c084": {
       "canonical_ar": "أبو النحيب السهروردي",
       "canonical_translit": "Abū al-Naǧīb al-Suhrawardī",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Abū al-Najīb ʿAbd al-Qāhir al-Suhrawardī",
+      "dates": "d. 563/1168",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q4115418",
+          "url": "https://www.wikidata.org/wiki/Q4115418"
+        },
+        {
+          "source": "VIAF",
+          "title": "101053660",
+          "url": "https://viaf.org/viaf/101053660"
+        },
+        {
+          "source": "GND",
+          "title": "104063467",
+          "url": "https://d-nb.info/gnd/104063467"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Abu al-Najib Suhrawardi",
+          "url": "https://en.wikipedia.org/wiki/Abu_al-Najib_Suhrawardi"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu al-Nagib al-Suhrawardi",
+          "url": "https://openalex.org/works?search=Abu%20al-Nagib%20al-Suhrawardi"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu al-Nagib al-Suhrawardi",
+          "url": "https://scholar.google.com/scholar?q=Abu%20al-Nagib%20al-Suhrawardi"
+        }
+      ],
       "user_confirmed": true
     },
     "c085": {
@@ -1346,9 +2381,40 @@
     "c088": {
       "canonical_ar": "ابو زكرياء يحيى بن شرف الدين النووي",
       "canonical_translit": "Abū Zakariyyāʾ Yaḥyā b. Šaraf al-Dīn al-Nawawī",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Abū Zakariyyā Yaḥyā b. Sharaf al-Nawawī",
+      "dates": "d. 676/1277",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q293571",
+          "url": "https://www.wikidata.org/wiki/Q293571"
+        },
+        {
+          "source": "VIAF",
+          "title": "90059668",
+          "url": "https://viaf.org/viaf/90059668"
+        },
+        {
+          "source": "GND",
+          "title": "119158523",
+          "url": "https://d-nb.info/gnd/119158523"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Al-Nawawi",
+          "url": "https://en.wikipedia.org/wiki/Al-Nawawi"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu Zakariyyaʾ Yahya b. Saraf al-Din al-Nawawi",
+          "url": "https://openalex.org/works?search=Abu%20Zakariyya%CA%BE%20Yahya%20b.%20Saraf%20al-Din%20al-Nawawi"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu Zakariyyaʾ Yahya b. Saraf al-Din al-Nawawi",
+          "url": "https://scholar.google.com/scholar?q=Abu%20Zakariyya%CA%BE%20Yahya%20b.%20Saraf%20al-Din%20al-Nawawi"
+        }
+      ],
       "user_confirmed": true
     },
     "c089": {
@@ -1370,9 +2436,40 @@
     "c091": {
       "canonical_ar": "عبد الله الأنصاري",
       "canonical_translit": "ʿAbd Allāh al-Anṣārī",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Abū Ismāʿīl ʿAbd Allāh b. Muḥammad al-Anṣārī al-Harawī",
+      "dates": "d. 481/1089",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q558205",
+          "url": "https://www.wikidata.org/wiki/Q558205"
+        },
+        {
+          "source": "VIAF",
+          "title": "19703891",
+          "url": "https://viaf.org/viaf/19703891"
+        },
+        {
+          "source": "GND",
+          "title": "11891099X",
+          "url": "https://d-nb.info/gnd/11891099X"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Abdullah Ansari",
+          "url": "https://en.wikipedia.org/wiki/Abdullah_Ansari"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "ʿAbd Allah al-Ansari",
+          "url": "https://openalex.org/works?search=%CA%BFAbd%20Allah%20al-Ansari"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "ʿAbd Allah al-Ansari",
+          "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20Allah%20al-Ansari"
+        }
+      ],
       "user_confirmed": true
     },
     "c092": {
@@ -1426,9 +2523,40 @@
     "c100": {
       "canonical_ar": "ابن الصلاح الشهرزوري",
       "canonical_translit": "Ibn al-Ṣalāḥ al-Šahrazūrī",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Ibn al-Ṣalāḥ ʿUthmān b. ʿAbd al-Raḥmān al-Shahrazūrī",
+      "dates": "d. 643/1245",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q4120436",
+          "url": "https://www.wikidata.org/wiki/Q4120436"
+        },
+        {
+          "source": "VIAF",
+          "title": "79189688",
+          "url": "https://viaf.org/viaf/79189688"
+        },
+        {
+          "source": "GND",
+          "title": "13215532X",
+          "url": "https://d-nb.info/gnd/13215532X"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Ibn al-Salah",
+          "url": "https://en.wikipedia.org/wiki/Ibn_al-Salah"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Ibn al-Salah al-Sahrazuri",
+          "url": "https://openalex.org/works?search=Ibn%20al-Salah%20al-Sahrazuri"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Ibn al-Salah al-Sahrazuri",
+          "url": "https://scholar.google.com/scholar?q=Ibn%20al-Salah%20al-Sahrazuri"
+        }
+      ],
       "user_confirmed": true
     },
     "c101": {
@@ -1482,17 +2610,79 @@
     "c109": {
       "canonical_ar": "أبو بكر الكلاباذي",
       "canonical_translit": "Abū Bakr al-Kalābāḏī",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "Abū Bakr Muḥammad b. Isḥāq al-Kalābādhī",
+      "dates": "d. 380/990",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q334857",
+          "url": "https://www.wikidata.org/wiki/Q334857"
+        },
+        {
+          "source": "VIAF",
+          "title": "79028386",
+          "url": "https://viaf.org/viaf/79028386"
+        },
+        {
+          "source": "GND",
+          "title": "104057513",
+          "url": "https://d-nb.info/gnd/104057513"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "Abu Bakr al-Kalabadhi",
+          "url": "https://en.wikipedia.org/wiki/Abu_Bakr_al-Kalabadhi"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "Abu Bakr al-Kalabadi",
+          "url": "https://openalex.org/works?search=Abu%20Bakr%20al-Kalabadi"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "Abu Bakr al-Kalabadi",
+          "url": "https://scholar.google.com/scholar?q=Abu%20Bakr%20al-Kalabadi"
+        }
+      ],
       "user_confirmed": true
     },
     "c110": {
       "canonical_ar": "علاء الدولة السمناني",
       "canonical_translit": "ʿAlāʾ al-Dawlah al-Simnānī",
-      "full_name": "",
-      "dates": "",
-      "authorities": [],
+      "full_name": "ʿAlāʾ al-Dawla Aḥmad b. Muḥammad al-Simnānī",
+      "dates": "d. 736/1336",
+      "authorities": [
+        {
+          "source": "Wikidata",
+          "title": "Q6406176",
+          "url": "https://www.wikidata.org/wiki/Q6406176"
+        },
+        {
+          "source": "VIAF",
+          "title": "17351669",
+          "url": "https://viaf.org/viaf/17351669"
+        },
+        {
+          "source": "GND",
+          "title": "102415536",
+          "url": "https://d-nb.info/gnd/102415536"
+        },
+        {
+          "source": "Wikipedia (EN)",
+          "title": "'Ala' al-Dawla Simnani",
+          "url": "https://en.wikipedia.org/wiki/'Ala'_al-Dawla_Simnani"
+        },
+        {
+          "source": "OpenAlex",
+          "title": "ʿAlaʾ al-Dawlah al-Simnani",
+          "url": "https://openalex.org/works?search=%CA%BFAla%CA%BE%20al-Dawlah%20al-Simnani"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "ʿAlaʾ al-Dawlah al-Simnani",
+          "url": "https://scholar.google.com/scholar?q=%CA%BFAla%CA%BE%20al-Dawlah%20al-Simnani"
+        }
+      ],
       "user_confirmed": true
     },
     "c111": {
