@@ -8,5 +8,8 @@ __pycache__/
 # Local safety snapshots (redundant once under version control)
 backups/
 
+# Atomic-writer last-good snapshots (written next to each generated file)
+*.bak
+
 # Claude Code local permissions (machine-specific)
 .claude/settings.local.json

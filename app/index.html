@@ -510,6 +510,40 @@ let edits = loadEdits();
 let cfg = loadCfg();
 let currentQuery = "";
 
+// Set true right before an app-initiated location.reload() so the unsaved-edits
+// beforeunload guard doesn't prompt on our own intentional navigations.
+let suppressUnloadWarning = false;
+
+// Single-level (capped) undo of discrete adjudication actions — a mis-pressed
+// status/cluster key is otherwise unrecoverable. Each entry is a JSON snapshot
+// of `edits` taken *before* a destructive action; live text-typing is not
+// snapshotted (it is visible as you type). Press `z` (outside any field) to undo.
+let undoStack = [];
+function pushUndo() {
+  undoStack.push(JSON.stringify(edits));
+  if (undoStack.length > 50) undoStack.shift();
+}
+function undo() {
+  if (undoStack.length === 0) return;
+  edits = JSON.parse(undoStack.pop());
+  saveEdits();
+  rebuildIndex();
+  rerenderActive();
+}
+function rerenderActive() {
+  if (activeTab === "browse") renderBrowse();
+  else if (activeTab === "rows") renderRowsView();
+  else if (activeTab === "clusters") renderClustersView();
+  else if (activeTab === "columns") renderColumnsView();
+}
+
+// Trailing-edge debounce: collapses bursts of keystrokes into one call so a full
+// re-render / search-index rebuild doesn't fire on every character.
+function debounce(fn, ms) {
+  let t;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+}
+
 // Per-view cursor state.
 let activeTab = sessionStorage.getItem(VIEW_KEY) || "browse";
 let rowsCursor = 0;
@@ -856,6 +890,7 @@ function renderRowsView() {
 
 function setRowStatus(v) {
   if (rowsList.length === 0) return;
+  pushUndo();
   const rowId = rowsList[rowsCursor];
   // Stay on this entry — no auto-advance. Pin it so it remains visible even
   // when the active filter (e.g. "Undecided") would otherwise drop it, letting
@@ -947,6 +982,7 @@ function addAuthorityFromInput() {
   const cid = cluList[cluCursor];
   const cur = mergedCluster(clustersById.get(cid)).authorities || [];
   if (!cur.some(a => a.url === url)) {
+    pushUndo();
     patchCluster(cid, { authorities: [...cur, { source: sourceFromUrl(url), url }] });
   }
   $("clu-authority-add").value = "";
@@ -954,6 +990,7 @@ function addAuthorityFromInput() {
 }
 function removeAuthority(i) {
   if (cluList.length === 0) return;
+  pushUndo();
   const cid = cluList[cluCursor];
   const cur = mergedCluster(clustersById.get(cid)).authorities || [];
   patchCluster(cid, { authorities: cur.filter((_, j) => j !== i) });
@@ -1030,6 +1067,7 @@ function renderClustersView() {
 
 function doClusterAct(v) {
   if (cluList.length === 0) return;
+  pushUndo();
   const cid = cluList[cluCursor];
   if (v === "confirm") {
     patchCluster(cid, { user_confirmed: true });
@@ -1089,6 +1127,7 @@ function fillClusterPicker(selectId, selectedCid, excludeCid, includeBlank) {
 }
 function assignRowToCluster() {
   if (rowsList.length === 0) return;
+  pushUndo();
   patchRow(rowsList[rowsCursor], { author_cluster_id: $("rows-cluster-pick").value });
   rebuildIndex();
   renderRowsView();
@@ -1102,6 +1141,7 @@ function mergeClusterInto() {
   const dstC = mergedCluster(clustersById.get(dst) || {});
   const movers = raw.rows.filter(r => mergedRow(r).author_cluster_id === src);
   if (!confirm(`Merge "${srcC.canonical_translit || src}" (${movers.length} rows) into "${dstC.canonical_translit || dst}"? All its rows will be reassigned.`)) return;
+  pushUndo();
   for (const r of movers) patchRow(r.id, { author_cluster_id: dst });
   rebuildIndex();
   buildCluList();
@@ -1238,6 +1278,7 @@ function colsCommitAndMove(delta) {
 
 function colsCopyPrevious() {
   if (colsList.length === 0) return;
+  pushUndo();
   const fld = colField().key;
   const rowId = colsList[colsCursor];
   patchRow(rowId, { [fld]: physicalPrevValue(rowId, fld) });
@@ -1290,8 +1331,8 @@ function updateCounts() {
 
 function renderKbdHints() {
   const bar = $("kbd-bar");
-  const common = `<span><code>Ctrl+S</code> save</span>
-                  <span><code>1·2·3</code> switch tabs</span>`;
+  const common = `<span><code>Ctrl+S</code> save</span>`;
+  const undoHint = `<span><code>z</code> undo last action</span>`;
   if (activeTab === "browse") {
     bar.innerHTML = `
       <span><code>/</code> focus search</span>
@@ -1304,18 +1345,21 @@ function renderKbdHints() {
       <span><code>1·2·3·4</code> set status (stays put)</span>
       <span><code>u</code> URL · <code>e</code> citation · <code>d</code> comment · <code>n</code> note</span>
       <span><code>c</code> jump to cluster</span>
+      ${undoHint}
       ${common}`;
   } else if (activeTab === "clusters") {
     bar.innerHTML = `
       <span><code>J</code> next · <code>K</code> prev</span>
       <span><code>1</code> confirm · <code>2</code> unconfirm · <code>3</code> unassign</span>
       <span><code>a</code> focus AR · <code>t</code> focus translit</span>
+      ${undoHint}
       ${common}`;
   } else {
     bar.innerHTML = `
       <span><code>Enter</code> next row · <code>Shift+Enter</code> prev</span>
       <span><code>↑ Same as previous</code> copies row above</span>
       <span>pick a column &amp; filter to blanks to fill gaps fast</span>
+      ${undoHint}
       ${common}`;
   }
 }
@@ -1337,8 +1381,8 @@ function onKey(ev) {
     return;
   }
   if (inField) return;
-  // Tab switching (Alt or plain number) — use plain number to keep simple.
-  if (ev.key === "1" && activeTab === "browse") { /* don't hijack browse */ }
+  // Undo the last discrete action (status/cluster/assign/merge/authority/copy).
+  if (ev.key === "z" || ev.key === "Z") { ev.preventDefault(); undo(); return; }
   if (activeTab === "browse") {
     if (ev.key === "/") { ev.preventDefault(); $("q").focus(); return; }
     if (ev.key === "Enter") {
@@ -1396,6 +1440,9 @@ function bindEditFields() {
   // Map each editor input id → the row field it writes. Title/author now carry
   // Arabic, transliteration and translation; plus the cataloguer comment and the
   // dedicated identification URL.
+  // Rebuilding the MiniSearch index is heavy (re-adds all rows); debounce it so
+  // it fires once after a burst of typing rather than on every keystroke.
+  const reindex = debounce(rebuildIndex, 300);
   const ROW_INPUT_FIELDS = {
     "rows-title-edit": "title",
     "rows-title-translit": "title_translit",
@@ -1418,18 +1465,18 @@ function bindEditFields() {
       if (rowsList.length === 0) return;
       patchRow(rowsList[rowsCursor], { [field]: e.target.value });
       // Title/author feed the search index; refresh it on those edits.
-      if (field === "title" || field === "author") rebuildIndex();
+      if (field === "title" || field === "author") reindex();
     });
   }
   $("clu-canon-ar").addEventListener("input", e => {
     if (cluList.length === 0) return;
     patchCluster(cluList[cluCursor], { canonical_ar: e.target.value });
-    rebuildIndex();
+    reindex();
   });
   $("clu-canon-translit").addEventListener("input", e => {
     if (cluList.length === 0) return;
     patchCluster(cluList[cluCursor], { canonical_translit: e.target.value });
-    rebuildIndex();
+    reindex();
   });
   $("clu-authority-addbtn").addEventListener("click", addAuthorityFromInput);
   $("clu-authority-add").addEventListener("keydown", e => {
@@ -1523,6 +1570,14 @@ function saveSettings() {
 function buildMergedData() {
   const out = { ...raw };
   out.rows = raw.rows.map(r => ({ ...r, ...(edits.rows[r.id] || {}) }));
+  // Recompute each cluster's member count from the merged rows. The stored
+  // `count` is otherwise static and goes stale on assign/merge/unassign, baking
+  // wrong sizes into the published file.
+  const counts = {};
+  for (const r of out.rows) {
+    const cid = r.author_cluster_id;
+    if (cid) counts[cid] = (counts[cid] || 0) + 1;
+  }
   // edits.clusters is keyed by cluster_id and holds PATCH objects (no id field).
   // Apply each patch over its base cluster; only append entries for ids that have
   // no base cluster, re-attaching the id. (The old code appended every patch as a
@@ -1530,13 +1585,32 @@ function buildMergedData() {
   out.clusters = raw.clusters.map(c => ({ ...c, ...(edits.clusters[c.cluster_id] || {}) }))
     .concat(Object.entries(edits.clusters)
       .filter(([cid]) => !clustersById.has(cid))
-      .map(([cid, patch]) => ({ cluster_id: cid, ...patch })));
+      .map(([cid, patch]) => ({ cluster_id: cid, ...patch })))
+    .map(c => ({ ...c, count: counts[c.cluster_id] || 0 }))
+    // Drop merged-away / fully-unassigned clusters so the exported file never
+    // carries zero-row phantoms (e.g. a merge source that kept its old count).
+    .filter(c => (counts[c.cluster_id] || 0) > 0);
   return out;
 }
 
+// Keep only edit entries that differ from a saved snapshot — i.e. edits made
+// during the save round-trip, which must NOT be cleared just because a save of
+// the earlier state succeeded.
+function keepFreshEdits(current, saved) {
+  const out = {};
+  for (const k of Object.keys(current)) {
+    if (JSON.stringify(current[k]) !== JSON.stringify(saved[k])) out[k] = current[k];
+  }
+  return out;
+}
+
+let saving = false;
 async function saveToGitHub() {
   if (!cfg.owner || !cfg.repo || !cfg.pat) { openSettings(); return; }
-  const body = JSON.stringify(buildMergedData(), null, 2);
+  if (saving) return;            // guard against a double Ctrl+S / click racing the same sha
+  saving = true;
+  const btn = $("btn-save");
+  btn.disabled = true;
   const path = "data/data.json";
   const url = `https://api.github.com/repos/${cfg.owner}/${cfg.repo}/contents/${path}`;
   const headers = {
@@ -1549,6 +1623,10 @@ async function saveToGitHub() {
     let sha = null;
     if (cur.ok) sha = (await cur.json()).sha;
     else if (cur.status !== 404) throw new Error(`GET ${cur.status}: ${await cur.text()}`);
+    // Snapshot and serialize together, immediately before the PUT, so the body
+    // and the "what we saved" record are the exact same state.
+    const savedSnapshot = JSON.parse(JSON.stringify(edits));
+    const body = JSON.stringify(buildMergedData(), null, 2);
     const put = await fetch(url, {
       method: "PUT", headers,
       body: JSON.stringify({
@@ -1559,13 +1637,22 @@ async function saveToGitHub() {
       }),
     });
     if (!put.ok) throw new Error(`PUT ${put.status}: ${await put.text()}`);
-    edits = { rows: {}, clusters: {} };
+    // Clear only what was actually saved; preserve edits made mid-flight.
+    edits = {
+      rows: keepFreshEdits(edits.rows, savedSnapshot.rows),
+      clusters: keepFreshEdits(edits.clusters, savedSnapshot.clusters),
+    };
+    undoStack = [];
     saveEdits();
     alert(`Saved to ${cfg.owner}/${cfg.repo}@${cfg.branch}. Reloading.`);
+    suppressUnloadWarning = true;
     location.reload();
   } catch (e) {
     console.error(e);
     alert(`Save failed: ${e.message}`);
+  } finally {
+    saving = false;
+    updateDirtyBadge();
   }
 }
 function downloadJson() {
@@ -1580,6 +1667,7 @@ function revert() {
   if (!confirm(`Discard ${dirtyCount()} local edits?`)) return;
   edits = { rows: {}, clusters: {} };
   saveEdits();
+  suppressUnloadWarning = true;
   location.reload();
 }
 
@@ -1591,11 +1679,17 @@ async function main() {
   $("btn-save").addEventListener("click", saveToGitHub);
   $("btn-export").addEventListener("click", downloadJson);
   $("btn-revert").addEventListener("click", revert);
-  $("q").addEventListener("input", () => { currentQuery = $("q").value; renderBrowse(); });
+  const debouncedBrowse = debounce(renderBrowse, 150);
+  $("q").addEventListener("input", () => { currentQuery = $("q").value; debouncedBrowse(); });
   for (const id of ["filter-city","filter-biblio","filter-author","filter-status","filter-pending"]) {
     $(id).addEventListener("change", renderBrowse);
   }
   document.addEventListener("keydown", onKey);
+  // Warn before leaving with edits that live only in this browser's localStorage
+  // (not yet exported or saved to GitHub).
+  window.addEventListener("beforeunload", e => {
+    if (!suppressUnloadWarning && dirtyCount() > 0) { e.preventDefault(); e.returnValue = ""; }
+  });
 
   try {
     const resp = await fetch(DATA_URL, { cache: "no-store" });

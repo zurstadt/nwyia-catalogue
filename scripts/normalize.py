@@ -13,8 +13,39 @@ Design rules:
 """
 from __future__ import annotations
 
+import json
+import os
 import re
+import tempfile
 import unicodedata
+from pathlib import Path
+
+
+def write_json_atomic(path, obj, *, backup: bool = True) -> None:
+    """Serialize ``obj`` to ``path`` as UTF-8 JSON without risk of truncation.
+
+    Writes to a temp file in the same directory then ``os.replace``s it into
+    place (atomic on POSIX), so a crash mid-write can never leave a half-written
+    file. When ``backup`` is set and the target already exists, the prior file
+    is first copied to ``<path>.bak`` as a last-good snapshot — important because
+    ``authority.json`` is the only on-disk record of the user's adjudication.
+    """
+    path = Path(path)
+    if backup and path.exists():
+        bak = path.with_name(path.name + ".bak")
+        bak.write_bytes(path.read_bytes())
+    text = json.dumps(obj, ensure_ascii=False, indent=2)
+    fd, tmp = tempfile.mkstemp(dir=str(path.parent), suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            f.write(text)
+        os.replace(tmp, path)
+    except BaseException:
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+        raise
 
 # --- City exonyms: French/local token → English. Identity-preserving. ---------
 # Tokens not listed (Istanbul, Paris, Berlin, Rabat, Ankara, Burdur, Birmingham,

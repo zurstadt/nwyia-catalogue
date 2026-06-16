@@ -19,6 +19,8 @@ from pathlib import Path
 
 import pdfplumber
 
+import normalize
+
 # Project root is the parent of this scripts/ directory.
 ROOT = Path(__file__).resolve().parent.parent
 PDF_PATH = ROOT.parent / "Nwyia_MSCollection.pdf"   # source PDF lives alongside the project
@@ -197,7 +199,7 @@ def main() -> int:
     rows = extract()
     for idx, row in enumerate(rows, start=1):
         row["id"] = f"r{idx:04d}"
-    OUT_PATH.write_text(json.dumps(rows, ensure_ascii=False, indent=2))
+    normalize.write_json_atomic(OUT_PATH, rows)
     print(f"Wrote {len(rows)} rows to {OUT_PATH}")
     blanks = sum(1 for r in rows if not r["author"])
     print(f"  rows with empty author: {blanks}")
