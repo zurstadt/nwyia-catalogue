@@ -1585,6 +1585,10 @@
       "catalog_note": "اربعة اجزاء: 2، 3، 4، 5",
       "pub_status": "published"
     },
+    "r0148": {
+      "pub_status": "published",
+      "pub_citation": "ʿAfīf al-Dīn al-Tilimsānī, Sharḥ Mawāqif al-Niffarī, ed. Jamāl al-Marzūqī, Cairo, 2000 (also ed. ʿĀṣim Ibrāhīm al-Kayyālī, Beirut, 2007)."
+    },
     "r0150": {
       "pub_status": "published"
     },
@@ -1864,7 +1868,9 @@
       "work_url": "https://www.fihrist.org.uk/catalog/manuscript_11794"
     },
     "r0271": {
-      "work_url": "https://www.fihrist.org.uk/catalog/manuscript_1816"
+      "work_url": "https://www.fihrist.org.uk/catalog/manuscript_1816",
+      "pub_status": "published",
+      "pub_citation": "ʿAfīf al-Dīn al-Tilimsānī, Sharḥ Mawāqif al-Niffarī, ed. Jamāl al-Marzūqī, Cairo, 2000 (also ed. ʿĀṣim Ibrāhīm al-Kayyālī, Beirut, 2007)."
     },
     "r0272": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
@@ -1898,7 +1904,9 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90575k"
     },
     "r0282": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081",
+      "pub_status": "published",
+      "pub_citation": "Abū al-Ḥasan al-Ḥarrālī al-Marrākushī, Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākushī fī al-tafsīr, ed. Muḥammādī b. ʿAbd al-Salām al-Khayyāṭī."
     },
     "r0283": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
@@ -1907,19 +1915,27 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
     },
     "r0285": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081",
+      "pub_status": "published",
+      "pub_citation": "Abū al-Ḥasan al-Ḥarrālī al-Marrākushī, Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākushī fī al-tafsīr, ed. Muḥammādī b. ʿAbd al-Salām al-Khayyāṭī."
     },
     "r0286": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081",
+      "pub_status": "published",
+      "pub_citation": "Abū al-Ḥasan al-Ḥarrālī al-Marrākushī, Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākushī fī al-tafsīr, ed. Muḥammādī b. ʿAbd al-Salām al-Khayyāṭī."
     },
     "r0287": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081",
+      "pub_status": "published",
+      "pub_citation": "Abū al-Ḥasan al-Ḥarrālī al-Marrākushī, Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākushī fī al-tafsīr, ed. Muḥammādī b. ʿAbd al-Salām al-Khayyāṭī."
     },
     "r0288": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
     },
     "r0289": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081",
+      "pub_status": "published",
+      "pub_citation": "Abū al-Ḥasan al-Ḥarrālī al-Marrākushī, Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākushī fī al-tafsīr, ed. Muḥammādī b. ʿAbd al-Salām al-Khayyāṭī."
     },
     "r0290": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906599"
@@ -1972,6 +1988,10 @@
     "r0312": {
       "pub_status": "published",
       "pub_citation": "Etan Kohlberg (ed.). Jawāmiʿ Ādāb al-Ṣūfīyah of Abū ʿAbd al-Raḥmān al-Sulamī (d. 412/1021). Jerusalem: Jerusalem Academic Press, 1976; repr. Cairo: Dār Jawāmiʿ al-Kalam, 1420/1999; repr. I, 311-408. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
+    },
+    "r0322": {
+      "pub_status": "published",
+      "pub_citation": "Ismāʿīl b. Sawdakīn al-Nūrī, Sharḥ al-Tajalliyāt (on Ibn al-ʿArabī's Kitāb al-Tajalliyāt), ed. Osman Yahya, Tehran, 1988; also ed. Muḥammad Idrīs al-ʿAdlūnī, Casablanca, 2009."
     },
     "r0324": {
       "pub_status": "published"
