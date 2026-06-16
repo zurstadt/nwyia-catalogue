@@ -301,21 +301,21 @@
       "city": "",
       "library": "",
       "title": "شرح قصيدة الشيخ عبد الهادي",
-      "author": "",
+      "author": "عبد الهادي الخرسة",
       "archive": "067",
       "id": "r0015",
       "shelfmark": "",
       "folios": "",
-      "author_cluster_id": "",
-      "pub_status": "unknown",
-      "pub_citation": "",
-      "discrepancy_note": "",
+      "author_cluster_id": "c122",
+      "pub_status": "published",
+      "pub_citation": "ʿAbd al-Hādī al-Kharsa, Sharḥ al-Qaṣīda al-Muḥammadiyya fī madḥ Rasūl Allāh ﷺ (commentary on al-Būṣīrī’s qaṣīda); digitized copy at archive.org/details/sharh_almuhammadiyyah.",
+      "discrepancy_note": "Nwyia recorded this as “Sharḥ qaṣīdat al-Shaykh ʿAbd al-Hādī”; al-Kharsa is the commentator, the base qaṣīda is al-Būṣīrī’s al-Qaṣīda al-Muḥammadiyya (madḥ).",
       "title_translit": "",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
       "catalog_note": "",
-      "work_url": ""
+      "work_url": "https://archive.org/details/sharh_almuhammadiyyah"
     },
     {
       "page": 1,
@@ -10715,6 +10715,31 @@
           "source": "Google Scholar",
           "title": "ʿAbd Allāh al-Yāfiʿī",
           "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20All%C4%81h%20al-Y%C4%81fi%CA%BF%C4%AB"
+        }
+      ]
+    },
+    {
+      "cluster_id": "c122",
+      "canonical_ar": "عبد الهادي الخرسة",
+      "canonical_translit": "ʿAbd al-Hādī al-Kharsa",
+      "variants": [
+        "عبد الهادي الخرسة"
+      ],
+      "count": 1,
+      "confidence": 1.0,
+      "user_confirmed": true,
+      "full_name": "Shaykh ʿAbd al-Hādī al-Kharsa (modern Damascene Sufi)",
+      "dates": "fl. 20th–21st c.",
+      "authorities": [
+        {
+          "source": "OpenAlex",
+          "title": "ʿAbd al-Hādī al-Kharsa",
+          "url": "https://openalex.org/works?search=%CA%BFAbd%20al-H%C4%81d%C4%AB%20al-Kharsa"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "ʿAbd al-Hādī al-Kharsa",
+          "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-H%C4%81d%C4%AB%20al-Kharsa"
         }
       ]
     }

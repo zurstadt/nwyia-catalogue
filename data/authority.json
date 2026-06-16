@@ -2862,6 +2862,25 @@
       ],
       "user_confirmed": true
     },
+    "c122": {
+      "canonical_ar": "عبد الهادي الخرسة",
+      "canonical_translit": "ʿAbd al-Hādī al-Kharsa",
+      "full_name": "Shaykh ʿAbd al-Hādī al-Kharsa (modern Damascene Sufi)",
+      "dates": "fl. 20th–21st c.",
+      "authorities": [
+        {
+          "source": "OpenAlex",
+          "title": "ʿAbd al-Hādī al-Kharsa",
+          "url": "https://openalex.org/works?search=%CA%BFAbd%20al-H%C4%81d%C4%AB%20al-Kharsa"
+        },
+        {
+          "source": "Google Scholar",
+          "title": "ʿAbd al-Hādī al-Kharsa",
+          "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-H%C4%81d%C4%AB%20al-Kharsa"
+        }
+      ],
+      "user_confirmed": true
+    },
     "n000": {
       "canonical_ar": "النيسابوري",
       "canonical_translit": "al-Naysābūrī",
@@ -2897,6 +2916,7 @@
     "المكزون السنجاري": "c045",
     "ابن تيميه": "c046",
     "ابو العلاء المعري": "c047",
+    "عبد الهادي الخرسه": "c122",
     "ابن عربي": "c005",
     "ارسطو": "c048",
     "الحلاج": "c006",
@@ -3078,6 +3098,13 @@
       "title": "رسائل ومسائل",
       "catalog_note": "مطبوع",
       "pub_status": "published"
+    },
+    "r0015": {
+      "author": "عبد الهادي الخرسة",
+      "work_url": "https://archive.org/details/sharh_almuhammadiyyah",
+      "pub_status": "published",
+      "pub_citation": "ʿAbd al-Hādī al-Kharsa, Sharḥ al-Qaṣīda al-Muḥammadiyya fī madḥ Rasūl Allāh ﷺ (commentary on al-Būṣīrī’s qaṣīda); digitized copy at archive.org/details/sharh_almuhammadiyyah.",
+      "discrepancy_note": "Nwyia recorded this as “Sharḥ qaṣīdat al-Shaykh ʿAbd al-Hādī”; al-Kharsa is the commentator, the base qaṣīda is al-Būṣīrī’s al-Qaṣīda al-Muḥammadiyya (madḥ)."
     },
     "r0016": {
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
