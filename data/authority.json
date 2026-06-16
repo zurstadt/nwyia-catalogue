@@ -1560,6 +1560,24 @@
       "catalog_note": "اربعة اجزاء: 2، 3، 4، 5",
       "pub_status": "published"
     },
+    "r0150": {
+      "pub_status": "published"
+    },
+    "r0151": {
+      "pub_status": "published"
+    },
+    "r0152": {
+      "pub_status": "published"
+    },
+    "r0153": {
+      "pub_status": "published"
+    },
+    "r0154": {
+      "pub_status": "published"
+    },
+    "r0155": {
+      "pub_status": "published"
+    },
     "r0156": {
       "work_url": "https://drive.google.com/open?id=1DbgmntM_zM5sv7mqcb7IXzhpyi1B5-bi",
       "pub_status": "published",
@@ -1631,6 +1649,9 @@
       "pub_status": "published",
       "pub_citation": "ʿAbd al-Qādir Aḥmad ʿAṭāʾ (ed.). \"Ādāb al-Nufūs,\" pp. 27-145. In ʿAbd al-Qādir Aḥmad ʿAṭā (ed.). Ādāb al-Nufūs wa-yalīhi Kitāb al-Tawahhum. Beirut: Muʾassasat al-Kutub al-Thaqāfīyah, 1411/1991."
     },
+    "r0182": {
+      "pub_status": "published"
+    },
     "r0184": {
       "title": "كتاب الشرح والبيان",
       "catalog_note": "مع ترجمة الى اللغة الفرنسية"
@@ -1689,6 +1710,9 @@
       "pub_status": "published",
       "pub_citation": "Etan Kohlberg (ed.). Jawāmiʿ Ādāb al-Ṣūfīyah of Abū ʿAbd al-Raḥmān al-Sulamī (d. 412/1021). Jerusalem: Jerusalem Academic Press, 1976; repr. Cairo: Dār Jawāmiʿ al-Kalam, 1420/1999; repr. I, 311-408. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
     },
+    "r0210": {
+      "pub_status": "published"
+    },
     "r0215": {
       "pub_status": "published",
       "pub_citation": "Bassām Muḥammad Bārūd (ed.). Tahdhīb al-Asrār. Abu Dhabi: Al-Majmaʿ al-Thaqafī, 1999."
@@ -1701,6 +1725,9 @@
       "title": "كتاب الصيام",
       "catalog_note": "الجزء الاول"
     },
+    "r0223": {
+      "pub_status": "published"
+    },
     "r0224": {
       "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
       "pub_status": "published",
@@ -1709,6 +1736,14 @@
     "r0225": {
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed.). “Šaqīq al-Balḫī, Ādāb al-ʿibādāt,” in Trois œuvres inédites de mystiques musulmans. Beyrouth: Dar el-Machreq, 1973."
+    },
+    "r0226": {
+      "pub_status": "published",
+      "pub_citation": "al-Qushayrī, Laṭāʾif al-ishārāt (Qurʾān commentary), ed. Ibrāhīm Basyūnī, Cairo: al-Hayʾa al-Miṣriyya al-ʿĀmma li-l-Kitāb, 1981."
+    },
+    "r0227": {
+      "pub_status": "published",
+      "pub_citation": "al-Qushayrī, Laṭāʾif al-ishārāt (Qurʾān commentary), ed. Ibrāhīm Basyūnī, Cairo: al-Hayʾa al-Miṣriyya al-ʿĀmma li-l-Kitāb, 1981."
     },
     "r0231": {
       "title": "رسالة الزيتونية",
@@ -1740,6 +1775,10 @@
       "work_url": "https://archive.org/details/kitbalawsn00usaiuoft",
       "pub_status": "published",
       "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969."
+    },
+    "r0250": {
+      "pub_status": "published",
+      "pub_citation": "al-Qushayrī, Laṭāʾif al-ishārāt (Qurʾān commentary), ed. Ibrāhīm Basyūnī, Cairo: al-Hayʾa al-Miṣriyya al-ʿĀmma li-l-Kitāb, 1981."
     },
     "r0253": {
       "pub_status": "published"
@@ -1888,7 +1927,9 @@
       "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. Inshāʾ al-dawāʾir, Osman Yahia RG 289 [Verified A]."
     },
     "r0304": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33586t"
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33586t",
+      "pub_status": "published",
+      "pub_citation": "al-Ghazālī, Tahāfut al-falāsifa, ed. Maurice Bouyges, Beirut: Imprimerie Catholique, 1927."
     },
     "r0305": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc5960x"
@@ -2025,7 +2066,9 @@
       "work_url": "https://digi.vatlib.it/view/MSS_Vat.ar.1453"
     },
     "r0344": {
-      "work_url": "https://digi.vatlib.it/view/MSS_Vat.ar.291"
+      "work_url": "https://digi.vatlib.it/view/MSS_Vat.ar.291",
+      "pub_status": "published",
+      "pub_citation": "al-Ghazālī, Tahāfut al-falāsifa, ed. Maurice Bouyges, Beirut: Imprimerie Catholique, 1927."
     },
     "r0346": {
       "title": "Petites heures de l'office des moines",
