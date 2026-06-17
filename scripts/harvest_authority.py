@@ -40,6 +40,8 @@ NAMED_MERGES = {
     "محمد بن علي الاندلسي": "c005",   # Ibn al-ʿArabī
     "عبد القادر الكيلاني": "c070",    # ʿAbd al-Qādir al-Jīlānī (= al-Jīlī = al-Kīlānī)
     "عبد الكريم الكيلاني": "c043",    # ʿAbd al-Karīm al-Jīlī (a different person)
+    # Abū Jaʿfar Ibn Yazdānyār (Rawḍat al-murīdīn): c083 was a duplicate of c069.
+    "ابو جعفر محمد بن الحسين احمد بن يزدانيار الانباري": "c069",
 }
 
 # NOTE: "title" and "author" are included so an adjudicator's hand-correction of
