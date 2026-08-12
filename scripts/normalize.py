@@ -224,6 +224,14 @@ def unmapped_places(raw_rows: list[dict]) -> tuple[set[str], set[str]]:
 _FOLIO_START = re.compile(r"(?i)\b(?:fols?|ff?|pp?)\.\s*,?\s*(?=\d)")
 # Whole value is just an extent descriptor ("13 folios", "6 folios").
 _FOLIO_EXTENT = re.compile(r"(?i)^\d+\s+(?:folios?|ff?\.?|pages?)\b")
+# A parenthesised extent: "(2 vols.)", "(4 vols)", "(17 pages dactylograhiées)".
+# Nwyia wrote these alongside the call number ("Besir aga 36 (3 vols.)"), so they
+# arrive glued to the shelfmark even though they describe the extent, not the
+# institution's reference.
+_PAREN_EXTENT = re.compile(
+    r"\(\s*\d+\s*(?:vols?|tomes?|pages?|folios?|ff?)\b[^)]*\)", re.I)
+# The same, anchored to the end of the value.
+_PAREN_EXTENT_TAIL = re.compile(_PAREN_EXTENT.pattern + r"\s*$", re.I)
 
 
 def clean_shelfmark_raw(s: str) -> str:
@@ -264,6 +272,21 @@ def split_shelfmark(raw: str) -> tuple[str, str]:
     # Pure extent descriptor → it is folio information, no shelfmark.
     if _FOLIO_EXTENT.match(s):
         return "", s
+    # Value is nothing but parenthesised extents ("(3 vols.)") → all extent.
+    if s and not _PAREN_EXTENT.sub("", s).strip():
+        return "", s
+    # A trailing parenthesised extent belongs in folios, and what precedes it is
+    # the shelfmark ("Besir aga 36 (3 vols.)" → "Besir aga 36" + "(3 vols.)").
+    tail = _PAREN_EXTENT_TAIL.search(s)
+    if tail:
+        head = s[: tail.start()].rstrip(" ,;").strip()
+        extent = tail.group(0).strip()
+        # Anything else in the head is still split on a folio marker as usual.
+        inner = _FOLIO_START.search(head)
+        if inner:
+            folios = f"{head[inner.start():].strip()} {extent}".strip()
+            return head[: inner.start()].rstrip(" ,;").strip(), folios
+        return head, extent
     m = _FOLIO_START.search(s)
     if not m:
         return s, ""

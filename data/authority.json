@@ -2486,8 +2486,7 @@
       "full_name": "Abū Ǧaʿfar Muḥammad b. al-Ḥusayn b. Aḥmad Ibn Yazdānyār al-Anbārī al-Hamaḏānī",
       "dates": "d. ca. 472/1080",
       "authorities": [],
-      "user_confirmed": true,
-      "variants": []
+      "user_confirmed": true
     },
     "c070": {
       "canonical_ar": "عبد القادر الجيلاني",
@@ -4938,9 +4937,9 @@
       "discrepancy_note": "Title corrected from the heading at f. 82a of Vat.ar.1436: «رسالة منازل الأبدال في بيان المقامات والأحوال للشيخ صدر الدين القونوي». Nwyia's index recorded it as «منازل العبادة في بيان المقامات والاحوال» — a misreading of الأبدال as العبادة (same text, ff. 82a–85a; author al-Qūnawī confirmed)."
     },
     "r0343": {
-      "work_url": "https://digi.vatlib.it/view/MSS_Vat.ar.1453",
       "author": "القونوي",
       "author_translit": "Ṣadr al-Dīn al-Qūnawī",
+      "work_url": "https://digi.vatlib.it/view/MSS_Vat.ar.1453",
       "discrepancy_note": "Vat.ar.1453 contains al-Qūnawī’s al-Risāla al-Hādiya and al-Risāla al-Mufṣiḥa — his side of the murāsala (correspondence) with Naṣīr al-Dīn al-Ṭūsī. Nwyia recorded the author as «الطوسي- القونوي» (al-Ṭūsī–al-Qūnawī); reattributed to Ṣadr al-Dīn al-Qūnawī (c003) as author of the two contained risālas (cf. r0087 al-Hādiya, r0088 al-Mufṣiḥa). Former one-row composite cluster c116 dissolved."
     },
     "r0344": {
