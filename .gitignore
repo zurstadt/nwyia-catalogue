@@ -11,6 +11,7 @@ backups/
 # Atomic-writer last-good snapshots (written next to each generated file)
 *.bak
 *.bak[0-9]*
+*.bak.*
 
 # Claude Code local permissions (machine-specific)
 .claude/settings.local.json
