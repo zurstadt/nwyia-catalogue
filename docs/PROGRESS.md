@@ -46,8 +46,9 @@ Self-contained static site (no build), reads the live `data/data.json`, styled
 after digitalsufism.github.io on a warm manuscript palette (Spectral/Amiri, RTL).
 - `index.html` — bilingual hero, live stats, Tübingen-Depot highlight.
 - `catalogue.html` — search + filter (city/library/author/status) + sort, RTL
-  titles, transliteration, pub-status badges, citation/edition links; honours an
-  `?author=` deep link.
+  titles, transliteration, pub-status badges, citation/edition links. Filter
+  state is carried in the URL, every entry has a citable `#r0173` permalink, and
+  "By place" groups under City › Library headings. See the citability section below.
 - `authors.html` — browsable author index: name, fullest name, dates, manuscript
   count, and authority-link chips; deep-links into the catalogue.
 - `about.html` — Nwyia, methodology, the provenance findings.
@@ -142,6 +143,40 @@ Author romanization is now explicitly the **cluster's** business
 (`canonical_translit`, `full_name`); the row-level `author_translit` /
 `author_translation` fields stay in the schema but are no longer offered in the
 app's Edit-columns sweep, where they were ~344 blanks that should never be filled.
+
+## Citability and the place index (2026-08-12)
+
+- **Every manuscript is citable.** Each entry carries a stable anchor and a quiet
+  `¶` permalink, e.g. `…/site/catalogue.html#r0173`. The **row id** is the key —
+  the Fonds cote cannot be, because it identifies a *bundle*: 345 rows carry a
+  cote but only 162 are distinct, and cote `082` alone covers 12 entries. A cited
+  URL resolves even when it collides with filters already in the link: the
+  filters are cleared so the entry is actually shown.
+- **Filter state lives in the URL** (`?q=&city=&library=&author=&status=&sort=`),
+  so a filtered view can be linked and bookmarked and Back steps through it. The
+  author deep link accepts a cluster id *or* the transliteration and rewrites to
+  the readable form; `authors.html` now links by cluster id, which survives a
+  correction to the transliteration.
+- **"By place" groups under City › Library headings** with counts, and drops the
+  city/library from each entry's meta where the heading already says it. The 28
+  rows with no recorded holding institution get an explained bucket floated to
+  the end — a residue, not a location.
+- **Facets cross-narrow**: choosing Istanbul cuts the library list from 37 to the
+  12 Istanbul actually has. Plus a Clear-filters control and a polite live region
+  on the result count.
+
+Three bugs worth remembering, all found by driving the real page:
+1. **Blank places sorted first, not last.** The `"~"` sentinel did not do what it
+   looked like: `localeCompare` orders punctuation *before* letters. Compare
+   emptiness explicitly instead of relying on a high-looking sentinel character.
+2. **The permalink jump never arrived.** `scroll-behavior: smooth` is set globally
+   in `styles.css`, and animating ~90,000 px was cancelled part-way, leaving the
+   reader near the top with the right entry highlighted off-screen. Programmatic
+   jumps use `behavior: "instant"`.
+3. **A fixed scroll offset cannot clear a variable sticky stack.** The navbar plus
+   control bar is 65 px wide-screen but 364 px once the six controls wrap. The
+   offset is measured at jump time, and below 860 px the control bar stops being
+   sticky rather than holding a third of the viewport.
 
 ## Roadmap / what's left
 
