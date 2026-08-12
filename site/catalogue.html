@@ -248,9 +248,16 @@ function entryHtml(r, level, grouped) {
   const authAr = r.author || clusterAr(r);
   const authDates = clusterDates(r);
   const authFull = clusterFullName(r);
+  // The author name is a real link — it carries the href a reader can copy or
+  // open in a new tab — but a plain click is intercepted and filtered in place,
+  // so the page is not reloaded to do what it can already do.
+  const authName = authTranslit
+    ? `<a class="translit author-link" href="?author=${encodeURIComponent(authTranslit)}"
+         data-author="${esc(authTranslit)}">${esc(authTranslit)}</a>`
+    : "";
   const author = (authAr || authTranslit) ? `<div class="entry-author">
-      ${authAr ? `<span class="ar-inline">${esc(authAr)}</span>` : ""}
-      ${authTranslit ? ` &nbsp;·&nbsp; <span class="translit">${esc(authTranslit)}</span>` : ""}
+      ${authAr ? `<span class="ar-inline" lang="ar" dir="rtl">${esc(authAr)}</span>` : ""}
+      ${authName ? ` &nbsp;·&nbsp; ${authName}` : ""}
       ${authDates ? `<span class="entry-author-dates">${esc(authDates)}</span>` : ""}
     </div>${authFull ? `<div class="entry-author-full">${esc(authFull)}</div>` : ""}` : "";
   // Under a place heading the city and library are already stated; repeating them
@@ -272,9 +279,14 @@ function entryHtml(r, level, grouped) {
   const catNote = r.catalog_note ? `<div class="entry-note">${esc(r.catalog_note)}</div>` : "";
   // An entry with no title is not a rendering failure: the Fonds index simply
   // records none. Say that, rather than showing a bare dash.
+  // lang/dir as ATTRIBUTES, not only CSS: they tell a screen reader which
+  // language to speak, survive copy-paste, and keep the text readable if the
+  // stylesheet fails. A Latin-script title ("Documents divers") gets neither.
+  const titleIsArabic = /[؀-ۿ]/.test(r.title || "");
+  const titleAttrs = titleIsArabic ? ` lang="ar" dir="rtl"` : ` dir="ltr"`;
   const title = r.title
-    ? `<${level} class="entry-title">${esc(r.title)}</${level}>`
-    : `<${level} class="entry-title entry-untitled">Untitled</${level}>`;
+    ? `<${level} class="entry-title${titleIsArabic ? "" : " entry-title-ltr"}"${titleAttrs}>${esc(r.title)}</${level}>`
+    : `<${level} class="entry-title entry-untitled" dir="ltr">Untitled</${level}>`;
   // A citable anchor for the individual manuscript. The row id is the key: the
   // Fonds cote cannot be, because one cote covers a whole bundle (345 rows carry
   // a cote but only 162 are distinct, and cote 082 alone covers 12 entries).
@@ -383,6 +395,20 @@ fetch("../data/data.json", { cache: "no-store" })
     $("q").addEventListener("input", debounced);
     ["f-city","f-lib","f-auth","f-status","f-sort"]
       .forEach(id => $(id).addEventListener("change", () => update(true)));
+
+    // Clicking an author name filters to that author without a reload. Modified
+    // clicks (new tab, new window, download) are left alone — the anchor has a
+    // real href precisely so those keep working.
+    $("results").addEventListener("click", e => {
+      const link = e.target.closest(".author-link");
+      if (!link || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      const name = link.dataset.author;
+      if (![...$("f-auth").options].some(o => o.value === name)) return;
+      e.preventDefault();
+      $("f-auth").value = name;
+      update(true);
+      window.scrollTo({ top: 0, behavior: "instant" });
+    });
     $("f-clear").addEventListener("click", () => {
       applyState({ q:"", city:"", library:"", author:"", status:"", sort: currentState().sort });
       update(true);

@@ -183,6 +183,13 @@ input[type="search"]:focus, select:focus { outline: none; border-color: var(--pr
 .entry-author { margin-top: .5rem; font-size: 1rem; }
 .entry-author .ar-inline { color: var(--ink); }
 .entry-author .translit { color: var(--primary-dk); font-weight: 600; }
+/* The author name filters to that author. Underlined only on hover/focus so a
+   catalogue page isn't a field of blue rules. */
+a.author-link { color: var(--primary-dk); text-decoration: none; }
+a.author-link:hover, a.author-link:focus-visible {
+  color: var(--primary); text-decoration: underline; text-underline-offset: .18em; }
+/* A Latin-script title is not an Arabic one: no RTL, no Amiri. */
+.entry-title-ltr { font-family: var(--serif); direction: ltr; font-size: 1.2rem; }
 .entry-author-dates { color: var(--muted); font-size: .85em; margin-left: .45rem;
   white-space: nowrap; }
 .entry-author-full { color: var(--muted); font-size: .87rem; margin-top: .15rem;
@@ -233,6 +240,31 @@ hr.rule { border: none; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .prose p { margin: 0 0 1.1rem; }
 .prose h2 { margin-top: 2.5rem; }
 .prose ul { color: var(--ink-soft); }
+
+/* ============================ Print ============================
+   The catalogue gets printed and PDF'd a section at a time. Drop the chrome,
+   stop cards breaking across pages, and put link targets on the page — a
+   printed "view edition ↗" that doesn't say where is a dead end. */
+@media print {
+  .nav, .controls, footer, .entry-permalink, .btn-row, .hero .lead { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .container { max-width: none; padding: 0; }
+  .entry { break-inside: avoid; page-break-inside: avoid;
+    box-shadow: none; border-color: #bbb; margin-bottom: .5rem; }
+  .place-head { break-after: avoid; page-break-after: avoid; }
+  .badge { border: 1px solid #999 !important; background: none !important; color: #000 !important; }
+  .entry-cite a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .85em; word-break: break-all; }
+  .result-count { border-bottom: 1px solid #999; padding-bottom: .3rem; }
+}
+
+/* Honour a reader who has asked the system for less movement. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important; }
+  .card:hover, .btn-primary:hover { transform: none; }
+}
 
 @media (max-width: 860px) {
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
