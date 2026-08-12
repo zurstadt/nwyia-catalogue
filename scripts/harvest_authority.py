@@ -100,6 +100,7 @@ def main(argv: list[str]) -> int:
             "dates": clean(c.get("dates", "")),              # e.g. "d. 412/1021"
             "authorities": c.get("authorities", []),  # [{source,title,url}, …]
             "user_confirmed": bool(c.get("user_confirmed", False)),
+            "category": clean(c.get("category", "")),  # "modern" = outside the ms corpus
         }
 
     # Row-level field edits, diffed against the STABLE baseline: the normalized

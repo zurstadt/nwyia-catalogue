@@ -409,6 +409,12 @@ def main() -> int:
             entry["dates"] = meta["dates"]
         if meta.get("authorities"):
             entry["authorities"] = meta["authorities"]
+        # Corpus classification. "modern" marks clusters that are NOT part of the
+        # premodern manuscript corpus — Nwyia's own studies, his colleagues'
+        # scholarship (Allard, Makdisi, Ritter), and modern authors — so the site
+        # can exclude them from manuscript counts and surface them separately.
+        if meta.get("category"):
+            entry["category"] = meta["category"]
         cluster_meta.append(entry)
 
     # 2b) Heuristic clusters for everything the authority doesn't cover (new ids).

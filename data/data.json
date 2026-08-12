@@ -7977,7 +7977,8 @@
           "title": "Paul Nwyia",
           "url": "https://scholar.google.com/scholar?q=Paul%20Nwyia"
         }
-      ]
+      ],
+      "category": "modern"
     },
     {
       "cluster_id": "c012",
@@ -8270,7 +8271,8 @@
           "title": "Michel Allard",
           "url": "https://scholar.google.com/scholar?q=Michel%20Allard"
         }
-      ]
+      ],
+      "category": "modern"
     },
     {
       "cluster_id": "c020",
@@ -9594,7 +9596,8 @@
           "title": "ʿAbd al-Hādī al-Kharsa",
           "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-H%C4%81d%C4%AB%20al-Kharsa"
         }
-      ]
+      ],
+      "category": "modern"
     },
     {
       "cluster_id": "c048",
@@ -9694,7 +9697,8 @@
           "title": "George Makdisi",
           "url": "https://scholar.google.com/scholar?q=George%20Makdisi"
         }
-      ]
+      ],
+      "category": "modern"
     },
     {
       "cluster_id": "c050",
@@ -9874,7 +9878,8 @@
           "title": "Hellmut Ritter",
           "url": "https://scholar.google.com/scholar?q=Hellmut%20Ritter"
         }
-      ]
+      ],
+      "category": "modern"
     },
     {
       "cluster_id": "c054",
@@ -10104,7 +10109,8 @@
           "title": "Muhammad b. Gafar al-Kattani",
           "url": "https://scholar.google.com/scholar?q=Muhammad%20b.%20Gafar%20al-Kattani"
         }
-      ]
+      ],
+      "category": "modern"
     },
     {
       "cluster_id": "c062",
@@ -10507,7 +10513,8 @@
       ],
       "count": 1,
       "confidence": 1.0,
-      "user_confirmed": true
+      "user_confirmed": true,
+      "category": "modern"
     },
     {
       "cluster_id": "c077",

@@ -16,6 +16,7 @@
       <a href="index.html" class="active">Home</a>
       <a href="catalogue.html">Catalogue</a>
       <a href="authors.html">Authors</a>
+      <a href="scholarship.html">Scholarship</a>
       <a href="about.html">About</a>
     </div>
   </div>
@@ -86,9 +87,11 @@
       <div>
         <div class="card" style="background:#222b38;border-color:#33404f;">
           <h3 style="color:var(--accent)">A note on the index</h3>
-          <p style="color:#c2c9d2">Nwyia's <em>archive</em> numbers refer to his <em>own</em>
-          ordering of the collection, not to a holding library. Works are therefore identified by
-          author and title rather than by shelfmark alone — the principle behind this catalogue.</p>
+          <p style="color:#c2c9d2">The <em>cote</em> numbers were not assigned by Nwyia himself:
+          a team of colleagues catalogued the materials gathered in his office, and their inventory
+          is the basis of the original <em>Fonds Nwyia</em> document. These numbers therefore reflect
+          that cataloguing effort, not a holding library — so works are identified here by author and
+          title rather than by shelfmark alone.</p>
         </div>
       </div>
     </div>
@@ -113,14 +116,19 @@
 fetch("../data/data.json", { cache: "no-store" })
   .then(r => r.json())
   .then(d => {
-    const rows = d.rows || [];
+    const clusters = d.clusters || [];
+    // Clusters classified "modern" (Nwyia's own studies, his colleagues, and
+    // modern authors) are not part of the premodern manuscript corpus — they are
+    // presented separately on the Scholarship page and excluded from these counts.
+    const modern = new Set(clusters.filter(c => c.category === "modern").map(c => c.cluster_id));
+    const rows = (d.rows || []).filter(r => !modern.has(r.author_cluster_id));
     const uniq = k => new Set(rows.map(r => (r[k] || "").trim()).filter(Boolean)).size;
     const set = (id, n) => document.getElementById(id).textContent = n.toLocaleString();
     set("s-mss", rows.length);
     set("s-lib", uniq("library"));
     set("s-city", uniq("city"));
-    set("s-auth", (d.clusters || []).filter(c =>
-      rows.some(r => r.author_cluster_id === c.cluster_id)).length);
+    set("s-auth", clusters.filter(c =>
+      c.category !== "modern" && rows.some(r => r.author_cluster_id === c.cluster_id)).length);
     set("s-pub", rows.filter(r => r.pub_status === "published").length);
   })
   .catch(() => {});

@@ -16,6 +16,7 @@
       <a href="index.html">Home</a>
       <a href="catalogue.html">Catalogue</a>
       <a href="authors.html" class="active">Authors</a>
+      <a href="scholarship.html">Scholarship</a>
       <a href="about.html">About</a>
     </div>
   </div>
@@ -64,8 +65,11 @@
 const $ = id => document.getElementById(id);
 const esc = s => (s == null ? "" : String(s)).replace(/[&<>"']/g,
   c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
-// modern editors / non-author clusters to omit from the author index
-const SKIP = new Set(["c011","c019","c049","c053","c101","c116","c117"]);
+// Non-author clusters to omit from the premodern author index. Modern clusters
+// (Nwyia, his colleagues, modern authors) are now flagged category:"modern" in
+// the data and filtered on that basis; this list covers the remaining special
+// cases (East-Syriac authors c101/c117, the dissolved cluster c116).
+const SKIP = new Set(["c101","c116","c117"]);
 
 let AUTHORS = [];
 
@@ -121,7 +125,7 @@ fetch("../data/data.json", { cache: "no-store" })
     const counts = {};
     for (const r of d.rows || []) if (r.author_cluster_id) counts[r.author_cluster_id] = (counts[r.author_cluster_id] || 0) + 1;
     AUTHORS = (d.clusters || [])
-      .filter(c => counts[c.cluster_id] && !SKIP.has(c.cluster_id))
+      .filter(c => counts[c.cluster_id] && !SKIP.has(c.cluster_id) && c.category !== "modern")
       .map(c => ({ ...c, _count: counts[c.cluster_id] }));
     render();
     $("q").addEventListener("input", render);

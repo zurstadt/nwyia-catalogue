@@ -16,6 +16,7 @@
       <a href="index.html">Home</a>
       <a href="catalogue.html" class="active">Catalogue</a>
       <a href="authors.html">Authors</a>
+      <a href="scholarship.html">Scholarship</a>
       <a href="about.html">About</a>
     </div>
   </div>
@@ -171,8 +172,11 @@ let t; const debounced = () => { clearTimeout(t); t = setTimeout(render, 120); }
 fetch("../data/data.json", { cache: "no-store" })
   .then(r => r.json())
   .then(d => {
-    ROWS = d.rows || [];
     (d.clusters || []).forEach(c => CLU.set(c.cluster_id, c));
+    // Exclude "modern" clusters (Nwyia's own studies, colleagues, modern authors)
+    // from the manuscript catalogue — they live on the Scholarship page instead.
+    const modern = new Set((d.clusters || []).filter(c => c.category === "modern").map(c => c.cluster_id));
+    ROWS = (d.rows || []).filter(r => !modern.has(r.author_cluster_id));
     populateFilters();
     // Deep link from the Authors page: ?author=<canonical_translit> pre-selects the filter.
     const wanted = new URLSearchParams(location.search).get("author");

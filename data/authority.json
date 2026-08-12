@@ -497,7 +497,8 @@
           "url": "https://scholar.google.com/scholar?q=Paul%20Nwyia"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "category": "modern"
     },
     "c012": {
       "canonical_ar": "إسماعيل بن سودكين النوري",
@@ -798,7 +799,8 @@
           "url": "https://scholar.google.com/scholar?q=Michel%20Allard"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "category": "modern"
     },
     "c020": {
       "canonical_ar": "أبو نصر الفارابي",
@@ -1942,7 +1944,8 @@
           "url": "https://scholar.google.com/scholar?q=George%20Makdisi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "category": "modern"
     },
     "c050": {
       "canonical_ar": "مقاتل بن سليمان",
@@ -2098,7 +2101,8 @@
           "url": "https://scholar.google.com/scholar?q=Hellmut%20Ritter"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "category": "modern"
     },
     "c054": {
       "canonical_ar": "ابو الفرج عبد الرحمن بن نصر الشيزري",
@@ -2298,7 +2302,8 @@
           "url": "https://scholar.google.com/scholar?q=Muhammad%20b.%20Gafar%20al-Kattani"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "category": "modern"
     },
     "c060": {
       "canonical_ar": "فيض القاشاني",
@@ -2700,7 +2705,8 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "category": "modern"
     },
     "c077": {
       "canonical_ar": "أبو بكر المروذي",
@@ -3809,7 +3815,8 @@
           "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-H%C4%81d%C4%AB%20al-Kharsa"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "category": "modern"
     },
     "c123": {
       "canonical_ar": "جلال الدين الدواني",

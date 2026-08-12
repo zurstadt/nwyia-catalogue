@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scholarship — Fonds P. Nwyia</title>
+<meta name="description" content="Modern scholarly materials in the Fonds Nwyia — Paul Nwyia's own studies and translations, and the work of colleagues such as Allard, Makdisi and Ritter — kept separate from the premodern manuscript corpus.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">Fonds P.&nbsp;Nwyia <span class="ar">فِهرِس مجموعة نُويا</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="catalogue.html">Catalogue</a>
+      <a href="authors.html">Authors</a>
+      <a href="scholarship.html" class="active">Scholarship</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" style="padding:2.5rem 0 1.75rem;">
+  <div class="container">
+    <div class="eyebrow">Modern materials</div>
+    <h1 style="font-size:2rem;margin:0;">Scholarship</h1>
+    <p class="lead" style="margin:.5rem 0 0;max-width:760px;">
+      Not every item in the Fonds is a premodern manuscript. The collection also gathered modern
+      scholarly materials — <strong>Paul Nwyia's own studies and translations</strong>, the work of
+      colleagues such as <strong>Michel Allard</strong>, and editions by <strong>George Makdisi</strong>
+      and <strong>Hellmut Ritter</strong>, alongside a few modern authors. These are kept here, apart
+      from the manuscript catalogue and excluded from its counts.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+  <div class="result-count" id="count"></div>
+  <div id="results"><div class="loading">Loading…</div></div>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><strong>Fonds P. Nwyia — Index des Lieux</strong></div>
+    <div>Modern works are listed here for completeness and are not counted as manuscripts.</div>
+  </div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => (s == null ? "" : String(s)).replace(/[&<>"']/g,
+  c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+
+// Nwyia's own cluster is surfaced first and labelled as the collector's own work.
+const NWYIA = "c011";
+
+function entryHtml(r, clu) {
+  const c = clu.get(r.author_cluster_id) || {};
+  const translit = r.title_translit ? `<div class="entry-translit">${esc(r.title_translit)}</div>` : "";
+  const transln = r.title_translation ? `<div class="entry-translation">${esc(r.title_translation)}</div>` : "";
+  const authName = c.canonical_translit || r.author || "";
+  const authAr = c.canonical_ar || "";
+  const author = (authName || authAr) ? `<div class="entry-author">
+      ${authAr ? `<span class="ar-inline">${esc(authAr)}</span>` : ""}
+      ${authName ? ` &nbsp;·&nbsp; <span class="translit">${esc(authName)}</span>` : ""}
+      ${c.dates ? ` <span class="muted">(${esc(c.dates)})</span>` : ""}
+    </div>` : "";
+  const meta = [
+    r.city && `<span><b>City:</b> ${esc(r.city)}</span>`,
+    r.library && `<span><b>Library:</b> ${esc(r.library)}</span>`,
+    r.shelfmark && `<span><b>Shelfmark:</b> ${esc(r.shelfmark)}</span>`,
+    r.folios && `<span><b>Folios:</b> ${esc(r.folios)}</span>`,
+    r.archive && `<span><b>Fonds cote:</b> <span class="cote">${esc(r.archive)}</span></span>`,
+  ].filter(Boolean).join("");
+  let cite = "";
+  if (r.pub_citation) cite = `<div class="entry-cite">${esc(r.pub_citation)}` +
+    (r.work_url ? ` — <a href="${esc(r.work_url)}" target="_blank" rel="noopener">view ↗</a>` : "") + `</div>`;
+  else if (r.work_url) cite = `<div class="entry-cite"><a href="${esc(r.work_url)}" target="_blank" rel="noopener">reference ↗</a></div>`;
+  const note = r.discrepancy_note ? `<div class="entry-cite muted">⚠ ${esc(r.discrepancy_note)}</div>` : "";
+  // Titles here are often in French/English (modern studies), so render LTR.
+  return `<article class="entry">
+    <div class="entry-head">
+      <div>
+        <h2 class="entry-title" style="font-family:var(--serif);direction:ltr;font-size:1.2rem;">${esc(r.title || "—")}</h2>
+        ${translit}${transln}${author}
+      </div>
+    </div>
+    <div class="entry-meta">${meta}</div>
+    ${cite}${note}
+  </article>`;
+}
+
+function sectionHtml(title, blurb, rows, clu) {
+  return `<section style="margin-bottom:2.5rem;">
+    <h2 style="font-family:var(--serif);color:var(--primary-dk);border-bottom:1px solid var(--line);padding-bottom:.4rem;">${esc(title)} <span class="muted" style="font-size:.9rem;font-weight:400;">· ${rows.length} item${rows.length===1?"":"s"}</span></h2>
+    ${blurb ? `<p class="muted" style="margin:.4rem 0 1rem;">${blurb}</p>` : ""}
+    ${rows.map(r => entryHtml(r, clu)).join("")}
+  </section>`;
+}
+
+fetch("../data/data.json", { cache: "no-store" })
+  .then(r => r.json())
+  .then(d => {
+    const clu = new Map();
+    (d.clusters || []).forEach(c => clu.set(c.cluster_id, c));
+    const modernIds = new Set((d.clusters || []).filter(c => c.category === "modern").map(c => c.cluster_id));
+    const rows = (d.rows || []).filter(r => modernIds.has(r.author_cluster_id));
+
+    $("count").textContent = `${rows.length} modern items · ${modernIds.size} authors — excluded from the manuscript catalogue`;
+
+    const nwyiaRows = rows.filter(r => r.author_cluster_id === NWYIA);
+    const otherRows = rows.filter(r => r.author_cluster_id !== NWYIA);
+
+    let html = "";
+    if (nwyiaRows.length)
+      html += sectionHtml("Paul Nwyia — the collector's own work", "Studies, translations and editions by Nwyia himself (1925–1980), the assembler of this collection.", nwyiaRows, clu);
+    if (otherRows.length)
+      html += sectionHtml("Colleagues & modern authors", "Modern editions and studies by Nwyia's colleagues and contemporaries — not manuscript witnesses of the early tradition.", otherRows, clu);
+
+    $("results").innerHTML = html || `<div class="loading">No modern materials recorded.</div>`;
+  })
+  .catch(e => { $("results").innerHTML = `<div class="loading">Could not load the data (${esc(e.message)}).</div>`; });
+</script>
+</body>
+</html>
