@@ -48,8 +48,9 @@ after digitalsufism.github.io on a warm manuscript palette (Spectral/Amiri, RTL)
   count, and authority-link chips; deep-links into the catalogue.
 - `about.html` — Nwyia, methodology, the provenance findings.
 - Serve from the project root: `python3 -m http.server 8000` →
-  `/site/index.html`. For GitHub Pages, publish from the repo root so `/site/`
-  and `/data/` are both served. (Not yet deployed; no git remote configured.)
+  `/site/index.html`. **Deployed 2026-08-12** to GitHub Pages from the repo root
+  (so `/site/` and `/data/` are both served): <https://zurstadt.github.io/nwyia-catalogue/>.
+  Remote `origin` = `zurstadt/nwyia-catalogue` (public).
 
 ### 4. Publication status (139/347)
 Each manuscript traced, where possible, to a published edition (`pub_status`,
@@ -113,4 +114,4 @@ variants, count, confidence, user_confirmed, **authorities** [{source,title,url}
   add QIDs (and thus VIAF/GND) when found.
 - **Long-tail author metadata** — minor count-1 figures beyond the ~55 substantive.
 - **Site:** surface `full_name`/`dates` inside catalogue entries (not just the
-  Authors page); deploy to GitHub Pages once a remote is set.
+  Authors page). **Deployed** — see above.

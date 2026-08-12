@@ -48,12 +48,15 @@ rejects requests from `file://` origins). Edits made offline are kept in
 `localStorage` and can be saved later from a served context, or downloaded with
 **Export JSON**.
 
-## Deploying on GitHub Pages
+## Published site
 
-1. Create a repository (e.g. `your-name/nwyia-index`) and commit the tree above
-   (at minimum `app/index.html` and `data/data.json`).
-2. **Settings → Pages → Source: Deploy from a branch → `main` / `/ (root)`**.
-3. Wait ~30 s; the app is live at `https://<your-name>.github.io/nwyia-index/app/`.
+The public catalogue is live at **<https://zurstadt.github.io/nwyia-catalogue/>**
+(GitHub Pages, served from `main` at `/ (root)`, so both `/site/` and `/data/`
+are reachable — the pages fetch `../data/data.json` at runtime). The root
+`index.html` redirects to `site/index.html`; `.nojekyll` disables Jekyll.
+
+A push to `main` republishes; the build takes ~30 s. The adjudicator app is
+published at the same origin under `/app/`.
 
 ## Editing and saving back to the repo
 
