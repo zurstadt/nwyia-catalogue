@@ -7,8 +7,11 @@ and what guards it.
 **Maintenance rule.** Touching an area re-verifies its rows. A row is removed only deliberately, and
 named in the commit message. New deliberate behaviour gets a row in the same commit.
 
-The app has no test suite, so most rows read **UNGUARDED**. That is an honest gap, not a formality —
-the priority list at the end says which to close first.
+Guards: `node scripts/test_translit_logic.js` covers the transliteration logic (it lifts the pure
+region out of `app/index.html` and runs against stubs — it never opens a browser or edits the app).
+`python3 scripts/test_normalize.py` covers the pipeline's string metrics. Rows still reading
+**UNGUARDED** are an honest gap, not a formality; the priority list at the end says which to close
+next.
 
 ---
 
@@ -42,10 +45,10 @@ typed into.
 
 | Decision | Anchor | Why | Guard |
 |---|---|---|---|
-| ASCII shorthand applies to `*_translit` fields only | `isTranslitField()` | An English translation must never be rewritten under the typist — `'` and `.` are ordinary punctuation there. | **UNGUARDED** |
+| ASCII shorthand applies to `*_translit` fields only | `isTranslitField()` | An English translation must never be rewritten under the typist — `'` and `.` are ordinary punctuation there. | `scripts/test_translit_logic.js` |
 | Shorthand expands around the caret, both sides separately | `#cols-edit` input handler | So the caret lands after the character just produced, however much the text before it shrank. | **UNGUARDED** |
-| A title is pre-filled only when **every** word is known | `translitSuggestion()` | A half-known suggestion is a sentence with holes, and accepting it by reflex would commit them silently. | **UNGUARDED** |
-| Lexicon pairs are **skipped, never guessed**, when Arabic and Latin token counts disagree | `buildTranslitLexicon()` | One wrong pair would propagate into every later suggestion. | **UNGUARDED** |
+| A title is pre-filled only when **every** word is known | `translitSuggestion()` | A half-known suggestion is a sentence with holes, and accepting it by reflex would commit them silently. | `scripts/test_translit_logic.js` |
+| Lexicon pairs are **skipped, never guessed**, when Arabic and Latin token counts disagree | `buildTranslitLexicon()` | One wrong pair would propagate into every later suggestion. | `scripts/test_translit_logic.js` |
 | A suggestion is committed only by an explicit `Enter` | `#cols-edit` keydown handler | Displaying is not accepting. Stepping past with `Shift+Enter` or changing column leaves the row blank rather than banking something nobody read. | **UNGUARDED** |
 | The tint is the entire prefill signal | `#cols-edit.prefilled` | A sentence explaining it would be drawn on every prefilled row. | **UNGUARDED** |
 
@@ -57,9 +60,9 @@ recoverable.
 
 | Decision | Anchor | Why | Guard |
 |---|---|---|---|
-| The app stores **what the machine proposed**, not what it thinks the human did | `shownSuggestion`, `recordSuggestionFor()` | An "accepted" flag set in a handler is wrong the moment a value arrives by another route — restore, preseed, batch accept. The record is an observation; the verdict is derived from it. | **UNGUARDED** |
+| The app stores **what the machine proposed**, not what it thinks the human did | `shownSuggestion`, `recordSuggestionFor()` | An "accepted" flag set in a handler is wrong the moment a value arrives by another route — restore, preseed, batch accept. The record is an observation; the verdict is derived from it. | `scripts/test_translit_logic.js` |
 | The proposal is captured **at decision time**, not recomputed later | `recordSuggestionFor()` called from the `Enter` branch | The lexicon grows as the sweep proceeds. Recomputing at export would answer "what would the finished lexicon say now?" and silently reclassify rows decided when it knew less. | **UNGUARDED** |
-| A proposal is recorded only on an actual commit | `Enter` branch, `#cols-edit` keydown | A row stepped past has no decision to attribute. | **UNGUARDED** |
+| A proposal is recorded only on an actual commit | `Enter` branch, `#cols-edit` keydown | A row stepped past has no decision to attribute. | `scripts/test_translit_logic.js` |
 | The verdict is a **comparison**, computed outside the app | `classify()` in `scripts/report_provenance.py` | accepted = value equals proposal · overridden = a proposal was shown and something else was written · independent = no proposal existed. | **UNGUARDED** |
 | Proposals live in `authority.json`, not in the rows | `harvest_authority.py` `machine_suggestions` | It is provenance about the curation, not catalogue content; the published `data.json` should not carry it. | **UNGUARDED** |
 | Proposals **accumulate** across harvests | `harvest_authority.py`, `prior` merge | `cluster.py` does not re-emit the block, so a later export carrying none would otherwise wipe the record. | **UNGUARDED** |
@@ -76,17 +79,23 @@ word-level decisions — a different and weaker claim, and the report says so in
 
 ## Unguarded-rows priority list
 
-The headless checks already written against the real app are the first candidates to promote into a
-test file:
+Closed so far by `node scripts/test_translit_logic.js` — shorthand field-scoping, the every-word
+pre-fill rule, the mismatched-token-count skip, and both provenance-recording rules. That suite was
+mutation-tested: deliberately relaxing the every-word rule fails two of its checks, so it has teeth
+rather than merely being green.
 
-1. **Suggestion is not banked without `Enter`** — the highest-consequence row here; a regression
-   silently fabricates scholarly data. Now *detectable* after the fact via
-   `report_provenance.py`, but still unguarded at the point of the mistake.
-2. **Lexicon skips mismatched token counts** — a regression corrupts every later suggestion.
-3. **Shorthand does not touch `title_translation`** — a regression rewrites English prose.
-4. `Alt+↑` copies the previous row (the only route to the feature in-field).
-5. Source renders above the input and both fit the viewport unscrolled.
-6. `kbd-bar` is hidden in columns and populated elsewhere.
+Next, hardest first:
+
+1. **A suggestion is not banked without `Enter`.** Still the highest-consequence row. The recording
+   half is now guarded, but the commit path itself lives in a DOM handler, so covering it needs a
+   headless driver rather than this harness. Detectable after the fact via `report_provenance.py`.
+2. **Shorthand expands around the caret.** Pure logic, but the caret arithmetic lives in the input
+   listener; lift it into a named function first, then it is trivially testable.
+3. **`Alt+↑` copies the previous row** — the only route to the feature in-field.
+4. **The harvest side**: proposals accumulate across harvests, and a proposal whose field was emptied
+   is pruned. Both are plain Python and belong in a `test_harvest.py` alongside `test_normalize.py`;
+   both were verified by hand on a scratch copy but nothing re-checks them.
+5. Source renders above the input, and `kbd-bar` is hidden only in the columns view.
 
 ## Kept by ruling
 
