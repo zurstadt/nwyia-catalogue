@@ -1,0 +1,214 @@
+{
+  "over_merge": [
+    {
+      "cluster_id": "c001",
+      "cluster": "Abū ʿAbd al-Raḥmān al-Sulamī",
+      "dates": "d. 412/1021",
+      "form_a": "ابو عبد الرحمن",
+      "form_b": "السلمي",
+      "severity": "weak",
+      "reasons": [
+        "no distinctive token in common"
+      ]
+    },
+    {
+      "cluster_id": "c009",
+      "cluster": "al-Ḥasan al-Baṣrī",
+      "dates": "d. 110/728",
+      "form_a": "ابو الحسن البصري",
+      "form_b": "الحسن البصري",
+      "severity": "refute",
+      "reasons": [
+        "kunyah names the other form: ابو الحسن is the FATHER of الحسن — a generation apart"
+      ]
+    },
+    {
+      "cluster_id": "c009",
+      "cluster": "al-Ḥasan al-Baṣrī",
+      "dates": "d. 110/728",
+      "form_a": "ابو الحسن البصري",
+      "form_b": "حسن البصري",
+      "severity": "refute",
+      "reasons": [
+        "kunyah names the other form: ابو الحسن is the FATHER of حسن — a generation apart"
+      ]
+    },
+    {
+      "cluster_id": "c014",
+      "cluster": "Ibn ʿAbbād al-Rundī",
+      "dates": "d. 792/1390",
+      "form_a": "ابن عبّاد",
+      "form_b": "سيدي الصبرجي",
+      "severity": "weak",
+      "reasons": [
+        "no distinctive token in common"
+      ]
+    },
+    {
+      "cluster_id": "c060",
+      "cluster": "Fayḍ al-Qāšānī",
+      "dates": "d. 1090/1679",
+      "form_a": "فيض القاشاني  [cluster canonical]",
+      "form_b": "عبد الرزاق بن ابي الغنائم القاشاني",
+      "severity": "refute",
+      "reasons": [
+        "linked to the cluster by nisbah alone (قاشاني) while carrying its own ism/nasab"
+      ]
+    },
+    {
+      "cluster_id": "c060",
+      "cluster": "Fayḍ al-Qāšānī",
+      "dates": "d. 1090/1679",
+      "form_a": "القلشاني",
+      "form_b": "عبد الرزاق بن ابي الغنائم القاشاني",
+      "severity": "weak",
+      "reasons": [
+        "no distinctive token in common"
+      ]
+    }
+  ],
+  "conservation": [],
+  "under_merge": [],
+  "attribution": [
+    {
+      "title": "اصطلاحات الصوفيه",
+      "attributions": [
+        {
+          "cluster_id": "c060",
+          "translit": "Fayḍ al-Qāšānī",
+          "rows": [
+            "r0083"
+          ]
+        },
+        {
+          "cluster_id": "n000",
+          "translit": "al-Naysābūrī",
+          "rows": [
+            "r0318"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "تفسير القران",
+      "attributions": [
+        {
+          "cluster_id": "c023",
+          "translit": "Ǧaʿfar al-Ṣādiq",
+          "rows": [
+            "r0057"
+          ]
+        },
+        {
+          "cluster_id": "c033",
+          "translit": "Ibn Barraǧān",
+          "rows": [
+            "r0140"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "رسائل عبد الملك بن مروان وحسن البصري",
+      "attributions": [
+        {
+          "cluster_id": "c009",
+          "translit": "al-Ḥasan al-Baṣrī",
+          "rows": [
+            "r0132"
+          ]
+        },
+        {
+          "cluster_id": "c079",
+          "translit": "ʿAbd al-Malik b. Marwān",
+          "rows": [
+            "r0133"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "مقامات القلوب",
+      "attributions": [
+        {
+          "cluster_id": "c036",
+          "translit": "Abū al-Ḥasan al-Nūrī",
+          "rows": [
+            "r0201",
+            "r0212"
+          ]
+        },
+        {
+          "cluster_id": "c088",
+          "translit": "Abū Zakariyyāʾ Yaḥyā b. Šaraf al-Dīn al-Nawawī",
+          "rows": [
+            "r0172"
+          ]
+        }
+      ]
+    }
+  ],
+  "cote_conflict": [
+    {
+      "cote": "078",
+      "title": "مقامات القلوب",
+      "attributions": [
+        {
+          "cluster_id": "c036",
+          "translit": "Abū al-Ḥasan al-Nūrī",
+          "rows": [
+            "r0201"
+          ],
+          "authors": [
+            "النوري"
+          ]
+        },
+        {
+          "cluster_id": "c088",
+          "translit": "Abū Zakariyyāʾ Yaḥyā b. Šaraf al-Dīn al-Nawawī",
+          "rows": [
+            "r0172"
+          ],
+          "authors": [
+            "ابو زكريا يحيى بن شرف الدين النووي"
+          ]
+        }
+      ]
+    },
+    {
+      "cote": "091",
+      "title": "رسائل عبد الملك بن مروان وحسن البصري",
+      "attributions": [
+        {
+          "cluster_id": "c009",
+          "translit": "al-Ḥasan al-Baṣrī",
+          "rows": [
+            "r0132"
+          ],
+          "authors": [
+            "حسن البصري"
+          ]
+        },
+        {
+          "cluster_id": "c079",
+          "translit": "ʿAbd al-Malik b. Marwān",
+          "rows": [
+            "r0133"
+          ],
+          "authors": [
+            "عبد الملك بن مروان"
+          ]
+        }
+      ]
+    }
+  ],
+  "title_forms": [
+    {
+      "normalized": "اداب العبادات",
+      "spellings": [
+        "آداب العبادات",
+        "ادآب العبادات"
+      ]
+    }
+  ]
+}
