@@ -493,8 +493,9 @@
       "author": "ميشال آلار",
       "archive": "131",
       "id": "r0024",
-      "shelfmark": "(différents documents en arabe et en français. Reproductio n de mss., textes dactylographiés)",
+      "shelfmark": "",
       "folios": "",
+      "catalog_note": "Différents documents en arabe et en français. Reproduction de mss., textes dactylographiés.",
       "author_cluster_id": "c019",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -503,7 +504,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -514,8 +514,9 @@
       "author": "فخر الدين الرازي",
       "archive": "120",
       "id": "r0025",
-      "shelfmark": "(texte Imprimé) 1-50",
-      "folios": "",
+      "shelfmark": "",
+      "folios": "1-50",
+      "catalog_note": "Texte imprimé.",
       "author_cluster_id": "c051",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -524,7 +525,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -535,8 +535,9 @@
       "author": "ابو حيان الغرناطي",
       "archive": "120",
       "id": "r0026",
-      "shelfmark": "(texte Imprimé)",
+      "shelfmark": "",
       "folios": "pp. 139-168",
+      "catalog_note": "Texte imprimé.",
       "author_cluster_id": "c052",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -545,7 +546,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -556,8 +556,9 @@
       "author": "بولس نويا",
       "archive": "118",
       "id": "r0027",
-      "shelfmark": "(texte dactylographié)",
+      "shelfmark": "",
       "folios": "",
+      "catalog_note": "Texte dactylographié.",
       "author_cluster_id": "c011",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -566,7 +567,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -577,8 +577,9 @@
       "author": "Hellmut Ritter",
       "archive": "135",
       "id": "r0028",
-      "shelfmark": "(texte imprimé)",
+      "shelfmark": "",
       "folios": "",
+      "catalog_note": "Texte imprimé.",
       "author_cluster_id": "c053",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -587,7 +588,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -598,17 +598,17 @@
       "author": "ابو الفرج عبد الرحمن بن نصر الشيزري",
       "archive": "137",
       "id": "r0029",
-      "shelfmark": "(texte imprimé) Arabica, 1977, v.24, fasc.2",
+      "shelfmark": "",
       "folios": "",
+      "catalog_note": "Texte imprimé.",
+      "pub_status": "published",
+      "pub_citation": "Arabica, 1977, v. 24, fasc. 2.",
       "author_cluster_id": "c054",
-      "pub_status": "unknown",
-      "pub_citation": "",
       "discrepancy_note": "",
       "title_translit": "",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -619,8 +619,9 @@
       "author": "ابو الحسن محمد بن ابي يعلى",
       "archive": "134",
       "id": "r0030",
-      "shelfmark": "(texte imprimé)",
+      "shelfmark": "",
       "folios": "",
+      "catalog_note": "Texte imprimé.",
       "author_cluster_id": "c055",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -629,7 +630,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -640,8 +640,9 @@
       "author": "ابن سبعين",
       "archive": "132",
       "id": "r0031",
-      "shelfmark": "(Textes manuscrit et dactylographié+ notes)",
+      "shelfmark": "",
       "folios": "",
+      "catalog_note": "Textes manuscrit et dactylographié, avec des notes.",
       "author_cluster_id": "c056",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -650,7 +651,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -808,8 +808,9 @@
       "author": "روزبهان الشيرازي",
       "archive": "033 a,b",
       "id": "r0039",
-      "shelfmark": "Lithographie",
+      "shelfmark": "",
       "folios": "(2 vols.)",
+      "catalog_note": "Lithographie.",
       "author_cluster_id": "c021",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -818,7 +819,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -871,8 +871,9 @@
       "author": "صدر الدين الشيرازي",
       "archive": "116",
       "id": "r0042",
-      "shelfmark": "Lithographie",
+      "shelfmark": "",
       "folios": "",
+      "catalog_note": "Lithographie.",
       "author_cluster_id": "c029",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -881,7 +882,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -892,8 +892,9 @@
       "author": "محمد الكتاني",
       "archive": "001 a,b,c",
       "id": "r0043",
-      "shelfmark": "Lithographe",
+      "shelfmark": "",
       "folios": "(3 vols.)",
+      "catalog_note": "Lithographie.",
       "work_url": "https://id.lib.harvard.edu/alma/990071977810203941/catalog",
       "author_cluster_id": "c059",
       "pub_status": "unknown",
@@ -902,8 +903,7 @@
       "title_translit": "",
       "title_translation": "",
       "author_translit": "",
-      "author_translation": "",
-      "catalog_note": ""
+      "author_translation": ""
     },
     {
       "page": 2,
@@ -2572,8 +2572,9 @@
       "author": "فايز المقدسي",
       "archive": "136",
       "id": "r0123",
-      "shelfmark": "(texte imprimé)",
+      "shelfmark": "",
       "folios": "",
+      "catalog_note": "Texte imprimé.",
       "author_cluster_id": "c076",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -2582,7 +2583,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -7194,8 +7194,8 @@
       "id": "r0343",
       "shelfmark": "Arabe 1453",
       "folios": "",
-      "work_url": "https://digi.vatlib.it/view/MSS_Vat.ar.1453",
       "author_translit": "Ṣadr al-Dīn al-Qūnawī",
+      "work_url": "https://digi.vatlib.it/view/MSS_Vat.ar.1453",
       "discrepancy_note": "Vat.ar.1453 contains al-Qūnawī’s al-Risāla al-Hādiya and al-Risāla al-Mufṣiḥa — his side of the murāsala (correspondence) with Naṣīr al-Dīn al-Ṭūsī. Nwyia recorded the author as «الطوسي- القونوي» (al-Ṭūsī–al-Qūnawī); reattributed to Ṣadr al-Dīn al-Qūnawī (c003) as author of the two contained risālas (cf. r0087 al-Hādiya, r0088 al-Mufṣiḥa). Former one-row composite cluster c116 dissolved.",
       "author_cluster_id": "c003",
       "pub_status": "unknown",

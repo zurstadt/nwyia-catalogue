@@ -4091,6 +4091,41 @@
       "pub_status": "published",
       "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969."
     },
+    "r0024": {
+      "shelfmark": "",
+      "catalog_note": "Différents documents en arabe et en français. Reproduction de mss., textes dactylographiés."
+    },
+    "r0025": {
+      "shelfmark": "",
+      "folios": "1-50",
+      "catalog_note": "Texte imprimé."
+    },
+    "r0026": {
+      "shelfmark": "",
+      "catalog_note": "Texte imprimé."
+    },
+    "r0027": {
+      "shelfmark": "",
+      "catalog_note": "Texte dactylographié."
+    },
+    "r0028": {
+      "shelfmark": "",
+      "catalog_note": "Texte imprimé."
+    },
+    "r0029": {
+      "shelfmark": "",
+      "catalog_note": "Texte imprimé.",
+      "pub_status": "published",
+      "pub_citation": "Arabica, 1977, v. 24, fasc. 2."
+    },
+    "r0030": {
+      "shelfmark": "",
+      "catalog_note": "Texte imprimé."
+    },
+    "r0031": {
+      "shelfmark": "",
+      "catalog_note": "Textes manuscrit et dactylographié, avec des notes."
+    },
     "r0032": {
       "title": "Fragments (sans titre)",
       "catalog_note": "Fragments d'un ms. arabe; écriture maghrébine"
@@ -4104,6 +4139,10 @@
       "pub_status": "manuscript",
       "discrepancy_note": "= al-Ḥakīm al-Tirmidhī, ʿIlal al-ʿubūdiyya (al-ʿibāda); recorded as extant in manuscript (Berlin Staatsbibl. 3504) and not yet edited per EI²."
     },
+    "r0039": {
+      "shelfmark": "",
+      "catalog_note": "Lithographie."
+    },
     "r0040": {
       "work_url": "http://mc.dlib.nyu.edu/files/books/princeton_aco004748/princeton_aco004748_lo.pdf",
       "pub_status": "published",
@@ -4115,9 +4154,13 @@
       "pub_citation": "Abū Ṭālib al-Makkī, Qūt al-qulūb fī muʿāmalat al-maḥbūb, Cairo: al-Maṭbaʿa al-Maymaniyya, 1310/1892 (and later editions)."
     },
     "r0042": {
-      "city": "Boston"
+      "city": "Boston",
+      "shelfmark": "",
+      "catalog_note": "Lithographie."
     },
     "r0043": {
+      "shelfmark": "",
+      "catalog_note": "Lithographie.",
       "work_url": "https://id.lib.harvard.edu/alma/990071977810203941/catalog"
     },
     "r0045": {
@@ -4345,6 +4388,10 @@
     },
     "r0122": {
       "work_url": "https://www.fihrist.org.uk/catalog/manuscript_225"
+    },
+    "r0123": {
+      "shelfmark": "",
+      "catalog_note": "Texte imprimé."
     },
     "r0124": {
       "pub_status": "published"
