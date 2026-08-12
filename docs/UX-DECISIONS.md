@@ -49,17 +49,28 @@ typed into.
 | A suggestion is committed only by an explicit `Enter` | `#cols-edit` keydown handler | Displaying is not accepting. Stepping past with `Shift+Enter` or changing column leaves the row blank rather than banking something nobody read. | **UNGUARDED** |
 | The tint is the entire prefill signal | `#cols-edit.prefilled` | A sentence explaining it would be drawn on every prefilled row. | **UNGUARDED** |
 
-### Known limitation — suggestion provenance
+### Suggestion provenance — closed
 
-A suggestion accepted with `Enter` lands in `data/data.json` **byte-identical** to a hand-typed value,
-and `harvest_authority.py` has no field to carry the difference. So the store cannot currently
-distinguish a confirmed machine suggestion from an independent human answer.
+Accepting a suggestion is a real decision, but it is not the same act as reading the Arabic and
+writing the line out, and in `data/data.json` the two are byte-identical. That distinction is now
+recoverable.
 
-Do **not** fix this with a flag set in an event handler — that flag is wrong the moment a value
-arrives by any other path (restore, preseed, batch accept). Provenance is a **comparison**: at export
-time, a committed value equal to what the lexicon would have suggested for that row *is* an accepted
-suggestion. If this becomes load-bearing (e.g. for measuring agreement), emit it as a side-car list
-rather than a new schema field.
+| Decision | Anchor | Why | Guard |
+|---|---|---|---|
+| The app stores **what the machine proposed**, not what it thinks the human did | `shownSuggestion`, `recordSuggestionFor()` | An "accepted" flag set in a handler is wrong the moment a value arrives by another route — restore, preseed, batch accept. The record is an observation; the verdict is derived from it. | **UNGUARDED** |
+| The proposal is captured **at decision time**, not recomputed later | `recordSuggestionFor()` called from the `Enter` branch | The lexicon grows as the sweep proceeds. Recomputing at export would answer "what would the finished lexicon say now?" and silently reclassify rows decided when it knew less. | **UNGUARDED** |
+| A proposal is recorded only on an actual commit | `Enter` branch, `#cols-edit` keydown | A row stepped past has no decision to attribute. | **UNGUARDED** |
+| The verdict is a **comparison**, computed outside the app | `classify()` in `scripts/report_provenance.py` | accepted = value equals proposal · overridden = a proposal was shown and something else was written · independent = no proposal existed. | **UNGUARDED** |
+| Proposals live in `authority.json`, not in the rows | `harvest_authority.py` `machine_suggestions` | It is provenance about the curation, not catalogue content; the published `data.json` should not carry it. | **UNGUARDED** |
+| Proposals **accumulate** across harvests | `harvest_authority.py`, `prior` merge | `cluster.py` does not re-emit the block, so a later export carrying none would otherwise wipe the record. | **UNGUARDED** |
+| A proposal whose field has been emptied is pruned | `harvest_authority.py`, `live` filter | With nothing to compare against, it describes a decision that no longer exists. | **UNGUARDED** |
+
+Report it with `python3 scripts/report_provenance.py [--field …] [--list]`. Verified end to end:
+accept / override / step-past classify correctly; a second harvest with no block preserves the
+earlier records; emptying a field prunes its proposal.
+
+**Do not** report accepted rows as hand-transliterated. They are confirmed compositions of your own
+word-level decisions — a different and weaker claim, and the report says so in its own output.
 
 ---
 
@@ -69,7 +80,8 @@ The headless checks already written against the real app are the first candidate
 test file:
 
 1. **Suggestion is not banked without `Enter`** — the highest-consequence row here; a regression
-   silently fabricates scholarly data.
+   silently fabricates scholarly data. Now *detectable* after the fact via
+   `report_provenance.py`, but still unguarded at the point of the mistake.
 2. **Lexicon skips mismatched token counts** — a regression corrupts every later suggestion.
 3. **Shorthand does not touch `title_translation`** — a regression rewrites English prose.
 4. `Alt+↑` copies the previous row (the only route to the feature in-field).

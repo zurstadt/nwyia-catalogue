@@ -140,15 +140,47 @@ def main(argv: list[str]) -> int:
         if ov:
             overrides[r["id"]] = ov
 
+    # What the app's lexicon proposed for a field, recorded beside the decision
+    # at the moment it was made. Kept here rather than in data.json: it is
+    # provenance about the curation, not catalogue content, and cluster.py does
+    # not re-emit it — so it must ACCUMULATE across harvests rather than being
+    # replaced by whatever the latest export happens to carry.
+    prior = {}
+    if OUT_PATH.exists():
+        try:
+            prior = json.loads(OUT_PATH.read_text(encoding="utf-8")).get(
+                "machine_suggestions", {})
+        except (OSError, json.JSONDecodeError):
+            prior = {}
+    suggestions = {rid: dict(fields) for rid, fields in prior.items()}
+    for rid, fields in (data.get("machine_suggestions") or {}).items():
+        suggestions.setdefault(rid, {}).update(fields)
+    # Drop entries whose field no longer holds a value: with nothing to compare
+    # against, a recorded proposal describes a decision that no longer exists.
+    live = {r["id"]: r for r in rows}
+    suggestions = {
+        rid: {f: v for f, v in fields.items()
+              if (live.get(rid, {}).get(f) or "").strip()}
+        for rid, fields in suggestions.items()
+    }
+    suggestions = {rid: f for rid, f in suggestions.items() if f}
+
     authority = {
         "source": str(src),
         "clusters": clusters_out,
         "variant_to_cluster": v2c,
         "row_overrides": overrides,
+        "machine_suggestions": suggestions,
     }
     cluster.normalize.write_json_atomic(OUT_PATH, authority)
+    accepted = sum(1 for rid, fields in suggestions.items()
+                   for f, v in fields.items() if (live[rid].get(f) or "") == v)
+    total_sug = sum(len(f) for f in suggestions.values())
     print(f"Wrote {OUT_PATH}: {len(clusters_out)} clusters, "
           f"{len(v2c)} variant→cluster, {len(overrides)} row overrides")
+    if total_sug:
+        print(f"  machine suggestions recorded: {total_sug} "
+              f"({accepted} accepted unchanged, {total_sug - accepted} overridden)")
     for variant, cid in NAMED_MERGES.items():
         print(f"  merge: {variant!r} → {cid} ({clusters_out.get(cid, {}).get('canonical_translit','?')})")
     if conflicts:

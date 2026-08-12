@@ -595,9 +595,11 @@ let rowsList = []; // ids in current filter
 let cluList = [];  // cluster_ids in current filter
 
 function loadEdits() {
-  try { return JSON.parse(localStorage.getItem(LS_KEY) || "null") ||
-    { rows: {}, clusters: {} }; }
-  catch { return { rows: {}, clusters: {} }; }
+  const empty = { rows: {}, clusters: {}, suggestions: {} };
+  try {
+    const got = JSON.parse(localStorage.getItem(LS_KEY) || "null");
+    return got ? { ...empty, ...got } : empty;
+  } catch { return empty; }
 }
 function saveEdits() {
   localStorage.setItem(LS_KEY, JSON.stringify(edits));
@@ -1304,6 +1306,25 @@ function translitSuggestionFor(fld, row) {
   return translitSuggestion((fld.key === "title_translit" ? row.title : row.author) || "");
 }
 
+// What the machine proposed on the screen the annotator was last looking at.
+// This is an OBSERVATION of the machine's output, not a claim about what the
+// human did — the accepted/overridden classification is derived later by
+// comparing this against the committed value. A flag set here saying "the human
+// accepted" would be a lie the moment a value arrived by any other route.
+let shownSuggestion = null;   // { rowId, field, value } | null
+
+// Record the proposal beside the decision, at the moment the decision is made,
+// so the pairing survives the lexicon growing afterwards. Recomputing the
+// suggestion at export time would ask a DIFFERENT question — what the finished
+// lexicon would say now — and silently mislabel rows decided earlier.
+function recordSuggestionFor(rowId, field) {
+  if (!shownSuggestion) return;
+  if (shownSuggestion.rowId !== rowId || shownSuggestion.field !== field) return;
+  const forRow = edits.suggestions[rowId] || {};
+  forRow[field] = shownSuggestion.value;
+  edits.suggestions[rowId] = forRow;
+}
+
 // What the row is being transliterated / translated FROM. Showing this — big,
 // above the field — is the whole point of the sweep screen: it is the raw source
 // artifact, and it used to sit below the input under ten other rows.
@@ -1416,6 +1437,8 @@ function renderColumnsView() {
   const prefilled = !input.value && suggestion;
   if (prefilled) input.value = suggestion;
   input.classList.toggle("prefilled", !!prefilled);
+  // Remember what was actually put in front of the annotator for this row.
+  shownSuggestion = prefilled ? { rowId, field: fld.key, value: suggestion } : null;
 
   const prev = physicalPrevValue(rowId, fld.key);
   $("cols-prevval").textContent = prev ? `Alt+↑ copies: ${prev}` : "";
@@ -1683,7 +1706,11 @@ function bindEditFields() {
       // Shift+Enter or a field change leaves it blank rather than silently
       // banking a suggestion nobody read.
       if (!e.shiftKey && colsList.length) {
-        patchRow(colsList[colsCursor], { [colField().key]: e.target.value });
+        const rowId = colsList[colsCursor], key = colField().key;
+        // Store the machine's proposal beside the decision. Only on an actual
+        // commit: a row stepped past never had a decision to attribute.
+        recordSuggestionFor(rowId, key);
+        patchRow(rowId, { [key]: e.target.value });
       }
       colsCommitAndMove(e.shiftKey ? -1 : 1);
       return;
@@ -1808,6 +1835,22 @@ function buildMergedData() {
     // Drop merged-away / fully-unassigned clusters so the exported file never
     // carries zero-row phantoms (e.g. a merge source that kept its old count).
     .filter(c => (counts[c.cluster_id] || 0) > 0);
+
+  // What the machine proposed, for the rows where it proposed anything. Carried
+  // beside the decisions rather than inside the rows: it is provenance about the
+  // curation, not catalogue content, and the public file should not grow it.
+  // harvest_authority.py moves it into authority.json, where it is durable.
+  const proposed = {};
+  for (const [rowId, byField] of Object.entries(edits.suggestions || {})) {
+    const kept = {};
+    for (const [field, value] of Object.entries(byField)) {
+      // Only meaningful while the row still carries a value to compare against.
+      const cur = (out.rows.find(r => r.id === rowId) || {})[field];
+      if ((cur ?? "").toString().trim()) kept[field] = value;
+    }
+    if (Object.keys(kept).length) proposed[rowId] = kept;
+  }
+  if (Object.keys(proposed).length) out.machine_suggestions = proposed;
   return out;
 }
 

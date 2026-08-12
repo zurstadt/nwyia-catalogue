@@ -60,6 +60,20 @@ accepts it, typing replaces it, and stepping past leaves the row blank. Words ar
 rows where the Arabic and Latin word counts match, so an ambiguous pairing is skipped rather than
 guessed.
 
+Accepting a pre-fill is a real decision, but it is not the same as reading the Arabic and writing the
+line out — so the app records **what it proposed**, beside the decision, at the moment you made it.
+`harvest_authority.py` keeps that in `authority.json` (it accumulates across harvests), and the split
+is derived by comparison, never asserted by the app:
+
+```sh
+python3 scripts/report_provenance.py            # totals
+python3 scripts/report_provenance.py --list     # per row, with the overridden proposals
+```
+
+`accepted` = the value equals what was proposed · `overridden` = a proposal was shown and you wrote
+something else · `independent` = no proposal existed. Accepted rows are confirmed compositions of your
+own word-level decisions; they should not be reported as hand-transliterated.
+
 ## Local use
 
 ```sh
