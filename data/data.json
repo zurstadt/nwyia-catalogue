@@ -1629,6 +1629,7 @@
       "id": "r0078",
       "shelfmark": "3319, mo 225",
       "folios": "fol.2-24b",
+      "catalog_note": "No title is recorded for this entry in the Fonds index.",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00004038",
       "author_cluster_id": "",
       "pub_status": "unknown",
@@ -1637,8 +1638,7 @@
       "title_translit": "",
       "title_translation": "",
       "author_translit": "",
-      "author_translation": "",
-      "catalog_note": ""
+      "author_translation": ""
     },
     {
       "page": 3,
@@ -2238,6 +2238,7 @@
       "id": "r0107",
       "shelfmark": "Mingana 635",
       "folios": "",
+      "catalog_note": "No title is recorded for this entry in the Fonds index.",
       "author_cluster_id": "c017",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -2246,7 +2247,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -2994,6 +2994,7 @@
       "id": "r0143",
       "shelfmark": "1602",
       "folios": "",
+      "catalog_note": "No title is recorded for this entry in the Fonds index.",
       "author_cluster_id": "",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -3002,7 +3003,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -3015,6 +3015,7 @@
       "id": "r0144",
       "shelfmark": "1620",
       "folios": "fol.88a-118b",
+      "catalog_note": "No title is recorded for this entry in the Fonds index.",
       "author_cluster_id": "c082",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -3023,7 +3024,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -3519,6 +3519,7 @@
       "id": "r0168",
       "shelfmark": "4128",
       "folios": "fol.151a-170",
+      "catalog_note": "No title is recorded for this entry in the Fonds index.",
       "author_cluster_id": "",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -3527,7 +3528,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -3897,6 +3897,7 @@
       "id": "r0186",
       "shelfmark": "Fatih 2553",
       "folios": "fol.58a-68a",
+      "catalog_note": "No title is recorded for this entry in the Fonds index.",
       "author_cluster_id": "c090",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -3905,7 +3906,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {
@@ -5430,6 +5430,7 @@
       "id": "r0259",
       "shelfmark": "3336",
       "folios": "(2 vols.)",
+      "catalog_note": "No title is recorded for this entry in the Fonds index.",
       "author_cluster_id": "c101",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -5438,7 +5439,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "",
       "work_url": ""
     },
     {

@@ -4293,6 +4293,7 @@
     },
     "r0078": {
       "library": "Staatsbibliothek zu Berlin",
+      "catalog_note": "No title is recorded for this entry in the Fonds index.",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00004038"
     },
     "r0079": {
@@ -4345,6 +4346,9 @@
     "r0106": {
       "author": "التستري",
       "pub_status": "published"
+    },
+    "r0107": {
+      "catalog_note": "No title is recorded for this entry in the Fonds index."
     },
     "r0109": {
       "pub_status": "published"
@@ -4430,6 +4434,12 @@
       "pub_status": "published",
       "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): al-Kawkab al-durrī fī manāqib Dhī al-Nūn al-Miṣrī, Osman Yahia RG 347 [Verified B]."
     },
+    "r0143": {
+      "catalog_note": "No title is recorded for this entry in the Fonds index."
+    },
+    "r0144": {
+      "catalog_note": "No title is recorded for this entry in the Fonds index."
+    },
     "r0145": {
       "title": "من كلام سهل",
       "catalog_note": "اربعة اجزاء: 2، 3، 4، 5",
@@ -4502,6 +4512,9 @@
       "pub_status": "published",
       "discrepancy_note": "Author corrected to Abū ʿAbd al-Raḥmān al-Sulamī (d. 412/1021): Nwyia's index captured a garbled fragment «...الخواص، التستري،» (the nisbas al-Khawwāṣ / al-Tustarī, likely transmitters in the excerpt's isnād). Surūr al-asrār attributed to al-Sulamī per ablibrary.net."
     },
+    "r0168": {
+      "catalog_note": "No title is recorded for this entry in the Fonds index."
+    },
     "r0173": {
       "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
       "pub_status": "published",
@@ -4543,6 +4556,9 @@
     "r0185": {
       "pub_status": "published",
       "pub_citation": "Ghawr al-umūr, ed. & French tr. G. Gobillot, “La pensée d’al-Ḥakīm al-Tirmiḏī”, thèse, Lyon, 1989."
+    },
+    "r0186": {
+      "catalog_note": "No title is recorded for this entry in the Fonds index."
     },
     "r0187": {
       "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
@@ -4697,6 +4713,9 @@
       "author": "ابن العربي",
       "catalog_note": "Attributed to Ibn al-ʿArabī al-Ṭāʾī (per JF); a divination-genre work (asʾilat mā kāna wa-mā yakūn), not listed among his works in the MIAS catalogue — publication status open.",
       "work_url": "https://www.qalamos.net/receive/DE15Book_manuscript_00015600"
+    },
+    "r0259": {
+      "catalog_note": "No title is recorded for this entry in the Fonds index."
     },
     "r0261": {
       "title": "طواسين",

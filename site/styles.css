@@ -162,6 +162,10 @@ input[type="search"]:focus, select:focus { outline: none; border-color: var(--pr
 .entry-meta b { color: var(--ink); font-weight: 600; }
 .entry-cite { margin-top: .55rem; font-size: .88rem; color: var(--muted); font-style: italic; }
 .entry-cite a { font-style: normal; }
+/* Cataloguer's description of the item: physical form, or "no title recorded". */
+.entry-note { margin-top: .55rem; font-size: .88rem; color: var(--ink-soft); }
+.entry-untitled { font-family: var(--serif); direction: ltr; font-size: 1.15rem;
+  color: var(--muted); font-style: italic; }
 
 /* ---- Badges ---- */
 .badge { display: inline-block; padding: .18rem .6rem; border-radius: 999px; font-size: .74rem;

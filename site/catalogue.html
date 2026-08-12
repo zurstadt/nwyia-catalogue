@@ -114,7 +114,7 @@ function matches(r, q, city, lib, auth, status) {
   if (status && (r.pub_status||"unknown") !== status) return false;
   if (q) {
     const hay = [r.title, r.title_translit, r.title_translation, r.author, clusterLabel(r),
-                 clusterAr(r), clusterFullName(r), clusterDates(r),
+                 clusterAr(r), clusterFullName(r), clusterDates(r), r.catalog_note,
                  r.shelfmark, r.archive, r.city, r.library].join(" ").toLowerCase();
     if (!q.split(/\s+/).every(t => hay.includes(t))) return false;
   }
@@ -158,16 +158,24 @@ function entryHtml(r) {
     (r.work_url ? ` — <a href="${esc(r.work_url)}" target="_blank" rel="noopener">view edition ↗</a>` : "") + `</div>`;
   else if (r.work_url) cite = `<div class="entry-cite"><a href="${esc(r.work_url)}" target="_blank" rel="noopener">identification / catalogue ↗</a></div>`;
   const note = r.discrepancy_note ? `<div class="entry-cite muted">⚠ ${esc(r.discrepancy_note)}</div>` : "";
+  // The cataloguer's own description of the item — its physical form (texte
+  // imprimé, lithographie), or a statement that the index records no title.
+  const catNote = r.catalog_note ? `<div class="entry-note">${esc(r.catalog_note)}</div>` : "";
+  // An entry with no title is not a rendering failure: the Fonds index simply
+  // records none. Say that, rather than showing a bare dash.
+  const title = r.title
+    ? `<h2 class="entry-title">${esc(r.title)}</h2>`
+    : `<h2 class="entry-title entry-untitled">Untitled</h2>`;
   return `<article class="entry">
     <div class="entry-head">
       <div>
-        <h2 class="entry-title">${esc(r.title || "—")}</h2>
+        ${title}
         ${translit}${transln}${author}
       </div>
       <div>${badge}</div>
     </div>
     <div class="entry-meta">${meta}</div>
-    ${cite}${note}
+    ${catNote}${cite}${note}
   </article>`;
 }
 
