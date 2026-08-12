@@ -78,6 +78,17 @@ function clusterAr(r) {
   const c = CLU.get(r.author_cluster_id);
   return c ? (c.canonical_ar || "") : "";
 }
+function clusterDates(r) {
+  const c = CLU.get(r.author_cluster_id);
+  return c ? (c.dates || "") : "";
+}
+// The fullest attested nasab, shown under the short name — but only when it adds
+// something the short name doesn't already say.
+function clusterFullName(r) {
+  const c = CLU.get(r.author_cluster_id);
+  const full = c ? (c.full_name || "") : "";
+  return full && full !== (c.canonical_translit || "") ? full : "";
+}
 
 function fillSelect(el, values, allLabel) {
   el.innerHTML = `<option value="">${allLabel}</option>` +
@@ -103,7 +114,8 @@ function matches(r, q, city, lib, auth, status) {
   if (status && (r.pub_status||"unknown") !== status) return false;
   if (q) {
     const hay = [r.title, r.title_translit, r.title_translation, r.author, clusterLabel(r),
-                 clusterAr(r), r.shelfmark, r.archive, r.city, r.library].join(" ").toLowerCase();
+                 clusterAr(r), clusterFullName(r), clusterDates(r),
+                 r.shelfmark, r.archive, r.city, r.library].join(" ").toLowerCase();
     if (!q.split(/\s+/).every(t => hay.includes(t))) return false;
   }
   return true;
@@ -127,10 +139,13 @@ function entryHtml(r) {
   const transln = r.title_translation ? `<div class="entry-translation">${esc(r.title_translation)}</div>` : "";
   const authTranslit = clusterLabel(r);
   const authAr = r.author || clusterAr(r);
+  const authDates = clusterDates(r);
+  const authFull = clusterFullName(r);
   const author = (authAr || authTranslit) ? `<div class="entry-author">
       ${authAr ? `<span class="ar-inline">${esc(authAr)}</span>` : ""}
       ${authTranslit ? ` &nbsp;·&nbsp; <span class="translit">${esc(authTranslit)}</span>` : ""}
-    </div>` : "";
+      ${authDates ? `<span class="entry-author-dates">${esc(authDates)}</span>` : ""}
+    </div>${authFull ? `<div class="entry-author-full">${esc(authFull)}</div>` : ""}` : "";
   const meta = [
     r.city && `<span><b>City:</b> ${esc(r.city)}</span>`,
     r.library && `<span><b>Library:</b> ${esc(r.library)}</span>`,

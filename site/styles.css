@@ -153,6 +153,10 @@ input[type="search"]:focus, select:focus { outline: none; border-color: var(--pr
 .entry-author { margin-top: .5rem; font-size: 1rem; }
 .entry-author .ar-inline { color: var(--ink); }
 .entry-author .translit { color: var(--primary-dk); font-weight: 600; }
+.entry-author-dates { color: var(--muted); font-size: .85em; margin-left: .45rem;
+  white-space: nowrap; }
+.entry-author-full { color: var(--muted); font-size: .87rem; margin-top: .15rem;
+  line-height: 1.45; max-width: 62ch; }
 .entry-meta { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin-top: .7rem;
   font-size: .9rem; color: var(--ink-soft); padding-top: .7rem; border-top: 1px dashed var(--line); }
 .entry-meta b { color: var(--ink); font-weight: 600; }
