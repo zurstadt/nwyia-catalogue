@@ -21,6 +21,74 @@ import unicodedata
 from pathlib import Path
 
 
+def jaro_similarity(s1: str, s2: str) -> float:
+    """Jaro similarity of two strings, in [0, 1].
+
+    Two characters match when they are equal and lie within a window of
+    ``max(len1, len2) // 2 - 1`` positions of each other; a transposition is a
+    pair of matched characters that appear in a different relative order.
+    """
+    len1, len2 = len(s1), len(s2)
+    if not len1 and not len2:
+        return 1.0
+    if not len1 or not len2:
+        return 0.0
+    window = max(max(len1, len2) // 2 - 1, 0)
+
+    s1_matched = [False] * len1
+    s2_matched = [False] * len2
+    matches = 0
+    for i, ch in enumerate(s1):
+        for j in range(max(0, i - window), min(len2, i + window + 1)):
+            if not s2_matched[j] and s2[j] == ch:
+                s1_matched[i] = s2_matched[j] = True
+                matches += 1
+                break
+    if not matches:
+        return 0.0
+
+    # Count characters that matched but in a different order.
+    transpositions = 0
+    j = 0
+    for i in range(len1):
+        if not s1_matched[i]:
+            continue
+        while not s2_matched[j]:
+            j += 1
+        if s1[i] != s2[j]:
+            transpositions += 1
+        j += 1
+    transpositions //= 2
+
+    return (matches / len1
+            + matches / len2
+            + (matches - transpositions) / matches) / 3.0
+
+
+def jaro_winkler_similarity(s1: str, s2: str) -> float:
+    """Jaro-Winkler similarity, in [0, 1].
+
+    Jaro, boosted for strings sharing a leading prefix (up to 4 characters,
+    scaling factor 0.1), and only when the Jaro score already clears 0.7 — the
+    standard Winkler boost threshold.
+
+    Implemented here in pure Python on purpose. It is the ONLY similarity call
+    the pipeline makes (``cluster.cluster_confidence``), and depending on a
+    compiled extension for it made the whole pipeline unrunnable whenever the
+    installed wheel's architecture stopped matching the interpreter's. A
+    research pipeline should still run years from now on an unknown machine.
+    """
+    jaro = jaro_similarity(s1, s2)
+    if jaro <= 0.7:
+        return jaro
+    prefix = 0
+    for a, b in zip(s1[:4], s2[:4]):
+        if a != b:
+            break
+        prefix += 1
+    return jaro + prefix * 0.1 * (1 - jaro)
+
+
 def write_json_atomic(path, obj, *, backup: bool = True) -> None:
     """Serialize ``obj`` to ``path`` as UTF-8 JSON without risk of truncation.
 

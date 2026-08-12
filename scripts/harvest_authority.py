@@ -100,8 +100,12 @@ def main(argv: list[str]) -> int:
             "dates": clean(c.get("dates", "")),              # e.g. "d. 412/1021"
             "authorities": c.get("authorities", []),  # [{source,title,url}, …]
             "user_confirmed": bool(c.get("user_confirmed", False)),
-            "category": clean(c.get("category", "")),  # "modern" = outside the ms corpus
         }
+        # "modern" = outside the manuscript corpus. Written only when set, to
+        # match how cluster.py consumes it (an empty value means "unclassified"
+        # and is ignored there) — so a no-op harvest doesn't add 100+ empty keys.
+        if clean(c.get("category", "")):
+            clusters_out[cid]["category"] = clean(c["category"])
 
     # Row-level field edits, diffed against the STABLE baseline: the normalized
     # raw extraction plus cluster.py's default fields — i.e. exactly the row state

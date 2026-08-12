@@ -21,8 +21,6 @@ import sys
 import unicodedata
 from pathlib import Path
 
-import jellyfish
-
 import normalize
 
 # Project root is the parent of this scripts/ directory.
@@ -318,7 +316,7 @@ def pick_translit(group: list[str], canonical: str) -> str:
 def cluster_confidence(group: list[str]) -> float:
     if len(group) <= 1:
         return 1.0
-    sims = [jellyfish.jaro_winkler_similarity(group[i], group[j])
+    sims = [normalize.jaro_winkler_similarity(group[i], group[j])
             for i in range(len(group)) for j in range(i + 1, len(group))]
     return round(min(sims), 3) if sims else 1.0
 
