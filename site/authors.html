@@ -88,7 +88,10 @@ function cardHtml(c) {
   const full = c.full_name ? `<div class="author-full">${esc(c.full_name)}</div>` : "";
   const dates = c.dates ? `<span class="author-dates">${esc(c.dates)}</span>` : "";
   const ar = c.canonical_ar ? `<span class="ar-inline">${esc(c.canonical_ar)}</span>` : "";
-  const q = encodeURIComponent(c.canonical_translit || "");
+  // Link by cluster id: it survives a correction to the transliteration, which a
+  // name-based link would not. The catalogue accepts either and rewrites the URL
+  // to the readable name.
+  const q = encodeURIComponent(c.cluster_id);
   return `<article class="author-card">
     <div class="author-head">
       <h2 class="author-name">${ar}${esc(c.canonical_translit || "—")}</h2>

@@ -141,11 +141,41 @@ input[type="search"]:focus, select:focus { outline: none; border-color: var(--pr
 .field label { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .06em;
   color: var(--muted); margin-bottom: .2rem; font-weight: 600; }
 .result-count { color: var(--muted); font-size: .92rem; margin: 1rem 0 .5rem; }
+.field-clear { display: flex; align-items: flex-end; flex: 0 0 auto; }
+.btn-clear { padding: .55rem .9rem; font-family: var(--sans); font-size: .9rem;
+  font-weight: 600; color: var(--primary-dk); background: #fff; cursor: pointer;
+  border: 1px solid var(--line); border-radius: var(--radius); }
+.btn-clear:hover { border-color: var(--primary); background: var(--parchment-2); }
+
+/* ---- Place index: City › Library section headings ---- */
+.place-group { margin-bottom: 2rem; }
+.place-group:first-child .place-head { margin-top: .25rem; }
+.place-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: .5rem;
+  font-size: 1.2rem; margin: 1.75rem 0 .8rem; padding-bottom: .45rem;
+  border-bottom: 2px solid var(--line); }
+.place-city { color: var(--ink); }
+.place-sep { color: var(--accent); }
+.place-lib { color: var(--primary-dk); font-weight: 500; }
+.place-count { margin-left: auto; font-family: var(--sans); font-size: .82rem;
+  font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.place-note { flex: 1 0 100%; font-family: var(--sans); font-size: .86rem;
+  font-weight: 400; color: var(--muted); }
 
 /* ---- Manuscript entry ---- */
-.entry { background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 1.1rem 1.3rem; margin-bottom: .9rem; box-shadow: var(--shadow); }
+.entry { position: relative;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.1rem 1.3rem; margin-bottom: .9rem; box-shadow: var(--shadow);
+  /* Clear the sticky navbar + control bar when a permalink scrolls an entry in. */
+  scroll-margin-top: 150px; }
 .entry-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+/* Permalink: present but quiet; revealed on hover or keyboard focus. Positioned
+   out of flow so it cannot disturb the RTL title line. */
+.entry-permalink { position: absolute; top: .45rem; left: .65rem;
+  font-size: .95rem; color: var(--muted); opacity: 0; transition: opacity .12s ease; }
+.entry:hover .entry-permalink, .entry-permalink:focus { opacity: 1; text-decoration: none; }
+.entry-permalink:hover { color: var(--primary); }
+.entry-target { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(176,125,43,.18); }
+.entry-target .entry-permalink { opacity: 1; color: var(--accent-dk); }
 .entry-title { font-family: var(--arabic); direction: rtl; font-size: 1.45rem; color: var(--ink);
   margin: 0 0 .15rem; font-weight: 400; }
 .entry-translit { font-style: italic; color: var(--ink-soft); font-size: 1rem; }
@@ -210,4 +240,10 @@ hr.rule { border: none; border-top: 1px solid var(--line); margin: 2.5rem 0; }
   .nav-links { gap: 1rem; }
   .field { flex: 1 1 45%; }
   .entry-head { flex-direction: column; }
+  /* The six controls wrap to three or four rows here, which as a sticky bar
+     would hold roughly a third of the viewport permanently. Let it scroll away;
+     the permalink offset measures the sticky stack and adapts. */
+  .controls { position: static; }
+  .place-head { font-size: 1.05rem; }
+  .place-count { margin-left: 0; flex-basis: 100%; }
 }

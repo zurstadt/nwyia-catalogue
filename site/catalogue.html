@@ -46,11 +46,14 @@
         <option value="status">By status</option>
       </select>
     </div>
+    <div class="field field-clear">
+      <button type="button" id="f-clear" class="btn-clear" hidden>Clear filters</button>
+    </div>
   </div>
 </div>
 
 <main class="container">
-  <div class="result-count" id="count"></div>
+  <div class="result-count" id="count" role="status" aria-live="polite"></div>
   <div id="results"><div class="loading">Loading catalogue…</div></div>
 </main>
 
@@ -90,40 +93,108 @@ function clusterFullName(r) {
   return full && full !== (c.canonical_translit || "") ? full : "";
 }
 
-function fillSelect(el, values, allLabel) {
-  el.innerHTML = `<option value="">${allLabel}</option>` +
-    values.map(v => `<option value="${esc(v)}">${esc(v)}</option>`).join("");
+// ---- Filter state -----------------------------------------------------------
+// Held in the URL so a filtered view can be linked, bookmarked and cited, and so
+// the Back button steps through the filters the reader actually applied.
+const FIELDS = { q:"q", city:"city", library:"library", author:"author",
+                 status:"status", sort:"sort" };
+const CONTROL = { q:"q", city:"f-city", library:"f-lib", author:"f-auth",
+                  status:"f-status", sort:"f-sort" };
+
+function currentState() {
+  const s = {};
+  for (const k in CONTROL) s[k] = $(CONTROL[k]).value.trim();
+  return s;
 }
 
+function stateFromUrl() {
+  const p = new URLSearchParams(location.search);
+  const s = {};
+  for (const k in FIELDS) s[k] = (p.get(FIELDS[k]) || "").trim();
+  // An author deep link may arrive as a cluster id (c001) or as the canonical
+  // transliteration. Accept both; the control speaks transliteration.
+  if (s.author && CLU.has(s.author)) s.author = CLU.get(s.author).canonical_translit || "";
+  if (!s.sort) s.sort = "place";
+  return s;
+}
+
+function writeUrl(state, push) {
+  const p = new URLSearchParams();
+  for (const k in FIELDS) {
+    if (k === "sort" && state[k] === "place") continue;   // the default
+    if (state[k]) p.set(FIELDS[k], state[k]);
+  }
+  const url = location.pathname + (p.toString() ? "?" + p : "") + location.hash;
+  if (push) history.pushState(state, "", url);
+  else history.replaceState(state, "", url);
+}
+
+function applyState(state) {
+  for (const k in CONTROL) {
+    const el = $(CONTROL[k]);
+    // A value no longer offered (a narrowed facet) falls back to "all".
+    if (k === "q") el.value = state[k] || "";
+    else el.value = [...el.options].some(o => o.value === state[k]) ? state[k] : "";
+  }
+}
+
+function fillSelect(el, values, allLabel) {
+  const keep = el.value;
+  el.innerHTML = `<option value="">${allLabel}</option>` +
+    values.map(v => `<option value="${esc(v)}">${esc(v)}</option>`).join("");
+  if (values.includes(keep)) el.value = keep;
+}
+
+// A facet's options are computed from the rows matching every OTHER facet, so
+// choosing a city narrows the library list to the libraries that city actually
+// has — rather than offering all 37 and letting the reader pick an empty result.
 function populateFilters() {
-  const uniq = k => [...new Set(ROWS.map(r => (r[k] || "").trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
-  fillSelect($("f-city"), uniq("city"), "All cities");
-  fillSelect($("f-lib"), uniq("library"), "All libraries");
-  const authors = [...new Set(ROWS.map(clusterLabel).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
-  fillSelect($("f-auth"), authors, "All authors");
-  fillSelect($("f-status"), Object.keys(STATUS).filter(s => ROWS.some(r => (r.pub_status||"unknown")===s)).map(s=>s),
+  const s = currentState();
+  const without = skip => ROWS.filter(r => matches(r, {
+    q: skip === "q" ? "" : s.q,
+    city: skip === "city" ? "" : s.city,
+    library: skip === "library" ? "" : s.library,
+    author: skip === "author" ? "" : s.author,
+    status: skip === "status" ? "" : s.status,
+  }));
+  const uniq = (rows, k) => [...new Set(rows.map(r => (r[k] || "").trim()).filter(Boolean))]
+    .sort((a, b) => a.localeCompare(b));
+
+  fillSelect($("f-city"), uniq(without("city"), "city"), "All cities");
+  fillSelect($("f-lib"), uniq(without("library"), "library"), "All libraries");
+  fillSelect($("f-auth"),
+    [...new Set(without("author").map(clusterLabel).filter(Boolean))].sort((a,b)=>a.localeCompare(b)),
+    "All authors");
+  const statuses = without("status");
+  fillSelect($("f-status"),
+    Object.keys(STATUS).filter(k => statuses.some(r => (r.pub_status || "unknown") === k)),
     "Any status");
-  // show readable labels for status options
   [...$("f-status").options].forEach(o => { if (o.value) o.textContent = STATUS[o.value] || o.value; });
 }
 
-function matches(r, q, city, lib, auth, status) {
-  if (city && (r.city||"") !== city) return false;
-  if (lib && (r.library||"") !== lib) return false;
-  if (auth && clusterLabel(r) !== auth) return false;
-  if (status && (r.pub_status||"unknown") !== status) return false;
-  if (q) {
+function matches(r, s) {
+  if (s.city && (r.city||"") !== s.city) return false;
+  if (s.library && (r.library||"") !== s.library) return false;
+  if (s.author && clusterLabel(r) !== s.author) return false;
+  if (s.status && (r.pub_status||"unknown") !== s.status) return false;
+  if (s.q) {
     const hay = [r.title, r.title_translit, r.title_translation, r.author, clusterLabel(r),
                  clusterAr(r), clusterFullName(r), clusterDates(r), r.catalog_note,
                  r.shelfmark, r.archive, r.city, r.library].join(" ").toLowerCase();
-    if (!q.split(/\s+/).every(t => hay.includes(t))) return false;
+    if (!s.q.toLowerCase().split(/\s+/).every(t => hay.includes(t))) return false;
   }
   return true;
 }
 
 function sortRows(rows, mode) {
   const by = (...fns) => (a,b) => { for (const f of fns){ const d=f(a,b); if(d) return d; } return 0; };
-  const s = k => (a,b) => (a[k]||"~").localeCompare(b[k]||"~");
+  // Blank sorts LAST. A "~" sentinel does not achieve that: localeCompare treats
+  // punctuation as sorting before letters, so unplaced rows led the place index.
+  const s = k => (a,b) => {
+    const x = (a[k]||"").trim(), y = (b[k]||"").trim();
+    if (!x !== !y) return x ? -1 : 1;
+    return x.localeCompare(y);
+  };
   if (mode === "author") return rows.sort(by((a,b)=>clusterLabel(a).localeCompare(clusterLabel(b)), s("city")));
   if (mode === "status") {
     const ord = { published:0, partial:1, manuscript:2, unknown:3 };
@@ -132,7 +203,43 @@ function sortRows(rows, mode) {
   return rows.sort(by(s("city"), s("library"), s("shelfmark")));
 }
 
-function entryHtml(r) {
+// ---- Place index ------------------------------------------------------------
+const NO_PLACE = "Holding institution not recorded";
+
+function placeKey(r) {
+  const city = (r.city || "").trim(), lib = (r.library || "").trim();
+  if (!city && !lib) return NO_PLACE;
+  return `${city || "City not recorded"} ${lib || "Library not recorded"}`;
+}
+
+function placeHeading(key, n) {
+  const count = `<span class="place-count">${n} manuscript${n === 1 ? "" : "s"}</span>`;
+  if (key === NO_PLACE) {
+    return `<h2 class="place-head">${esc(NO_PLACE)}${count}
+      <span class="place-note">Items in the fonds carrying only a cote — largely
+      Nwyia's own offprints, typescripts and working papers.</span></h2>`;
+  }
+  const [city, lib] = key.split(" ");
+  return `<h2 class="place-head"><span class="place-city">${esc(city)}</span>
+    <span class="place-sep">›</span> <span class="place-lib">${esc(lib)}</span>${count}</h2>`;
+}
+
+// Group into place sections, preserving the order rows already arrived in (the
+// place sort has run), and floating the no-place bucket to the end — it is a
+// residue, not a location, and should not head an index of places.
+function groupByPlace(rows) {
+  const groups = new Map();
+  for (const r of rows) {
+    const k = placeKey(r);
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(r);
+  }
+  const keys = [...groups.keys()].filter(k => k !== NO_PLACE);
+  if (groups.has(NO_PLACE)) keys.push(NO_PLACE);
+  return keys.map(k => [k, groups.get(k)]);
+}
+
+function entryHtml(r, level, grouped) {
   const status = r.pub_status || "unknown";
   const badge = `<span class="badge badge-${esc(status)}">${esc(STATUS[status]||status)}</span>`;
   const translit = r.title_translit ? `<div class="entry-translit">${esc(r.title_translit)}</div>` : "";
@@ -146,9 +253,11 @@ function entryHtml(r) {
       ${authTranslit ? ` &nbsp;·&nbsp; <span class="translit">${esc(authTranslit)}</span>` : ""}
       ${authDates ? `<span class="entry-author-dates">${esc(authDates)}</span>` : ""}
     </div>${authFull ? `<div class="entry-author-full">${esc(authFull)}</div>` : ""}` : "";
+  // Under a place heading the city and library are already stated; repeating them
+  // on every entry is noise.
   const meta = [
-    r.city && `<span><b>City:</b> ${esc(r.city)}</span>`,
-    r.library && `<span><b>Library:</b> ${esc(r.library)}</span>`,
+    !grouped && r.city && `<span><b>City:</b> ${esc(r.city)}</span>`,
+    !grouped && r.library && `<span><b>Library:</b> ${esc(r.library)}</span>`,
     r.shelfmark && `<span><b>Shelfmark:</b> ${esc(r.shelfmark)}</span>`,
     r.folios && `<span><b>Folios:</b> ${esc(r.folios)}</span>`,
     r.archive && `<span><b>Fonds cote:</b> <span class="cote">${esc(r.archive)}</span></span>`,
@@ -164,12 +273,17 @@ function entryHtml(r) {
   // An entry with no title is not a rendering failure: the Fonds index simply
   // records none. Say that, rather than showing a bare dash.
   const title = r.title
-    ? `<h2 class="entry-title">${esc(r.title)}</h2>`
-    : `<h2 class="entry-title entry-untitled">Untitled</h2>`;
-  return `<article class="entry">
+    ? `<${level} class="entry-title">${esc(r.title)}</${level}>`
+    : `<${level} class="entry-title entry-untitled">Untitled</${level}>`;
+  // A citable anchor for the individual manuscript. The row id is the key: the
+  // Fonds cote cannot be, because one cote covers a whole bundle (345 rows carry
+  // a cote but only 162 are distinct, and cote 082 alone covers 12 entries).
+  const link = `<a class="entry-permalink" href="#${esc(r.id)}"
+    aria-label="Permalink to this entry (${esc(r.id)})" title="Permalink to this entry">¶</a>`;
+  return `<article class="entry" id="${esc(r.id)}">
     <div class="entry-head">
       <div>
-        ${title}
+        ${title}${link}
         ${translit}${transln}${author}
       </div>
       <div>${badge}</div>
@@ -180,17 +294,75 @@ function entryHtml(r) {
 }
 
 function render() {
-  const q = $("q").value.trim().toLowerCase();
-  const city = $("f-city").value, lib = $("f-lib").value, auth = $("f-auth").value, status = $("f-status").value;
-  let out = ROWS.filter(r => matches(r, q, city, lib, auth, status));
-  out = sortRows(out, $("f-sort").value);
-  $("count").textContent = `${out.length} of ${ROWS.length} manuscripts`;
-  $("results").innerHTML = out.length
-    ? out.map(entryHtml).join("")
-    : `<div class="loading">No manuscripts match these filters.</div>`;
+  // Narrow the facets FIRST: a selection that is no longer offered is dropped
+  // here, and the filtering below must see that, not the stale value.
+  populateFilters();
+  const s = currentState();
+  const out = sortRows(ROWS.filter(r => matches(r, s)), s.sort);
+  const filtered = Object.keys(FIELDS).some(k => k !== "sort" && s[k]);
+  $("f-clear").hidden = !filtered;
+
+  $("count").textContent = out.length === ROWS.length
+    ? `${ROWS.length} manuscripts`
+    : `${out.length} of ${ROWS.length} manuscripts`;
+
+  if (!out.length) {
+    $("results").innerHTML = `<div class="loading">No manuscripts match these filters.</div>`;
+    return;
+  }
+  if (s.sort === "place") {
+    // A place index should show its places. Entries sit at h3 under the h2 heading.
+    $("results").innerHTML = groupByPlace(out).map(([key, rows]) =>
+      `<section class="place-group">${placeHeading(key, rows.length)}
+        ${rows.map(r => entryHtml(r, "h3", true)).join("")}</section>`).join("");
+  } else {
+    $("results").innerHTML = out.map(r => entryHtml(r, "h2", false)).join("");
+  }
 }
 
-let t; const debounced = () => { clearTimeout(t); t = setTimeout(render, 120); };
+// Highlight the entry a permalink points at, and bring it into view. Called after
+// a render, so it works on first load as well as on a later hash change.
+function focusHash() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (!id) return;
+  const el = document.getElementById(id);
+  if (!el) return;
+  document.querySelectorAll(".entry-target").forEach(e => e.classList.remove("entry-target"));
+  el.classList.add("entry-target");
+  // Measure the sticky stack rather than assuming a fixed offset: the control bar
+  // wraps to three or four rows on a narrow viewport, where a fixed scroll-margin
+  // would drop the cited entry underneath it. The bar also stops being sticky
+  // below 860px, in which case it takes up no scroll offset at all.
+  const nav = document.querySelector(".nav"), ctl = document.querySelector(".controls");
+  const sticky = nav.offsetHeight +
+    (getComputedStyle(ctl).position === "sticky" ? ctl.offsetHeight : 0);
+  // Instant, not smooth: the page sets scroll-behavior:smooth globally, and
+  // animating tens of thousands of pixels to a cited entry either takes seconds
+  // or is cancelled part-way, leaving the reader stranded near the top.
+  window.scrollTo({
+    top: el.getBoundingClientRect().top + window.scrollY - sticky - 12,
+    behavior: "instant",
+  });
+}
+
+// A permalink must resolve even when the saved filters would hide its entry —
+// otherwise a cited URL silently shows nothing. Clear them and say so.
+function ensureHashVisible() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (!id || !ROWS.some(r => r.id === id)) return;
+  if (document.getElementById(id)) return;
+  applyState({ q:"", city:"", library:"", author:"", status:"", sort: currentState().sort });
+  render();
+  writeUrl(currentState(), false);
+}
+
+function update(push) {
+  render();
+  writeUrl(currentState(), push);
+}
+
+let t;
+const debounced = () => { clearTimeout(t); t = setTimeout(() => update(false), 150); };
 
 fetch("../data/data.json", { cache: "no-store" })
   .then(r => r.json())
@@ -200,13 +372,27 @@ fetch("../data/data.json", { cache: "no-store" })
     // from the manuscript catalogue — they live on the Scholarship page instead.
     const modern = new Set((d.clusters || []).filter(c => c.category === "modern").map(c => c.cluster_id));
     ROWS = (d.rows || []).filter(r => !modern.has(r.author_cluster_id));
+
     populateFilters();
-    // Deep link from the Authors page: ?author=<canonical_translit> pre-selects the filter.
-    const wanted = new URLSearchParams(location.search).get("author");
-    if (wanted && [...$("f-auth").options].some(o => o.value === wanted)) $("f-auth").value = wanted;
+    applyState(stateFromUrl());
     render();
+    ensureHashVisible();
+    focusHash();
+    writeUrl(currentState(), false);    // canonicalise (e.g. ?author=c001 → the name)
+
     $("q").addEventListener("input", debounced);
-    ["f-city","f-lib","f-auth","f-status","f-sort"].forEach(id => $(id).addEventListener("change", render));
+    ["f-city","f-lib","f-auth","f-status","f-sort"]
+      .forEach(id => $(id).addEventListener("change", () => update(true)));
+    $("f-clear").addEventListener("click", () => {
+      applyState({ q:"", city:"", library:"", author:"", status:"", sort: currentState().sort });
+      update(true);
+    });
+    window.addEventListener("popstate", () => {
+      applyState(stateFromUrl());
+      render();
+      focusHash();
+    });
+    window.addEventListener("hashchange", () => { ensureHashVisible(); focusHash(); });
   })
   .catch(e => { $("results").innerHTML = `<div class="loading">Could not load the catalogue (${esc(e.message)}).</div>`; });
 </script>
