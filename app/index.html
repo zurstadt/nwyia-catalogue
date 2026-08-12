@@ -1282,11 +1282,16 @@ function buildTranslitLexicon() {
   TRANSLIT_LEXICON = lex;
 }
 
-// Capitalize the first letter only: this project writes "Kitāb al-tawahhum",
-// not "Kitāb Al-Tawahhum".
-function capitalizeFirst(s) {
-  const i = s.search(/\S/);
-  return i < 0 ? s : s.slice(0, i) + s[i].toUpperCase() + s.slice(i + 1);
+// A suggestion must mirror the annotator's OWN convention, never one the tool
+// invented. An earlier version capitalized the first letter here, on the strength
+// of three pre-existing rows. Measured against the first real batch, the corpus
+// runs 182 lowercase to 2 capitalized — and both capitals were this function's
+// output. It turned 33 of 38 suggestions into values that had to be retyped, and
+// made the lexicon look 92% wrong when its content accuracy was 95%.
+// The composition is now exactly what the lexicon holds; the lexicon learns from
+// the annotator, so it follows whatever convention they actually use.
+function compose(parts) {
+  return parts.join(" ");
 }
 
 // A suggestion is offered only when EVERY word is known. A half-known title would
@@ -1295,7 +1300,7 @@ function translitSuggestion(arabic) {
   const words = arabicWords(arabic);
   if (!words.length) return null;
   const parts = words.map(w => TRANSLIT_LEXICON.get(w) || null);
-  return parts.every(Boolean) ? capitalizeFirst(parts.join(" ")) : null;
+  return parts.every(Boolean) ? compose(parts) : null;
 }
 
 // The suggestion for the row, or null. The per-word breakdown this used to draw

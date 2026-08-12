@@ -51,7 +51,7 @@ const region = liftPureRegion(fs.readFileSync(APP, "utf8"));
 // return the handles the assertions need.
 const api = eval(region + `
   ({ expandShorthand, isTranslitField, arabicKey, arabicWords, hasArabic,
-     capitalizeFirst, translitSuggestion, buildTranslitLexicon, sweepSourceFor,
+     compose, translitSuggestion, buildTranslitLexicon, sweepSourceFor,
      translitSuggestionFor, recordSuggestionFor,
      getLexicon: () => TRANSLIT_LEXICON,
      setShown: v => { shownSuggestion = v; } })
@@ -94,11 +94,15 @@ eq(api.arabicWords("  كتاب   التوهم "), ["كتاب", "التوهم"], 
 eq(api.hasArabic("Documents divers"), false, "a French title carries no Arabic");
 eq(api.hasArabic("كتاب"), true, "an Arabic title is detected");
 
-// ------------------------------------------------------------ capitalization
-eq(api.capitalizeFirst("kitāb al-tawahhum"), "Kitāb al-tawahhum",
-   "only the first letter is capitalized — not every word, and not after al-");
-eq(api.capitalizeFirst("  risāla"), "  Risāla", "leading space is preserved");
-eq(api.capitalizeFirst(""), "", "empty string is safe");
+// -------------------------------------------------------------- composition
+// A suggestion must mirror the annotator's own convention. An earlier version
+// capitalized the first letter here; measured against a real batch the corpus ran
+// 182 lowercase to 2 capitalized, and both capitals were that function's output.
+eq(api.compose(["kitāb", "al-tawahhum"]), "kitāb al-tawahhum",
+   "composition imposes NO capitalization of its own");
+eq(api.compose(["Ādāb", "al-aqṭāb"]), "Ādāb al-aqṭāb",
+   "a capital the lexicon actually learned is preserved");
+eq(api.compose([]), "", "empty composition is safe");
 
 // ------------------------------------------------------------------ lexicon
 // UX-DECISIONS: "pairs are skipped, never guessed, when token counts disagree".
@@ -124,7 +128,7 @@ eq(lex.get("السلمي"), "al-Sulamī", "cluster name pairs seed the lexicon")
 // UX-DECISIONS: "pre-filled only when EVERY word is known" — a half-known
 // suggestion is a sentence with holes that would be accepted by reflex.
 eq(api.translitSuggestion("كتاب الحقائق"), "Kitāb al-ḥaqāʾiq",
-   "all words known → a suggestion, first letter capitalized");
+   "all words known → a suggestion, exactly as the lexicon holds them");
 eq(api.translitSuggestion("كتاب المجهول"), null,
    "ONE unknown word must suppress the whole suggestion");
 eq(api.translitSuggestion("المجهول"), null, "no words known → no suggestion");
