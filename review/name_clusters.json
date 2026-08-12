@@ -1,0 +1,1071 @@
+{
+  "schema_version": "1.0",
+  "source": "data/data.json",
+  "n_clusters_total": 114,
+  "n_groups": 17,
+  "n_clusters_in_groups": 37,
+  "methods_legend": {
+    "shared name / nisbah": "clusters sharing a distinctive token (e.g. al-Nūrī), rare across the corpus (≤ 4 clusters)",
+    "shared prefix": "share a nisbah stem (ḥarrā… joins al-Ḥarrālī & al-Ḥarrānī)",
+    "shared bigram": "share two adjacent name tokens (ʿAfīf al-Dīn)",
+    "≈ spelling": "near-identical names by edit distance"
+  },
+  "groups": [
+    {
+      "group_id": "gc073_c113",
+      "label": "qadir fasi",
+      "members": [
+        {
+          "cluster_id": "c073",
+          "canonical_ar": "أبو زيد عبد الرحمن بن عبد القادر الفاسي",
+          "canonical_translit": "Abū Zayd ʿAbd al-Raḥmān b. ʿAbd al-Qādir al-Fāsī",
+          "full_name": "Abū Zayd ʿAbd al-Raḥmān b. ʿAbd al-Qādir al-Fāsī",
+          "dates": "d. 1096/1685",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابو زيد عبد الرحمن بن عبد القادر الفاسي"
+          ],
+          "sample_titles": [
+            "ذكر بعض مشاهير فاس في القديم"
+          ],
+          "authorities": [
+            "TDVİA",
+            "Wikidata",
+            "VIAF",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c113",
+          "canonical_ar": "محمد بن عبد القادر الفاسي",
+          "canonical_translit": "Muḥammad b. ʿAbd al-Qādir al-Fāsī",
+          "full_name": "",
+          "dates": "",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "الفاسي.م"
+          ],
+          "sample_titles": [
+            "كتاب المنح البادية"
+          ],
+          "authorities": []
+        }
+      ],
+      "methods": [
+        "qadir fasi",
+        "fasi…",
+        "fasi",
+        "فاسي"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c073"
+    },
+    {
+      "group_id": "gc034_n002",
+      "label": "afif din",
+      "members": [
+        {
+          "cluster_id": "c034",
+          "canonical_ar": "عفيف الدين التلمساني",
+          "canonical_translit": "ʿAfīf al-Dīn al-Tilimsānī",
+          "full_name": "ʿAfīf al-Dīn Sulaymān b. ʿAlī al-Tilimsānī",
+          "dates": "d. 690/1291",
+          "count": 2,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "التلمساني"
+          ],
+          "sample_titles": [
+            "شرح المواقف للنفري",
+            "شرح المواقف"
+          ],
+          "authorities": [
+            "TDVİA",
+            "EI2",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "n002",
+          "canonical_ar": "عفيف الدين عبد الكريم",
+          "canonical_translit": "ʿAfīf al-Dīn ʿAbd al-Karīm",
+          "full_name": "",
+          "dates": "",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "عفيف الدين عبد الكريم"
+          ],
+          "sample_titles": [
+            "حقائق اليقين وزلفة التمكين"
+          ],
+          "authorities": []
+        }
+      ],
+      "methods": [
+        "afif din"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c034"
+    },
+    {
+      "group_id": "gc068_c076",
+      "label": "maqdisi",
+      "members": [
+        {
+          "cluster_id": "c068",
+          "canonical_ar": "ابن غانم المقدسي",
+          "canonical_translit": "Ibn Ġānim al-Maqdisī",
+          "full_name": "ʿIzz al-Dīn ʿAbd al-Salām b. Aḥmad Ibn Ġānim al-Maqdisī",
+          "dates": "d. 678/1280",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابن غانم المقدسي"
+          ],
+          "sample_titles": [
+            "حلّ الرموز ومفاتيح الكنوز"
+          ],
+          "authorities": [
+            "Wikidata",
+            "BnF",
+            "Wikipedia (FR)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c076",
+          "canonical_ar": "فايز المقدسي",
+          "canonical_translit": "Fāyiz al-Maqdisī",
+          "full_name": "",
+          "dates": "",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "modern",
+          "variants": [
+            "فايز المقدسي"
+          ],
+          "sample_titles": [
+            "حول العلم الصوفي، اللغة الصوفية"
+          ],
+          "authorities": []
+        }
+      ],
+      "methods": [
+        "maqdisi",
+        "maqd…"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c068"
+    },
+    {
+      "group_id": "gc101_c117",
+      "label": "Qatraya",
+      "members": [
+        {
+          "cluster_id": "c101",
+          "canonical_ar": "Qatraya Gabriel",
+          "canonical_translit": "Gabriel Qaṭraya",
+          "full_name": "Gabriel Qaṭraya (Gabriel of Qatar)",
+          "dates": "fl. 7th c.",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "Qatraya Gabriel"
+          ],
+          "sample_titles": [],
+          "authorities": [
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c117",
+          "canonical_ar": "Dadiso’ Bar Qatraya",
+          "canonical_translit": "Dadīšūʿ Bar Qaṭraya",
+          "full_name": "",
+          "dates": "",
+          "count": 1,
+          "user_confirmed": false,
+          "category": "",
+          "variants": [
+            "Dadiso’ Bar Qatraya"
+          ],
+          "sample_titles": [
+            "Petites heures de l'office des moines"
+          ],
+          "authorities": []
+        }
+      ],
+      "methods": [
+        "Qatraya",
+        "qatraya",
+        "qatr…"
+      ],
+      "n_confirmed": 1,
+      "suggested_keep": "c101"
+    },
+    {
+      "group_id": "gc008_c042",
+      "label": "harr…",
+      "members": [
+        {
+          "cluster_id": "c008",
+          "canonical_ar": "علي بن احمد الحرالي",
+          "canonical_translit": "ʿAlī b. Aḥmad al-Ḥarrālī",
+          "full_name": "Abū al-Ḥasan ʿAlī b. Aḥmad b. al-Ḥasan al-Tujībī al-Ḥarrālī al-Marrākušī",
+          "dates": "d. 638/1241",
+          "count": 8,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "فخر الدين ابو الحسن علي بن احمد حرّالي"
+          ],
+          "sample_titles": [
+            "تفهيم معاني الحروف ولطائف المعاني التي هي",
+            "فتوى صلاح الامل لانتظار الاجل",
+            "كتاب التوشية والتوفية",
+            "كتاب العروة للمفتاح الفاتح للباب المقفل"
+          ],
+          "authorities": [
+            "Wikipedia (AR)"
+          ]
+        },
+        {
+          "cluster_id": "c042",
+          "canonical_ar": "محمد بن شعبة الحرّاني",
+          "canonical_translit": "Muḥammad b. Šuʿbah al-Ḥarrānī",
+          "full_name": "",
+          "dates": "",
+          "count": 2,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "محمد بن شعبة الحرّاني"
+          ],
+          "sample_titles": [
+            "كتاب الاصيفر وغيره",
+            "كتاب الاصيفر وغيره"
+          ],
+          "authorities": []
+        }
+      ],
+      "methods": [
+        "harr…"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c008"
+    },
+    {
+      "group_id": "gc026_c102",
+      "label": "mady…",
+      "members": [
+        {
+          "cluster_id": "c026",
+          "canonical_ar": "أبو مدين شعيب",
+          "canonical_translit": "Abū Madyan Šuʿayb",
+          "full_name": "Abū Madyan Shuʿayb b. al-Ḥusayn al-Anṣārī",
+          "dates": "d. 594/1198",
+          "count": 3,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابو مدين شعيب"
+          ],
+          "sample_titles": [
+            "حكم",
+            "حكم",
+            "حكم"
+          ],
+          "authorities": [
+            "TDVİA",
+            "EI2",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c102",
+          "canonical_ar": "محمد بن أحمد المديني",
+          "canonical_translit": "Muḥammad b. Aḥmad al-Madyanī",
+          "full_name": "",
+          "dates": "",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "محمد بن احمد المدني"
+          ],
+          "sample_titles": [
+            "الخلاصة المرضية من الدرّة المضيئة"
+          ],
+          "authorities": []
+        }
+      ],
+      "methods": [
+        "mady…"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c026"
+    },
+    {
+      "group_id": "gc103_c104",
+      "label": "khad…",
+      "members": [
+        {
+          "cluster_id": "c103",
+          "canonical_ar": "ابو سعيد الخادمي",
+          "canonical_translit": "Abū Saʿīd al-Ḫādimī",
+          "full_name": "Abū Saʿīd Muḥammad b. Muṣṭafā al-Ḫādimī",
+          "dates": "d. 1176/1762",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابو سعيد الخادمي"
+          ],
+          "sample_titles": [
+            "رسالة"
+          ],
+          "authorities": [
+            "TDVİA",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c104",
+          "canonical_ar": "مفتي الخادم",
+          "canonical_translit": "Muftī al-Ḫādim",
+          "full_name": "",
+          "dates": "",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "مفتي الخادم"
+          ],
+          "sample_titles": [
+            "رسالة"
+          ],
+          "authorities": []
+        }
+      ],
+      "methods": [
+        "khad…"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c103"
+    },
+    {
+      "group_id": "gc049_c068_c076",
+      "label": "مقدسي",
+      "members": [
+        {
+          "cluster_id": "c049",
+          "canonical_ar": "جورج المقدسي (محقق)",
+          "canonical_translit": "George Makdisi (ed.)",
+          "full_name": "George Makdisi",
+          "dates": "1920–2002",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "modern",
+          "variants": [
+            "جورج المقدسي (محقق)"
+          ],
+          "sample_titles": [
+            "الواضح في اصول الفقه لأبي الوفاء علي بن عقيل"
+          ],
+          "authorities": [
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c068",
+          "canonical_ar": "ابن غانم المقدسي",
+          "canonical_translit": "Ibn Ġānim al-Maqdisī",
+          "full_name": "ʿIzz al-Dīn ʿAbd al-Salām b. Aḥmad Ibn Ġānim al-Maqdisī",
+          "dates": "d. 678/1280",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابن غانم المقدسي"
+          ],
+          "sample_titles": [
+            "حلّ الرموز ومفاتيح الكنوز"
+          ],
+          "authorities": [
+            "Wikidata",
+            "BnF",
+            "Wikipedia (FR)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c076",
+          "canonical_ar": "فايز المقدسي",
+          "canonical_translit": "Fāyiz al-Maqdisī",
+          "full_name": "",
+          "dates": "",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "modern",
+          "variants": [
+            "فايز المقدسي"
+          ],
+          "sample_titles": [
+            "حول العلم الصوفي، اللغة الصوفية"
+          ],
+          "authorities": []
+        }
+      ],
+      "methods": [
+        "مقدسي"
+      ],
+      "n_confirmed": 3,
+      "suggested_keep": "c049"
+    },
+    {
+      "group_id": "gc002_c064",
+      "label": "iskandari",
+      "members": [
+        {
+          "cluster_id": "c002",
+          "canonical_ar": "ابن عطاء الله الإسكندري",
+          "canonical_translit": "Ibn ʿAṭāʾ Allāh al-Iskandarī",
+          "full_name": "Tāj al-Dīn Abū al-Faḍl Aḥmad b. Muḥammad Ibn ʿAṭāʾ Allāh al-Iskandarī",
+          "dates": "d. 709/1309",
+          "count": 20,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابن عطاء",
+            "ابن عطاء الله"
+          ],
+          "sample_titles": [
+            "رسالة",
+            "الحكم العطائية",
+            "الجواهر والدرر",
+            "الحكم"
+          ],
+          "authorities": [
+            "Wikidata",
+            "TDVİA",
+            "EI3",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c064",
+          "canonical_ar": "داود الباخلي الإسكندري",
+          "canonical_translit": "Dāwūd al-Bāḫilī al-Iskandarī",
+          "full_name": "Šaraf al-Dīn Abū Sulaymān Dāwūd b. ʿUmar al-Bāḫilī al-Iskandarī al-Šāḏilī",
+          "dates": "d. 733/1332",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "داود الباخلي الاسكندري"
+          ],
+          "sample_titles": [
+            "عيون الحقائق"
+          ],
+          "authorities": []
+        }
+      ],
+      "methods": [
+        "iskandari",
+        "اسكندري",
+        "iska…"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c002"
+    },
+    {
+      "group_id": "gc003_c029",
+      "label": "sadr din",
+      "members": [
+        {
+          "cluster_id": "c003",
+          "canonical_ar": "صدر الدين القونوي",
+          "canonical_translit": "Ṣadr al-Dīn al-Qūnawī",
+          "full_name": "Ṣadr al-Dīn Muḥammad b. Isḥāq al-Qūnawī",
+          "dates": "d. 673/1274",
+          "count": 18,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "القونوي"
+          ],
+          "sample_titles": [
+            "شرح الاحاديث الاربعينية",
+            "حقائق الاسماء في شرح اسماء الله",
+            "كتاب الفكوك في مستندات حكم الفصوص",
+            "شعب الايمان"
+          ],
+          "authorities": [
+            "Vatican",
+            "TDVİA",
+            "EI3",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c029",
+          "canonical_ar": "صدر الدين الشيرازي",
+          "canonical_translit": "Ṣadr al-Dīn al-Šīrāzī",
+          "full_name": "Ṣadr al-Dīn Muḥammad b. Ibrāhīm al-Shīrāzī (Mullā Ṣadrā)",
+          "dates": "d. 1045/1635",
+          "count": 2,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "صدر الدين الشيرازي"
+          ],
+          "sample_titles": [
+            "تفسير",
+            "الاول والثالث: الاسرار الاربعة"
+          ],
+          "authorities": [
+            "TDVİA",
+            "EI2",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        }
+      ],
+      "methods": [
+        "sadr din",
+        "صدر"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c003"
+    },
+    {
+      "group_id": "gc043_c070",
+      "label": "جيلاني",
+      "members": [
+        {
+          "cluster_id": "c043",
+          "canonical_ar": "عبد الكريم الجيلي",
+          "canonical_translit": "ʿAbd al-Karīm al-Ǧīlī",
+          "full_name": "ʿAbd al-Karīm b. Ibrāhīm al-Jīlī",
+          "dates": "d. c. 832/1428",
+          "count": 3,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "عبد الكريم الجيلي",
+            "عبد الكريم الكيلاني"
+          ],
+          "sample_titles": [
+            "كتاب الكمالات الالهية في الصفات المحمدية",
+            "قصيدة العينية",
+            "قصيدة العينية"
+          ],
+          "authorities": [
+            "TDVİA",
+            "EI2",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c070",
+          "canonical_ar": "عبد القادر الجيلاني",
+          "canonical_translit": "ʿAbd al-Qādir al-Ǧīlānī",
+          "full_name": "Muḥyī al-Dīn ʿAbd al-Qādir b. Mūsā al-Jīlānī",
+          "dates": "d. 561/1166",
+          "count": 2,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "عبد القادر الجيلاني",
+            "عبد القادر الكيلاني"
+          ],
+          "sample_titles": [
+            "سر الاسرار",
+            "درّة الاسرار وروضة الانوار في مناقب الابرار"
+          ],
+          "authorities": [
+            "TDVİA",
+            "EI3",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        }
+      ],
+      "methods": [
+        "جيلاني"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c043"
+    },
+    {
+      "group_id": "gc119_c120",
+      "label": "nasafi",
+      "members": [
+        {
+          "cluster_id": "c119",
+          "canonical_ar": "أبو المعين النسفي",
+          "canonical_translit": "Abū al-Muʿīn al-Nasafī",
+          "full_name": "Abū al-Muʿīn Maymūn b. Muḥammad al-Nasafī",
+          "dates": "d. 508/1114",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "أبو المعين النسفي"
+          ],
+          "sample_titles": [
+            "تبصرة الادلة"
+          ],
+          "authorities": [
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c120",
+          "canonical_ar": "مكحول النسفي",
+          "canonical_translit": "Makḥūl al-Nasafī",
+          "full_name": "Abū Muṭīʿ Makḥūl b. al-Faḍl al-Nasafī",
+          "dates": "d. 318/930",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابو مطيع مكحول النسفي"
+          ],
+          "sample_titles": [
+            "كتاب في التصوّف"
+          ],
+          "authorities": [
+            "Wikidata",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        }
+      ],
+      "methods": [
+        "nasafi",
+        "nasa…",
+        "نسفي"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c119"
+    },
+    {
+      "group_id": "gc087_c091",
+      "label": "ansari",
+      "members": [
+        {
+          "cluster_id": "c087",
+          "canonical_ar": "أبو الفرج ابن عبد المحسن الأنصاري",
+          "canonical_translit": "Abū al-Faraǧ Ibn ʿAbd al-Muḥsin al-Anṣārī",
+          "full_name": "Abū al-Faraǧ ʿAbd al-Raḥmān b. ʿAbd al-Muḥsin al-Anṣārī al-Wāsiṭī al-Šāfiʿī",
+          "dates": "d. 744/1343",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابو الفرج ابن عبد المحسن الانصاري"
+          ],
+          "sample_titles": [
+            "ترياق المحبّين في طبقات خرقة المشايخ العارفين"
+          ],
+          "authorities": []
+        },
+        {
+          "cluster_id": "c091",
+          "canonical_ar": "عبد الله الأنصاري",
+          "canonical_translit": "ʿAbd Allāh al-Anṣārī",
+          "full_name": "Abū Ismāʿīl ʿAbd Allāh b. Muḥammad al-Anṣārī al-Harawī",
+          "dates": "d. 481/1089",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "عبدالله الانصاري"
+          ],
+          "sample_titles": [
+            "في انواء العلوم"
+          ],
+          "authorities": [
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        }
+      ],
+      "methods": [
+        "ansari",
+        "انصاري",
+        "ansa…"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c087"
+    },
+    {
+      "group_id": "gc012_c036",
+      "label": "nuri…",
+      "members": [
+        {
+          "cluster_id": "c012",
+          "canonical_ar": "إسماعيل بن سودكين النوري",
+          "canonical_translit": "Ismaʿīl b. Sawdakīn al-Nūrī",
+          "full_name": "Ismāʿīl b. Sawdakīn al-Nūrī",
+          "dates": "d. 646/1248",
+          "count": 5,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابن سودكين"
+          ],
+          "sample_titles": [
+            "شرح كتاب الاسراء لابن عربي",
+            "كتاب شرح الاسراء لابن عربي",
+            "شرح المشاهد لابن عربي",
+            "شرح الاسراء لابن عربي"
+          ],
+          "authorities": [
+            "TDVİA",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c036",
+          "canonical_ar": "أبو الحسن النوري",
+          "canonical_translit": "Abū al-Ḥasan al-Nūrī",
+          "full_name": "Abū al-Ḥasan Aḥmad b. Muḥammad al-Nūrī",
+          "dates": "d. 295/907",
+          "count": 2,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابو الحسن النوري",
+            "النوري"
+          ],
+          "sample_titles": [
+            "مقامات القلوب",
+            "مقامات القلوب"
+          ],
+          "authorities": [
+            "TDVİA",
+            "EI2",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        }
+      ],
+      "methods": [
+        "nuri…",
+        "nuri",
+        "نوري"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c012"
+    },
+    {
+      "group_id": "gc077_c081",
+      "label": "marr…",
+      "members": [
+        {
+          "cluster_id": "c077",
+          "canonical_ar": "أبو بكر المروذي",
+          "canonical_translit": "Abū Bakr al-Marrūḏī",
+          "full_name": "Abū Bakr Aḥmad b. Muḥammad al-Marrūḏī",
+          "dates": "d. 275/888",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابو بكر المزودي"
+          ],
+          "sample_titles": [
+            "كتاب الورع"
+          ],
+          "authorities": [
+            "TDVİA",
+            "Wikidata",
+            "VIAF",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c081",
+          "canonical_ar": "ابن البناء المراكشي",
+          "canonical_translit": "Ibn al-Bannāʾ al-Marrākušī",
+          "full_name": "Abū al-ʿAbbās Aḥmad b. Muḥammad al-Azdī al-Marrākušī, Ibn al-Bannāʾ",
+          "dates": "d. 721/1321",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابن البنا"
+          ],
+          "sample_titles": [
+            "في فهم الحقيقة"
+          ],
+          "authorities": [
+            "TDVİA",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        }
+      ],
+      "methods": [
+        "marr…"
+      ],
+      "n_confirmed": 2,
+      "suggested_keep": "c077"
+    },
+    {
+      "group_id": "gc021_c029_c085",
+      "label": "shirazi",
+      "members": [
+        {
+          "cluster_id": "c021",
+          "canonical_ar": "روزبهان البقلى الشيرازي",
+          "canonical_translit": "Rūzbihān Baqlī al-Šīrāzī",
+          "full_name": "Abū Muḥammad Rūzbihān b. Abī Naṣr al-Baqlī al-Shīrāzī",
+          "dates": "d. 606/1209",
+          "count": 3,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابو محمد روزبهان البقلي الشيرازي",
+            "روزبهان الشيرازي"
+          ],
+          "sample_titles": [
+            "تفسير عرائس البيان",
+            "كتاب يسر الارواح",
+            "عرائس البيان"
+          ],
+          "authorities": [
+            "TDVİA",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c029",
+          "canonical_ar": "صدر الدين الشيرازي",
+          "canonical_translit": "Ṣadr al-Dīn al-Šīrāzī",
+          "full_name": "Ṣadr al-Dīn Muḥammad b. Ibrāhīm al-Shīrāzī (Mullā Ṣadrā)",
+          "dates": "d. 1045/1635",
+          "count": 2,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "صدر الدين الشيرازي"
+          ],
+          "sample_titles": [
+            "تفسير",
+            "الاول والثالث: الاسرار الاربعة"
+          ],
+          "authorities": [
+            "TDVİA",
+            "EI2",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c085",
+          "canonical_ar": "ابن باكويه الشيرازي",
+          "canonical_translit": "Ibn Bākōyeh al-Šīrāzī",
+          "full_name": "Abū ʿAbd Allāh Muḥammad b. ʿAbd Allāh Ibn Bākūya al-Šīrāzī (Bābā Kūhī)",
+          "dates": "d. 428/1037",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابن باكويه الشيرازي"
+          ],
+          "sample_titles": [
+            "من حكايات الصوفية"
+          ],
+          "authorities": [
+            "TDVİA",
+            "Wikidata",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        }
+      ],
+      "methods": [
+        "shirazi",
+        "شيرازي",
+        "shir…"
+      ],
+      "n_confirmed": 3,
+      "suggested_keep": "c021"
+    },
+    {
+      "group_id": "gc016_c039_c122",
+      "label": "khar…",
+      "members": [
+        {
+          "cluster_id": "c016",
+          "canonical_ar": "أبو سعد الخركوشي",
+          "canonical_translit": "Abū Saʿd al-Ḫargūšī",
+          "full_name": "Abū Saʿd ʿAbd al-Malik b. Muḥammad al-Khargūshī al-Naysābūrī",
+          "dates": "d. 406/1015",
+          "count": 4,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "الخركوشي"
+          ],
+          "sample_titles": [
+            "المسائل والاجوبة",
+            "تهذيب الاسرار",
+            "تهذيب الاسرار",
+            "تهذيب الاسرار"
+          ],
+          "authorities": [
+            "TDVİA",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c039",
+          "canonical_ar": "ابو سعيد الخراز",
+          "canonical_translit": "Abū Saʿīd al-Ḫarrāz",
+          "full_name": "Abū Saʿīd Aḥmad b. ʿĪsā al-Kharrāz",
+          "dates": "d. 286/899",
+          "count": 2,
+          "user_confirmed": true,
+          "category": "",
+          "variants": [
+            "ابو سعيد الخرّاز"
+          ],
+          "sample_titles": [
+            "في علم الاشارات، الجزء الاوّل",
+            "في علم الاشارات، الجزء الثاني"
+          ],
+          "authorities": [
+            "TDVİA",
+            "EI2",
+            "Wikidata",
+            "VIAF",
+            "GND",
+            "Wikipedia (EN)",
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        },
+        {
+          "cluster_id": "c122",
+          "canonical_ar": "عبد الهادي الخرسة",
+          "canonical_translit": "ʿAbd al-Hādī al-Kharsa",
+          "full_name": "Shaykh ʿAbd al-Hādī al-Kharsa (modern Damascene Sufi)",
+          "dates": "fl. 20th–21st c.",
+          "count": 1,
+          "user_confirmed": true,
+          "category": "modern",
+          "variants": [
+            "عبد الهادي الخرسة"
+          ],
+          "sample_titles": [
+            "شرح قصيدة الشيخ عبد الهادي"
+          ],
+          "authorities": [
+            "OpenAlex",
+            "Google Scholar"
+          ]
+        }
+      ],
+      "methods": [
+        "khar…"
+      ],
+      "n_confirmed": 3,
+      "suggested_keep": "c016"
+    }
+  ]
+}

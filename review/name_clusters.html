@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Name-cluster adjudication — Fonds P. Nwyia</title>
+<style>
+:root{
+  --bg:#f4f1ea;--card:#fff;--line:#e4ddd0;--ink:#1f2733;--soft:#475063;--muted:#7b8494;
+  --primary:#5a3e85;--primary-dk:#3f2a63;--accent:#b08a3e;--ok:#1e8e3e;--warn:#c77f12;--red:#c0392b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#f4f1ea;color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+.ar{font-family:"Amiri","Noto Naskh Arabic","Traditional Arabic",serif;direction:rtl;unicode-bidi:isolate}
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);
+  padding:.7rem 1.2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+header h1{font-size:1.05rem;margin:0;color:var(--primary-dk);font-weight:700}
+.spacer{flex:1}
+.prog{font-size:.85rem;color:var(--muted)}
+.prog b{color:var(--ink)}
+.bar{height:5px;background:#eceadf;border-radius:3px;overflow:hidden;width:160px}
+.bar>i{display:block;height:100%;background:var(--accent)}
+button.btn{font:inherit;font-size:.82rem;padding:.4rem .7rem;border:1px solid var(--line);background:#fff;
+  border-radius:6px;cursor:pointer;color:var(--soft)}
+button.btn:hover{border-color:var(--primary);color:var(--primary)}
+button.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.wrap{max-width:1040px;margin:1.2rem auto;padding:0 1.2rem 5rem}
+.legend{font-size:.8rem;color:var(--muted);background:#fbf9f4;border:1px solid var(--line);
+  border-radius:8px;padding:.6rem .8rem;margin-bottom:1rem}
+.legend code{background:#efe9db;padding:.05em .35em;border-radius:4px;color:var(--primary-dk)}
+.group-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;margin-bottom:.2rem}
+.group-head h2{margin:0;font-size:1.15rem;color:var(--primary-dk)}
+.gid{font-family:ui-monospace,Menlo,monospace;font-size:.78rem;color:var(--muted)}
+.methods{margin:.3rem 0 .2rem;display:flex;gap:.35rem;flex-wrap:wrap}
+.mchip{font-size:.72rem;background:#ece4f4;color:var(--primary-dk);border:1px solid #d9cce8;
+  border-radius:999px;padding:.1rem .55rem}
+.mchip.lead{background:#fbf0db;color:var(--accent);border-color:#ecdcb4}
+.prompt{font-size:.9rem;color:var(--soft);margin:.5rem 0 1rem}
+.members{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-bottom:1.1rem}
+.mem{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.75rem .85rem;position:relative}
+.mem.keep{border-color:var(--primary);box-shadow:0 0 0 2px #ece4f4}
+.mem.dropme{opacity:.62}
+.mem-top{display:flex;align-items:center;gap:.5rem;margin-bottom:.35rem;flex-wrap:wrap}
+.cid{font-family:ui-monospace,Menlo,monospace;font-size:.74rem;background:#eef0f3;border-radius:4px;
+  padding:.05em .4em;color:var(--soft)}
+.tag{font-size:.66rem;border-radius:999px;padding:.05em .45em;border:1px solid}
+.tag.conf{background:#e7f1ea;color:var(--ok);border-color:#bfded0}
+.tag.bare{background:#fdeceb;color:var(--red);border-color:#f0c7c3}
+.tag.modern{background:#eef0f2;color:var(--muted);border-color:#dfe3e7}
+.name-ar{font-size:1.3rem}
+.name-tr{font-style:italic;color:var(--primary-dk);font-weight:600}
+.full{font-size:.86rem;color:var(--soft);margin-top:.25rem}
+.full.none{color:var(--red);font-style:italic}
+.dates{font-size:.8rem;color:var(--muted)}
+.kv{font-size:.78rem;color:var(--muted);margin-top:.3rem}
+.auths{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.3rem}
+.auth{font-size:.68rem;background:#f1eee6;border:1px solid var(--line);border-radius:999px;padding:.05em .45em;color:var(--soft)}
+.titles{margin:.4rem 0 0;padding:0;list-style:none;font-size:.8rem}
+.titles li{color:var(--ink);padding:.05rem 0}
+.ctrl{display:flex;gap:.6rem;align-items:center;margin-top:.55rem;flex-wrap:wrap;
+  border-top:1px dashed var(--line);padding-top:.5rem}
+.ctrl label{font-size:.8rem;color:var(--soft);display:flex;align-items:center;gap:.3rem;cursor:pointer}
+.decbar{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);padding:.7rem 1.2rem;
+  display:flex;gap:.8rem;align-items:center;flex-wrap:wrap}
+.decbar select,.decbar input[type=text]{font:inherit;font-size:.85rem;padding:.35rem .5rem;
+  border:1px solid var(--line);border-radius:6px}
+.decbar input[type=text]{flex:1;min-width:180px}
+.statetag{font-size:.78rem;padding:.15rem .5rem;border-radius:999px}
+.s-merge{background:#e7f1ea;color:var(--ok)}.s-distinct{background:#eef0f2;color:var(--soft)}
+.s-unsure{background:#fbf0db;color:var(--accent)}.s-defer{background:#f3eef7;color:var(--primary)}
+.s-none{background:#fdeceb;color:var(--red)}
+.kbd{font-size:.74rem;color:var(--muted);text-align:center;padding:.4rem}
+.kbd b{background:#eee;border-radius:3px;padding:0 .35em;color:var(--ink)}
+dialog{border:none;border-radius:10px;padding:0;max-width:680px;width:92%}
+dialog .dlg{padding:1rem 1.2rem}
+dialog textarea{width:100%;height:300px;font-family:ui-monospace,Menlo,monospace;font-size:.78rem;
+  border:1px solid var(--line);border-radius:6px;padding:.5rem}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Name-cluster adjudication</h1>
+  <span class="prog">Initials: <input id="who" maxlength="6" style="width:4em;font:inherit;padding:.15rem .3rem;border:1px solid var(--line);border-radius:5px"></span>
+  <div class="spacer"></div>
+  <span class="prog"><b id="p-done">0</b> / <span id="p-tot">0</span> decided &nbsp;·&nbsp; <span id="p-pct">0%</span></span>
+  <div class="bar"><i id="p-bar" style="width:0"></i></div>
+  <button class="btn" onclick="exportJSON()">Export JSON</button>
+  <button class="btn primary" onclick="exportMerges()">Merge transcript</button>
+</header>
+
+<div class="wrap">
+  <div class="legend" id="legend"></div>
+  <div id="main"><div style="padding:3rem;text-align:center;color:var(--muted)">Loading…</div></div>
+</div>
+
+<div class="decbar">
+  <span>Decision:</span>
+  <select id="action" onchange="setAction(this.value)">
+    <option value="">— pick —</option>
+    <option value="merge">1: Merge — checked are the SAME person</option>
+    <option value="distinct">2: All distinct — no merge</option>
+    <option value="unsure">3: Unsure — needs evidence</option>
+    <option value="defer">4: Defer / skip</option>
+  </select>
+  <span id="statetag" class="statetag s-none">undecided</span>
+  <input type="text" id="note" placeholder="Note (n)…" oninput="setNote(this.value)">
+  <button class="btn" onclick="nav(-1)">‹ Prev (k)</button>
+  <button class="btn" onclick="nav(1)">Next (j) ›</button>
+</div>
+<div class="kbd">
+  <b>j</b>/<b>k</b> next/prev · <b>1</b>–<b>4</b> decision · click a card to set the <b>keep</b> target · checkboxes pick who merges in · <b>n</b> note · <b>e</b> export
+</div>
+
+<dialog id="dlg"><div class="dlg">
+  <h3 id="dlg-title" style="margin:.2rem 0 .6rem"></h3>
+  <p style="font-size:.82rem;color:var(--soft);margin:.2rem 0 .6rem" id="dlg-sub"></p>
+  <textarea id="dlg-text" readonly></textarea>
+  <div style="margin-top:.7rem;display:flex;gap:.6rem;justify-content:flex-end">
+    <button class="btn" onclick="copyDlg()">Copy</button>
+    <button class="btn" onclick="downloadDlg()">Download</button>
+    <button class="btn primary" onclick="document.getElementById('dlg').close()">Close</button>
+  </div>
+</div></dialog>
+
+<script>
+const $ = id => document.getElementById(id);
+const ESC = s => (s==null?"":String(s)).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const STORAGE = "nwyia_namecluster_v1";
+
+let WL = null, GROUPS = [], idx = 0;
+let DEC = {};   // group_id → {action, keep, merged:[cid], note}
+let META = {};  // group_id → {byId: {cid→member}}
+
+function load(){ try{ DEC = JSON.parse(localStorage.getItem(STORAGE))||{}; }catch(e){ DEC={}; } }
+function save(){ localStorage.setItem(STORAGE, JSON.stringify(DEC)); }
+
+function dec(gid){
+  if(!DEC[gid]){
+    const g = GROUPS.find(x=>x.group_id===gid);
+    DEC[gid] = { action:"", keep:g.suggested_keep, merged:[], note:"" };
+  }
+  return DEC[gid];
+}
+function isDecided(gid){
+  const d = DEC[gid]; if(!d||!d.action) return false;
+  if(d.action==="merge" && (!d.keep || (d.merged||[]).length<1)) return false;
+  return true;
+}
+
+function memTag(m){
+  let t = "";
+  if(m.user_confirmed) t += `<span class="tag conf">confirmed</span>`;
+  if(!m.full_name)     t += `<span class="tag bare">no full name</span>`;
+  if(m.category==="modern") t += `<span class="tag modern">modern</span>`;
+  return t;
+}
+
+function memHtml(m, g){
+  const d = dec(g.group_id);
+  const isKeep = d.keep===m.cluster_id;
+  const checked = (d.merged||[]).includes(m.cluster_id);
+  const titles = (m.sample_titles||[]).slice(0,3)
+    .map(t=>`<li class="ar">${ESC(t)}</li>`).join("");
+  const auths = (m.authorities||[]).map(a=>`<span class="auth">${ESC(a)}</span>`).join("");
+  const variants = (m.variants||[]).length>1
+    ? `<div class="kv">variants: <span class="ar">${(m.variants||[]).map(ESC).join(" · ")}</span></div>` : "";
+  const ctrl = isKeep
+    ? `<div class="ctrl"><b style="color:var(--primary)">★ keep this cluster</b></div>`
+    : `<div class="ctrl"><label><input type="checkbox" ${checked?"checked":""}
+         onchange="toggleMerge('${g.group_id}','${m.cluster_id}',this.checked)"> merge into keep</label></div>`;
+  return `<div class="mem ${isKeep?"keep":""} ${(!isKeep&&checked)?"":""}" onclick="pickKeep('${g.group_id}','${m.cluster_id}',event)">
+    <div class="mem-top">
+      <span class="cid">${ESC(m.cluster_id)}</span>${memTag(m)}
+      <span style="flex:1"></span>
+      <span class="kv">${m.count} ms</span>
+    </div>
+    <div><span class="name-ar ar">${ESC(m.canonical_ar)}</span></div>
+    <div class="name-tr">${ESC(m.canonical_translit)}</div>
+    <div class="full ${m.full_name?"":"none"}">${m.full_name?ESC(m.full_name):"— no identification yet —"}</div>
+    ${m.dates?`<div class="dates">${ESC(m.dates)}</div>`:""}
+    ${auths?`<div class="auths">${auths}</div>`:""}
+    ${titles?`<ul class="titles">${titles}</ul>`:""}
+    ${variants}
+    ${ctrl}
+  </div>`;
+}
+
+function render(){
+  const g = GROUPS[idx];
+  if(!g){ $("main").innerHTML = "No groups."; return; }
+  const d = dec(g.group_id);
+  const methods = g.methods.map(mn=>{
+    const lead = mn.startsWith("lead:");
+    return `<span class="mchip ${lead?"lead":""}">${ESC(mn)}</span>`;
+  }).join("");
+  const names = g.members.map(m=>m.canonical_translit||m.cluster_id).join(", ");
+  $("main").innerHTML = `
+    <div class="group-head">
+      <h2>Group ${idx+1} of ${GROUPS.length}</h2>
+      <span class="gid">${ESC(g.group_id)}</span>
+      ${g.n_confirmed?`<span class="tag conf">${g.n_confirmed} confirmed inside</span>`:""}
+    </div>
+    <div class="methods">${methods}</div>
+    <div class="prompt"><b>Are any of these the same person?</b>
+      Click the card that should survive (the <b>keep</b> target), tick those that merge into it, then choose a decision below.
+      Grouped because the names share: ${ESC(names)}.</div>
+    <div class="members">${g.members.map(m=>memHtml(m,g)).join("")}</div>`;
+  $("action").value = d.action||"";
+  $("note").value = d.note||"";
+  updateStateTag();
+  updateProgress();
+}
+
+function updateStateTag(){
+  const g = GROUPS[idx]; const d = dec(g.group_id);
+  const tag = $("statetag");
+  const map = {merge:["s-merge","merge "+(d.merged||[]).length+"→"+d.keep],
+    distinct:["s-distinct","all distinct"],unsure:["s-unsure","unsure"],defer:["s-defer","deferred"]};
+  if(d.action && map[d.action]){ tag.className="statetag "+map[d.action][0]; tag.textContent=map[d.action][1]; }
+  else { tag.className="statetag s-none"; tag.textContent="undecided"; }
+}
+
+function updateProgress(){
+  const tot = GROUPS.length;
+  const done = GROUPS.filter(g=>isDecided(g.group_id)).length;
+  $("p-done").textContent=done; $("p-tot").textContent=tot;
+  const pct = tot?Math.round(done/tot*100):0;
+  $("p-pct").textContent=pct+"%"; $("p-bar").style.width=pct+"%";
+}
+
+// ── decision actions ──────────────────────────────────────────────────────
+function pickKeep(gid,cid,ev){
+  if(ev && (ev.target.tagName==="INPUT"||ev.target.tagName==="LABEL")) return;
+  const d = dec(gid);
+  d.keep = cid;
+  d.merged = (d.merged||[]).filter(x=>x!==cid);   // keep can't be in merged
+  save(); render();
+}
+function toggleMerge(gid,cid,on){
+  const d = dec(gid);
+  d.merged = (d.merged||[]).filter(x=>x!==cid);
+  if(on) d.merged.push(cid);
+  if(d.action==="" && on) d.action="merge";
+  save(); render();
+}
+function setAction(v){
+  const g = GROUPS[idx]; const d = dec(g.group_id);
+  d.action = v;
+  if(v==="merge" && (d.merged||[]).length===0){
+    // smart default: propose merging every non-keep member; user unticks the rest
+    d.merged = g.members.map(m=>m.cluster_id).filter(c=>c!==d.keep);
+  }
+  if(v==="distinct"||v==="unsure"||v==="defer") d.merged=[];
+  save(); render();
+}
+function setNote(v){ const g=GROUPS[idx]; dec(g.group_id).note=v; save(); updateProgress(); }
+function nav(dir){ idx=Math.max(0,Math.min(GROUPS.length-1,idx+dir)); render(); window.scrollTo(0,0); }
+
+document.addEventListener("keydown",e=>{
+  if(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA") {
+    if(e.key==="Escape") e.target.blur(); return;
+  }
+  if(e.key==="j"){ nav(1); }
+  else if(e.key==="k"){ nav(-1); }
+  else if(e.key==="n"){ e.preventDefault(); $("note").focus(); }
+  else if(e.key==="e"){ exportJSON(); }
+  else if("1234".includes(e.key)){
+    const m={1:"merge",2:"distinct",3:"unsure",4:"defer"}[e.key];
+    setAction(m); $("action").value=m;
+  }
+});
+
+// ── exports ───────────────────────────────────────────────────────────────
+function stamp(){ return new Date().toISOString(); }
+function annot(){ return ($("who").value||"").trim()||"anon"; }
+
+function exportJSON(){
+  const decisions = GROUPS.map(g=>{
+    const d = DEC[g.group_id]||{};
+    return { group_id:g.group_id, members:g.members.map(m=>m.cluster_id),
+      methods:g.methods, action:d.action||"", keep:d.keep||"",
+      merged:d.merged||[], note:d.note||"" };
+  });
+  const out = { schema_version:"1.0", task:"name-cluster-adjudication",
+    annotator:annot(), annotated_date:stamp(),
+    source:WL.source, decisions };
+  showDlg("Decisions (JSON)",
+    "Save next to the worklist. Re-importable; provenance stamped.",
+    JSON.stringify(out,null,2),
+    "name_cluster_decisions_"+annot()+".json");
+}
+
+function exportMerges(){
+  const lines = [
+    "# Name-cluster merges — adjudicated "+stamp()+" by "+annot(),
+    "# Paste these into NAMED_MERGES in scripts/harvest_authority.py, then:",
+    "#   python3 scripts/harvest_authority.py data/data.json && python3 scripts/cluster.py",
+    "# BACK UP FIRST: cp data/authority.json backups/authority.json.bak.premerge",
+    "" ];
+  let n=0;
+  for(const g of GROUPS){
+    const d = DEC[g.group_id]; if(!d||d.action!=="merge"||!(d.merged||[]).length) continue;
+    const byId = {}; g.members.forEach(m=>byId[m.cluster_id]=m);
+    const keep = byId[d.keep];
+    lines.push("# "+(keep?keep.canonical_translit:d.keep)+"  ["+g.group_id+"]"+(d.note?"  — "+d.note:""));
+    for(const cid of d.merged){
+      const m = byId[cid]; if(!m) continue;
+      lines.push("#   ← absorb "+cid+" "+(m.canonical_translit||""));
+      for(const v of (m.variants||[])){
+        lines.push('    '+JSON.stringify(v)+': "'+d.keep+'",   # '+(m.canonical_translit||cid)+' → '+(keep?keep.canonical_translit:d.keep));
+        n++;
+      }
+    }
+    lines.push("");
+  }
+  lines.push("# "+n+" variant→cluster merge mappings emitted");
+  showDlg("Merge transcript (NAMED_MERGES)",
+    "Ready-to-apply variant→cluster mappings for harvest_authority.py.",
+    lines.join("\n"), "name_cluster_merges_"+annot()+".py");
+}
+
+let dlgName="export.txt";
+function showDlg(title,sub,text,fname){
+  $("dlg-title").textContent=title; $("dlg-sub").textContent=sub;
+  $("dlg-text").value=text; dlgName=fname; $("dlg").showModal();
+}
+function copyDlg(){ navigator.clipboard.writeText($("dlg-text").value); }
+function downloadDlg(){
+  const blob=new Blob([$("dlg-text").value],{type:"text/plain"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=dlgName; a.click();
+}
+
+// ── boot ────────────────────────────────────────────────────────────────────
+load();
+fetch("name_clusters.json",{cache:"no-store"}).then(r=>r.json()).then(d=>{
+  WL=d; GROUPS=d.groups||[];
+  $("legend").innerHTML = "<b>"+GROUPS.length+" candidate groups</b> ("+d.n_clusters_in_groups+
+    " of "+d.n_clusters_total+" clusters) flagged by OpenRefine-style methods — "+
+    Object.entries(d.methods_legend).map(([k,v])=>"<code>"+ESC(k)+"</code> "+ESC(v)).join(" · ");
+  render();
+}).catch(e=>{ $("main").innerHTML="<div style='padding:2rem;color:var(--red)'>Could not load worklist ("+ESC(e.message)+"). Serve from the project root and open /review/name_clusters.html</div>"; });
+</script>
+</body>
+</html>

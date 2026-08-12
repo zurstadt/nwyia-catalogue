@@ -20,8 +20,12 @@ scripts/
   normalize.py          Pure helpers (place names, shelfmark/folio split, author cleanup).
   cluster.py            (re)build data/data.json from raw_rows.json + authority.json.
   harvest_authority.py  Build data/authority.json from an exported data.json.
+  name_cluster.py       OpenRefine-style fuzzy grouping of similar author names → review worklist.
 backups/                Timestamped data.json snapshots + stray exports.
-site/                   Public static catalogue site (Home / Catalogue / Authors / About).
+site/                   Public static catalogue site (Home / Catalogue / Authors / Scholarship / About).
+review/
+  name_clusters.html    Adjudicate similar-name groups (confirm merges/identifications).
+  name_clusters.json    Worklist produced by scripts/name_cluster.py.
 docs/
   findings.md           Provenance & identification notes for the forthcoming publication.
   PROGRESS.md           Project progress & features log: methods, resources, roadmap.
@@ -82,6 +86,29 @@ python3 scripts/cluster.py      # writes data/data.json
 `cluster.py` carries a curated DIN 31635 transliteration table for the most
 common figures in the corpus; other clusters get a mechanical placeholder
 which is meant to be corrected interactively in the app.
+
+## Finding similar-name clusters to merge (OpenRefine-style)
+
+`scripts/name_cluster.py` groups author clusters whose names are similar enough
+that they may be the same person (or a bare/unidentified cluster matching an
+identified one). It mirrors OpenRefine's clustering with several independent
+methods — token-sort *fingerprint* (transliteration and Arabic, the latter with
+the project's orthographic folding), *n-gram* fingerprint, *Levenshtein*
+near-neighbour, a *shared distinctive nisbah* test (excluding common given-name
+and laqab elements), and a *bare-cluster lead* pass that links unidentified
+clusters to look-alikes by nisbah-stem prefix. Consonant digraphs are preserved
+(ḫ→kh stays distinct from ḥ→h), so خ and ح don't wrongly merge.
+
+```sh
+python3 scripts/name_cluster.py        # writes review/name_clusters.json
+python3 -m http.server 8443            # from the project root
+# then open http://localhost:8443/review/name_clusters.html
+```
+
+Adjudicate one group per screen (j/k to move, 1–4 to decide, click a card to set
+the *keep* target, tick who merges into it). **Export JSON** saves the decisions;
+**Merge transcript** emits ready-to-paste `NAMED_MERGES` mappings for
+`scripts/harvest_authority.py`.
 
 ## Notes on the data
 
