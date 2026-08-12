@@ -1161,8 +1161,11 @@ const COL_FIELDS = [
   { key: "title_translit",    label: "Title (translit.)",   arabic: false, suggest: false },
   { key: "title_translation", label: "Title (translation)", arabic: false, suggest: false },
   { key: "author",    label: "Author",    arabic: true,  suggest: false },
-  { key: "author_translit",    label: "Author (translit.)",   arabic: false, suggest: false },
-  { key: "author_translation", label: "Author (translation)", arabic: false, suggest: false },
+  // author_translit / author_translation are deliberately NOT sweepable. Author
+  // romanization lives on the CLUSTER (canonical_translit, full_name), which is
+  // what the public catalogue displays; as row fields they are filled on 3 of
+  // 347 rows and would otherwise present as ~344 blanks that should never be
+  // filled. The fields remain in the schema so existing values round-trip.
   { key: "catalog_note", label: "Cataloguer comment", arabic: false, suggest: false },
   { key: "work_url",  label: "Identification URL", arabic: false, suggest: false },
   { key: "archive",   label: "Archive",   arabic: false, suggest: true },

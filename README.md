@@ -122,7 +122,19 @@ the *keep* target, tick who merges into it). **Export JSON** saves the decisions
   **Cluster** dropdown to merge missed variants.
 - The `confidence` field on a cluster is the minimum pairwise Jaro-Winkler
   similarity across its members (1.0 for singletons). Low confidence is a hint
-  to inspect, not a verdict.
+  to inspect, not a verdict. The metric is implemented in `normalize.py` in pure
+  Python — verify it with `python3 scripts/test_normalize.py`. Note that it only
+  runs for clusters the authority file does *not* cover; authority clusters are
+  assigned 1.0 outright, so at present it is dormant.
+- **The cluster is authoritative for author romanization.** `canonical_translit`
+  and `full_name` on the cluster are what the public catalogue displays. The
+  row-level `author_translit` / `author_translation` fields remain in the schema
+  so existing values round-trip, but they are not offered in the app's
+  **Edit columns** sweep and should not be filled in bulk.
+- `catalog_note` holds the cataloguer's description of the item, including its
+  physical form where that was recorded (*texte imprimé*, *texte dactylographié*,
+  *lithographie*). It is distinct from `discrepancy_note`, which records a
+  conflict between Nwyia's entry and the holding library's catalogue.
 - `pub_status` defaults to `unknown`. The four values are `unknown`,
   `published`, `partial` (partial edition), `manuscript` (manuscript only).
 - Discrepancy notes are free-text; the intent is to record alternative or
