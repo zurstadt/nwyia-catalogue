@@ -180,27 +180,35 @@
     font-size: 0.74rem; background: var(--accent-soft); color: var(--accent); }
   .confidence-low { background: #fce8b3; color: #6c4d00; }
 
-  /* Transliteration aids (Edit columns → *_translit) */
-  #translit-aid { margin-top: 0.5rem; }
-  .translit-palette { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-bottom: 0.4rem; }
-  .translit-palette button { font-family: inherit; font-size: 1rem; line-height: 1;
-    min-width: 2rem; padding: 0.3rem 0.35rem; background: white; cursor: pointer;
-    border: 1px solid var(--rule); border-radius: 3px; }
-  .translit-palette button:hover { background: var(--accent-soft); border-color: var(--accent); }
-  .translit-legend { font-size: 0.76rem; color: var(--muted); line-height: 1.7; }
-  .translit-legend code { font-family: ui-monospace, monospace; background: var(--bg);
-    padding: 0 0.25em; border-radius: 2px; border: 1px solid var(--rule); color: var(--fg); }
-  /* Per-token hints: what the lexicon already knows about this title's words. */
-  .tok-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
-  .tok { border: 1px solid var(--rule); border-radius: 4px; padding: 0.2rem 0.45rem;
-    font-size: 0.82rem; text-align: center; background: white; }
-  .tok .tok-ar { font-family: "Scheherazade New", "Amiri", "Geeza Pro", serif;
-    font-size: 1.05rem; display: block; }
-  .tok .tok-lat { color: var(--accent); display: block; }
-  .tok.tok-unknown { border-style: dashed; }
-  .tok.tok-unknown .tok-lat { color: var(--muted); }
-  .prefill-note { margin-top: 0.45rem; font-size: 0.8rem; color: var(--accent); }
+  /* ---- The sweep: source above, field below, nothing else ----
+     A sweep is one question asked hundreds of times. Any furniture here is paid
+     for once per row, so the only things on screen are what the task reads from
+     and what it types into. See docs/UX-DECISIONS.md. */
+  .sweep { max-width: 780px; margin: 2rem auto 0; }
+  .sweep-source { font-family: "Scheherazade New", "Amiri", "Geeza Pro", serif;
+    direction: rtl; text-align: center; font-size: 1.9rem; line-height: 1.9;
+    color: var(--fg); min-height: 2.6rem; margin-bottom: 1.1rem; }
+  /* A source that is not Arabic (a Latin author string, a URL) reads left-to-right. */
+  .sweep-source.ltr { direction: ltr; font-family: inherit; font-size: 1.3rem; }
+  .sweep-source:empty::after { content: "—"; color: var(--muted); }
+  #cols-edit { width: 100%; font-size: 1.15rem; padding: 0.6rem 0.75rem; }
+  /* Tint is the whole signal that a value was suggested rather than typed. */
   #cols-edit.prefilled { background: #fffbe9; border-color: var(--accent); }
+
+  /* ctx disclosure: what the sweep does not need in front of it. */
+  #cols-ctx-toggle { padding: 0.25rem 0.6rem; border: 1px solid var(--rule);
+    background: white; border-radius: 4px; cursor: pointer; font-size: 0.82rem;
+    color: var(--muted); }
+  #cols-ctx-toggle[aria-expanded="true"] { background: var(--accent-soft); color: var(--accent); }
+  .ctx-panel .ctx-meta { margin-top: 0.9rem; padding-top: 0.7rem;
+    border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 0.45rem; }
+  .ctx-keys { font-size: 0.78rem; color: var(--muted); line-height: 1.9; }
+  .ctx-keys code { font-family: ui-monospace, monospace; background: var(--bg);
+    padding: 0 0.3em; border-radius: 2px; border: 1px solid var(--rule); color: var(--fg); }
+  .ctx-jump { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem;
+    color: var(--muted); }
+  .ctx-jump input { width: 6rem; padding: 0.25rem 0.4rem;
+    border: 1px solid var(--rule); border-radius: 3px; }
 
   /* Keyboard hint bar */
   .kbd-bar { position: fixed; bottom: 0; left: 0; right: 0;
@@ -450,60 +458,56 @@
     </div>
   </section>
 
-  <!-- ============== EDIT COLUMNS (one field at a time) ============== -->
+  <!-- ============== EDIT COLUMNS (one field at a time) ==============
+       A sweep is one question asked hundreds of times, so the screen carries
+       only the two things the task needs: the SOURCE being read from, and the
+       field being typed into. Everything else lives behind the ctx disclosure
+       or on a key — see docs/UX-DECISIONS.md before adding anything back. -->
   <section id="view-columns" class="view">
     <div class="adj-header">
       <div class="progress" id="cols-progress"></div>
       <div class="adj-nav">
-        <label for="cols-field" style="color:var(--muted);font-size:0.82rem;">Column</label>
-        <select id="cols-field" class="adj-filter"></select>
-        <select id="cols-filter" class="adj-filter">
+        <select id="cols-field" class="adj-filter" aria-label="Column to edit"></select>
+        <select id="cols-filter" class="adj-filter" aria-label="Which rows">
           <option value="all">All rows</option>
-          <option value="blank">Blank in this column</option>
+          <option value="blank">Blank</option>
           <option value="edited">Edited</option>
         </select>
-        <button id="cols-prev" title="K or ↑">◀ Prev</button>
-        <input id="cols-jump" type="number" min="1" placeholder="Go" />
-        <button id="cols-next" title="J or ↓">Next ▶</button>
+        <button id="cols-ctx-toggle" aria-expanded="false" aria-controls="cols-ctx">ctx ▾</button>
       </div>
     </div>
 
-    <div class="prompt" id="cols-prompt"></div>
-
-    <div class="card">
-      <h2 id="cols-edit-head">Edit field</h2>
-      <div class="row-inputs">
-        <div>
-          <label for="cols-edit" id="cols-edit-label">Value</label>
-          <input id="cols-edit" type="text" list="cols-datalist" autocomplete="off" />
-          <datalist id="cols-datalist"></datalist>
-        </div>
-
-        <!-- Transliteration aids. Shown only on the *_translit fields, so an
-             English translation is never rewritten by the shorthand. -->
-        <div id="translit-aid" hidden>
-          <div class="translit-palette" id="translit-palette"></div>
-          <div class="translit-legend">
-            Shorthand: <code>a:</code> ā &nbsp; <code>i:</code> ī &nbsp; <code>u:</code> ū &nbsp;
-            <code>h.</code> ḥ &nbsp; <code>s.</code> ṣ &nbsp; <code>d.</code> ḍ &nbsp;
-            <code>t.</code> ṭ &nbsp; <code>z.</code> ẓ &nbsp;
-            <code>d_</code> ḏ &nbsp; <code>t_</code> ṯ &nbsp; <code>g_</code> ġ &nbsp;
-            <code>h_</code> ḫ &nbsp; <code>s_</code> š &nbsp; <code>j_</code> ǧ &nbsp;
-            <code>'</code> ʾ &nbsp; <code>`</code> ʿ
-          </div>
-          <div id="translit-tokens"></div>
-        </div>
-
-        <div style="display:flex;gap:0.4rem;flex-wrap:wrap;align-items:center;">
-          <button id="cols-copyprev" class="act" style="padding:0.4rem 0.8rem;border:1px solid var(--rule);background:white;border-radius:4px;cursor:pointer;">↑ Same as previous row</button>
-          <span id="cols-prevval" style="color:var(--muted);font-size:0.82rem;"></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" id="cols-context-card">
-      <h2>Entry context</h2>
+    <!-- Everything the sweep does not need in front of it, one keystroke away. -->
+    <div class="card ctx-panel" id="cols-ctx" hidden>
       <div id="cols-context"></div>
+      <div class="ctx-meta">
+        <div class="ctx-keys">
+          <code>Enter</code> next · <code>Shift+Enter</code> previous ·
+          <code>Alt+↑</code> copy the previous row's value ·
+          <code>Ctrl+S</code> save · <code>Esc</code> leave the field
+        </div>
+        <div class="ctx-keys" id="cols-shorthand">
+          Transliteration shorthand:
+          <code>a:</code> ā <code>i:</code> ī <code>u:</code> ū
+          <code>h.</code> ḥ <code>s.</code> ṣ <code>d.</code> ḍ
+          <code>t.</code> ṭ <code>z.</code> ẓ
+          <code>d_</code> ḏ <code>t_</code> ṯ <code>g_</code> ġ
+          <code>h_</code> ḫ <code>s_</code> š <code>j_</code> ǧ
+          <code>'</code> ʾ <code>`</code> ʿ
+        </div>
+        <div class="ctx-jump">
+          <label for="cols-jump">Go to</label>
+          <input id="cols-jump" type="number" min="1" placeholder="#" />
+          <span id="cols-prevval"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sweep">
+      <div class="sweep-source" id="cols-source"></div>
+      <input id="cols-edit" type="text" list="cols-datalist" autocomplete="off"
+             aria-label="Value for the column being edited" />
+      <datalist id="cols-datalist"></datalist>
     </div>
   </section>
 </main>
@@ -539,6 +543,7 @@ const DATA_URL = "../data/data.json";
 const LS_KEY = "nwyia-index-edits-v1";
 const SS_KEY_CFG = "nwyia-index-cfg";
 const VIEW_KEY = "nwyia-index-view-v1";
+const SS_KEY_CTX = "nwyia-index-cols-ctx-v1";   // sweep ctx panel open/closed
 
 let raw = null;
 let rowsById = new Map();
@@ -1218,8 +1223,6 @@ let colsList = []; // row ids in current filter
 // answers are reused. DIN 31635 diacritics are also awkward on a normal keyboard,
 // hence the palette and the ASCII shorthand.
 
-const DIACRITICS = ["ā","ī","ū","ḥ","ṣ","ḍ","ṭ","ẓ","ḏ","ṯ","ġ","ḫ","š","ǧ","ʿ","ʾ"];
-
 // Longest-first so "a:" is tried before a bare "a" rule could ever shadow it.
 const SHORTHAND = [
   ["a:","ā"],["i:","ī"],["u:","ū"],
@@ -1246,6 +1249,10 @@ function arabicKey(w) {
 }
 
 const arabicWords = s => (s || "").split(/\s+/).map(arabicKey).filter(Boolean);
+
+// Some "titles" in the fonds are French or Latin ("Documents divers"); those must
+// render left-to-right or they read as gibberish.
+const hasArabic = s => /[؀-ۿ]/.test(s || "");
 
 // Arabic word -> transliteration, learned from every row where the token counts
 // line up. Where they don't, the pairing is ambiguous and is skipped rather than
@@ -1289,23 +1296,27 @@ function translitSuggestion(arabic) {
   return parts.every(Boolean) ? capitalizeFirst(parts.join(" ")) : null;
 }
 
-function renderTranslitAid(fld, row) {
-  const aid = $("translit-aid");
-  const on = isTranslitField(fld.key);
-  aid.hidden = !on;
-  if (!on) { $("cols-edit").classList.remove("prefilled"); return null; }
+// The suggestion for the row, or null. The per-word breakdown this used to draw
+// is gone deliberately: it appeared on every entry of a several-hundred-row
+// sweep to say something the tinted field already says.
+function translitSuggestionFor(fld, row) {
+  if (!isTranslitField(fld.key)) return null;
+  return translitSuggestion((fld.key === "title_translit" ? row.title : row.author) || "");
+}
 
-  const arabic = (fld.key === "title_translit" ? row.title : row.author) || "";
-  const words = arabicWords(arabic);
-  const known = words.map(w => TRANSLIT_LEXICON.get(w) || null);
-  $("translit-tokens").innerHTML = words.length
-    ? `<div class="tok-row">` + words.map((w, i) =>
-        `<span class="tok ${known[i] ? "" : "tok-unknown"}">
-           <span class="tok-ar">${escHtml(w)}</span>
-           <span class="tok-lat">${escHtml(known[i] || "?")}</span>
-         </span>`).join("") + `</div>`
-    : "";
-  return translitSuggestion(arabic);
+// What the row is being transliterated / translated FROM. Showing this — big,
+// above the field — is the whole point of the sweep screen: it is the raw source
+// artifact, and it used to sit below the input under ten other rows.
+function sweepSourceFor(fld, row) {
+  const SOURCE_OF = {
+    title_translit: "title", title_translation: "title",
+    author_translit: "author", author_translation: "author",
+  };
+  const key = SOURCE_OF[fld.key];
+  if (key) return { text: (row[key] || "").toString(), arabic: true };
+  // Editing a field with no separate source (city, shelfmark, …): show the
+  // title, so the entry is still identifiable while typing.
+  return { text: (row.title || "").toString(), arabic: true };
 }
 
 function colField() {
@@ -1346,29 +1357,36 @@ function renderColumnsView() {
   dl.innerHTML = fld.suggest
     ? colsDatalistValues(fld.key).map(v => `<option value="${escHtml(v)}"></option>`).join("")
     : "";
-  $("cols-edit-head").textContent = `Edit ${fld.label}`;
-  $("cols-edit-label").textContent = `${fld.label} value`;
-
   if (colsList.length === 0) {
-    $("cols-progress").innerHTML = `<strong>0 / 0</strong> · no rows in filter`;
-    $("cols-prompt").innerHTML = `<strong>Nothing here</strong> — widen the filter.`;
+    $("cols-progress").innerHTML = `<strong>0 / 0</strong> · nothing in this filter`;
     $("cols-context").innerHTML = "";
+    $("cols-source").textContent = "";
     $("cols-edit").value = "";
     $("cols-prevval").textContent = "";
     return;
   }
   const rowId = colsList[colsCursor];
   const r = mergedRow(rowsById.get(rowId));
+  // Position in the queue, then real progress on the column. Percent-of-cursor
+  // would say "0%" on the first of 344 rows and mean nothing; what the typist
+  // wants to know is how much of the column is filled in.
   const blanks = raw.rows.filter(x => colBlank(x, fld.key)).length;
+  const done = raw.rows.length - blanks;
+  const pct = Math.round((done / raw.rows.length) * 100);
 
+  // One line of state. The field is named once, by the Column select beside it —
+  // it used to be repeated here, in a card heading, in a label and in a banner,
+  // on every one of several hundred rows.
   $("cols-progress").innerHTML =
-    `<strong>${colsCursor + 1} / ${colsList.length}</strong> · editing <strong>${escHtml(fld.label)}</strong> · ` +
-    `${blanks} blank of ${raw.rows.length} · entry <code>${escHtml(r.id)}</code> (p. ${r.page})`;
+    `<strong>${colsCursor + 1} / ${colsList.length}</strong> · ` +
+    `${done} of ${raw.rows.length} filled (${pct}%) · ` +
+    `<code>${escHtml(r.id)}</code> · p. ${escHtml(String(r.page))}`;
 
-  $("cols-prompt").innerHTML =
-    `<strong>Set the ${escHtml(fld.label)} for this entry.</strong> ` +
-    `<code>Enter</code> = next, <code>Shift+Enter</code> = previous, ` +
-    `<code>↑ Same as previous</code> copies the row above.`;
+  // The source being read from, above the field. See sweepSourceFor().
+  const src = sweepSourceFor(fld, r);
+  const srcEl = $("cols-source");
+  srcEl.textContent = src.text;
+  srcEl.classList.toggle("ltr", !src.arabic || !hasArabic(src.text));
 
   // Context: the other columns, read-only, so you know which entry this is.
   // Empty ones are omitted — on a sweep of hundreds of rows a column of "—"
@@ -1392,20 +1410,15 @@ function renderColumnsView() {
   if (fld.suggest) input.setAttribute("list", "cols-datalist");
   else input.removeAttribute("list");
 
-  // Transliteration aids, and a suggestion when every word is already known.
-  const suggestion = renderTranslitAid(fld, r);
+  // A suggestion when every word of the source is already known. The tint is the
+  // only signal — a sentence explaining it would be drawn on every prefilled row.
+  const suggestion = translitSuggestionFor(fld, r);
   const prefilled = !input.value && suggestion;
   if (prefilled) input.value = suggestion;
   input.classList.toggle("prefilled", !!prefilled);
-  const noteEl = $("translit-tokens");
-  if (prefilled && noteEl) {
-    noteEl.insertAdjacentHTML("beforeend",
-      `<div class="prefill-note">Suggested from words you have already confirmed —
-       press <code>Enter</code> to accept, or edit first.</div>`);
-  }
 
   const prev = physicalPrevValue(rowId, fld.key);
-  $("cols-prevval").textContent = prev ? `previous row: ${prev}` : "previous row: —";
+  $("cols-prevval").textContent = prev ? `Alt+↑ copies: ${prev}` : "";
   input.focus();
   input.setSelectionRange(input.value.length, input.value.length);
 }
@@ -1514,13 +1527,14 @@ function renderKbdHints() {
       ${undoHint}
       ${common}`;
   } else {
-    bar.innerHTML = `
-      <span><code>Enter</code> next row · <code>Shift+Enter</code> prev</span>
-      <span><code>↑ Same as previous</code> copies row above</span>
-      <span>pick a column &amp; filter to blanks to fill gaps fast</span>
-      ${undoHint}
-      ${common}`;
+    // Columns view: the bar stays hidden. Its hints live in the ctx panel — a
+    // fixed bar restating two keys on every row of a several-hundred-row sweep
+    // is the third place the same sentence was being printed.
+    bar.innerHTML = "";
+    bar.hidden = true;
+    return;
   }
+  bar.hidden = false;
 }
 
 // ============================================================
@@ -1672,21 +1686,16 @@ function bindEditFields() {
         patchRow(colsList[colsCursor], { [colField().key]: e.target.value });
       }
       colsCommitAndMove(e.shiftKey ? -1 : 1);
+      return;
     }
-  });
-
-  // Diacritic palette: insert at the caret and keep focus in the field.
-  $("translit-palette").innerHTML = DIACRITICS
-    .map(ch => `<button type="button" data-ch="${ch}" tabindex="-1">${ch}</button>`).join("");
-  $("translit-palette").addEventListener("click", e => {
-    const ch = e.target.dataset && e.target.dataset.ch;
-    if (!ch) return;
-    const el = $("cols-edit");
-    const a = el.selectionStart, b = el.selectionEnd;
-    el.value = el.value.slice(0, a) + ch + el.value.slice(b);
-    el.setSelectionRange(a + ch.length, a + ch.length);
-    el.focus();
-    el.dispatchEvent(new Event("input", { bubbles: true }));
+    // Copy the previous row's value. This is a KEY and not a button because
+    // onKey() early-returns whenever focus is in a field, so during a sweep the
+    // global bindings are inert — a button here would be the only way to reach
+    // the feature, and buttons are what this screen is trying not to have.
+    if (e.altKey && e.key === "ArrowUp") {
+      e.preventDefault();
+      colsCopyPrevious();
+    }
   });
 }
 
@@ -1718,13 +1727,27 @@ function bindNavControls() {
   $("cols-field").innerHTML = COL_FIELDS.map(f => `<option value="${f.key}">${f.label}</option>`).join("");
   $("cols-field").addEventListener("change", () => { colsCursor = 0; renderColumnsView(); });
   $("cols-filter").addEventListener("change", () => { colsCursor = 0; renderColumnsView(); });
-  $("cols-prev").addEventListener("click", () => colsCommitAndMove(-1));
-  $("cols-next").addEventListener("click", () => colsCommitAndMove(1));
-  $("cols-copyprev").addEventListener("click", colsCopyPrevious);
+  // Prev / Next / copy-previous have no buttons here: Enter, Shift+Enter and
+  // Alt+↑ carry them, and the sweep screen holds only the source and the field.
   $("cols-jump").addEventListener("change", e => {
     const n = parseInt(e.target.value, 10);
     if (n >= 1 && n <= colsList.length) { colsCursor = n - 1; renderColumnsView(); }
     e.target.value = "";
+  });
+
+  // ctx disclosure. Open/closed persists for the session, so a reader who wants
+  // the full entry beside them keeps it across rows and re-renders.
+  const ctxToggle = $("cols-ctx-toggle"), ctxPanel = $("cols-ctx");
+  const setCtx = open => {
+    ctxPanel.hidden = !open;
+    ctxToggle.setAttribute("aria-expanded", String(open));
+    ctxToggle.textContent = open ? "ctx ▴" : "ctx ▾";
+    sessionStorage.setItem(SS_KEY_CTX, open ? "1" : "0");
+  };
+  setCtx(sessionStorage.getItem(SS_KEY_CTX) === "1");
+  ctxToggle.addEventListener("click", () => {
+    setCtx(ctxPanel.hidden);
+    $("cols-edit").focus();          // never steal focus from the sweep
   });
 
   for (const btn of document.querySelectorAll(".tabs button")) {

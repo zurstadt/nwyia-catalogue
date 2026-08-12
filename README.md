@@ -29,10 +29,36 @@ review/
 docs/
   findings.md           Provenance & identification notes for the forthcoming publication.
   PROGRESS.md           Project progress & features log: methods, resources, roadmap.
+  UX-DECISIONS.md       Deliberate interaction decisions in the app — read before changing it.
 ```
 
 All scripts resolve paths from the project root (the parent of `scripts/`), so they
 can be run from anywhere, e.g. `python3 scripts/cluster.py`.
+
+## Sweeping one column (Edit columns)
+
+Pick a **Column**, set the filter to **Blank**, and type. The screen shows only the Arabic being
+read from and the field being typed into; `ctx ▾` opens the full entry, the key reference and the
+shorthand table. `Enter` next · `Shift+Enter` previous · `Alt+↑` copies the previous row's value ·
+`Ctrl+S` save.
+
+On the transliteration columns (`Title (translit.)`, `Author (translit.)`) an ASCII shorthand is
+expanded as you type — it is **not** applied to the translation columns, so English prose is never
+rewritten:
+
+| type | get | type | get | type | get | type | get |
+|---|---|---|---|---|---|---|---|
+| `a:` | ā | `h.` | ḥ | `d_` | ḏ | `'` | ʾ |
+| `i:` | ī | `s.` | ṣ | `t_` | ṯ | `` ` `` | ʿ |
+| `u:` | ū | `d.` | ḍ | `g_` | ġ | | |
+| | | `t.` | ṭ | `h_` | ḫ | | |
+| | | `z.` | ẓ | `s_` | š | | |
+| | | | | `j_` | ǧ | | |
+
+A title whose every word you have already transliterated is **pre-filled** and tinted; `Enter`
+accepts it, typing replaces it, and stepping past leaves the row blank. Words are learned only from
+rows where the Arabic and Latin word counts match, so an ambiguous pairing is skipped rather than
+guessed.
 
 ## Local use
 
