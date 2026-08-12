@@ -180,6 +180,28 @@
     font-size: 0.74rem; background: var(--accent-soft); color: var(--accent); }
   .confidence-low { background: #fce8b3; color: #6c4d00; }
 
+  /* Transliteration aids (Edit columns → *_translit) */
+  #translit-aid { margin-top: 0.5rem; }
+  .translit-palette { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-bottom: 0.4rem; }
+  .translit-palette button { font-family: inherit; font-size: 1rem; line-height: 1;
+    min-width: 2rem; padding: 0.3rem 0.35rem; background: white; cursor: pointer;
+    border: 1px solid var(--rule); border-radius: 3px; }
+  .translit-palette button:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .translit-legend { font-size: 0.76rem; color: var(--muted); line-height: 1.7; }
+  .translit-legend code { font-family: ui-monospace, monospace; background: var(--bg);
+    padding: 0 0.25em; border-radius: 2px; border: 1px solid var(--rule); color: var(--fg); }
+  /* Per-token hints: what the lexicon already knows about this title's words. */
+  .tok-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+  .tok { border: 1px solid var(--rule); border-radius: 4px; padding: 0.2rem 0.45rem;
+    font-size: 0.82rem; text-align: center; background: white; }
+  .tok .tok-ar { font-family: "Scheherazade New", "Amiri", "Geeza Pro", serif;
+    font-size: 1.05rem; display: block; }
+  .tok .tok-lat { color: var(--accent); display: block; }
+  .tok.tok-unknown { border-style: dashed; }
+  .tok.tok-unknown .tok-lat { color: var(--muted); }
+  .prefill-note { margin-top: 0.45rem; font-size: 0.8rem; color: var(--accent); }
+  #cols-edit.prefilled { background: #fffbe9; border-color: var(--accent); }
+
   /* Keyboard hint bar */
   .kbd-bar { position: fixed; bottom: 0; left: 0; right: 0;
     background: var(--card); border-top: 1px solid var(--rule);
@@ -448,11 +470,6 @@
 
     <div class="prompt" id="cols-prompt"></div>
 
-    <div class="card" id="cols-context-card">
-      <h2>Entry context</h2>
-      <div id="cols-context"></div>
-    </div>
-
     <div class="card">
       <h2 id="cols-edit-head">Edit field</h2>
       <div class="row-inputs">
@@ -461,11 +478,32 @@
           <input id="cols-edit" type="text" list="cols-datalist" autocomplete="off" />
           <datalist id="cols-datalist"></datalist>
         </div>
+
+        <!-- Transliteration aids. Shown only on the *_translit fields, so an
+             English translation is never rewritten by the shorthand. -->
+        <div id="translit-aid" hidden>
+          <div class="translit-palette" id="translit-palette"></div>
+          <div class="translit-legend">
+            Shorthand: <code>a:</code> ā &nbsp; <code>i:</code> ī &nbsp; <code>u:</code> ū &nbsp;
+            <code>h.</code> ḥ &nbsp; <code>s.</code> ṣ &nbsp; <code>d.</code> ḍ &nbsp;
+            <code>t.</code> ṭ &nbsp; <code>z.</code> ẓ &nbsp;
+            <code>d_</code> ḏ &nbsp; <code>t_</code> ṯ &nbsp; <code>g_</code> ġ &nbsp;
+            <code>h_</code> ḫ &nbsp; <code>s_</code> š &nbsp; <code>j_</code> ǧ &nbsp;
+            <code>'</code> ʾ &nbsp; <code>`</code> ʿ
+          </div>
+          <div id="translit-tokens"></div>
+        </div>
+
         <div style="display:flex;gap:0.4rem;flex-wrap:wrap;align-items:center;">
           <button id="cols-copyprev" class="act" style="padding:0.4rem 0.8rem;border:1px solid var(--rule);background:white;border-radius:4px;cursor:pointer;">↑ Same as previous row</button>
           <span id="cols-prevval" style="color:var(--muted);font-size:0.82rem;"></span>
         </div>
       </div>
+    </div>
+
+    <div class="card" id="cols-context-card">
+      <h2>Entry context</h2>
+      <div id="cols-context"></div>
     </div>
   </section>
 </main>
@@ -1173,6 +1211,103 @@ const COL_FIELDS = [
 let colsCursor = 0;
 let colsList = []; // row ids in current filter
 
+// ===== Transliteration aids =====================================================
+// The corpus is small and formulaic — 978 title tokens across ~515 distinct words,
+// with كتاب alone appearing 53 times. Typing each occurrence again is wasted effort
+// and invites the same word being romanized two ways in one index, so confirmed
+// answers are reused. DIN 31635 diacritics are also awkward on a normal keyboard,
+// hence the palette and the ASCII shorthand.
+
+const DIACRITICS = ["ā","ī","ū","ḥ","ṣ","ḍ","ṭ","ẓ","ḏ","ṯ","ġ","ḫ","š","ǧ","ʿ","ʾ"];
+
+// Longest-first so "a:" is tried before a bare "a" rule could ever shadow it.
+const SHORTHAND = [
+  ["a:","ā"],["i:","ī"],["u:","ū"],
+  ["h.","ḥ"],["s.","ṣ"],["d.","ḍ"],["t.","ṭ"],["z.","ẓ"],
+  ["d_","ḏ"],["t_","ṯ"],["g_","ġ"],["h_","ḫ"],["s_","š"],["j_","ǧ"],
+  ["'","ʾ"],["`","ʿ"],
+];
+
+function expandShorthand(s) {
+  for (const [from, to] of SHORTHAND) s = s.split(from).join(to);
+  return s;
+}
+
+function isTranslitField(key) { return key === "title_translit" || key === "author_translit"; }
+
+// Lookup key for an Arabic word: drop the vowel/shadda marks and tatweel, and fold
+// the alif and yāʾ variants, so ٱلْحَقَائِق and الحقائق are one entry.
+function arabicKey(w) {
+  return (w || "")
+    .replace(/[ً-ْٰـ]/g, "")
+    .replace(/[آأإٱ]/g, "ا")
+    .replace(/ى/g, "ي")
+    .trim();
+}
+
+const arabicWords = s => (s || "").split(/\s+/).map(arabicKey).filter(Boolean);
+
+// Arabic word -> transliteration, learned from every row where the token counts
+// line up. Where they don't, the pairing is ambiguous and is skipped rather than
+// guessed — a wrong pair would propagate into every later suggestion.
+let TRANSLIT_LEXICON = new Map();
+
+function buildTranslitLexicon() {
+  const lex = new Map();
+  const learn = (ar, lat) => {
+    const a = arabicWords(ar), l = (lat || "").trim().split(/\s+/).filter(Boolean);
+    if (!a.length || a.length !== l.length) return;
+    a.forEach((w, i) => { if (!lex.has(w)) lex.set(w, l[i]); });
+  };
+  for (const row of raw.rows) {
+    const r = mergedRow(row);
+    learn(r.title, r.title_translit);
+    learn(r.author, r.author_translit);
+  }
+  // Author clusters are a free seed: 114 confirmed name pairs, and those names
+  // recur inside titles (شرح كلام الحلاج).
+  for (const c of raw.clusters || []) {
+    const m = mergedCluster(c);
+    learn(m.canonical_ar, m.canonical_translit);
+  }
+  TRANSLIT_LEXICON = lex;
+}
+
+// Capitalize the first letter only: this project writes "Kitāb al-tawahhum",
+// not "Kitāb Al-Tawahhum".
+function capitalizeFirst(s) {
+  const i = s.search(/\S/);
+  return i < 0 ? s : s.slice(0, i) + s[i].toUpperCase() + s.slice(i + 1);
+}
+
+// A suggestion is offered only when EVERY word is known. A half-known title would
+// be a sentence with holes, and accepting it by reflex would silently commit them.
+function translitSuggestion(arabic) {
+  const words = arabicWords(arabic);
+  if (!words.length) return null;
+  const parts = words.map(w => TRANSLIT_LEXICON.get(w) || null);
+  return parts.every(Boolean) ? capitalizeFirst(parts.join(" ")) : null;
+}
+
+function renderTranslitAid(fld, row) {
+  const aid = $("translit-aid");
+  const on = isTranslitField(fld.key);
+  aid.hidden = !on;
+  if (!on) { $("cols-edit").classList.remove("prefilled"); return null; }
+
+  const arabic = (fld.key === "title_translit" ? row.title : row.author) || "";
+  const words = arabicWords(arabic);
+  const known = words.map(w => TRANSLIT_LEXICON.get(w) || null);
+  $("translit-tokens").innerHTML = words.length
+    ? `<div class="tok-row">` + words.map((w, i) =>
+        `<span class="tok ${known[i] ? "" : "tok-unknown"}">
+           <span class="tok-ar">${escHtml(w)}</span>
+           <span class="tok-lat">${escHtml(known[i] || "?")}</span>
+         </span>`).join("") + `</div>`
+    : "";
+  return translitSuggestion(arabic);
+}
+
 function colField() {
   return COL_FIELDS.find(f => f.key === $("cols-field").value) || COL_FIELDS[0];
 }
@@ -1235,9 +1370,14 @@ function renderColumnsView() {
     `<code>Enter</code> = next, <code>Shift+Enter</code> = previous, ` +
     `<code>↑ Same as previous</code> copies the row above.`;
 
-  // Context: every other column, read-only, so you know which entry this is.
+  // Context: the other columns, read-only, so you know which entry this is.
+  // Empty ones are omitted — on a sweep of hundreds of rows a column of "—"
+  // pushes the field you are actually typing into off the screen. Title, author
+  // and cluster are always kept: they are what a transliteration is made from.
+  const ALWAYS = new Set(["title", "author"]);
   const ctx = COL_FIELDS.filter(c => c.key !== fld.key).map(c => {
     const val = (r[c.key] ?? "").toString();
+    if (!val && !ALWAYS.has(c.key)) return "";
     return `<div class="field"><label>${escHtml(c.label)}</label><div class="${c.arabic ? "val ar" : "val"}">${escHtml(val || "—")}</div></div>`;
   }).join("");
   const cluster = r.author_cluster_id ? mergedCluster(clustersById.get(r.author_cluster_id) || {}) : null;
@@ -1251,6 +1391,19 @@ function renderColumnsView() {
   input.classList.toggle("ar", fld.arabic);
   if (fld.suggest) input.setAttribute("list", "cols-datalist");
   else input.removeAttribute("list");
+
+  // Transliteration aids, and a suggestion when every word is already known.
+  const suggestion = renderTranslitAid(fld, r);
+  const prefilled = !input.value && suggestion;
+  if (prefilled) input.value = suggestion;
+  input.classList.toggle("prefilled", !!prefilled);
+  const noteEl = $("translit-tokens");
+  if (prefilled && noteEl) {
+    noteEl.insertAdjacentHTML("beforeend",
+      `<div class="prefill-note">Suggested from words you have already confirmed —
+       press <code>Enter</code> to accept, or edit first.</div>`);
+  }
+
   const prev = physicalPrevValue(rowId, fld.key);
   $("cols-prevval").textContent = prev ? `previous row: ${prev}` : "previous row: —";
   input.focus();
@@ -1266,6 +1419,9 @@ function moveColsCursor(delta) {
 // index (the next blank shifts into it) instead of skipping forward.
 function colsCommitAndMove(delta) {
   const fld = colField().key;
+  // Learn from what was just confirmed, so the next title containing the same
+  // word can be suggested.
+  if (isTranslitField(fld)) buildTranslitLexicon();
   if (delta > 0 && $("cols-filter").value === "blank" && colsList.length) {
     const justFilled = !colBlank(rowsById.get(colsList[colsCursor]), fld);
     if (justFilled) {
@@ -1488,13 +1644,49 @@ function bindEditFields() {
   // Columns view: live-save the focused field, navigate on Enter.
   $("cols-edit").addEventListener("input", e => {
     if (colsList.length === 0) return;
-    patchRow(colsList[colsCursor], { [colField().key]: e.target.value });
+    const key = colField().key;
+    const el = e.target;
+    if (isTranslitField(key)) {
+      // Expand the ASCII shorthand in place. Split at the caret and expand each
+      // side separately so the caret lands after the character just produced,
+      // however much the text before it shrank.
+      const caret = el.selectionStart;
+      const pre = expandShorthand(el.value.slice(0, caret));
+      const post = expandShorthand(el.value.slice(caret));
+      if (pre + post !== el.value) {
+        el.value = pre + post;
+        el.setSelectionRange(pre.length, pre.length);
+      }
+    }
+    el.classList.remove("prefilled");     // typed over: it is the user's value now
+    patchRow(colsList[colsCursor], { [key]: el.value });
   });
   $("cols-edit").addEventListener("keydown", e => {
     if (e.key === "Enter") {
       e.preventDefault();
+      // Commit what is on screen. A suggestion is NOT saved merely by being
+      // displayed — only this keystroke accepts it, so skipping past a row with
+      // Shift+Enter or a field change leaves it blank rather than silently
+      // banking a suggestion nobody read.
+      if (!e.shiftKey && colsList.length) {
+        patchRow(colsList[colsCursor], { [colField().key]: e.target.value });
+      }
       colsCommitAndMove(e.shiftKey ? -1 : 1);
     }
+  });
+
+  // Diacritic palette: insert at the caret and keep focus in the field.
+  $("translit-palette").innerHTML = DIACRITICS
+    .map(ch => `<button type="button" data-ch="${ch}" tabindex="-1">${ch}</button>`).join("");
+  $("translit-palette").addEventListener("click", e => {
+    const ch = e.target.dataset && e.target.dataset.ch;
+    if (!ch) return;
+    const el = $("cols-edit");
+    const a = el.selectionStart, b = el.selectionEnd;
+    el.value = el.value.slice(0, a) + ch + el.value.slice(b);
+    el.setSelectionRange(a + ch.length, a + ch.length);
+    el.focus();
+    el.dispatchEvent(new Event("input", { bubbles: true }));
   });
 }
 
@@ -1705,6 +1897,7 @@ async function main() {
   for (const r of raw.rows) rowsById.set(r.id, r);
   for (const c of raw.clusters) clustersById.set(c.cluster_id, c);
   buildIndex();
+  buildTranslitLexicon();
   populateFilters();
   bindEditFields();
   bindNavControls();
