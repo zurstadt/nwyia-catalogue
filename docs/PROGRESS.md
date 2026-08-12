@@ -5,15 +5,19 @@ Nwyia's manuscript collection, the methods and resources that worked, and what
 remains. Companion to `findings.md` (scholarly provenance/identification notes)
 and `README.md` (layout & usage).
 
-_Last updated: 2026-06-16._
+_Last updated: 2026-08-12._
 
 ## Snapshot
 
-- **347 manuscripts**, **117 author clusters** (116 with rows).
-- **Publication status:** 139 published · 7 manuscript-only · 201 unknown (was
-  2 published at the start). **120 rows** carry a `work_url` (edition/catalogue link).
-- **Author metadata:** 60 clusters carry `full_name`, `dates`, and authority links.
-- **32 rows** remain unclustered (mostly genuine fragments / generic incipits).
+- **334 manuscripts** in the premodern corpus (347 rows total, less the clusters
+  flagged `category:"modern"`), **114 author clusters**.
+- **Publication status:** 138 published · 5 manuscript-only · 191 unknown (was
+  2 published at the start). **117 rows** carry a `work_url` (edition/catalogue link).
+- **Author metadata:** 98 clusters carry `full_name` and `dates`; 90 carry
+  authority links. Both are shown in catalogue entries, not just on the Authors page.
+- **32 rows** remain unclustered (mostly genuine fragments / generic incipits);
+  7 rows are untitled in the source index itself.
+- **Live** at <https://zurstadt.github.io/nwyia-catalogue/>.
 
 ## What has been built
 
@@ -98,6 +102,46 @@ author (+ `_translit`, `_translation`), archive (Fonds cote), `author_cluster_id
 `work_url`, `discrepancy_note`, `page`, `id`.
 `cluster`: cluster_id, canonical_ar, canonical_translit, **full_name**, **dates**,
 variants, count, confidence, user_confirmed, **authorities** [{source,title,url}].
+
+## Pipeline repair and data hygiene (2026-08-12)
+
+**The pipeline could not run at all.** `cluster.py` and `harvest_authority.py`
+both died at import: `jellyfish` was installed as an x86_64 wheel under arm64
+Python 3.14, so no edit could round-trip and every repair would have been
+reverted by the next re-cluster. The whole dependency existed for one call
+(`jaro_winkler_similarity` in `cluster_confidence`), so it was replaced with a
+pure-Python implementation in `normalize.py` rather than reinstalled — a
+research pipeline should still run years from now on an unknown machine. Guarded
+by `scripts/test_normalize.py` (plain `python3`, no framework), validated against
+the standard published worked examples. Note the metric is currently *dormant*:
+every cluster comes from `authority.json`, which is assigned confidence 1.0
+outright, so `cluster_confidence()` never runs on this data. `pdfplumber` is
+broken the same way, if it is ever needed again.
+
+**Field hygiene — `shelfmark` was carrying three different things.**
+- *Extent.* `split_shelfmark()` only recognised `fol./f./p./pp.` + digit or a bare
+  "13 folios", so a parenthesised `(3 vols.)` stayed glued to the call number
+  ("Besir aga 36 (3 vols.)"). Fixed in the splitter, not in the rows — once
+  `normalize_rows()` produces the corrected split the repair needs no override
+  and cannot be reverted. 13 rows.
+- *Physical format.* Twelve rows held `(texte imprimé)`, `(texte dactylographié)`
+  or `Lithographie` — mostly Nwyia's own offprints and typescripts, which is why
+  they also have no city or library. Moved to `catalog_note`; no new `format`
+  field for twelve rows. Two fields were rescued from the same cells: r0025's
+  page range, and r0029's *Arabica*, 1977, v. 24, fasc. 2 — al-Šayzarī's *Rawḍat
+  al-qulūb* in print, so that row is now `published`.
+- *Nothing.* The 7 untitled rows are untitled **in the source**: verified against
+  `Nwyia_MSCollection.pdf` pp. 3–8, the Titre cell is empty in the index itself.
+  Recorded in `catalog_note`; the catalogue now says "Untitled" with the reason
+  instead of a bare em dash.
+
+`catalog_note` is now rendered in the catalogue (it never was), so all of the
+above is visible to readers, and it joins the search haystack.
+
+Author romanization is now explicitly the **cluster's** business
+(`canonical_translit`, `full_name`); the row-level `author_translit` /
+`author_translation` fields stay in the schema but are no longer offered in the
+app's Edit-columns sweep, where they were ~344 blanks that should never be filled.
 
 ## Roadmap / what's left
 
