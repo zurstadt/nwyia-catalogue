@@ -55,7 +55,7 @@ OVERRIDE_FIELDS = ["title", "author",
                    "title_translit", "title_translation",
                    "author_translit", "author_translation",
                    "catalog_note", "work_url",
-                   "pub_status", "pub_citation", "discrepancy_note"]
+                   "pub_status", "pub_citation", "pub_source", "discrepancy_note"]
 
 
 def clean(s: str) -> str:

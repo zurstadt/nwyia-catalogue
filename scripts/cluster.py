@@ -40,6 +40,12 @@ AUTH_PATH = ROOT / "data" / "authority.json"
 ROW_FIELD_DEFAULTS = {
     "pub_status": "unknown",
     "pub_citation": "",
+    # Where the citation came from, so a relayed one is not mistaken for a checked
+    # one. "catalogue" = copied from a holding library's own notice and NOT verified;
+    # "bibliography" = from a published bibliography or reference work;
+    # "edition" = taken from the edition itself. Empty means simply unrecorded —
+    # it is not a claim that the citation is unsourced.
+    "pub_source": "",
     "discrepancy_note": "",
     "title_translit": "",
     "title_translation": "",
@@ -472,7 +478,8 @@ def main() -> int:
                             "title", "title_translit", "title_translation",
                             "author", "author_translit", "author_translation",
                             "catalog_note", "archive", "author_cluster_id",
-                            "pub_status", "pub_citation", "work_url", "discrepancy_note"],
+                            "pub_status", "pub_citation", "pub_source", "work_url",
+                            "discrepancy_note"],
             "pub_status_values": ["unknown", "published", "partial", "manuscript"],
         },
     }

@@ -269,8 +269,18 @@ function entryHtml(r, level, grouped) {
     r.folios && `<span><b>Folios:</b> ${esc(r.folios)}</span>`,
     r.archive && `<span><b>Fonds cote:</b> <span class="cote">${esc(r.archive)}</span></span>`,
   ].filter(Boolean).join("");
+  // Where a citation came from. A reference relayed from a holding library's own
+  // notice has not been checked against the edition, and a reader deciding whether
+  // to cite it needs to know which kind it is.
+  const SRC = { catalogue: "relayed from the library catalogue, unverified",
+                bibliography: "from a published bibliography",
+                edition: "from the edition",
+                "source-cell": "recorded in the Fonds index itself" };
+  const srcTag = r.pub_source
+    ? ` <span class="cite-src" title="${esc(SRC[r.pub_source] || r.pub_source)}">${esc(r.pub_source)}</span>`
+    : "";
   let cite = "";
-  if (r.pub_citation) cite = `<div class="entry-cite">${esc(r.pub_citation)}` +
+  if (r.pub_citation) cite = `<div class="entry-cite">${esc(r.pub_citation)}${srcTag}` +
     (r.work_url ? ` — <a href="${esc(r.work_url)}" target="_blank" rel="noopener">view edition ↗</a>` : "") + `</div>`;
   else if (r.work_url) cite = `<div class="entry-cite"><a href="${esc(r.work_url)}" target="_blank" rel="noopener">identification / catalogue ↗</a></div>`;
   const note = r.discrepancy_note ? `<div class="entry-cite muted">⚠ ${esc(r.discrepancy_note)}</div>` : "";

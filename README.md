@@ -175,6 +175,14 @@ the *keep* target, tick who merges into it). **Export JSON** saves the decisions
   physical form where that was recorded (*texte imprimé*, *texte dactylographié*,
   *lithographie*). It is distinct from `discrepancy_note`, which records a
   conflict between Nwyia's entry and the holding library's catalogue.
+- **`pub_source` says where a `pub_citation` came from**, so a relayed reference is
+  not mistaken for a checked one. `catalogue` = copied from a holding library's own
+  notice and **not** verified against the edition; `bibliography` = from a published
+  bibliography or reference work (Digital Sufism, the MIAS catalogue, TDVİA, EI);
+  `edition` = taken from the edition itself; `source-cell` = the Fonds index's own
+  cell carried the reference. **Empty means unrecorded, not unsourced** — most of the
+  corpus predates the field. The catalogue page shows the value as a small tag beside
+  the citation.
 - `pub_status` defaults to `unknown`. The four values are `unknown`,
   `published`, `partial` (partial edition), `manuscript` (manuscript only).
 - Discrepancy notes are free-text; the intent is to record alternative or

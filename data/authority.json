@@ -4020,12 +4020,14 @@
       "title": "Ibn ʿAṭāʾ Allāḥ (m. 709/1309), et la naissance de la confrérie šād̲ilite : édition critique et traduction des Ḥikam, précedrees d'une introduction sur le soufisme et suivies de notes sur le vocabulaire mystique",
       "title_translit": "Ibn ʿAṭāʾ Allāh (m. 709/1309), et la naissance de la confrérie šād̲ilite : édition critique et traduction des Ḥikam, précedrees d'une introduction sur le soufisme et suivies de notes sur le vocabulaire mystique",
       "work_url": "https://archive.org/details/paul-nwiya-ibn-ata-allah/page/n3/mode/2up",
-      "pub_citation": "Paul Nwyia, Ibn ʿAṭāʾ Allāḥ (m. 709/1309), et la naissance de la confrérie šād̲ilite : édition critique et traduction des Ḥikam, précedrees d'une introduction sur le soufisme et suivies de notes sur le vocabulaire mystique, Recherches publiées sous la direction de l'Institu de Lettres Orientales de Beyrouth – Nouvelle Série A. Langue arabe et pensée islamique 2 (Beirut: Dar El-Machreq, 1972); second edition, 1990; third edition, 2007"
+      "pub_citation": "Paul Nwyia, Ibn ʿAṭāʾ Allāḥ (m. 709/1309), et la naissance de la confrérie šād̲ilite : édition critique et traduction des Ḥikam, précedrees d'une introduction sur le soufisme et suivies de notes sur le vocabulaire mystique, Recherches publiées sous la direction de l'Institu de Lettres Orientales de Beyrouth – Nouvelle Série A. Langue arabe et pensée islamique 2 (Beirut: Dar El-Machreq, 1972); second edition, 1990; third edition, 2007",
+      "pub_source": "edition"
     },
     "r0007": {
       "title": "Exégèse coranique et langage mystique",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia, \"Exégèse coranique et langage mystique,\" Ph.D. Diss. supervised by Henri Corbin (Paris: Université de Paris – Faculté des lettres et sciences humaines, 1970).",
+      "pub_source": "edition",
       "discrepancy_note": "This copy represents the text of Nwyia's completed doctoral dissertation (*thèse de doctorat*), which was published under the same title. "
     },
     "r0008": {
@@ -4070,7 +4072,8 @@
       "title_translit": "kitāb al-iʿlām bi-išārāt ahl al-ilhām",
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
-      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. al-Iʿlām bi-ishārāt ahl al-ilhām, Osman Yahia RG 281 [Verified A]."
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. al-Iʿlām bi-ishārāt ahl al-ilhām, Osman Yahia RG 281 [Verified A].",
+      "pub_source": "bibliography"
     },
     "r0017": {
       "title_translit": "kitāb al-īḍāḥ"
@@ -4124,7 +4127,8 @@
       "title_translit": "rawḍat al-qulūb wa-nuzhat al-muḥibb wa-l-maḥbūb",
       "catalog_note": "Texte imprimé.",
       "pub_status": "published",
-      "pub_citation": "Arabica, 1977, v. 24, fasc. 2."
+      "pub_citation": "Arabica, 1977, v. 24, fasc. 2.",
+      "pub_source": "source-cell"
     },
     "r0030": {
       "shelfmark": "",
@@ -4495,7 +4499,8 @@
     "r0110": {
       "title_translit": "ādāb al-ʿibādāt",
       "pub_status": "published",
-      "pub_citation": "Paul Nwyia (ed.). “Šaqīq al-Balḫī, Ādāb al-ʿibādāt,” in Trois œuvres inédites de mystiques musulmans. Beyrouth: Dar el-Machreq, 1973."
+      "pub_citation": "Paul Nwyia (ed.). “Šaqīq al-Balḫī, Ādāb al-ʿibādāt,” in Trois œuvres inédites de mystiques musulmans. Beyrouth: Dar el-Machreq, 1973.",
+      "pub_source": "edition"
     },
     "r0111": {
       "title_translit": "ʿuyūb al-nafs",
@@ -4584,17 +4589,20 @@
     "r0129": {
       "title_translit": "al-rasāʾil al-ṣuġrā",
       "pub_status": "published",
-      "pub_citation": "Paul Nwyia (ed.). Ar-Rasāʾil al-ṣughrā li-Ibn ʿAbbād al-Rundī. Beyrouth: Dar el-Machreq."
+      "pub_citation": "Paul Nwyia (ed.). Ar-Rasāʾil al-ṣughrā li-Ibn ʿAbbād al-Rundī. Beyrouth: Dar el-Machreq.",
+      "pub_source": "edition"
     },
     "r0130": {
       "title_translit": "al-rasāʾil al-ṣuġrā",
       "pub_status": "published",
-      "pub_citation": "Paul Nwyia (ed.). Ar-Rasāʾil al-ṣughrā li-Ibn ʿAbbād al-Rundī. Beyrouth: Dar el-Machreq."
+      "pub_citation": "Paul Nwyia (ed.). Ar-Rasāʾil al-ṣughrā li-Ibn ʿAbbād al-Rundī. Beyrouth: Dar el-Machreq.",
+      "pub_source": "edition"
     },
     "r0131": {
       "title_translit": "al-rasāʾil al-ṣuġrā",
       "pub_status": "published",
-      "pub_citation": "Paul Nwyia (ed.). Ar-Rasāʾil al-ṣughrā li-Ibn ʿAbbād al-Rundī. Beyrouth: Dar el-Machreq."
+      "pub_citation": "Paul Nwyia (ed.). Ar-Rasāʾil al-ṣughrā li-Ibn ʿAbbād al-Rundī. Beyrouth: Dar el-Machreq.",
+      "pub_source": "edition"
     },
     "r0132": {
       "title_translit": "rasāʾil ʿabd al-malik b. marwān wa-ḥasan al-baṣrī"
@@ -4631,7 +4639,8 @@
       "title_translit": "al-kawkab al-durrī fī manāqib ḏī al-nūn al-miṣrī",
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
-      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): al-Kawkab al-durrī fī manāqib Dhī al-Nūn al-Miṣrī, Osman Yahia RG 347 [Verified B]."
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): al-Kawkab al-durrī fī manāqib Dhī al-Nūn al-Miṣrī, Osman Yahia RG 347 [Verified B].",
+      "pub_source": "bibliography"
     },
     "r0140": {
       "title_translit": "tafsīr al-qurʾān"
@@ -4722,13 +4731,15 @@
       "title_translit": "kitāb al-ḥuǧab",
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
-      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. al-Ḥujub, Osman Yahia RG 247 [Verified A]."
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. al-Ḥujub, Osman Yahia RG 247 [Verified A].",
+      "pub_source": "bibliography"
     },
     "r0161": {
       "title_translit": "kitāb al-ḫalawāt",
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
-      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. al-Khalwa, Osman Yahia RG 255 [Verified A]."
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. al-Khalwa, Osman Yahia RG 255 [Verified A].",
+      "pub_source": "bibliography"
     },
     "r0162": {
       "title_translit": "kitāb al-furūq",
@@ -4978,7 +4989,8 @@
     },
     "r0225": {
       "pub_status": "published",
-      "pub_citation": "Paul Nwyia (ed.). “Šaqīq al-Balḫī, Ādāb al-ʿibādāt,” in Trois œuvres inédites de mystiques musulmans. Beyrouth: Dar el-Machreq, 1973."
+      "pub_citation": "Paul Nwyia (ed.). “Šaqīq al-Balḫī, Ādāb al-ʿibādāt,” in Trois œuvres inédites de mystiques musulmans. Beyrouth: Dar el-Machreq, 1973.",
+      "pub_source": "edition"
     },
     "r0226": {
       "title": "لطائف الاشارات",
@@ -5001,7 +5013,8 @@
     "r0233": {
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
-      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. Maqām al-maʿrifa, Osman Yahia RG 413 [Extract from al-Futūḥāt al-Makkiyya]."
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. Maqām al-maʿrifa, Osman Yahia RG 413 [Extract from al-Futūḥāt al-Makkiyya].",
+      "pub_source": "bibliography"
     },
     "r0234": {
       "author": "الدواني",
@@ -5010,7 +5023,8 @@
     },
     "r0235": {
       "pub_status": "published",
-      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition"
     },
     "r0236": {
       "title": "حكم أبي مدين",
@@ -5020,7 +5034,8 @@
     "r0241": {
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
-      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): R. al-Maḥabba, Osman Yahia RG 390 [Extract from al-Futūḥāt; cf. RG 391 R. fī al-Maḥabba]."
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): R. al-Maḥabba, Osman Yahia RG 390 [Extract from al-Futūḥāt; cf. RG 391 R. fī al-Maḥabba].",
+      "pub_source": "bibliography"
     },
     "r0243": {
       "title": "رسالة",
@@ -5090,21 +5105,25 @@
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia's index records the title as «الحكم»."
     },
     "r0265": {
       "pub_status": "published",
-      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition"
     },
     "r0266": {
       "pub_status": "published",
-      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition"
     },
     "r0267": {
       "title": "الحكم العطائية",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia's index records the title as «الحكم»."
     },
     "r0270": {
@@ -5137,6 +5156,7 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90557n",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia's index records the title as «الحكم»."
     },
     "r0278": {
@@ -5216,6 +5236,7 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc32644j",
       "pub_status": "partial",
       "pub_citation": "Two treatises edited: al-Ḥaǧǧ wa-asrāruhu, ed. Ḥ. N. Zaydān (Cairo, 1969); al-Iḥtiyāṭāt, ed. ʿA. Ǧahdanī (Beirut, 2011).",
+      "pub_source": "catalogue",
       "discrepancy_note": "Nwyia's index records the title as «Opera»."
     },
     "r0300": {
@@ -5232,7 +5253,8 @@
     "r0303": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33572n",
       "pub_status": "published",
-      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. Inshāʾ al-dawāʾir, Osman Yahia RG 289 [Verified A]."
+      "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. Inshāʾ al-dawāʾir, Osman Yahia RG 289 [Verified A].",
+      "pub_source": "bibliography"
     },
     "r0304": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33586t",
@@ -5280,6 +5302,7 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069346",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1169”: it is Berlin SBB Sprenger 1169, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0328": {
@@ -5291,6 +5314,7 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00013389",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1172”: it is Berlin SBB Sprenger 1172, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0329": {
@@ -5302,6 +5326,7 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069343",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 159”: it is Berlin SBB Petermann II 159, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0330": {
@@ -5313,6 +5338,7 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00064293",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1730”: it is Berlin SBB Wetzstein II 1730, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0331": {
@@ -5324,6 +5350,7 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069339",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1757”: it is Berlin SBB Wetzstein II 1757, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0332": {
@@ -5335,6 +5362,7 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069342",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1771”: it is Berlin SBB Wetzstein II 1771, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0333": {
@@ -5346,6 +5374,7 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069344",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1982”: it is Berlin SBB Sprenger 1982, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0334": {
@@ -5357,6 +5386,7 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00020807",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 275”: it is Berlin SBB Petermann I 275, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «حكم»."
     },
     "r0335": {
@@ -5368,6 +5398,7 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007211",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 552”: it is Berlin SBB Landberg 552, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «حكم»."
     },
     "r0336": {
@@ -5379,6 +5410,7 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007212",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 553”: it is Berlin SBB Landberg 553, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «حكم»."
     },
     "r0337": {
@@ -5388,6 +5420,7 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00058288",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia recorded this as “Tübingen 889”: it is Berlin SBB Landberg 889, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0338": {
@@ -5424,6 +5457,7 @@
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "pub_source": "edition",
       "discrepancy_note": "Nwyia's index records the title as «حكم»."
     }
   },

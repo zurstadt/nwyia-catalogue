@@ -1213,6 +1213,9 @@ const COL_FIELDS = [
   // filled. The fields remain in the schema so existing values round-trip.
   { key: "catalog_note", label: "Cataloguer comment", arabic: false, suggest: false },
   { key: "work_url",  label: "Identification URL", arabic: false, suggest: false },
+  // Where a citation came from. suggest:true so the datalist offers the values
+  // already in use and the vocabulary stays small rather than drifting.
+  { key: "pub_source", label: "Citation source", arabic: false, suggest: true },
   { key: "archive",   label: "Archive",   arabic: false, suggest: true },
 ];
 let colsCursor = 0;

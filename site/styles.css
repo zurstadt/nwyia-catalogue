@@ -199,6 +199,12 @@ a.author-link:hover, a.author-link:focus-visible {
 .entry-meta b { color: var(--ink); font-weight: 600; }
 .entry-cite { margin-top: .55rem; font-size: .88rem; color: var(--muted); font-style: italic; }
 .entry-cite a { font-style: normal; }
+/* Provenance of the citation, not of the manuscript: quiet, but present, because
+   a catalogue-relayed reference has not been checked against the edition. */
+.cite-src { font-style: normal; font-size: .74rem; font-weight: 600;
+  letter-spacing: .03em; text-transform: uppercase; color: var(--muted);
+  border: 1px solid var(--line); border-radius: 999px; padding: .05rem .45rem;
+  margin-left: .35rem; white-space: nowrap; cursor: help; }
 /* Cataloguer's description of the item: physical form, or "no title recorded". */
 .entry-note { margin-top: .55rem; font-size: .88rem; color: var(--ink-soft); }
 .entry-untitled { font-family: var(--serif); direction: ltr; font-size: 1.15rem;
