@@ -250,11 +250,33 @@ console.log("\nhamza proposals");
      declared.filter(x => !x.translit).map(x => x.id).join(", "));
 
   // Every surface a card claims to touch must be non-empty somewhere, or the card
-  // is proposing an edit with no target.
-  const empty = hz.filter(x => !x.scope.titles.length && !x.scope.authors.length
-                            && !x.scope.clusters.length);
-  ok(empty.length === 0, "every hamza card names at least one surface to edit",
+  // is proposing an edit with no target. This once covered the derived cards only,
+  // because only they carried a scope — which is precisely how a hand-written card
+  // came to be judged on titles alone and dropped while eleven author fields and
+  // three cluster names still spelled the fault.
+  const all = R.items("ortho");
+  const noScope = all.filter(x => !x.scope);
+  ok(noScope.length === 0, "every ortho card carries a three-surface scope",
+     noScope.map(x => x.id).join(", "));
+  const empty = all.filter(x => x.scope && !x.scope.titles.length
+                             && !x.scope.authors.length && !x.scope.clusters.length);
+  ok(empty.length === 0, "every ortho card names at least one surface to edit",
      empty.map(x => x.word).join(", "));
+
+  // A card whose word sits ONLY in author fields and cluster names must still be
+  // answerable: it has no per-word romanization, so demanding one leaves Confirm
+  // dead forever. The complement of the same rule as the transliteration axis.
+  const nameOnly = all.filter(x => x.scope && !x.scope.titles.length
+                                && (x.scope.authors.length || x.scope.clusters.length));
+  const dead = nameOnly.filter(x => {
+    R.setAx(x.id, "form", "accept");
+    const isReady = R.ready(x);
+    R.setAx(x.id, "form", "accept");            // toggle back off
+    return !isReady;
+  });
+  ok(dead.length === 0,
+     `${nameOnly.length} name-only card(s) are answerable on the Arabic form alone`,
+     dead.map(x => x.id).join(", "));
 }
 
 console.log("\nattribution");

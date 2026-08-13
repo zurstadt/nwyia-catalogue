@@ -759,36 +759,97 @@ def main() -> int:
         })
 
     # --- orthography stratum -------------------------------------------------
+    # ONE occurrence index over all THREE surfaces a ruling governs. It used to
+    # cover titles only, while the drop test below asked about author fields and
+    # cluster names — and a hand-written card carries no `scope` of its own, so it
+    # was judged on a surface it had never been given. o08 (ابي) therefore vanished
+    # from the bake the moment its last TITLE was fixed, taking 11 author fields
+    # and 3 cluster names with it; the derived h-ابي that would have carried them
+    # had already been suppressed by `covered`. Any hand card whose word also sits
+    # in an author field or a cluster name had the same hole.
+    #
+    # All three indexes exclude `modern` clusters, the same boundary the rest of
+    # this stratum uses: those rows are outside the manuscript corpus. (Verified:
+    # the 13 modern rows contribute only modern editors' names — none of them a
+    # candidate here.)
     corpus = [r for r in data["rows"] if r.get("author_cluster_id") not in modern]
-    occ: dict[str, list[str]] = defaultdict(list)
+    title_occ: dict[str, list[str]] = defaultdict(list)
+    author_occ: dict[str, list[str]] = defaultdict(list)
+    name_occ: dict[str, list[str]] = defaultdict(list)
     for r in corpus:
         for raw in ARABIC.findall(r.get("title") or ""):
-            occ[bare(raw)].append(r["id"])
+            title_occ[bare(raw)].append(r["id"])
+        for raw in ARABIC.findall(r.get("author") or ""):
+            author_occ[bare(raw)].append(r["id"])
+    for c in data["clusters"]:
+        if c["cluster_id"] in modern:
+            continue
+        for s in [c.get("canonical_ar")] + list(c.get("variants") or []):
+            for raw in ARABIC.findall(s or ""):
+                name_occ[bare(raw)].append(c["cluster_id"])
+
+    def survives(text: str, word: str, proposed: str | None) -> bool:
+        """Does the FAULT still stand in this text?
+
+        The index is keyed mark-BLIND, the way the ingest matches. That is right
+        for FINDING the word and wrong for deciding whether it is still open: a
+        fix that only adds marks leaves the key unchanged, so the surface keeps
+        matching and the card returns forever. Ask the sharper question — is there
+        an occurrence that still differs from the proposal?
+        """
+        return any(bare(m.group()) == word and (not proposed or m.group() != proposed)
+                   for m in ARABIC.finditer(text or ""))
+
+    def surfaces_of(o: dict, hand: bool) -> dict:
+        """Every surface where this card's fault still stands.
+
+        All three axes get the same residual filter. The derived cards supply a
+        `scope` of their own, but it is RAW — a hamza card whose author fields
+        were already fixed would never have dropped. Recomputing here gives every
+        card one rule.
+
+        A hand-written card that declares `only_rows` is scoped to those rows and
+        to TITLES alone: the whole point of that field is that the form is a fault
+        HERE and correct elsewhere (بن is right between two names and wrong
+        word-initially), so letting it reach author fields and cluster names —
+        which are corpus-wide by nature — would be the very rewrite it exists to
+        prevent.
+        """
+        w, p = o["word"], o.get("proposed")
+        only = set(o["only_rows"]) if (hand and o.get("only_rows")) else None
+        titles = [i for i in sorted(set(title_occ[w]))
+                  if (only is None or i in only)
+                  and survives(rows_by_id[i].get("title"), w, p)]
+        if only is not None:
+            return {"titles": titles, "authors": [], "clusters": []}
+        return {
+            "titles": titles,
+            "authors": [i for i in sorted(set(author_occ[w]))
+                        if survives(rows_by_id[i].get("author"), w, p)],
+            "clusters": [k for k in sorted(set(name_occ[w]))
+                         if any(survives(s, w, p)
+                                for s in [clusters[k].get("canonical_ar")]
+                                + list(clusters[k].get("variants") or []))],
+        }
 
     ortho = []
     # An explicit card above outranks a derived one, and a witness card that is
     # already correcting a word's transliteration supplies this word's default.
+    #
+    # `covered` stays RAW ORTHO membership deliberately. Deriving it from the cards
+    # that SURVIVE would let hamza_items rebuild a card for a word whose hand card
+    # was ruled KEEP — re-asking a settled question under a different id (h-<word>),
+    # which the keeps store, keyed by item id, cannot suppress.
     covered = {o["word"] for o in ORTHO}
     translit_fix = {bare(w["word"]): w["proposed"] for w in WITNESSES}
     derived = (shadda_items(corpus, readings, covered, translit_fix)
-               + hamza_items(corpus, data["clusters"], covered | {"مطالب"}))
-    for o in ORTHO + derived:
-        ids = sorted(set(occ.get(o["word"], [])))
-        if o.get("only_rows"):
-            ids = [i for i in ids if i in set(o["only_rows"])]
+               + hamza_items(corpus, data["clusters"], covered))
+    for o, hand in [(x, True) for x in ORTHO] + [(x, False) for x in derived]:
         if o["id"] in kept:
             continue                      # ruled keep in an earlier batch
-        # `occ` is keyed mark-BLIND, the way the ingest matches. That is right for
-        # FINDING the word and wrong for deciding whether it is still open: a fix
-        # that only adds marks (a šaddah) leaves the key unchanged, so the row keeps
-        # matching and the card returns forever. Ask the sharper question — does any
-        # occurrence still differ from the proposal?
-        if o.get("proposed"):
-            ids = [i for i in ids
-                   if any(bare(m.group()) == o["word"] and m.group() != o["proposed"]
-                          for m in ARABIC.finditer(rows_by_id[i].get("title") or ""))]
-        scope = o.get("scope") or {}
-        if not ids and not (scope.get("authors") or scope.get("clusters")):
+        scope = surfaces_of(o, hand)
+        ids = scope["titles"]
+        if not ids and not scope["authors"] and not scope["clusters"]:
             continue                      # already canonicalized — settled, drop it
         # The transliteration the word carries TODAY. The ingest needs it to swap
         # the token inside any affected row that already has a title_translit —
@@ -802,7 +863,7 @@ def main() -> int:
         key_changes = bool(o.get("proposed")) and (
             cluster.normalize_ar(o["word"]) != cluster.normalize_ar(o["proposed"]))
         ortho.append({
-            **o, "stratum": "ortho", "key_changes": key_changes,
+            **o, "stratum": "ortho", "key_changes": key_changes, "scope": scope,
             "translit_was": lex.get(key) or (was[0] if len(was) == 1 else None),
             "rows": [{
                 "id": i,
@@ -812,6 +873,7 @@ def main() -> int:
                 "translit": rows_by_id[i].get("title_translit") or "",
             } for i in ids],
         })
+
 
     attributions = attribution_items(rows_by_id, clusters, kept)
 
