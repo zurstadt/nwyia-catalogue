@@ -90,6 +90,15 @@ eq(api.arabicKey("كِتَابْ"), "كتاب", "vowel marks are dropped for loo
 eq(api.arabicKey("أحمد"), "احمد", "alif hamza folds to bare alif");
 eq(api.arabicKey("إبراهيم"), "ابراهيم", "alif hamza-below folds to bare alif");
 eq(api.arabicKey("مصطفى"), "مصطفي", "alif maqsura folds to ya");
+// Punctuation must not survive into the key: a title splits on whitespace, so a
+// trailing comma would key «الاشارات،» apart from «الاشارات» and the second entry
+// would never be filled.
+eq(api.arabicKey("الاشارات،"), "الاشارات", "Arabic comma is stripped from the key");
+eq(api.arabicKey("الصوفيه،"), "الصوفيه", "trailing Arabic comma stripped");
+eq(api.arabicKey("البقرة:"), "البقره", "colon stripped (and ta marbuta folded)");
+eq(api.arabicKey("(القوة"), "القوه", "leading parenthesis stripped");
+eq(api.arabicKey("التصوّف"), "التصوف", "shadda stripped, word kept whole");
+eq(api.arabicKey("Documents"), "", "a Latin word yields no Arabic key");
 eq(api.arabicWords("  كتاب   التوهم "), ["كتاب", "التوهم"], "words split on any whitespace");
 eq(api.hasArabic("Documents divers"), false, "a French title carries no Arabic");
 eq(api.hasArabic("كتاب"), true, "an Arabic title is detected");

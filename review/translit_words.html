@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Word transliteration — Fonds P. Nwyia</title>
+<style>
+  :root {
+    --bg:#faf8f3; --card:#fff; --fg:#1d2630; --muted:#6b7682; --rule:#e3ddd0;
+    --accent:#155e63; --accent-dk:#0f474b; --warn:#b07d2b;
+    --arabic:"Scheherazade New","Amiri","Geeza Pro","Times New Roman",serif;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); line-height:1.6;
+    font:16px/1.6 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  .wrap { max-width:880px; margin:0 auto; padding:0 1.1rem 4.5rem; }
+
+  header { position:sticky; top:0; z-index:20; background:var(--bg);
+    border-bottom:1px solid var(--rule); }
+  .hdr { display:flex; align-items:baseline; gap:.9rem; flex-wrap:wrap;
+    max-width:880px; margin:0 auto; padding:.7rem 1.1rem; }
+  h1 { font-size:.92rem; margin:0; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--accent-dk); }
+  .progress { color:var(--muted); font-size:.86rem; }
+  .progress b { color:var(--fg); }
+  .spacer { margin-left:auto; }
+
+  /* Every variant rule is container-scoped so a generic `header button` rule can
+     never outrank it and leave a primary button white-on-white. */
+  header button { font:inherit; font-size:.82rem; padding:.3rem .75rem;
+    border:1px solid var(--rule); border-radius:4px; background:#fff;
+    color:var(--fg); cursor:pointer; }
+  header button:hover { background:#f3efe6; }
+  header .primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+  header .primary:hover { background:var(--accent-dk); color:#fff; }
+  header button:disabled { background:#eceae4; color:#9aa0a6;
+    border-color:var(--rule); cursor:default; }
+
+  .card { background:var(--card); border:1px solid var(--rule); border-radius:6px;
+    padding:1.3rem 1.5rem; margin-top:1.1rem; box-shadow:0 1px 3px rgba(28,36,48,.07); }
+  .word { font-family:var(--arabic); direction:rtl; font-size:2.7rem; line-height:1.7;
+    text-align:center; margin:.1rem 0 0; }
+  .leverage { text-align:center; color:var(--muted); font-size:.84rem; margin-bottom:1.1rem; }
+  .leverage .hot { color:var(--warn); font-weight:600; }
+
+  input[type=text] { width:100%; font:inherit; font-size:1.2rem; padding:.55rem .7rem;
+    border:1px solid var(--rule); border-radius:4px; background:#fff; color:var(--fg); }
+  input[type=text]:focus { outline:none; border-color:var(--accent);
+    box-shadow:0 0 0 3px rgba(21,94,99,.12); }
+  .varies { display:flex; align-items:center; gap:.45rem; margin-top:.65rem;
+    font-size:.84rem; color:var(--muted); }
+
+  /* An Arabic-script value in a transliteration field is definitionally wrong —
+     the field exists to hold the romanization. Say so and refuse to advance. */
+  input[type=text].bad { border-color:#b3261e; background:#fff6f5; }
+  input[type=text].bad:focus { box-shadow:0 0 0 3px rgba(179,38,30,.14); }
+  .warn-msg { display:none; margin-top:.5rem; font-size:.85rem; color:#b3261e; }
+  .warn-msg.on { display:block; }
+
+  .occ { margin-top:1.2rem; border-top:1px dashed var(--rule); padding-top:.9rem; }
+  .occ h2 { font-size:.72rem; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--muted); margin:0 0 .55rem; font-weight:600; }
+  .o { padding:.45rem 0; border-bottom:1px solid #f2efe8; }
+  .o:last-child { border-bottom:0; }
+  .o .ar { font-family:var(--arabic); direction:rtl; font-size:1.35rem; display:block; }
+  .o .gl { color:var(--accent-dk); font-size:.9rem; }
+  .o .by { color:var(--muted); font-size:.78rem; }
+
+  .kbd { position:fixed; bottom:0; left:0; right:0; background:var(--card);
+    border-top:1px solid var(--rule); padding:.4rem 1rem; font-size:.76rem;
+    color:var(--muted); display:flex; gap:1.1rem; flex-wrap:wrap; }
+  code { font-family:ui-monospace,Menlo,monospace; background:var(--bg);
+    border:1px solid var(--rule); border-radius:3px; padding:0 .3em; color:var(--fg); }
+  #help { display:none; }
+  #help.on { display:block; }
+  #help p { margin:.55rem 0; }
+  .done { text-align:center; padding:3rem 1rem; color:var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <h1>Word transliteration</h1>
+    <span class="progress" id="prog"></span>
+    <span class="spacer"></span>
+    <button id="skip">Skip</button>
+    <button id="help-btn" aria-expanded="false">? help</button>
+    <button id="export" class="primary">Export</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="card" id="help">
+    <p style="margin-top:0"><b>One Arabic word at a time.</b> Type its transliteration, press
+    <code>Enter</code>. Words are ordered by how many titles they unlock, so the early ones pay
+    for themselves.</p>
+    <p>The main app's shorthand works here:
+      <code>a:</code>ā <code>i:</code>ī <code>u:</code>ū · <code>h.</code>ḥ <code>s.</code>ṣ
+      <code>d.</code>ḍ <code>t.</code>ṭ <code>z.</code>ẓ · <code>d_</code>ḏ <code>t_</code>ṯ
+      <code>g_</code>ġ <code>h_</code>ḫ <code>s_</code>š <code>j_</code>ǧ ·
+      <code>'</code>ʾ <code>`</code>ʿ</p>
+    <p>Titles in this corpus are <b>lowercase</b> — write <code>kitāb</code>, not <code>Kitāb</code>.</p>
+    <p>If a word needs <i>different</i> forms in different titles — a construct <code>qaṣīdat</code>
+    beside an absolute <code>qaṣīda</code> — tick <b>varies by context</b>. Titles containing it are
+    then left for you to write out, rather than composed from the word list.</p>
+    <p>Nothing here touches the catalogue. Export writes a word list; a separate step composes the
+    titles and files them as <b>suggestions</b>, which you accept or override in the main app — so
+    composed titles stay distinguishable from ones you wrote.</p>
+  </div>
+
+  <div id="app"></div>
+</div>
+
+<div class="kbd">
+  <span><code>Enter</code> save &amp; next</span>
+  <span><code>Shift+Enter</code> back</span>
+  <span><code>Esc</code> leave the field</span>
+  <span><code>?</code> help</span>
+</div>
+
+<script>
+const LS = "nwyia-translit-words-v1";
+const SHORTHAND = [["a:","ā"],["i:","ī"],["u:","ū"],["h.","ḥ"],["s.","ṣ"],["d.","ḍ"],
+  ["t.","ṭ"],["z.","ẓ"],["d_","ḏ"],["t_","ṯ"],["g_","ġ"],["h_","ḫ"],["s_","š"],
+  ["j_","ǧ"],["'","ʾ"],["`","ʿ"]];
+const expand = s => SHORTHAND.reduce((a,[f,t]) => a.split(f).join(t), s);
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,
+  c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+let DATA = null, ITEMS = [], cur = 0;
+let state = load();
+
+function load(){ try { return JSON.parse(localStorage.getItem(LS) || "null") || {}; }
+                 catch { return {}; } }
+function save(){ localStorage.setItem(LS, JSON.stringify(state)); }
+const isDone = it => { const s = state[it.id]; return !!(s && (s.t || s.varies)); };
+const decided = () => ITEMS.filter(isDone).length;
+
+function render(){
+  const app = document.getElementById("app");
+  if (!ITEMS.length){ app.innerHTML = `<div class="done">Nothing left to settle.</div>`; return; }
+  cur = Math.max(0, Math.min(cur, ITEMS.length - 1));
+  const it = ITEMS[cur], st = state[it.id] || {};
+
+  const n = decided();
+  document.getElementById("prog").innerHTML =
+    `<b>${cur + 1}</b> / ${ITEMS.length} · ${n} settled (${Math.round(n / ITEMS.length * 100)}%)`;
+
+  const lev = it.unlocks
+    ? `in ${it.titles} title${it.titles === 1 ? "" : "s"} · <span class="hot">completes ${it.unlocks} on its own</span>`
+    : `in ${it.titles} title${it.titles === 1 ? "" : "s"}`;
+
+  app.innerHTML = `
+    <div class="card">
+      <div class="word" lang="ar" dir="rtl">${esc(it.word)}</div>
+      <div class="leverage">${lev}</div>
+      <input type="text" id="val" autocomplete="off" spellcheck="false" dir="ltr"
+             placeholder="romanization — e.g. kitāb"
+             aria-label="Transliteration of this word" value="${esc(st.t || "")}">
+      <div class="warn-msg" id="warn" role="alert">
+        That is Arabic script. This field wants the <b>romanization</b> of the word
+        above — what you would print in a footnote.
+      </div>
+      <label class="varies">
+        <input type="checkbox" id="varies" ${st.varies ? "checked" : ""}>
+        varies by context — leave its titles for hand transliteration
+      </label>
+      <div class="occ">
+        <h2>where it occurs${it.more ? ` — ${it.occurrences.length} of ${it.occurrences.length + it.more}` : ""}</h2>
+        ${it.occurrences.map(o => `
+          <div class="o">
+            <span class="ar" lang="ar" dir="rtl">${esc(o.title)}</span>
+            <span class="gl">${esc(o.gloss)}</span>
+            ${o.author ? `<span class="by"> — ${esc(o.author)}</span>` : ""}
+          </div>`).join("")}
+      </div>
+    </div>`;
+
+  const val = document.getElementById("val");
+  val.addEventListener("input", e => {
+    const el = e.target, caret = el.selectionStart;
+    const pre = expand(el.value.slice(0, caret)), post = expand(el.value.slice(caret));
+    if (pre + post !== el.value){ el.value = pre + post; el.setSelectionRange(pre.length, pre.length); }
+    flagArabic();
+  });
+  val.addEventListener("keydown", e => {
+    if (e.key !== "Enter") return;
+    e.preventDefault();
+    // The blocker blocks. Advancing here would bank an Arabic value as though it
+    // were a romanization, and it would then be composed into titles.
+    if (flagArabic()) return;
+    commit();
+    cur += e.shiftKey ? -1 : 1;
+    render();
+  });
+  flagArabic();
+  document.getElementById("varies").addEventListener("change", commit);
+  val.focus();
+  val.setSelectionRange(val.value.length, val.value.length);
+}
+
+const hasArabic = s => /[؀-ۿݐ-ݿ]/.test(s || "");
+
+// Returns true when the field is holding Arabic — i.e. when it must not commit.
+function flagArabic(){
+  const el = document.getElementById("val"), msg = document.getElementById("warn");
+  if (!el || !msg) return false;
+  const bad = hasArabic(el.value);
+  el.classList.toggle("bad", bad);
+  msg.classList.toggle("on", bad);
+  return bad;
+}
+
+function commit(){
+  const it = ITEMS[cur]; if (!it) return;
+  const t = (document.getElementById("val")?.value || "").trim();
+  const varies = !!document.getElementById("varies")?.checked;
+  if (hasArabic(t)) return;              // never store Arabic in a translit field
+  if (!t && !varies) delete state[it.id];
+  else state[it.id] = { t, varies, ts: new Date().toISOString() };
+  save();
+}
+
+document.getElementById("skip").addEventListener("click", () => { commit(); cur++; render(); });
+document.getElementById("help-btn").addEventListener("click", e => {
+  const h = document.getElementById("help");
+  h.classList.toggle("on");
+  e.currentTarget.setAttribute("aria-expanded", h.classList.contains("on"));
+  document.getElementById("val")?.focus();
+});
+document.getElementById("export").addEventListener("click", () => {
+  commit();
+  // Export the WHOLE worklist, not only what was touched: an untouched word has to
+  // read as explicitly undecided downstream, never as merely absent.
+  const words = {};
+  for (const it of ITEMS){
+    const st = state[it.id];
+    words[it.word] = (st && (st.t || st.varies))
+      ? { translit: st.t || "", varies: !!st.varies, decided: true }
+      : { translit: "", varies: false, decided: false };
+  }
+  const payload = { schema_version: 1,
+    annotated_date: new Date().toISOString().slice(0, 10),
+    source: DATA ? DATA.generated_from : "",
+    counts: { words: ITEMS.length, decided: decided() },
+    words };
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)],
+                                        { type: "application/json" }));
+  a.download = "translit_words_decisions.json";
+  a.click();
+});
+
+// `?` toggles help. `/` is deliberately left alone — it is the browser's quick-find.
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+  if (e.key === "?"){ e.preventDefault(); document.getElementById("help-btn").click(); }
+});
+
+fetch("translit_words.json", { cache: "no-store" })
+  .then(r => r.json())
+  .then(d => {
+    DATA = d; ITEMS = d.items || [];
+    const open = ITEMS.findIndex(i => !isDone(i));   // resume, don't restart
+    cur = open < 0 ? 0 : open;
+    render();
+  })
+  .catch(e => {
+    document.getElementById("app").innerHTML =
+      `<div class="done">Could not load <code>translit_words.json</code> (${esc(e.message)}).<br>
+       Serve from the project root, then open <code>/review/translit_words.html</code></div>`;
+  });
+
+// Lets a harness drive the real code without a browser.
+globalThis.__review = {
+  items: () => ITEMS, state: () => state, decided, render, expand,
+  go: i => { cur = i; render(); },
+  set: (id, t, varies = false) => { state[id] = { t, varies, ts: "test" }; save(); },
+};
+</script>
+</body>
+</html>

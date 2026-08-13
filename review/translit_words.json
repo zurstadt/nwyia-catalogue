@@ -1,0 +1,2852 @@
+{
+  "schema_version": 1,
+  "generated_from": "data/data.json",
+  "counts": {
+    "titles_todo": 144,
+    "words_unsettled": 177,
+    "words_known": 326
+  },
+  "known_sample": {
+    "ابن": "ibn",
+    "ابي": "abī",
+    "احوال": "aḥwāl",
+    "اخبار": "aḫbār",
+    "اداب": "ādāb",
+    "اسرار": "asrār",
+    "اسماء": "asmāʾ",
+    "اشكل": "aškala",
+    "اصطلاح": "iṣṭilāḥ",
+    "اصطلاحات": "iṣṭilāḥāṭ",
+    "اصول": "uṣūl",
+    "اقوال": "aqwāl",
+    "الابدال": "al-abdāl",
+    "الابرار": "al-abrār",
+    "الابواب": "al-abwāb",
+    "الاحاديث": "al-aḥādīth",
+    "الاحالات": "al-iḥālāt",
+    "الاحوال": "al-aḥwāl",
+    "الاخيره": "al-aḫīrah",
+    "الادله": "al-adillah",
+    "الاربعينيه": "al-arbaʿīnīyah",
+    "الارواح": "al-arwāḥ",
+    "الاسراء": "al-isrāʾ",
+    "الاسرار": "al-asrār",
+    "الاسماء": "al-asmāʾ",
+    "الاشارات": "al-išārāt",
+    "الاعلام": "al-iʿlām",
+    "الاقطاب": "al-aqṭāb",
+    "الاكياس": "al-akyās",
+    "الالهام": "al-ilhām",
+    "الالهي": "al-ilāhī",
+    "الامام": "al-imām",
+    "الانوار": "al-anwār",
+    "الاولياء": "al-awliyāʾ",
+    "الايات": "al-āyāt",
+    "الايضاح": "al-īḍāḥ",
+    "الايمان": "al-īmān",
+    "البابا": "yūnus",
+    "الباطن": "al-bāṭin",
+    "البرهان": "al-burhān"
+  },
+  "items": [
+    {
+      "id": "العطائيه",
+      "word": "العطائيه",
+      "titles": 17,
+      "unlocks": 17,
+      "occurrences": [
+        {
+          "row": "r0235",
+          "title": "الحكم العطائية",
+          "gloss": "al-ḥikam …",
+          "author": "Ibn ʿAṭāʾ Allāh al-Iskandarī"
+        },
+        {
+          "row": "r0264",
+          "title": "الحكم العطائية",
+          "gloss": "al-ḥikam …",
+          "author": "Ibn ʿAṭāʾ Allāh al-Iskandarī"
+        },
+        {
+          "row": "r0266",
+          "title": "الحكم العطائية",
+          "gloss": "al-ḥikam …",
+          "author": "Ibn ʿAṭāʾ Allāh al-Iskandarī"
+        },
+        {
+          "row": "r0267",
+          "title": "الحكم العطائية",
+          "gloss": "al-ḥikam …",
+          "author": "Ibn ʿAṭāʾ Allāh al-Iskandarī"
+        },
+        {
+          "row": "r0277",
+          "title": "الحكم العطائية",
+          "gloss": "al-ḥikam …",
+          "author": "Ibn ʿAṭāʾ Allāh al-Iskandarī"
+        },
+        {
+          "row": "r0327",
+          "title": "الحكم العطائية",
+          "gloss": "al-ḥikam …",
+          "author": "Ibn ʿAṭāʾ Allāh al-Iskandarī"
+        },
+        {
+          "row": "r0328",
+          "title": "الحكم العطائية",
+          "gloss": "al-ḥikam …",
+          "author": "Ibn ʿAṭāʾ Allāh al-Iskandarī"
+        },
+        {
+          "row": "r0329",
+          "title": "الحكم العطائية",
+          "gloss": "al-ḥikam …",
+          "author": "Ibn ʿAṭāʾ Allāh al-Iskandarī"
+        }
+      ],
+      "more": 9
+    },
+    {
+      "id": "الاول",
+      "word": "الاول",
+      "titles": 3,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0242",
+          "title": "جواب عن مسألة (القوة البيضاء وهو العقل الاول)",
+          "gloss": "ǧawāb ʿan … … … … … …",
+          "author": ""
+        },
+        {
+          "row": "r0253",
+          "title": "في علم الاشارات، الجزء الاوّل",
+          "gloss": "fī ʿilm al-išārāt al-ǧuzʾ …",
+          "author": "Abū Saʿīd al-Ḫarrāz"
+        },
+        {
+          "row": "r0305",
+          "title": "الاول والثالث: الاسرار الاربعة",
+          "gloss": "… … al-asrār …",
+          "author": "Ṣadr al-Dīn al-Šīrāzī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "تعريف",
+      "word": "تعريف",
+      "titles": 3,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0317",
+          "title": "اصطلاحات الصوفية، تعريف بابن عباد",
+          "gloss": "iṣṭilāḥāṭ al-ṣūfīyah … … …",
+          "author": "Ibn ʿAbbād al-Rundī"
+        },
+        {
+          "row": "r0338",
+          "title": "النصوص في تعريف الطور المحسوس",
+          "gloss": "… fī … … …",
+          "author": "Ṣadr al-Dīn al-Qūnawī"
+        },
+        {
+          "row": "r0339",
+          "title": "تعريف اصطلاحات الصوفية",
+          "gloss": "… iṣṭilāḥāṭ al-ṣūfīyah",
+          "author": "Ṣadr al-Dīn al-Qūnawī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "مدين",
+      "word": "مدين",
+      "titles": 3,
+      "unlocks": 3,
+      "occurrences": [
+        {
+          "row": "r0134",
+          "title": "حكم أبي مدين",
+          "gloss": "ḥikam abī …",
+          "author": "Abū Madyan Šuʿayb"
+        },
+        {
+          "row": "r0236",
+          "title": "حكم أبي مدين",
+          "gloss": "ḥikam abī …",
+          "author": "Abū Madyan Šuʿayb"
+        },
+        {
+          "row": "r0245",
+          "title": "حكم أبي مدين",
+          "gloss": "ḥikam abī …",
+          "author": "Abū Madyan Šuʿayb"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الاصيفر",
+      "word": "الاصيفر",
+      "titles": 2,
+      "unlocks": 2,
+      "occurrences": [
+        {
+          "row": "r0291",
+          "title": "كتاب الاصيفر وغيره",
+          "gloss": "kitāb … wa-ġayruh",
+          "author": "Muḥammad b. Šuʿbah al-Ḥarrānī"
+        },
+        {
+          "row": "r0292",
+          "title": "كتاب الاصيفر وغيره",
+          "gloss": "kitāb … wa-ġayruh",
+          "author": "Muḥammad b. Šuʿbah al-Ḥarrānī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الحروف",
+      "word": "الحروف",
+      "titles": 2,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0282",
+          "title": "تفهيم معاني الحروف ولطائف المعاني التي هي",
+          "gloss": "… … … … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        },
+        {
+          "row": "r0286",
+          "title": "كتاب اللمحة في معرفة الحروف",
+          "gloss": "kitāb … fī … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "العينيه",
+      "word": "العينيه",
+      "titles": 2,
+      "unlocks": 2,
+      "occurrences": [
+        {
+          "row": "r0296",
+          "title": "قصيدة العينية",
+          "gloss": "qaṣīdah …",
+          "author": "ʿAbd al-Karīm al-Ǧīlī"
+        },
+        {
+          "row": "r0297",
+          "title": "قصيدة العينية",
+          "gloss": "qaṣīdah …",
+          "author": "ʿAbd al-Karīm al-Ǧīlī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المقفل",
+      "word": "المقفل",
+      "titles": 2,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0285",
+          "title": "كتاب العروة للمفتاح الفاتح للباب المقفل",
+          "gloss": "kitāb … … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        },
+        {
+          "row": "r0287",
+          "title": "كتاب مفتاح الباب المقفل لفهم القرآن المنزل",
+          "gloss": "kitāb mafātīḥ … … … al-qurʾān …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "النصوص",
+      "word": "النصوص",
+      "titles": 2,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0338",
+          "title": "النصوص في تعريف الطور المحسوس",
+          "gloss": "… fī … … …",
+          "author": "Ṣadr al-Dīn al-Qūnawī"
+        },
+        {
+          "row": "r0345",
+          "title": "شرح فصوص النصوص",
+          "gloss": "šarḥ fuṣūṣ …",
+          "author": "Ṣadr al-Dīn al-Qūnawī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "اليقين",
+      "word": "اليقين",
+      "titles": 2,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0223",
+          "title": "كتاب اليقين",
+          "gloss": "kitāb …",
+          "author": "Ibn Abī al-Dunyā"
+        },
+        {
+          "row": "r0238",
+          "title": "حقائق اليقين وزلفة التمكين",
+          "gloss": "ḥaqāʾiq … … …",
+          "author": "ʿAfīf al-Dīn ʿAbd al-Karīm"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "تهافت",
+      "word": "تهافت",
+      "titles": 2,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0304",
+          "title": "تهافت التهافت",
+          "gloss": "… …",
+          "author": "Abū Ḥāmid al-Ġazālī"
+        },
+        {
+          "row": "r0344",
+          "title": "تهافت الفلاسفة",
+          "gloss": "… …",
+          "author": "Abū Ḥāmid al-Ġazālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "شروط",
+      "word": "شروط",
+      "titles": 2,
+      "unlocks": 2,
+      "occurrences": [
+        {
+          "row": "r0251",
+          "title": "شروط التصوّف",
+          "gloss": "… al-taṣawwuf",
+          "author": "Abū al-Qāsim al-Qušayrī"
+        },
+        {
+          "row": "r0252",
+          "title": "شروط التصوّف",
+          "gloss": "… al-taṣawwuf",
+          "author": "Abū al-Qāsim al-Qušayrī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "عباد",
+      "word": "عباد",
+      "titles": 2,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0311",
+          "title": "إفادة المرتاد بالتعريف بان عباد",
+          "gloss": "… … … … …",
+          "author": "ʿAbd al-Maǧīd al-Zabādī"
+        },
+        {
+          "row": "r0317",
+          "title": "اصطلاحات الصوفية، تعريف بابن عباد",
+          "gloss": "iṣṭilāḥāṭ al-ṣūfīyah … … …",
+          "author": "Ibn ʿAbbād al-Rundī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "لاهل",
+      "word": "لاهل",
+      "titles": 2,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0275",
+          "title": "رسالة في حقائق العلوم لأهل الفهوم",
+          "gloss": "al-bābā fī ḥaqāʾiq al-ʿulūm … …",
+          "author": "Abū Ḥāmid al-Ġazālī"
+        },
+        {
+          "row": "r0308",
+          "title": "الحدائق لأهل الحقيقة",
+          "gloss": "… … al-ḥaqīqah",
+          "author": "al-Naysābūrī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "موقف",
+      "word": "موقف",
+      "titles": 2,
+      "unlocks": 2,
+      "occurrences": [
+        {
+          "row": "r0256",
+          "title": "موقف المواقف",
+          "gloss": "… al-mawāqif",
+          "author": "Muḥammad b. ʿAbd Allāh al-Niffarī"
+        },
+        {
+          "row": "r0257",
+          "title": "موقف المواقف",
+          "gloss": "… al-mawāqif",
+          "author": "Muḥammad b. ʿAbd Allāh al-Niffarī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "ادب",
+      "word": "ادب",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0293",
+          "title": "كتاب أدب السلوك",
+          "gloss": "kitāb … al-sulūk",
+          "author": "ʿIzz al-Dīn Ibn al-Ṭayyib"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "اسئيله",
+      "word": "اسئيله",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0258",
+          "title": "الدر المكنون في اسئيلة ما كان وما يكون",
+          "gloss": "… … fī … mā … … …",
+          "author": "Ibn al-ʿArabī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "اسانيد",
+      "word": "اسانيد",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0319",
+          "title": "أسانيد بعض طرق الصوفية",
+          "gloss": "… baʿḍ … al-ṣūfīyah",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "اسجال",
+      "word": "اسجال",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0316",
+          "title": "اسجال",
+          "gloss": "…",
+          "author": "al-Šustarī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "افاده",
+      "word": "افاده",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0311",
+          "title": "إفادة المرتاد بالتعريف بان عباد",
+          "gloss": "… … … … …",
+          "author": "ʿAbd al-Maǧīd al-Zabādī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "افضل",
+      "word": "افضل",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0239",
+          "title": "السؤال عن افضل الذكر",
+          "gloss": "… ʿan … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الائمه",
+      "word": "الائمه",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0263",
+          "title": "اقوال الائمة الصوفية",
+          "gloss": "aqwāl … al-ṣūfīyah",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الاجل",
+      "word": "الاجل",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0283",
+          "title": "فتوى صلاح الامل لانتظار الاجل",
+          "gloss": "… … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الاربعه",
+      "word": "الاربعه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0305",
+          "title": "الاول والثالث: الاسرار الاربعة",
+          "gloss": "… … al-asrār …",
+          "author": "Ṣadr al-Dīn al-Šīrāzī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الازل",
+      "word": "الازل",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0325",
+          "title": "رسالة طواسين الازل",
+          "gloss": "al-bābā … …",
+          "author": "al-Ḥallāǧ"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الاسوس",
+      "word": "الاسوس",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0290",
+          "title": "كتاب الاسوس",
+          "gloss": "kitāb …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الاصطلاح",
+      "word": "الاصطلاح",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0306",
+          "title": "كتاب الاصطلاح على بطن القرآن",
+          "gloss": "kitāb … ʿalā … al-qurʾān",
+          "author": "ʿAlāʾ al-Dawlah al-Simnānī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الاقصي",
+      "word": "الاقصي",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0230",
+          "title": "امد الاقصى",
+          "gloss": "… …",
+          "author": "Abū Zayd al-Dabbūsī al-Ḥanafī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الالهيه",
+      "word": "الالهيه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0276",
+          "title": "كتاب الكمالات الالهية في الصفات المحمدية",
+          "gloss": "kitāb … … fī … …",
+          "author": "ʿAbd al-Karīm al-Ǧīlī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الامل",
+      "word": "الامل",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0283",
+          "title": "فتوى صلاح الامل لانتظار الاجل",
+          "gloss": "… … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الانتصار",
+      "word": "الانتصار",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0321",
+          "title": "الرد على الشيخ– كتاب في الانتصار الخروبي",
+          "gloss": "… ʿalā … kitāb fī … …",
+          "author": "Abū ʿAmr Ibn al-Maḥallī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الانس",
+      "word": "الانس",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0280",
+          "title": "نفحات الإنس من حضرة القدس",
+          "gloss": "… … min … bi-nafaḥ",
+          "author": "ʿAbd al-Raḥmān Ǧāmī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الايه",
+      "word": "الايه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0289",
+          "title": "في ذكر ما نزل في الحكمة من الآية",
+          "gloss": "fī ḏikr mā … fī al-ḥikmah min …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الباب",
+      "word": "الباب",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0287",
+          "title": "كتاب مفتاح الباب المقفل لفهم القرآن المنزل",
+          "gloss": "kitāb mafātīḥ … … … al-qurʾān …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الباديه",
+      "word": "الباديه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0320",
+          "title": "كتاب المنح البادية",
+          "gloss": "kitāb … …",
+          "author": "Muḥammad b. ʿAbd al-Qādir al-Fāsī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "البيضاء",
+      "word": "البيضاء",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0242",
+          "title": "جواب عن مسألة (القوة البيضاء وهو العقل الاول)",
+          "gloss": "ǧawāb ʿan … … … … … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "التجليات",
+      "word": "التجليات",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0322",
+          "title": "شرح التجليات",
+          "gloss": "šarḥ …",
+          "author": "Ismaʿīl b. Sawdakīn al-Nūrī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "التحقيق",
+      "word": "التحقيق",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0281",
+          "title": "زبدة التحقيق ونزهة التوفيق، شرح القوني، نصوص في تحقيق",
+          "gloss": "… … wa-nuzhat … šarḥ … … fī …",
+          "author": "al-Khūʾī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "التمكين",
+      "word": "التمكين",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0238",
+          "title": "حقائق اليقين وزلفة التمكين",
+          "gloss": "ḥaqāʾiq … … …",
+          "author": "ʿAfīf al-Dīn ʿAbd al-Karīm"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "التهافت",
+      "word": "التهافت",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0304",
+          "title": "تهافت التهافت",
+          "gloss": "… …",
+          "author": "Abū Ḥāmid al-Ġazālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "التوبه",
+      "word": "التوبه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0219",
+          "title": "مختصر في التوبة",
+          "gloss": "… fī …",
+          "author": "Abū al-Qāsim al-Qušayrī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "التوشيه",
+      "word": "التوشيه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0284",
+          "title": "كتاب التوشية والتوفية",
+          "gloss": "kitāb … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "التوفيق",
+      "word": "التوفيق",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0281",
+          "title": "زبدة التحقيق ونزهة التوفيق، شرح القوني، نصوص في تحقيق",
+          "gloss": "… … wa-nuzhat … šarḥ … … fī …",
+          "author": "al-Khūʾī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "التي",
+      "word": "التي",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0282",
+          "title": "تفهيم معاني الحروف ولطائف المعاني التي هي",
+          "gloss": "… … … … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الجمال",
+      "word": "الجمال",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0279",
+          "title": "مرآت الجمال",
+          "gloss": "… …",
+          "author": "ʿAbd Allāh al-Yāfiʿī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الجواهر",
+      "word": "الجواهر",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0260",
+          "title": "الجواهر والدرر",
+          "gloss": "… …",
+          "author": "Ibn ʿAṭāʾ Allāh al-Iskandarī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الحدائق",
+      "word": "الحدائق",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0308",
+          "title": "الحدائق لأهل الحقيقة",
+          "gloss": "… … al-ḥaqīqah",
+          "author": "al-Naysābūrī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الحسن",
+      "word": "الحسن",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0244",
+          "title": "شرح كلام ابي الحسن النوري",
+          "gloss": "šarḥ kalām abī … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الخروبي",
+      "word": "الخروبي",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0321",
+          "title": "الرد على الشيخ– كتاب في الانتصار الخروبي",
+          "gloss": "… ʿalā … kitāb fī … …",
+          "author": "Abū ʿAmr Ibn al-Maḥallī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الخلاصه",
+      "word": "الخلاصه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0272",
+          "title": "الخلاصة المرضية من الدرّة المضيئة",
+          "gloss": "… … min … …",
+          "author": "Muḥammad b. Aḥmad al-Madyanī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الدر",
+      "word": "الدر",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0258",
+          "title": "الدر المكنون في اسئيلة ما كان وما يكون",
+          "gloss": "… … fī … mā … … …",
+          "author": "Ibn al-ʿArabī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الدره",
+      "word": "الدره",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0272",
+          "title": "الخلاصة المرضية من الدرّة المضيئة",
+          "gloss": "… … min … …",
+          "author": "Muḥammad b. Aḥmad al-Madyanī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الدوائر",
+      "word": "الدوائر",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0303",
+          "title": "كتاب الدوائر",
+          "gloss": "kitāb …",
+          "author": "Ibn al-ʿArabī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الذكر",
+      "word": "الذكر",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0239",
+          "title": "السؤال عن افضل الذكر",
+          "gloss": "… ʿan … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الربانيه",
+      "word": "الربانيه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0278",
+          "title": "النفحات الربّانية",
+          "gloss": "… …",
+          "author": "Ṣadr al-Dīn al-Qūnawī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الرد",
+      "word": "الرد",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0321",
+          "title": "الرد على الشيخ– كتاب في الانتصار الخروبي",
+          "gloss": "… ʿalā … kitāb fī … …",
+          "author": "Abū ʿAmr Ibn al-Maḥallī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الرضاء",
+      "word": "الرضاء",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0210",
+          "title": "الرضاء عن الله والصبر على قضائه",
+          "gloss": "… ʿan allāh … ʿalā …",
+          "author": "Ibn Abī al-Dunyā"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الزلال",
+      "word": "الزلال",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0218",
+          "title": "رشح الزلال في اصطلاحات المشايخ",
+          "gloss": "… … fī iṣṭilāḥāṭ al-mašāyiḫ",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الزوراء",
+      "word": "الزوراء",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0234",
+          "title": "رسالة الزوراء",
+          "gloss": "al-bābā …",
+          "author": "Jalāl al-Dīn al-Dawānī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الزيتونيه",
+      "word": "الزيتونيه",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0231",
+          "title": "رسالة الزيتونية",
+          "gloss": "al-bābā …",
+          "author": "Abū Naṣr al-Fārābī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "السؤال",
+      "word": "السؤال",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0239",
+          "title": "السؤال عن افضل الذكر",
+          "gloss": "… ʿan … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "السعاده",
+      "word": "السعاده",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0309",
+          "title": "مفتاح السعادة وتحقيق طريق السعادة",
+          "gloss": "mafātīḥ … … … …",
+          "author": "Abū al-ʿAbbās Ibn al-ʿArīf"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الشستري",
+      "word": "الشستري",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0314",
+          "title": "شرح ابن عجيبة على الشستري",
+          "gloss": "šarḥ ibn … ʿalā …",
+          "author": "Ibn ʿAǧība"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الشطح",
+      "word": "الشطح",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0232",
+          "title": "رسالة الفتح في تأويل ما صدر عن الكمّل من الشطح",
+          "gloss": "al-bābā … fī … mā … ʿan … min …",
+          "author": "ʿAbd al-Wahhāb al-Shaʿrānī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الشفاء",
+      "word": "الشفاء",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0246",
+          "title": "كتاب الشفاء والعلل",
+          "gloss": "kitāb … …",
+          "author": "al-Ḥakīm al-Tirmiḏī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الشيخ",
+      "word": "الشيخ",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0321",
+          "title": "الرد على الشيخ– كتاب في الانتصار الخروبي",
+          "gloss": "… ʿalā … kitāb fī … …",
+          "author": "Abū ʿAmr Ibn al-Maḥallī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الشيوخ",
+      "word": "الشيوخ",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0255",
+          "title": "معيار التصوّف وماهيّته من كلام الشيوخ",
+          "gloss": "… al-taṣawwuf … min kalām …",
+          "author": "Sahl al-Tustarī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الصفات",
+      "word": "الصفات",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0276",
+          "title": "كتاب الكمالات الالهية في الصفات المحمدية",
+          "gloss": "kitāb … … fī … …",
+          "author": "ʿAbd al-Karīm al-Ǧīlī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الصيام",
+      "word": "الصيام",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0221",
+          "title": "كتاب الصيام",
+          "gloss": "kitāb …",
+          "author": "Abū Bakr Ǧaʿfar b. Musrtafāḍ al-Faryābī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الطب",
+      "word": "الطب",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0295",
+          "title": "المنظومة في الطب",
+          "gloss": "… fī …",
+          "author": "Ibn Sīnā"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الطور",
+      "word": "الطور",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0338",
+          "title": "النصوص في تعريف الطور المحسوس",
+          "gloss": "… fī … … …",
+          "author": "Ṣadr al-Dīn al-Qūnawī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "العروه",
+      "word": "العروه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0285",
+          "title": "كتاب العروة للمفتاح الفاتح للباب المقفل",
+          "gloss": "kitāb … … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "العزيز",
+      "word": "العزيز",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0250",
+          "title": "اللطائف في تفسير الكتاب العزيز",
+          "gloss": "… fī tafsīr … …",
+          "author": "Abū al-Qāsim al-Qušayrī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "العظمه",
+      "word": "العظمه",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0182",
+          "title": "كتاب العظمة",
+          "gloss": "kitāb …",
+          "author": "Ibn Abī al-Dunyā"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "العظيم",
+      "word": "العظيم",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0126",
+          "title": "تفسير القرآن العظيم",
+          "gloss": "tafsīr al-qurʾān …",
+          "author": "Sahl al-Tustarī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "العقل",
+      "word": "العقل",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0242",
+          "title": "جواب عن مسألة (القوة البيضاء وهو العقل الاول)",
+          "gloss": "ǧawāb ʿan … … … … … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الفاتح",
+      "word": "الفاتح",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0285",
+          "title": "كتاب العروة للمفتاح الفاتح للباب المقفل",
+          "gloss": "kitāb … … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الفتح",
+      "word": "الفتح",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0232",
+          "title": "رسالة الفتح في تأويل ما صدر عن الكمّل من الشطح",
+          "gloss": "al-bābā … fī … mā … ʿan … min …",
+          "author": "ʿAbd al-Wahhāb al-Shaʿrānī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الفتوحات",
+      "word": "الفتوحات",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0240",
+          "title": "سؤال الفتوحات وجوابه",
+          "gloss": "… … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الفلاسفه",
+      "word": "الفلاسفه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0344",
+          "title": "تهافت الفلاسفة",
+          "gloss": "… …",
+          "author": "Abū Ḥāmid al-Ġazālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الفهوم",
+      "word": "الفهوم",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0275",
+          "title": "رسالة في حقائق العلوم لأهل الفهوم",
+          "gloss": "al-bābā fī ḥaqāʾiq al-ʿulūm … …",
+          "author": "Abū Ḥāmid al-Ġazālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الفوائد",
+      "word": "الفوائد",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0300",
+          "title": "بحر الفوائد",
+          "gloss": "… …",
+          "author": "Abū Bakr al-Kalābāḏī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "القوني",
+      "word": "القوني",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0281",
+          "title": "زبدة التحقيق ونزهة التوفيق، شرح القوني، نصوص في تحقيق",
+          "gloss": "… … wa-nuzhat … šarḥ … … fī …",
+          "author": "al-Khūʾī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "القوه",
+      "word": "القوه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0242",
+          "title": "جواب عن مسألة (القوة البيضاء وهو العقل الاول)",
+          "gloss": "ǧawāb ʿan … … … … … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الكتاب",
+      "word": "الكتاب",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0250",
+          "title": "اللطائف في تفسير الكتاب العزيز",
+          "gloss": "… fī tafsīr … …",
+          "author": "Abū al-Qāsim al-Qušayrī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الكرخي",
+      "word": "الكرخي",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0220",
+          "title": "مناقب معروف الكرخي",
+          "gloss": "manāqib … …",
+          "author": "Ibn al-Ǧawzī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الكمالات",
+      "word": "الكمالات",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0276",
+          "title": "كتاب الكمالات الالهية في الصفات المحمدية",
+          "gloss": "kitāb … … fī … …",
+          "author": "ʿAbd al-Karīm al-Ǧīlī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الكمل",
+      "word": "الكمل",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0232",
+          "title": "رسالة الفتح في تأويل ما صدر عن الكمّل من الشطح",
+          "gloss": "al-bābā … fī … mā … ʿan … min …",
+          "author": "ʿAbd al-Wahhāb al-Shaʿrānī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "اللطائف",
+      "word": "اللطائف",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0250",
+          "title": "اللطائف في تفسير الكتاب العزيز",
+          "gloss": "… fī tafsīr … …",
+          "author": "Abū al-Qāsim al-Qušayrī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "اللمحه",
+      "word": "اللمحه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0286",
+          "title": "كتاب اللمحة في معرفة الحروف",
+          "gloss": "kitāb … fī … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "اللوائح",
+      "word": "اللوائح",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0310",
+          "title": "كتاب اللوائح",
+          "gloss": "kitāb …",
+          "author": "ʿAbd al-Raḥmān Ǧāmī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المتمنين",
+      "word": "المتمنين",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0150",
+          "title": "كتاب المتمنين",
+          "gloss": "kitāb …",
+          "author": "Ibn Abī al-Dunyā"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المجالس",
+      "word": "المجالس",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0269",
+          "title": "محاسن المجالس",
+          "gloss": "… …",
+          "author": "Abū al-ʿAbbās Ibn al-ʿArīf"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المحسوس",
+      "word": "المحسوس",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0338",
+          "title": "النصوص في تعريف الطور المحسوس",
+          "gloss": "… fī … … …",
+          "author": "Ṣadr al-Dīn al-Qūnawī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المحمديه",
+      "word": "المحمديه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0276",
+          "title": "كتاب الكمالات الالهية في الصفات المحمدية",
+          "gloss": "kitāb … … fī … …",
+          "author": "ʿAbd al-Karīm al-Ǧīlī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المرتاد",
+      "word": "المرتاد",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0311",
+          "title": "إفادة المرتاد بالتعريف بان عباد",
+          "gloss": "… … … … …",
+          "author": "ʿAbd al-Maǧīd al-Zabādī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المرضيه",
+      "word": "المرضيه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0272",
+          "title": "الخلاصة المرضية من الدرّة المضيئة",
+          "gloss": "… … min … …",
+          "author": "Muḥammad b. Aḥmad al-Madyanī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المشايح",
+      "word": "المشايح",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0341",
+          "title": "مبايعة المشايح اهل الحقيقة",
+          "gloss": "… … ahl al-ḥaqīqah",
+          "author": "Ṣadr al-Dīn al-Qūnawī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المضيئه",
+      "word": "المضيئه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0272",
+          "title": "الخلاصة المرضية من الدرّة المضيئة",
+          "gloss": "… … min … …",
+          "author": "Muḥammad b. Aḥmad al-Madyanī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المعاني",
+      "word": "المعاني",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0282",
+          "title": "تفهيم معاني الحروف ولطائف المعاني التي هي",
+          "gloss": "… … … … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المكنون",
+      "word": "المكنون",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0258",
+          "title": "الدر المكنون في اسئيلة ما كان وما يكون",
+          "gloss": "… … fī … mā … … …",
+          "author": "Ibn al-ʿArabī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المنح",
+      "word": "المنح",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0320",
+          "title": "كتاب المنح البادية",
+          "gloss": "kitāb … …",
+          "author": "Muḥammad b. ʿAbd al-Qādir al-Fāsī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المنزل",
+      "word": "المنزل",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0287",
+          "title": "كتاب مفتاح الباب المقفل لفهم القرآن المنزل",
+          "gloss": "kitāb mafātīḥ … … … al-qurʾān …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "المنظومه",
+      "word": "المنظومه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0295",
+          "title": "المنظومة في الطب",
+          "gloss": "… fī …",
+          "author": "Ibn Sīnā"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "النعلين",
+      "word": "النعلين",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0217",
+          "title": "خلع النعلين",
+          "gloss": "… …",
+          "author": "Abū al-Qāsim Aḥmad b. Qasī al-Maġribī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "النفحات",
+      "word": "النفحات",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0278",
+          "title": "النفحات الربّانية",
+          "gloss": "… …",
+          "author": "Ṣadr al-Dīn al-Qūnawī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "النفري",
+      "word": "النفري",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0270",
+          "title": "من كلام النفري في التستري",
+          "gloss": "min kalām … fī al-tustarī",
+          "author": "Muḥammad b. ʿAbd Allāh al-Niffarī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "النوري",
+      "word": "النوري",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0244",
+          "title": "شرح كلام ابي الحسن النوري",
+          "gloss": "šarḥ kalām abī … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "الوحيد",
+      "word": "الوحيد",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0298",
+          "title": "الوحيد في سلوك التوحيد",
+          "gloss": "… fī sulūk al-tawḥīd",
+          "author": "ʿAbd al-Ġaffār b. Aḥmad b. ʿAbd al-Maǧīd al-Qūṣī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "امد",
+      "word": "امد",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0230",
+          "title": "امد الاقصى",
+          "gloss": "… …",
+          "author": "Abū Zayd al-Dabbūsī al-Ḥanafī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "بابن",
+      "word": "بابن",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0317",
+          "title": "اصطلاحات الصوفية، تعريف بابن عباد",
+          "gloss": "iṣṭilāḥāṭ al-ṣūfīyah … … …",
+          "author": "Ibn ʿAbbād al-Rundī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "بالتعريف",
+      "word": "بالتعريف",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0311",
+          "title": "إفادة المرتاد بالتعريف بان عباد",
+          "gloss": "… … … … …",
+          "author": "ʿAbd al-Maǧīd al-Zabādī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "بان",
+      "word": "بان",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0311",
+          "title": "إفادة المرتاد بالتعريف بان عباد",
+          "gloss": "… … … … …",
+          "author": "ʿAbd al-Maǧīd al-Zabādī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "بحر",
+      "word": "بحر",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0300",
+          "title": "بحر الفوائد",
+          "gloss": "… …",
+          "author": "Abū Bakr al-Kalābāḏī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "بطن",
+      "word": "بطن",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0306",
+          "title": "كتاب الاصطلاح على بطن القرآن",
+          "gloss": "kitāb … ʿalā … al-qurʾān",
+          "author": "ʿAlāʾ al-Dawlah al-Simnānī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "تاويل",
+      "word": "تاويل",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0232",
+          "title": "رسالة الفتح في تأويل ما صدر عن الكمّل من الشطح",
+          "gloss": "al-bābā … fī … mā … ʿan … min …",
+          "author": "ʿAbd al-Wahhāb al-Shaʿrānī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "تاويلات",
+      "word": "تاويلات",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0149",
+          "title": "تأويلات القرآن",
+          "gloss": "… al-qurʾān",
+          "author": "Abū Manṣūr al-Māturīdī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "تحقيق",
+      "word": "تحقيق",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0281",
+          "title": "زبدة التحقيق ونزهة التوفيق، شرح القوني، نصوص في تحقيق",
+          "gloss": "… … wa-nuzhat … šarḥ … … fī …",
+          "author": "al-Khūʾī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "تعليم",
+      "word": "تعليم",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0301",
+          "title": "تعليم ديانة النصيرية",
+          "gloss": "… … al-nuṣarīyah",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "تفهيم",
+      "word": "تفهيم",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0282",
+          "title": "تفهيم معاني الحروف ولطائف المعاني التي هي",
+          "gloss": "… … … … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "تقييدات",
+      "word": "تقييدات",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0313",
+          "title": "تقييدات",
+          "gloss": "…",
+          "author": "Ibn ʿAǧība"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "جفر",
+      "word": "جفر",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0294",
+          "title": "جفر",
+          "gloss": "…",
+          "author": "Ibn al-ʿArabī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "حضره",
+      "word": "حضره",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0280",
+          "title": "نفحات الإنس من حضرة القدس",
+          "gloss": "… … min … bi-nafaḥ",
+          "author": "ʿAbd al-Raḥmān Ǧāmī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "خلع",
+      "word": "خلع",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0217",
+          "title": "خلع النعلين",
+          "gloss": "… …",
+          "author": "Abū al-Qāsim Aḥmad b. Qasī al-Maġribī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "ديانه",
+      "word": "ديانه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0301",
+          "title": "تعليم ديانة النصيرية",
+          "gloss": "… … al-nuṣarīyah",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "رسول",
+      "word": "رسول",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0248",
+          "title": "رسالة في نسب رسول الله",
+          "gloss": "al-bābā fī … … allāh",
+          "author": "Ibn al-Ṣalāḥ al-Šahrazūrī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "رشح",
+      "word": "رشح",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0218",
+          "title": "رشح الزلال في اصطلاحات المشايخ",
+          "gloss": "… … fī iṣṭilāḥāṭ al-mašāyiḫ",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "زبده",
+      "word": "زبده",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0281",
+          "title": "زبدة التحقيق ونزهة التوفيق، شرح القوني، نصوص في تحقيق",
+          "gloss": "… … wa-nuzhat … šarḥ … … fī …",
+          "author": "al-Khūʾī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "سؤال",
+      "word": "سؤال",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0240",
+          "title": "سؤال الفتوحات وجوابه",
+          "gloss": "… … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "صدر",
+      "word": "صدر",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0232",
+          "title": "رسالة الفتح في تأويل ما صدر عن الكمّل من الشطح",
+          "gloss": "al-bābā … fī … mā … ʿan … min …",
+          "author": "ʿAbd al-Wahhāb al-Shaʿrānī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "صلاح",
+      "word": "صلاح",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0283",
+          "title": "فتوى صلاح الامل لانتظار الاجل",
+          "gloss": "… … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "طرق",
+      "word": "طرق",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0319",
+          "title": "أسانيد بعض طرق الصوفية",
+          "gloss": "… baʿḍ … al-ṣūfīyah",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "طريق",
+      "word": "طريق",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0309",
+          "title": "مفتاح السعادة وتحقيق طريق السعادة",
+          "gloss": "mafātīḥ … … … …",
+          "author": "Abū al-ʿAbbās Ibn al-ʿArīf"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "طواسين",
+      "word": "طواسين",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0325",
+          "title": "رسالة طواسين الازل",
+          "gloss": "al-bābā … …",
+          "author": "al-Ḥallāǧ"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "عجيبه",
+      "word": "عجيبه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0314",
+          "title": "شرح ابن عجيبة على الشستري",
+          "gloss": "šarḥ ibn … ʿalā …",
+          "author": "Ibn ʿAǧība"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "عياض",
+      "word": "عياض",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0323",
+          "title": "شرح قواعد عياض",
+          "gloss": "šarḥ … …",
+          "author": "Abū al-ʿAbbās Aḥmad b. Qāsim al-Juḏāmī al-Qabbāb"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "فتوي",
+      "word": "فتوي",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0283",
+          "title": "فتوى صلاح الامل لانتظار الاجل",
+          "gloss": "… … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "فريضه",
+      "word": "فريضه",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0247",
+          "title": "فريضة 54",
+          "gloss": "…",
+          "author": "al-Ḥasan al-Baṣrī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "فوائد",
+      "word": "فوائد",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0213",
+          "title": "فوائد",
+          "gloss": "…",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "قضائه",
+      "word": "قضائه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0210",
+          "title": "الرضاء عن الله والصبر على قضائه",
+          "gloss": "… ʿan allāh … ʿalā …",
+          "author": "Ibn Abī al-Dunyā"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "قواعد",
+      "word": "قواعد",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0323",
+          "title": "شرح قواعد عياض",
+          "gloss": "šarḥ … …",
+          "author": "Abū al-ʿAbbās Aḥmad b. Qāsim al-Juḏāmī al-Qabbāb"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "كان",
+      "word": "كان",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0258",
+          "title": "الدر المكنون في اسئيلة ما كان وما يكون",
+          "gloss": "… … fī … mā … … …",
+          "author": "Ibn al-ʿArabī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "لانتظار",
+      "word": "لانتظار",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0283",
+          "title": "فتوى صلاح الامل لانتظار الاجل",
+          "gloss": "… … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "لفهم",
+      "word": "لفهم",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0287",
+          "title": "كتاب مفتاح الباب المقفل لفهم القرآن المنزل",
+          "gloss": "kitāb mafātīḥ … … … al-qurʾān …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "للباب",
+      "word": "للباب",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0285",
+          "title": "كتاب العروة للمفتاح الفاتح للباب المقفل",
+          "gloss": "kitāb … … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "للمفتاح",
+      "word": "للمفتاح",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0285",
+          "title": "كتاب العروة للمفتاح الفاتح للباب المقفل",
+          "gloss": "kitāb … … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "مبايعه",
+      "word": "مبايعه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0341",
+          "title": "مبايعة المشايح اهل الحقيقة",
+          "gloss": "… … ahl al-ḥaqīqah",
+          "author": "Ṣadr al-Dīn al-Qūnawī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "محاسن",
+      "word": "محاسن",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0269",
+          "title": "محاسن المجالس",
+          "gloss": "… …",
+          "author": "Abū al-ʿAbbās Ibn al-ʿArīf"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "مختصر",
+      "word": "مختصر",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0219",
+          "title": "مختصر في التوبة",
+          "gloss": "… fī …",
+          "author": "Abū al-Qāsim al-Qušayrī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "مرات",
+      "word": "مرات",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0279",
+          "title": "مرآت الجمال",
+          "gloss": "… …",
+          "author": "ʿAbd Allāh al-Yāfiʿī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "مساله",
+      "word": "مساله",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0242",
+          "title": "جواب عن مسألة (القوة البيضاء وهو العقل الاول)",
+          "gloss": "ǧawāb ʿan … … … … … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "معاني",
+      "word": "معاني",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0282",
+          "title": "تفهيم معاني الحروف ولطائف المعاني التي هي",
+          "gloss": "… … … … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "معراج",
+      "word": "معراج",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0315",
+          "title": "معراج التصوّف",
+          "gloss": "… al-taṣawwuf",
+          "author": "Ibn ʿAǧība"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "معرفه",
+      "word": "معرفه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0286",
+          "title": "كتاب اللمحة في معرفة الحروف",
+          "gloss": "kitāb … fī … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "معروف",
+      "word": "معروف",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0220",
+          "title": "مناقب معروف الكرخي",
+          "gloss": "manāqib … …",
+          "author": "Ibn al-Ǧawzī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "معيار",
+      "word": "معيار",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0255",
+          "title": "معيار التصوّف وماهيّته من كلام الشيوخ",
+          "gloss": "… al-taṣawwuf … min kalām …",
+          "author": "Sahl al-Tustarī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "مقتطفات",
+      "word": "مقتطفات",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0268",
+          "title": "مقتطفات",
+          "gloss": "…",
+          "author": "Ibn ʿAbbād al-Rundī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "نزل",
+      "word": "نزل",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0289",
+          "title": "في ذكر ما نزل في الحكمة من الآية",
+          "gloss": "fī ḏikr mā … fī al-ḥikmah min …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "نسب",
+      "word": "نسب",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0248",
+          "title": "رسالة في نسب رسول الله",
+          "gloss": "al-bābā fī … … allāh",
+          "author": "Ibn al-Ṣalāḥ al-Šahrazūrī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "نصوص",
+      "word": "نصوص",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0281",
+          "title": "زبدة التحقيق ونزهة التوفيق، شرح القوني، نصوص في تحقيق",
+          "gloss": "… … wa-nuzhat … šarḥ … … fī …",
+          "author": "al-Khūʾī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "نفحات",
+      "word": "نفحات",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0280",
+          "title": "نفحات الإنس من حضرة القدس",
+          "gloss": "… … min … bi-nafaḥ",
+          "author": "ʿAbd al-Raḥmān Ǧāmī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "هي",
+      "word": "هي",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0282",
+          "title": "تفهيم معاني الحروف ولطائف المعاني التي هي",
+          "gloss": "… … … … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "والاداب",
+      "word": "والاداب",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0265",
+          "title": "كتاب الحكم والآداب",
+          "gloss": "kitāb al-ḥikam …",
+          "author": "Ibn ʿAṭāʾ Allāh al-Iskandarī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "والاشعار",
+      "word": "والاشعار",
+      "titles": 1,
+      "unlocks": 1,
+      "occurrences": [
+        {
+          "row": "r0262",
+          "title": "تفسير بعض الحكم والاشعار",
+          "gloss": "tafsīr baʿḍ al-ḥikam …",
+          "author": "al-Ḥallāǧ"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "والتوفيه",
+      "word": "والتوفيه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0284",
+          "title": "كتاب التوشية والتوفية",
+          "gloss": "kitāb … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "والثالث",
+      "word": "والثالث",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0305",
+          "title": "الاول والثالث: الاسرار الاربعة",
+          "gloss": "… … al-asrār …",
+          "author": "Ṣadr al-Dīn al-Šīrāzī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "والدرر",
+      "word": "والدرر",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0260",
+          "title": "الجواهر والدرر",
+          "gloss": "… …",
+          "author": "Ibn ʿAṭāʾ Allāh al-Iskandarī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "والصبر",
+      "word": "والصبر",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0210",
+          "title": "الرضاء عن الله والصبر على قضائه",
+          "gloss": "… ʿan allāh … ʿalā …",
+          "author": "Ibn Abī al-Dunyā"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "والعلل",
+      "word": "والعلل",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0246",
+          "title": "كتاب الشفاء والعلل",
+          "gloss": "kitāb … …",
+          "author": "al-Ḥakīm al-Tirmiḏī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "وتحقيق",
+      "word": "وتحقيق",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0309",
+          "title": "مفتاح السعادة وتحقيق طريق السعادة",
+          "gloss": "mafātīḥ … … … …",
+          "author": "Abū al-ʿAbbās Ibn al-ʿArīf"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "وجوابه",
+      "word": "وجوابه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0240",
+          "title": "سؤال الفتوحات وجوابه",
+          "gloss": "… … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "وزلفه",
+      "word": "وزلفه",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0238",
+          "title": "حقائق اليقين وزلفة التمكين",
+          "gloss": "ḥaqāʾiq … … …",
+          "author": "ʿAfīf al-Dīn ʿAbd al-Karīm"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "ولطائف",
+      "word": "ولطائف",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0282",
+          "title": "تفهيم معاني الحروف ولطائف المعاني التي هي",
+          "gloss": "… … … … … … …",
+          "author": "ʿAlī b. Aḥmad al-Ḥarrālī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "وما",
+      "word": "وما",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0258",
+          "title": "الدر المكنون في اسئيلة ما كان وما يكون",
+          "gloss": "… … fī … mā … … …",
+          "author": "Ibn al-ʿArabī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "وماهيته",
+      "word": "وماهيته",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0255",
+          "title": "معيار التصوّف وماهيّته من كلام الشيوخ",
+          "gloss": "… al-taṣawwuf … min kalām …",
+          "author": "Sahl al-Tustarī"
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "وهو",
+      "word": "وهو",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0242",
+          "title": "جواب عن مسألة (القوة البيضاء وهو العقل الاول)",
+          "gloss": "ǧawāb ʿan … … … … … …",
+          "author": ""
+        }
+      ],
+      "more": 0
+    },
+    {
+      "id": "يكون",
+      "word": "يكون",
+      "titles": 1,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0258",
+          "title": "الدر المكنون في اسئيلة ما كان وما يكون",
+          "gloss": "… … fī … mā … … …",
+          "author": "Ibn al-ʿArabī"
+        }
+      ],
+      "more": 0
+    }
+  ]
+}

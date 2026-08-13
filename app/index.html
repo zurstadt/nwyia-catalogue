@@ -1250,6 +1250,16 @@ function arabicKey(w) {
     .replace(/[ً-ْٰـ]/g, "")
     .replace(/[آأإٱ]/g, "ا")
     .replace(/ى/g, "ي")
+    // ة → ه, matching normalize_ar on the Python side. Without it the two
+    // normalizers disagree (الصوفية vs الصوفيه) and any word list exchanged
+    // between the app and the pipeline silently fails to match on those words.
+    .replace(/ة/g, "ه")
+    // Drop everything that is not an Arabic letter. Splitting a title on
+    // whitespace alone leaves punctuation stuck to the word, so «الاشارات،» keys
+    // separately from «الاشارات» — one word, two lexicon entries, and the second
+    // never gets filled. Titles here carry ، , . : ( ) " ' - – [ ] / and the
+    // Arabic comma is the commonest of them.
+    .replace(/[^ء-يٱ-ۓ]/g, "")
     .trim();
 }
 
