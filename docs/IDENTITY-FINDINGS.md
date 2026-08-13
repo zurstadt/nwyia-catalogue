@@ -1,8 +1,10 @@
 # Identity findings — author clusters and title attributions
 
 Produced by `python3 scripts/audit_identity.py` (read-only) on 2026-08-13, then
-assessed by hand. Nothing here has been applied: every item is a proposal awaiting
-your ruling.
+assessed by hand.
+
+**Findings 1 and 2 were ruled on and APPLIED on 2026-08-13** — see the notes on each.
+The rest remain proposals awaiting a ruling.
 
 The audit applies refutations that a similarity score cannot express — a
 similarity function only ever ACCUMULATES, so two people who share enough
@@ -14,7 +16,7 @@ date impossibility is a veto**.
 
 ---
 
-## 1. c060 conflates two men three and a half centuries apart — HIGH confidence
+## 1. c060 conflates two men three and a half centuries apart — APPLIED
 
 The cluster claims **Muḥammad b. Murtaḍā, Muḥsin Fayḍ al-Kāshānī, d. 1090/1679**
 (the Safavid polymath). It holds two rows:
@@ -33,20 +35,21 @@ the Ibn ʿArabī-school commentator. Four independent signals:
 - **The only link is the nisbah** — al-Qāšānī / al-Kāšānī, which the skill is
   explicit is confirmatory and never decisive. This is the textbook homonym merge.
 
-**Proposed:** split r0083 into a new cluster for ʿAbd al-Razzāq al-Qāšānī
-(d. 736/1335). Note that once it leaves, **no row supports the Fayḍ identity at
-all** — r0058 is the only remainder, and *al-Qalshānī* is a Maghribi nisbah
-(Qalshāna, Ifrīqiya), not obviously Kāšānī. So the cluster's name and dates are
-themselves in question, not just its membership.
-
-**Needs your ruling:** is r0058's القلشاني a spelling of القاشاني (join it to
-al-Qāšānī), or the Maghribi al-Qalshānī (its own cluster)? If neither row is
-Fayḍ, c060's metadata should be retired rather than inherited.
-
 *Context:* the project log records a dedup merge `c066 → c060`. That merge is the
 likely origin of this conflation.
 
-## 2. r0172 *Maqāmāt al-qulūb* is al-Nūrī, not al-Nawawī — HIGH confidence
+**Applied.** r0083 now sits in a new cluster **c124 · ʿAbd al-Razzāq al-Qāšānī**
+(Kamāl al-Dīn ʿAbd al-Razzāq b. Abī al-Ġanāʾim al-Qāšānī, d. c. 736/1335), with the
+reasoning recorded in the row's `discrepancy_note`.
+
+**Still open, and it matters:** c060 now holds **one row, r0058 (`القلشاني`)** — and
+its name, its dates (d. 1090/1679) and its **seven authority links** (TDVİA, Wikidata,
+VIAF, GND, Wikipedia, OpenAlex, Google Scholar) all describe Fayḍ al-Kāšānī, whom no
+remaining row clearly attests. Rule on whether r0058 is a spelling of القاشاني or the
+Maghribi al-Qalshānī; if it is neither man, that metadata should be retired rather
+than left attached.
+
+## 2. r0172 *Maqāmāt al-qulūb* is al-Nūrī, not al-Nawawī — APPLIED
 
 r0172 (Süleymaniye, Bağdatlı Vehbi 2150) is catalogued as
 `ابو زكريا يحيى بن شرف الدين النووي` — **al-Nawawī**, d. 676/1277, the Shāfiʿī
@@ -60,8 +63,12 @@ jurist — and is the *only* row in cluster c088. Four converging signals:
 - The corpus already holds two other *Maqāmāt al-qulūb* rows (r0201, r0212), both
   under al-Nūrī.
 
-**Proposed:** reattribute r0172 to **c036 (Abū al-Ḥasan Aḥmad b. Muḥammad al-Nūrī,
-d. 295/907)**; c088 then holds no rows and is dropped on the next re-cluster.
+**Applied.** r0172 now sits in **c036 (Abū al-Ḥasan Aḥmad b. Muḥammad al-Nūrī,
+d. 295/907)**, which holds three rows; **c088 held no rows and was dropped** on the
+re-cluster, taking its six authority links with it. The author cell was corrected to
+`ابو الحسن النوري` as well — leaving Nwyia's `النووي` in place kept the audit
+re-raising a decided case every run — and his wording is preserved in the row's
+`discrepancy_note`.
 
 *Worth verifying at your end:* Nwyia himself published al-Nūrī's mystical texts,
 which would explain three copies of this treatise sitting in his collection. I have
@@ -159,3 +166,60 @@ Unconditioned, that check produced **73 hits, nearly all benign**.
 Conditioned on a second dimension — *the same work, in the same bundle, attributed
 two ways* — it produced **2 hits, one of them finding 2 above**. The signal is real;
 it is the conjunction that carries it.
+
+---
+
+# Titles expanded to the work they name — applied 2026-08-13
+
+Nwyia's index often records a bare genre word or a cataloguer's label where the author
+already settles the work. **33 titles were expanded in place**, each keeping his own
+wording in `discrepancy_note` and the basis in `catalog_note`.
+
+The largest class: **14 rows reading `الحكم` / `حكم` under Ibn ʿAṭāʾ Allāh** are all
+*al-Ḥikam al-ʿAṭāʾiyya*, the work Nwyia edited in 1972. Then al-Ḥallāǧ's *Ṭawāsīn* (2),
+al-Qušayrī's *Laṭāʾif al-išārāt* (2), al-Sulamī's *Ḥaqāʾiq al-tafsīr* (2), al-Māturīdī's
+*Kitāb al-Tawḥīd* and *Taʾwīlāt al-Qurʾān*, three monographs of Ibn Abī al-Dunyā,
+al-Tustarī's *Tafsīr*, al-Niffarī's *Mawāqif*, and Abū Madyan's *Ḥikam* (3).
+
+## What the BnF settled
+
+- **r0299 «Opera»** — Arabe 5018 is *«12 traités de théologie et de philosophie par
+  Abou Abd Allah Mohammad ibn Ali al-Tirmidi»*: a majmūʿ of twelve treatises, 212 ff.,
+  14th-c. Egyptian naskh, entered 1890. The al-Tirmiḏī attribution is **confirmed**.
+  Two of the twelve are edited (*al-Ḥaǧǧ wa-asrāruhu*, Cairo 1969; *al-Iḥtiyāṭāt*,
+  Beirut 2011), so the row is now `pub_status: partial`.
+- **r0295 «Traité médicale»** — Arabe 3038 is a majmūʿ of three medical texts; Ibn
+  Sīnā's is the third, *al-Manẓūma fī al-ṭibb* (f. 62). The other two are *Zād
+  al-musāfir* and a treatise on the pulse by Muḥammad b. Aḥmad b. al-ʿĀṣ.
+- **r0306 «تفسير»** — Arabe 6962 is *Kitāb al-iṣṭilāḥ ʿalā baṭn al-Qurʾān* (GAL Suppl.
+  II, 281; Ahlwardt I, 874–875), copied 895/1490. It expounds the inner senses of the
+  Qurʾān rather than being a running commentary, so "tafsīr" was a loose descriptor.
+
+## Deliberately NOT expanded
+
+- **r0294 «جفر» under Ibn al-ʿArabī** — BnF Arabe 2669 is a majmūʿ of jafr texts dated
+  1026/1617 (predictions ascribed to ʿAlī; an extract from the *Ǧafr al-kabīr* of
+  Muḥammad b. Sālim al-Ḫallāl). **The notice does not mention Ibn al-ʿArabī at all.**
+  Jafr literature is routinely pseudepigraphic; the attribution needs a ruling, not an
+  expansion.
+- **r0036 «مجموع» under al-Fārābī** — the shelfmark `Arabe d 84` is already flagged as
+  mis-transcribed, and no such Fārābī collection is there.
+- **r0183 «تفسير» under Ibn Barraǧān** — he wrote two Qurʾān commentaries; which one
+  Carullah 534 holds needs the catalogue, not a guess.
+- **`فريضة` under al-Ḥasan al-Baṣrī** (r0199, r0247) — a *farīḍa* text is not
+  characteristic of him, and this overlaps finding 5 above.
+
+## Residue — needs your portal access
+
+Behind the login-gated Türkiye Yazma Eserler portal, or otherwise unresolvable here:
+
+| row | shelfmark | what to look for |
+|---|---|---|
+| r0143 | Köprülü 1602 | no title and no author in the index |
+| r0144 | Köprülü 1620 | untitled; index gives Ibn al-Fāriḍ |
+| r0168 | Süleymaniye, Ayasofya 4128 (ff. 151a–170) | untitled continuation item |
+| r0186 | Süleymaniye, Fatih 2553 (ff. 58a–68a) | untitled; index gives al-Isfarāyīnī |
+| r0107 | Mingana 635 | untitled; index gives Šaqīq al-Balḫī |
+| r0078 | Berlin, 3319 mo 225 | untitled; Qalamos may settle it |
+| r0259 | BL 3336 (2 vols.) | untitled; index gives Gabriel Qaṭraya |
+| r0005, r0032, r0033 | — | *Documents divers*, *Fragments (sans titre)* — loose papers |

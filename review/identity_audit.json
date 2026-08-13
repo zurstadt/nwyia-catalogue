@@ -43,28 +43,6 @@
       "reasons": [
         "no distinctive token in common"
       ]
-    },
-    {
-      "cluster_id": "c060",
-      "cluster": "Fayḍ al-Qāšānī",
-      "dates": "d. 1090/1679",
-      "form_a": "فيض القاشاني  [cluster canonical]",
-      "form_b": "عبد الرزاق بن ابي الغنائم القاشاني",
-      "severity": "refute",
-      "reasons": [
-        "linked to the cluster by nisbah alone (قاشاني) while carrying its own ism/nasab"
-      ]
-    },
-    {
-      "cluster_id": "c060",
-      "cluster": "Fayḍ al-Qāšānī",
-      "dates": "d. 1090/1679",
-      "form_a": "القلشاني",
-      "form_b": "عبد الرزاق بن ابي الغنائم القاشاني",
-      "severity": "weak",
-      "reasons": [
-        "no distinctive token in common"
-      ]
     }
   ],
   "conservation": [],
@@ -74,8 +52,8 @@
       "title": "اصطلاحات الصوفيه",
       "attributions": [
         {
-          "cluster_id": "c060",
-          "translit": "Fayḍ al-Qāšānī",
+          "cluster_id": "c124",
+          "translit": "ʿAbd al-Razzāq al-Qāšānī",
           "rows": [
             "r0083"
           ]
@@ -126,55 +104,9 @@
           ]
         }
       ]
-    },
-    {
-      "title": "مقامات القلوب",
-      "attributions": [
-        {
-          "cluster_id": "c036",
-          "translit": "Abū al-Ḥasan al-Nūrī",
-          "rows": [
-            "r0201",
-            "r0212"
-          ]
-        },
-        {
-          "cluster_id": "c088",
-          "translit": "Abū Zakariyyāʾ Yaḥyā b. Šaraf al-Dīn al-Nawawī",
-          "rows": [
-            "r0172"
-          ]
-        }
-      ]
     }
   ],
   "cote_conflict": [
-    {
-      "cote": "078",
-      "title": "مقامات القلوب",
-      "attributions": [
-        {
-          "cluster_id": "c036",
-          "translit": "Abū al-Ḥasan al-Nūrī",
-          "rows": [
-            "r0201"
-          ],
-          "authors": [
-            "النوري"
-          ]
-        },
-        {
-          "cluster_id": "c088",
-          "translit": "Abū Zakariyyāʾ Yaḥyā b. Šaraf al-Dīn al-Nawawī",
-          "rows": [
-            "r0172"
-          ],
-          "authors": [
-            "ابو زكريا يحيى بن شرف الدين النووي"
-          ]
-        }
-      ]
-    },
     {
       "cote": "091",
       "title": "رسائل عبد الملك بن مروان وحسن البصري",

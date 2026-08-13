@@ -3027,45 +3027,6 @@
       "authorities": [],
       "user_confirmed": true
     },
-    "c088": {
-      "canonical_ar": "ابو زكرياء يحيى بن شرف الدين النووي",
-      "canonical_translit": "Abū Zakariyyāʾ Yaḥyā b. Šaraf al-Dīn al-Nawawī",
-      "full_name": "Abū Zakariyyā Yaḥyā b. Sharaf al-Nawawī",
-      "dates": "d. 676/1277",
-      "authorities": [
-        {
-          "source": "Wikidata",
-          "title": "Q293571",
-          "url": "https://www.wikidata.org/wiki/Q293571"
-        },
-        {
-          "source": "VIAF",
-          "title": "90059668",
-          "url": "https://viaf.org/viaf/90059668"
-        },
-        {
-          "source": "GND",
-          "title": "119158523",
-          "url": "https://d-nb.info/gnd/119158523"
-        },
-        {
-          "source": "Wikipedia (EN)",
-          "title": "Al-Nawawi",
-          "url": "https://en.wikipedia.org/wiki/Al-Nawawi"
-        },
-        {
-          "source": "OpenAlex",
-          "title": "Abu Zakariyyaʾ Yahya b. Saraf al-Din al-Nawawi",
-          "url": "https://openalex.org/works?search=Abu%20Zakariyya%CA%BE%20Yahya%20b.%20Saraf%20al-Din%20al-Nawawi"
-        },
-        {
-          "source": "Google Scholar",
-          "title": "Abu Zakariyyaʾ Yahya b. Saraf al-Din al-Nawawi",
-          "url": "https://scholar.google.com/scholar?q=Abu%20Zakariyya%CA%BE%20Yahya%20b.%20Saraf%20al-Din%20al-Nawawi"
-        }
-      ],
-      "user_confirmed": true
-    },
     "c089": {
       "canonical_ar": "عبد الرحمن ابن أحمد",
       "canonical_translit": "ʿAbd al-Raḥmān b. Aḥmad",
@@ -3856,6 +3817,14 @@
       ],
       "user_confirmed": true
     },
+    "c124": {
+      "canonical_ar": "عبد الرزاق القاشاني",
+      "canonical_translit": "ʿAbd al-Razzāq al-Qāšānī",
+      "full_name": "Kamāl al-Dīn ʿAbd al-Razzāq b. Abī al-Ġanāʾim al-Qāšānī",
+      "dates": "d. c. 736/1335",
+      "authorities": [],
+      "user_confirmed": true
+    },
     "n000": {
       "canonical_ar": "النيسابوري",
       "canonical_translit": "al-Naysābūrī",
@@ -3925,7 +3894,7 @@
     "داود الباخلي الاسكندري": "c064",
     "علي بن احمد الحموي الشاذلي الكيزواني": "c065",
     "القشيري": "c007",
-    "عبد الرزاق بن ابي الغنائم القاشاني": "c060",
+    "عبد الرزاق بن ابي الغنائم القاشاني": "c124",
     "داود بن محمود القيصري": "c030",
     "الغزالي": "c013",
     "محمد بن محمد الغمري": "c067",
@@ -3963,7 +3932,7 @@
     "ابو مطيع مكحول النسفي": "c120",
     "ابو الحسن البصري": "c009",
     "ابو الفرج ابن عبد المحسن الانصاري": "c087",
-    "ابو زكريا يحيي بن شرف الدين النووي": "c088",
+    "ابو الحسن النوري": "c036",
     "المستملي": "c118",
     "عبد الرحمن ابن احمد": "c089",
     "محمد الصقلي": "c018",
@@ -3973,7 +3942,6 @@
     "البصري": "c009",
     "النوري": "c036",
     "الروزباري": "c037",
-    "ابو الحسن النوري": "c036",
     "ابو القاسم احمد بن قسي المغربي": "c092",
     "ابو بكر جعفر بن محيي الحسن بن المستفاص الفيزيائي": "c093",
     "السمرقندي": "c094",
@@ -4430,7 +4398,8 @@
     "r0083": {
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "iṣṭilāḥāṭ al-ṣūfīyah",
-      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069119"
+      "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069119",
+      "discrepancy_note": "Filed under Fayḍ al-Kāšānī (d. 1090/1679) on the strength of the nisba alone. The author cell names ʿAbd al-Razzāq b. Abī al-Ġanāʾim al-Qāšānī (d. c. 736/1335), whose Iṣṭilāḥāt al-ṣūfiyya this is — a different man by ism and by three and a half centuries."
     },
     "r0084": {
       "library": "Staatsbibliothek zu Berlin",
@@ -4581,8 +4550,10 @@
       "pub_citation": "Abū al-Muʿīn al-Nasafī, Tabṣirat al-adilla fī uṣūl al-dīn, ed. Claude Salamé, 2 vols., Damascus: IFEAD, 1990–93."
     },
     "r0122": {
-      "title_translit": "al-tawḥīd",
-      "work_url": "https://www.fihrist.org.uk/catalog/manuscript_225"
+      "title": "كتاب التوحيد",
+      "catalog_note": "Identified as Kitāb al-Tawḥīd; Cambridge Add. 3651 is its principal witness.",
+      "work_url": "https://www.fihrist.org.uk/catalog/manuscript_225",
+      "discrepancy_note": "Nwyia's index records the title as «التوحيد»."
     },
     "r0123": {
       "shelfmark": "",
@@ -4597,9 +4568,11 @@
       "title_translit": "kitāb al-waraʿ"
     },
     "r0126": {
-      "title_translit": "tafsīr",
+      "title": "تفسير القرآن العظيم",
+      "catalog_note": "Identified as Tafsīr al-Qurʾān al-ʿaẓīm, al-Tustarī's commentary.",
       "pub_status": "published",
-      "pub_citation": "Tafsīr al-Qurʾān al-Karīm. Cairo: Dār al-Saʿādah, 1325/1908."
+      "pub_citation": "Tafsīr al-Qurʾān al-Karīm. Cairo: Dār al-Saʿādah, 1325/1908.",
+      "discrepancy_note": "Nwyia's index records the title as «تفسير»."
     },
     "r0127": {
       "title_translit": "maṭālib b. abī bišr"
@@ -4630,7 +4603,9 @@
       "title_translit": "rasāʾil ʿabd al-malik b. marwān wa-ḥasan al-baṣrī"
     },
     "r0134": {
-      "title_translit": "ḥikam"
+      "title": "حكم أبي مدين",
+      "catalog_note": "Identified as the Ḥikam of Abū Madyan Šuʿayb.",
+      "discrepancy_note": "Nwyia's index records the title as «حكم»."
     },
     "r0135": {
       "title_translit": "ḥikam"
@@ -4639,10 +4614,12 @@
       "title_translit": "kitāb al-maqāmāt al-ṯalāṯah"
     },
     "r0137": {
-      "title_translit": "tafsīr",
+      "title": "حقائق التفسير",
+      "catalog_note": "Identified as Ḥaqāʾiq al-tafsīr, al-Sulamī's Qurʾān commentary.",
       "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
       "pub_status": "published",
-      "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah."
+      "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah.",
+      "discrepancy_note": "Nwyia's index records the title as «تفسير»."
     },
     "r0138": {
       "title_translit": "kitāb al-ḥaqāʾiq",
@@ -4691,19 +4668,25 @@
       "pub_citation": "ʿAfīf al-Dīn al-Tilimsānī, Sharḥ Mawāqif al-Niffarī, ed. Jamāl al-Marzūqī, Cairo, 2000 (also ed. ʿĀṣim Ibrāhīm al-Kayyālī, Beirut, 2007)."
     },
     "r0149": {
-      "title_translit": "taʾwīlāt"
+      "title": "تأويلات القرآن",
+      "catalog_note": "Identified as Taʾwīlāt al-Qurʾān (Taʾwīlāt ahl al-sunna), al-Māturīdī's commentary; the four volumes fit its extent.",
+      "discrepancy_note": "Nwyia's index records the title as «تأويلات»."
     },
     "r0150": {
-      "title_translit": "al-mutamannīyīn",
-      "pub_status": "published"
+      "title": "كتاب المتمنين",
+      "catalog_note": "Identified as Kitāb al-Mutamannīn, one of Ibn Abī al-Dunyā's monographs.",
+      "pub_status": "published",
+      "discrepancy_note": "Nwyia's index records the title as «المتمنيين»."
     },
     "r0151": {
       "title_translit": "al-tahaǧǧud wa-qiyām al-layl",
       "pub_status": "published"
     },
     "r0152": {
-      "title_translit": "al-awliyāʾ",
-      "pub_status": "published"
+      "title": "كتاب الأولياء",
+      "catalog_note": "Identified as Kitāb al-Awliyāʾ, one of Ibn Abī al-Dunyā's monographs.",
+      "pub_status": "published",
+      "discrepancy_note": "Nwyia's index records the title as «الأولياء»."
     },
     "r0153": {
       "title_translit": "al-ṣabr wa-l-ṯawāb ʿalayh",
@@ -4795,13 +4778,17 @@
       "title_translit": "tiryāq al-muḥibbīn fī ṭabaqāt ḫirḫat al-mašāyiḫ al-ʿārifīn"
     },
     "r0172": {
-      "title_translit": "maqāmat al-qulūb"
+      "author": "ابو الحسن النوري",
+      "title_translit": "maqāmat al-qulūb",
+      "discrepancy_note": "Nwyia's index attributes this copy to al-Nawawī (النووي). Maqāmāt al-qulūb is Abū al-Ḥasan al-Nūrī's (النوري); the two names differ by one letter, and Fonds cote 078 bundles this copy with r0201, the same work under al-Nūrī."
     },
     "r0173": {
-      "title_translit": "ḥaqāʾiq",
+      "title": "حقائق التفسير",
+      "catalog_note": "Identified as Ḥaqāʾiq al-tafsīr, al-Sulamī's Qurʾān commentary.",
       "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
       "pub_status": "published",
-      "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah."
+      "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah.",
+      "discrepancy_note": "Nwyia's index records the title as «حقائق»."
     },
     "r0174": {
       "title_translit": "al-makāsib wa-l-waraʿ wa-l-šuhbah wa-bayān mubāḥhā ...wa-maḥẓūruhā wa-iḫtilāf al-nās fī ṭalabihā",
@@ -4842,8 +4829,10 @@
       "title_translit": "kitāb al-nūr"
     },
     "r0182": {
-      "title_translit": "al-ʿaẓamah",
-      "pub_status": "published"
+      "title": "كتاب العظمة",
+      "catalog_note": "Identified as Kitāb al-ʿAẓama, one of Ibn Abī al-Dunyā's monographs.",
+      "pub_status": "published",
+      "discrepancy_note": "Nwyia's index records the title as «العظمة»."
     },
     "r0183": {
       "title_translit": "tafsīr"
@@ -4925,10 +4914,12 @@
       "title_translit": "50 فريضة"
     },
     "r0200": {
-      "title_translit": "al-mawāqif",
+      "title": "كتاب المواقف",
+      "catalog_note": "Identified as Kitāb al-Mawāqif, ed. A. J. Arberry (London, 1935).",
       "work_url": "https://archive.org/details/Niffari",
       "pub_status": "published",
-      "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
+      "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935.",
+      "discrepancy_note": "Nwyia's index records the title as «المواقف»."
     },
     "r0201": {
       "title_translit": "maqāmat al-qulūb"
@@ -4990,12 +4981,18 @@
       "pub_citation": "Paul Nwyia (ed.). “Šaqīq al-Balḫī, Ādāb al-ʿibādāt,” in Trois œuvres inédites de mystiques musulmans. Beyrouth: Dar el-Machreq, 1973."
     },
     "r0226": {
+      "title": "لطائف الاشارات",
+      "catalog_note": "Identified as Laṭāʾif al-išārāt, al-Qušayrī's Qurʾān commentary.",
       "pub_status": "published",
-      "pub_citation": "al-Qushayrī, Laṭāʾif al-ishārāt (Qurʾān commentary), ed. Ibrāhīm Basyūnī, Cairo: al-Hayʾa al-Miṣriyya al-ʿĀmma li-l-Kitāb, 1981."
+      "pub_citation": "al-Qushayrī, Laṭāʾif al-ishārāt (Qurʾān commentary), ed. Ibrāhīm Basyūnī, Cairo: al-Hayʾa al-Miṣriyya al-ʿĀmma li-l-Kitāb, 1981.",
+      "discrepancy_note": "Nwyia's index records the title as «21 – 1 تفسير»."
     },
     "r0227": {
+      "title": "لطائف الاشارات",
+      "catalog_note": "Identified as Laṭāʾif al-išārāt, al-Qušayrī's Qurʾān commentary.",
       "pub_status": "published",
-      "pub_citation": "al-Qushayrī, Laṭāʾif al-ishārāt (Qurʾān commentary), ed. Ibrāhīm Basyūnī, Cairo: al-Hayʾa al-Miṣriyya al-ʿĀmma li-l-Kitāb, 1981."
+      "pub_citation": "al-Qushayrī, Laṭāʾif al-ishārāt (Qurʾān commentary), ed. Ibrāhīm Basyūnī, Cairo: al-Hayʾa al-Miṣriyya al-ʿĀmma li-l-Kitāb, 1981.",
+      "discrepancy_note": "Nwyia's index records the title as «3122 – تفسير»."
     },
     "r0231": {
       "title": "رسالة الزيتونية",
@@ -5015,6 +5012,11 @@
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
     },
+    "r0236": {
+      "title": "حكم أبي مدين",
+      "catalog_note": "Identified as the Ḥikam of Abū Madyan Šuʿayb.",
+      "discrepancy_note": "Nwyia's index records the title as «حكم»."
+    },
     "r0241": {
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
@@ -5024,14 +5026,22 @@
       "title": "رسالة",
       "catalog_note": "نص غير مكتمل"
     },
+    "r0245": {
+      "title": "حكم أبي مدين",
+      "catalog_note": "Identified as the Ḥikam of Abū Madyan Šuʿayb.",
+      "discrepancy_note": "Nwyia's index records the title as «حكم»."
+    },
     "r0246": {
       "title": "كتاب الشفاء والعلل",
       "catalog_note": "مقتطفات"
     },
     "r0249": {
+      "title": "كتاب الطواسين",
+      "catalog_note": "Identified as Kitāb al-Ṭawāsīn, al-Ḥallāǧ's only surviving book, ed. L. Massignon (Paris, 1913).",
       "work_url": "https://archive.org/details/kitbalawsn00usaiuoft",
       "pub_status": "published",
-      "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969."
+      "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969.",
+      "discrepancy_note": "Nwyia's index records the title as «طواسين»."
     },
     "r0250": {
       "pub_status": "published",
@@ -5065,18 +5075,22 @@
       "catalog_note": "No title is recorded for this entry in the Fonds index."
     },
     "r0261": {
-      "title": "طواسين",
-      "catalog_note": "نسختان",
+      "title": "كتاب الطواسين",
+      "catalog_note": "Identified as Kitāb al-Ṭawāsīn, al-Ḥallāǧ's only surviving book, ed. L. Massignon (Paris, 1913).",
       "work_url": "https://archive.org/details/kitbalawsn00usaiuoft",
       "pub_status": "published",
-      "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969."
+      "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969.",
+      "discrepancy_note": "Nwyia's index records the title as «طواسين»."
     },
     "r0262": {
       "pub_status": "published"
     },
     "r0264": {
+      "title": "الحكم العطائية",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "pub_status": "published",
-      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "discrepancy_note": "Nwyia's index records the title as «الحكم»."
     },
     "r0265": {
       "pub_status": "published",
@@ -5087,8 +5101,11 @@
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
     },
     "r0267": {
+      "title": "الحكم العطائية",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "pub_status": "published",
-      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "discrepancy_note": "Nwyia's index records the title as «الحكم»."
     },
     "r0270": {
       "author": "النفري",
@@ -5115,9 +5132,12 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905427"
     },
     "r0277": {
+      "title": "الحكم العطائية",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90557n",
       "pub_status": "published",
-      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "discrepancy_note": "Nwyia's index records the title as «الحكم»."
     },
     "r0278": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905605",
@@ -5177,6 +5197,12 @@
     "r0293": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc30356f"
     },
+    "r0295": {
+      "title": "المنظومة في الطب",
+      "catalog_note": "BnF Arabe 3038 is a majmūʿ of three medical texts, of which Ibn Sīnā's is the third: 1° ff. 1–54 Zād al-musāfir wa-qūt al-ḥāḍir; 2° f. 56v a treatise on the pulse by Muḥammad b. Aḥmad b. al-ʿĀṣ; 3° f. 62 al-Manẓūma fī al-ṭibb by Avicenna. Paper, 70 ff., various 17th-c. hands.",
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc309468",
+      "discrepancy_note": "Nwyia's index records the title as «Traité médicale»."
+    },
     "r0296": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc31125c"
     },
@@ -5184,7 +5210,13 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc31421x"
     },
     "r0299": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc32644j"
+      "title": "Twelve treatises on theology and philosophy",
+      "folios": "212 ff.",
+      "catalog_note": "BnF Arabe 5018: «12 traités de théologie et de philosophie par Abou Abd Allah Mohammad ibn Ali al-Tirmidi». Egyptian naskh, 14th c., gold title, 212 ff., 20 × 15.5 cm; entered 1890. Two of the twelve are edited: al-Ḥaǧǧ wa-asrāruhu (ff. 36v–50), ed. Ḥ. N. Zaydān (Cairo, 1969); al-Iḥtiyāṭāt, ed. ʿA. Ǧahdanī (Beirut, 2011). See also the typescript notices of Georges Vajda for Arabe 4600–5114.",
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc32644j",
+      "pub_status": "partial",
+      "pub_citation": "Two treatises edited: al-Ḥaǧǧ wa-asrāruhu, ed. Ḥ. N. Zaydān (Cairo, 1969); al-Iḥtiyāṭāt, ed. ʿA. Ǧahdanī (Beirut, 2011).",
+      "discrepancy_note": "Nwyia's index records the title as «Opera»."
     },
     "r0300": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc32885z",
@@ -5211,7 +5243,10 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc5960x"
     },
     "r0306": {
-      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc19984n"
+      "title": "كتاب الاصطلاح على بطن القرآن",
+      "catalog_note": "BnF Arabe 6962: titled at f. 1 Kitāb al-iṣṭilāḥ ʿalā baṭn al-Qurʾān (catalogued as Kitāb fī al-iṣṭilāḥāt). GAL Suppl. II, 281; Ahlwardt I, 874–875. Copy completed 15 Rabīʿ II 895 / 8 March 1490. Nwyia's «tafsīr» is a loose descriptor: the work expounds the inner senses of the Qurʾān rather than being a running commentary.",
+      "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc19984n",
+      "discrepancy_note": "Nwyia's index records the title as «تفسير»."
     },
     "r0312": {
       "pub_status": "published",
@@ -5237,94 +5272,114 @@
       "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
     },
     "r0327": {
+      "title": "الحكم العطائية",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Sprenger 1169",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069346",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
-      "discrepancy_note": "Nwyia recorded this as “Tübingen 1169”: it is Berlin SBB Sprenger 1169, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 1169”: it is Berlin SBB Sprenger 1169, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0328": {
+      "title": "الحكم العطائية",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Sprenger 1172",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00013389",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
-      "discrepancy_note": "Nwyia recorded this as “Tübingen 1172”: it is Berlin SBB Sprenger 1172, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 1172”: it is Berlin SBB Sprenger 1172, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0329": {
+      "title": "الحكم العطائية",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Petermann II 159",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069343",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
-      "discrepancy_note": "Nwyia recorded this as “Tübingen 159”: it is Berlin SBB Petermann II 159, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 159”: it is Berlin SBB Petermann II 159, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0330": {
+      "title": "الحكم العطائية",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Wetzstein II 1730",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00064293",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
-      "discrepancy_note": "Nwyia recorded this as “Tübingen 1730”: it is Berlin SBB Wetzstein II 1730, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 1730”: it is Berlin SBB Wetzstein II 1730, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0331": {
+      "title": "الحكم العطائية",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Wetzstein II 1757",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069339",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
-      "discrepancy_note": "Nwyia recorded this as “Tübingen 1757”: it is Berlin SBB Wetzstein II 1757, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 1757”: it is Berlin SBB Wetzstein II 1757, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0332": {
+      "title": "الحكم العطائية",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Wetzstein II 1771",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069342",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
-      "discrepancy_note": "Nwyia recorded this as “Tübingen 1771”: it is Berlin SBB Wetzstein II 1771, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 1771”: it is Berlin SBB Wetzstein II 1771, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0333": {
+      "title": "الحكم العطائية",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Sprenger 1982",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069344",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
-      "discrepancy_note": "Nwyia recorded this as “Tübingen 1982”: it is Berlin SBB Sprenger 1982, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 1982”: it is Berlin SBB Sprenger 1982, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0334": {
+      "title": "الحكم العطائية",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Petermann I 275",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00020807",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
-      "discrepancy_note": "Nwyia recorded this as “Tübingen 275”: it is Berlin SBB Petermann I 275, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 275”: it is Berlin SBB Petermann I 275, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «حكم»."
     },
     "r0335": {
+      "title": "الحكم العطائية",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Landberg 552",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007211",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
-      "discrepancy_note": "Nwyia recorded this as “Tübingen 552”: it is Berlin SBB Landberg 552, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 552”: it is Berlin SBB Landberg 552, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «حكم»."
     },
     "r0336": {
+      "title": "الحكم العطائية",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Landberg 553",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007212",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
-      "discrepancy_note": "Nwyia recorded this as “Tübingen 553”: it is Berlin SBB Landberg 553, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
+      "discrepancy_note": "Nwyia recorded this as “Tübingen 553”: it is Berlin SBB Landberg 553, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «حكم»."
     },
     "r0337": {
       "city": "Berlin",
@@ -5365,8 +5420,11 @@
       "catalog_note": "syriaque"
     },
     "r0347": {
+      "title": "الحكم العطائية",
+      "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "pub_status": "published",
-      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972."
+      "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
+      "discrepancy_note": "Nwyia's index records the title as «حكم»."
     }
   },
   "machine_suggestions": {
@@ -5400,12 +5458,6 @@
     "r0118": {
       "title_translit": "Kitāb ʿilm al-awliyāʾ"
     },
-    "r0122": {
-      "title_translit": "Al-tawḥīd"
-    },
-    "r0126": {
-      "title_translit": "Tafsīr"
-    },
     "r0128": {
       "title_translit": "Kitāb ʿilm al-qulūb"
     },
@@ -5418,14 +5470,8 @@
     "r0133": {
       "title_translit": "Rasāʾil ʿabd al-malik b. marwān wa-ḥasan al-baṣrī"
     },
-    "r0134": {
-      "title_translit": "Ḥikam"
-    },
     "r0135": {
       "title_translit": "Ḥikam"
-    },
-    "r0137": {
-      "title_translit": "Tafsīr"
     },
     "r0138": {
       "title_translit": "Kitāb al-ḥaqāʾiq"
@@ -5435,9 +5481,6 @@
     },
     "r0145": {
       "title_translit": "Min kalām Sahl"
-    },
-    "r0152": {
-      "title_translit": "Al-awliyāʾ"
     },
     "r0156": {
       "title_translit": "Rawḍat al-murīdīn"
@@ -5453,9 +5496,6 @@
     },
     "r0172": {
       "title_translit": "Maqāmat al-qulūb"
-    },
-    "r0173": {
-      "title_translit": "Ḥaqāʾiq"
     },
     "r0177": {
       "title_translit": "Masāʾil"
@@ -5477,9 +5517,6 @@
     },
     "r0197": {
       "title_translit": "Šarḥ al-taʿarruf"
-    },
-    "r0200": {
-      "title_translit": "Al-mawāqif"
     },
     "r0201": {
       "title_translit": "Maqāmat al-qulūb"
