@@ -19,6 +19,12 @@
       "row": "r0170",
       "kept": "al-mutafarraqah",
       "note": ""
+    },
+    "r0285-attr": {
+      "stratum": "attribution",
+      "row": "r0285",
+      "kept": "كتاب العروة للمفتاح الفاتح للباب المقفّل",
+      "note": "This is just a long title, no need to adjust it. "
     }
   }
 }

@@ -87,6 +87,16 @@ const DATA = R.data();
 // One list, consumed everywhere. A stratum added to the app but not here would
 // make the export-completeness assertion silently under-count instead of fail.
 const STRATA = Object.keys(DATA.strata);
+// What a "decided" value looks like per axis, so a test can settle any card without
+// knowing which stratum it came from.
+const FILL = {verdict: "fix", disposition: "keep", form: "accept", translit: "x"};
+function axesOf(it){
+  if (it.stratum === "witness") return ["verdict"];
+  if (it.stratum === "attribution") return ["disposition"];
+  if (it.stratum === "homograph") return it.keys.map(k => "key:" + k.key);
+  return (it.rows && it.rows.length) || (it.scope && it.scope.titles.length)
+       ? ["form", "translit"] : ["form"];
+}
 
 /* ---- assertions -------------------------------------------------------- */
 let failures = 0;
@@ -212,9 +222,10 @@ console.log("\nhamza proposals");
 }
 
 console.log("\nattribution");
-{
+if (R.items("attribution").length === 0) {
+  console.log("  skip — attribution stratum is empty (all tails settled)");
+} else {
   const at = R.items("attribution");
-  ok(at.length > 0, `${at.length} attribution cards`);
   const it = at[0];
   R.setAx(it.id, "disposition", "strip");
   const rec = R.decisions().find(d => d.id === it.id);
@@ -230,8 +241,12 @@ console.log("\nattribution");
 }
 
 console.log("\northography second axis");
+// Pick any card that actually HAS the second axis, rather than a fixed confidence
+// tier — the tiers empty out as the batch is worked through.
 {
-  const it = R.items("ortho").find(x => x.confidence === "clear");
+  const it = R.items("ortho").find(x => x.proposed && axesOf(x).includes("translit"));
+  if (!it) console.log("  skip — no ortho card with a transliteration axis remains");
+  else {
   R.setAx(it.id, "form", "accept");
   ok(R.ready(it), `${it.id}: accept + prefilled translit is ready`);
   const rec = R.decisions().find(d => d.id === it.id);
@@ -241,6 +256,7 @@ console.log("\northography second axis");
   const keep = R.decisions().find(d => d.id === it.id);
   ok(keep.target === it.word && keep.translit === null,
      `${it.id}: "keep" exports the word unchanged and no new translit`);
+  }
 }
 
 console.log("\nevery card is answerable");
@@ -265,8 +281,10 @@ console.log("\nevery card is answerable");
             + `competing recorded readings: ${needsPick.join(", ") || "none"}`);
 
   for (const t of ["witness", "attribution"]) {
+    const items = R.items(t);
+    if (!items.length) { console.log(`  skip ${t} — stratum is empty`); continue; }
     const bad = [];
-    for (const it of R.items(t)) {
+    for (const it of items) {
       R.setAx(it.id, t === "witness" ? "verdict" : "disposition",
               t === "witness" ? "fix" : "strip");
       if (!R.ready(it)) bad.push(it.id);
@@ -292,11 +310,18 @@ console.log("\nexport contract");
 }
 
 console.log("\ndeferral is not resolution");
+// Any stratum can empty out as its work is settled — the residual bake is supposed
+// to shrink to nothing. Pick whatever stratum still has a card rather than assuming
+// one; announce the skip if none does.
 {
-  const it = R.items("witness")[0];
+  const host = STRATA.map(t => R.items(t)).find(xs => xs.length);
+  const it = host && host[0];
+  if (!it) console.log("  skip — every stratum is empty");
+  else {
   // Assign, do not toggle: setAx flips a value that is already set, so this test
   // would silently depend on whether an earlier block had touched the same card.
-  sandbox.__review.state()[it.id].verdict = "fix";
+  // Whatever the host stratum is, mark it decided the way its own axes require.
+  axesOf(it).forEach(ax => sandbox.__review.state()[it.id][ax] = FILL[ax] || "keep");
   sandbox.__review.state()[it.id].confirmed = true;
   delete sandbox.__review.state()[it.id].deferred;
   ok(R.complete(it), `${it.id}: confirmed is complete`);
@@ -305,6 +330,7 @@ console.log("\ndeferral is not resolution");
   const rec = R.decisions().find(x => x.id === it.id);
   ok(rec.disposition === "deferred" && rec.done === false,
      `${it.id}: deferred exports as parked, not resolved`);
+  }
 }
 
 console.log("\ncomposition lookup table");

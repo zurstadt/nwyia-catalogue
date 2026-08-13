@@ -170,6 +170,19 @@ def main() -> int:
         if LATIN.search(target):
             reject(d, f"canonical Arabic form contains Latin characters: {target!r}")
             continue
+        # A DERIVED card (šaddah, hamzat qaṭʿ) proposes a mark or a hamza carrier,
+        # and normalize_ar folds both away — so its answer must leave the word's
+        # normalized key untouched. An answer that moves the key has changed a
+        # LETTER, which on these cards is a typing slip, not a ruling: it would
+        # silently write a different word into every row the card covers. Hand-
+        # written ortho cards are exempt, because changing a letter is their job.
+        if str(d.get("confidence") or "").startswith(("hamza", "shadda")):
+            if cluster.normalize_ar(word) != cluster.normalize_ar(target):
+                reject(d, f"a {d['confidence']} card may only add marks or a hamza "
+                          f"carrier, but {target!r} changes a letter of {word!r} "
+                          f"({cluster.normalize_ar(word)} -> "
+                          f"{cluster.normalize_ar(target)})")
+                continue
         translit = (d.get("translit") or "").strip()
         scope = d.get("scope") or {}
         # A transliteration is required only where the word sits in a TITLE: that is
@@ -338,18 +351,42 @@ def main() -> int:
         if not target:
             reject(d, "no resulting title recorded"); continue
         current = (r.get("title") or "").strip()
-        if current == target:
-            unchanged.append(d["id"]); continue      # already applied — idempotent
         tail = (d.get("tail") or "").strip()
-        if tail and tail not in current:
-            reject(d, f"the tail {tail!r} is no longer in the title {current!r} — "
-                      f"the row changed under the adjudication"); continue
-        patch = {"title": target}
+        if current == target or cluster.normalize_ar(current) == cluster.normalize_ar(target):
+            unchanged.append(d["id"]); continue      # already applied — idempotent
+
+        # Apply this as a REMOVAL against the CURRENT title, never as an assignment
+        # of the title the app computed. `target` was rendered from a snapshot taken
+        # before this same run's orthographic passes edited the very same rows, so
+        # assigning it reverts them — a lost update that is invisible in the output
+        # (the tail does disappear, so the step looks like it worked) and only
+        # surfaces as a re-run that finds work to redo.
+        n_tail = len(ARABIC.findall(tail))
+        starts = [m.start() for m in ARABIC.finditer(current)]
+        if not n_tail or len(starts) <= n_tail:
+            reject(d, f"cannot locate a {n_tail}-word tail in {current!r} — the row "
+                      f"changed under the adjudication"); continue
+        new_title = current[:starts[len(starts) - n_tail]].strip()
+        # The removal must land where the app said it would. Compare normalized, so
+        # an orthographic fix applied earlier in this run counts as agreement while a
+        # genuinely different cut does not.
+        if cluster.normalize_ar(new_title) != cluster.normalize_ar(target):
+            reject(d, f"removing the last {n_tail} words of {current!r} gives "
+                      f"{new_title!r}, which is not the adjudicated {target!r} — the "
+                      f"row changed under the adjudication"); continue
+        patch = {"title": new_title}
         # The transliteration is trimmed only when the app said the row's two sides
         # were aligned. Otherwise the tail's own words cannot be located in it, and
-        # a guess would silently truncate the wrong end.
+        # a guess would silently truncate the wrong end. Same rule as the title: drop
+        # the tail's OWN word count off the current value rather than assigning the
+        # app's precomputed string.
         if d.get("target_translit"):
-            patch["title_translit"] = d["target_translit"]
+            cur_tr = (r.get("title_translit") or "").split()
+            n_tr = len((d.get("tail_translit") or "").split())
+            if n_tr and len(cur_tr) > n_tr:
+                patch["title_translit"] = " ".join(cur_tr[:len(cur_tr) - n_tr])
+            else:
+                patch["title_translit"] = d["target_translit"]
         elif tail and not d.get("aligned"):
             patch["discrepancy_note"] = " ".join(filter(None, [
                 (r.get("discrepancy_note") or "").strip(),
@@ -365,7 +402,7 @@ def main() -> int:
                 + (f" ({d['tail_translit']})" if d.get("tail_translit") else "") + "."]))
         rows[rid] = {**r, **patch}
         applied["attribution"].append({"id": d["id"], "row": rid, "was": current,
-                                       "now": target, "tail": tail})
+                                       "now": new_title, "tail": tail})
 
     # --- 3. homographs -------------------------------------------------------
     data = {**data, "rows": [rows[r["id"]] for r in data["rows"]]}
@@ -394,6 +431,28 @@ def main() -> int:
 
     updated = {**data, "rows": [rows[r["id"]] for r in data["rows"]],
                "clusters": [clusters[c["cluster_id"]] for c in data["clusters"]]}
+
+    # --- conservation: no later pass may undo an earlier one ------------------
+    # The strata edit the same fields in sequence, so a pass that ASSIGNS a whole
+    # value computed from a pre-run snapshot silently reverts whatever ran before
+    # it. That failure is invisible in the report — each pass truthfully says it did
+    # its work — and shows up only as a re-run that finds work to redo. Verify the
+    # end state instead of trusting the sequence: every word an ortho decision
+    # replaced must be gone from every row it touched.
+    reverted = []
+    for a in applied["ortho"]:
+        for rid in a["rows"]:
+            if any(bare(m.group()) == a["word"]
+                   for m in ARABIC.finditer(rows[rid].get("title") or "")):
+                reverted.append(f"{rid}: {a['word']!r} survived the fix to "
+                                f"{a['target']!r}")
+    if reverted:
+        print("\nREVERTED BY A LATER PASS — refusing to write:")
+        for x in reverted:
+            print(f"   {x}")
+        print("An earlier stratum's edit was overwritten by a later one. Fix the "
+              "ordering or make the later pass patch rather than assign.")
+        return 1
 
     # Composed titles stay separable from hand-written ones — the same channel
     # apply_word_lexicon.py uses, so report_provenance.py keeps working.

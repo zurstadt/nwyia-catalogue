@@ -778,6 +778,15 @@ def main() -> int:
             ids = [i for i in ids if i in set(o["only_rows"])]
         if o["id"] in kept:
             continue                      # ruled keep in an earlier batch
+        # `occ` is keyed mark-BLIND, the way the ingest matches. That is right for
+        # FINDING the word and wrong for deciding whether it is still open: a fix
+        # that only adds marks (a šaddah) leaves the key unchanged, so the row keeps
+        # matching and the card returns forever. Ask the sharper question — does any
+        # occurrence still differ from the proposal?
+        if o.get("proposed"):
+            ids = [i for i in ids
+                   if any(bare(m.group()) == o["word"] and m.group() != o["proposed"]
+                          for m in ARABIC.finditer(rows_by_id[i].get("title") or ""))]
         scope = o.get("scope") or {}
         if not ids and not (scope.get("authors") or scope.get("clusters")):
             continue                      # already canonicalized — settled, drop it
