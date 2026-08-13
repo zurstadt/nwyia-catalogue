@@ -84,6 +84,9 @@ vm.runInContext(code, sandbox, {filename: "translit_adjudicate.html"});
 
 const R = sandbox.__review;
 const DATA = R.data();
+// One list, consumed everywhere. A stratum added to the app but not here would
+// make the export-completeness assertion silently under-count instead of fail.
+const STRATA = Object.keys(DATA.strata);
 
 /* ---- assertions -------------------------------------------------------- */
 let failures = 0;
@@ -93,7 +96,7 @@ function ok(cond, label, detail){
 }
 
 console.log("render");
-for (const t of ["witness", "homograph", "ortho"]) {
+for (const t of STRATA) {
   const n = R.items(t).length;
   let threw = null;
   for (let i = 0; i < n; i++) {
@@ -108,7 +111,7 @@ console.log("\nescaping");
   // Nothing from the payload may reach innerHTML as markup: the two sentinels the
   // highlighter uses must never survive into the rendered string.
   let leaked = null;
-  for (const t of ["witness", "homograph", "ortho"])
+  for (const t of STRATA)
     for (let i = 0; i < R.items(t).length; i++) {
       R.go(t, i);
       const h = byId("app")._html;
@@ -161,6 +164,71 @@ console.log("\nšaddah proposals");
   }
 }
 
+console.log("\nhamza proposals");
+{
+  const CARRIERS = "\u0623\u0625\u0622\u0671";           // أ إ آ ٱ
+  const hz = R.items("ortho").filter(x => String(x.confidence).startsWith("hamza"));
+  // A hamza card restores a CARRIER on an existing bare ālif. It may therefore
+  // differ from its word in exactly one position, that position must hold a
+  // carrier, and the word must have held a plain ālif there. Anything else means
+  // the derivation changed a letter it had no business touching.
+  const bad = hz.filter(x => {
+    if (!x.proposed) return false;
+    if (x.proposed.length !== x.word.length) return true;
+    const diff = [...x.word].map((c,i) => c === x.proposed[i] ? null : i).filter(i => i !== null);
+    return diff.length !== 1 || !CARRIERS.includes(x.proposed[diff[0]])
+        || x.word[diff[0]] !== "\u0627";
+  });
+  ok(bad.length === 0, `${hz.length} hamza cards: each swaps one bare ālif for a carrier`,
+     bad.map(x => `${x.word}->${x.proposed}`).join(", "));
+
+  // Hamzat waṣl must never be proposed for a carrier. These are attested in the
+  // corpus and every one of them is form VII/VIII/X or closed-class.
+  const WASL = ["\u0627\u0635\u0637\u0644\u0627\u062d",
+                "\u0627\u0635\u0637\u0644\u0627\u062d\u0627\u062a",
+                "\u0627\u0644\u0627\u0635\u0637\u0644\u0627\u062d",
+                "\u0627\u0644\u0627\u0646\u062a\u0635\u0627\u0631",
+                "\u0627\u0628\u0646"];
+  const leaked = WASL.filter(w => hz.some(x => x.word === w));
+  ok(leaked.length === 0, "no hamzat-waṣl word is offered a carrier", leaked.join(", "));
+
+  // A derived card restores a carrier and nothing else, so it must be key-neutral.
+  // Only a hand-written ORTHO card may move a normalized key, and it must say so.
+  const derived = R.items("ortho").filter(x => /^[hs]-/.test(x.id));
+  const moved = derived.filter(x => x.key_changes);
+  ok(moved.length === 0, "no derived šaddah/hamza card moves a normalized key",
+     moved.map(x => x.word).join(", "));
+  const declared = R.items("ortho").filter(x => x.key_changes);
+  ok(declared.every(x => x.translit),
+     "every key-moving card carries the transliteration its new key needs",
+     declared.filter(x => !x.translit).map(x => x.id).join(", "));
+
+  // Every surface a card claims to touch must be non-empty somewhere, or the card
+  // is proposing an edit with no target.
+  const empty = hz.filter(x => !x.scope.titles.length && !x.scope.authors.length
+                            && !x.scope.clusters.length);
+  ok(empty.length === 0, "every hamza card names at least one surface to edit",
+     empty.map(x => x.word).join(", "));
+}
+
+console.log("\nattribution");
+{
+  const at = R.items("attribution");
+  ok(at.length > 0, `${at.length} attribution cards`);
+  const it = at[0];
+  R.setAx(it.id, "disposition", "strip");
+  const rec = R.decisions().find(d => d.id === it.id);
+  ok(rec.tail === it.tail && rec.was === it.title,
+     "a strip exports the tail it removes AND the title it removed it from");
+  ok(rec.target === it.proposed_title, "…and the resulting title");
+  ok(at.every(x => x.title.includes(x.tail)),
+     "every tail is a literal substring of its title");
+  ok(at.every(x => !x.aligned || x.proposed_translit !== null),
+     "an aligned row carries a trimmed transliteration");
+  R.setAx(it.id, "disposition", "strip");   // toggle back off
+  ok(!R.ready(it), "un-answering the disposition reopens the decision");
+}
+
 console.log("\northography second axis");
 {
   const it = R.items("ortho").find(x => x.confidence === "clear");
@@ -178,7 +246,7 @@ console.log("\northography second axis");
 console.log("\nexport contract");
 {
   const d = R.decisions();
-  const total = ["witness","homograph","ortho"].reduce((a,t)=>a+R.items(t).length, 0);
+  const total = STRATA.reduce((a,t)=>a+R.items(t).length, 0);
   ok(d.length === total,
      `export walks the worklist, not touched state (${d.length}/${total})`);
   const untouched = d.filter(x => x.disposition === "open");

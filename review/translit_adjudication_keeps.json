@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "updated": "2026-08-13",
+  "keeps": {
+    "s-الله": {
+      "stratum": "ortho",
+      "word": "الله",
+      "kept": "الله",
+      "note": "We don't need to add another one, this ends up being written as a ligature which already includes the šaddah and the vocalization on the second written lām."
+    },
+    "r0268-muqtatafat": {
+      "stratum": "witness",
+      "row": "r0268",
+      "kept": "muqtaṭṭafāt",
+      "note": ""
+    },
+    "r0170-mutafarriqa": {
+      "stratum": "witness",
+      "row": "r0170",
+      "kept": "al-mutafarraqah",
+      "note": ""
+    }
+  }
+}
