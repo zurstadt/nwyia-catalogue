@@ -1,24 +1,74 @@
 {
   "schema_version": 1,
   "applied_date": "2026-08-13",
-  "source_export": "/Users/jfireland05/Downloads/translit_adjudication_decisions (2).json",
-  "annotator": null,
+  "source_export": "/Users/jfireland05/Downloads/translit_adjudication_decisions (3).json",
+  "annotator": "jf",
   "applied": {
     "ortho": [
       {
-        "id": "h-الاسراء",
-        "word": "الاسراء",
-        "target": "الإسراء",
-        "translit": "al-isrāʾ",
+        "id": "o08",
+        "word": "ابي",
+        "target": "أبي",
+        "translit": "abī",
+        "rows": [],
+        "retransliterated": [],
+        "authors": [
+          "r0030",
+          "r0083",
+          "r0150",
+          "r0151",
+          "r0152",
+          "r0153",
+          "r0154",
+          "r0155",
+          "r0182",
+          "r0210",
+          "r0223"
+        ],
+        "clusters": [
+          "c004",
+          "c055",
+          "c124"
+        ]
+      },
+      {
+        "id": "s-الأئمة",
+        "word": "الأئمة",
+        "target": "الأئمّة",
+        "translit": "al-aʾimmah",
         "rows": [
-          "r0067",
-          "r0068",
-          "r0302"
+          "r0263"
         ],
         "retransliterated": [
-          "r0067",
-          "r0068",
-          "r0302"
+          "r0263"
+        ],
+        "authors": [],
+        "clusters": []
+      },
+      {
+        "id": "s-الأدلة",
+        "word": "الأدلة",
+        "target": "الأدلّة",
+        "translit": "al-adillah",
+        "rows": [
+          "r0121"
+        ],
+        "retransliterated": [
+          "r0121"
+        ],
+        "authors": [],
+        "clusters": []
+      },
+      {
+        "id": "h-الالهي",
+        "word": "الالهي",
+        "target": "الإلهيّ",
+        "translit": "al-ilāhī",
+        "rows": [
+          "r0020"
+        ],
+        "retransliterated": [
+          "r0020"
         ],
         "authors": [],
         "clusters": []
@@ -28,59 +78,7 @@
     "homograph": [],
     "attribution": []
   },
-  "unchanged": [
-    "o15:r0155",
-    "r0081",
-    "r0083",
-    "r0084",
-    "r0218",
-    "r0317",
-    "r0318",
-    "r0339",
-    "r0021-attr",
-    "r0067-attr",
-    "r0068-attr",
-    "r0069-attr",
-    "r0070-attr",
-    "r0302-attr",
-    "r0148-attr",
-    "r0285-attr"
-  ],
+  "unchanged": [],
   "deferred": [],
-  "quarantine": [
-    {
-      "id": "h-الالهي",
-      "stratum": "ortho",
-      "reason": "a hamza card may only add marks or a hamza carrier, but 'اللإلهيّ' changes a letter of 'الالهي' (الالهي -> اللالهي)",
-      "record": {
-        "id": "h-الالهي",
-        "stratum": "ortho",
-        "done": true,
-        "disposition": "resolved",
-        "note": "need to keep the šaddah on the terminal ي",
-        "word": "الالهي",
-        "action": "canonicalize",
-        "target": "اللإلهيّ",
-        "translit": "al-ilāhī",
-        "suggested": "الإلهي",
-        "suggested_translit": "al-ilāhī",
-        "translit_was": "al-ilāhī",
-        "confidence": "hamza",
-        "rows": [
-          "r0020"
-        ],
-        "translits_seen": [
-          "al-ilāhī"
-        ],
-        "scope": {
-          "titles": [
-            "r0020"
-          ],
-          "authors": [],
-          "clusters": []
-        },
-        "changed": true
-      }
-    }
-  ]
+  "quarantine": []
 }

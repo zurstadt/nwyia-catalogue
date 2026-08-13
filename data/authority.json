@@ -48,7 +48,10 @@
           "url": "https://scholar.google.com/scholar?q=Al-Hakim%20al-Tirmidhi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الترمذي"
+      ]
     },
     "c001": {
       "canonical_ar": "أبو عبد الرحمن السلمي",
@@ -97,7 +100,11 @@
           "url": "https://scholar.google.com/scholar?q=Al-Sulami"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو عبد الرحمن",
+        "السلمي"
+      ]
     },
     "c002": {
       "canonical_ar": "ابن عطاء الله الإسكندري",
@@ -146,7 +153,11 @@
           "url": "https://scholar.google.com/scholar?q=Ibn%20Ata%20Allah%20al-Iskandari"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن عطاء",
+        "ابن عطاء الله"
+      ]
     },
     "c003": {
       "canonical_ar": "صدر الدين القونوي",
@@ -200,10 +211,13 @@
           "url": "https://scholar.google.com/scholar?q=Sadr%20al-Din%20al-Qunawi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "القونوي"
+      ]
     },
     "c004": {
-      "canonical_ar": "ابن ابي الدنيا",
+      "canonical_ar": "ابن أبي الدنيا",
       "canonical_translit": "Ibn Abī al-Dunyā",
       "full_name": "Abū Bakr ʿAbd Allāh b. Muḥammad Ibn Abī al-Dunyā",
       "dates": "d. 281/894",
@@ -249,7 +263,10 @@
           "url": "https://scholar.google.com/scholar?q=Ibn%20Abi%20al-Dunya"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن أبي الدنيا"
+      ]
     },
     "c005": {
       "canonical_ar": "ابن العربي",
@@ -298,7 +315,12 @@
           "url": "https://scholar.google.com/scholar?q=Ibn%20Arabi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن العربي",
+        "ابن عربي",
+        "محمد بن علي الأندلسيّ"
+      ]
     },
     "c006": {
       "canonical_ar": "الحلاج",
@@ -342,7 +364,10 @@
           "url": "https://scholar.google.com/scholar?q=Al-Hallaj"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الحلاج"
+      ]
     },
     "c007": {
       "canonical_ar": "أبو القاسم القشيري",
@@ -371,10 +396,13 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Qasim%20al-Qusayri"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "القشيري"
+      ]
     },
     "c008": {
-      "canonical_ar": "علي بن احمد الحرالي",
+      "canonical_ar": "علي بن أحمد الحرالي",
       "canonical_translit": "ʿAlī b. Aḥmad al-Ḥarrālī",
       "full_name": "Abū al-Ḥasan ʿAlī b. Aḥmad b. al-Ḥasan al-Tujībī al-Ḥarrālī al-Marrākušī",
       "dates": "d. 638/1241",
@@ -385,7 +413,10 @@
           "url": "https://ar.wikipedia.org/wiki/الحرالي"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "فخر الدين أبو الحسن علي بن أحمد حرّالي"
+      ]
     },
     "c009": {
       "canonical_ar": "الحسن البصري",
@@ -434,7 +465,13 @@
           "url": "https://scholar.google.com/scholar?q=Hasan%20al-Basri"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو الحسن البصري",
+        "البصري",
+        "الحسن البصري",
+        "حسن البصري"
+      ]
     },
     "c010": {
       "canonical_ar": "محمد بن عبد الله النفري",
@@ -463,7 +500,10 @@
           "url": "https://scholar.google.com/scholar?q=Muhammad%20b.%20%CA%BFAbd%20Allah%20al-Niffari"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "النفري"
+      ]
     },
     "c011": {
       "canonical_ar": "بولس نويا",
@@ -498,6 +538,9 @@
         }
       ],
       "user_confirmed": true,
+      "variants": [
+        "بولس نويا"
+      ],
       "category": "modern"
     },
     "c012": {
@@ -537,7 +580,10 @@
           "url": "https://scholar.google.com/scholar?q=Isma%CA%BFil%20b.%20Sawdakin%20al-Nuri"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن سودكين"
+      ]
     },
     "c013": {
       "canonical_ar": "أبو حامد الغزالي",
@@ -586,7 +632,10 @@
           "url": "https://scholar.google.com/scholar?q=Al-Ghazali"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الغزالي"
+      ]
     },
     "c014": {
       "canonical_ar": "ابن عبّاد الرندي",
@@ -635,7 +684,11 @@
           "url": "https://scholar.google.com/scholar?q=Ibn%20Abbad%20al-Rundi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن عبّاد",
+        "سيدي الصبرجي"
+      ]
     },
     "c015": {
       "canonical_ar": "الحارث المحاسبي",
@@ -684,7 +737,10 @@
           "url": "https://scholar.google.com/scholar?q=Al-Muhasibi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الحارث المحاسبي"
+      ]
     },
     "c016": {
       "canonical_ar": "أبو سعد الخركوشي",
@@ -708,7 +764,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Sa%CA%BFd%20al-Hargusi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الخركوشي"
+      ]
     },
     "c017": {
       "canonical_ar": "شقيق البلخي",
@@ -757,7 +816,10 @@
           "url": "https://scholar.google.com/scholar?q=Saqiq%20al-Balhi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "شقيق البلخي"
+      ]
     },
     "c018": {
       "canonical_ar": "أبو القاسم عبد الرحمن بن محمد الصقلي",
@@ -765,7 +827,11 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو القاسم عبد الرحمن بن محمد الصقلي",
+        "محمد الصقلي"
+      ]
     },
     "c019": {
       "canonical_ar": "ميشال آلار",
@@ -800,6 +866,9 @@
         }
       ],
       "user_confirmed": true,
+      "variants": [
+        "ميشال آلار"
+      ],
       "category": "modern"
     },
     "c020": {
@@ -829,7 +898,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Nasr%20al-Farabi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو نصر الفارابي"
+      ]
     },
     "c021": {
       "canonical_ar": "روزبهان البقلى الشيرازي",
@@ -873,7 +945,11 @@
           "url": "https://scholar.google.com/scholar?q=Ruzbihan%20Baqli%20al-Sirazi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو محمد روزبهان البقلي الشيرازي",
+        "روزبهان الشيرازي"
+      ]
     },
     "c023": {
       "canonical_ar": "جعفر الصادق",
@@ -922,7 +998,10 @@
           "url": "https://scholar.google.com/scholar?q=Ga%CA%BFfar%20al-Sadiq"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "جعفر الصادق"
+      ]
     },
     "c024": {
       "canonical_ar": "أبو طالب المكي",
@@ -971,7 +1050,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Talib%20al-Makki"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو طالب المكي"
+      ]
     },
     "c025": {
       "canonical_ar": "سهل التستري",
@@ -1020,7 +1102,11 @@
           "url": "https://scholar.google.com/scholar?q=Sahl%20al-Tustari"
         }
       ],
-      "user_confirmed": false
+      "user_confirmed": false,
+      "variants": [
+        "أبو سعيد الخرّاز، الوسي، التستري",
+        "التستري"
+      ]
     },
     "c026": {
       "canonical_ar": "أبو مدين شعيب",
@@ -1069,7 +1155,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Madyan%20Su%CA%BFayb"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو مدين شعيب"
+      ]
     },
     "c027": {
       "canonical_ar": "ابن عجيبة",
@@ -1118,7 +1207,10 @@
           "url": "https://scholar.google.com/scholar?q=Ibn%20%CA%BFAgiba"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن عجيبة"
+      ]
     },
     "c028": {
       "canonical_ar": "ابن سينا",
@@ -1167,7 +1259,10 @@
           "url": "https://scholar.google.com/scholar?q=Ibn%20Sina"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن سينا"
+      ]
     },
     "c029": {
       "canonical_ar": "صدر الدين الشيرازي",
@@ -1216,7 +1311,10 @@
           "url": "https://scholar.google.com/scholar?q=Sadr%20al-Din%20al-Sirazi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "صدر الدين الشيرازي"
+      ]
     },
     "c030": {
       "canonical_ar": "داود بن محمود القيصري",
@@ -1260,7 +1358,10 @@
           "url": "https://scholar.google.com/scholar?q=Dawud%20b.%20Mahmud%20al-Qaysari"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "داود بن محمود القيصري"
+      ]
     },
     "c032": {
       "canonical_ar": "أبو منصور الماتريدي",
@@ -1309,7 +1410,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Mansur%20al-Maturidi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الماتريدي"
+      ]
     },
     "c033": {
       "canonical_ar": "ابن برجان",
@@ -1358,7 +1462,10 @@
           "url": "https://scholar.google.com/scholar?q=Ibn%20Barragan"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن برجان"
+      ]
     },
     "c034": {
       "canonical_ar": "عفيف الدين التلمساني",
@@ -1402,7 +1509,10 @@
           "url": "https://scholar.google.com/scholar?q=%CA%BFAfif%20al-Din%20al-Tilimsani"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "التلمساني"
+      ]
     },
     "c035": {
       "canonical_ar": "ابن الجوزي",
@@ -1451,7 +1561,10 @@
           "url": "https://scholar.google.com/scholar?q=Ibn%20al-Gawzi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن الجوزي"
+      ]
     },
     "c036": {
       "canonical_ar": "أبو الحسن النوري",
@@ -1500,7 +1613,11 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Hasan%20al-Nuri"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو الحسن النوري",
+        "النوري"
+      ]
     },
     "c037": {
       "canonical_ar": "أبو علي الروذباري",
@@ -1524,7 +1641,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20%CA%BFAli%20al-Rudhbari"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الروزباري"
+      ]
     },
     "c038": {
       "canonical_ar": "ابن خميس الموصلي",
@@ -1532,10 +1652,13 @@
       "full_name": "Abū ʿAbd Allāh al-Ḥusayn b. Naṣr Ibn Ḫamīs al-Mawṣilī",
       "dates": "d. 552/1157",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن خميس"
+      ]
     },
     "c039": {
-      "canonical_ar": "ابو سعيد الخراز",
+      "canonical_ar": "أبو سعيد الخراز",
       "canonical_translit": "Abū Saʿīd al-Ḫarrāz",
       "full_name": "Abū Saʿīd Aḥmad b. ʿĪsā al-Kharrāz",
       "dates": "d. 286/899",
@@ -1581,7 +1704,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Sa%CA%BFid%20al-Harraz"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو سعيد الخرّاز"
+      ]
     },
     "c040": {
       "canonical_ar": "أبو العباس ابن العريف",
@@ -1630,7 +1756,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-%CA%BFAbbas%20Ibn%20al-%CA%BFArif"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن العريف"
+      ]
     },
     "c041": {
       "canonical_ar": "عبد الرحمن الجامي",
@@ -1674,7 +1803,11 @@
           "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-Rahman%20Gami"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو زيد عبد الرحمن بن أحمد الجامي",
+        "عبد الرحمن الجامي"
+      ]
     },
     "c042": {
       "canonical_ar": "محمد بن شعبة الحرّاني",
@@ -1682,7 +1815,10 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "محمد بن شعبة الحرّاني"
+      ]
     },
     "c043": {
       "canonical_ar": "عبد الكريم الجيلي",
@@ -1731,15 +1867,22 @@
           "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-Karim%20al-Gili"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "عبد الكريم الجيلي",
+        "عبد الكريم الكيلاني"
+      ]
     },
     "c044": {
-      "canonical_ar": "الاب عضم",
+      "canonical_ar": "الأب عضم",
       "canonical_translit": "al-Ab ʿAḍam(?)",
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": false
+      "user_confirmed": false,
+      "variants": [
+        "الأب عضم"
+      ]
     },
     "c045": {
       "canonical_ar": "المكزون السنجاري",
@@ -1778,7 +1921,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Muhammad%20al-Hasan%20b.%20Yusuf%20al-Makzun%20al-Sinjari"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "المكزون السنجاري"
+      ]
     },
     "c046": {
       "canonical_ar": "ابن تيمية",
@@ -1817,10 +1963,13 @@
           "url": "https://scholar.google.com/scholar?q=Ibn%20Taymiyah"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن تيمية"
+      ]
     },
     "c047": {
-      "canonical_ar": "ابو العلاء المعرّي",
+      "canonical_ar": "أبو العلاء المعرّي",
       "canonical_translit": "Abū al-ʿAlāʾ al-Maʿarrī",
       "full_name": "Abū al-ʿAlāʾ Aḥmad b. ʿAbd Allāh al-Maʿarrī",
       "dates": "d. 449/1057",
@@ -1856,7 +2005,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-%CA%BFAla%CA%BE%20al-Ma%CA%BFarri"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو العلاء المعرّي"
+      ]
     },
     "c048": {
       "canonical_ar": "أرسطو",
@@ -1905,7 +2057,10 @@
           "url": "https://scholar.google.com/scholar?q=Aristotle"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أرسطو"
+      ]
     },
     "c049": {
       "canonical_ar": "جورج المقدسي (محقق)",
@@ -1945,6 +2100,9 @@
         }
       ],
       "user_confirmed": true,
+      "variants": [
+        "جورج المقدسي (محقق)"
+      ],
       "category": "modern"
     },
     "c050": {
@@ -1984,7 +2142,10 @@
           "url": "https://scholar.google.com/scholar?q=Muqatil%20b.%20Sulayman"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "مقاتل"
+      ]
     },
     "c051": {
       "canonical_ar": "فخر الدين الرازي",
@@ -2023,7 +2184,10 @@
           "url": "https://scholar.google.com/scholar?q=Fahr%20al-Din%20al-Razi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "فخر الدين الرازي"
+      ]
     },
     "c052": {
       "canonical_ar": "أبو حيان الغرناطي",
@@ -2062,7 +2226,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Hayyan%20al-Garnati"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو حيان الغرناطي"
+      ]
     },
     "c053": {
       "canonical_ar": "Hellmut Ritter",
@@ -2102,10 +2269,13 @@
         }
       ],
       "user_confirmed": true,
+      "variants": [
+        "Hellmut Ritter"
+      ],
       "category": "modern"
     },
     "c054": {
-      "canonical_ar": "ابو الفرج عبد الرحمن بن نصر الشيزري",
+      "canonical_ar": "أبو الفرج عبد الرحمن بن نصر الشيزري",
       "canonical_translit": "Abū al-Faraǧ ʿAbd al-Raḥmān b. Naṣr al-Šayzarī",
       "full_name": "Abū al-Faraǧ ʿAbd al-Raḥmān b. Naṣr al-Šayzarī",
       "dates": "d. ca. 589/1193",
@@ -2136,10 +2306,13 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Faraj%20Abd%20al-Rahman%20b.%20Nasr%20al-Sayzari"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو الفرج عبد الرحمن بن نصر الشيزري"
+      ]
     },
     "c055": {
-      "canonical_ar": "ابو الحسن محمد بن أبي يعلى",
+      "canonical_ar": "أبو الحسن محمد بن أبي يعلى",
       "canonical_translit": "Abū al-Ḥasan Muḥammad Ibn Abī Yaʿlā",
       "full_name": "Abū al-Ḥusayn Muḥammad b. Muḥammad Ibn Abī Yaʿlā al-Farrāʾ",
       "dates": "d. 526/1131",
@@ -2180,7 +2353,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Husayn%20Muhammad%20b.%20Muhammad%20Ibn%20Abi%20Yala%20al-Farra"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو الحسن محمد بن أبي يعلى"
+      ]
     },
     "c056": {
       "canonical_ar": "ابن سبعين",
@@ -2219,7 +2395,10 @@
           "url": "https://scholar.google.com/scholar?q=Ibn%20Sab%CA%BFin"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن سبعين"
+      ]
     },
     "c058": {
       "canonical_ar": "ابن طلموس",
@@ -2258,7 +2437,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Hajjaj%20Yusuf%20b.%20Ahmad%20Ibn%20Tumlus%20al-Ansari"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن طلموس"
+      ]
     },
     "c059": {
       "canonical_ar": "محمد بن جعفر الكتاني",
@@ -2303,6 +2485,9 @@
         }
       ],
       "user_confirmed": true,
+      "variants": [
+        "محمد الكتاني"
+      ],
       "category": "modern"
     },
     "c060": {
@@ -2347,7 +2532,10 @@
           "url": "https://scholar.google.com/scholar?q=Fayd%20al-Qasani"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "القلشاني"
+      ]
     },
     "c062": {
       "canonical_ar": "أحمد البوني",
@@ -2396,7 +2584,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Abbas%20Ahmad%20b.%20Ali%20al-Buni"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أحمد البوني"
+      ]
     },
     "c063": {
       "canonical_ar": "ست عجم بنت النفيس",
@@ -2420,7 +2611,10 @@
           "url": "https://scholar.google.com/scholar?q=Sitt%20Ajam%20Bint%20al-Nafis%20al-Baghdadiyya"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ست عجم بنت النفيس"
+      ]
     },
     "c064": {
       "canonical_ar": "داود الباخلي الإسكندري",
@@ -2428,15 +2622,21 @@
       "full_name": "Šaraf al-Dīn Abū Sulaymān Dāwūd b. ʿUmar al-Bāḫilī al-Iskandarī al-Šāḏilī",
       "dates": "d. 733/1332",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "داود الباخلي الإسكندري"
+      ]
     },
     "c065": {
-      "canonical_ar": "علي بن احمد الكيزواني",
+      "canonical_ar": "علي بن أحمد الكيزواني",
       "canonical_translit": "ʿAlī b. Aḥmad al-Kīzwānī",
       "full_name": "Quṭb al-Dīn ʿAlī b. Aḥmad al-Kīzwānī (al-Kayzawānī) al-Ḥamawī",
       "dates": "d. 955/1548",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "علي بن أحمد الحموي الشاذلي الكيزواني"
+      ]
     },
     "c067": {
       "canonical_ar": "محمد بن محمد الغمري",
@@ -2444,7 +2644,10 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "محمد بن محمد الغمري"
+      ]
     },
     "c068": {
       "canonical_ar": "ابن غانم المقدسي",
@@ -2478,7 +2681,10 @@
           "url": "https://scholar.google.com/scholar?q=Izz%20al-Din%20Abd%20al-Salam%20b.%20Ahmad%20Ibn%20Ganim%20al-Maqdisi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن غانم المقدسي"
+      ]
     },
     "c069": {
       "canonical_ar": "أبو جعفر محمد بن الحسين بن أحمد بن يزدانيار الأنباري",
@@ -2486,7 +2692,11 @@
       "full_name": "Abū Ǧaʿfar Muḥammad b. al-Ḥusayn b. Aḥmad Ibn Yazdānyār al-Anbārī al-Hamaḏānī",
       "dates": "d. ca. 472/1080",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو جعفر محمد بن الحسين أحمد بن يزدانيار الأنباريّ",
+        "أبو حفص محمد بن الحسين أحمد بن يازدانيار"
+      ]
     },
     "c070": {
       "canonical_ar": "عبد القادر الجيلاني",
@@ -2535,7 +2745,11 @@
           "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-Qadir%20al-Gilani"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "عبد القادر الجيلاني",
+        "عبد القادر الكيلاني"
+      ]
     },
     "c072": {
       "canonical_ar": "خالد بن عيسى بن أحمد البلوي",
@@ -2569,7 +2783,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Baqa%20Halid%20b.%20Isa%20b.%20Ahmad%20al-Balawi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "خالد بن عيسى بن أحمد البلوي ... بَن"
+      ]
     },
     "c073": {
       "canonical_ar": "أبو زيد عبد الرحمن بن عبد القادر الفاسي",
@@ -2608,7 +2825,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Zayd%20Abd%20al-Rahman%20b.%20Abd%20al-Qadir%20al-Fasi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو زيد عبد الرحمن بن عبد القادر الفاسي"
+      ]
     },
     "c074": {
       "canonical_ar": "محمد بن سعيد بن حمادى البوصيري",
@@ -2657,7 +2877,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Abd%20Allah%20Saraf%20al-Din%20Muhammad%20b.%20Said%20al-Busiri"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "محمد بن سعيد بن حمادى البصيري"
+      ]
     },
     "c075": {
       "canonical_ar": "أبو القاسم الجنيد",
@@ -2696,7 +2919,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Qasim%20al-Gunayd"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو القاسم الجنيد"
+      ]
     },
     "c076": {
       "canonical_ar": "فايز المقدسي",
@@ -2705,6 +2931,9 @@
       "dates": "",
       "authorities": [],
       "user_confirmed": true,
+      "variants": [
+        "فايز المقدسي"
+      ],
       "category": "modern"
     },
     "c077": {
@@ -2739,7 +2968,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Bakr%20Ahmad%20b.%20Muhammad%20al-Marrudhi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو بكر المزودي"
+      ]
     },
     "c078": {
       "canonical_ar": "أبو علي الأهوازي",
@@ -2773,7 +3005,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Ali%20al-Hasan%20b.%20Ali%20b.%20Ibrahim%20al-Ahwazi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "علي الأهوازيّ"
+      ]
     },
     "c079": {
       "canonical_ar": "عبد الملك بن مروان",
@@ -2822,7 +3057,10 @@
           "url": "https://scholar.google.com/scholar?q=Abd%20al-Malik%20b.%20Marwan"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "عبد الملك بن مروان"
+      ]
     },
     "c080": {
       "canonical_ar": "إمام الحرمين الجويني",
@@ -2861,7 +3099,10 @@
           "url": "https://scholar.google.com/scholar?q=Imam%20al-Haramayn%20al-Guwayni"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الجويني"
+      ]
     },
     "c081": {
       "canonical_ar": "ابن البناء المراكشي",
@@ -2905,7 +3146,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Abbas%20Ahmad%20b.%20Muhammad%20al-Azdi%20al-Marrakushi%2C%20Ibn%20al-Banna"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن البنا"
+      ]
     },
     "c082": {
       "canonical_ar": "ابن الفارض",
@@ -2944,7 +3188,10 @@
           "url": "https://scholar.google.com/scholar?q=Ibn%20al-Farid"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن الفارض"
+      ]
     },
     "c084": {
       "canonical_ar": "أبو النحيب السهروردي",
@@ -2983,7 +3230,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Nagib%20al-Suhrawardi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "السهروردي"
+      ]
     },
     "c085": {
       "canonical_ar": "ابن باكويه الشيرازي",
@@ -3017,7 +3267,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Abd%20Allah%20Muhammad%20b.%20Abd%20Allah%20Ibn%20Bakuya%20al-Sirazi%20%28Baba%20Kuhi%29"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن باكويه الشيرازي"
+      ]
     },
     "c087": {
       "canonical_ar": "أبو الفرج ابن عبد المحسن الأنصاري",
@@ -3025,7 +3278,10 @@
       "full_name": "Abū al-Faraǧ ʿAbd al-Raḥmān b. ʿAbd al-Muḥsin al-Anṣārī al-Wāsiṭī al-Šāfiʿī",
       "dates": "d. 744/1343",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو الفرج ابن عبد المحسن الأنصاري"
+      ]
     },
     "c089": {
       "canonical_ar": "عبد الرحمن ابن أحمد",
@@ -3033,7 +3289,10 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "عبد الرحمن ابن أحمد"
+      ]
     },
     "c090": {
       "canonical_ar": "عبد الرحمن بن محمد بن محمد الإسفرايني",
@@ -3072,7 +3331,10 @@
           "url": "https://scholar.google.com/scholar?q=Nur%20al-Din%20Abd%20al-Rahman%20b.%20Muhammad%20al-Kazaruni%20al-Isfarayini"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "عبد الرحمن محمد بن محمد الإسفاريني"
+      ]
     },
     "c091": {
       "canonical_ar": "عبد الله الأنصاري",
@@ -3111,7 +3373,10 @@
           "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20Allah%20al-Ansari"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "عبدالله الأنصاري"
+      ]
     },
     "c092": {
       "canonical_ar": "أبو القاسم أحمد بن قسي المغربي",
@@ -3155,7 +3420,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Qasim%20Ahmad%20b.%20al-Husayn%20Ibn%20Qasi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو القاسم أحمد بن قسي المغربي"
+      ]
     },
     "c093": {
       "canonical_ar": "أبو بكر جعفر بن المستفاض القريابي",
@@ -3199,7 +3467,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Bakr%20Gafar%20b.%20Muhammad%20al-Firyabi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو بكر جعفر بن محيي الحسن بن المستفاص الفيزيائي"
+      ]
     },
     "c094": {
       "canonical_ar": "أبو محمد الحسن بن أحمد السمرقندي",
@@ -3207,7 +3478,10 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "السمرقندي"
+      ]
     },
     "c095": {
       "canonical_ar": "أبو زيد الدبوسي الحنفي",
@@ -3251,7 +3525,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Zayd%20Ubayd%20Allah%20b.%20Umar%20al-Dabbusi%20al-Hanafi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو زيد الدبوسي الحنفي"
+      ]
     },
     "c096": {
       "canonical_ar": "عبد الوهاب الشعراني",
@@ -3290,7 +3567,10 @@
           "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20al-Wahh%C4%81b%20al-Sha%CA%BFr%C4%81n%C4%AB"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "عبد الوهاب بن أحمد بن علي الأنصاري"
+      ]
     },
     "c098": {
       "canonical_ar": "رسلان دمشقي",
@@ -3334,7 +3614,10 @@
           "url": "https://scholar.google.com/scholar?q=Arslan%20%28Ruslan%29%20al-Dimashqi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "رسلان دمشقي"
+      ]
     },
     "c100": {
       "canonical_ar": "ابن الصلاح الشهرزوري",
@@ -3373,7 +3656,10 @@
           "url": "https://scholar.google.com/scholar?q=Ibn%20al-Salah%20al-Sahrazuri"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن الصلاح الشهرزوري"
+      ]
     },
     "c101": {
       "canonical_ar": "Qatraya Gabriel",
@@ -3412,7 +3698,10 @@
           "url": "https://scholar.google.com/scholar?q=Gabriel%20Qatraya%20%28Gabriel%20of%20Qatar%29"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "Qatraya Gabriel"
+      ]
     },
     "c102": {
       "canonical_ar": "محمد بن أحمد المديني",
@@ -3420,10 +3709,13 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "محمد بن أحمد المدني"
+      ]
     },
     "c103": {
-      "canonical_ar": "ابو سعيد الخادمي",
+      "canonical_ar": "أبو سعيد الخادمي",
       "canonical_translit": "Abū Saʿīd al-Ḫādimī",
       "full_name": "Abū Saʿīd Muḥammad b. Muṣṭafā al-Ḫādimī",
       "dates": "d. 1176/1762",
@@ -3459,7 +3751,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Said%20Muhammad%20b.%20Mustafa%20al-Hadimi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو سعيد الخادمي"
+      ]
     },
     "c104": {
       "canonical_ar": "مفتي الخادم",
@@ -3467,7 +3762,10 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "مفتي الخادم"
+      ]
     },
     "c107": {
       "canonical_ar": "عز الدين ابن الطيب",
@@ -3475,7 +3773,10 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "عز الدين ابن الطيب"
+      ]
     },
     "c108": {
       "canonical_ar": "عبد الغفار بن أحمد بن عبد المجيد القوصي",
@@ -3483,7 +3784,10 @@
       "full_name": "ʿAbd al-Ġaffār b. Aḥmad b. ʿAbd al-Maǧīd al-Qūṣī (Ibn Nūḥ)",
       "dates": "d. 708/1308",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "عبد الغفار بن عبد المجيد القوصي"
+      ]
     },
     "c109": {
       "canonical_ar": "أبو بكر الكلاباذي",
@@ -3522,7 +3826,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20Bakr%20al-Kalabadi"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الكلاباذي"
+      ]
     },
     "c110": {
       "canonical_ar": "علاء الدولة السمناني",
@@ -3561,7 +3868,10 @@
           "url": "https://scholar.google.com/scholar?q=%CA%BFAla%CA%BE%20al-Dawlah%20al-Simnani"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "السمناني"
+      ]
     },
     "c111": {
       "canonical_ar": "عبد المجيد الزبادي",
@@ -3569,7 +3879,10 @@
       "full_name": "Abū Muḥammad ʿAbd al-Maǧīd b. ʿAlī al-Manālī al-Zabādī al-Fāsī",
       "dates": "d. 1163/1750",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "عبد المجيد الزبادي"
+      ]
     },
     "c112": {
       "canonical_ar": "الشستري",
@@ -3613,7 +3926,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Hasan%20Ali%20b.%20Abd%20Allah%20al-Numayri%20al-Sushtari"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الشستري"
+      ]
     },
     "c113": {
       "canonical_ar": "محمد بن عبد القادر الفاسي",
@@ -3621,7 +3937,10 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الفاسي.م"
+      ]
     },
     "c114": {
       "canonical_ar": "أبو عمرو ابن المحلي",
@@ -3629,7 +3948,10 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "ابن محلى– أبو عمرو"
+      ]
     },
     "c115": {
       "canonical_ar": "أبو العباس أحمد بن قاسم الجذامي القباب",
@@ -3658,7 +3980,10 @@
           "url": "https://scholar.google.com/scholar?q=Abu%20al-Abbas%20Ahmad%20b.%20Qasim%20al-Judhami%20al-Qabbab"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "القباب"
+      ]
     },
     "c117": {
       "canonical_ar": "Dadiso’ Bar Qatraya",
@@ -3666,7 +3991,10 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": false
+      "user_confirmed": false,
+      "variants": [
+        "Dadiso’ Bar Qatraya"
+      ]
     },
     "c118": {
       "canonical_ar": "إسماعيل المستملي البخاري",
@@ -3674,7 +4002,10 @@
       "full_name": "Abū Ibrāhīm Ismāʿīl b. Muḥammad al-Mustamlī al-Buḫārī",
       "dates": "d. 434/1042",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "المستملي"
+      ]
     },
     "c119": {
       "canonical_ar": "أبو المعين النسفي",
@@ -3713,7 +4044,10 @@
           "url": "https://scholar.google.com/scholar?q=Ab%C5%AB%20al-Mu%CA%BF%C4%ABn%20al-Nasaf%C4%AB"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو المعين النسفي"
+      ]
     },
     "c120": {
       "canonical_ar": "مكحول النسفي",
@@ -3737,7 +4071,10 @@
           "url": "https://scholar.google.com/scholar?q=Mak%E1%B8%A5%C5%ABl%20al-Nasaf%C4%AB"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "أبو مطيع مكحول النسفي"
+      ]
     },
     "c121": {
       "canonical_ar": "عبد الله اليافعي",
@@ -3756,7 +4093,10 @@
           "url": "https://scholar.google.com/scholar?q=%CA%BFAbd%20All%C4%81h%20al-Y%C4%81fi%CA%BF%C4%AB"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "اليافعي"
+      ]
     },
     "c122": {
       "canonical_ar": "عبد الهادي الخرسة",
@@ -3776,6 +4116,9 @@
         }
       ],
       "user_confirmed": true,
+      "variants": [
+        "عبد الهادي الخرسة"
+      ],
       "category": "modern"
     },
     "c123": {
@@ -3815,7 +4158,10 @@
           "url": "https://scholar.google.com/scholar?q=Jalal%20al-Din%20Dawani"
         }
       ],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الدواني"
+      ]
     },
     "c124": {
       "canonical_ar": "عبد الرزاق القاشاني",
@@ -3823,7 +4169,10 @@
       "full_name": "Kamāl al-Dīn ʿAbd al-Razzāq b. Abī al-Ġanāʾim al-Qāšānī",
       "dates": "d. c. 736/1335",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "عبد الرزاق بن أبي الغنائم القاشاني"
+      ]
     },
     "n000": {
       "canonical_ar": "النيسابوري",
@@ -3831,7 +4180,10 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": false
+      "user_confirmed": false,
+      "variants": [
+        "النيسابوري"
+      ]
     },
     "n002": {
       "canonical_ar": "عفيف الدين عبد الكريم",
@@ -3839,7 +4191,10 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "عفيف الدين عبد الكريم"
+      ]
     },
     "n003": {
       "canonical_ar": "الخوئي",
@@ -3847,7 +4202,10 @@
       "full_name": "",
       "dates": "",
       "authorities": [],
-      "user_confirmed": true
+      "user_confirmed": true,
+      "variants": [
+        "الخوئي"
+      ]
     }
   },
   "variant_to_cluster": {
@@ -3992,7 +4350,7 @@
       "discrepancy_note": "The cataloguers of the Nwyian corpus refer to this a \"glossaire\" in a marginal note, suggesting it is not the well-known work by al-Ḥārith al-Muḥāsibī. "
     },
     "r0002": {
-      "title": "مخطوطة سريانية",
+      "title": "مخطوطة سريانيّة",
       "title_translit": "maḫṭūṭah siryānīyah",
       "pub_status": "manuscript",
       "discrepancy_note": "No further information about this text is given."
@@ -4036,11 +4394,13 @@
     },
     "r0009": {
       "title": "ترجمة رسالة البابا بيوس الثاني عشر الروح القدس بنفح",
+      "author": "الأب عضم",
       "title_translit": "tarǧamat risālat al-bābā yūnus al-ṯānī ʿašr al-rūḥ al-quds bi-nafaḥ",
       "pub_citation": "These appear ",
       "discrepancy_note": "PDF extraction scrambled this title: it read «بنفح\" ترجمة رسالة البابا بيوس الثاني عشر \"الروح القدس», with بنفح flung to the front and one quotation mark orphaned. Word order restored to match the reading."
     },
     "r0010": {
+      "author": "أبو نصر الفارابي",
       "title_translit": "al-ǧamʿ bayna raʾyay al-ḥakīmayn"
     },
     "r0011": {
@@ -4057,6 +4417,7 @@
       "pub_status": "published"
     },
     "r0013": {
+      "author": "أبو العلاء المعرّي",
       "title_translit": "risālat al-malāʾikah"
     },
     "r0014": {
@@ -4071,6 +4432,7 @@
       "discrepancy_note": "Nwyia recorded this as “Sharḥ qaṣīdat al-Shaykh ʿAbd al-Hādī”; al-Kharsa is the commentator, the base qaṣīda is al-Būṣīrī’s al-Qaṣīda al-Muḥammadiyya (madḥ)."
     },
     "r0016": {
+      "title": "كتاب الإعلام باشارات أهل الإلهام",
       "title_translit": "kitāb al-iʿlām bi-išārāt ahl al-ilhām",
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
@@ -4078,6 +4440,8 @@
       "pub_source": "bibliography"
     },
     "r0017": {
+      "title": "كتاب الإيضاح",
+      "author": "أرسطو",
       "title_translit": "kitāb al-īḍāḥ"
     },
     "r0018": {
@@ -4090,12 +4454,16 @@
       "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969."
     },
     "r0020": {
+      "title": "كتاب النكات والفوائد في العلم الإلهيّ",
       "title_translit": "kitāb al-nikāt wa-l-fawāʾid fī al-ʿilm al-ilāhī"
     },
     "r0021": {
-      "title_translit": "al-wāḍiḥ fī uṣūl al-fiqh li-abī al-wafāʾ ʿalī b. ʿaqīl"
+      "title": "الواضح في اصول الفقه",
+      "title_translit": "al-wāḍiḥ fī uṣūl al-fiqh",
+      "catalog_note": "Title as catalogued ends «لأبي الوفاء علي بن عقيل» (li-abī al-wafāʾ ʿalī b. ʿaqīl)."
     },
     "r0022": {
+      "title": "الورقات الأخيرة من كتاب الطبقات الإحالات",
       "title_translit": "al-waraqāt al-aḫīrah min kitāb al-ṭabaqāt al-iḥālāt"
     },
     "r0023": {
@@ -4108,11 +4476,12 @@
     "r0025": {
       "shelfmark": "",
       "folios": "1-50",
-      "title_translit": "mafātīḥ al-ġayb",
+      "title_translit": "miftāḥ al-ġayb",
       "catalog_note": "Texte imprimé."
     },
     "r0026": {
       "title": "سورة البقرة: تفسير البحر المحيط",
+      "author": "أبو حيان الغرناطي",
       "shelfmark": "",
       "title_translit": "sūrat al-baqarah: tafsīr al-baḥr al-muḥīṭ",
       "catalog_note": "Texte imprimé."
@@ -4126,6 +4495,7 @@
       "catalog_note": "Texte imprimé."
     },
     "r0029": {
+      "author": "أبو الفرج عبد الرحمن بن نصر الشيزري",
       "shelfmark": "",
       "title_translit": "rawḍat al-qulūb wa-nuzhat al-muḥibb wa-l-maḥbūb",
       "catalog_note": "Texte imprimé.",
@@ -4134,6 +4504,7 @@
       "pub_source": "source-cell"
     },
     "r0030": {
+      "author": "أبو الحسن محمد بن أبي يعلى",
       "shelfmark": "",
       "title_translit": "ṭabaqāt al-ḥanābilah, al-ǧuzʾ al-ṯānī",
       "catalog_note": "Texte imprimé."
@@ -4155,9 +4526,11 @@
       "title_translit": "al-masāʾil wa-l-aǧwibah"
     },
     "r0035": {
+      "title": "نزهة الناظر المتأمّل وقيد الساتر المستعجل",
       "title_translit": "nuzhat al-nāẓir al-mutaʾammil wa-qayd al-sātir al-mustaʿǧil"
     },
     "r0036": {
+      "author": "أبو نصر الفارابي",
       "title_translit": "maǧmūʿ"
     },
     "r0037": {
@@ -4181,7 +4554,7 @@
       "pub_citation": "Kitāb ʿUyūb al-nafs. Beirut: Dār al-Ahliyah, N.D."
     },
     "r0041": {
-      "author": "ابو طالب المكي",
+      "author": "أبو طالب المكي",
       "title_translit": "qūt al-qulūb",
       "pub_status": "published",
       "pub_citation": "Abū Ṭālib al-Makkī, Qūt al-qulūb fī muʿāmalat al-maḥbūb, Cairo: al-Maṭbaʿa al-Maymaniyya, 1310/1892 (and later editions)."
@@ -4199,6 +4572,7 @@
       "work_url": "https://id.lib.harvard.edu/alma/990071977810203941/catalog"
     },
     "r0044": {
+      "title": "مقدّمة في التصوّف",
       "title_translit": "muqaddimah fī al-taṣawwuf"
     },
     "r0045": {
@@ -4210,6 +4584,7 @@
       "title_translit": "kitāb bayān al-ʿilm"
     },
     "r0047": {
+      "title": "الفرق بين الآيات والكرامات",
       "title_translit": "al-farq bayn al-āyāt wa-l-karāmāt",
       "pub_status": "published"
     },
@@ -4217,7 +4592,8 @@
       "title_translit": "kitāb al-ḥuqūq"
     },
     "r0049": {
-      "title_translit": "badwʾ šaʾn al-muṣannif",
+      "title": "بدء شأن المصنّف",
+      "title_translit": "badʾ šaʾn al-muṣannif",
       "pub_status": "published",
       "pub_citation": "Badʾ shaʾn al-Ḥakīm al-Tirmidhī (with Kitāb Khatm al-awliyāʾ), ed. ʿUthmān Ismāʿīl Yaḥyā, Beirut, 1965."
     },
@@ -4227,13 +4603,16 @@
       "pub_citation": "al-Ḥakīm al-Tirmidhī, Masāʾil al-taʿbīr, ed. A. J. Arberry, in Rivista degli Studi Orientali xviii (1940), 320–327."
     },
     "r0051": {
+      "title": "منازل القاصدين إلى الله",
       "title_translit": "manāzil al-qāṣidīn ilā allāh",
       "pub_status": "published"
     },
     "r0052": {
+      "title": "مسائل في النيّة",
       "title_translit": "masāʾil fī al-nīyah"
     },
     "r0053": {
+      "title": "شرح قوله ما الإيمان والاسلام والاحسان",
       "title_translit": "šarḥ qawluhu mā al-īmān wa-l-islām wa-l-iḥsān"
     },
     "r0054": {
@@ -4242,6 +4621,7 @@
       "pub_citation": "Jawāb Kitāb min al-Rayy, ed. B. Radtke, in Drei Schriften des Theosophen von Tirmiḏ (Thalātha muṣannafāt), Stuttgart–Beirut, 1992."
     },
     "r0055": {
+      "title": "الأكياس والمغترّين عن معصية الله",
       "title_translit": "al-akyās wa-l-muġtarrīn ʿan maʿṣiyat allāh",
       "pub_status": "published"
     },
@@ -4254,10 +4634,12 @@
       "title_translit": "tafsīr al-qurʾān"
     },
     "r0058": {
+      "title": "اصطلاح في علم التصوّف",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "iṣṭilāḥ fī ʿilm al-taṣawwuf"
     },
     "r0059": {
+      "title": "شرح الأحاديث الأربعينيّة",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "šarḥ al-aḥādīth al-arbaʿīnīyah",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00024229",
@@ -4270,12 +4652,14 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007511"
     },
     "r0061": {
+      "title": "حقائق الأسماء في شرح أسماء الله",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "ḥaqāʾiq al-asmāʾ fī šarḥ asmāʾ allāh",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011740",
       "pub_status": "published"
     },
     "r0062": {
+      "title": "تهذيب الأسرار",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "tahḏīb al-asrār",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011708",
@@ -4283,6 +4667,7 @@
       "pub_citation": "Bassām Muḥammad Bārūd (ed.). Tahdhīb al-Asrār. Abu Dhabi: Al-Majmaʿ al-Thaqafī, 1999."
     },
     "r0063": {
+      "author": "أبو عبد الرحمن",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "manāhiǧ al-ʿārifīn",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011728",
@@ -4297,6 +4682,8 @@
       "pub_citation": "Etan Kohlberg (ed.).  \"Manāhij al-ʿĀrifīn: A Treatise on Ṣūfism by Abū ʿAbd al-Raḥmān al-Sulamī,\" Jerusalem Studies in Arabic and Islam 1 (1979): pp. 19-39; reprint II, pp. 133-158. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
     },
     "r0065": {
+      "title": "مواقف الغايات في أسرار الرياضات",
+      "author": "أحمد البوني",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "mawāqif al-ġāyāt fī asrār al-riyāḍāt",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011770"
@@ -4309,26 +4696,35 @@
       "pub_citation": "al-Fukūk fī asrār mustanadāt ḥikam al-Fuṣūṣ, ed. Muḥammad Khwājawī, Tehran, 1413/1992."
     },
     "r0067": {
+      "title": "شرح كتاب الإسراء",
       "library": "Staatsbibliothek zu Berlin",
-      "title_translit": "šarḥ kitāb al-isrāʾ li-ibn ʿarabī",
+      "title_translit": "šarḥ kitāb al-isrāʾ",
+      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011710"
     },
     "r0068": {
+      "title": "كتاب شرح الإسراء",
       "library": "Staatsbibliothek zu Berlin",
-      "title_translit": "kitāb šarḥ al-isrāʾ li-ibn ʿarabī",
+      "title_translit": "kitāb šarḥ al-isrāʾ",
+      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00023932"
     },
     "r0069": {
+      "title": "شرح المشاهد",
       "library": "Staatsbibliothek zu Berlin",
-      "title_translit": "šarḥ al-mašāhid li-ibn ʿarabī",
+      "title_translit": "šarḥ al-mašāhid",
+      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00023932"
     },
     "r0070": {
+      "title": "شرح المشاهد القدسيّة",
       "library": "Staatsbibliothek zu Berlin",
-      "title_translit": "šarḥ al-mašāhid al-qudsīyah li-ibn ʿarabī",
+      "title_translit": "šarḥ al-mašāhid al-qudsīyah",
+      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00024259"
     },
     "r0071": {
+      "author": "داود الباخلي الإسكندري",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "ʿuyūn al-ḥaqāʾiq",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00024086"
@@ -4345,7 +4741,7 @@
     },
     "r0074": {
       "title": "آداب الأقطاب",
-      "author": "علي بن احمد الحموي الشاذلي الكيزواني",
+      "author": "علي بن أحمد الحموي الشاذلي الكيزواني",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "ādāb al-aqṭāb",
       "title_translation": "The Etiquette of the Spiritual Poles (aqṭāb)",
@@ -4354,6 +4750,7 @@
       "discrepancy_note": "Author corrected per saramusik.org (al-Maṣādir al-ʿarabiyya li-l-mūsīqā): the work آداب الأقطاب (taṣawwuf/samāʿ) is by ʿAlī b. Aḥmad b. Muḥammad al-Ḥamawī al-Shādhilī al-Kīzwānī — not «محمود الكازواني» as Nwyia read it. Witness: Berlin Spr. 851, ff. 177a–177b (Ahlwardt 3199). NB the Qalamos auto-match earlier (receive/00059083, Spr 851-15, ff. 88–90, anon.) is a DIFFERENT item in the same majmūʿ."
     },
     "r0075": {
+      "title": "شعب الإيمان",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "šuʿab al-īmān",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00068645"
@@ -4366,6 +4763,7 @@
       "pub_citation": "Miftāḥ al-ghayb (Miftāḥ ghayb al-jamʿ wa-l-wujūd), ed. Muḥammad Khwājawī, Tehran, 1374 hş."
     },
     "r0077": {
+      "author": "أبو طالب المكي",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "maqāmat al-ʿārifīn",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00068801",
@@ -4378,6 +4776,7 @@
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00004038"
     },
     "r0079": {
+      "title": "مجلس في المحبّة",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "maǧlis fī al-maḥabbah",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00068931"
@@ -4390,11 +4789,13 @@
       "pub_citation": "Süleyman Ateş (ed.). \"Darajāt al-Muʿāmalāt,\" pp. ٢١-٢٦. In Süleyman Ateş (ed.). Tisʿat Kutub li-Abī ʿAbd al-Raḥmān al-Sulamī / Tasavvufun Ana Ilkeleri Sülemî'nin Risaleleri. Ankara: Ankara Üniversitesi Basimevi, 1401/1981; reprint. Beirut: al-Nāshir, 1414/1993."
     },
     "r0081": {
+      "title": "اصطلاحات الصوفيّة",
       "library": "Staatsbibliothek zu Berlin",
-      "title_translit": "iṣṭilāḥāṭ al-ṣūfīyah",
+      "title_translit": "iṣṭilāḥāt al-ṣūfīyah",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069107"
     },
     "r0082": {
+      "title": "لطائف الإشارات",
       "author": "القشيري",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "laṭāʾif al-išārāt",
@@ -4403,24 +4804,28 @@
       "pub_citation": "al-Qushayrī, Laṭāʾif al-ishārāt (Qurʾān commentary), ed. Ibrāhīm Basyūnī, Cairo: al-Hayʾa al-Miṣriyya al-ʿĀmma li-l-Kitāb, 1981."
     },
     "r0083": {
+      "title": "اصطلاحات الصوفيّة",
+      "author": "عبد الرزاق بن أبي الغنائم القاشاني",
       "library": "Staatsbibliothek zu Berlin",
-      "title_translit": "iṣṭilāḥāṭ al-ṣūfīyah",
+      "title_translit": "iṣṭilāḥāt al-ṣūfīyah",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069119",
       "discrepancy_note": "Filed under Fayḍ al-Kāšānī (d. 1090/1679) on the strength of the nisba alone. The author cell names ʿAbd al-Razzāq b. Abī al-Ġanāʾim al-Qāšānī (d. c. 736/1335), whose Iṣṭilāḥāt al-ṣūfiyya this is — a different man by ism and by three and a half centuries."
     },
     "r0084": {
+      "title": "اصطلاحات الصوفيّة",
       "library": "Staatsbibliothek zu Berlin",
-      "title_translit": "iṣṭilāḥāṭ al-ṣūfīyah",
+      "title_translit": "iṣṭilāḥāt al-ṣūfīyah",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069128"
     },
     "r0085": {
+      "title": "الرسالة المرشديّة",
       "library": "Staatsbibliothek zu Berlin",
       "title_translit": "al-risālah al-muršidīyah",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00068715"
     },
     "r0086": {
       "library": "Staatsbibliothek zu Berlin",
-      "title_translit": "al-risālah li-aǧwibat al-nuṣarīyah",
+      "title_translit": "al-risālah li-aǧwibat al-nuṣayrīyah",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069178",
       "pub_status": "published",
       "pub_citation": "al-Murāsalāt: the correspondence between al-Qūnawī and Naṣīr al-Dīn al-Ṭūsī, ed. Gudrun Schubert, Beirut, 1995; cf. W. C. Chittick, “Mysticism versus Philosophy… the al-Ṭūsī–al-Qūnawī Correspondence,” Religious Studies 17 (1981)."
@@ -4439,45 +4844,56 @@
       "title_translit": "šarḥ fuṣūṣ ibn ʿarabī"
     },
     "r0091": {
+      "title": "في أصول آداب الطريق",
       "title_translit": "fī uṣūl ādāb al-ṭarīq"
     },
     "r0092": {
+      "title": "حكايات دينيّة واسئلة صوفيّة",
       "title_translit": "ḥikāyah dīnīyah wa-asʾilah ṣūfīyah"
     },
     "r0093": {
+      "title": "الزجاجة البلوريّة في شرح القصيدة الخمريّة",
       "title_translit": "al-zuzāǧah al-bilawrīyah fī šarḥ al-qaṣīdah al-ḫamrīyah"
     },
     "r0094": {
+      "title": "شرح القصيدة الخمريّة",
       "title_translit": "šarḥ al-qaṣīdah al-ḫamrīyah"
     },
     "r0095": {
       "title_translit": "kitāb al-taǧrīd fī kalimāt al-tawḥīd"
     },
     "r0096": {
+      "title": "مجموع من أخبار الصالحين واقوالهم",
       "title_translit": "maǧmūʿ min aḫbār al-ṣāliḥīn wa-aqwālihim"
     },
     "r0097": {
-      "title_translit": "ǧall al-rumūz wa-mafātīh al-kunūz"
+      "title_translit": "ḥall al-rumūz wa-mafātīḥ al-kunūz"
     },
     "r0098": {
+      "author": "أبو حفص محمد بن الحسين أحمد بن يازدانيار",
       "title_translit": "rawḍat al-murīdīn"
     },
     "r0099": {
+      "title": "سرّ الأسرار",
       "title_translit": "sirr al-asrār"
     },
     "r0100": {
       "title_translit": "fī al-taṣawwuf ʿalā ṭarīqat ibn ʿarabī"
     },
     "r0101": {
+      "title": "السلوك إلى الله",
       "title_translit": "al-sulūk ilā allāh"
     },
     "r0102": {
+      "title": "درّة الأسرار وروضة الأنوار في مناقب الأبرار",
       "title_translit": "durrat al-asrār wa-rawḍat al-anwār fī manāqib al-abrār"
     },
     "r0103": {
+      "author": "خالد بن عيسى بن أحمد البلوي ... بَن",
       "title_translit": "tāǧ al-mafriq fī taḥliyat ʿulamāʾ al-mašriq"
     },
     "r0104": {
+      "author": "أبو زيد عبد الرحمن بن عبد القادر الفاسي",
       "title_translit": "ḏikr baʿḍ mašāhīr fās fī al-qadīm"
     },
     "r0105": {
@@ -4493,13 +4909,16 @@
       "catalog_note": "No title is recorded for this entry in the Fonds index."
     },
     "r0108": {
+      "title": "في المحبّة والفقر",
       "title_translit": "fī al-maḥabbah wa-l-faqr"
     },
     "r0109": {
+      "author": "أبو القاسم الجنيد",
       "title_translit": "dawāʾ al-tafrīṭ",
       "pub_status": "published"
     },
     "r0110": {
+      "title": "آداب العبادات",
       "title_translit": "ādāb al-ʿibādāt",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed.). “Šaqīq al-Balḫī, Ādāb al-ʿibādāt,” in Trois œuvres inédites de mystiques musulmans. Beyrouth: Dar el-Machreq, 1973.",
@@ -4552,6 +4971,7 @@
       "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
     },
     "r0121": {
+      "title": "تبصرة الأدلّة",
       "author": "أبو المعين النسفي",
       "title_translit": "tabṣirat al-adillah",
       "pub_status": "published",
@@ -4570,10 +4990,12 @@
       "catalog_note": "Texte imprimé."
     },
     "r0124": {
+      "title": "الأكياس والمغترّين",
       "title_translit": "al-akyās wa-l-muġtarrīn",
       "pub_status": "published"
     },
     "r0125": {
+      "author": "أبو بكر المزودي",
       "title_translit": "kitāb al-waraʿ"
     },
     "r0126": {
@@ -4585,9 +5007,12 @@
       "discrepancy_note": "Nwyia's index records the title as «تفسير»."
     },
     "r0127": {
-      "title_translit": "maṭālib b. abī bišr"
+      "title": "مثالب ابن أبي بشر",
+      "author": "علي الأهوازيّ",
+      "title_translit": "maṯālib ibn abī bišr"
     },
     "r0128": {
+      "author": "أبو طالب المكي",
       "title_translit": "kitāb ʿilm al-qulūb",
       "pub_status": "published"
     },
@@ -4617,6 +5042,7 @@
     },
     "r0134": {
       "title": "حكم أبي مدين",
+      "author": "أبو مدين شعيب",
       "title_translit": "ḥikam abī madyan",
       "catalog_note": "Identified as the Ḥikam of Abū Madyan Šuʿayb.",
       "discrepancy_note": "Nwyia's index records the title as «حكم»."
@@ -4673,13 +5099,19 @@
       "pub_status": "published"
     },
     "r0146": {
-      "title_translit": "al-šarḥ wa-l-bayān li-mā aškala min kalam sahl"
+      "title": "الشرح والبيان لما أشكل من كلام سهل",
+      "author": "أبو القاسم عبد الرحمن بن محمد الصقلي",
+      "title_translit": "al-šarḥ wa-l-bayān li-mā aškala min kalām sahl"
     },
     "r0147": {
+      "title": "كتاب المعارضة والردّ على أهل الفرق واهل الدعاوى في الأحوال من كلام سهل",
+      "author": "أبو القاسم عبد الرحمن بن محمد الصقلي",
       "title_translit": "kitāb al-muʿāraḍah wa-l-radd ʿalā ahl al-firaq wa-ahl al-daʿāwā fī al-aḥwāl min kalām sahl"
     },
     "r0148": {
-      "title_translit": "šarḥ al-mawāqif li-l-niffarī",
+      "title": "شرح المواقف",
+      "title_translit": "šarḥ al-mawāqif",
+      "catalog_note": "Title as catalogued ends «للنفّري» (li-l-niffarī).",
       "pub_status": "published",
       "pub_citation": "ʿAfīf al-Dīn al-Tilimsānī, Sharḥ Mawāqif al-Niffarī, ed. Jamāl al-Marzūqī, Cairo, 2000 (also ed. ʿĀṣim Ibrāhīm al-Kayyālī, Beirut, 2007)."
     },
@@ -4690,42 +5122,51 @@
       "discrepancy_note": "Nwyia's index records the title as «تأويلات»."
     },
     "r0150": {
-      "title": "كتاب المتمنين",
+      "title": "كتاب المتمنّين",
+      "author": "ابن أبي الدنيا",
       "title_translit": "kitāb al-mutamannīn",
       "catalog_note": "Identified as Kitāb al-Mutamannīn, one of Ibn Abī al-Dunyā's monographs.",
       "pub_status": "published",
       "discrepancy_note": "Nwyia's index records the title as «المتمنيين»."
     },
     "r0151": {
+      "author": "ابن أبي الدنيا",
       "title_translit": "al-tahaǧǧud wa-qiyām al-layl",
       "pub_status": "published"
     },
     "r0152": {
       "title": "كتاب الأولياء",
+      "author": "ابن أبي الدنيا",
       "title_translit": "kitāb al-awliyāʾ",
       "catalog_note": "Identified as Kitāb al-Awliyāʾ, one of Ibn Abī al-Dunyā's monographs.",
       "pub_status": "published",
       "discrepancy_note": "Nwyia's index records the title as «الأولياء»."
     },
     "r0153": {
+      "author": "ابن أبي الدنيا",
       "title_translit": "al-ṣabr wa-l-ṯawāb ʿalayh",
       "pub_status": "published"
     },
     "r0154": {
+      "author": "ابن أبي الدنيا",
       "title_translit": "al-ʿuzlah wa-l-infirād",
       "pub_status": "published"
     },
     "r0155": {
+      "title": "الهمّ والحزن",
+      "author": "ابن أبي الدنيا",
       "title_translit": "al-hamm wa-l-ḥuzn",
       "pub_status": "published"
     },
     "r0156": {
+      "author": "أبو جعفر محمد بن الحسين أحمد بن يزدانيار الأنباريّ",
       "title_translit": "rawḍat al-murīdīn",
       "work_url": "https://drive.google.com/open?id=1DbgmntM_zM5sv7mqcb7IXzhpyi1B5-bi",
       "pub_status": "published",
       "pub_citation": "John Alden Williams Rawḍat al-Murīdīn of Shaykh Abū Jaʿfar Ibn Yazdānyār, pp. ١-١١٦. PhD Dissertation: Princeton University, 1960."
     },
     "r0157": {
+      "title": "أقوال بستان المعرفة",
       "title_translit": "aqwāl bustān al-maʿrifah",
       "work_url": "https://archive.org/details/sufi-works_201905",
       "pub_status": "published",
@@ -4763,6 +5204,7 @@
       "pub_citation": "Süleyman Ateş (ed.). \"Kitāb al-Futuwwah,\" pp. ١-١١٥. In Süleyman Ateş (ed.). Tasavvufta Fütüvet. Ankara: Ankara Üniversitesi, 1977 ; reprint II, pp. 207-334. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
     },
     "r0164": {
+      "title": "من حكايات الصوفيّة",
       "title_translit": "min ḥikāyah al-ṣūfīyah"
     },
     "r0165": {
@@ -4772,6 +5214,7 @@
       "pub_citation": "Najma Rijāyī, \"al-Farq bayna ʿIlm al-Sharīʿah wa-l-Ḥaqīqah,\" Maʿārif-i Islāmī 14/42 (1376^/1998): pp. 398-414."
     },
     "r0166": {
+      "title": "منشور الخطاب في مشهور الأبواب",
       "title_translit": "manšūr al-ḫiṭāb fī mašhūr al-abwāb"
     },
     "r0167": {
@@ -4790,16 +5233,20 @@
       "catalog_note": "No title is recorded for this entry in the Fonds index."
     },
     "r0169": {
+      "author": "أبو مطيع مكحول النسفي",
       "title_translit": "kitāb fī al-taṣawwuf"
     },
     "r0170": {
-      "title_translit": "risālah fī al-aḥādīṯ al-mutafarraqah"
+      "title": "رسالة في الأحاديث المتفرّقة",
+      "author": "أبو الحسن البصري",
+      "title_translit": "risālah fī al-aḥādīth al-mutafarriqah"
     },
     "r0171": {
+      "author": "أبو الفرج ابن عبد المحسن الأنصاري",
       "title_translit": "tiryāq al-muḥibbīn fī ṭabaqāt ḫirḫat al-mašāyiḫ al-ʿārifīn"
     },
     "r0172": {
-      "author": "ابو الحسن النوري",
+      "author": "أبو الحسن النوري",
       "title_translit": "maqāmat al-qulūb",
       "discrepancy_note": "Nwyia's index attributes this copy to al-Nawawī (النووي). Maqāmāt al-qulūb is Abū al-Ḥasan al-Nūrī's (النوري); the two names differ by one letter, and Fonds cote 078 bundles this copy with r0201, the same work under al-Nūrī."
     },
@@ -4834,6 +5281,7 @@
       "pub_citation": "Muṣṭafā ʿAbd al-Qādir ʿAṭā (ed.). al-Masāʾil fī al-Zuhd. Cairo: Maktabat al-Turāth al-Islāmī, 1406/1986."
     },
     "r0178": {
+      "title": "بدء من أناب إلى الله",
       "title_translit": "badʾ man anāba ilā allāh",
       "pub_status": "published",
       "pub_citation": "Hellmut Ritter (ed.). Die Schrift des Ḥāriṯ ibn Asad al-Muḥāsibi über den Anfang der Umkehr zu Gott (Kitāb badʾ man anāba ilā Llāh taʿālā). Glückstadt: J.J. Augustin, 1935."
@@ -4845,13 +5293,17 @@
       "pub_citation": "ʿAbd al-Qādir Aḥmad ʿAṭāʾ (ed.). \"Ādāb al-Nufūs,\" pp. 27-145. In ʿAbd al-Qādir Aḥmad ʿAṭā (ed.). Ādāb al-Nufūs wa-yalīhi Kitāb al-Tawahhum. Beirut: Muʾassasat al-Kutub al-Thaqāfīyah, 1411/1991."
     },
     "r0180": {
+      "title": "كتاب الأنوار",
+      "author": "أبو القاسم عبد الرحمن بن محمد الصقلي",
       "title_translit": "kitāb al-anwār"
     },
     "r0181": {
+      "author": "عبد الرحمن ابن أحمد",
       "title_translit": "kitāb al-nūr"
     },
     "r0182": {
       "title": "كتاب العظمة",
+      "author": "ابن أبي الدنيا",
       "title_translit": "kitāb al-ʿaẓamah",
       "catalog_note": "Identified as Kitāb al-ʿAẓama, one of Ibn Abī al-Dunyā's monographs.",
       "pub_status": "published",
@@ -4871,6 +5323,7 @@
       "pub_citation": "Ghawr al-umūr, ed. & French tr. G. Gobillot, “La pensée d’al-Ḥakīm al-Tirmiḏī”, thèse, Lyon, 1989."
     },
     "r0186": {
+      "author": "عبد الرحمن محمد بن محمد الإسفاريني",
       "title_translit": "--",
       "catalog_note": "No title is recorded for this entry in the Fonds index."
     },
@@ -4903,10 +5356,13 @@
       "pub_citation": "Süleyman Ateş (ed.). \"Masʿalat Darajāt al-Ṣādiqīn,\" pp. ١٤١-١٥٢. In Süleyman Ateş (ed.). Tisʿat Kutub li-Abī ʿAbd al-Raḥmān al-Sulamī / Tasavvufun Ana Ilkeleri Sülemî'nin Risaleleri. Ankara: Kuliyyat Ilahiyat, 1401/1981; reprint Beirut: al-Nāshir, 1414/1993."
     },
     "r0192": {
+      "author": "أبو طالب المكي",
       "title_translit": "ʿan al-sukūt",
       "pub_status": "published"
     },
     "r0193": {
+      "title": "في أنواء العلوم",
+      "author": "عبدالله الأنصاري",
       "title_translit": "fī anwāʾ al-ʿulūm"
     },
     "r0194": {
@@ -4916,6 +5372,8 @@
       "pub_citation": "Louis Massignon. \"Le Dîwân d'al-Ḥallâj. Essai de Reconstitution, Édition, et Traduction,\" Journal Asiatique Vol. CCXVIII (1931): pp. 1-158."
     },
     "r0195": {
+      "title": "كتاب يسر الأرواح",
+      "author": "أبو محمد روزبهان البقلي الشيرازي",
       "title_translit": "kitāb yusr al-arwāḥ"
     },
     "r0196": {
@@ -4951,27 +5409,33 @@
       "title_translit": "maqāmat al-qulūb"
     },
     "r0202": {
+      "title": "الرسالة الهنديّة",
       "title_translit": "al-risālah al-hindīyah"
     },
     "r0203": {
       "title_translit": "kitāb al-farāʾiḍ"
     },
     "r0204": {
+      "title": "شرح أوراد حفظيّة",
+      "author": "أبو الحسن البصري",
       "title_translit": "šarḥ awrād al-ḥifẓīyah"
     },
     "r0205": {
       "title_translit": "faḍāʾil al-qurʾān"
     },
     "r0206": {
+      "title": "وصيّة",
       "title_translit": "waṣīyah"
     },
     "r0207": {
-      "title_translit": "bayānn aḥwāl al-ṣūfīyah",
+      "title": "بيان أحوال الصوفيّة",
+      "title_translit": "bayān aḥwāl al-ṣūfīyah",
       "work_url": "https://archive.org/details/tisat_kutub_fi_usul_al-tasawuf_waz_zuhd/page/n139/mode/2up?view=theater",
       "pub_status": "published",
       "pub_citation": "Süleyman Ateş (ed.). \"Bayān Aḥwāl al-Ṣūfīyah,\"  pp. ١٤١-١٥٠. In Süleyman Ateş (ed.). Tisʿat Kutub fī Uṣūl al-Taṣawwuf wa-l-Zuhd li-Abī ʿAbd al-Raḥmān al-Sulamī / Tasavvufun Ana Ilkeleri Sülemî'nin Risaleleri. Ankara: Ankara Üniversitesi Basimevi, 1401/1981; reprint Beirut: al-Nāshir, 1414/1993."
     },
     "r0208": {
+      "title": "جوامع آداب الصوفيّة",
       "title_translit": "ǧawāmiʿ ādāb al-ṣūfīyah",
       "pub_status": "published",
       "pub_citation": "Etan Kohlberg (ed.). Jawāmiʿ Ādāb al-Ṣūfīyah of Abū ʿAbd al-Raḥmān al-Sulamī (d. 412/1021). Jerusalem: Jerusalem Academic Press, 1976; repr. Cairo: Dār Jawāmiʿ al-Kalam, 1420/1999; repr. I, 311-408. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
@@ -4980,12 +5444,16 @@
       "title_translit": "manāfiʿ al-qurʾān"
     },
     "r0210": {
+      "title": "الرضا عن الله والصبر على قضائه",
+      "author": "ابن أبي الدنيا",
+      "title_translit": "al-riḍā ʿan allāh wa-l-ṣabr ʿalā qaḍāʾih",
       "pub_status": "published"
     },
     "r0211": {
       "title_translit": "ʿarāʾis al-bayān"
     },
     "r0212": {
+      "author": "أبو الحسن النوري",
       "title_translit": "maqāmat al-qulūb"
     },
     "r0213": {
@@ -4995,20 +5463,23 @@
       "title_translit": "tafsīr"
     },
     "r0215": {
+      "title": "تهذيب الأسرار",
       "title_translit": "tahḏīb al-asrār",
       "pub_status": "published",
       "pub_citation": "Bassām Muḥammad Bārūd (ed.). Tahdhīb al-Asrār. Abu Dhabi: Al-Majmaʿ al-Thaqafī, 1999."
     },
     "r0216": {
+      "title": "تهذيب الأسرار",
       "title_translit": "tahḏīb al-asrār",
       "pub_status": "published",
       "pub_citation": "Bassām Muḥammad Bārūd (ed.). Tahdhīb al-Asrār. Abu Dhabi: Al-Majmaʿ al-Thaqafī, 1999."
     },
     "r0217": {
+      "author": "أبو القاسم أحمد بن قسي المغربي",
       "title_translit": "ḫalʿ al-naʿlayn"
     },
     "r0218": {
-      "title_translit": "rašḥ al-zalāl fī iṣṭilāḥāṭ al-mašāyiḫ"
+      "title_translit": "rašḥ al-zalāl fī iṣṭilāḥāt al-mašāyiḫ"
     },
     "r0219": {
       "title_translit": "muḫtaṣar fī al-tawbah"
@@ -5018,13 +5489,16 @@
     },
     "r0221": {
       "title": "كتاب الصيام",
+      "author": "أبو بكر جعفر بن محيي الحسن بن المستفاص الفيزيائي",
       "title_translit": "kitāb al-ṣiyām",
       "catalog_note": "الجزء الاول"
     },
     "r0222": {
+      "title": "ذكر الأبدال",
       "title_translit": "ḏikr al-abdāl"
     },
     "r0223": {
+      "author": "ابن أبي الدنيا",
       "title_translit": "kitāb al-yaqīn",
       "pub_status": "published"
     },
@@ -5041,7 +5515,7 @@
       "pub_source": "edition"
     },
     "r0226": {
-      "title": "لطائف الاشارات",
+      "title": "لطائف الإشارات",
       "title_translit": "laṭāʾif al-išārāt",
       "catalog_note": "Identified as Laṭāʾif al-išārāt, al-Qušayrī's Qurʾān commentary.",
       "pub_status": "published",
@@ -5049,7 +5523,7 @@
       "discrepancy_note": "Nwyia's index records the title as «21 – 1 تفسير»."
     },
     "r0227": {
-      "title": "لطائف الاشارات",
+      "title": "لطائف الإشارات",
       "title_translit": "laṭāʾif al-išārāt",
       "catalog_note": "Identified as Laṭāʾif al-išārāt, al-Qušayrī's Qurʾān commentary.",
       "pub_status": "published",
@@ -5057,20 +5531,30 @@
       "discrepancy_note": "Nwyia's index records the title as «3122 – تفسير»."
     },
     "r0228": {
+      "title": "مناقب الأبرار",
       "title_translit": "manāqib al-abrār"
     },
     "r0229": {
+      "title": "مناقب الأبرار",
       "title_translit": "manāqib al-abrār"
     },
     "r0230": {
+      "title": "أمد الأقصى",
+      "author": "أبو زيد الدبوسي الحنفي",
       "title_translit": "amad al-aqṣā"
     },
     "r0231": {
-      "title": "رسالة الزيتونية",
+      "title": "رسالة الزيتونيّة",
+      "author": "أبو نصر الفارابي",
       "title_translit": "risālat al-zaytūnīyah",
       "catalog_note": "نسختان"
     },
+    "r0232": {
+      "author": "عبد الوهاب بن أحمد بن علي الأنصاري",
+      "title_translit": "risālat al-fatḥ fī taʾwīl mā ṣadr ʿan al-kamal min al-šaṭḥ"
+    },
     "r0233": {
+      "author": "محمد بن علي الأندلسيّ",
       "title_translit": "kitāb al-maʿrifah",
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
@@ -5084,6 +5568,7 @@
       "pub_citation": "Jalāl al-Dīn al-Dawānī, al-Risāla al-Zawrāʾ (printed in several editions)."
     },
     "r0235": {
+      "title": "الحكم العطائيّة",
       "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
@@ -5091,6 +5576,7 @@
     },
     "r0236": {
       "title": "حكم أبي مدين",
+      "author": "أبو مدين شعيب",
       "title_translit": "ḥikam abī madyan",
       "catalog_note": "Identified as the Ḥikam of Abū Madyan Šuʿayb.",
       "discrepancy_note": "Nwyia's index records the title as «حكم»."
@@ -5102,12 +5588,14 @@
       "title_translit": "ḥaqāʾiq al-yaqīn wa-zulfat al-tamkīn"
     },
     "r0239": {
+      "title": "السؤال عن أفضل الذكر",
       "title_translit": "al-suʾāl ʿan afḍal al-ḏikr"
     },
     "r0240": {
       "title_translit": "suʾāl al-futūḥāt wa-ǧawābuh"
     },
     "r0241": {
+      "title": "رسالة المحبّة",
       "title_translit": "risālat al-maḥabbah",
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
@@ -5115,6 +5603,7 @@
       "pub_source": "bibliography"
     },
     "r0242": {
+      "title": "جواب عن مسألة (القوّة البيضاء وهو العقل الأوّل)",
       "title_translit": "ǧawāb ʿan masʾalat al-quwwah al-bayḍāʾ wa-huwa al-ʿaql al-awwal"
     },
     "r0243": {
@@ -5122,8 +5611,13 @@
       "title_translit": "risālah",
       "catalog_note": "نص غير مكتمل"
     },
+    "r0244": {
+      "title": "شرح كلام أبي الحسن النوري",
+      "title_translit": "šarḥ kalām abī al-ḥasan al-nūrī"
+    },
     "r0245": {
       "title": "حكم أبي مدين",
+      "author": "أبو مدين شعيب",
       "title_translit": "ḥikam abī madyan",
       "catalog_note": "Identified as the Ḥikam of Abū Madyan Šuʿayb.",
       "discrepancy_note": "Nwyia's index records the title as «حكم»."
@@ -5161,14 +5655,20 @@
       "title_translit": "šurūṭ al-taṣawwuf"
     },
     "r0253": {
+      "title": "في علم الإشارات، الجزء الأوّل",
+      "author": "أبو سعيد الخرّاز",
       "title_translit": "fī ʿilm al-išārāt al-ǧuzʾ al-awwal",
       "pub_status": "published"
     },
     "r0254": {
+      "title": "في علم الإشارات، الجزء الثاني",
+      "author": "أبو سعيد الخرّاز",
       "title_translit": "fī ʿilm al-išārāt al-ǧuzʾ al-ṯānī",
       "pub_status": "published"
     },
     "r0255": {
+      "author": "أبو سعيد الخرّاز، الوسي، التستري",
+      "title_translit": "miʿyār al-taṣawwuf wa-māhīyatuhū min kalām al-šuyūḫ",
       "pub_status": "published"
     },
     "r0256": {
@@ -5184,6 +5684,7 @@
       "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
     },
     "r0258": {
+      "title": "الدرّ المكنون في أسئلة ما كان وما يكون",
       "author": "ابن العربي",
       "title_translit": "al-durr al-maknūn fī asʾilah mā kāna wa-mā yakūn",
       "catalog_note": "Attributed to Ibn al-ʿArabī al-Ṭāʾī (per JF); a divination-genre work (asʾilat mā kāna wa-mā yakūn), not listed among his works in the MIAS catalogue — publication status open.",
@@ -5209,10 +5710,11 @@
       "pub_status": "published"
     },
     "r0263": {
+      "title": "أقوال الأئمّة الصوفيّة",
       "title_translit": "aqwāl al-aʾimmah al-ṣūfīyah"
     },
     "r0264": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "pub_status": "published",
@@ -5227,13 +5729,14 @@
       "pub_source": "edition"
     },
     "r0266": {
+      "title": "الحكم العطائيّة",
       "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "pub_source": "edition"
     },
     "r0267": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "pub_status": "published",
@@ -5248,7 +5751,9 @@
       "title_translit": "maḥāsin al-maǧālis"
     },
     "r0270": {
+      "title": "من كلام النفّري في التستري",
       "author": "النفري",
+      "title_translit": "min kalām al-niffarī fī al-tustarī",
       "work_url": "https://www.fihrist.org.uk/catalog/manuscript_11794"
     },
     "r0271": {
@@ -5258,9 +5763,13 @@
       "pub_citation": "ʿAfīf al-Dīn al-Tilimsānī, Sharḥ Mawāqif al-Niffarī, ed. Jamāl al-Marzūqī, Cairo, 2000 (also ed. ʿĀṣim Ibrāhīm al-Kayyālī, Beirut, 2007)."
     },
     "r0272": {
+      "title": "الخلاصة المرضيّة من الدرّة المضيّة",
+      "author": "محمد بن أحمد المدني",
+      "title_translit": "al-ḫulāsah al-marḍīyah min al-durrah al-muḍīyah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
     },
     "r0273": {
+      "author": "أبو سعيد الخادمي",
       "title_translit": "risālah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
     },
@@ -5273,11 +5782,12 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
     },
     "r0276": {
+      "title": "كتاب الكمالات الإلهيّة في الصفات المحمّديّة",
       "title_translit": "kitāb al-kamālāt al-ilāhīyah fī al-ṣifāt al-muḥammadīyah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905427"
     },
     "r0277": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90557n",
@@ -5293,66 +5803,85 @@
       "pub_citation": "al-Nafaḥāt al-ilāhiyya, ed. Muḥammad Khwājawī, Tehran, 1996."
     },
     "r0279": {
+      "title": "مرآة الجمال",
       "author": "اليافعي",
-      "title_translit": "mirāʾat al-ǧamāl",
+      "title_translit": "mirʾāt al-ǧamāl",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90571m",
       "pub_status": "published",
       "pub_citation": "ʿAbd Allāh b. Asʿad al-Yāfiʿī, Mirʾāt al-janān wa-ʿibrat al-yaqẓān, 4 vols., Hyderabad: Dāʾirat al-Maʿārif al-Niẓāmiyya, 1337–39/1918–21."
     },
     "r0280": {
+      "title_translit": "nafaḥāt al-uns min ḥaḍrat al-quds",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90575k"
     },
     "r0281": {
       "title_translit": "zubdat al-taḥqīq wa-nuzhat al-tawfīq šarḥ al-qūnī nuṣūṣ fī taḥqīq"
     },
     "r0282": {
+      "title": "تفهيم معاني الحروف ولطائف المعاني الّتي هي",
+      "author": "فخر الدين أبو الحسن علي بن أحمد حرّالي",
       "title_translit": "tafhīm maʿānī al-ḥurūf wa-laṭāʾif al-maʿānī allatī hiya",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
     },
     "r0283": {
-      "title_translit": "fatwā ṣalāḥ al-amal al-intiẓār al-ajl",
+      "title": "فتوى صلاح الأمل لانتظار الأجل",
+      "author": "فخر الدين أبو الحسن علي بن أحمد حرّالي",
+      "title_translit": "fatwā ṣalāḥ al-amal al-intiẓār al-ajal",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
     },
     "r0284": {
+      "author": "فخر الدين أبو الحسن علي بن أحمد حرّالي",
       "title_translit": "kitāb al-tawšīh wa-l-tawfiyah",
       "work_url": "https://archive.org/details/0868Pdf_201804",
       "pub_status": "published",
       "pub_citation": "Maḥāmadī b. ʿAbd al-Sallām al-Khayyāṭī (ed.), Abū al-Ḥasan al-Ḥarrālī al-Marrākušī (d. 638) fī al-tafsīr, Silsilat Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākušī 1 (Tetouan: n.p., n.d.)."
     },
     "r0285": {
+      "title": "كتاب العروة للمفتاح الفاتح للباب المقفّل",
+      "author": "فخر الدين أبو الحسن علي بن أحمد حرّالي",
       "title_translit": "kitāb al-ʿurwah li-l-miftāḥ al-fātiḥ li-l-bāb al-muqaffal",
       "work_url": "https://archive.org/details/0868Pdf_201804",
       "pub_status": "published",
       "pub_citation": "Maḥāmadī b. ʿAbd al-Sallām al-Khayyāṭī (ed.), Abū al-Ḥasan al-Ḥarrālī al-Marrākušī (d. 638) fī al-tafsīr, Silsilat Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākušī 1 (Tetouan: n.p., n.d.)."
     },
     "r0286": {
+      "author": "فخر الدين أبو الحسن علي بن أحمد حرّالي",
       "title_translit": "kitāb al-lamḥah fī maʿrifat al-ḥurūf",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
     },
     "r0287": {
+      "title": "كتاب مفتاح الباب المقفّل لفهم القرآن المنزّل",
+      "author": "فخر الدين أبو الحسن علي بن أحمد حرّالي",
+      "title_translit": "kitāb miftāḥ al-bāb al-muqaffal li-fahm al-qurʾān al-munazzal",
       "work_url": "https://archive.org/details/0868Pdf_201804",
       "pub_status": "published",
       "pub_citation": "Maḥāmadī b. ʿAbd al-Sallām al-Khayyāṭī (ed.), Abū al-Ḥasan al-Ḥarrālī al-Marrākušī (d. 638) fī al-tafsīr, Silsilat Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākušī 1 (Tetouan: n.p., n.d.)."
     },
     "r0288": {
+      "author": "فخر الدين أبو الحسن علي بن أحمد حرّالي",
       "title_translit": "al-ḥikam",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
     },
     "r0289": {
+      "author": "فخر الدين أبو الحسن علي بن أحمد حرّالي",
+      "title_translit": "fī ḏikr mā nazala fī al-ḥikmah min al-āyah",
       "work_url": "https://archive.org/details/0868Pdf_201804",
       "pub_status": "published",
       "pub_citation": "Maḥāmadī b. ʿAbd al-Sallām al-Khayyāṭī (ed.), Abū al-Ḥasan al-Ḥarrālī al-Marrākušī (d. 638) fī al-tafsīr, Silsilat Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākušī 1 (Tetouan: n.p., n.d.)."
     },
     "r0290": {
+      "title": "كتاب الأسوس",
       "title_translit": "kitāb al-usūs",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906599"
     },
     "r0291": {
-      "title_translit": "kitāb al-aṣfīr wa-ġayruh",
+      "title": "كتاب الأصيفر وغيره",
+      "title_translit": "kitāb al-aṣayfar wa-ġayruh",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90660b"
     },
     "r0292": {
-      "title_translit": "kitāb al-aṣfīr wa-ġayruh",
+      "title": "كتاب الأصيفر وغيره",
+      "title_translit": "kitāb al-aṣayfar wa-ġayruh",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90660b"
     },
     "r0293": {
@@ -5363,17 +5892,19 @@
       "title_translit": "ǧafr"
     },
     "r0295": {
-      "title": "المنظومة في الطب",
+      "title": "المنظومة في الطبّ",
       "title_translit": "al-manẓūmah fī al-ṭibb",
       "catalog_note": "BnF Arabe 3038 is a majmūʿ of three medical texts, of which Ibn Sīnā's is the third: 1° ff. 1–54 Zād al-musāfir wa-qūt al-ḥāḍir; 2° f. 56v a treatise on the pulse by Muḥammad b. Aḥmad b. al-ʿĀṣ; 3° f. 62 al-Manẓūma fī al-ṭibb by Avicenna. Paper, 70 ff., various 17th-c. hands.",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc309468",
       "discrepancy_note": "Nwyia's index records the title as «Traité médicale»."
     },
     "r0296": {
+      "title": "قصيدة العينيّة",
       "title_translit": "qaṣīdat al-ʿaynīyah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc31125c"
     },
     "r0297": {
+      "title": "قصيدة العينيّة",
       "title_translit": "qaṣīdat al-ʿaynīyah"
     },
     "r0298": {
@@ -5397,11 +5928,13 @@
       "pub_citation": "Muḥammad Ḥasan Ismāʿīl and Aḥmad Farīd Mizyadī (eds.). Baḥr al-Fawaʾid al-mashhūr bi-Maʿānī al-Akhbār. Beirut: Dār al-Kutub al-ʿIlmīyah, 1999."
     },
     "r0301": {
-      "title_translit": "taʿlīm diyānat al-nuṣarīyah",
+      "title_translit": "taʿlīm diyānat al-nuṣayrīyah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33187c"
     },
     "r0302": {
-      "title_translit": "šarḥ al-isrāʾ li-ibn ʿarabī",
+      "title": "شرح الإسراء",
+      "title_translit": "šarḥ al-isrāʾ",
+      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī).",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33572n"
     },
     "r0303": {
@@ -5418,11 +5951,13 @@
       "pub_citation": "al-Ghazālī, Tahāfut al-falāsifa, ed. Maurice Bouyges, Beirut: Imprimerie Catholique, 1927."
     },
     "r0305": {
+      "title": "الأوّل والثالث: الأسرار الأربعة",
       "title_translit": "al-awwal wa-l-ṯāliṯ al-asrār al-arbaʿah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc5960x"
     },
     "r0306": {
       "title": "كتاب الاصطلاح على بطن القرآن",
+      "title_translit": "kitāb al-iṣṭilāḥ ʿalā baṭn al-qurʾān",
       "catalog_note": "BnF Arabe 6962: titled at f. 1 Kitāb al-iṣṭilāḥ ʿalā baṭn al-Qurʾān (catalogued as Kitāb fī al-iṣṭilāḥāt). GAL Suppl. II, 281; Ahlwardt I, 874–875. Copy completed 15 Rabīʿ II 895 / 8 March 1490. Nwyia's «tafsīr» is a loose descriptor: the work expounds the inner senses of the Qurʾān rather than being a running commentary.",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc19984n",
       "discrepancy_note": "Nwyia's index records the title as «تفسير»."
@@ -5433,15 +5968,20 @@
     "r0308": {
       "title_translit": "al-ḥadāʾiq li-ahl al-ḥaqīqah"
     },
+    "r0309": {
+      "title_translit": "miftāḥ al-saʿādah wa-taḥqīq ṭarīq al-saʿādah"
+    },
     "r0310": {
+      "author": "أبو زيد عبد الرحمن بن أحمد الجامي",
       "title_translit": "kitāb al-lawāʾiḥ"
     },
     "r0311": {
-      "title": "إفادة المرتاد بالتعريف بابن عباد",
+      "title": "إفادة المرتاد بالتعريف بابن عبّاد",
       "title_translit": "ifādat al-murtād bi-l-taʿrīf bi-ibn ʿabbād",
       "discrepancy_note": "PDF extraction dropped a bāʾ: the index reads «بان عباد» where the title is «بابن عباد» — Ifādat al-murtād bi-l-taʿrīf bi-Ibn ʿAbbād, al-Zabādī's introduction to Ibn ʿAbbād al-Rundī. Compare r0317, «تعريف بابن عباد»."
     },
     "r0312": {
+      "title": "آداب الصوفيّة",
       "title_translit": "ādāb al-ṣūfīyah",
       "pub_status": "published",
       "pub_citation": "Etan Kohlberg (ed.). Jawāmiʿ Ādāb al-Ṣūfīyah of Abū ʿAbd al-Raḥmān al-Sulamī (d. 412/1021). Jerusalem: Jerusalem Academic Press, 1976; repr. Cairo: Dār Jawāmiʿ al-Kalam, 1420/1999; repr. I, 311-408. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
@@ -5449,26 +5989,40 @@
     "r0313": {
       "title_translit": "taqyīdāt"
     },
+    "r0314": {
+      "title_translit": "šarḥ ibn ʿaǧībah ʿalā al-šustarī"
+    },
     "r0315": {
       "title_translit": "miʿrāǧ al-taṣawwuf"
     },
     "r0316": {
+      "title": "أسجال",
       "title_translit": "asǧāl"
     },
     "r0317": {
-      "title_translit": "iṣṭilāḥāṭ al-ṣūfīyah taʿrīf bi-ibn ʿabbād"
+      "title": "اصطلاحات الصوفيّة، تعريف بابن عبّاد",
+      "title_translit": "iṣṭilāḥāt al-ṣūfīyah taʿrīf bi-ibn ʿabbād"
     },
     "r0318": {
-      "title_translit": "iṣṭilāḥāṭ al-ṣūfīyah"
+      "title": "اصطلاحات الصوفيّة",
+      "title_translit": "iṣṭilāḥāt al-ṣūfīyah"
     },
     "r0319": {
+      "title": "أسانيد بعض طرق الصوفيّة",
       "title_translit": "asānīd baʿḍ ṭuruq al-ṣūfīyah"
     },
     "r0320": {
       "title_translit": "kitāb al-minaḥ al-bādiyah"
     },
+    "r0321": {
+      "title": "الردّ على الشيخ– كتاب في الانتصار الخروبي",
+      "author": "ابن محلى– أبو عمرو",
+      "title_translit": "al-radd ʿalā al-šayḫ kitāb fī al-intiṣār al-ḫarūbī"
+    },
     "r0322": {
+      "title": "شرح التجلّيات",
       "title_translit": "šarḥ al-taǧalliyāt",
+      "catalog_note": "Commentary on Ibn ʿArabī's al-Taǧalliyāt. The title carries no li- attribution, so this note is added by the rule established at r0069 («most Ibn Sawdakīn titles are commentaries on Ibn al-ʿArabī»), not from the catalogued title itself.",
       "pub_status": "published",
       "pub_citation": "Ismāʿīl b. Sawdakīn al-Nūrī, Sharḥ al-Tajalliyāt (on Ibn al-ʿArabī's Kitāb al-Tajalliyāt), ed. Osman Yahya, Tehran, 1988; also ed. Muḥammad Idrīs al-ʿAdlūnī, Casablanca, 2009."
     },
@@ -5480,7 +6034,7 @@
       "pub_status": "published"
     },
     "r0325": {
-      "title": "رسالة طواسين الازل",
+      "title": "رسالة طواسين الأزل",
       "title_translit": "risālat ṭawāsīn al-azal",
       "catalog_note": "نسختان",
       "work_url": "https://archive.org/details/kitbalawsn00usaiuoft",
@@ -5494,7 +6048,7 @@
       "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
     },
     "r0327": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Sprenger 1169",
@@ -5507,7 +6061,7 @@
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1169”: it is Berlin SBB Sprenger 1169, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0328": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Sprenger 1172",
@@ -5520,7 +6074,7 @@
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1172”: it is Berlin SBB Sprenger 1172, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0329": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Petermann II 159",
@@ -5533,7 +6087,7 @@
       "discrepancy_note": "Nwyia recorded this as “Tübingen 159”: it is Berlin SBB Petermann II 159, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0330": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Wetzstein II 1730",
@@ -5546,7 +6100,7 @@
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1730”: it is Berlin SBB Wetzstein II 1730, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0331": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Wetzstein II 1757",
@@ -5559,7 +6113,7 @@
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1757”: it is Berlin SBB Wetzstein II 1757, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0332": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Wetzstein II 1771",
@@ -5572,7 +6126,7 @@
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1771”: it is Berlin SBB Wetzstein II 1771, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0333": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Sprenger 1982",
@@ -5585,7 +6139,7 @@
       "discrepancy_note": "Nwyia recorded this as “Tübingen 1982”: it is Berlin SBB Sprenger 1982, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «الحكم»."
     },
     "r0334": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Petermann I 275",
@@ -5598,7 +6152,7 @@
       "discrepancy_note": "Nwyia recorded this as “Tübingen 275”: it is Berlin SBB Petermann I 275, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «حكم»."
     },
     "r0335": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Landberg 552",
@@ -5611,7 +6165,7 @@
       "discrepancy_note": "Nwyia recorded this as “Tübingen 552”: it is Berlin SBB Landberg 552, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «حكم»."
     },
     "r0336": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Landberg 553",
@@ -5624,6 +6178,7 @@
       "discrepancy_note": "Nwyia recorded this as “Tübingen 553”: it is Berlin SBB Landberg 553, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group). Nwyia's index records the title as «حكم»."
     },
     "r0337": {
+      "title": "الحكم العطائيّة",
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Landberg 889",
@@ -5640,13 +6195,15 @@
       "pub_citation": "al-Nuṣūṣ fī taḥqīq al-ṭawr al-makhṣūṣ, ed. S. J. Āshtiyānī, Tehran, 1342 hş."
     },
     "r0339": {
-      "title_translit": "taʿrīf iṣṭilāḥāṭ al-ṣūfīyah",
+      "title": "تعريف اصطلاحات الصوفيّة",
+      "title_translit": "taʿrīf iṣṭilāḥāt al-ṣūfīyah",
       "pub_status": "published"
     },
     "r0340": {
       "title_translit": "šarḥ al-fuṣūṣ"
     },
     "r0341": {
+      "title": "مبايعة المشايح أهل الحقيقة",
       "title_translit": "mubāyiʿat al-mašāyiḫ ahl al-ḥaqīqah"
     },
     "r0342": {
@@ -5677,7 +6234,7 @@
       "catalog_note": "syriaque"
     },
     "r0347": {
-      "title": "الحكم العطائية",
+      "title": "الحكم العطائيّة",
       "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "pub_status": "published",
@@ -6172,6 +6729,45 @@
     },
     "r0325": {
       "title_translit": "risālat ṭawāsīn al-azal"
+    },
+    "r0210": {
+      "title_translit": "al-riḍā ʿan allāh wa-l-ṣabr ʿalā qaḍāʾih"
+    },
+    "r0232": {
+      "title_translit": "risālat al-fatḥ fī taʾwīl mā ṣadr ʿan al-kamal min al-šaṭḥ"
+    },
+    "r0244": {
+      "title_translit": "šarḥ kalām abī al-ḥasan al-nūrī"
+    },
+    "r0255": {
+      "title_translit": "miʿyār al-taṣawwuf wa-māhīyatuhū min kalām al-šuyūḫ"
+    },
+    "r0270": {
+      "title_translit": "min kalām al-niffarī fī al-tustarī"
+    },
+    "r0272": {
+      "title_translit": "al-ḫulāsah al-marḍīyah min al-durrah al-muḍīyah"
+    },
+    "r0280": {
+      "title_translit": "nafaḥāt al-uns min ḥaḍrat al-quds"
+    },
+    "r0287": {
+      "title_translit": "kitāb miftāḥ al-bāb al-muqaffal li-fahm al-qurʾān al-munazzal"
+    },
+    "r0289": {
+      "title_translit": "fī ḏikr mā nazala fī al-ḥikmah min al-āyah"
+    },
+    "r0306": {
+      "title_translit": "kitāb al-iṣṭilāḥ ʿalā baṭn al-qurʾān"
+    },
+    "r0309": {
+      "title_translit": "miftāḥ al-saʿādah wa-taḥqīq ṭarīq al-saʿādah"
+    },
+    "r0314": {
+      "title_translit": "šarḥ ibn ʿaǧībah ʿalā al-šustarī"
+    },
+    "r0321": {
+      "title_translit": "al-radd ʿalā al-šayḫ kitāb fī al-intiṣār al-ḫarūbī"
     }
   }
 }

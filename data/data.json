@@ -424,7 +424,7 @@
       "page": 1,
       "city": "",
       "library": "",
-      "title": "كتاب النكات والفوائد في العلم الالهي",
+      "title": "كتاب النكات والفوائد في العلم الإلهيّ",
       "author": "ابن سينا",
       "archive": "147",
       "id": "r0020",
@@ -453,6 +453,7 @@
       "shelfmark": "",
       "folios": "",
       "title_translit": "al-wāḍiḥ fī uṣūl al-fiqh",
+      "catalog_note": "Title as catalogued ends «لأبي الوفاء علي بن عقيل» (li-abī al-wafāʾ ʿalī b. ʿaqīl).",
       "author_cluster_id": "c049",
       "pub_status": "unknown",
       "pub_citation": "",
@@ -461,7 +462,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "Title as catalogued ends «لأبي الوفاء علي بن عقيل» (li-abī al-wafāʾ ʿalī b. ʿaqīl).",
       "work_url": ""
     },
     {
@@ -645,7 +645,7 @@
       "city": "",
       "library": "",
       "title": "طبقات الحنابلة، الجزء الثاني",
-      "author": "أبو الحسن محمد بن ابي يعلى",
+      "author": "أبو الحسن محمد بن أبي يعلى",
       "archive": "134",
       "id": "r0030",
       "shelfmark": "",
@@ -1465,6 +1465,7 @@
       "shelfmark": "2903",
       "folios": "fol.1-74",
       "title_translit": "šarḥ kitāb al-isrāʾ",
+      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00011710",
       "author_cluster_id": "c012",
       "pub_status": "unknown",
@@ -1473,8 +1474,7 @@
       "discrepancy_note": "",
       "title_translation": "",
       "author_translit": "",
-      "author_translation": "",
-      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī)."
+      "author_translation": ""
     },
     {
       "page": 3,
@@ -1487,6 +1487,7 @@
       "shelfmark": "2904",
       "folios": "fol.1-118a",
       "title_translit": "kitāb šarḥ al-isrāʾ",
+      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00023932",
       "author_cluster_id": "c012",
       "pub_status": "unknown",
@@ -1495,8 +1496,7 @@
       "discrepancy_note": "",
       "title_translation": "",
       "author_translit": "",
-      "author_translation": "",
-      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī)."
+      "author_translation": ""
     },
     {
       "page": 3,
@@ -1509,6 +1509,7 @@
       "shelfmark": "2904",
       "folios": "fol.119-167",
       "title_translit": "šarḥ al-mašāhid",
+      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00023932",
       "author_cluster_id": "c012",
       "pub_status": "unknown",
@@ -1517,8 +1518,7 @@
       "discrepancy_note": "",
       "title_translation": "",
       "author_translit": "",
-      "author_translation": "",
-      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī)."
+      "author_translation": ""
     },
     {
       "page": 3,
@@ -1531,6 +1531,7 @@
       "shelfmark": "2905",
       "folios": "",
       "title_translit": "šarḥ al-mašāhid al-qudsīyah",
+      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00024259",
       "author_cluster_id": "c063",
       "pub_status": "unknown",
@@ -1539,8 +1540,7 @@
       "discrepancy_note": "",
       "title_translation": "",
       "author_translit": "",
-      "author_translation": "",
-      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī)."
+      "author_translation": ""
     },
     {
       "page": 3,
@@ -1811,7 +1811,7 @@
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "title": "اصطلاحات الصوفيّة",
-      "author": "عبد الرزاق بن ابي الغنائم القاشاني",
+      "author": "عبد الرزاق بن أبي الغنائم القاشاني",
       "archive": "022",
       "id": "r0083",
       "shelfmark": "3461 w1814",
@@ -2646,7 +2646,7 @@
       "page": 4,
       "city": "Cairo",
       "library": "al-Azhar Library",
-      "title": "تبصرة الأدلة",
+      "title": "تبصرة الأدلّة",
       "author": "أبو المعين النسفي",
       "archive": "093",
       "id": "r0121",
@@ -3247,6 +3247,7 @@
       "shelfmark": "I, 785",
       "folios": "(2 vols.)",
       "title_translit": "šarḥ al-mawāqif",
+      "catalog_note": "Title as catalogued ends «للنفّري» (li-l-niffarī).",
       "pub_status": "published",
       "pub_citation": "ʿAfīf al-Dīn al-Tilimsānī, Sharḥ Mawāqif al-Niffarī, ed. Jamāl al-Marzūqī, Cairo, 2000 (also ed. ʿĀṣim Ibrāhīm al-Kayyālī, Beirut, 2007).",
       "author_cluster_id": "c034",
@@ -3255,7 +3256,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "Title as catalogued ends «للنفّري» (li-l-niffarī).",
       "work_url": ""
     },
     {
@@ -3285,7 +3285,7 @@
       "city": "Istanbul",
       "library": "Laleli Library",
       "title": "كتاب المتمنّين",
-      "author": "ابن ابي الدنيا",
+      "author": "ابن أبي الدنيا",
       "archive": "073",
       "id": "r0150",
       "shelfmark": "3664",
@@ -3307,7 +3307,7 @@
       "city": "Istanbul",
       "library": "Laleli Library",
       "title": "التهجّد وقيام الليل",
-      "author": "ابن ابي الدنيا",
+      "author": "ابن أبي الدنيا",
       "archive": "073",
       "id": "r0151",
       "shelfmark": "3664",
@@ -3329,7 +3329,7 @@
       "city": "Istanbul",
       "library": "Laleli Library",
       "title": "كتاب الأولياء",
-      "author": "ابن ابي الدنيا",
+      "author": "ابن أبي الدنيا",
       "archive": "073",
       "id": "r0152",
       "shelfmark": "3664",
@@ -3351,7 +3351,7 @@
       "city": "Istanbul",
       "library": "Laleli Library",
       "title": "الصبر والثواب عليه",
-      "author": "ابن ابي الدنيا",
+      "author": "ابن أبي الدنيا",
       "archive": "073",
       "id": "r0153",
       "shelfmark": "3664",
@@ -3373,7 +3373,7 @@
       "city": "Istanbul",
       "library": "Laleli Library",
       "title": "العزلة والإنفراد",
-      "author": "ابن ابي الدنيا",
+      "author": "ابن أبي الدنيا",
       "archive": "073",
       "id": "r0154",
       "shelfmark": "3664",
@@ -3395,7 +3395,7 @@
       "city": "Istanbul",
       "library": "Laleli Library",
       "title": "الهمّ والحزن",
-      "author": "ابن ابي الدنيا",
+      "author": "ابن أبي الدنيا",
       "archive": "073",
       "id": "r0155",
       "shelfmark": "3664",
@@ -3989,7 +3989,7 @@
       "city": "Istanbul",
       "library": "Süleymaniye Library",
       "title": "كتاب العظمة",
-      "author": "ابن ابي الدنيا",
+      "author": "ابن أبي الدنيا",
       "archive": "073",
       "id": "r0182",
       "shelfmark": "Carullah 400",
@@ -4605,17 +4605,17 @@
       "city": "Istanbul",
       "library": "Süleymaniye Library",
       "title": "الرضا عن الله والصبر على قضائه",
-      "author": "ابن ابي الدنيا",
+      "author": "ابن أبي الدنيا",
       "archive": "073",
       "id": "r0210",
       "shelfmark": "Laleli 3664",
       "folios": "fol.16a-25b",
+      "title_translit": "al-riḍā ʿan allāh wa-l-ṣabr ʿalā qaḍāʾih",
       "pub_status": "published",
       "author_cluster_id": "c004",
       "pub_citation": "",
       "pub_source": "",
       "discrepancy_note": "",
-      "title_translit": "al-riḍā ʿan allāh wa-l-ṣabr ʿalā qaḍāʾih",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
@@ -4891,7 +4891,7 @@
       "city": "Istanbul",
       "library": "Süleymaniye Library",
       "title": "كتاب اليقين",
-      "author": "ابن ابي الدنيا",
+      "author": "ابن أبي الدنيا",
       "archive": "086",
       "id": "r0223",
       "shelfmark": "Sehid `ali 360",
@@ -5094,12 +5094,12 @@
       "id": "r0232",
       "shelfmark": "1821",
       "folios": "",
+      "title_translit": "risālat al-fatḥ fī taʾwīl mā ṣadr ʿan al-kamal min al-šaṭḥ",
       "author_cluster_id": "c096",
       "pub_status": "unknown",
       "pub_citation": "",
       "pub_source": "",
       "discrepancy_note": "",
-      "title_translit": "risālat al-fatḥ fī taʾwīl mā ṣadr ʿan al-kamal min al-šaṭḥ",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
@@ -5358,12 +5358,12 @@
       "id": "r0244",
       "shelfmark": "1821",
       "folios": "fol.88b-93a",
+      "title_translit": "šarḥ kalām abī al-ḥasan al-nūrī",
       "author_cluster_id": "",
       "pub_status": "unknown",
       "pub_citation": "",
       "pub_source": "",
       "discrepancy_note": "",
-      "title_translit": "šarḥ kalām abī al-ḥasan al-nūrī",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
@@ -5600,12 +5600,12 @@
       "id": "r0255",
       "shelfmark": "2713",
       "folios": "fol.88a-133a",
+      "title_translit": "miʿyār al-taṣawwuf wa-māhīyatuhū min kalām al-šuyūḫ",
       "pub_status": "published",
       "author_cluster_id": "c025",
       "pub_citation": "",
       "pub_source": "",
       "discrepancy_note": "",
-      "title_translit": "miʿyār al-taṣawwuf wa-māhīyatuhū min kalām al-šuyūḫ",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
@@ -5770,7 +5770,7 @@
       "page": 8,
       "city": "London",
       "library": "British Museum / British Library",
-      "title": "أقوال الأئمة الصوفيّة",
+      "title": "أقوال الأئمّة الصوفيّة",
       "author": "",
       "archive": "013 a,b",
       "id": "r0263",
@@ -5930,13 +5930,13 @@
       "id": "r0270",
       "shelfmark": "554",
       "folios": "",
+      "title_translit": "min kalām al-niffarī fī al-tustarī",
       "work_url": "https://www.fihrist.org.uk/catalog/manuscript_11794",
       "author_cluster_id": "c010",
       "pub_status": "unknown",
       "pub_citation": "",
       "pub_source": "",
       "discrepancy_note": "",
-      "title_translit": "min kalām al-niffarī fī al-tustarī",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
@@ -5974,13 +5974,13 @@
       "id": "r0272",
       "shelfmark": "Arabe 1337",
       "folios": "",
+      "title_translit": "al-ḫulāsah al-marḍīyah min al-durrah al-muḍīyah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410",
       "author_cluster_id": "c102",
       "pub_status": "unknown",
       "pub_citation": "",
       "pub_source": "",
       "discrepancy_note": "",
-      "title_translit": "al-ḫulāsah al-marḍīyah min al-durrah al-muḍīyah",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
@@ -6150,13 +6150,13 @@
       "id": "r0280",
       "shelfmark": "Arabe 1370",
       "folios": "",
+      "title_translit": "nafaḥāt al-uns min ḥaḍrat al-quds",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90575k",
       "author_cluster_id": "c041",
       "pub_status": "unknown",
       "pub_citation": "",
       "pub_source": "",
       "discrepancy_note": "",
-      "title_translit": "nafaḥāt al-uns min ḥaḍrat al-quds",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
@@ -6304,13 +6304,13 @@
       "id": "r0287",
       "shelfmark": "Arabe 1398",
       "folios": "",
+      "title_translit": "kitāb miftāḥ al-bāb al-muqaffal li-fahm al-qurʾān al-munazzal",
       "work_url": "https://archive.org/details/0868Pdf_201804",
       "pub_status": "published",
       "pub_citation": "Maḥāmadī b. ʿAbd al-Sallām al-Khayyāṭī (ed.), Abū al-Ḥasan al-Ḥarrālī al-Marrākušī (d. 638) fī al-tafsīr, Silsilat Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākušī 1 (Tetouan: n.p., n.d.).",
       "author_cluster_id": "c008",
       "pub_source": "",
       "discrepancy_note": "",
-      "title_translit": "kitāb miftāḥ al-bāb al-muqaffal li-fahm al-qurʾān al-munazzal",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
@@ -6348,13 +6348,13 @@
       "id": "r0289",
       "shelfmark": "Arabe 1398",
       "folios": "",
+      "title_translit": "fī ḏikr mā nazala fī al-ḥikmah min al-āyah",
       "work_url": "https://archive.org/details/0868Pdf_201804",
       "pub_status": "published",
       "pub_citation": "Maḥāmadī b. ʿAbd al-Sallām al-Khayyāṭī (ed.), Abū al-Ḥasan al-Ḥarrālī al-Marrākušī (d. 638) fī al-tafsīr, Silsilat Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākušī 1 (Tetouan: n.p., n.d.).",
       "author_cluster_id": "c008",
       "pub_source": "",
       "discrepancy_note": "",
-      "title_translit": "fī ḏikr mā nazala fī al-ḥikmah min al-āyah",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
@@ -6635,6 +6635,7 @@
       "shelfmark": "Arabe 6613",
       "folios": "",
       "title_translit": "šarḥ al-isrāʾ",
+      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī).",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33572n",
       "author_cluster_id": "c012",
       "pub_status": "unknown",
@@ -6643,8 +6644,7 @@
       "discrepancy_note": "",
       "title_translation": "",
       "author_translit": "",
-      "author_translation": "",
-      "catalog_note": "Title as catalogued ends «لابن عربي» (li-ibn ʿarabī)."
+      "author_translation": ""
     },
     {
       "page": 9,
@@ -6722,6 +6722,7 @@
       "id": "r0306",
       "shelfmark": "Arabe 6962",
       "folios": "",
+      "title_translit": "kitāb al-iṣṭilāḥ ʿalā baṭn al-qurʾān",
       "catalog_note": "BnF Arabe 6962: titled at f. 1 Kitāb al-iṣṭilāḥ ʿalā baṭn al-Qurʾān (catalogued as Kitāb fī al-iṣṭilāḥāt). GAL Suppl. II, 281; Ahlwardt I, 874–875. Copy completed 15 Rabīʿ II 895 / 8 March 1490. Nwyia's «tafsīr» is a loose descriptor: the work expounds the inner senses of the Qurʾān rather than being a running commentary.",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc19984n",
       "discrepancy_note": "Nwyia's index records the title as «تفسير».",
@@ -6729,7 +6730,6 @@
       "pub_status": "unknown",
       "pub_citation": "",
       "pub_source": "",
-      "title_translit": "kitāb al-iṣṭilāḥ ʿalā baṭn al-qurʾān",
       "title_translation": "",
       "author_translit": "",
       "author_translation": ""
@@ -6788,12 +6788,12 @@
       "id": "r0309",
       "shelfmark": "1562",
       "folios": "",
+      "title_translit": "miftāḥ al-saʿādah wa-taḥqīq ṭarīq al-saʿādah",
       "author_cluster_id": "c040",
       "pub_status": "unknown",
       "pub_citation": "",
       "pub_source": "",
       "discrepancy_note": "",
-      "title_translit": "miftāḥ al-saʿādah wa-taḥqīq ṭarīq al-saʿādah",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
@@ -6898,12 +6898,12 @@
       "id": "r0314",
       "shelfmark": "D1974",
       "folios": "fol.204-233",
+      "title_translit": "šarḥ ibn ʿaǧībah ʿalā al-šustarī",
       "author_cluster_id": "c027",
       "pub_status": "unknown",
       "pub_citation": "",
       "pub_source": "",
       "discrepancy_note": "",
-      "title_translit": "šarḥ ibn ʿaǧībah ʿalā al-šustarī",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
@@ -7052,12 +7052,12 @@
       "id": "r0321",
       "shelfmark": "K611",
       "folios": "",
+      "title_translit": "al-radd ʿalā al-šayḫ kitāb fī al-intiṣār al-ḫarūbī",
       "author_cluster_id": "c114",
       "pub_status": "unknown",
       "pub_citation": "",
       "pub_source": "",
       "discrepancy_note": "",
-      "title_translit": "al-radd ʿalā al-šayḫ kitāb fī al-intiṣār al-ḫarūbī",
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
@@ -7075,6 +7075,7 @@
       "shelfmark": "K79",
       "folios": "fol.1-161",
       "title_translit": "šarḥ al-taǧalliyāt",
+      "catalog_note": "Commentary on Ibn ʿArabī's al-Taǧalliyāt. The title carries no li- attribution, so this note is added by the rule established at r0069 («most Ibn Sawdakīn titles are commentaries on Ibn al-ʿArabī»), not from the catalogued title itself.",
       "pub_status": "published",
       "pub_citation": "Ismāʿīl b. Sawdakīn al-Nūrī, Sharḥ al-Tajalliyāt (on Ibn al-ʿArabī's Kitāb al-Tajalliyāt), ed. Osman Yahya, Tehran, 1988; also ed. Muḥammad Idrīs al-ʿAdlūnī, Casablanca, 2009.",
       "author_cluster_id": "c012",
@@ -7083,7 +7084,6 @@
       "title_translation": "",
       "author_translit": "",
       "author_translation": "",
-      "catalog_note": "Commentary on Ibn ʿArabī's al-Taǧalliyāt. The title carries no li- attribution, so this note is added by the rule established at r0069 («most Ibn Sawdakīn titles are commentaries on Ibn al-ʿArabī»), not from the catalogued title itself.",
       "work_url": ""
     },
     {
@@ -7959,10 +7959,10 @@
     },
     {
       "cluster_id": "c004",
-      "canonical_ar": "ابن ابي الدنيا",
+      "canonical_ar": "ابن أبي الدنيا",
       "canonical_translit": "Ibn Abī al-Dunyā",
       "variants": [
-        "ابن ابي الدنيا"
+        "ابن أبي الدنيا"
       ],
       "count": 9,
       "confidence": 1.0,
@@ -10222,7 +10222,7 @@
       "canonical_ar": "أبو الحسن محمد بن أبي يعلى",
       "canonical_translit": "Abū al-Ḥasan Muḥammad Ibn Abī Yaʿlā",
       "variants": [
-        "أبو الحسن محمد بن ابي يعلى"
+        "أبو الحسن محمد بن أبي يعلى"
       ],
       "count": 1,
       "confidence": 1.0,
@@ -10574,7 +10574,7 @@
       "canonical_ar": "عبد الرزاق القاشاني",
       "canonical_translit": "ʿAbd al-Razzāq al-Qāšānī",
       "variants": [
-        "عبد الرزاق بن ابي الغنائم القاشاني"
+        "عبد الرزاق بن أبي الغنائم القاشاني"
       ],
       "count": 1,
       "confidence": 1.0,
@@ -12159,46 +12159,5 @@
       "partial",
       "manuscript"
     ]
-  },
-  "machine_suggestions": {
-    "r0210": {
-      "title_translit": "al-riḍā ʿan allāh wa-l-ṣabr ʿalā qaḍāʾih"
-    },
-    "r0232": {
-      "title_translit": "risālat al-fatḥ fī taʾwīl mā ṣadr ʿan al-kamal min al-šaṭḥ"
-    },
-    "r0244": {
-      "title_translit": "šarḥ kalām abī al-ḥasan al-nūrī"
-    },
-    "r0255": {
-      "title_translit": "miʿyār al-taṣawwuf wa-māhīyatuhū min kalām al-šuyūḫ"
-    },
-    "r0270": {
-      "title_translit": "min kalām al-niffarī fī al-tustarī"
-    },
-    "r0272": {
-      "title_translit": "al-ḫulāsah al-marḍīyah min al-durrah al-muḍīyah"
-    },
-    "r0280": {
-      "title_translit": "nafaḥāt al-uns min ḥaḍrat al-quds"
-    },
-    "r0287": {
-      "title_translit": "kitāb miftāḥ al-bāb al-muqaffal li-fahm al-qurʾān al-munazzal"
-    },
-    "r0289": {
-      "title_translit": "fī ḏikr mā nazala fī al-ḥikmah min al-āyah"
-    },
-    "r0306": {
-      "title_translit": "kitāb al-iṣṭilāḥ ʿalā baṭn al-qurʾān"
-    },
-    "r0309": {
-      "title_translit": "miftāḥ al-saʿādah wa-taḥqīq ṭarīq al-saʿādah"
-    },
-    "r0314": {
-      "title_translit": "šarḥ ibn ʿaǧībah ʿalā al-šustarī"
-    },
-    "r0321": {
-      "title_translit": "al-radd ʿalā al-šayḫ kitāb fī al-intiṣār al-ḫarūbī"
-    }
   }
 }
