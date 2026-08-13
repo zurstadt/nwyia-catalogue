@@ -75,6 +75,23 @@ earlier records; emptying a field prunes its proposal.
 **Do not** report accepted rows as hand-transliterated. They are confirmed compositions of your own
 word-level decisions — a different and weaker claim, and the report says so in its own output.
 
+**A later bulk normalization RECLASSIFIES provenance, and that is correct rather than a bug.** The
+verdict compares the proposal against what the field holds *now*. Lowercasing five titles on
+2026-08-13 moved two rows from `accepted` to `overridden`, because their committed value no longer
+equals what was proposed. The comparison is still telling the truth — the stored value does differ
+from the machine's output — but the difference is now an editorial pass, not the annotator's
+judgement at the time. When reporting an acceptance rate as evidence about the *suggester*, say
+which normalizations have run since. Do not "fix" this by freezing the verdict at decision time:
+that would reintroduce the event-flag failure the whole design avoids.
+
+### House style: title transliterations are lowercase
+
+Ruled 2026-08-13. Arabic-source titles are romanized entirely in lowercase (`kitāb al-tawahhum`),
+and `scripts/audit_identity.py` reports any drift under "Transliteration case drift". A
+**Latin-script** source is exempt — r0006 is Nwyia's own French volume, where `Ibn ʿAṭāʾ Allāh` is a
+proper noun rather than a transliteration. Author names on clusters keep their capitals; this rule
+governs titles only.
+
 ---
 
 ## Unguarded-rows priority list

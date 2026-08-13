@@ -256,7 +256,8 @@ def main() -> int:
     settled = {cluster.normalize_ar(v) for v in harvest_authority.NAMED_MERGES}
 
     report, worklist = [], {"over_merge": [], "conservation": [], "under_merge": [],
-                            "attribution": [], "cote_conflict": [], "title_forms": []}
+                            "attribution": [], "cote_conflict": [], "case_drift": [],
+                            "title_forms": []}
 
     # 1 — over-merge
     for cid, variants in sorted(forms.items()):
@@ -369,6 +370,19 @@ def main() -> int:
                                                      if r["author_cluster_id"] == c})}
                                  for c in sorted(cids)]})
 
+    # 4c — transliteration house style. Titles are romanized in LOWERCASE in this
+    # corpus (ruled 2026-08-13); a stray initial capital is drift, not a variant,
+    # and two spellings of one work is exactly what the index must not carry.
+    # A Latin-script source is exempt: its capitals are proper nouns, not style.
+    arabic_re = re.compile(r"[؀-ۿ]")
+    for r in rows:
+        t = (r.get("title_translit") or "").strip()
+        if not t or not arabic_re.search(r.get("title") or ""):
+            continue
+        if t != t.lower():
+            worklist["case_drift"].append(
+                {"row": r["id"], "value": t, "expected": t.lower()})
+
     # 5 — title spellings that must not diverge in transliteration
     by_fold = defaultdict(set)
     for r in rows:
@@ -411,6 +425,9 @@ def main() -> int:
         for a in it["attributions"]:
             report.append(f"      {', '.join(a['rows'])} → {a['cluster_id']} {a['translit']}"
                           f"   ({'; '.join(a['authors'])})")
+    section("Transliteration case drift (titles are lowercase here)", worklist["case_drift"])
+    for it in worklist["case_drift"]:
+        report.append(f"  {it['row']}  {it['value']}  ->  {it['expected']}")
     section("Title spellings that must share one transliteration", worklist["title_forms"])
     for it in worklist["title_forms"]:
         report.append("  " + "   |   ".join(it["spellings"]))
