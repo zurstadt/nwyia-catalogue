@@ -243,6 +243,38 @@ console.log("\northography second axis");
      `${it.id}: "keep" exports the word unchanged and no new translit`);
 }
 
+console.log("\nevery card is answerable");
+{
+  // The defect this catches: a card whose required axis asks for a value that does
+  // not exist for it, so Confirm is dead and the annotator has no way to proceed.
+  // Accepting the proposal must make a card ready — except where the corpus itself
+  // records competing readings, which is a real question and must be ANSWERABLE.
+  const stuck = [], needsPick = [];
+  for (const it of R.items("ortho")) {
+    R.setAx(it.id, "form", "accept");
+    if (R.ready(it)) continue;
+    // pick the first competing reading, the way the chips let the annotator do
+    if ((it.translits || []).length > 1) {
+      R.state()[it.id].translit = it.translits[0];
+      (R.ready(it) ? needsPick : stuck).push(it.id);
+    } else stuck.push(it.id);
+  }
+  ok(stuck.length === 0, "accepting a proposal makes every ortho card confirmable",
+     stuck.join(", "));
+  console.log(`  note ${needsPick.length} card(s) additionally require picking among `
+            + `competing recorded readings: ${needsPick.join(", ") || "none"}`);
+
+  for (const t of ["witness", "attribution"]) {
+    const bad = [];
+    for (const it of R.items(t)) {
+      R.setAx(it.id, t === "witness" ? "verdict" : "disposition",
+              t === "witness" ? "fix" : "strip");
+      if (!R.ready(it)) bad.push(it.id);
+    }
+    ok(bad.length === 0, `every ${t} card is confirmable once answered`, bad.join(", "));
+  }
+}
+
 console.log("\nexport contract");
 {
   const d = R.decisions();
@@ -262,8 +294,11 @@ console.log("\nexport contract");
 console.log("\ndeferral is not resolution");
 {
   const it = R.items("witness")[0];
-  R.setAx(it.id, "verdict", "fix");
+  // Assign, do not toggle: setAx flips a value that is already set, so this test
+  // would silently depend on whether an earlier block had touched the same card.
+  sandbox.__review.state()[it.id].verdict = "fix";
   sandbox.__review.state()[it.id].confirmed = true;
+  delete sandbox.__review.state()[it.id].deferred;
   ok(R.complete(it), `${it.id}: confirmed is complete`);
   sandbox.__review.state()[it.id].deferred = true;
   sandbox.__review.state()[it.id].confirmed = false;

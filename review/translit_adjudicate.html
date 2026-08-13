@@ -172,9 +172,15 @@ nav.foot .skip{color:var(--muted)}
 
   <h3>Orthography</h3>
   <p>Arabic word forms that look non-standard, with a proposed canonical spelling.
-  Two required answers: the Arabic form, and the transliteration that form implies —
-  because changing the Arabic changes the lexicon key the composer looks it up under,
-  so a spelling fix with no transliteration would silently un-settle the word.</p>
+  Up to two answers: the Arabic form, and — <b>where the word appears in a title</b> —
+  the transliteration that form implies, because changing the Arabic changes the
+  lexicon key the composer looks it up under, so a spelling fix with no
+  transliteration would silently un-settle the word. A word that appears only in
+  author fields and cluster names has no per-word romanization, so that second
+  question is not asked there: the Arabic form is the whole decision.</p>
+  <p>Where the corpus records more than one reading for the same word, no default is
+  offered and the competing readings appear as one-click choices. The disagreement is
+  itself a finding — pick one, or type a third.</p>
   <dl>
     <dt><span class="badge clear">clear</span></dt>
     <dd>A real fault: the spelling is wrong by any convention.</dd>
@@ -284,11 +290,19 @@ function cur(){ return items(tab)[idx[tab]]; }
 // Every axis must be answered for the item to count as decided — in the progress
 // bar, in the Confirm gate, and in the export's `done` flag. A partial is undecided
 // everywhere; toggling any axis off reopens the whole decision.
+// The transliteration axis exists because changing an Arabic word changes the
+// lexicon key the composer looks it up under. That is a fact about TITLES only: an
+// author field and a cluster name carry no per-word romanization, so demanding one
+// there asks for a value that does not exist and leaves Confirm dead forever.
+function touchesTitle(it){
+  return (it.rows && it.rows.length > 0)
+      || !!(it.scope && it.scope.titles && it.scope.titles.length);
+}
 function axes(it){
   if (it.stratum === "witness") return ["verdict"];
   if (it.stratum === "attribution") return ["disposition"];
   if (it.stratum === "homograph") return it.keys.map(k => "key:" + k.key);
-  return ["form", "translit"];                       // ortho: Arabic AND translit
+  return touchesTitle(it) ? ["form", "translit"] : ["form"];
 }
 function answered(it, ax){
   const s = S[it.id]; if (!s) return false;
@@ -562,13 +576,27 @@ function orthoCard(it){
            placeholder="${esc(it.proposed || it.word)}"
            value="${esc(s.form && s.form!=="accept" && s.form!=="keep" ? s.form : "")}">`;
 
-  if (s.form !== "keep"){
+  if (s.form !== "keep" && touchesTitle(it)){
+    const many = (it.translits || []).length > 1;
     h += `<h2 class="q">2 · Transliteration this spelling implies</h2>
       <p style="font-size:13px;color:var(--muted);margin:0 0 6px">Required: the
       canonical spelling becomes a new lexicon key, so without this the word is no
       longer settled and every title containing it stops composing.</p>
+      ${many ? `<div class="note">The corpus records
+        ${it.translits.length} different readings for this word, so no default is
+        offered — that disagreement is itself a finding. Pick one, or type a third.
+        </div>
+        <div class="opts" style="margin-bottom:8px">${it.translits.map((t,i) =>
+          `<button class="opt ${ (s.translit !== undefined ? s.translit : "") === t ? "on" : "" }"
+             data-fill="${esc(t)}"><span class="k">${i+1}</span>
+             <span class="v">${esc(t)}</span></button>`).join("")}</div>` : ""}
       <input type="text" id="translit" placeholder="${esc(it.translit || "")}"
              value="${esc(s.translit !== undefined ? s.translit : (it.translit || ""))}">`;
+  } else if (s.form !== "keep") {
+    h += `<h2 class="q">Transliteration</h2>
+      <p style="font-size:13px;color:var(--muted);margin:0">Not applicable: this word
+      appears only in author fields and cluster names, which carry no per-word
+      romanization. Nothing to supply — the Arabic form is the whole decision.</p>`;
   }
   return h + noteBox(it) + `</div>`;
 }
@@ -583,8 +611,16 @@ function setAx(it, ax, val){
 }
 
 function wire(it){
-  [...document.querySelectorAll(".opt")].forEach(b =>
-    b.onclick = () => setAx(it, b.dataset.ax, b.dataset.val));
+  [...document.querySelectorAll(".opt")].forEach(b => b.onclick = () => {
+    if (b.dataset.fill !== undefined){        // a competing-reading chip
+      const s = st(it.id);
+      s.translit = s.translit === b.dataset.fill ? "" : b.dataset.fill;
+      s.confirmed = false;
+      save(); render();
+      return;
+    }
+    setAx(it, b.dataset.ax, b.dataset.val);
+  });
 
   const cf = document.getElementById("custom-form");
   if (cf) cf.oninput = () => {
