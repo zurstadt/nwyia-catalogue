@@ -37,56 +37,83 @@ function node(id){
     appendChild(){}, addEventListener(){},
   };
 }
-const nodes = new Map();
-function byId(id){ if (!nodes.has(id)) nodes.set(id, node(id)); return nodes.get(id); }
 
-// querySelectorAll only ever needs to enumerate the option buttons and the tab
-// buttons the last render wrote; parse them back out of the recorded HTML.
-function parseButtons(selector){
-  const app = byId("app")._html, tabs = byId("tabs")._html;
-  const src = selector === ".opt" ? app : tabs;
-  const out = [];
-  const re = selector === ".opt"
-    ? /<button class="opt[^"]*"\s+data-ax="([^"]*)"\s*\n?\s*data-val="([^"]*)"[\s\S]*?<span class="k">(\d+)<\/span>/g
-    : /<button data-tab="([^"]*)"/g;
+// Parse a rendered <button> GENERICALLY — attributes in any order, every data-*
+// captured. The previous version matched `data-ax` followed by `data-val`, which
+// silently excluded the ortho competing-reading chips (they carry `data-fill`)
+// from the very flat list the digit handler indexes. A gate whose selector is
+// narrower than the browser's cannot see a mislabelled option, and its assertion
+// passes vacuously. Match what the browser matches: class contains "opt".
+const BTN_RE = /<button\b([^>]*)>([\s\S]*?)<\/button>/g;
+function attrsOf(s){
+  const out = {};
+  const re = /([a-zA-Z][\w-]*)\s*=\s*"([^"]*)"/g;
   let m;
-  while ((m = re.exec(src))) {
-    const b = node(null);
-    // Capture the PRINTED number too. Discarding it is what let a card print one
-    // digit on an option and fire a different one — the gate has to compare the
-    // label the annotator reads against the index the key handler uses.
-    if (selector === ".opt"){ b.dataset = {ax: m[1], val: m[2]}; b.label = Number(m[3]); }
-    else { b.dataset = {tab: m[1]}; }
-    out.push(b);
-  }
+  while ((m = re.exec(s))) out[m[1]] = m[2];
   return out;
 }
 
-const store = new Map();
-const sandbox = {
-  console,
-  localStorage: {
-    getItem: k => (store.has(k) ? store.get(k) : null),
-    setItem: (k, v) => store.set(k, String(v)),
-    removeItem: k => store.delete(k),
-  },
-  document: {
-    getElementById: id => (id === "payload" ? {textContent: payload} : byId(id)),
-    querySelectorAll: sel => parseButtons(sel),
-    createElement: () => ({click(){}, set href(v){}, get href(){return "";}}),
-    addEventListener(){},
-  },
-  window: {scrollTo(){}},
-  alert: msg => { throw new Error("unexpected alert: " + msg); },
-  Blob: function(){}, URL: {createObjectURL: () => "", revokeObjectURL(){}},
-  setTimeout: () => 0,
-};
-sandbox.globalThis = sandbox;
-vm.createContext(sandbox);
-vm.runInContext(code, sandbox, {filename: "translit_adjudicate.html"});
+function boot(payloadText){
+  // Per-boot DOM and storage. Module-global state made a second payload
+  // impossible, which is why the empty strata could never be exercised.
+  const nodes = new Map();
+  function byId(id){ if (!nodes.has(id)) nodes.set(id, node(id)); return nodes.get(id); }
 
-const R = sandbox.__review;
-const DATA = R.data();
+  function parseButtons(selector){
+    const src = selector === ".opt" ? byId("app")._html : byId("tabs")._html;
+    const out = [];
+    let m;
+    BTN_RE.lastIndex = 0;
+    while ((m = BTN_RE.exec(src))) {
+      const a = attrsOf(m[1]), body = m[2];
+      const classes = (a.class || "").split(/\s+/);
+      if (selector === ".opt" ? !classes.includes("opt") : a["data-tab"] === undefined)
+        continue;
+      const b = node(null);
+      b.dataset = {};
+      for (const k of Object.keys(a))
+        if (k.startsWith("data-"))
+          b.dataset[k.slice(5).replace(/-(\w)/g, (_, c) => c.toUpperCase())] = a[k];
+      // Capture the PRINTED number too. Discarding it is what let a card print one
+      // digit on an option and fire a different one — the gate has to compare the
+      // label the annotator reads against the index the key handler uses.
+      const k = body.match(/<span class="k">(\d+)<\/span>/);
+      if (k) b.label = Number(k[1]);
+      out.push(b);
+    }
+    return out;
+  }
+
+  const store = new Map();
+  const sandbox = {
+    console,
+    localStorage: {
+      getItem: k => (store.has(k) ? store.get(k) : null),
+      setItem: (k, v) => store.set(k, String(v)),
+      removeItem: k => store.delete(k),
+    },
+    document: {
+      getElementById: id => (id === "payload" ? {textContent: payloadText} : byId(id)),
+      querySelectorAll: sel => parseButtons(sel),
+      createElement: () => ({click(){}, set href(v){}, get href(){return "";}}),
+      addEventListener(){},
+    },
+    window: {scrollTo(){}},
+    alert: msg => { throw new Error("unexpected alert: " + msg); },
+    Blob: function(){}, URL: {createObjectURL: () => "", revokeObjectURL(){}},
+    setTimeout: () => 0,
+  };
+  sandbox.globalThis = sandbox;
+  vm.createContext(sandbox);
+  vm.runInContext(code, sandbox, {filename: "translit_adjudicate.html"});
+  const R = sandbox.__review;
+  return {R, sandbox, byId, store, data: R.data(),
+          strata: Object.keys(R.data().strata)};
+}
+
+const BAKE = boot(payload);
+const {R, sandbox, byId} = BAKE;
+const DATA = BAKE.data;
 // One list, consumed everywhere. A stratum added to the app but not here would
 // make the export-completeness assertion silently under-count instead of fail.
 const STRATA = Object.keys(DATA.strata);

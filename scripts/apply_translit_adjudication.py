@@ -111,26 +111,17 @@ def build_lexicon(data: dict, decisions: dict, overrides: dict) -> tuple[dict, s
     return lex, contested - set(overrides)
 
 
-def main() -> int:
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    write = "--write" in sys.argv
-    if not args:
-        print(__doc__)
-        return 1
-    src = Path(args[0]).expanduser()
-    if not src.exists():
-        print(f"Not found: {src}")
-        return 1
+def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
+    """Apply an export to an in-memory `data` dict. Reads and writes no files.
 
-    export = json.loads(src.read_text(encoding="utf-8"))
-    if export.get("task") != "translit-adjudication":
-        print(f"Refusing: export task is {export.get('task')!r}, not "
-              f"'translit-adjudication'.")
-        return 1
-
-    data = json.loads(DATA.read_text(encoding="utf-8"))
-    word_decisions = json.loads(WORDS.read_text(encoding="utf-8")).get("words", {})
+    Returns {updated, applied, unchanged, quarantine, parked, keeps,
+    still_contested, report}. `report` is the operator-facing text main() prints;
+    accumulating it rather than printing it is what lets a test assert on what the
+    run SAID as well as on what it did. Splitting this out of main() is what makes
+    the ingest testable at all: a test hands it fixtures instead of the live files.
+    """
     rows = {r["id"]: r for r in data["rows"]}
+    report: list[str] = []
 
     quarantine: list[dict] = []
     parked: list[str] = []
@@ -472,38 +463,75 @@ def main() -> int:
         updated["machine_suggestions"] = ms
 
     # --- report --------------------------------------------------------------
-    print(f"export: {src}  ({export.get('annotator') or 'no annotator recorded'}, "
-          f"{export.get('annotated_date')})")
-    print(f"  orthography applied : {len(applied['ortho'])}")
+    report.append(f"  orthography applied : {len(applied['ortho'])}")
     for a in applied["ortho"]:
         surfaces = []
         if a["rows"]: surfaces.append(f"titles {', '.join(a['rows'])}")
         if a.get("authors"): surfaces.append(f"authors {', '.join(a['authors'])}")
         if a.get("clusters"): surfaces.append(f"clusters {', '.join(a['clusters'])}")
-        print(f"     {a['word']} -> {a['target']}  [{a['translit']}]  "
-              f"in {'; '.join(surfaces)}"
-              + (f"  (title_translit rewritten in {', '.join(a['retransliterated'])})"
-                 if a["retransliterated"] else ""))
-    print(f"  witnesses corrected : {len(applied['witness'])}")
+        report.append(f"     {a['word']} -> {a['target']}  [{a['translit']}]  "
+                      f"in {'; '.join(surfaces)}"
+                      + (f"  (title_translit rewritten in "
+                         f"{', '.join(a['retransliterated'])})"
+                         if a["retransliterated"] else ""))
+    report.append(f"  witnesses corrected : {len(applied['witness'])}")
     for a in applied["witness"]:
-        print(f"     {a['row']}  {a['was']}  ->  {a['now']}")
-    print(f"  attribution tails   : {len(applied['attribution'])}")
+        report.append(f"     {a['row']}  {a['was']}  ->  {a['now']}")
+    report.append(f"  attribution tails   : {len(applied['attribution'])}")
     for a in applied["attribution"]:
-        print(f"     {a['row']}  «{a['tail']}» -> catalog_note;  title now: {a['now']}")
-    print(f"  titles composed     : {len(applied['homograph'])}")
+        report.append(f"     {a['row']}  «{a['tail']}» -> catalog_note;  "
+                      f"title now: {a['now']}")
+    report.append(f"  titles composed     : {len(applied['homograph'])}")
     for a in applied["homograph"]:
-        print(f"     {a['id']}  {a['title']}  ->  {a['value']}")
-    print(f"  already applied     : {len(unchanged)}")
-    print(f"  ruled KEEP (recorded, so the card does not return): {len(keeps)}")
-    print(f"  deferred (parked, NOT applied): {len(parked)}"
-          + (f"  {', '.join(parked)}" if parked else ""))
-    print(f"  quarantined         : {len(quarantine)}")
+        report.append(f"     {a['id']}  {a['title']}  ->  {a['value']}")
+    report.append(f"  already applied     : {len(unchanged)}")
+    report.append(f"  ruled KEEP (recorded, so the card does not return): {len(keeps)}")
+    report.append(f"  deferred (parked, NOT applied): {len(parked)}"
+                  + (f"  {', '.join(parked)}" if parked else ""))
+    report.append(f"  quarantined         : {len(quarantine)}")
     for q in quarantine:
-        print(f"     {q['id']} [{q['stratum']}]  {q['reason']}")
+        report.append(f"     {q['id']} [{q['stratum']}]  {q['reason']}")
     if still_contested:
         # Corpus-wide, not per row: the rows above were composed with an adjudicated
         # reading, but the KEY still carries two readings for any future title.
-        print(f"  keys still contested corpus-wide: {', '.join(sorted(still_contested))}")
+        report.append("  keys still contested corpus-wide: "
+                      + ", ".join(sorted(still_contested)))
+
+    return {"updated": updated, "applied": applied, "unchanged": unchanged,
+            "quarantine": quarantine, "parked": parked, "keeps": keeps,
+            "still_contested": still_contested, "report": report}
+
+
+def main() -> int:
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    write = "--write" in sys.argv
+    if not args:
+        print(__doc__)
+        return 1
+    src = Path(args[0]).expanduser()
+    if not src.exists():
+        print(f"Not found: {src}")
+        return 1
+
+    export = json.loads(src.read_text(encoding="utf-8"))
+    if export.get("task") != "translit-adjudication":
+        print(f"Refusing: export task is {export.get('task')!r}, not "
+              f"'translit-adjudication'.")
+        return 1
+
+    result = run(export,
+                 data=json.loads(DATA.read_text(encoding="utf-8")),
+                 word_decisions=json.loads(
+                     WORDS.read_text(encoding="utf-8")).get("words", {}))
+    updated = result["updated"]
+    applied, unchanged = result["applied"], result["unchanged"]
+    quarantine, parked, keeps = (result["quarantine"], result["parked"],
+                                 result["keeps"])
+
+    print(f"export: {src}  ({export.get('annotator') or 'no annotator recorded'}, "
+          f"{export.get('annotated_date')})")
+    for line in result["report"]:
+        print(line)
 
     if not write:
         print("\nPreview only. Re-run with --write to apply.")
@@ -518,15 +546,19 @@ def main() -> int:
     prior = {}
     if KEEPS.exists():
         prior = json.loads(KEEPS.read_text(encoding="utf-8")).get("keeps") or {}
-    KEEPS.write_text(json.dumps(
-        {"schema_version": 1, "updated": date.today().isoformat(),
-         "keeps": {**prior, **keeps}}, ensure_ascii=False, indent=2), encoding="utf-8")
+    # Atomic like the data file: the keeps store is the ONLY record of a KEEP
+    # ruling, so a crash mid-write would silently re-open every card it holds.
+    # `backup=False` — .gitignore's `*.bak.*` rule does not catch a plain `.bak`
+    # suffix, and these two are regenerated artifacts anyway.
+    normalize.write_json_atomic(
+        KEEPS, {"schema_version": 1, "updated": date.today().isoformat(),
+                "keeps": {**prior, **keeps}}, backup=False)
     normalize.write_json_atomic(DATA, updated)
-    LOG.write_text(json.dumps(
-        {"schema_version": 1, "applied_date": date.today().isoformat(),
-         "source_export": str(src), "annotator": export.get("annotator"),
-         "applied": applied, "unchanged": unchanged, "deferred": parked,
-         "quarantine": quarantine}, ensure_ascii=False, indent=2), encoding="utf-8")
+    normalize.write_json_atomic(
+        LOG, {"schema_version": 1, "applied_date": date.today().isoformat(),
+              "source_export": str(src), "annotator": export.get("annotator"),
+              "applied": applied, "unchanged": unchanged, "deferred": parked,
+              "quarantine": quarantine}, backup=False)
     print(f"Wrote {DATA}")
     print(f"Wrote {LOG}")
     print(f"Wrote {KEEPS}")
