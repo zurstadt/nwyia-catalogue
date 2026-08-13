@@ -53,7 +53,7 @@ function attrsOf(s){
   return out;
 }
 
-function boot(payloadText){
+function boot(payloadText, storedState){
   // Per-boot DOM and storage. Module-global state made a second payload
   // impossible, which is why the empty strata could never be exercised.
   const nodes = new Map();
@@ -85,6 +85,10 @@ function boot(payloadText){
   }
 
   const store = new Map();
+  // Seeded BEFORE the app runs, because it reads its state exactly once, on load.
+  // Anything written afterwards is a test talking to itself.
+  if (storedState !== undefined)
+    store.set("nwyia-translit-adjudication-v1", storedState);
   const sandbox = {
     console,
     localStorage: {
@@ -440,7 +444,7 @@ const FIXTURE = JSON.stringify({
   counts: {witness: 1, homograph: 1, ortho: 1, attribution: 1},
   strata: {
     ortho: [{
-      id: "o-fix", stratum: "ortho", word: "الاول", proposed: "الأوّل",
+      id: "o-fix", fp: "aaaaaaaaaaaa", stratum: "ortho", word: "الاول", proposed: "الأوّل",
       confidence: "house-style", reason: "fixture: competing recorded readings.",
       key_changes: false, translit: "al-awwal",
       translits: ["al-awwal", "al-ūlā"],          // two chips → a second .opt group
@@ -448,7 +452,7 @@ const FIXTURE = JSON.stringify({
               translit: "kitāb al-awwal"}],
     }],
     homograph: [{
-      id: "r9", stratum: "homograph", title: "كتاب من الفرق", author: "—",
+      id: "r9", fp: "bbbbbbbbbbbb", stratum: "homograph", title: "كتاب من الفرق", author: "—",
       gloss: [{key: "كتاب", raw: null, translit: "kitāb", contested: false},
               {key: "من", raw: null, translit: null, contested: true},
               {key: "الفرق", raw: null, translit: null, contested: true}],
@@ -476,13 +480,13 @@ const FIXTURE = JSON.stringify({
       },
     }],
     witness: [{
-      id: "r8", stratum: "witness", row: "r8", word: "المواقف",
+      id: "r8", fp: "cccccccccccc", stratum: "witness", row: "r8", word: "المواقف",
       title: "كتاب المواقف", title_translit: "kitāb al-mawāqif",
       current: "al-mawāqif", proposed: "al-mawāqif",
       why: "fixture: sole witness for a losing reading.", unblocks: ["r9"],
     }],
     attribution: [{
-      id: "r7-attr", stratum: "attribution", row: "r7", marker: "لابي",
+      id: "r7-attr", fp: "dddddddddddd", stratum: "attribution", row: "r7", marker: "لابي",
       verdict: "commentary", note_why: "fixture: li- attribution tail.",
       title: "كتاب المواقف لابي علي", title_translit: "kitāb al-mawāqif li-Abī ʿAlī",
       tail: "لابي علي", tail_translit: "li-Abī ʿAlī",
@@ -593,6 +597,83 @@ console.log("\nfixture bake — strata the shipped bake cannot exercise");
        `all ${expect} reading combinations are precomputed`,
        `${combos.length} present`);
   }
+}
+
+console.log("\nre-bake: an answer records the question it answered");
+{
+  // Item ids are stable literals, which is what lets an in-progress batch survive
+  // a rebuild of the residual worklist — and is also what let an answer survive a
+  // rebuild of a DIFFERENT question. Two boots of the SAME app over two payloads
+  // that share an id and differ in the proposal, with the answer carried across
+  // the way localStorage carries it.
+  const first = boot(FIXTURE);
+  const it = first.R.items("ortho")[0];
+  first.R.setAx(it.id, "form", "accept");
+  first.R.state()[it.id].confirmed = true;
+  ok(first.R.complete(it), "answered and confirmed against bake N is complete");
+  // The state as the app holds it. (`confirmed` is set here directly rather than
+  // through the Confirm button, which lives in a DOM handler, so save() has not
+  // run — serialize the live store instead of reading the stale write.)
+  const carried = JSON.stringify(first.R.state());
+
+  const changed = JSON.parse(FIXTURE);
+  changed.strata.ortho[0].proposed = "\u0627\u0644\u0623\u0648\u0644";  // a DIFFERENT proposal
+  changed.strata.ortho[0].fp = "ffffffffffff";                // …so a different fp
+  const second = boot(JSON.stringify(changed), carried);
+  const it2 = second.R.items("ortho")[0];
+  ok(second.R.stale(it2), "the carried answer is recognized as stale in bake N+1");
+  ok(!second.R.complete(it2),
+     "…so it is NOT complete, and the card does not render 'decided'");
+  ok(!second.R.ready(it2), "…and Confirm is closed until it is re-answered");
+  const rec = second.R.decisions().find(d => d.id === it2.id);
+  ok(rec.disposition === "open" && rec.done === false && rec.stale === true,
+     "…and it exports as open, flagged stale — never as a resolution nobody saw",
+     JSON.stringify([rec.disposition, rec.done, rec.stale, rec.target]));
+  second.R.go("ortho", 0);
+  ok(second.byId("app")._html.includes("changed since you answered"),
+     "…and the card says so, keeping the previous answer visible");
+
+  // Re-answering it against the card as it now stands restores it. Two setAx
+  // calls: the carried answer already holds "accept", and setAx toggles.
+  second.R.setAx(it2.id, "form", "accept");     // off
+  second.R.setAx(it2.id, "form", "accept");     // …and on again, against THIS card
+  second.R.state()[it2.id].confirmed = true;
+  ok(!second.R.stale(it2) && second.R.complete(it2),
+     "re-answering the changed card clears the flag");
+  const fixed = second.R.decisions().find(d => d.id === it2.id);
+  ok(fixed.target === changed.strata.ortho[0].proposed,
+     "…and now exports the proposal that was actually on screen", fixed.target);
+
+  // An UNCHANGED card must not be disturbed: the worklist is residual by design,
+  // so every bake differs, and a payload-level check would discard the whole batch.
+  const same = boot(FIXTURE, carried);
+  const it3 = same.R.items("ortho")[0];
+  ok(!same.R.stale(it3) && same.R.complete(it3),
+     "an answer to an UNCHANGED card survives the re-bake untouched");
+}
+
+// A boot cannot be pre-seeded after the fact — the app reads localStorage once, on
+// load — so the v1 migration gets its own boot with storage seeded first.
+console.log("\nv1 state migrates rather than being discarded");
+{
+  const probe = boot(FIXTURE);
+  const attrId = probe.R.items("attribution")[0].id;
+  const orthoId = probe.R.items("ortho")[0].id;
+  const v1 = JSON.stringify({
+    [attrId]: {disposition: "\u0643\u062A\u0627\u0628 \u0622\u062E\u0631",
+               title_translit: "kit\u0101b \u0101\u1E2Bar", confirmed: true},
+    [orthoId]: {form: "accept", confirmed: true},
+  });
+  const b = boot(FIXTURE, v1);
+  const s = b.R.state();
+  ok(s[attrId].disposition === "custom"
+     && s[attrId].title === "\u0643\u062A\u0627\u0628 \u0622\u062E\u0631",
+     "a v1 hand-written title is recovered out of the enum slot",
+     JSON.stringify(s[attrId]));
+  ok(s[orthoId].fp === probe.R.items("ortho")[0].fp,
+     "a v1 answer with no fingerprint is stamped with the current card's, not dropped");
+  ok(b.R.complete(b.R.items("ortho")[0]),
+     "…so it is still a decision, exactly as the annotator left it");
 }
 
 console.log(`\n${failures === 0 ? "PASS" : "FAIL"} — ${failures} failing assertion(s)`);

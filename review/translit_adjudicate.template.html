@@ -283,6 +283,9 @@ const LS = "nwyia-translit-adjudication-v1";
 const ORDER = ["witness", "homograph", "ortho", "attribution"];
 const TAB_LABEL = {witness:"Witnesses", homograph:"Homographs",
                    ortho:"Orthography", attribution:"Attribution"};
+// Bumped when the shape of a stored answer changes. `let S = load()` runs before
+// any `const` below it is initialized, so this has to sit above that line.
+const STATE_V = 2;
 
 /* ---------- state ------------------------------------------------------- */
 // One record per item, keyed by stable id. Created lazily, but the EXPORT walks
@@ -293,8 +296,36 @@ let tab = ORDER[0];
 let idx = {witness:0, homograph:0, ortho:0, attribution:0};
 
 function load(){
-  try { return JSON.parse(localStorage.getItem(LS)) || {}; }
+  let raw;
+  try { raw = JSON.parse(localStorage.getItem(LS)) || {}; }
   catch(e){ console.warn("state unreadable, starting clean", e); return {}; }
+  return migrate(raw);
+}
+// One-time, non-destructive, and idempotent: it runs on whatever a previous
+// version of this app left behind. Answers are the annotator's work — a schema
+// change may not throw them away.
+function migrate(raw){
+  if (raw.__v === STATE_V) return raw;
+  const out = {};
+  for (const [id, s] of Object.entries(raw)){
+    if (id === "__v") continue;
+    // v1 stored a hand-written attribution title in `disposition`, the same slot
+    // as the enum sentinels. Recover it as the answer it always was.
+    if (s && typeof s.disposition === "string"
+        && s.disposition !== "keep" && s.disposition !== "strip"
+        && s.disposition !== "custom")
+      out[id] = {...s, disposition: "custom", title: s.disposition};
+    else out[id] = s;
+  }
+  // v1 answers carry no fingerprint. Stamping them with the CURRENT item's leaves
+  // them intact and trusted, which is the honest reading: they were given against
+  // whatever this bake now shows, and there is no record to say otherwise. From
+  // here on every answer records the question it answered.
+  for (const t of ORDER)
+    for (const it of (DATA.strata[t] || []))
+      if (out[it.id] && out[it.id].fp === undefined) out[it.id].fp = it.fp;
+  out.__v = STATE_V;
+  return out;
 }
 function save(){
   try { localStorage.setItem(LS, JSON.stringify(S)); }
@@ -303,6 +334,15 @@ function save(){
 }
 function items(t){ return DATA.strata[t] || []; }
 function st(id){ return S[id] || (S[id] = {}); }
+// An answer records the QUESTION it answered. Every write goes through here.
+function touch(it){ const s = st(it.id); s.fp = it.fp; s.confirmed = false; return s; }
+// The stored answer was given against a different version of this card — a
+// re-baked worklist reuses ids, so without this the card renders "decided ✓" and
+// exports a proposal nobody has seen.
+function stale(it){
+  const s = S[it.id];
+  return !!(s && s.fp !== undefined && it.fp !== undefined && s.fp !== it.fp);
+}
 function cur(){ return items(tab)[idx[tab]]; }
 
 /* ---------- completeness: a multi-axis decision is a conjunction ---------- */
@@ -344,12 +384,14 @@ function answered(it, ax){
 }
 function complete(it){
   const s = S[it.id]; if (!s) return false;
+  if (stale(it)) return false;                       // answered a different question
   if (s.deferred) return false;                      // parked is NOT resolved
   if (it.stratum === "ortho" && s.form === "keep") return !!s.confirmed;
   return axes(it).every(a => answered(it, a)) && !!s.confirmed;
 }
 function ready(it){                                  // may Confirm be pressed?
   const s = S[it.id]; if (!s) return false;
+  if (stale(it)) return false;                       // re-answer it, or it is a guess
   if (it.stratum === "ortho" && s.form === "keep") return true;
   return axes(it).every(a => answered(it, a));
 }
@@ -411,8 +453,17 @@ function head(it, n, extra){
   return `<div class="meta"><span class="rid">${esc(it.id)}</span>`
        + `<span>${esc(n)} of ${items(tab).length}</span>`
        + (complete(it) ? '<span class="done-tick">decided ✓</span>' : "")
+       + (stale(it) ? '<span class="badge bad-badge">re-check</span>' : "")
        + (st(it.id).deferred ? '<span class="badge">deferred</span>' : "")
-       + (extra || "") + `</div>`;
+       + (extra || "") + `</div>`
+       + (stale(it)
+          ? `<div class="note artifact"><b>This card changed since you answered
+             it.</b> The worklist was rebuilt and this item now asks a different
+             question — a different proposal, a different set of readings, or a
+             different set of questions. Your previous answer is still shown below
+             and is still yours; it simply is not recorded as a decision until you
+             confirm it against the card as it now stands.</div>`
+          : "");
 }
 
 function noteBox(it){
@@ -653,10 +704,9 @@ function orthoCard(it){
 
 /* ---------- interaction -------------------------------------------------- */
 function setAx(it, ax, val){
-  const s = st(it.id);
+  const s = touch(it);
   if (s[ax] === val) delete s[ax]; else s[ax] = val;   // toggling off reopens
-  s.confirmed = false;                                  // …the whole decision
-  delete s.deferred;
+  delete s.deferred;                                    // …the whole decision
   save(); render();
 }
 
@@ -671,8 +721,8 @@ function wire(it){
 
   const cf = document.getElementById("custom-form");
   if (cf) cf.oninput = () => {
-    const s = st(it.id);
-    if (cf.value.trim()) { s.form = cf.value.trim(); s.confirmed = false; }
+    const s = touch(it);
+    if (cf.value.trim()) s.form = cf.value.trim();
     else if (s.form !== "accept" && s.form !== "keep") delete s.form;
     save();
     document.getElementById("confirm").disabled = !ready(it);
@@ -684,35 +734,35 @@ function wire(it){
   // cause ("the row changed under the adjudication"; it had not).
   const ct = document.getElementById("custom-title");
   if (ct) ct.oninput = () => {
-    const s = st(it.id);
+    const s = touch(it);
     if (ct.value.trim()) { s.disposition = "custom"; s.title = ct.value.trim(); }
     else { if (s.disposition === "custom") delete s.disposition; delete s.title; }
-    s.confirmed = false;
     save();
     document.getElementById("confirm").disabled = !ready(it);
   };
   const ctt = document.getElementById("custom-title-translit");
   if (ctt) ctt.oninput = () => {
-    const s = st(it.id);
+    const s = touch(it);
     if (ctt.value.trim()) s.title_translit = ctt.value.trim();
     else delete s.title_translit;
-    s.confirmed = false;
     save();
     document.getElementById("confirm").disabled = !ready(it);
   };
   const cv = document.getElementById("custom-verdict");
   if (cv) cv.oninput = () => {
-    const s = st(it.id);
-    if (cv.value.trim()) { s.verdict = cv.value.trim(); s.confirmed = false; }
+    const s = touch(it);
+    if (cv.value.trim()) s.verdict = cv.value.trim();
     else if (s.verdict !== "fix" && s.verdict !== "keep") delete s.verdict;
     save();
     document.getElementById("confirm").disabled = !ready(it);
   };
   const tr = document.getElementById("translit");
   if (tr) tr.oninput = () => {
-    st(it.id).translit = tr.value; st(it.id).confirmed = false; save();
+    touch(it).translit = tr.value; save();
     document.getElementById("confirm").disabled = !ready(it);
   };
+  // A note is not an answer, so it does not re-stamp the fingerprint — but it is
+  // still the annotator's, so a stale card keeps it.
   const nt = document.getElementById("note");
   if (nt) nt.oninput = () => { st(it.id).note = nt.value; save(); };
 }
@@ -726,8 +776,10 @@ function move(d){
 }
 function confirmCard(){
   const it = cur(); if (!it || !ready(it)) return;
-  st(it.id).confirmed = true;
-  delete st(it.id).deferred;
+  const s = st(it.id);
+  s.confirmed = true;
+  s.fp = it.fp;                       // confirmed against THIS version of the card
+  delete s.deferred;
   save();
   move(1);
 }
@@ -743,6 +795,19 @@ document.getElementById("prev").onclick = () => move(-1);
 document.getElementById("next").onclick = () => move(1);
 document.getElementById("confirm").onclick = confirmCard;
 document.getElementById("skip").onclick = deferCard;
+// The annotator name was READ into every export and into the header badge and
+// never written anywhere, so every export so far carries annotator: null —
+// recorded as such in the applied log. Ask once, on the first export.
+function annotator(){
+  let who = localStorage.getItem(LS + ":who");
+  if (!who){
+    who = (typeof window.prompt === "function"
+           ? window.prompt("Your name, for the export's provenance:") || "" : "").trim();
+    if (who) localStorage.setItem(LS + ":who", who);
+  }
+  return who || null;
+}
+
 document.getElementById("defs-btn").onclick =
   () => document.getElementById("defs").classList.toggle("on");
 document.getElementById("defs-close").onclick =
@@ -783,11 +848,18 @@ function decisions(){
   const out = [];
   ORDER.forEach(t => items(t).forEach(it => {
     const s = S[it.id] || {};
+    const isStale = stale(it);
     const rec = {
       id: it.id, stratum: it.stratum,
       done: complete(it),
       disposition: complete(it) ? "resolved" : (s.deferred ? "deferred" : "open"),
       note: s.note || "",
+      // The question this record answers. complete() already refuses a stale
+      // answer, so such a record exports as open/not-done — but the flag travels
+      // too, so the ingest's log says WHY an item nobody re-opened came back
+      // unresolved rather than leaving it to be read as an oversight.
+      fp: it.fp || null,
+      stale: isStale,
     };
     if (it.stratum === "witness"){
       rec.row = it.row || it.id;
@@ -884,7 +956,7 @@ function decisions(){
 }
 
 function exportJSON(){
-  const who = (localStorage.getItem(LS + ":who") || "").trim();
+  const who = annotator();
   const payload = {
     schema_version: 1,
     task: DATA.task,
@@ -896,7 +968,10 @@ function exportJSON(){
       return {total: d.length,
               resolved: d.filter(x => x.disposition === "resolved").length,
               deferred: d.filter(x => x.disposition === "deferred").length,
-              open:     d.filter(x => x.disposition === "open").length};
+              open:     d.filter(x => x.disposition === "open").length,
+              // Answers held back because the card changed under them. Counted, so
+              // a shrunken "resolved" is explained rather than merely noticed.
+              stale:    d.filter(x => x.stale).length};
     })(),
     decisions: decisions(),
   };
@@ -910,12 +985,12 @@ function exportJSON(){
 }
 document.getElementById("export-btn").onclick = exportJSON;
 
-const who = localStorage.getItem(LS + ":who");
-if (who) document.getElementById("who-badge").textContent = who;
+const whoBadge = localStorage.getItem(LS + ":who");
+if (whoBadge) document.getElementById("who-badge").textContent = whoBadge;
 
 // Headless-review contract: drive the REAL baked JS without a browser.
 globalThis.__review = {
-  data: () => DATA, state: () => S, items, complete, ready, decisions,
+  data: () => DATA, state: () => S, items, complete, ready, decisions, stale,
   setAx: (id, ax, val) => { const it = ORDER.flatMap(items).find(x => x.id === id);
                             if (it) setAx(it, ax, val); },
   go: (t, i) => { tab = t; idx[t] = i; render(); },

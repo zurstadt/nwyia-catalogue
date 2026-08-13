@@ -118,6 +118,17 @@ Next, hardest first:
    both were verified by hand on a scratch copy but nothing re-checks them.
 5. Source renders above the input, and `kbd-bar` is hidden only in the columns view.
 
+## An answer records the question it answered
+
+| Decision | Anchor | Why | Guard |
+|---|---|---|---|
+| Every item carries a content fingerprint, baked | `fingerprint()` in `build_translit_adjudication.py`; `it.fp` | Item ids are stable literals — which is what lets an in-progress batch survive a rebuild of the residual worklist, and also what let an answer survive a rebuild of a DIFFERENT question. Edit a hand-written ORTHO dict and the next bake emits a new proposal under the same id. | `scripts/check_translit_app.js` |
+| The fingerprint covers what the ANSWER depends on, and nothing else | `fingerprint()`, per-stratum signature | Prose, row context and the scope's id lists are excluded: a card must not be invalidated because one unrelated row in its radius was fixed. The scope BOOLEANS are in, because `axes()` keys on them — a card that gains or loses its transliteration axis is a different question. | `scripts/check_translit_app.js` |
+| Per-item, never a whole-payload bake id | — | The worklist is residual by design, so every bake differs; a payload-level check would discard the annotator's whole in-progress batch on every rebuild. | `scripts/check_translit_app.js` ("an answer to an UNCHANGED card survives") |
+| A stale answer is shown, not deleted, and exports as open | `stale()`, `complete()`, `ready()`, the re-check banner, `rec.stale` | The answer is the annotator's work. It stops counting as a decision until re-confirmed against the card as it stands; it does not stop existing. The ingest reports the count so a shrunken "resolved" is explained rather than merely noticed. | `scripts/check_translit_app.js` |
+| A schema change migrates state, never discards it | `migrate()`, `STATE_V` | v1 stored a hand-written attribution title in the enum slot and carried no fingerprints. Both are recovered on load: the title becomes its own answer, and a fingerprint-less answer is stamped with the current card's — the honest reading, since there is no record to say it was given against anything else. | `scripts/check_translit_app.js` |
+| The annotator name is written, not only read | `annotator()` | It was read into every export and into the header badge and set nowhere, so every export so far carries `annotator: null` — recorded as such in the applied log. | **UNGUARDED** |
+
 ## Every affordance the app renders is consumable
 
 | Decision | Anchor | Why | Guard |

@@ -585,6 +585,14 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
     report.append(f"  ruled KEEP (recorded, so the card does not return): {len(keeps)}")
     report.append(f"  deferred (parked, NOT applied): {len(parked)}"
                   + (f"  {', '.join(parked)}" if parked else ""))
+    # An item whose card changed under a prior answer exports as open, flagged. It
+    # is NOT an oversight and must not read as one: the app held the answer back on
+    # purpose, and the annotator has to see the card as it now stands.
+    stale = [d["id"] for d in decisions if d.get("stale")]
+    if stale:
+        report.append(f"  held back — the card changed since it was answered, so the "
+                      f"answer was not carried forward: {len(stale)}  "
+                      + ", ".join(stale))
     report.append(f"  quarantined         : {len(quarantine)}")
     for q in quarantine:
         report.append(f"     {q['id']} [{q['stratum']}]  {q['reason']}")

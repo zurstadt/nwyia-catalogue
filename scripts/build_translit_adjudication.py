@@ -33,6 +33,7 @@ file:// as well as through the project's http.server). Never writes data/.
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -882,6 +883,43 @@ def main() -> int:
         })
 
 
+    # --- per-item fingerprint -------------------------------------------------
+    # Item ids are stable literals by construction (o01…, s-<word>, h-<word>, a row
+    # id), which is what lets an answer survive a re-bake — and also what let an
+    # answer survive a re-bake of a DIFFERENT question. Edit a hand-written ORTHO
+    # dict and the next bake emits a new proposal under the same id; the stored
+    # `confirmed` flag then makes the card render "decided ✓" and export the NEW
+    # bake's proposal as resolved, endorsed by an annotator who never saw it.
+    #
+    # The fingerprint covers what the ANSWER depends on, and nothing else. Prose,
+    # row context and the scope's id lists are excluded on purpose: a card must not
+    # be invalidated because one unrelated row in its radius was fixed. The scope
+    # BOOLEANS are in, because axes() keys on them — a card that gains or loses its
+    # transliteration axis is a genuinely different question.
+    def fingerprint(it: dict) -> str:
+        st = it["stratum"]
+        if st == "ortho":
+            sc = it.get("scope") or {}
+            sig = [st, it.get("word"), it.get("proposed"), it.get("translit"),
+                   sorted(it.get("translits") or []), it.get("confidence"),
+                   bool(it.get("key_changes")), bool(it.get("row_scoped")),
+                   bool(sc.get("titles")), bool(sc.get("authors")),
+                   bool(sc.get("clusters"))]
+        elif st == "witness":
+            sig = [st, it.get("row") or it.get("id"), it.get("word"),
+                   it.get("current"), it.get("proposed")]
+        elif st == "homograph":
+            sig = [st, it.get("title"),
+                   [[k["key"], sorted(o["value"] for o in k["options"])]
+                    for k in sorted(it.get("keys") or [], key=lambda k: k["key"])]]
+        else:
+            sig = [st, it.get("row"), it.get("marker"), it.get("title"),
+                   it.get("tail"), it.get("proposed_title"),
+                   it.get("proposed_translit"), bool(it.get("aligned")),
+                   bool(it.get("title_translit"))]
+        blob = json.dumps(sig, ensure_ascii=False, sort_keys=True)
+        return hashlib.sha256(blob.encode("utf-8")).hexdigest()[:12]
+
     attributions = attribution_items(rows_by_id, clusters, kept)
 
     payload = {
@@ -895,8 +933,9 @@ def main() -> int:
         "mark_class": normalize.mark_class_js(),
         "counts": {"witness": len(witnesses), "homograph": len(homographs),
                    "ortho": len(ortho), "attribution": len(attributions)},
-        "strata": {"witness": witnesses, "homograph": homographs, "ortho": ortho,
-                   "attribution": attributions},
+        "strata": {t: [{**it, "fp": fingerprint(it)} for it in xs]
+                   for t, xs in (("witness", witnesses), ("homograph", homographs),
+                                 ("ortho", ortho), ("attribution", attributions))},
     }
 
     # `</` inside the inlined JSON would close the <script> block early.
