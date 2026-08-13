@@ -381,9 +381,16 @@ console.log("\nexport contract");
   const total = STRATA.reduce((a,t)=>a+R.items(t).length, 0);
   ok(d.length === total,
      `export walks the worklist, not touched state (${d.length}/${total})`);
+  // The worklist is residual: it shrinks to nothing as the work is settled, and an
+  // empty one is success, not failure. Requiring at least one untouched item made
+  // a finished batch report RED — the mirror of the empty-stratum skips above. The
+  // contract itself is asserted non-vacuously against the fixture bake below.
   const untouched = d.filter(x => x.disposition === "open");
-  ok(untouched.length > 0 && untouched.every(x => x.done === false),
-     "untouched items export as explicit open/not-done records");
+  if (total === 0)
+    console.log("  skip untouched-export — the worklist is empty (all work settled)");
+  else
+    ok(untouched.length === 0 || untouched.every(x => x.done === false),
+       "untouched items export as explicit open/not-done records");
   ok(d.every(x => ["resolved","deferred","open"].includes(x.disposition)),
      "every record carries a disposition");
   const hg = d.filter(x => x.stratum === "homograph");
@@ -501,6 +508,18 @@ console.log("\nfixture bake — strata the shipped bake cannot exercise");
 {
   const F = boot(FIXTURE);
   const fStrata = F.strata;
+
+  // The export contract, on a bake that is guaranteed non-empty. Asserted here so
+  // it keeps biting once the live worklist has been worked down to nothing.
+  {
+    const d = F.R.decisions();
+    const total = fStrata.reduce((a, t) => a + F.R.items(t).length, 0);
+    const untouched = d.filter(x => x.disposition === "open");
+    ok(d.length === total && untouched.length === total,
+       `export walks the worklist on a fresh profile (${untouched.length}/${total} open)`);
+    ok(untouched.every(x => x.done === false && x.stale === false),
+       "…and every untouched item is an explicit not-reviewed record");
+  }
 
   let threw = null;
   for (const t of fStrata)
