@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transliteration adjudication — Nwyia index</title>
+<style>
+:root{
+  --bg:#faf9f7; --panel:#fff; --ink:#1b1a18; --muted:#6c6862; --line:#e2ded7;
+  --accent:#7a4f2b; --accent-ink:#fff; --ok:#2f6b3f; --warn:#8a6d1f; --bad:#8c2f2f;
+  --chip:#f1ece4;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+     font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.ar{font-family:"Geeza Pro","Al Bayan","Scheherazade New","Amiri",serif;
+    font-size:1.45em;line-height:1.9;direction:rtl;unicode-bidi:isolate}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em}
+
+header{position:sticky;top:0;z-index:20;background:var(--panel);
+       border-bottom:1px solid var(--line);padding:10px 18px}
+.hrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+h1{font-size:15px;margin:0;font-weight:600;letter-spacing:.01em}
+.spacer{flex:1}
+header button{font:inherit;padding:5px 11px;border:1px solid var(--line);
+              border-radius:6px;background:#fff;color:var(--ink);cursor:pointer}
+header button:hover{background:var(--chip)}
+header .primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+header .primary:hover{filter:brightness(1.08)}
+
+.tabs{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.tabs button{font:inherit;padding:5px 12px;border:1px solid var(--line);
+             border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}
+.tabs button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.tabs button .n{opacity:.75;margin-left:6px;font-size:.85em}
+
+main{max-width:900px;margin:22px auto 90px;padding:0 18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+      padding:18px 20px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.meta{display:flex;gap:12px;flex-wrap:wrap;align-items:baseline;color:var(--muted);
+      font-size:13px;margin-bottom:10px}
+.meta .rid{font-weight:600;color:var(--ink)}
+.badge{display:inline-block;padding:1px 8px;border-radius:999px;background:var(--chip);
+       font-size:12px;color:var(--muted)}
+.badge.clear{background:#e7f0e8;color:var(--ok)}
+.badge.check{background:#f5eedd;color:var(--warn)}
+.badge.house-style{background:#eceaf3;color:#4a4472}
+.badge.shadda{background:#e8eef0;color:#2d5560}
+.badge.shadda-manual{background:#f3e6e6;color:var(--bad)}
+
+h2.q{font-size:12.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
+     margin:20px 0 8px;font-weight:600}
+.title-raw{background:#fbf7f0;border:1px solid var(--line);border-radius:8px;padding:10px 14px}
+.hl{background:#fbe7c8;border-radius:3px;padding:0 3px;box-decoration-break:clone}
+.gloss{color:var(--muted);font-size:14px;margin-top:8px;word-spacing:.15em}
+.gloss .c{color:var(--accent);font-weight:600}
+.note{background:#fdf6e8;border-left:3px solid var(--warn);padding:8px 12px;
+      border-radius:0 6px 6px 0;font-size:13.5px;margin:10px 0}
+.note.artifact{background:#eef3fb;border-left-color:#3a5f9c}
+
+.opts{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.opt{border:1px solid var(--line);border-radius:8px;padding:9px 13px;background:#fff;
+     cursor:pointer;text-align:left;font:inherit;color:var(--ink);width:100%}
+.opt:hover{background:var(--chip)}
+.opt.on{border-color:var(--accent);background:#f6efe7;box-shadow:inset 0 0 0 1px var(--accent)}
+.opt .k{display:inline-block;min-width:20px;color:var(--muted);font-size:12px}
+.opt .v{font-weight:600}
+.opt .ev{display:block;color:var(--muted);font-size:12.5px;margin-top:3px}
+.opt .sug{color:var(--ok);font-size:12px;margin-left:8px}
+
+input[type=text]{font:inherit;padding:7px 10px;border:1px solid var(--line);
+                 border-radius:7px;background:#fff;color:var(--ink);width:100%;max-width:420px}
+textarea{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:7px;
+         background:#fff;color:var(--ink);width:100%;min-height:62px;resize:vertical}
+
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:6px}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+td.ar{font-size:1.15em;line-height:1.7}
+.del{color:var(--bad);text-decoration:line-through}
+.ins{color:var(--ok);font-weight:600}
+
+.preview{margin-top:14px;padding:10px 14px;border:1px dashed var(--line);
+         border-radius:8px;background:#fcfbf9}
+.preview .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.preview .val{font-size:16px;margin-top:3px}
+.preview.bad{border-color:var(--bad);background:#fdf2f2}
+
+nav.foot{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--panel);
+         border-top:1px solid var(--line);padding:10px 18px}
+.frow{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+nav.foot button{font:inherit;padding:7px 14px;border:1px solid var(--line);
+                border-radius:7px;background:#fff;color:var(--ink);cursor:pointer}
+nav.foot button:hover{background:var(--chip)}
+nav.foot .confirm{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);
+                  font-weight:600}
+nav.foot .confirm:hover{filter:brightness(1.08)}
+nav.foot .confirm:disabled{background:#e6e3de;color:#9a958d;border-color:var(--line);
+                           cursor:not-allowed;filter:none}
+nav.foot .skip{color:var(--muted)}
+.prog{color:var(--muted);font-size:13px}
+.bar{height:5px;background:var(--chip);border-radius:3px;overflow:hidden;width:130px}
+.bar i{display:block;height:100%;background:var(--accent)}
+
+#defs{display:none;position:fixed;inset:0;z-index:40;background:rgba(20,18,16,.45);
+      padding:40px 18px;overflow:auto}
+#defs.on{display:block}
+#defs .box{max-width:760px;margin:0 auto;background:var(--panel);border-radius:12px;
+           padding:22px 26px}
+#defs h3{margin:18px 0 6px;font-size:14px}
+#defs dl{margin:0}#defs dt{font-weight:600;margin-top:9px}#defs dd{margin:2px 0 0;color:var(--muted)}
+.done-tick{color:var(--ok);font-weight:600}
+.empty{color:var(--muted);text-align:center;padding:50px 0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hrow">
+    <h1>Transliteration adjudication</h1>
+    <span class="badge" id="who-badge"></span>
+    <span class="spacer"></span>
+    <span class="prog" id="prog"></span>
+    <div class="bar"><i id="barfill" style="width:0"></i></div>
+    <button id="defs-btn" title="? toggles">ⓘ definitions</button>
+    <button class="primary" id="export-btn">Export JSON</button>
+  </div>
+  <div class="tabs" id="tabs"></div>
+</header>
+
+<main id="app"></main>
+
+<nav class="foot">
+  <div class="frow">
+    <button id="prev">← Prev <span class="mono">K</span></button>
+    <button id="next">Next → <span class="mono">J</span></button>
+    <span class="spacer"></span>
+    <button class="skip" id="skip">Defer <span class="mono">S</span></button>
+    <button class="confirm" id="confirm">Confirm <span class="mono">Enter</span></button>
+  </div>
+</nav>
+
+<div id="defs"><div class="box">
+  <h2 style="margin:0;font-size:16px">What each tab is asking</h2>
+
+  <h3>Witnesses (decide first)</h3>
+  <p>Rows whose recorded transliteration carries a faulty token. Because the
+  composer learns its lexicon from completed rows, one of these can be the sole
+  witness for a losing reading — correcting it dissolves a contest downstream
+  rather than requiring a separate ruling on it. One row may hold several fixes,
+  so the card is keyed by fix, not by row.</p>
+
+  <h3>Homographs</h3>
+  <p>13 rows that <code>apply_word_lexicon.py</code> refuses to compose: one
+  normalized Arabic key carries two attested readings, so composing would mean
+  guessing. Pick the reading this row's context requires.</p>
+  <dl>
+    <dt>Normalizer artifact</dt>
+    <dd><code>normalize_ar</code> folds ألف مقصورة (ى) to yāʾ (ي) — correct for
+    matching names, but it merges على <i>ʿalā</i> with علي <i>ʿAlī</i> onto one key.
+    The raw title tells you which it is.</dd>
+    <dt>Genuine homograph</dt>
+    <dd>One spelling, two words: من is the preposition <i>min</i> and the relative
+    pronoun <i>man</i>.</dd>
+    <dt>Witness rows</dt>
+    <dd>Rows whose existing transliteration attests that reading. One witness
+    against several is usually a typo, not a distinction.</dd>
+  </dl>
+
+  <h3>Orthography</h3>
+  <p>Arabic word forms that look non-standard, with a proposed canonical spelling.
+  Two required answers: the Arabic form, and the transliteration that form implies —
+  because changing the Arabic changes the lexicon key the composer looks it up under,
+  so a spelling fix with no transliteration would silently un-settle the word.</p>
+  <dl>
+    <dt><span class="badge clear">clear</span></dt>
+    <dd>A real fault: the spelling is wrong by any convention.</dd>
+    <dt><span class="badge check">check</span></dt>
+    <dd>Probably a fault, but worth a look at the manuscript reading.</dd>
+    <dt><span class="badge house-style">house-style</span></dt>
+    <dd>Not wrong — inconsistent. The corpus writes it both ways (or drops an optional
+    hamza). Your call is a convention, and «keep as written» is a legitimate answer.</dd>
+    <dt><span class="badge shadda">shadda</span></dt>
+    <dd>The transliteration geminates, so the Arabic should carry a šaddah. The
+    placement was derived from the transliteration's doubled consonant and is
+    offered for one-click acceptance.</dd>
+    <dt><span class="badge shadda-manual">shadda-manual</span></dt>
+    <dd>Same, but WHICH letter carries the mark is not mechanically decidable — the
+    consonant occurs more than once outside the article, or the transliteration
+    doubles two of them. No proposal is offered; type the form.</dd>
+  </dl>
+
+  <h3>What the šaddah does and does not do</h3>
+  <p><b>It does not affect matching.</b> <code>normalize_ar</code> strips every
+  combining mark, so القدسيّة and القدسيه are ONE lexicon key — writing the mark
+  changes no key and unblocks no title. What it buys is the reverse check: with the
+  mark present, a scan can verify a transliteration's doubling against the Arabic,
+  which is how the witness-tab faults were found. The corpus currently writes it on
+  16 word types and omits it on the rest; nothing carries a šaddah the
+  transliteration contradicts, so the rule holds in one direction already.</p>
+  <p>Where the <i>transliteration</i> is the thing that is wrong (a doubled
+  consonant the Arabic never had), the fix is a Witnesses card, not a šaddah — those
+  words are held out of this tab deliberately.</p>
+
+  <h3>Keys</h3>
+  <dl>
+    <dt>J / K</dt><dd>next / previous card</dd>
+    <dt>1 … 9</dt><dd>choose an option for the first unanswered question</dd>
+    <dt>Enter</dt><dd>confirm (disabled until every question on the card is answered)</dd>
+    <dt>S</dt><dd>defer — recorded as a decision, but not a resolution</dd>
+    <dt>N</dt><dd>jump to the note field</dd>
+    <dt>?</dt><dd>this panel</dd>
+  </dl>
+  <p style="margin-top:18px"><button id="defs-close">Close</button></p>
+</div></div>
+
+<script type="application/json" id="payload">{"schema_version": 1, "task": "translit-adjudication", "generated_from": "data/data.json + review/translit_words_decisions.json", "counts": {"witness": 7, "homograph": 0, "ortho": 46}, "strata": {"witness": [{"id": "r0207-bayan", "row": "r0207", "word": "بيان", "current": "bayānn", "proposed": "bayān", "why": "A spurious doubled n. Four other rows (r0046, r0190, r0196, r0342) write bayān — and this single outlier is why the key بيان counts as contested corpus-wide.", "stratum": "witness", "title": "بيان احوال الصوفية", "title_translit": "bayānn aḥwāl al-ṣūfīyah", "unblocks": []}, {"id": "r0086-nusayri", "row": "r0086", "word": "النصيرية", "current": "al-nuṣarīyah", "proposed": "al-nuṣayrīyah", "why": "The Nuṣayriyya: نصيرية is nuṣayriyya — the recorded form drops the diphthong and the gemination both.", "stratum": "witness", "title": "الرسالة لأجوبة النصيرية", "title_translit": "al-risālah li-aǧwibat al-nuṣarīyah", "unblocks": []}, {"id": "r0301-nusayri", "row": "r0301", "word": "النصيرية", "current": "al-nuṣarīyah", "proposed": "al-nuṣayrīyah", "why": "Same fault as r0086.", "stratum": "witness", "title": "تعليم ديانة النصيرية", "title_translit": "taʿlīm diyānat al-nuṣarīyah", "unblocks": []}, {"id": "r0097-hall", "row": "r0097", "word": "حلّ", "current": "ǧall", "proposed": "ḥall", "why": "ǧīm for ḥāʾ. The Arabic reads حلّ — Ḥall al-rumūz wa-mafātīḥ al-kunūz.", "stratum": "witness", "title": "حلّ الرموز ومفاتيح الكنوز", "title_translit": "ǧall al-rumūz wa-mafātīh al-kunūz", "unblocks": []}, {"id": "r0097-mafatih", "row": "r0097", "word": "ومفاتيح", "current": "wa-mafātīh", "proposed": "wa-mafātīḥ", "why": "Plain h for ḥāʾ in the same row's مفاتيح.", "stratum": "witness", "title": "حلّ الرموز ومفاتيح الكنوز", "title_translit": "ǧall al-rumūz wa-mafātīh al-kunūz", "unblocks": []}, {"id": "r0268-muqtatafat", "row": "r0268", "word": "مقتطفات", "current": "muqtaṭṭafāt", "proposed": "muqtaṭafāt", "why": "The Arabic مقتطفات has no gemination — muqtaṭafāt. Do NOT resolve this by adding a šaddah to the Arabic; the transliteration is the thing that is wrong.", "stratum": "witness", "title": "مقتطفات", "title_translit": "muqtaṭṭafāt", "unblocks": []}, {"id": "r0170-mutafarriqa", "row": "r0170", "word": "المتفرقة", "current": "al-mutafarraqah", "proposed": "al-mutafarriqah", "why": "المتفرّقة is the active participle mutafarriqa «various, sundry», not the passive mutafarraqa. Check the sense before accepting; the šaddah on the rāʾ is right either way.", "stratum": "witness", "title": "رسالة في الاحاديث المتفرقة", "title_translit": "risālah fī al-aḥādīṯ al-mutafarraqah", "unblocks": []}], "homograph": [], "ortho": [{"id": "o13", "word": "مطالب", "proposed": "مثالب", "translit": "maṯālib", "only_rows": ["r0127"], "reason": "ṭāʾ for ṯāʾ. The work is al-Ahwāzī's polemic against al-Ašʿarī — Maṯālib «faults, vices», not Maṭālib «demands». Reported from WorldCat 1162866982 (search.worldcat.org/title/1162866982); that record could not be fetched automatically (HTTP 403), so this card records YOUR reading of it, not a verified retrieval.", "confidence": "clear", "stratum": "ortho", "translit_was": "maṭālib", "rows": [{"id": "r0127", "title": "مطالب بن أبي بشر", "after": "مثالب بن أبي بشر", "translit": "maṭālib b. abī bišr"}]}, {"id": "o17", "word": "المضيئة", "proposed": "المضيّة", "translit": "al-muḍīyah", "only_rows": ["r0272"], "reason": "r0272 is «الخلاصة المرضية من الدرّة المضيئة» — a rhyming title, and this class of late work regularly drops the hamza for the rhyme: muḍiyya to answer marḍiyya. The recorded transliteration al-muḍīyah already reads it that way, so the Arabic is the side that is out of step. Keeping المضيئة instead would mean fixing the transliteration to al-muḍīʾah and losing the rhyme.", "confidence": "check", "stratum": "ortho", "translit_was": "al-muḍīyah", "rows": [{"id": "r0272", "title": "الخلاصة المرضية من الدرّة المضيئة", "after": "الخلاصة المرضية من الدرّة المضيّة", "translit": "al-ḫulāsah al-marḍīyah min al-durrah al-muḍīyah"}]}, {"id": "o15", "word": "الهم", "proposed": "الهمّ", "translit": "al-hamm", "only_rows": ["r0155"], "reason": "r0155 writes «اّلهم» — the šaddah sits on the ālif, which is impossible: a mark of gemination cannot fall on a word's first letter. It belongs on the mīm: الهمّ al-hamm «grief».", "confidence": "clear", "stratum": "ortho", "translit_was": "al-hamm", "rows": [{"id": "r0155", "title": "اّلهم والحزن", "after": "اّلهم والحزن", "translit": "al-hamm wa-l-ḥuzn"}]}, {"id": "o16", "word": "والمفترين", "proposed": "والمغترّين", "translit": "wa-l-muġtarrīn", "only_rows": ["r0124"], "reason": "fāʾ for ġayn. The recorded transliteration already reads wa-l-muġtarrīn, and r0055 writes the word والمغترّين — «the deluded». Check the manuscript: مفترين muftarīn «slanderers» is also a word, in which case the TRANSLITERATION is what needs fixing, not the Arabic.", "confidence": "check", "stratum": "ortho", "translit_was": "wa-l-muġtarrīn", "rows": [{"id": "r0124", "title": "الاكياس والمفترين", "after": "الاكياس والمغترّين", "translit": "al-akyās wa-l-muġtarrīn"}]}, {"id": "o14", "word": "بن", "proposed": "ابن", "translit": "ibn", "only_rows": ["r0127"], "reason": "بن is the correct medial form BETWEEN two names, but this one is word-initial: the title names Ibn Abī Bišr (al-Ašʿarī's patronymic), so the standard form is ابن أبي بشر. Only touches r0127 — every other بن in the corpus is medial and correct. Check the manuscript reading before accepting.", "confidence": "check", "stratum": "ortho", "translit_was": "b.", "rows": [{"id": "r0127", "title": "مطالب بن أبي بشر", "after": "مطالب ابن أبي بشر", "translit": "maṭālib b. abī bišr"}]}, {"id": "s-العطائية", "word": "العطائية", "proposed": "العطائيّة", "translit": "al-ʿaṭāʾīyah", "translits": ["al-ʿaṭāʾīyah"], "only_rows": ["r0235", "r0264", "r0266", "r0267", "r0277", "r0327", "r0328", "r0329", "r0330", "r0331", "r0332", "r0333", "r0334", "r0335", "r0336", "r0337", "r0347"], "confidence": "shadda", "reason": "The transliteration geminates (al-ʿaṭāʾīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-ʿaṭāʾīyah", "rows": [{"id": "r0235", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0264", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0266", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0267", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0277", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0327", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0328", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0329", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0330", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0331", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0332", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0333", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0334", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0335", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0336", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0337", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}, {"id": "r0347", "title": "الحكم العطائية", "after": "الحكم العطائيّة", "translit": "al-ḥikam al-ʿaṭāʾīyah"}]}, {"id": "s-الصوفية", "word": "الصوفية", "proposed": "الصوفيّة", "translit": "al-ṣūfīyah", "translits": ["al-ṣūfīyah"], "only_rows": ["r0081", "r0083", "r0084", "r0164", "r0207", "r0208", "r0263", "r0312", "r0317", "r0318", "r0319", "r0339"], "confidence": "shadda", "reason": "The transliteration geminates (al-ṣūfīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-ṣūfīyah", "rows": [{"id": "r0081", "title": "اصطلاحات الصوفية", "after": "اصطلاحات الصوفيّة", "translit": "iṣṭilāḥāṭ al-ṣūfīyah"}, {"id": "r0083", "title": "اصطلاحات الصوفية", "after": "اصطلاحات الصوفيّة", "translit": "iṣṭilāḥāṭ al-ṣūfīyah"}, {"id": "r0084", "title": "اصطلاحات الصوفية", "after": "اصطلاحات الصوفيّة", "translit": "iṣṭilāḥāṭ al-ṣūfīyah"}, {"id": "r0164", "title": "من حكايات الصوفية", "after": "من حكايات الصوفيّة", "translit": "min ḥikāyah al-ṣūfīyah"}, {"id": "r0207", "title": "بيان احوال الصوفية", "after": "بيان احوال الصوفيّة", "translit": "bayānn aḥwāl al-ṣūfīyah"}, {"id": "r0208", "title": "جوامع آداب الصوفية", "after": "جوامع آداب الصوفيّة", "translit": "ǧawāmiʿ ādāb al-ṣūfīyah"}, {"id": "r0263", "title": "اقوال الائمة الصوفية", "after": "اقوال الائمة الصوفيّة", "translit": "aqwāl al-aʾimmah al-ṣūfīyah"}, {"id": "r0312", "title": "آداب الصوفية", "after": "آداب الصوفيّة", "translit": "ādāb al-ṣūfīyah"}, {"id": "r0317", "title": "اصطلاحات الصوفية، تعريف بابن عباد", "after": "اصطلاحات الصوفيّة، تعريف بابن عباد", "translit": "iṣṭilāḥāṭ al-ṣūfīyah taʿrīf bi-ibn ʿabbād"}, {"id": "r0318", "title": "اصطلاحات الصوفية", "after": "اصطلاحات الصوفيّة", "translit": "iṣṭilāḥāṭ al-ṣūfīyah"}, {"id": "r0319", "title": "أسانيد بعض طرق الصوفية", "after": "أسانيد بعض طرق الصوفيّة", "translit": "asānīd baʿḍ ṭuruq al-ṣūfīyah"}, {"id": "r0339", "title": "تعريف اصطلاحات الصوفية", "after": "تعريف اصطلاحات الصوفيّة", "translit": "taʿrīf iṣṭilāḥāṭ al-ṣūfīyah"}]}, {"id": "s-الله", "word": "الله", "proposed": "اللّه", "translit": "allāh", "translits": ["allāh"], "only_rows": ["r0051", "r0055", "r0061", "r0101", "r0178", "r0210", "r0248"], "confidence": "shadda", "reason": "The transliteration geminates (allāh), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "allāh", "rows": [{"id": "r0051", "title": "منازل القاصدين الى الله", "after": "منازل القاصدين الى اللّه", "translit": "manāzil al-qāṣidīn ilā allāh"}, {"id": "r0055", "title": "الاكياس والمغترّين عن معصية الله", "after": "الاكياس والمغترّين عن معصية اللّه", "translit": "al-akyās wa-l-muġtarrīn ʿan maʿṣiyat allāh"}, {"id": "r0061", "title": "حقائق الاسماء في شرح أسماء الله", "after": "حقائق الاسماء في شرح أسماء اللّه", "translit": "ḥaqāʾiq al-asmāʾ fī šarḥ asmāʾ allāh"}, {"id": "r0101", "title": "السلوك الى الله", "after": "السلوك الى اللّه", "translit": "al-sulūk ilā allāh"}, {"id": "r0178", "title": "بدء من اناب الى الله", "after": "بدء من اناب الى اللّه", "translit": "badʾ man anāba ilā allāh"}, {"id": "r0210", "title": "الرضا عن الله والصبر على قضائه", "after": "الرضا عن اللّه والصبر على قضائه", "translit": "al-riḍā ʿan allāh wa-l-ṣabr ʿalā qaḍāʾih"}, {"id": "r0248", "title": "رسالة في نسب رسول الله", "after": "رسالة في نسب رسول اللّه", "translit": "risālah fī nasab rusūl allāh"}]}, {"id": "s-المحبة", "word": "المحبة", "proposed": "المحبّة", "translit": "al-maḥabbah", "translits": ["al-maḥabbah"], "only_rows": ["r0079", "r0108", "r0241"], "confidence": "shadda", "reason": "The transliteration geminates (al-maḥabbah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-maḥabbah", "rows": [{"id": "r0079", "title": "مجلس في المحبة", "after": "مجلس في المحبّة", "translit": "maǧlis fī al-maḥabbah"}, {"id": "r0108", "title": "في المحبة والفقر", "after": "في المحبّة والفقر", "translit": "fī al-maḥabbah wa-l-faqr"}, {"id": "r0241", "title": "رسالة المحبة", "after": "رسالة المحبّة", "translit": "risālat al-maḥabbah"}]}, {"id": "s-الخمرية", "word": "الخمرية", "proposed": "الخمريّة", "translit": "al-ḫamrīyah", "translits": ["al-ḫamrīyah"], "only_rows": ["r0093", "r0094"], "confidence": "shadda", "reason": "The transliteration geminates (al-ḫamrīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-ḫamrīyah", "rows": [{"id": "r0093", "title": "الزجاجة البلورية في شرح القصيدة الخمرية", "after": "الزجاجة البلورية في شرح القصيدة الخمريّة", "translit": "al-zuzāǧah al-bilawrīyah fī šarḥ al-qaṣīdah al-ḫamrīyah"}, {"id": "r0094", "title": "شرح القصيدة الخمرية", "after": "شرح القصيدة الخمريّة", "translit": "šarḥ al-qaṣīdah al-ḫamrīyah"}]}, {"id": "s-العينية", "word": "العينية", "proposed": "العينيّة", "translit": "al-ʿaynīyah", "translits": ["al-ʿaynīyah"], "only_rows": ["r0296", "r0297"], "confidence": "shadda", "reason": "The transliteration geminates (al-ʿaynīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-ʿaynīyah", "rows": [{"id": "r0296", "title": "قصيدة العينية", "after": "قصيدة العينيّة", "translit": "qaṣīdat al-ʿaynīyah"}, {"id": "r0297", "title": "قصيدة العينية", "after": "قصيدة العينيّة", "translit": "qaṣīdat al-ʿaynīyah"}]}, {"id": "s-المقفل", "word": "المقفل", "proposed": "المقفّل", "translit": "al-muqaffal", "translits": ["al-muqaffal"], "only_rows": ["r0285", "r0287"], "confidence": "shadda", "reason": "The transliteration geminates (al-muqaffal), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-muqaffal", "rows": [{"id": "r0285", "title": "كتاب العروة للمفتاح الفاتح للباب المقفل", "after": "كتاب العروة للمفتاح الفاتح للباب المقفّل", "translit": "kitāb al-ʿurwah li-l-miftāḥ al-fātiḥ li-l-bāb al-muqaffal"}, {"id": "r0287", "title": "كتاب مفتاح الباب المقفل لفهم القرآن المنزل", "after": "كتاب مفتاح الباب المقفّل لفهم القرآن المنزل", "translit": "kitāb miftāḥ al-bāb al-muqaffal li-fahm al-qurʾān al-munazzal"}]}, {"id": "s-عباد", "word": "عباد", "proposed": "عبّاد", "translit": "ʿabbād", "translits": ["ʿabbād"], "only_rows": ["r0311", "r0317"], "confidence": "shadda", "reason": "The transliteration geminates (ʿabbād), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "ʿabbād", "rows": [{"id": "r0311", "title": "إفادة المرتاد بالتعريف بابن عباد", "after": "إفادة المرتاد بالتعريف بابن عبّاد", "translit": "ifādat al-murtād bi-l-taʿrīf bi-ibn ʿabbād"}, {"id": "r0317", "title": "اصطلاحات الصوفية، تعريف بابن عباد", "after": "اصطلاحات الصوفية، تعريف بابن عبّاد", "translit": "iṣṭilāḥāṭ al-ṣūfīyah taʿrīf bi-ibn ʿabbād"}]}, {"id": "s-الائمة", "word": "الائمة", "proposed": "الائمّة", "translit": "al-aʾimmah", "translits": ["al-aʾimmah"], "only_rows": ["r0263"], "confidence": "shadda", "reason": "The transliteration geminates (al-aʾimmah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-aʾimmah", "rows": [{"id": "r0263", "title": "اقوال الائمة الصوفية", "after": "اقوال الائمّة الصوفية", "translit": "aqwāl al-aʾimmah al-ṣūfīyah"}]}, {"id": "s-الادلة", "word": "الادلة", "proposed": "الادلّة", "translit": "al-adillah", "translits": ["al-adillah"], "only_rows": ["r0121"], "confidence": "shadda", "reason": "The transliteration geminates (al-adillah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-adillah", "rows": [{"id": "r0121", "title": "تبصرة الادلة", "after": "تبصرة الادلّة", "translit": "tabṣirat al-adillah"}]}, {"id": "s-الاربعينية", "word": "الاربعينية", "proposed": "الاربعينيّة", "translit": "al-arbaʿīnīyah", "translits": ["al-arbaʿīnīyah"], "only_rows": ["r0059"], "confidence": "shadda", "reason": "The transliteration geminates (al-arbaʿīnīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-arbaʿīnīyah", "rows": [{"id": "r0059", "title": "شرح الاحاديث الاربعينية", "after": "شرح الاحاديث الاربعينيّة", "translit": "šarḥ al-aḥādīth al-arbaʿīnīyah"}]}, {"id": "s-الالهية", "word": "الالهية", "proposed": "الالهيّة", "translit": "al-ilāhīyah", "translits": ["al-ilāhīyah"], "only_rows": ["r0276"], "confidence": "shadda", "reason": "The transliteration geminates (al-ilāhīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-ilāhīyah", "rows": [{"id": "r0276", "title": "كتاب الكمالات الالهية في الصفات المحمدية", "after": "كتاب الكمالات الالهيّة في الصفات المحمدية", "translit": "kitāb al-kamālāt al-ilāhīyah fī al-ṣifāt al-muḥammadīyah"}]}, {"id": "s-البلورية", "word": "البلورية", "proposed": "البلوريّة", "translit": "al-bilawrīyah", "translits": ["al-bilawrīyah"], "only_rows": ["r0093"], "confidence": "shadda", "reason": "The transliteration geminates (al-bilawrīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-bilawrīyah", "rows": [{"id": "r0093", "title": "الزجاجة البلورية في شرح القصيدة الخمرية", "after": "الزجاجة البلوريّة في شرح القصيدة الخمرية", "translit": "al-zuzāǧah al-bilawrīyah fī šarḥ al-qaṣīdah al-ḫamrīyah"}]}, {"id": "s-التجليات", "word": "التجليات", "proposed": "التجلّيات", "translit": "al-taǧalliyāt", "translits": ["al-taǧalliyāt"], "only_rows": ["r0322"], "confidence": "shadda", "reason": "The transliteration geminates (al-taǧalliyāt), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-taǧalliyāt", "rows": [{"id": "r0322", "title": "شرح التجليات", "after": "شرح التجلّيات", "translit": "šarḥ al-taǧalliyāt"}]}, {"id": "s-التصوف", "word": "التصوف", "proposed": "التصوّف", "translit": "al-taṣawwuf", "translits": ["al-taṣawwuf"], "only_rows": ["r0058"], "confidence": "shadda", "reason": "The transliteration geminates (al-taṣawwuf), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-taṣawwuf", "rows": [{"id": "r0058", "title": "اصطلاح في علم التصوف", "after": "اصطلاح في علم التصوّف", "translit": "iṣṭilāḥ fī ʿilm al-taṣawwuf"}]}, {"id": "s-التي", "word": "التي", "proposed": "الّتي", "translit": "allatī", "translits": ["allatī"], "only_rows": ["r0282"], "confidence": "shadda", "reason": "The transliteration geminates (allatī), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "allatī", "rows": [{"id": "r0282", "title": "تفهيم معاني الحروف ولطائف المعاني التي هي", "after": "تفهيم معاني الحروف ولطائف المعاني الّتي هي", "translit": "tafhīm maʿānī al-ḥurūf wa-laṭāʾif al-maʿānī allatī hiya"}]}, {"id": "s-الدر", "word": "الدر", "proposed": "الدرّ", "translit": "al-durr", "translits": ["al-durr"], "only_rows": ["r0258"], "confidence": "shadda", "reason": "The transliteration geminates (al-durr), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-durr", "rows": [{"id": "r0258", "title": "الدر المكنون في اسئيلة ما كان وما يكون", "after": "الدرّ المكنون في اسئيلة ما كان وما يكون", "translit": "al-durr al-maknūn fī asʾilah mā kāna wa-mā yakūn"}]}, {"id": "s-الرد", "word": "الرد", "proposed": "الردّ", "translit": "al-radd", "translits": ["al-radd"], "only_rows": ["r0321"], "confidence": "shadda", "reason": "The transliteration geminates (al-radd), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-radd", "rows": [{"id": "r0321", "title": "الرد على الشيخ– كتاب في الانتصار الخروبي", "after": "الردّ على الشيخ– كتاب في الانتصار الخروبي", "translit": "al-radd ʿalā al-šayḫ kitāb fī al-intiṣār al-ḫarūbī"}]}, {"id": "s-الزيتونية", "word": "الزيتونية", "proposed": "الزيتونيّة", "translit": "al-zaytūnīyah", "translits": ["al-zaytūnīyah"], "only_rows": ["r0231"], "confidence": "shadda", "reason": "The transliteration geminates (al-zaytūnīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-zaytūnīyah", "rows": [{"id": "r0231", "title": "رسالة الزيتونية", "after": "رسالة الزيتونيّة", "translit": "risālat al-zaytūnīyah"}]}, {"id": "s-الطب", "word": "الطب", "proposed": "الطبّ", "translit": "al-ṭibb", "translits": ["al-ṭibb"], "only_rows": ["r0295"], "confidence": "shadda", "reason": "The transliteration geminates (al-ṭibb), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-ṭibb", "rows": [{"id": "r0295", "title": "المنظومة في الطب", "after": "المنظومة في الطبّ", "translit": "al-manẓūmah fī al-ṭibb"}]}, {"id": "s-القوة", "word": "القوة", "proposed": "القوّة", "translit": "al-quwwah", "translits": ["al-quwwah"], "only_rows": ["r0242"], "confidence": "shadda", "reason": "The transliteration geminates (al-quwwah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-quwwah", "rows": [{"id": "r0242", "title": "جواب عن مسألة (القوة البيضاء وهو العقل الأوّل)", "after": "جواب عن مسألة (القوّة البيضاء وهو العقل الأوّل)", "translit": "ǧawāb ʿan masʾalat al-quwwah al-bayḍāʾ wa-huwa al-ʿaql al-awwal"}]}, {"id": "s-المتأمل", "word": "المتأمل", "proposed": null, "translit": "al-mutaʾammil", "translits": ["al-mutaʾammil"], "only_rows": ["r0035"], "confidence": "shadda-manual", "reason": "The transliteration geminates (al-mutaʾammil), so the Arabic should carry a šaddah.  Which letter carries it is not mechanically decidable here — م occurs more than once outside the article. Type the form.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-mutaʾammil", "rows": [{"id": "r0035", "title": "نزهة الناظر المتأمل وقيد الساتر المستعجل", "after": null, "translit": "nuzhat al-nāẓir al-mutaʾammil wa-qayd al-sātir al-mustaʿǧil"}]}, {"id": "s-المتفرقة", "word": "المتفرقة", "proposed": "المتفرّقة", "translit": "al-mutafarriqah", "translits": ["al-mutafarraqah"], "only_rows": ["r0170"], "confidence": "shadda", "reason": "The transliteration geminates (al-mutafarraqah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-mutafarraqah", "rows": [{"id": "r0170", "title": "رسالة في الاحاديث المتفرقة", "after": "رسالة في الاحاديث المتفرّقة", "translit": "risālah fī al-aḥādīṯ al-mutafarraqah"}]}, {"id": "s-المتمنين", "word": "المتمنين", "proposed": null, "translit": "al-mutamannīn", "translits": ["al-mutamannīn"], "only_rows": ["r0150"], "confidence": "shadda-manual", "reason": "The transliteration geminates (al-mutamannīn), so the Arabic should carry a šaddah.  Which letter carries it is not mechanically decidable here — ن occurs more than once outside the article. Type the form.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-mutamannīn", "rows": [{"id": "r0150", "title": "كتاب المتمنين", "after": null, "translit": "kitāb al-mutamannīn"}]}, {"id": "s-المحمدية", "word": "المحمدية", "proposed": null, "translit": "al-muḥammadīyah", "translits": ["al-muḥammadīyah"], "only_rows": ["r0276"], "confidence": "shadda-manual", "reason": "The transliteration geminates (al-muḥammadīyah), so the Arabic should carry a šaddah.  Which letter carries it is not mechanically decidable here — the transliteration doubles 2 consonants (y, m). Type the form.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-muḥammadīyah", "rows": [{"id": "r0276", "title": "كتاب الكمالات الالهية في الصفات المحمدية", "after": null, "translit": "kitāb al-kamālāt al-ilāhīyah fī al-ṣifāt al-muḥammadīyah"}]}, {"id": "s-المرشدية", "word": "المرشدية", "proposed": "المرشديّة", "translit": "al-muršidīyah", "translits": ["al-muršidīyah"], "only_rows": ["r0085"], "confidence": "shadda", "reason": "The transliteration geminates (al-muršidīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-muršidīyah", "rows": [{"id": "r0085", "title": "الرسالة المرشدية", "after": "الرسالة المرشديّة", "translit": "al-risālah al-muršidīyah"}]}, {"id": "s-المرضية", "word": "المرضية", "proposed": "المرضيّة", "translit": "al-marḍīyah", "translits": ["al-marḍīyah"], "only_rows": ["r0272"], "confidence": "shadda", "reason": "The transliteration geminates (al-marḍīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-marḍīyah", "rows": [{"id": "r0272", "title": "الخلاصة المرضية من الدرّة المضيئة", "after": "الخلاصة المرضيّة من الدرّة المضيئة", "translit": "al-ḫulāsah al-marḍīyah min al-durrah al-muḍīyah"}]}, {"id": "s-المصنف", "word": "المصنف", "proposed": "المصنّف", "translit": "al-muṣannif", "translits": ["al-muṣannif"], "only_rows": ["r0049"], "confidence": "shadda", "reason": "The transliteration geminates (al-muṣannif), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-muṣannif", "rows": [{"id": "r0049", "title": "بدء شأن المصنف", "after": "بدء شأن المصنّف", "translit": "badʾ šaʾn al-muṣannif"}]}, {"id": "s-المنزل", "word": "المنزل", "proposed": "المنزّل", "translit": "al-munazzal", "translits": ["al-munazzal"], "only_rows": ["r0287"], "confidence": "shadda", "reason": "The transliteration geminates (al-munazzal), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-munazzal", "rows": [{"id": "r0287", "title": "كتاب مفتاح الباب المقفل لفهم القرآن المنزل", "after": "كتاب مفتاح الباب المقفل لفهم القرآن المنزّل", "translit": "kitāb miftāḥ al-bāb al-muqaffal li-fahm al-qurʾān al-munazzal"}]}, {"id": "s-النفري", "word": "النفري", "proposed": "النفّري", "translit": "al-niffarī", "translits": ["al-niffarī"], "only_rows": ["r0270"], "confidence": "shadda", "reason": "The transliteration geminates (al-niffarī), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-niffarī", "rows": [{"id": "r0270", "title": "من كلام النفري في التستري", "after": "من كلام النفّري في التستري", "translit": "min kalām al-niffarī fī al-tustarī"}]}, {"id": "s-النية", "word": "النية", "proposed": "النيّة", "translit": "al-nīyah", "translits": ["al-nīyah"], "only_rows": ["r0052"], "confidence": "shadda", "reason": "The transliteration geminates (al-nīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-nīyah", "rows": [{"id": "r0052", "title": "مسائل في النية", "after": "مسائل في النيّة", "translit": "masāʾil fī al-nīyah"}]}, {"id": "s-الهندية", "word": "الهندية", "proposed": "الهنديّة", "translit": "al-hindīyah", "translits": ["al-hindīyah"], "only_rows": ["r0202"], "confidence": "shadda", "reason": "The transliteration geminates (al-hindīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-hindīyah", "rows": [{"id": "r0202", "title": "الرسالة الهندية", "after": "الرسالة الهنديّة", "translit": "al-risālah al-hindīyah"}]}, {"id": "s-حفظية", "word": "حفظية", "proposed": "حفظيّة", "translit": "al-ḥifẓīyah", "translits": ["al-ḥifẓīyah"], "only_rows": ["r0204"], "confidence": "shadda", "reason": "The transliteration geminates (al-ḥifẓīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "al-ḥifẓīyah", "rows": [{"id": "r0204", "title": "شرح اوراد حفظية", "after": "شرح اوراد حفظيّة", "translit": "šarḥ awrād al-ḥifẓīyah"}]}, {"id": "s-دينية", "word": "دينية", "proposed": "دينيّة", "translit": "dīnīyah", "translits": ["dīnīyah"], "only_rows": ["r0092"], "confidence": "shadda", "reason": "The transliteration geminates (dīnīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "dīnīyah", "rows": [{"id": "r0092", "title": "حكايات دينية واسئلة صوفية", "after": "حكايات دينيّة واسئلة صوفية", "translit": "ḥikāyah dīnīyah wa-asʾilah ṣūfīyah"}]}, {"id": "s-سر", "word": "سر", "proposed": "سرّ", "translit": "sirr", "translits": ["sirr"], "only_rows": ["r0099"], "confidence": "shadda", "reason": "The transliteration geminates (sirr), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "sirr", "rows": [{"id": "r0099", "title": "سر الأسرار", "after": "سرّ الأسرّار", "translit": "sirr al-asrār"}]}, {"id": "s-سريانية", "word": "سريانية", "proposed": "سريانيّة", "translit": "siryānīyah", "translits": ["siryānīyah"], "only_rows": ["r0002"], "confidence": "shadda", "reason": "The transliteration geminates (siryānīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "siryānīyah", "rows": [{"id": "r0002", "title": "مخطوطة سريانية", "after": "مخطوطة سريانيّة", "translit": "maḫṭūṭah siryānīyah"}]}, {"id": "s-صوفية", "word": "صوفية", "proposed": "صوفيّة", "translit": "ṣūfīyah", "translits": ["ṣūfīyah"], "only_rows": ["r0092"], "confidence": "shadda", "reason": "The transliteration geminates (ṣūfīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "ṣūfīyah", "rows": [{"id": "r0092", "title": "حكايات دينية واسئلة صوفية", "after": "حكايات دينية واسئلة صوفيّة", "translit": "ḥikāyah dīnīyah wa-asʾilah ṣūfīyah"}]}, {"id": "s-للنفري", "word": "للنفري", "proposed": "للنفّري", "translit": "li-l-niffarī", "translits": ["li-l-niffarī"], "only_rows": ["r0148"], "confidence": "shadda", "reason": "The transliteration geminates (li-l-niffarī), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "li-l-niffarī", "rows": [{"id": "r0148", "title": "شرح المواقف للنفري", "after": "شرح المواقف للنفّري", "translit": "šarḥ al-mawāqif li-l-niffarī"}]}, {"id": "s-مقدمة", "word": "مقدمة", "proposed": "مقدّمة", "translit": "muqaddimah", "translits": ["muqaddimah"], "only_rows": ["r0044"], "confidence": "shadda", "reason": "The transliteration geminates (muqaddimah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "muqaddimah", "rows": [{"id": "r0044", "title": "مقدمة في التصوّف", "after": "مقدّمة في التصوّف", "translit": "muqaddimah fī al-taṣawwuf"}]}, {"id": "s-والرد", "word": "والرد", "proposed": "والردّ", "translit": "wa-l-radd", "translits": ["wa-l-radd"], "only_rows": ["r0147"], "confidence": "shadda", "reason": "The transliteration geminates (wa-l-radd), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "wa-l-radd", "rows": [{"id": "r0147", "title": "كتاب المعارضة والرد على اهل الفرق واهل الدعاوى في الاحوال من كلام سهل", "after": "كتاب المعارضة والردّ على اهل الفرق واهل الدعاوى في الاحوال من كلام سهل", "translit": "kitāb al-muʿāraḍah wa-l-radd ʿalā ahl al-firaq wa-ahl al-daʿāwā fī al-aḥwāl min kalām sahl"}]}, {"id": "s-وصية", "word": "وصية", "proposed": "وصيّة", "translit": "waṣīyah", "translits": ["waṣīyah"], "only_rows": ["r0206"], "confidence": "shadda", "reason": "The transliteration geminates (waṣīyah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "translit_was": "waṣīyah", "rows": [{"id": "r0206", "title": "وصية", "after": "وصيّة", "translit": "waṣīyah"}]}]}}</script>
+<script>
+"use strict";
+const DATA = JSON.parse(document.getElementById("payload").textContent);
+const LS = "nwyia-translit-adjudication-v1";
+const ORDER = ["witness", "homograph", "ortho"];
+const TAB_LABEL = {witness:"Witnesses", homograph:"Homographs", ortho:"Orthography"};
+
+/* ---------- state ------------------------------------------------------- */
+// One record per item, keyed by stable id. Created lazily, but the EXPORT walks
+// the worklist rather than this store, so an untouched item is exported as an
+// explicit "not reviewed" rather than vanishing.
+let S = load();
+let tab = ORDER[0];
+let idx = {witness:0, homograph:0, ortho:0};
+
+function load(){
+  try { return JSON.parse(localStorage.getItem(LS)) || {}; }
+  catch(e){ console.warn("state unreadable, starting clean", e); return {}; }
+}
+function save(){
+  try { localStorage.setItem(LS, JSON.stringify(S)); }
+  catch(e){ alert("Could not save progress locally (storage full or blocked). "
+                + "Export now — the download is your only copy."); }
+}
+function items(t){ return DATA.strata[t] || []; }
+function st(id){ return S[id] || (S[id] = {}); }
+function cur(){ return items(tab)[idx[tab]]; }
+
+/* ---------- completeness: a multi-axis decision is a conjunction ---------- */
+// Every axis must be answered for the item to count as decided — in the progress
+// bar, in the Confirm gate, and in the export's `done` flag. A partial is undecided
+// everywhere; toggling any axis off reopens the whole decision.
+function axes(it){
+  if (it.stratum === "witness") return ["verdict"];
+  if (it.stratum === "homograph") return it.keys.map(k => "key:" + k.key);
+  return ["form", "translit"];                       // ortho: Arabic AND translit
+}
+function answered(it, ax){
+  const s = S[it.id]; if (!s) return false;
+  let v = s[ax];
+  if (ax === "form" && v === "keep") return true;    // keep needs no new translit…
+  // The transliteration box is PREFILLED from the item, so an untouched box is a
+  // real answer (the suggestion, accepted). Reading only the state store here made
+  // Confirm dead on a card that visibly showed a filled field — resolve the default
+  // the same way the render does, in one place.
+  if (v === undefined && it.stratum === "ortho" && ax === "translit") v = it.translit;
+  return v !== undefined && v !== null && String(v).trim() !== "";
+}
+function complete(it){
+  const s = S[it.id]; if (!s) return false;
+  if (s.deferred) return false;                      // parked is NOT resolved
+  if (it.stratum === "ortho" && s.form === "keep") return !!s.confirmed;
+  return axes(it).every(a => answered(it, a)) && !!s.confirmed;
+}
+function ready(it){                                  // may Confirm be pressed?
+  const s = S[it.id]; if (!s) return false;
+  if (it.stratum === "ortho" && s.form === "keep") return true;
+  return axes(it).every(a => answered(it, a));
+}
+
+/* ---------- helpers ------------------------------------------------------ */
+function esc(s){
+  return String(s == null ? "" : s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+}
+// Highlight occurrences of one or more words inside a title. The text is escaped
+// FIRST and the markers are two control characters that cannot occur in the data,
+// so nothing from the payload can ever reach innerHTML as markup.
+const M0 = "\u0001", M1 = "\u0002";
+function markWords(title, words){
+  let out = esc(title);
+  (words || []).filter(Boolean).forEach(w => {
+    const e = esc(w);
+    if (e) out = out.split(e).join(M0 + e + M1);
+  });
+  return out.split(M0).join('<span class="hl">').split(M1).join("</span>");
+}
+function markWord(title, word){ return markWords(title, [word]); }
+
+/* ---------- render ------------------------------------------------------- */
+function render(){
+  document.getElementById("tabs").innerHTML = ORDER.map(t => {
+    const done = items(t).filter(complete).length;
+    return `<button data-tab="${t}" class="${t===tab?"on":""}">${TAB_LABEL[t]}`
+         + `<span class="n">${done}/${items(t).length}</span></button>`;
+  }).join("");
+  [...document.querySelectorAll(".tabs button")].forEach(b =>
+    b.onclick = () => { tab = b.dataset.tab; render(); });
+
+  const all = ORDER.flatMap(items);
+  const done = all.filter(complete).length;
+  document.getElementById("prog").textContent =
+    `${done} / ${all.length} decided (${Math.round(100*done/all.length)}%)`;
+  document.getElementById("barfill").style.width = (100*done/all.length) + "%";
+
+  const it = cur();
+  const app = document.getElementById("app");
+  if (!it){ app.innerHTML = '<p class="empty">Nothing in this tab.</p>'; return; }
+  app.innerHTML =
+      it.stratum === "witness"   ? witnessCard(it)
+    : it.stratum === "homograph" ? homographCard(it)
+    :                              orthoCard(it);
+  wire(it);
+
+  const s = st(it.id);
+  const btn = document.getElementById("confirm");
+  btn.disabled = !ready(it);
+  btn.textContent = complete(it) ? "Confirmed ✓ — next" : "Confirm";
+  document.getElementById("skip").textContent = s.deferred ? "Deferred — undo" : "Defer";
+}
+
+function head(it, n, extra){
+  return `<div class="meta"><span class="rid">${esc(it.id)}</span>`
+       + `<span>${esc(n)} of ${items(tab).length}</span>`
+       + (complete(it) ? '<span class="done-tick">decided ✓</span>' : "")
+       + (st(it.id).deferred ? '<span class="badge">deferred</span>' : "")
+       + (extra || "") + `</div>`;
+}
+
+function noteBox(it){
+  return `<h2 class="q">Note <span class="mono">N</span></h2>`
+       + `<textarea id="note" placeholder="Reasoning, a manuscript reading, anything the `
+       + `ingest should carry forward.">${esc(st(it.id).note || "")}</textarea>`;
+}
+
+function witnessCard(it){
+  const s = st(it.id);
+  const opts = [
+    {v:"fix",  label:`Correct it to «${it.proposed}»`,
+     ev:`Rewrites ${it.id}'s title_translit; the key ${it.word} stops being contested.`},
+    {v:"keep", label:`Leave «${it.current}» as recorded`,
+     ev:"The key stays contested and the rows below must each be ruled individually."},
+  ];
+  return `<div class="card">${head(it, idx.witness+1,
+      `<span>row ${esc(it.row || it.id)}</span>`)}
+    <h2 class="q">Row as it stands</h2>
+    <div class="title-raw"><div class="ar">${markWord(it.title, it.word)}</div>
+      <div class="gloss">${esc(it.title_translit)}</div></div>
+    <div class="note">${esc(it.why)}</div>
+    <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">
+      Blocks: ${it.unblocks.map(x=>`<code>${esc(x)}</code>`).join(", ") || "—"}</p>
+    <h2 class="q">Is the recorded transliteration wrong?</h2>
+    <div class="opts">${opts.map((o,i)=>
+      `<button class="opt ${s.verdict===o.v?"on":""}" data-ax="verdict" data-val="${esc(o.v)}">
+         <span class="k">${i+1}</span><span class="v">${esc(o.label)}</span>
+         <span class="ev">${esc(o.ev)}</span></button>`).join("")}
+    </div>
+    <h2 class="q">Or write a different transliteration</h2>
+    <input type="text" id="custom-verdict" placeholder="e.g. ${esc(it.proposed)}"
+           value="${esc(s.verdict && s.verdict!=="fix" && s.verdict!=="keep" ? s.verdict : "")}">
+    ${noteBox(it)}
+  </div>`;
+}
+
+function homographCard(it){
+  const s = st(it.id);
+  const keys = it.keys;
+  let h = `<div class="card">${head(it, idx.homograph+1,
+      `<span>${esc(it.author)}</span>`)}
+    <h2 class="q">Title as written</h2>
+    <div class="title-raw"><div class="ar">${
+      markWords(it.title, keys.map(k => k.raw))}</div>
+      <div class="gloss">${it.gloss.map(g =>
+        g.contested ? `<span class="c">${esc(g.key)}?</span>`
+                    : esc(g.translit || "…")).join(" ")}</div></div>`;
+
+  keys.forEach((k, ki) => {
+    const chosen = s["key:" + k.key];
+    h += `<h2 class="q">Reading ${ki+1} of ${keys.length} — `
+       + `<span class="ar" style="font-size:1em">${esc(k.raw)}</span></h2>`;
+    if (k.note) h += `<div class="note ${/ARTIFACT/.test(k.note)?"artifact":""}">${esc(k.note)}</div>`;
+    h += `<div class="opts">` + k.options.map((o, oi) => {
+      const wt = o.witness_titles.map(w =>
+        `${esc(w.id)}: ${esc(w.translit || w.title)}`).join(" · ");
+      return `<button class="opt ${chosen===o.value?"on":""}" data-ax="key:${esc(k.key)}"
+                data-val="${esc(o.value)}">
+          <span class="k">${ki*3+oi+1}</span><span class="v">${esc(o.value)}</span>
+          ${k.suggest===o.value?'<span class="sug">◂ evidence favours</span>':""}
+          <span class="ev">${o.witnesses.length} witness${o.witnesses.length===1?"":"es"} — ${wt}</span>
+        </button>`;
+    }).join("") + `</div>`;
+  });
+
+  // Composition preview: a LOOKUP into the table the builder precomputed. The
+  // iḍāfa rule has one home, in Python. An unlisted combination is announced, not
+  // papered over — and the ingest recomposes from the real pipeline regardless.
+  const combo = keys.map(k => s["key:" + k.key]);
+  if (combo.every(Boolean)){
+    const key = combo.join("|");
+    const has = Object.prototype.hasOwnProperty.call(it.compositions, key);
+    const val = it.compositions[key];
+    h += has && val
+      ? `<div class="preview"><div class="lbl">Composed title_translit (preview — the
+           ingest recomposes it)</div><div class="val">${esc(val)}</div></div>`
+      : `<div class="preview bad"><div class="lbl">Outside the checked range</div>
+           <div class="val">No composition was precomputed for «${esc(key)}». Do not
+           trust a value here — record the reading and a note, and let the ingest
+           report it.</div></div>`;
+  }
+  return h + noteBox(it) + `</div>`;
+}
+
+function orthoCard(it){
+  const s = st(it.id);
+  const formOpts = (it.proposed ? [{v:"accept", label:`Canonicalize to «${it.proposed}»`}] : [])
+    .concat([{v:"keep", label:"Keep as written — not a fault"}]);
+  let h = `<div class="card">${head(it, idx.ortho+1,
+      `<span class="badge ${esc(it.confidence)}">${esc(it.confidence)}</span>`)}
+    <h2 class="q">Word</h2>
+    <div class="title-raw"><div class="ar">
+      <span class="del">${esc(it.word)}</span> &nbsp;→&nbsp;
+      ${it.proposed ? `<span class="ins">${esc(it.proposed)}</span>`
+                    : `<span style="font-size:.62em;color:var(--bad)">no proposal — type the form below</span>`}
+      </div></div>
+    <div class="note">${esc(it.reason)}</div>
+
+    <h2 class="q">Rows affected (${it.rows.length})</h2>
+    <table><thead><tr><th>row</th><th>title as written</th><th>after</th></tr></thead><tbody>`
+    + it.rows.map(r => `<tr><td class="mono">${esc(r.id)}</td>
+        <td class="ar">${markWords(r.title, [it.word])}</td>
+        <td class="ar">${r.after ? markWords(r.after, [it.proposed])
+                                  : '<span style="font-size:.7em;color:var(--muted)">—</span>'}</td></tr>`).join("")
+    + `</tbody></table>
+
+    <h2 class="q">1 · Arabic form</h2>
+    <div class="opts">` + formOpts.map((o,i) =>
+      `<button class="opt ${s.form===o.v?"on":""}" data-ax="form" data-val="${esc(o.v)}">
+         <span class="k">${i+1}</span><span class="v">${esc(o.label)}</span></button>`).join("")
+    + `</div>
+    <h2 class="q">Or write a different canonical form</h2>
+    <input type="text" id="custom-form" class="ar" dir="rtl"
+           placeholder="${esc(it.proposed || it.word)}"
+           value="${esc(s.form && s.form!=="accept" && s.form!=="keep" ? s.form : "")}">`;
+
+  if (s.form !== "keep"){
+    h += `<h2 class="q">2 · Transliteration this spelling implies</h2>
+      <p style="font-size:13px;color:var(--muted);margin:0 0 6px">Required: the
+      canonical spelling becomes a new lexicon key, so without this the word is no
+      longer settled and every title containing it stops composing.</p>
+      <input type="text" id="translit" placeholder="${esc(it.translit || "")}"
+             value="${esc(s.translit !== undefined ? s.translit : (it.translit || ""))}">`;
+  }
+  return h + noteBox(it) + `</div>`;
+}
+
+/* ---------- interaction -------------------------------------------------- */
+function setAx(it, ax, val){
+  const s = st(it.id);
+  if (s[ax] === val) delete s[ax]; else s[ax] = val;   // toggling off reopens
+  s.confirmed = false;                                  // …the whole decision
+  delete s.deferred;
+  save(); render();
+}
+
+function wire(it){
+  [...document.querySelectorAll(".opt")].forEach(b =>
+    b.onclick = () => setAx(it, b.dataset.ax, b.dataset.val));
+
+  const cf = document.getElementById("custom-form");
+  if (cf) cf.oninput = () => {
+    const s = st(it.id);
+    if (cf.value.trim()) { s.form = cf.value.trim(); s.confirmed = false; }
+    else if (s.form !== "accept" && s.form !== "keep") delete s.form;
+    save();
+    document.getElementById("confirm").disabled = !ready(it);
+  };
+  const cv = document.getElementById("custom-verdict");
+  if (cv) cv.oninput = () => {
+    const s = st(it.id);
+    if (cv.value.trim()) { s.verdict = cv.value.trim(); s.confirmed = false; }
+    else if (s.verdict !== "fix" && s.verdict !== "keep") delete s.verdict;
+    save();
+    document.getElementById("confirm").disabled = !ready(it);
+  };
+  const tr = document.getElementById("translit");
+  if (tr) tr.oninput = () => {
+    st(it.id).translit = tr.value; st(it.id).confirmed = false; save();
+    document.getElementById("confirm").disabled = !ready(it);
+  };
+  const nt = document.getElementById("note");
+  if (nt) nt.oninput = () => { st(it.id).note = nt.value; save(); };
+}
+
+function move(d){
+  const n = items(tab).length;
+  if (!n) return;
+  idx[tab] = (idx[tab] + d + n) % n;
+  render();
+  window.scrollTo({top:0, behavior:"instant"});
+}
+function confirmCard(){
+  const it = cur(); if (!it || !ready(it)) return;
+  st(it.id).confirmed = true;
+  delete st(it.id).deferred;
+  save();
+  move(1);
+}
+function deferCard(){
+  const it = cur(); if (!it) return;
+  const s = st(it.id);
+  if (s.deferred) delete s.deferred; else { s.deferred = true; s.confirmed = false; }
+  save(); render();
+  if (s.deferred) move(1);
+}
+
+document.getElementById("prev").onclick = () => move(-1);
+document.getElementById("next").onclick = () => move(1);
+document.getElementById("confirm").onclick = confirmCard;
+document.getElementById("skip").onclick = deferCard;
+document.getElementById("defs-btn").onclick =
+  () => document.getElementById("defs").classList.toggle("on");
+document.getElementById("defs-close").onclick =
+  () => document.getElementById("defs").classList.remove("on");
+
+document.addEventListener("keydown", e => {
+  const t = e.target.tagName;
+  const typing = t === "INPUT" || t === "TEXTAREA";
+  if (e.key === "Escape"){ document.getElementById("defs").classList.remove("on");
+                           if (typing) e.target.blur(); return; }
+  // Enter must never commit from the note field: it is the one place the annotator
+  // writes prose, and a stolen Enter both commits and eats the newline.
+  if (typing && !(e.key === "Enter" && t === "INPUT")) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+  if (e.key === "j" || e.key === "J"){ e.preventDefault(); move(1); }
+  else if (e.key === "k" || e.key === "K"){ e.preventDefault(); move(-1); }
+  else if (e.key === "Enter"){ e.preventDefault(); e.target.blur && e.target.blur();
+                               confirmCard(); }
+  else if (e.key === "s" || e.key === "S"){ e.preventDefault(); deferCard(); }
+  else if (e.key === "?"){ e.preventDefault();
+                           document.getElementById("defs").classList.toggle("on"); }
+  else if (e.key === "n" || e.key === "N"){
+    const nt = document.getElementById("note");
+    if (nt){ e.preventDefault(); nt.focus(); }
+  }
+  else if (/^[1-9]$/.test(e.key)){
+    const b = [...document.querySelectorAll(".opt")][Number(e.key) - 1];
+    if (b){ e.preventDefault(); b.click(); }
+  }
+});
+
+/* ---------- export ------------------------------------------------------- */
+// Walks the WORKLIST, not the state store, so an item never opened exports as an
+// explicit not-reviewed record. Provenance is computed by COMPARING to the item —
+// never inferred from which handler fired.
+function decisions(){
+  const out = [];
+  ORDER.forEach(t => items(t).forEach(it => {
+    const s = S[it.id] || {};
+    const rec = {
+      id: it.id, stratum: it.stratum,
+      done: complete(it),
+      disposition: complete(it) ? "resolved" : (s.deferred ? "deferred" : "open"),
+      note: s.note || "",
+    };
+    if (it.stratum === "witness"){
+      rec.row = it.row || it.id;
+      rec.word = it.word;
+      rec.action = s.verdict === "keep" ? "keep"
+                 : s.verdict === "fix"  ? "set_translit" : (s.verdict ? "set_translit" : null);
+      rec.target = s.verdict === "fix" ? it.proposed
+                 : s.verdict === "keep" ? it.current
+                 : (s.verdict || null);
+      rec.was = it.current;
+      rec.suggested = it.proposed;
+      rec.changed = rec.target !== null && rec.target !== it.proposed;
+    } else if (it.stratum === "homograph"){
+      rec.readings = {};
+      it.keys.forEach(k => rec.readings[k.key] = s["key:" + k.key] || null);
+      rec.suggested = {};
+      it.keys.forEach(k => rec.suggested[k.key] = k.suggest || null);
+      rec.changed = it.keys.some(k => s["key:"+k.key] && s["key:"+k.key] !== k.suggest);
+      // The context that shaped the decision travels with it, so a later reviewer
+      // can reopen the question rather than only read the answer.
+      rec.context = {title: it.title, options: {}};
+      it.keys.forEach(k => rec.context.options[k.key] =
+        k.options.map(o => ({value:o.value, witnesses:o.witnesses})));
+      const combo = it.keys.map(k => s["key:" + k.key]);
+      rec.preview = combo.every(Boolean)
+        ? (it.compositions[combo.join("|")] ?? null) : null;
+    } else {
+      rec.word = it.word;
+      rec.action = s.form === "keep" ? "keep"
+                 : s.form ? "canonicalize" : null;
+      rec.target = s.form === "keep" ? it.word
+                 : s.form === "accept" ? it.proposed
+                 : (s.form || null);
+      rec.translit = s.form === "keep" ? null
+                   : (s.translit !== undefined ? s.translit : it.translit);
+      rec.suggested = it.proposed;
+      rec.suggested_translit = it.translit;
+      // The form the word carries TODAY — the ingest needs it to swap the token
+      // inside any affected row that already has a transliteration.
+      rec.translit_was = it.translit_was || null;
+      rec.confidence = it.confidence;
+      rec.rows = it.rows.map(r => r.id);
+      rec.translits_seen = it.translits || null;
+      rec.changed = rec.target !== null && rec.target !== it.proposed;
+    }
+    out.push(rec);
+  }));
+  return out;
+}
+
+function exportJSON(){
+  const who = (localStorage.getItem(LS + ":who") || "").trim();
+  const payload = {
+    schema_version: 1,
+    task: DATA.task,
+    annotated_date: new Date().toISOString().slice(0,10),
+    annotator: who || null,
+    source: DATA.generated_from,
+    counts: (() => {
+      const d = decisions();
+      return {total: d.length,
+              resolved: d.filter(x => x.disposition === "resolved").length,
+              deferred: d.filter(x => x.disposition === "deferred").length,
+              open:     d.filter(x => x.disposition === "open").length};
+    })(),
+    decisions: decisions(),
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)],
+                        {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "translit_adjudication_decisions.json";
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+document.getElementById("export-btn").onclick = exportJSON;
+
+const who = localStorage.getItem(LS + ":who");
+if (who) document.getElementById("who-badge").textContent = who;
+
+// Headless-review contract: drive the REAL baked JS without a browser.
+globalThis.__review = {
+  data: () => DATA, state: () => S, items, complete, ready, decisions,
+  setAx: (id, ax, val) => { const it = ORDER.flatMap(items).find(x => x.id === id);
+                            if (it) setAx(it, ax, val); },
+  go: (t, i) => { tab = t; idx[t] = i; render(); },
+  render, exportJSON,
+};
+
+render();
+</script>
+</body>
+</html>

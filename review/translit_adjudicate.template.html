@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transliteration adjudication — Nwyia index</title>
+<style>
+:root{
+  --bg:#faf9f7; --panel:#fff; --ink:#1b1a18; --muted:#6c6862; --line:#e2ded7;
+  --accent:#7a4f2b; --accent-ink:#fff; --ok:#2f6b3f; --warn:#8a6d1f; --bad:#8c2f2f;
+  --chip:#f1ece4;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+     font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.ar{font-family:"Geeza Pro","Al Bayan","Scheherazade New","Amiri",serif;
+    font-size:1.45em;line-height:1.9;direction:rtl;unicode-bidi:isolate}
+code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em}
+
+header{position:sticky;top:0;z-index:20;background:var(--panel);
+       border-bottom:1px solid var(--line);padding:10px 18px}
+.hrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+h1{font-size:15px;margin:0;font-weight:600;letter-spacing:.01em}
+.spacer{flex:1}
+header button{font:inherit;padding:5px 11px;border:1px solid var(--line);
+              border-radius:6px;background:#fff;color:var(--ink);cursor:pointer}
+header button:hover{background:var(--chip)}
+header .primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+header .primary:hover{filter:brightness(1.08)}
+
+.tabs{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.tabs button{font:inherit;padding:5px 12px;border:1px solid var(--line);
+             border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}
+.tabs button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.tabs button .n{opacity:.75;margin-left:6px;font-size:.85em}
+
+main{max-width:900px;margin:22px auto 90px;padding:0 18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+      padding:18px 20px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.meta{display:flex;gap:12px;flex-wrap:wrap;align-items:baseline;color:var(--muted);
+      font-size:13px;margin-bottom:10px}
+.meta .rid{font-weight:600;color:var(--ink)}
+.badge{display:inline-block;padding:1px 8px;border-radius:999px;background:var(--chip);
+       font-size:12px;color:var(--muted)}
+.badge.clear{background:#e7f0e8;color:var(--ok)}
+.badge.check{background:#f5eedd;color:var(--warn)}
+.badge.house-style{background:#eceaf3;color:#4a4472}
+.badge.shadda{background:#e8eef0;color:#2d5560}
+.badge.shadda-manual{background:#f3e6e6;color:var(--bad)}
+
+h2.q{font-size:12.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);
+     margin:20px 0 8px;font-weight:600}
+.title-raw{background:#fbf7f0;border:1px solid var(--line);border-radius:8px;padding:10px 14px}
+.hl{background:#fbe7c8;border-radius:3px;padding:0 3px;box-decoration-break:clone}
+.gloss{color:var(--muted);font-size:14px;margin-top:8px;word-spacing:.15em}
+.gloss .c{color:var(--accent);font-weight:600}
+.note{background:#fdf6e8;border-left:3px solid var(--warn);padding:8px 12px;
+      border-radius:0 6px 6px 0;font-size:13.5px;margin:10px 0}
+.note.artifact{background:#eef3fb;border-left-color:#3a5f9c}
+
+.opts{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.opt{border:1px solid var(--line);border-radius:8px;padding:9px 13px;background:#fff;
+     cursor:pointer;text-align:left;font:inherit;color:var(--ink);width:100%}
+.opt:hover{background:var(--chip)}
+.opt.on{border-color:var(--accent);background:#f6efe7;box-shadow:inset 0 0 0 1px var(--accent)}
+.opt .k{display:inline-block;min-width:20px;color:var(--muted);font-size:12px}
+.opt .v{font-weight:600}
+.opt .ev{display:block;color:var(--muted);font-size:12.5px;margin-top:3px}
+.opt .sug{color:var(--ok);font-size:12px;margin-left:8px}
+
+input[type=text]{font:inherit;padding:7px 10px;border:1px solid var(--line);
+                 border-radius:7px;background:#fff;color:var(--ink);width:100%;max-width:420px}
+textarea{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:7px;
+         background:#fff;color:var(--ink);width:100%;min-height:62px;resize:vertical}
+
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin-top:6px}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+td.ar{font-size:1.15em;line-height:1.7}
+.del{color:var(--bad);text-decoration:line-through}
+.ins{color:var(--ok);font-weight:600}
+
+.preview{margin-top:14px;padding:10px 14px;border:1px dashed var(--line);
+         border-radius:8px;background:#fcfbf9}
+.preview .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.preview .val{font-size:16px;margin-top:3px}
+.preview.bad{border-color:var(--bad);background:#fdf2f2}
+
+nav.foot{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--panel);
+         border-top:1px solid var(--line);padding:10px 18px}
+.frow{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+nav.foot button{font:inherit;padding:7px 14px;border:1px solid var(--line);
+                border-radius:7px;background:#fff;color:var(--ink);cursor:pointer}
+nav.foot button:hover{background:var(--chip)}
+nav.foot .confirm{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);
+                  font-weight:600}
+nav.foot .confirm:hover{filter:brightness(1.08)}
+nav.foot .confirm:disabled{background:#e6e3de;color:#9a958d;border-color:var(--line);
+                           cursor:not-allowed;filter:none}
+nav.foot .skip{color:var(--muted)}
+.prog{color:var(--muted);font-size:13px}
+.bar{height:5px;background:var(--chip);border-radius:3px;overflow:hidden;width:130px}
+.bar i{display:block;height:100%;background:var(--accent)}
+
+#defs{display:none;position:fixed;inset:0;z-index:40;background:rgba(20,18,16,.45);
+      padding:40px 18px;overflow:auto}
+#defs.on{display:block}
+#defs .box{max-width:760px;margin:0 auto;background:var(--panel);border-radius:12px;
+           padding:22px 26px}
+#defs h3{margin:18px 0 6px;font-size:14px}
+#defs dl{margin:0}#defs dt{font-weight:600;margin-top:9px}#defs dd{margin:2px 0 0;color:var(--muted)}
+.done-tick{color:var(--ok);font-weight:600}
+.empty{color:var(--muted);text-align:center;padding:50px 0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hrow">
+    <h1>Transliteration adjudication</h1>
+    <span class="badge" id="who-badge"></span>
+    <span class="spacer"></span>
+    <span class="prog" id="prog"></span>
+    <div class="bar"><i id="barfill" style="width:0"></i></div>
+    <button id="defs-btn" title="? toggles">ⓘ definitions</button>
+    <button class="primary" id="export-btn">Export JSON</button>
+  </div>
+  <div class="tabs" id="tabs"></div>
+</header>
+
+<main id="app"></main>
+
+<nav class="foot">
+  <div class="frow">
+    <button id="prev">← Prev <span class="mono">K</span></button>
+    <button id="next">Next → <span class="mono">J</span></button>
+    <span class="spacer"></span>
+    <button class="skip" id="skip">Defer <span class="mono">S</span></button>
+    <button class="confirm" id="confirm">Confirm <span class="mono">Enter</span></button>
+  </div>
+</nav>
+
+<div id="defs"><div class="box">
+  <h2 style="margin:0;font-size:16px">What each tab is asking</h2>
+
+  <h3>Witnesses (decide first)</h3>
+  <p>Rows whose recorded transliteration carries a faulty token. Because the
+  composer learns its lexicon from completed rows, one of these can be the sole
+  witness for a losing reading — correcting it dissolves a contest downstream
+  rather than requiring a separate ruling on it. One row may hold several fixes,
+  so the card is keyed by fix, not by row.</p>
+
+  <h3>Homographs</h3>
+  <p>13 rows that <code>apply_word_lexicon.py</code> refuses to compose: one
+  normalized Arabic key carries two attested readings, so composing would mean
+  guessing. Pick the reading this row's context requires.</p>
+  <dl>
+    <dt>Normalizer artifact</dt>
+    <dd><code>normalize_ar</code> folds ألف مقصورة (ى) to yāʾ (ي) — correct for
+    matching names, but it merges على <i>ʿalā</i> with علي <i>ʿAlī</i> onto one key.
+    The raw title tells you which it is.</dd>
+    <dt>Genuine homograph</dt>
+    <dd>One spelling, two words: من is the preposition <i>min</i> and the relative
+    pronoun <i>man</i>.</dd>
+    <dt>Witness rows</dt>
+    <dd>Rows whose existing transliteration attests that reading. One witness
+    against several is usually a typo, not a distinction.</dd>
+  </dl>
+
+  <h3>Orthography</h3>
+  <p>Arabic word forms that look non-standard, with a proposed canonical spelling.
+  Two required answers: the Arabic form, and the transliteration that form implies —
+  because changing the Arabic changes the lexicon key the composer looks it up under,
+  so a spelling fix with no transliteration would silently un-settle the word.</p>
+  <dl>
+    <dt><span class="badge clear">clear</span></dt>
+    <dd>A real fault: the spelling is wrong by any convention.</dd>
+    <dt><span class="badge check">check</span></dt>
+    <dd>Probably a fault, but worth a look at the manuscript reading.</dd>
+    <dt><span class="badge house-style">house-style</span></dt>
+    <dd>Not wrong — inconsistent. The corpus writes it both ways (or drops an optional
+    hamza). Your call is a convention, and «keep as written» is a legitimate answer.</dd>
+    <dt><span class="badge shadda">shadda</span></dt>
+    <dd>The transliteration geminates, so the Arabic should carry a šaddah. The
+    placement was derived from the transliteration's doubled consonant and is
+    offered for one-click acceptance.</dd>
+    <dt><span class="badge shadda-manual">shadda-manual</span></dt>
+    <dd>Same, but WHICH letter carries the mark is not mechanically decidable — the
+    consonant occurs more than once outside the article, or the transliteration
+    doubles two of them. No proposal is offered; type the form.</dd>
+  </dl>
+
+  <h3>What the šaddah does and does not do</h3>
+  <p><b>It does not affect matching.</b> <code>normalize_ar</code> strips every
+  combining mark, so القدسيّة and القدسيه are ONE lexicon key — writing the mark
+  changes no key and unblocks no title. What it buys is the reverse check: with the
+  mark present, a scan can verify a transliteration's doubling against the Arabic,
+  which is how the witness-tab faults were found. The corpus currently writes it on
+  16 word types and omits it on the rest; nothing carries a šaddah the
+  transliteration contradicts, so the rule holds in one direction already.</p>
+  <p>Where the <i>transliteration</i> is the thing that is wrong (a doubled
+  consonant the Arabic never had), the fix is a Witnesses card, not a šaddah — those
+  words are held out of this tab deliberately.</p>
+
+  <h3>Keys</h3>
+  <dl>
+    <dt>J / K</dt><dd>next / previous card</dd>
+    <dt>1 … 9</dt><dd>choose an option for the first unanswered question</dd>
+    <dt>Enter</dt><dd>confirm (disabled until every question on the card is answered)</dd>
+    <dt>S</dt><dd>defer — recorded as a decision, but not a resolution</dd>
+    <dt>N</dt><dd>jump to the note field</dd>
+    <dt>?</dt><dd>this panel</dd>
+  </dl>
+  <p style="margin-top:18px"><button id="defs-close">Close</button></p>
+</div></div>
+
+<script type="application/json" id="payload">__DATA__</script>
+<script>
+"use strict";
+const DATA = JSON.parse(document.getElementById("payload").textContent);
+const LS = "nwyia-translit-adjudication-v1";
+const ORDER = ["witness", "homograph", "ortho"];
+const TAB_LABEL = {witness:"Witnesses", homograph:"Homographs", ortho:"Orthography"};
+
+/* ---------- state ------------------------------------------------------- */
+// One record per item, keyed by stable id. Created lazily, but the EXPORT walks
+// the worklist rather than this store, so an untouched item is exported as an
+// explicit "not reviewed" rather than vanishing.
+let S = load();
+let tab = ORDER[0];
+let idx = {witness:0, homograph:0, ortho:0};
+
+function load(){
+  try { return JSON.parse(localStorage.getItem(LS)) || {}; }
+  catch(e){ console.warn("state unreadable, starting clean", e); return {}; }
+}
+function save(){
+  try { localStorage.setItem(LS, JSON.stringify(S)); }
+  catch(e){ alert("Could not save progress locally (storage full or blocked). "
+                + "Export now — the download is your only copy."); }
+}
+function items(t){ return DATA.strata[t] || []; }
+function st(id){ return S[id] || (S[id] = {}); }
+function cur(){ return items(tab)[idx[tab]]; }
+
+/* ---------- completeness: a multi-axis decision is a conjunction ---------- */
+// Every axis must be answered for the item to count as decided — in the progress
+// bar, in the Confirm gate, and in the export's `done` flag. A partial is undecided
+// everywhere; toggling any axis off reopens the whole decision.
+function axes(it){
+  if (it.stratum === "witness") return ["verdict"];
+  if (it.stratum === "homograph") return it.keys.map(k => "key:" + k.key);
+  return ["form", "translit"];                       // ortho: Arabic AND translit
+}
+function answered(it, ax){
+  const s = S[it.id]; if (!s) return false;
+  let v = s[ax];
+  if (ax === "form" && v === "keep") return true;    // keep needs no new translit…
+  // The transliteration box is PREFILLED from the item, so an untouched box is a
+  // real answer (the suggestion, accepted). Reading only the state store here made
+  // Confirm dead on a card that visibly showed a filled field — resolve the default
+  // the same way the render does, in one place.
+  if (v === undefined && it.stratum === "ortho" && ax === "translit") v = it.translit;
+  return v !== undefined && v !== null && String(v).trim() !== "";
+}
+function complete(it){
+  const s = S[it.id]; if (!s) return false;
+  if (s.deferred) return false;                      // parked is NOT resolved
+  if (it.stratum === "ortho" && s.form === "keep") return !!s.confirmed;
+  return axes(it).every(a => answered(it, a)) && !!s.confirmed;
+}
+function ready(it){                                  // may Confirm be pressed?
+  const s = S[it.id]; if (!s) return false;
+  if (it.stratum === "ortho" && s.form === "keep") return true;
+  return axes(it).every(a => answered(it, a));
+}
+
+/* ---------- helpers ------------------------------------------------------ */
+function esc(s){
+  return String(s == null ? "" : s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+}
+// Highlight occurrences of one or more words inside a title. The text is escaped
+// FIRST and the markers are two control characters that cannot occur in the data,
+// so nothing from the payload can ever reach innerHTML as markup.
+const M0 = "\u0001", M1 = "\u0002";
+function markWords(title, words){
+  let out = esc(title);
+  (words || []).filter(Boolean).forEach(w => {
+    const e = esc(w);
+    if (e) out = out.split(e).join(M0 + e + M1);
+  });
+  return out.split(M0).join('<span class="hl">').split(M1).join("</span>");
+}
+function markWord(title, word){ return markWords(title, [word]); }
+
+/* ---------- render ------------------------------------------------------- */
+function render(){
+  document.getElementById("tabs").innerHTML = ORDER.map(t => {
+    const done = items(t).filter(complete).length;
+    return `<button data-tab="${t}" class="${t===tab?"on":""}">${TAB_LABEL[t]}`
+         + `<span class="n">${done}/${items(t).length}</span></button>`;
+  }).join("");
+  [...document.querySelectorAll(".tabs button")].forEach(b =>
+    b.onclick = () => { tab = b.dataset.tab; render(); });
+
+  const all = ORDER.flatMap(items);
+  const done = all.filter(complete).length;
+  document.getElementById("prog").textContent =
+    `${done} / ${all.length} decided (${Math.round(100*done/all.length)}%)`;
+  document.getElementById("barfill").style.width = (100*done/all.length) + "%";
+
+  const it = cur();
+  const app = document.getElementById("app");
+  if (!it){ app.innerHTML = '<p class="empty">Nothing in this tab.</p>'; return; }
+  app.innerHTML =
+      it.stratum === "witness"   ? witnessCard(it)
+    : it.stratum === "homograph" ? homographCard(it)
+    :                              orthoCard(it);
+  wire(it);
+
+  const s = st(it.id);
+  const btn = document.getElementById("confirm");
+  btn.disabled = !ready(it);
+  btn.textContent = complete(it) ? "Confirmed ✓ — next" : "Confirm";
+  document.getElementById("skip").textContent = s.deferred ? "Deferred — undo" : "Defer";
+}
+
+function head(it, n, extra){
+  return `<div class="meta"><span class="rid">${esc(it.id)}</span>`
+       + `<span>${esc(n)} of ${items(tab).length}</span>`
+       + (complete(it) ? '<span class="done-tick">decided ✓</span>' : "")
+       + (st(it.id).deferred ? '<span class="badge">deferred</span>' : "")
+       + (extra || "") + `</div>`;
+}
+
+function noteBox(it){
+  return `<h2 class="q">Note <span class="mono">N</span></h2>`
+       + `<textarea id="note" placeholder="Reasoning, a manuscript reading, anything the `
+       + `ingest should carry forward.">${esc(st(it.id).note || "")}</textarea>`;
+}
+
+function witnessCard(it){
+  const s = st(it.id);
+  const opts = [
+    {v:"fix",  label:`Correct it to «${it.proposed}»`,
+     ev:`Rewrites ${it.id}'s title_translit; the key ${it.word} stops being contested.`},
+    {v:"keep", label:`Leave «${it.current}» as recorded`,
+     ev:"The key stays contested and the rows below must each be ruled individually."},
+  ];
+  return `<div class="card">${head(it, idx.witness+1,
+      `<span>row ${esc(it.row || it.id)}</span>`)}
+    <h2 class="q">Row as it stands</h2>
+    <div class="title-raw"><div class="ar">${markWord(it.title, it.word)}</div>
+      <div class="gloss">${esc(it.title_translit)}</div></div>
+    <div class="note">${esc(it.why)}</div>
+    <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">
+      Blocks: ${it.unblocks.map(x=>`<code>${esc(x)}</code>`).join(", ") || "—"}</p>
+    <h2 class="q">Is the recorded transliteration wrong?</h2>
+    <div class="opts">${opts.map((o,i)=>
+      `<button class="opt ${s.verdict===o.v?"on":""}" data-ax="verdict" data-val="${esc(o.v)}">
+         <span class="k">${i+1}</span><span class="v">${esc(o.label)}</span>
+         <span class="ev">${esc(o.ev)}</span></button>`).join("")}
+    </div>
+    <h2 class="q">Or write a different transliteration</h2>
+    <input type="text" id="custom-verdict" placeholder="e.g. ${esc(it.proposed)}"
+           value="${esc(s.verdict && s.verdict!=="fix" && s.verdict!=="keep" ? s.verdict : "")}">
+    ${noteBox(it)}
+  </div>`;
+}
+
+function homographCard(it){
+  const s = st(it.id);
+  const keys = it.keys;
+  let h = `<div class="card">${head(it, idx.homograph+1,
+      `<span>${esc(it.author)}</span>`)}
+    <h2 class="q">Title as written</h2>
+    <div class="title-raw"><div class="ar">${
+      markWords(it.title, keys.map(k => k.raw))}</div>
+      <div class="gloss">${it.gloss.map(g =>
+        g.contested ? `<span class="c">${esc(g.key)}?</span>`
+                    : esc(g.translit || "…")).join(" ")}</div></div>`;
+
+  keys.forEach((k, ki) => {
+    const chosen = s["key:" + k.key];
+    h += `<h2 class="q">Reading ${ki+1} of ${keys.length} — `
+       + `<span class="ar" style="font-size:1em">${esc(k.raw)}</span></h2>`;
+    if (k.note) h += `<div class="note ${/ARTIFACT/.test(k.note)?"artifact":""}">${esc(k.note)}</div>`;
+    h += `<div class="opts">` + k.options.map((o, oi) => {
+      const wt = o.witness_titles.map(w =>
+        `${esc(w.id)}: ${esc(w.translit || w.title)}`).join(" · ");
+      return `<button class="opt ${chosen===o.value?"on":""}" data-ax="key:${esc(k.key)}"
+                data-val="${esc(o.value)}">
+          <span class="k">${ki*3+oi+1}</span><span class="v">${esc(o.value)}</span>
+          ${k.suggest===o.value?'<span class="sug">◂ evidence favours</span>':""}
+          <span class="ev">${o.witnesses.length} witness${o.witnesses.length===1?"":"es"} — ${wt}</span>
+        </button>`;
+    }).join("") + `</div>`;
+  });
+
+  // Composition preview: a LOOKUP into the table the builder precomputed. The
+  // iḍāfa rule has one home, in Python. An unlisted combination is announced, not
+  // papered over — and the ingest recomposes from the real pipeline regardless.
+  const combo = keys.map(k => s["key:" + k.key]);
+  if (combo.every(Boolean)){
+    const key = combo.join("|");
+    const has = Object.prototype.hasOwnProperty.call(it.compositions, key);
+    const val = it.compositions[key];
+    h += has && val
+      ? `<div class="preview"><div class="lbl">Composed title_translit (preview — the
+           ingest recomposes it)</div><div class="val">${esc(val)}</div></div>`
+      : `<div class="preview bad"><div class="lbl">Outside the checked range</div>
+           <div class="val">No composition was precomputed for «${esc(key)}». Do not
+           trust a value here — record the reading and a note, and let the ingest
+           report it.</div></div>`;
+  }
+  return h + noteBox(it) + `</div>`;
+}
+
+function orthoCard(it){
+  const s = st(it.id);
+  const formOpts = (it.proposed ? [{v:"accept", label:`Canonicalize to «${it.proposed}»`}] : [])
+    .concat([{v:"keep", label:"Keep as written — not a fault"}]);
+  let h = `<div class="card">${head(it, idx.ortho+1,
+      `<span class="badge ${esc(it.confidence)}">${esc(it.confidence)}</span>`)}
+    <h2 class="q">Word</h2>
+    <div class="title-raw"><div class="ar">
+      <span class="del">${esc(it.word)}</span> &nbsp;→&nbsp;
+      ${it.proposed ? `<span class="ins">${esc(it.proposed)}</span>`
+                    : `<span style="font-size:.62em;color:var(--bad)">no proposal — type the form below</span>`}
+      </div></div>
+    <div class="note">${esc(it.reason)}</div>
+
+    <h2 class="q">Rows affected (${it.rows.length})</h2>
+    <table><thead><tr><th>row</th><th>title as written</th><th>after</th></tr></thead><tbody>`
+    + it.rows.map(r => `<tr><td class="mono">${esc(r.id)}</td>
+        <td class="ar">${markWords(r.title, [it.word])}</td>
+        <td class="ar">${r.after ? markWords(r.after, [it.proposed])
+                                  : '<span style="font-size:.7em;color:var(--muted)">—</span>'}</td></tr>`).join("")
+    + `</tbody></table>
+
+    <h2 class="q">1 · Arabic form</h2>
+    <div class="opts">` + formOpts.map((o,i) =>
+      `<button class="opt ${s.form===o.v?"on":""}" data-ax="form" data-val="${esc(o.v)}">
+         <span class="k">${i+1}</span><span class="v">${esc(o.label)}</span></button>`).join("")
+    + `</div>
+    <h2 class="q">Or write a different canonical form</h2>
+    <input type="text" id="custom-form" class="ar" dir="rtl"
+           placeholder="${esc(it.proposed || it.word)}"
+           value="${esc(s.form && s.form!=="accept" && s.form!=="keep" ? s.form : "")}">`;
+
+  if (s.form !== "keep"){
+    h += `<h2 class="q">2 · Transliteration this spelling implies</h2>
+      <p style="font-size:13px;color:var(--muted);margin:0 0 6px">Required: the
+      canonical spelling becomes a new lexicon key, so without this the word is no
+      longer settled and every title containing it stops composing.</p>
+      <input type="text" id="translit" placeholder="${esc(it.translit || "")}"
+             value="${esc(s.translit !== undefined ? s.translit : (it.translit || ""))}">`;
+  }
+  return h + noteBox(it) + `</div>`;
+}
+
+/* ---------- interaction -------------------------------------------------- */
+function setAx(it, ax, val){
+  const s = st(it.id);
+  if (s[ax] === val) delete s[ax]; else s[ax] = val;   // toggling off reopens
+  s.confirmed = false;                                  // …the whole decision
+  delete s.deferred;
+  save(); render();
+}
+
+function wire(it){
+  [...document.querySelectorAll(".opt")].forEach(b =>
+    b.onclick = () => setAx(it, b.dataset.ax, b.dataset.val));
+
+  const cf = document.getElementById("custom-form");
+  if (cf) cf.oninput = () => {
+    const s = st(it.id);
+    if (cf.value.trim()) { s.form = cf.value.trim(); s.confirmed = false; }
+    else if (s.form !== "accept" && s.form !== "keep") delete s.form;
+    save();
+    document.getElementById("confirm").disabled = !ready(it);
+  };
+  const cv = document.getElementById("custom-verdict");
+  if (cv) cv.oninput = () => {
+    const s = st(it.id);
+    if (cv.value.trim()) { s.verdict = cv.value.trim(); s.confirmed = false; }
+    else if (s.verdict !== "fix" && s.verdict !== "keep") delete s.verdict;
+    save();
+    document.getElementById("confirm").disabled = !ready(it);
+  };
+  const tr = document.getElementById("translit");
+  if (tr) tr.oninput = () => {
+    st(it.id).translit = tr.value; st(it.id).confirmed = false; save();
+    document.getElementById("confirm").disabled = !ready(it);
+  };
+  const nt = document.getElementById("note");
+  if (nt) nt.oninput = () => { st(it.id).note = nt.value; save(); };
+}
+
+function move(d){
+  const n = items(tab).length;
+  if (!n) return;
+  idx[tab] = (idx[tab] + d + n) % n;
+  render();
+  window.scrollTo({top:0, behavior:"instant"});
+}
+function confirmCard(){
+  const it = cur(); if (!it || !ready(it)) return;
+  st(it.id).confirmed = true;
+  delete st(it.id).deferred;
+  save();
+  move(1);
+}
+function deferCard(){
+  const it = cur(); if (!it) return;
+  const s = st(it.id);
+  if (s.deferred) delete s.deferred; else { s.deferred = true; s.confirmed = false; }
+  save(); render();
+  if (s.deferred) move(1);
+}
+
+document.getElementById("prev").onclick = () => move(-1);
+document.getElementById("next").onclick = () => move(1);
+document.getElementById("confirm").onclick = confirmCard;
+document.getElementById("skip").onclick = deferCard;
+document.getElementById("defs-btn").onclick =
+  () => document.getElementById("defs").classList.toggle("on");
+document.getElementById("defs-close").onclick =
+  () => document.getElementById("defs").classList.remove("on");
+
+document.addEventListener("keydown", e => {
+  const t = e.target.tagName;
+  const typing = t === "INPUT" || t === "TEXTAREA";
+  if (e.key === "Escape"){ document.getElementById("defs").classList.remove("on");
+                           if (typing) e.target.blur(); return; }
+  // Enter must never commit from the note field: it is the one place the annotator
+  // writes prose, and a stolen Enter both commits and eats the newline.
+  if (typing && !(e.key === "Enter" && t === "INPUT")) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+  if (e.key === "j" || e.key === "J"){ e.preventDefault(); move(1); }
+  else if (e.key === "k" || e.key === "K"){ e.preventDefault(); move(-1); }
+  else if (e.key === "Enter"){ e.preventDefault(); e.target.blur && e.target.blur();
+                               confirmCard(); }
+  else if (e.key === "s" || e.key === "S"){ e.preventDefault(); deferCard(); }
+  else if (e.key === "?"){ e.preventDefault();
+                           document.getElementById("defs").classList.toggle("on"); }
+  else if (e.key === "n" || e.key === "N"){
+    const nt = document.getElementById("note");
+    if (nt){ e.preventDefault(); nt.focus(); }
+  }
+  else if (/^[1-9]$/.test(e.key)){
+    const b = [...document.querySelectorAll(".opt")][Number(e.key) - 1];
+    if (b){ e.preventDefault(); b.click(); }
+  }
+});
+
+/* ---------- export ------------------------------------------------------- */
+// Walks the WORKLIST, not the state store, so an item never opened exports as an
+// explicit not-reviewed record. Provenance is computed by COMPARING to the item —
+// never inferred from which handler fired.
+function decisions(){
+  const out = [];
+  ORDER.forEach(t => items(t).forEach(it => {
+    const s = S[it.id] || {};
+    const rec = {
+      id: it.id, stratum: it.stratum,
+      done: complete(it),
+      disposition: complete(it) ? "resolved" : (s.deferred ? "deferred" : "open"),
+      note: s.note || "",
+    };
+    if (it.stratum === "witness"){
+      rec.row = it.row || it.id;
+      rec.word = it.word;
+      rec.action = s.verdict === "keep" ? "keep"
+                 : s.verdict === "fix"  ? "set_translit" : (s.verdict ? "set_translit" : null);
+      rec.target = s.verdict === "fix" ? it.proposed
+                 : s.verdict === "keep" ? it.current
+                 : (s.verdict || null);
+      rec.was = it.current;
+      rec.suggested = it.proposed;
+      rec.changed = rec.target !== null && rec.target !== it.proposed;
+    } else if (it.stratum === "homograph"){
+      rec.readings = {};
+      it.keys.forEach(k => rec.readings[k.key] = s["key:" + k.key] || null);
+      rec.suggested = {};
+      it.keys.forEach(k => rec.suggested[k.key] = k.suggest || null);
+      rec.changed = it.keys.some(k => s["key:"+k.key] && s["key:"+k.key] !== k.suggest);
+      // The context that shaped the decision travels with it, so a later reviewer
+      // can reopen the question rather than only read the answer.
+      rec.context = {title: it.title, options: {}};
+      it.keys.forEach(k => rec.context.options[k.key] =
+        k.options.map(o => ({value:o.value, witnesses:o.witnesses})));
+      const combo = it.keys.map(k => s["key:" + k.key]);
+      rec.preview = combo.every(Boolean)
+        ? (it.compositions[combo.join("|")] ?? null) : null;
+    } else {
+      rec.word = it.word;
+      rec.action = s.form === "keep" ? "keep"
+                 : s.form ? "canonicalize" : null;
+      rec.target = s.form === "keep" ? it.word
+                 : s.form === "accept" ? it.proposed
+                 : (s.form || null);
+      rec.translit = s.form === "keep" ? null
+                   : (s.translit !== undefined ? s.translit : it.translit);
+      rec.suggested = it.proposed;
+      rec.suggested_translit = it.translit;
+      // The form the word carries TODAY — the ingest needs it to swap the token
+      // inside any affected row that already has a transliteration.
+      rec.translit_was = it.translit_was || null;
+      rec.confidence = it.confidence;
+      rec.rows = it.rows.map(r => r.id);
+      rec.translits_seen = it.translits || null;
+      rec.changed = rec.target !== null && rec.target !== it.proposed;
+    }
+    out.push(rec);
+  }));
+  return out;
+}
+
+function exportJSON(){
+  const who = (localStorage.getItem(LS + ":who") || "").trim();
+  const payload = {
+    schema_version: 1,
+    task: DATA.task,
+    annotated_date: new Date().toISOString().slice(0,10),
+    annotator: who || null,
+    source: DATA.generated_from,
+    counts: (() => {
+      const d = decisions();
+      return {total: d.length,
+              resolved: d.filter(x => x.disposition === "resolved").length,
+              deferred: d.filter(x => x.disposition === "deferred").length,
+              open:     d.filter(x => x.disposition === "open").length};
+    })(),
+    decisions: decisions(),
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)],
+                        {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "translit_adjudication_decisions.json";
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+document.getElementById("export-btn").onclick = exportJSON;
+
+const who = localStorage.getItem(LS + ":who");
+if (who) document.getElementById("who-badge").textContent = who;
+
+// Headless-review contract: drive the REAL baked JS without a browser.
+globalThis.__review = {
+  data: () => DATA, state: () => S, items, complete, ready, decisions,
+  setAx: (id, ax, val) => { const it = ORDER.flatMap(items).find(x => x.id === id);
+                            if (it) setAx(it, ax, val); },
+  go: (t, i) => { tab = t; idx[t] = i; render(); },
+  render, exportJSON,
+};
+
+render();
+</script>
+</body>
+</html>

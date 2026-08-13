@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "applied_date": "2026-08-13",
+  "source_export": "/Users/jfireland05/Downloads/translit_adjudication_decisions.json",
+  "annotator": null,
+  "applied": {
+    "ortho": [
+      {
+        "id": "o01",
+        "word": "ادآب",
+        "target": "آداب",
+        "translit": "ādāb",
+        "rows": [
+          "r0110"
+        ],
+        "retransliterated": [
+          "r0110"
+        ]
+      },
+      {
+        "id": "o02",
+        "word": "القدسيه",
+        "target": "القدسيّة",
+        "translit": "al-qudsīyah",
+        "rows": [
+          "r0070"
+        ],
+        "retransliterated": [
+          "r0070"
+        ]
+      },
+      {
+        "id": "o03",
+        "word": "الرضاء",
+        "target": "الرضا",
+        "translit": "al-riḍā",
+        "rows": [
+          "r0210"
+        ],
+        "retransliterated": []
+      },
+      {
+        "id": "o04",
+        "word": "بدو",
+        "target": "بدء",
+        "translit": "badʾ",
+        "rows": [
+          "r0049"
+        ],
+        "retransliterated": [
+          "r0049"
+        ]
+      },
+      {
+        "id": "o05",
+        "word": "شان",
+        "target": "شأن",
+        "translit": "šaʾn",
+        "rows": [
+          "r0049"
+        ],
+        "retransliterated": [
+          "r0049"
+        ]
+      },
+      {
+        "id": "o06",
+        "word": "مرآت",
+        "target": "مرآة",
+        "translit": "mirʾāt",
+        "rows": [
+          "r0279"
+        ],
+        "retransliterated": [
+          "r0279"
+        ]
+      },
+      {
+        "id": "o07",
+        "word": "الاسرار",
+        "target": "الأسرار",
+        "translit": "al-asrār",
+        "rows": [
+          "r0062",
+          "r0099",
+          "r0102",
+          "r0215",
+          "r0216",
+          "r0305"
+        ],
+        "retransliterated": [
+          "r0062",
+          "r0099",
+          "r0102",
+          "r0215",
+          "r0216",
+          "r0305"
+        ]
+      },
+      {
+        "id": "o08",
+        "word": "ابي",
+        "target": "أبي",
+        "translit": "abī",
+        "rows": [
+          "r0127",
+          "r0244"
+        ],
+        "retransliterated": [
+          "r0127"
+        ]
+      },
+      {
+        "id": "o09",
+        "word": "الابدال",
+        "target": "الأبدال",
+        "translit": "al-abdāl",
+        "rows": [
+          "r0222"
+        ],
+        "retransliterated": [
+          "r0222"
+        ]
+      },
+      {
+        "id": "o10",
+        "word": "الاول",
+        "target": "الأوّل",
+        "translit": "al-awwal",
+        "rows": [
+          "r0242",
+          "r0253",
+          "r0305"
+        ],
+        "retransliterated": [
+          "r0242",
+          "r0253",
+          "r0305"
+        ]
+      },
+      {
+        "id": "o11",
+        "word": "اسماء",
+        "target": "أسماء",
+        "translit": "asmāʾ",
+        "rows": [
+          "r0061"
+        ],
+        "retransliterated": [
+          "r0061"
+        ]
+      },
+      {
+        "id": "o12",
+        "word": "الابواب",
+        "target": "الأبواب",
+        "translit": "al-abwāb",
+        "rows": [
+          "r0166"
+        ],
+        "retransliterated": [
+          "r0166"
+        ]
+      }
+    ],
+    "witness": [
+      {
+        "id": "r0146",
+        "was": "al-šarḥ wa-l-bayān li-mā aškala min kalam sahl",
+        "now": "al-šarḥ wa-l-bayān li-mā aškala min kalām sahl"
+      },
+      {
+        "id": "r0025",
+        "was": "mafātīḥ al-ġayb",
+        "now": "miftāḥ al-ġayb"
+      }
+    ],
+    "homograph": [
+      {
+        "id": "r0210",
+        "title": "الرضا عن الله والصبر على قضائه",
+        "readings": {
+          "علي": "ʿalā"
+        },
+        "value": "al-riḍā ʿan allāh wa-l-ṣabr ʿalā qaḍāʾih"
+      },
+      {
+        "id": "r0232",
+        "title": "رسالة الفتح في تأويل ما صدر عن الكمّل من الشطح",
+        "readings": {
+          "من": "min"
+        },
+        "value": "risālat al-fatḥ fī taʾwīl mā ṣadr ʿan al-kamal min al-šaṭḥ"
+      },
+      {
+        "id": "r0244",
+        "title": "شرح كلام أبي الحسن النوري",
+        "readings": {
+          "كلام": "kalām"
+        },
+        "value": "šarḥ kalām abī al-ḥasan al-nūrī"
+      },
+      {
+        "id": "r0255",
+        "title": "معيار التصوّف وماهيّته من كلام الشيوخ",
+        "readings": {
+          "من": "min",
+          "كلام": "kalām"
+        },
+        "value": "miʿyār al-taṣawwuf wa-māhīyatuhū min kalām al-šuyūḫ"
+      },
+      {
+        "id": "r0270",
+        "title": "من كلام النفري في التستري",
+        "readings": {
+          "من": "min",
+          "كلام": "kalām"
+        },
+        "value": "min kalām al-niffarī fī al-tustarī"
+      },
+      {
+        "id": "r0272",
+        "title": "الخلاصة المرضية من الدرّة المضيئة",
+        "readings": {
+          "من": "min"
+        },
+        "value": "al-ḫulāsah al-marḍīyah min al-durrah al-muḍīyah"
+      },
+      {
+        "id": "r0280",
+        "title": "نفحات الإنس من حضرة القدس",
+        "readings": {
+          "من": "min"
+        },
+        "value": "nafaḥāt al-uns min ḥaḍrat al-quds"
+      },
+      {
+        "id": "r0287",
+        "title": "كتاب مفتاح الباب المقفل لفهم القرآن المنزل",
+        "readings": {
+          "مفتاح": "miftāḥ"
+        },
+        "value": "kitāb miftāḥ al-bāb al-muqaffal li-fahm al-qurʾān al-munazzal"
+      },
+      {
+        "id": "r0289",
+        "title": "في ذكر ما نزل في الحكمة من الآية",
+        "readings": {
+          "من": "min"
+        },
+        "value": "fī ḏikr mā nazala fī al-ḥikmah min al-āyah"
+      },
+      {
+        "id": "r0306",
+        "title": "كتاب الاصطلاح على بطن القرآن",
+        "readings": {
+          "علي": "ʿalā"
+        },
+        "value": "kitāb al-iṣṭilāḥ ʿalā baṭn al-qurʾān"
+      },
+      {
+        "id": "r0309",
+        "title": "مفتاح السعادة وتحقيق طريق السعادة",
+        "readings": {
+          "مفتاح": "miftāḥ"
+        },
+        "value": "miftāḥ al-saʿādah wa-taḥqīq ṭarīq al-saʿādah"
+      },
+      {
+        "id": "r0314",
+        "title": "شرح ابن عجيبة على الشستري",
+        "readings": {
+          "علي": "ʿalā"
+        },
+        "value": "šarḥ ibn ʿaǧībah ʿalā al-šustarī"
+      },
+      {
+        "id": "r0321",
+        "title": "الرد على الشيخ– كتاب في الانتصار الخروبي",
+        "readings": {
+          "علي": "ʿalā"
+        },
+        "value": "al-radd ʿalā al-šayḫ kitāb fī al-intiṣār al-ḫarūbī"
+      }
+    ]
+  },
+  "unchanged": [],
+  "deferred": [],
+  "quarantine": []
+}
