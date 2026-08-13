@@ -1,290 +1,656 @@
 {
   "schema_version": 1,
   "applied_date": "2026-08-13",
-  "source_export": "/Users/jfireland05/Downloads/translit_adjudication_decisions.json",
+  "source_export": "/Users/jfireland05/Downloads/translit_adjudication_decisions (1).json",
   "annotator": null,
   "applied": {
     "ortho": [
       {
-        "id": "o01",
-        "word": "ادآب",
-        "target": "آداب",
-        "translit": "ādāb",
+        "id": "o13",
+        "word": "مطالب",
+        "target": "مثالب",
+        "translit": "maṯālib",
         "rows": [
-          "r0110"
-        ],
-        "retransliterated": [
-          "r0110"
-        ]
-      },
-      {
-        "id": "o02",
-        "word": "القدسيه",
-        "target": "القدسيّة",
-        "translit": "al-qudsīyah",
-        "rows": [
-          "r0070"
-        ],
-        "retransliterated": [
-          "r0070"
-        ]
-      },
-      {
-        "id": "o03",
-        "word": "الرضاء",
-        "target": "الرضا",
-        "translit": "al-riḍā",
-        "rows": [
-          "r0210"
-        ],
-        "retransliterated": []
-      },
-      {
-        "id": "o04",
-        "word": "بدو",
-        "target": "بدء",
-        "translit": "badʾ",
-        "rows": [
-          "r0049"
-        ],
-        "retransliterated": [
-          "r0049"
-        ]
-      },
-      {
-        "id": "o05",
-        "word": "شان",
-        "target": "شأن",
-        "translit": "šaʾn",
-        "rows": [
-          "r0049"
-        ],
-        "retransliterated": [
-          "r0049"
-        ]
-      },
-      {
-        "id": "o06",
-        "word": "مرآت",
-        "target": "مرآة",
-        "translit": "mirʾāt",
-        "rows": [
-          "r0279"
-        ],
-        "retransliterated": [
-          "r0279"
-        ]
-      },
-      {
-        "id": "o07",
-        "word": "الاسرار",
-        "target": "الأسرار",
-        "translit": "al-asrār",
-        "rows": [
-          "r0062",
-          "r0099",
-          "r0102",
-          "r0215",
-          "r0216",
-          "r0305"
-        ],
-        "retransliterated": [
-          "r0062",
-          "r0099",
-          "r0102",
-          "r0215",
-          "r0216",
-          "r0305"
-        ]
-      },
-      {
-        "id": "o08",
-        "word": "ابي",
-        "target": "أبي",
-        "translit": "abī",
-        "rows": [
-          "r0127",
-          "r0244"
+          "r0127"
         ],
         "retransliterated": [
           "r0127"
         ]
       },
       {
-        "id": "o09",
-        "word": "الابدال",
-        "target": "الأبدال",
-        "translit": "al-abdāl",
+        "id": "o17",
+        "word": "المضيئة",
+        "target": "المضيّة",
+        "translit": "al-muḍīyah",
         "rows": [
-          "r0222"
+          "r0272"
         ],
         "retransliterated": [
-          "r0222"
+          "r0272"
         ]
       },
       {
-        "id": "o10",
-        "word": "الاول",
-        "target": "الأوّل",
-        "translit": "al-awwal",
+        "id": "o15",
+        "word": "الهم",
+        "target": "الهمّ",
+        "translit": "al-hamm",
         "rows": [
-          "r0242",
-          "r0253",
-          "r0305"
+          "r0155"
         ],
         "retransliterated": [
-          "r0242",
-          "r0253",
-          "r0305"
+          "r0155"
         ]
       },
       {
-        "id": "o11",
-        "word": "اسماء",
-        "target": "أسماء",
-        "translit": "asmāʾ",
+        "id": "o16",
+        "word": "والمفترين",
+        "target": "والمغترّين",
+        "translit": "wa-l-muġtarrīn",
         "rows": [
-          "r0061"
+          "r0124"
         ],
         "retransliterated": [
-          "r0061"
+          "r0124"
         ]
       },
       {
-        "id": "o12",
-        "word": "الابواب",
-        "target": "الأبواب",
-        "translit": "al-abwāb",
+        "id": "o14",
+        "word": "بن",
+        "target": "ابن",
+        "translit": "ibn",
         "rows": [
-          "r0166"
+          "r0127"
         ],
         "retransliterated": [
-          "r0166"
+          "r0127"
+        ]
+      },
+      {
+        "id": "s-العطائية",
+        "word": "العطائية",
+        "target": "العطائيّة",
+        "translit": "al-ʿaṭāʾīyah",
+        "rows": [
+          "r0235",
+          "r0264",
+          "r0266",
+          "r0267",
+          "r0277",
+          "r0327",
+          "r0328",
+          "r0329",
+          "r0330",
+          "r0331",
+          "r0332",
+          "r0333",
+          "r0334",
+          "r0335",
+          "r0336",
+          "r0337",
+          "r0347"
+        ],
+        "retransliterated": [
+          "r0235",
+          "r0264",
+          "r0266",
+          "r0267",
+          "r0277",
+          "r0327",
+          "r0328",
+          "r0329",
+          "r0330",
+          "r0331",
+          "r0332",
+          "r0333",
+          "r0334",
+          "r0335",
+          "r0336",
+          "r0337",
+          "r0347"
+        ]
+      },
+      {
+        "id": "s-الصوفية",
+        "word": "الصوفية",
+        "target": "الصوفيّة",
+        "translit": "al-ṣūfīyah",
+        "rows": [
+          "r0081",
+          "r0083",
+          "r0084",
+          "r0164",
+          "r0207",
+          "r0208",
+          "r0263",
+          "r0312",
+          "r0317",
+          "r0318",
+          "r0319",
+          "r0339"
+        ],
+        "retransliterated": [
+          "r0081",
+          "r0083",
+          "r0084",
+          "r0164",
+          "r0207",
+          "r0208",
+          "r0263",
+          "r0312",
+          "r0317",
+          "r0318",
+          "r0319",
+          "r0339"
+        ]
+      },
+      {
+        "id": "s-المحبة",
+        "word": "المحبة",
+        "target": "المحبّة",
+        "translit": "al-maḥabbah",
+        "rows": [
+          "r0079",
+          "r0108",
+          "r0241"
+        ],
+        "retransliterated": [
+          "r0079",
+          "r0108",
+          "r0241"
+        ]
+      },
+      {
+        "id": "s-الخمرية",
+        "word": "الخمرية",
+        "target": "الخمريّة",
+        "translit": "al-ḫamrīyah",
+        "rows": [
+          "r0093",
+          "r0094"
+        ],
+        "retransliterated": [
+          "r0093",
+          "r0094"
+        ]
+      },
+      {
+        "id": "s-العينية",
+        "word": "العينية",
+        "target": "العينيّة",
+        "translit": "al-ʿaynīyah",
+        "rows": [
+          "r0296",
+          "r0297"
+        ],
+        "retransliterated": [
+          "r0296",
+          "r0297"
+        ]
+      },
+      {
+        "id": "s-المقفل",
+        "word": "المقفل",
+        "target": "المقفّل",
+        "translit": "al-muqaffal",
+        "rows": [
+          "r0285",
+          "r0287"
+        ],
+        "retransliterated": [
+          "r0285",
+          "r0287"
+        ]
+      },
+      {
+        "id": "s-عباد",
+        "word": "عباد",
+        "target": "عبّاد",
+        "translit": "ʿabbād",
+        "rows": [
+          "r0311",
+          "r0317"
+        ],
+        "retransliterated": [
+          "r0311",
+          "r0317"
+        ]
+      },
+      {
+        "id": "s-الائمة",
+        "word": "الائمة",
+        "target": "الائمّة",
+        "translit": "al-aʾimmah",
+        "rows": [
+          "r0263"
+        ],
+        "retransliterated": [
+          "r0263"
+        ]
+      },
+      {
+        "id": "s-الادلة",
+        "word": "الادلة",
+        "target": "الادلّة",
+        "translit": "al-adillah",
+        "rows": [
+          "r0121"
+        ],
+        "retransliterated": [
+          "r0121"
+        ]
+      },
+      {
+        "id": "s-الاربعينية",
+        "word": "الاربعينية",
+        "target": "الاربعينيّة",
+        "translit": "al-arbaʿīnīyah",
+        "rows": [
+          "r0059"
+        ],
+        "retransliterated": [
+          "r0059"
+        ]
+      },
+      {
+        "id": "s-الالهية",
+        "word": "الالهية",
+        "target": "الالهيّة",
+        "translit": "al-ilāhīyah",
+        "rows": [
+          "r0276"
+        ],
+        "retransliterated": [
+          "r0276"
+        ]
+      },
+      {
+        "id": "s-البلورية",
+        "word": "البلورية",
+        "target": "البلوريّة",
+        "translit": "al-bilawrīyah",
+        "rows": [
+          "r0093"
+        ],
+        "retransliterated": [
+          "r0093"
+        ]
+      },
+      {
+        "id": "s-التجليات",
+        "word": "التجليات",
+        "target": "التجلّيات",
+        "translit": "al-taǧalliyāt",
+        "rows": [
+          "r0322"
+        ],
+        "retransliterated": [
+          "r0322"
+        ]
+      },
+      {
+        "id": "s-التصوف",
+        "word": "التصوف",
+        "target": "التصوّف",
+        "translit": "al-taṣawwuf",
+        "rows": [
+          "r0058"
+        ],
+        "retransliterated": [
+          "r0058"
+        ]
+      },
+      {
+        "id": "s-التي",
+        "word": "التي",
+        "target": "الّتي",
+        "translit": "allatī",
+        "rows": [
+          "r0282"
+        ],
+        "retransliterated": [
+          "r0282"
+        ]
+      },
+      {
+        "id": "s-الدر",
+        "word": "الدر",
+        "target": "الدرّ",
+        "translit": "al-durr",
+        "rows": [
+          "r0258"
+        ],
+        "retransliterated": [
+          "r0258"
+        ]
+      },
+      {
+        "id": "s-الرد",
+        "word": "الرد",
+        "target": "الردّ",
+        "translit": "al-radd",
+        "rows": [
+          "r0321"
+        ],
+        "retransliterated": [
+          "r0321"
+        ]
+      },
+      {
+        "id": "s-الزيتونية",
+        "word": "الزيتونية",
+        "target": "الزيتونيّة",
+        "translit": "al-zaytūnīyah",
+        "rows": [
+          "r0231"
+        ],
+        "retransliterated": [
+          "r0231"
+        ]
+      },
+      {
+        "id": "s-الطب",
+        "word": "الطب",
+        "target": "الطبّ",
+        "translit": "al-ṭibb",
+        "rows": [
+          "r0295"
+        ],
+        "retransliterated": [
+          "r0295"
+        ]
+      },
+      {
+        "id": "s-القوة",
+        "word": "القوة",
+        "target": "القوّة",
+        "translit": "al-quwwah",
+        "rows": [
+          "r0242"
+        ],
+        "retransliterated": [
+          "r0242"
+        ]
+      },
+      {
+        "id": "s-المتأمل",
+        "word": "المتأمل",
+        "target": "المتأمّل",
+        "translit": "al-mutaʾammil",
+        "rows": [
+          "r0035"
+        ],
+        "retransliterated": [
+          "r0035"
+        ]
+      },
+      {
+        "id": "s-المتفرقة",
+        "word": "المتفرقة",
+        "target": "المتفرّقة",
+        "translit": "al-mutafarriqah",
+        "rows": [
+          "r0170"
+        ],
+        "retransliterated": [
+          "r0170"
+        ]
+      },
+      {
+        "id": "s-المتمنين",
+        "word": "المتمنين",
+        "target": "المتمنّين",
+        "translit": "al-mutamannīn",
+        "rows": [
+          "r0150"
+        ],
+        "retransliterated": [
+          "r0150"
+        ]
+      },
+      {
+        "id": "s-المحمدية",
+        "word": "المحمدية",
+        "target": "المحمّديّة",
+        "translit": "al-muḥammadīyah",
+        "rows": [
+          "r0276"
+        ],
+        "retransliterated": [
+          "r0276"
+        ]
+      },
+      {
+        "id": "s-المرشدية",
+        "word": "المرشدية",
+        "target": "المرشديّة",
+        "translit": "al-muršidīyah",
+        "rows": [
+          "r0085"
+        ],
+        "retransliterated": [
+          "r0085"
+        ]
+      },
+      {
+        "id": "s-المرضية",
+        "word": "المرضية",
+        "target": "المرضيّة",
+        "translit": "al-marḍīyah",
+        "rows": [
+          "r0272"
+        ],
+        "retransliterated": [
+          "r0272"
+        ]
+      },
+      {
+        "id": "s-المصنف",
+        "word": "المصنف",
+        "target": "المصنّف",
+        "translit": "al-muṣannif",
+        "rows": [
+          "r0049"
+        ],
+        "retransliterated": [
+          "r0049"
+        ]
+      },
+      {
+        "id": "s-المنزل",
+        "word": "المنزل",
+        "target": "المنزّل",
+        "translit": "al-munazzal",
+        "rows": [
+          "r0287"
+        ],
+        "retransliterated": [
+          "r0287"
+        ]
+      },
+      {
+        "id": "s-النفري",
+        "word": "النفري",
+        "target": "النفّري",
+        "translit": "al-niffarī",
+        "rows": [
+          "r0270"
+        ],
+        "retransliterated": [
+          "r0270"
+        ]
+      },
+      {
+        "id": "s-النية",
+        "word": "النية",
+        "target": "النيّة",
+        "translit": "al-nīyah",
+        "rows": [
+          "r0052"
+        ],
+        "retransliterated": [
+          "r0052"
+        ]
+      },
+      {
+        "id": "s-الهندية",
+        "word": "الهندية",
+        "target": "الهنديّة",
+        "translit": "al-hindīyah",
+        "rows": [
+          "r0202"
+        ],
+        "retransliterated": [
+          "r0202"
+        ]
+      },
+      {
+        "id": "s-حفظية",
+        "word": "حفظية",
+        "target": "حفظيّة",
+        "translit": "al-ḥifẓīyah",
+        "rows": [
+          "r0204"
+        ],
+        "retransliterated": [
+          "r0204"
+        ]
+      },
+      {
+        "id": "s-دينية",
+        "word": "دينية",
+        "target": "دينيّة",
+        "translit": "dīnīyah",
+        "rows": [
+          "r0092"
+        ],
+        "retransliterated": [
+          "r0092"
+        ]
+      },
+      {
+        "id": "s-سر",
+        "word": "سر",
+        "target": "سرّ",
+        "translit": "sirr",
+        "rows": [
+          "r0099"
+        ],
+        "retransliterated": [
+          "r0099"
+        ]
+      },
+      {
+        "id": "s-سريانية",
+        "word": "سريانية",
+        "target": "سريانيّة",
+        "translit": "siryānīyah",
+        "rows": [
+          "r0002"
+        ],
+        "retransliterated": [
+          "r0002"
+        ]
+      },
+      {
+        "id": "s-صوفية",
+        "word": "صوفية",
+        "target": "صوفيّة",
+        "translit": "ṣūfīyah",
+        "rows": [
+          "r0092"
+        ],
+        "retransliterated": [
+          "r0092"
+        ]
+      },
+      {
+        "id": "s-للنفري",
+        "word": "للنفري",
+        "target": "للنفّري",
+        "translit": "li-l-niffarī",
+        "rows": [
+          "r0148"
+        ],
+        "retransliterated": [
+          "r0148"
+        ]
+      },
+      {
+        "id": "s-مقدمة",
+        "word": "مقدمة",
+        "target": "مقدّمة",
+        "translit": "muqaddimah",
+        "rows": [
+          "r0044"
+        ],
+        "retransliterated": [
+          "r0044"
+        ]
+      },
+      {
+        "id": "s-والرد",
+        "word": "والرد",
+        "target": "والردّ",
+        "translit": "wa-l-radd",
+        "rows": [
+          "r0147"
+        ],
+        "retransliterated": [
+          "r0147"
+        ]
+      },
+      {
+        "id": "s-وصية",
+        "word": "وصية",
+        "target": "وصيّة",
+        "translit": "waṣīyah",
+        "rows": [
+          "r0206"
+        ],
+        "retransliterated": [
+          "r0206"
         ]
       }
     ],
     "witness": [
       {
-        "id": "r0146",
-        "was": "al-šarḥ wa-l-bayān li-mā aškala min kalam sahl",
-        "now": "al-šarḥ wa-l-bayān li-mā aškala min kalām sahl"
+        "id": "r0207-bayan",
+        "row": "r0207",
+        "was": "bayānn aḥwāl al-ṣūfīyah",
+        "now": "bayān aḥwāl al-ṣūfīyah"
       },
       {
-        "id": "r0025",
-        "was": "mafātīḥ al-ġayb",
-        "now": "miftāḥ al-ġayb"
+        "id": "r0086-nusayri",
+        "row": "r0086",
+        "was": "al-risālah li-aǧwibat al-nuṣarīyah",
+        "now": "al-risālah li-aǧwibat al-nuṣayrīyah"
+      },
+      {
+        "id": "r0301-nusayri",
+        "row": "r0301",
+        "was": "taʿlīm diyānat al-nuṣarīyah",
+        "now": "taʿlīm diyānat al-nuṣayrīyah"
+      },
+      {
+        "id": "r0097-hall",
+        "row": "r0097",
+        "was": "ǧall al-rumūz wa-mafātīh al-kunūz",
+        "now": "ḥall al-rumūz wa-mafātīh al-kunūz"
+      },
+      {
+        "id": "r0097-mafatih",
+        "row": "r0097",
+        "was": "ḥall al-rumūz wa-mafātīh al-kunūz",
+        "now": "ḥall al-rumūz wa-mafātīḥ al-kunūz"
       }
     ],
-    "homograph": [
-      {
-        "id": "r0210",
-        "title": "الرضا عن الله والصبر على قضائه",
-        "readings": {
-          "علي": "ʿalā"
-        },
-        "value": "al-riḍā ʿan allāh wa-l-ṣabr ʿalā qaḍāʾih"
-      },
-      {
-        "id": "r0232",
-        "title": "رسالة الفتح في تأويل ما صدر عن الكمّل من الشطح",
-        "readings": {
-          "من": "min"
-        },
-        "value": "risālat al-fatḥ fī taʾwīl mā ṣadr ʿan al-kamal min al-šaṭḥ"
-      },
-      {
-        "id": "r0244",
-        "title": "شرح كلام أبي الحسن النوري",
-        "readings": {
-          "كلام": "kalām"
-        },
-        "value": "šarḥ kalām abī al-ḥasan al-nūrī"
-      },
-      {
-        "id": "r0255",
-        "title": "معيار التصوّف وماهيّته من كلام الشيوخ",
-        "readings": {
-          "من": "min",
-          "كلام": "kalām"
-        },
-        "value": "miʿyār al-taṣawwuf wa-māhīyatuhū min kalām al-šuyūḫ"
-      },
-      {
-        "id": "r0270",
-        "title": "من كلام النفري في التستري",
-        "readings": {
-          "من": "min",
-          "كلام": "kalām"
-        },
-        "value": "min kalām al-niffarī fī al-tustarī"
-      },
-      {
-        "id": "r0272",
-        "title": "الخلاصة المرضية من الدرّة المضيئة",
-        "readings": {
-          "من": "min"
-        },
-        "value": "al-ḫulāsah al-marḍīyah min al-durrah al-muḍīyah"
-      },
-      {
-        "id": "r0280",
-        "title": "نفحات الإنس من حضرة القدس",
-        "readings": {
-          "من": "min"
-        },
-        "value": "nafaḥāt al-uns min ḥaḍrat al-quds"
-      },
-      {
-        "id": "r0287",
-        "title": "كتاب مفتاح الباب المقفل لفهم القرآن المنزل",
-        "readings": {
-          "مفتاح": "miftāḥ"
-        },
-        "value": "kitāb miftāḥ al-bāb al-muqaffal li-fahm al-qurʾān al-munazzal"
-      },
-      {
-        "id": "r0289",
-        "title": "في ذكر ما نزل في الحكمة من الآية",
-        "readings": {
-          "من": "min"
-        },
-        "value": "fī ḏikr mā nazala fī al-ḥikmah min al-āyah"
-      },
-      {
-        "id": "r0306",
-        "title": "كتاب الاصطلاح على بطن القرآن",
-        "readings": {
-          "علي": "ʿalā"
-        },
-        "value": "kitāb al-iṣṭilāḥ ʿalā baṭn al-qurʾān"
-      },
-      {
-        "id": "r0309",
-        "title": "مفتاح السعادة وتحقيق طريق السعادة",
-        "readings": {
-          "مفتاح": "miftāḥ"
-        },
-        "value": "miftāḥ al-saʿādah wa-taḥqīq ṭarīq al-saʿādah"
-      },
-      {
-        "id": "r0314",
-        "title": "شرح ابن عجيبة على الشستري",
-        "readings": {
-          "علي": "ʿalā"
-        },
-        "value": "šarḥ ibn ʿaǧībah ʿalā al-šustarī"
-      },
-      {
-        "id": "r0321",
-        "title": "الرد على الشيخ– كتاب في الانتصار الخروبي",
-        "readings": {
-          "علي": "ʿalā"
-        },
-        "value": "al-radd ʿalā al-šayḫ kitāb fī al-intiṣār al-ḫarūbī"
-      }
-    ]
+    "homograph": []
   },
-  "unchanged": [],
+  "unchanged": [
+    "s-الله",
+    "r0268",
+    "r0170"
+  ],
   "deferred": [],
   "quarantine": []
 }

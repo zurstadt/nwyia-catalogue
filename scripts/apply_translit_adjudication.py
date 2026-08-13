@@ -190,6 +190,14 @@ def main() -> int:
                 # Guard the edit on the from-value: a re-extraction that changed
                 # the title must not let a stale correction fire on new content.
                 reject(d, f"row {rid} no longer contains {word!r}"); continue
+            # A hit is not a change. The match is mark-BLIND, so re-running an
+            # applied decision matches the token it already wrote and rewrites it
+            # to itself. The data is right either way, but reporting that as
+            # "applied" makes a no-op run indistinguishable from a real one — and
+            # the whole value of the idempotence check is telling those apart.
+            if after == before:
+                unchanged.append(f"{d['id']}:{rid}")
+                continue
             titles[rid] = after
             touched.append(rid)
 
