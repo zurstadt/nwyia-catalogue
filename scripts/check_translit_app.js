@@ -47,12 +47,15 @@ function parseButtons(selector){
   const src = selector === ".opt" ? app : tabs;
   const out = [];
   const re = selector === ".opt"
-    ? /<button class="opt[^"]*"\s+data-ax="([^"]*)"\s*\n?\s*data-val="([^"]*)"/g
+    ? /<button class="opt[^"]*"\s+data-ax="([^"]*)"\s*\n?\s*data-val="([^"]*)"[\s\S]*?<span class="k">(\d+)<\/span>/g
     : /<button data-tab="([^"]*)"/g;
   let m;
   while ((m = re.exec(src))) {
     const b = node(null);
-    if (selector === ".opt"){ b.dataset = {ax: m[1], val: m[2]}; }
+    // Capture the PRINTED number too. Discarding it is what let a card print one
+    // digit on an option and fire a different one — the gate has to compare the
+    // label the annotator reads against the index the key handler uses.
+    if (selector === ".opt"){ b.dataset = {ax: m[1], val: m[2]}; b.label = Number(m[3]); }
     else { b.dataset = {tab: m[1]}; }
     out.push(b);
   }
@@ -291,6 +294,26 @@ console.log("\nevery card is answerable");
     }
     ok(bad.length === 0, `every ${t} card is confirmable once answered`, bad.join(", "));
   }
+}
+
+console.log("\nnumber keys select what they print");
+{
+  // The digit handler picks `querySelectorAll(".opt")[key-1]`, so the number shown
+  // on a button must equal its flat position. A per-group formula silently diverges
+  // the moment two groups have different option counts.
+  const bad = [];
+  for (const t of STRATA) {
+    for (let i = 0; i < R.items(t).length; i++) {
+      R.go(t, i);
+      const opts = sandbox.document.querySelectorAll(".opt");
+      opts.forEach((b, ix) => {
+        if (b.label !== undefined && b.label !== ix + 1)
+          bad.push(`${R.items(t)[i].id}: option ${ix + 1} is printed "${b.label}"`);
+      });
+    }
+  }
+  ok(bad.length === 0, "every option's printed number is its flat index",
+     bad.slice(0, 6).join("; "));
 }
 
 console.log("\nexport contract");

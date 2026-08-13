@@ -435,17 +435,23 @@ function homographCard(it){
         g.contested ? `<span class="c">${esc(g.key)}?</span>`
                     : esc(g.translit || "…")).join(" ")}</div></div>`;
 
+  // The number PRINTED on an option must be the number that SELECTS it. The digit
+  // handler indexes the flat list of rendered `.opt` buttons, so the label has to be
+  // that same flat index — a per-key formula (ki*3+oi+1) only agrees when every key
+  // happens to offer exactly three options, and silently mislabels otherwise: a card
+  // whose first key has two readings printed "4" on the option that key 3 fires.
+  let optNo = 0;
   keys.forEach((k, ki) => {
     const chosen = s["key:" + k.key];
     h += `<h2 class="q">Reading ${ki+1} of ${keys.length} — `
        + `<span class="ar" style="font-size:1em">${esc(k.raw)}</span></h2>`;
     if (k.note) h += `<div class="note ${/ARTIFACT/.test(k.note)?"artifact":""}">${esc(k.note)}</div>`;
-    h += `<div class="opts">` + k.options.map((o, oi) => {
+    h += `<div class="opts">` + k.options.map((o) => {
       const wt = o.witness_titles.map(w =>
         `${esc(w.id)}: ${esc(w.translit || w.title)}`).join(" · ");
       return `<button class="opt ${chosen===o.value?"on":""}" data-ax="key:${esc(k.key)}"
                 data-val="${esc(o.value)}">
-          <span class="k">${ki*3+oi+1}</span><span class="v">${esc(o.value)}</span>
+          <span class="k">${++optNo}</span><span class="v">${esc(o.value)}</span>
           ${k.suggest===o.value?'<span class="sug">◂ evidence favours</span>':""}
           <span class="ev">${o.witnesses.length} witness${o.witnesses.length===1?"":"es"} — ${wt}</span>
         </button>`;

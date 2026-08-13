@@ -151,6 +151,8 @@ def main() -> int:
     # Collected across all strata, merged (never replaced) into the keeps file.
     keeps: dict[str, dict] = {}
 
+    d_by_id = {d.get("id"): d for d in decisions}
+
     def live(stratum):
         return [d for d in by_stratum[stratum] if d.get("disposition") == "resolved"]
 
@@ -439,20 +441,27 @@ def main() -> int:
     # its work — and shows up only as a re-run that finds work to redo. Verify the
     # end state instead of trusting the sequence: every word an ortho decision
     # replaced must be gone from every row it touched.
-    reverted = []
+    # Ask whether the FAULT survived, not whether the word's key survived. `bare()`
+    # is mark-blind, so a šaddah fix writes a token that still bares to the original
+    # word — the naive test fired on every successful mark-only fix, i.e. precisely
+    # because the fix had worked. Same shape as the builder's residual filter: the
+    # token must still be present AND still differ from what was written.
     for a in applied["ortho"]:
-        for rid in a["rows"]:
-            if any(bare(m.group()) == a["word"]
-                   for m in ARABIC.finditer(rows[rid].get("title") or "")):
-                reverted.append(f"{rid}: {a['word']!r} survived the fix to "
-                                f"{a['target']!r}")
-    if reverted:
-        print("\nREVERTED BY A LATER PASS — refusing to write:")
-        for x in reverted:
-            print(f"   {x}")
-        print("An earlier stratum's edit was overwritten by a later one. Fix the "
-              "ordering or make the later pass patch rather than assign.")
-        return 1
+        survived = [rid for rid in a["rows"]
+                    if any(bare(m.group()) == a["word"] and m.group() != a["target"]
+                           for m in ARABIC.finditer(rows[rid].get("title") or ""))]
+        if survived:
+            # Per-decision, never a whole-run abort: one reverted edit must not sink
+            # the batch, and must not strand the KEEP rulings collected alongside it.
+            reject(d_by_id.get(a["id"], {"id": a["id"], "stratum": "ortho"}),
+                   f"reverted by a later pass in {', '.join(survived)}: "
+                   f"{a['word']!r} survived the fix to {a['target']!r}. An earlier "
+                   f"stratum's edit was overwritten by a later one — make the later "
+                   f"pass patch rather than assign.")
+            for rid in survived:
+                rows[rid] = {**rows[rid], "title": (rows[rid].get("title") or "")}
+    updated = {**data, "rows": [rows[r["id"]] for r in data["rows"]],
+               "clusters": [clusters[c["cluster_id"]] for c in data["clusters"]]}
 
     # Composed titles stay separable from hand-written ones — the same channel
     # apply_word_lexicon.py uses, so report_provenance.py keeps working.
