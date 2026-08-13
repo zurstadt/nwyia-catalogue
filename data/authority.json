@@ -4035,8 +4035,10 @@
       "pub_status": "manuscript"
     },
     "r0009": {
+      "title": "ترجمة رسالة البابا بيوس الثاني عشر الروح القدس بنفح",
       "title_translit": "tarǧamat risālat al-bābā yūnus al-ṯānī ʿašr al-rūḥ al-quds bi-nafaḥ",
-      "pub_citation": "These appear "
+      "pub_citation": "These appear ",
+      "discrepancy_note": "PDF extraction scrambled this title: it read «بنفح\" ترجمة رسالة البابا بيوس الثاني عشر \"الروح القدس», with بنفح flung to the front and one quotation mark orphaned. Word order restored to match the reading."
     },
     "r0010": {
       "title_translit": "al-ǧamʿ bayna raʾyay al-ḥakīmayn"
@@ -4110,8 +4112,9 @@
       "catalog_note": "Texte imprimé."
     },
     "r0026": {
+      "title": "سورة البقرة: تفسير البحر المحيط",
       "shelfmark": "",
-      "title_translit": "sūrat al-baqarah:tafsīr al-baḥr al-muḥīṭ",
+      "title_translit": "sūrat al-baqarah: tafsīr al-baḥr al-muḥīṭ",
       "catalog_note": "Texte imprimé."
     },
     "r0027": {
@@ -4931,7 +4934,9 @@
       "title_translit": "al-ʿaqīdah al-ṣaḥīḥah"
     },
     "r0199": {
-      "title_translit": "50 فريضة"
+      "title": "خمسون فريضة",
+      "title_translit": "ḫamsūn farīḍah",
+      "discrepancy_note": "Nwyia's index writes the numeral: «فريضة 50». The title spells it out — compare r0003, «خمسون خصلة الإمام», the same construction under the same author."
     },
     "r0200": {
       "title": "كتاب المواقف",
@@ -5062,6 +5067,7 @@
     },
     "r0231": {
       "title": "رسالة الزيتونية",
+      "title_translit": "risālat al-zaytūnīyah",
       "catalog_note": "نسختان"
     },
     "r0233": {
@@ -5073,6 +5079,7 @@
     },
     "r0234": {
       "author": "الدواني",
+      "title_translit": "risālat al-zawrāʾ",
       "pub_status": "published",
       "pub_citation": "Jalāl al-Dīn al-Dawānī, al-Risāla al-Zawrāʾ (printed in several editions)."
     },
@@ -5101,6 +5108,7 @@
       "title_translit": "suʾāl al-futūḥāt wa-ǧawābuh"
     },
     "r0241": {
+      "title_translit": "risālat al-maḥabbah",
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
       "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): R. al-Maḥabba, Osman Yahia RG 390 [Extract from al-Futūḥāt; cf. RG 391 R. fī al-Maḥabba].",
@@ -5111,6 +5119,7 @@
     },
     "r0243": {
       "title": "رسالة",
+      "title_translit": "risālah",
       "catalog_note": "نص غير مكتمل"
     },
     "r0245": {
@@ -5125,7 +5134,11 @@
       "catalog_note": "مقتطفات"
     },
     "r0247": {
-      "title_translit": "farīḍah"
+      "title_translit": "farīḍah",
+      "discrepancy_note": "Nwyia's index writes «فريضة 54». By the pattern of r0003 and r0199 the title likely spells the numeral out (أربع وخمسون فريضة), but 54 is not attested here — left as recorded pending a ruling."
+    },
+    "r0248": {
+      "title_translit": "risālah fī nasab rusūl allāh"
     },
     "r0249": {
       "title": "كتاب الطواسين",
@@ -5248,12 +5261,15 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
     },
     "r0273": {
+      "title_translit": "risālah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
     },
     "r0274": {
+      "title_translit": "risālah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
     },
     "r0275": {
+      "title_translit": "risālah fī ḥaqāʾiq al-ʿulūm li-ahl al-fuhūm",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
     },
     "r0276": {
@@ -5354,7 +5370,11 @@
       "discrepancy_note": "Nwyia's index records the title as «Traité médicale»."
     },
     "r0296": {
+      "title_translit": "qaṣīdat al-ʿaynīyah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc31125c"
+    },
+    "r0297": {
+      "title_translit": "qaṣīdat al-ʿaynīyah"
     },
     "r0298": {
       "title_translit": "al-waḥīd fī sulūk al-tawḥīd",
@@ -5461,6 +5481,7 @@
     },
     "r0325": {
       "title": "رسالة طواسين الازل",
+      "title_translit": "risālat ṭawāsīn al-azal",
       "catalog_note": "نسختان",
       "work_url": "https://archive.org/details/kitbalawsn00usaiuoft",
       "pub_status": "published",
@@ -6118,6 +6139,39 @@
     },
     "r0347": {
       "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0231": {
+      "title_translit": "risālat al-zaytūnīyah"
+    },
+    "r0234": {
+      "title_translit": "risālat al-zawrāʾ"
+    },
+    "r0241": {
+      "title_translit": "risālat al-maḥabbah"
+    },
+    "r0243": {
+      "title_translit": "risālah"
+    },
+    "r0248": {
+      "title_translit": "risālah fī nasab rusūl allāh"
+    },
+    "r0273": {
+      "title_translit": "risālah"
+    },
+    "r0274": {
+      "title_translit": "risālah"
+    },
+    "r0275": {
+      "title_translit": "risālah fī ḥaqāʾiq al-ʿulūm li-ahl al-fuhūm"
+    },
+    "r0296": {
+      "title_translit": "qaṣīdat al-ʿaynīyah"
+    },
+    "r0297": {
+      "title_translit": "qaṣīdat al-ʿaynīyah"
+    },
+    "r0325": {
+      "title_translit": "risālat ṭawāsīn al-azal"
     }
   }
 }

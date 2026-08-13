@@ -115,13 +115,12 @@ def main() -> int:
     # job), which merges على (ʿalā) with علي (ʿAlī) onto one key. Taking the first
     # writer silently rendered every «على» as the personal name. A key with two
     # readings is not settled; it is contested, and must block rather than guess.
-    # Rows whose transliteration REORDERS the Arabic. Count-matching assumes word
-    # order is preserved; when it is not, every pair in the row is shifted and the
-    # result looks perfectly well-formed. r0009 renders a scrambled extraction in
-    # readable order, which silently taught بنفح→tarǧamat, البابا→yūnus, عشر→al-rūḥ
-    # and three more. There is no general way to detect this, so a reordered row is
-    # named here and excluded from learning.
-    REORDERED = {"r0009"}
+    # Count-matching assumes the transliteration preserves Arabic word order. When
+    # it does not, every pair in the row shifts and the result still looks
+    # well-formed — r0009 taught بنفح→tarǧamat, البابا→yūnus and four more before
+    # its scrambled title was repaired at source. Fixing the TITLE is the real
+    # remedy; this set exists for any row where that is not yet possible.
+    REORDERED: set[str] = set()
 
     seen: dict[str, set[str]] = {}
     for r in data["rows"]:
@@ -131,10 +130,18 @@ def main() -> int:
         if ar and len(ar) == len(lat):
             for a, l in zip(ar, lat):
                 seen.setdefault(a, set()).add(l)
-    contested = {k for k, v in seen.items() if len(v) > 1}
+    # -ah and -at are not two readings of a word; they are one word in two states,
+    # and which one applies is decided by apply_construct below. Fold them together
+    # before judging a key contested, or every tāʾ-marbūṭa word in the corpus looks
+    # like a conflict and blocks its titles for no reason.
+    def state_free(v: str) -> str:
+        return v[:-2] + "ah" if v.endswith("at") else v
+
+    contested = {k for k, v in seen.items() if len({state_free(x) for x in v}) > 1}
     for k, v in seen.items():
         if k not in contested:
-            lex.setdefault(k, next(iter(v)))
+            # Store the base (-ah) form; the construct rule re-applies -at in place.
+            lex.setdefault(k, state_free(sorted(v)[0]))
     for k in contested:
         lex.pop(k, None)
 

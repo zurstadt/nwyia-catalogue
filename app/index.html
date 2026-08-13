@@ -194,6 +194,8 @@
   #cols-edit { width: 100%; font-size: 1.15rem; padding: 0.6rem 0.75rem; }
   /* Tint is the whole signal that a value was suggested rather than typed. */
   #cols-edit.prefilled { background: #fffbe9; border-color: var(--accent); }
+  /* Arabic in a transliteration field. Enter refuses while this is showing. */
+  #cols-edit.bad-script { background: #fff6f5; border-color: #b3261e; }
 
   /* ctx disclosure: what the sweep does not need in front of it. */
   #cols-ctx-toggle { padding: 0.25rem 0.6rem; border: 1px solid var(--rule);
@@ -1714,6 +1716,10 @@ function bindEditFields() {
       }
     }
     el.classList.remove("prefilled");     // typed over: it is the user's value now
+    // Arabic script in a transliteration field is definitionally wrong — the field
+    // holds the romanization. One row (r0199) reached data.json holding «50 فريضة»
+    // before this existed, and nothing said otherwise.
+    el.classList.toggle("bad-script", isTranslitField(key) && /[؀-ۿ]/.test(el.value));
     patchRow(colsList[colsCursor], { [key]: el.value });
   });
   $("cols-edit").addEventListener("keydown", e => {
@@ -1725,6 +1731,8 @@ function bindEditFields() {
       // banking a suggestion nobody read.
       if (!e.shiftKey && colsList.length) {
         const rowId = colsList[colsCursor], key = colField().key;
+        // The blocker blocks: refuse to advance while a translit field holds Arabic.
+        if (isTranslitField(key) && /[؀-ۿ]/.test(e.target.value)) return;
         // Store the machine's proposal beside the decision. Only on an actual
         // commit: a row stepped past never had a decision to attribute.
         recordSuggestionFor(rowId, key);
