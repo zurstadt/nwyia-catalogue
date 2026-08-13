@@ -573,6 +573,12 @@ function orthoCard(it){
     + `</tbody></table>
 
     <h2 class="q">1 · Arabic form</h2>
+    <!-- The digit handler indexes the FLAT list of .opt buttons on the card, so
+         every group's numbering has to continue the one before it. This card can
+         render two groups — the form options here and, below, one chip per
+         competing recorded reading — and numbering each from 1 meant the chip
+         printed "1" was fired by pressing "3". Same fault as the homograph
+         per-key formula, in the one place that formula was not. -->
     <div class="opts">` + formOpts.map((o,i) =>
       `<button class="opt ${s.form===o.v?"on":""}" data-ax="form" data-val="${esc(o.v)}">
          <span class="k">${i+1}</span><span class="v">${esc(o.label)}</span></button>`).join("")
@@ -594,7 +600,8 @@ function orthoCard(it){
         </div>
         <div class="opts" style="margin-bottom:8px">${it.translits.map((t,i) =>
           `<button class="opt ${ (s.translit !== undefined ? s.translit : "") === t ? "on" : "" }"
-             data-fill="${esc(t)}"><span class="k">${i+1}</span>
+             data-ax="translit" data-val="${esc(t)}">
+             <span class="k">${formOpts.length + i + 1}</span>
              <span class="v">${esc(t)}</span></button>`).join("")}</div>` : ""}
       <input type="text" id="translit" placeholder="${esc(it.translit || "")}"
              value="${esc(s.translit !== undefined ? s.translit : (it.translit || ""))}">`;
@@ -617,16 +624,13 @@ function setAx(it, ax, val){
 }
 
 function wire(it){
-  [...document.querySelectorAll(".opt")].forEach(b => b.onclick = () => {
-    if (b.dataset.fill !== undefined){        // a competing-reading chip
-      const s = st(it.id);
-      s.translit = s.translit === b.dataset.fill ? "" : b.dataset.fill;
-      s.confirmed = false;
-      save(); render();
-      return;
-    }
-    setAx(it, b.dataset.ax, b.dataset.val);
-  });
+  // One path for every option button, chips included. The chips used to take a
+  // private branch that wrote "" on toggle-off; setAx DELETES the axis instead,
+  // which is the difference between "the annotator cleared their choice" and "the
+  // annotator typed an empty reading" — only the first can still be read as
+  // accepting the prefilled default.
+  [...document.querySelectorAll(".opt")].forEach(b => b.onclick = () =>
+    setAx(it, b.dataset.ax, b.dataset.val));
 
   const cf = document.getElementById("custom-form");
   if (cf) cf.oninput = () => {

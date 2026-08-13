@@ -397,5 +397,156 @@ console.log("\ncomposition lookup table");
   ok(bad.length === 0, "every reading combination is precomputed", bad.join("; "));
 }
 
+/* ---- fixture bake ------------------------------------------------------- */
+// The residual worklist shrinks to nothing as work is settled, so whole strata
+// are empty in the shipped bake and every assertion over them SKIPS. A skipped
+// assertion guards nothing. This payload is hand-built to the builder's own item
+// shapes and driven through the same real app code, so the cards that no longer
+// occur in the corpus are still covered — including the two shapes that no bake
+// has ever produced together: an ortho card whose word has competing recorded
+// readings (two button groups on one card) and a homograph card whose keys offer
+// DIFFERENT numbers of options.
+const FIXTURE = JSON.stringify({
+  schema_version: 1,
+  task: "translit-adjudication",
+  counts: {witness: 1, homograph: 1, ortho: 1, attribution: 1},
+  strata: {
+    ortho: [{
+      id: "o-fix", stratum: "ortho", word: "الاول", proposed: "الأوّل",
+      confidence: "house-style", reason: "fixture: competing recorded readings.",
+      key_changes: false, translit: "al-awwal",
+      translits: ["al-awwal", "al-ūlā"],          // two chips → a second .opt group
+      rows: [{id: "r1", title: "كتاب الاول", after: "كتاب الأوّل",
+              translit: "kitāb al-awwal"}],
+    }],
+    homograph: [{
+      id: "r9", stratum: "homograph", title: "كتاب من الفرق", author: "—",
+      gloss: [{key: "كتاب", raw: null, translit: "kitāb", contested: false},
+              {key: "من", raw: null, translit: null, contested: true},
+              {key: "الفرق", raw: null, translit: null, contested: true}],
+      // The C2 shape: key one offers TWO readings, key two offers THREE. Any
+      // per-key numbering formula agrees with the flat digit handler only when
+      // every key happens to offer the same count.
+      keys: [
+        {key: "من", raw: "من", note: "", suggest: "min", options: [
+          {value: "min", witnesses: ["r1"],
+           witness_titles: [{id: "r1", title: "t", translit: "min"}]},
+          {value: "man", witnesses: ["r2"],
+           witness_titles: [{id: "r2", title: "t", translit: "man"}]}]},
+        {key: "الفرق", raw: "الفرق", note: "", suggest: "al-farq", options: [
+          {value: "al-farq", witnesses: ["r3"],
+           witness_titles: [{id: "r3", title: "t", translit: "al-farq"}]},
+          {value: "al-firaq", witnesses: ["r4"],
+           witness_titles: [{id: "r4", title: "t", translit: "al-firaq"}]},
+          {value: "al-furuq", witnesses: ["r5"],
+           witness_titles: [{id: "r5", title: "t", translit: "al-furuq"}]}]},
+      ],
+      compositions: {
+        "min|al-farq": "kitāb min al-farq", "min|al-firaq": "kitāb min al-firaq",
+        "min|al-furuq": "kitāb min al-furuq", "man|al-farq": "kitāb man al-farq",
+        "man|al-firaq": "kitāb man al-firaq", "man|al-furuq": "kitāb man al-furuq",
+      },
+    }],
+    witness: [{
+      id: "r8", stratum: "witness", row: "r8", word: "المواقف",
+      title: "كتاب المواقف", title_translit: "kitāb al-mawāqif",
+      current: "al-mawāqif", proposed: "al-mawāqif",
+      why: "fixture: sole witness for a losing reading.", unblocks: ["r9"],
+    }],
+    attribution: [{
+      id: "r7-attr", stratum: "attribution", row: "r7", marker: "لابي",
+      verdict: "commentary", note_why: "fixture: li- attribution tail.",
+      title: "كتاب المواقف لابي علي", title_translit: "kitāb al-mawāqif li-Abī ʿAlī",
+      tail: "لابي علي", tail_translit: "li-Abī ʿAlī",
+      proposed_title: "كتاب المواقف", proposed_translit: "kitāb al-mawāqif",
+      aligned: true, author_ar: "ابو علي", author: "Abū ʿAlī",
+      catalog_note: "", collides_with: [],
+    }],
+  },
+});
+
+console.log("\nfixture bake — strata the shipped bake cannot exercise");
+{
+  const F = boot(FIXTURE);
+  const fStrata = F.strata;
+
+  let threw = null;
+  for (const t of fStrata)
+    for (let i = 0; i < F.R.items(t).length; i++) {
+      try { F.R.go(t, i); } catch (e) { threw = `${t}[${i}]: ${e.message}`; break; }
+      if (!F.byId("app")._html.includes("card")) threw = `${t}[${i}] rendered no card`;
+    }
+  ok(!threw, "every fixture card renders", threw);
+
+  // The assertion the shipped bake can only pass vacuously: an ortho card with
+  // competing readings renders TWO groups of .opt buttons, and the digit handler
+  // indexes them as one flat list.
+  const bad = [];
+  for (const t of fStrata)
+    for (let i = 0; i < F.R.items(t).length; i++) {
+      F.R.go(t, i);
+      F.sandbox.document.querySelectorAll(".opt").forEach((b, ix) => {
+        if (b.label !== undefined && b.label !== ix + 1)
+          bad.push(`${F.R.items(t)[i].id}: option ${ix + 1} is printed "${b.label}"`);
+      });
+    }
+  ok(bad.length === 0,
+     "every option's printed number is its flat index — two-group ortho card and "
+     + "an asymmetric 2+3-option homograph card", bad.join("; "));
+
+  // …and pressing that digit must select the option whose label it is.
+  {
+    const it = F.R.items("ortho")[0];
+    F.R.go("ortho", 0);
+    const opts = F.sandbox.document.querySelectorAll(".opt");
+    const chip = opts.find(b => b.dataset.val === it.translits[1]
+                             || b.dataset.fill === it.translits[1]);
+    ok(chip && chip.label === opts.indexOf(chip) + 1,
+       "the second competing-reading chip is fired by the digit it prints",
+       chip ? `prints ${chip.label}, sits at ${opts.indexOf(chip) + 1}` : "chip not rendered");
+  }
+
+  // Conjunction over keys with unequal option counts.
+  {
+    const it = F.R.items("homograph")[0];
+    F.R.setAx(it.id, "key:" + it.keys[0].key, it.keys[0].options[0].value);
+    ok(!F.R.ready(it), "one of two readings answered is NOT ready");
+    F.R.setAx(it.id, "key:" + it.keys[1].key, it.keys[1].options[2].value);
+    ok(F.R.ready(it), "both readings answered is ready");
+    const rec = F.R.decisions().find(d => d.id === it.id);
+    ok(rec.readings[it.keys[1].key] === "al-furuq",
+       "the export carries the reading that was actually chosen",
+       JSON.stringify(rec.readings));
+  }
+
+  // Attribution: the stratum H2 lives in, empty in every bake since it was built.
+  {
+    const it = F.R.items("attribution")[0];
+    F.R.setAx(it.id, "disposition", "strip");
+    const rec = F.R.decisions().find(d => d.id === it.id);
+    ok(rec.action === "strip_tail" && rec.target === it.proposed_title,
+       "a strip exports strip_tail and the resulting title",
+       JSON.stringify([rec.action, rec.target]));
+    ok(rec.was === it.title && rec.tail === it.tail,
+       "…and the title it removed the tail from");
+    ok(rec.target_translit === it.proposed_translit,
+       "an aligned row exports the trimmed transliteration");
+    F.R.setAx(it.id, "disposition", "keep");
+    const keep = F.R.decisions().find(d => d.id === it.id);
+    ok(keep.action === "keep" && keep.target === it.title,
+       "a keep exports the title unchanged", JSON.stringify([keep.action, keep.target]));
+  }
+
+  // Composition table: every combination of an asymmetric key pair is precomputed.
+  {
+    const it = F.R.items("homograph")[0];
+    const expect = it.keys.reduce((n, k) => n * k.options.length, 1);
+    const combos = Object.keys(it.compositions);
+    ok(combos.length === expect && combos.every(c => it.compositions[c]),
+       `all ${expect} reading combinations are precomputed`,
+       `${combos.length} present`);
+  }
+}
+
 console.log(`\n${failures === 0 ? "PASS" : "FAIL"} — ${failures} failing assertion(s)`);
 process.exit(failures === 0 ? 0 : 1);
