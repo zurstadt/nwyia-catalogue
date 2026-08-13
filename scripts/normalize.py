@@ -295,6 +295,63 @@ def split_shelfmark(raw: str) -> tuple[str, str]:
     return shelfmark, folios
 
 
+# --- Arabic word tokens and marks: the ONE definition -------------------------
+# Four copies of this pair lived across the pipeline and two of them were wrong.
+# `[ء-ٰٟ-ۓ]` parses as `[ء-ٰ] ∪ [ٟ-ۓ]` = U+0621–U+06D3, and the mark class `[ً-ٰٟ]`
+# is the RANGE U+064B–U+0670 — so "stripping marks" also deleted the Arabic-Indic
+# digits ٠–٩ (U+0660–U+0669), the percent/decimal separators (U+066A–U+066D) and
+# the base letters dotless beh ٮ and dotless qaf ٯ (U+066E–U+066F).
+#
+# Define a mark STRUCTURALLY rather than by codepoint range, the way
+# cluster.normalize_ar already does: a mark is what Unicode calls combining. A
+# hand-written range drifts — `unicodedata.combining` cannot.
+#
+# The word class must MATCH the marks (excluding them splits a word at its
+# šaddah, leaving two lexicon keys that never get filled) and must NOT match the
+# Arabic comma U+060C or the Arabic-Indic digits U+0660–U+0669 — the first split a
+# comma-suffixed title word off its bare form, the second glued a numeral onto the
+# word beside it. Tatweel U+0640 stays inside the range on purpose, so a stretched
+# word remains ONE token for bare() to fold. Written as escapes, not as literal
+# Arabic: the literal form renders right-to-left in every editor, which is exactly
+# how `[\u0621-\u0670\u065F-\u06D3]` came to be read as something narrower than it is.
+AR_WORD = re.compile(r"[\u0621-\u065F\u0670-\u06D3]+")
+TATWEEL = "ـ"
+
+
+def bare(w: str) -> str:
+    """The surface with vowel/šaddah marks and tatweel stripped.
+
+    This is how the worklist keys a word, so it has to agree with
+    ``cluster.normalize_ar`` about what a mark is: that function drops every
+    combining character AND the tatweel. A ``bare`` that kept the tatweel would
+    key كـتاب apart from كتاب while the lexicon keyed them together.
+    """
+    return "".join(c for c in (w or "")
+                   if not unicodedata.combining(c) and c != TATWEEL)
+
+
+def mark_class_js() -> str:
+    """The combining marks of the Arabic block as a JavaScript character class.
+
+    The browser cannot call ``unicodedata``, so the class is derived here and
+    baked into the app's payload. A hand-written copy on the JS side is how the
+    headless gate came to use a different notion of "mark" than the pipeline it
+    verifies.
+    """
+    marks = [c for c in range(0x0600, 0x0700)
+             if unicodedata.combining(chr(c))] + [ord(TATWEEL)]
+    marks.sort()
+    out, i = [], 0
+    while i < len(marks):
+        j = i
+        while j + 1 < len(marks) and marks[j + 1] == marks[j] + 1:
+            j += 1
+        out.append(f"\\u{marks[i]:04X}"
+                   + (f"-\\u{marks[j]:04X}" if j > i else ""))
+        i = j + 1
+    return "[" + "".join(out) + "]"
+
+
 # --- Author cleanup -----------------------------------------------------------
 _ARABIC_RE = re.compile(r"[؀-ۿ]")
 _AR_LETTER = re.compile(r"[ء-يٱ-ۓ]")

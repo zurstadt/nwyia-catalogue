@@ -43,6 +43,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import cluster  # noqa: E402
+import normalize  # noqa: E402  — the ONE Arabic word/mark definition
 from apply_word_lexicon import apply_construct  # noqa: E402  — ONE home for the iḍāfa rule
 
 DATA = ROOT / "data" / "data.json"
@@ -54,9 +55,12 @@ OUT = ROOT / "review" / "translit_adjudicate.html"
 # see it, and the card would come back every bake. This file is how a keep sticks.
 KEEPS = ROOT / "review" / "translit_adjudication_keeps.json"
 
-# Must stay in step with apply_word_lexicon.ARABIC and the app's arabicKey().
-ARABIC = re.compile(r"[ء-ٰٟ-ۓ]+")
-MARKS = re.compile(r"[ً-ٰٟ]")
+# One definition, shared with the ingest and the worklist builders. The comment
+# this replaces claimed the class had to stay in step with "the app's
+# arabicKey()" — the adjudication app has no arabicKey() and does no Arabic
+# normalization at all, so that was a contract with nobody.
+ARABIC = normalize.AR_WORD
+bare = normalize.bare
 
 # Rows whose recorded transliteration carries a faulty token. `row` is the row the
 # fix lands on; `id` is only the worklist key, so one row can hold several fixes.
@@ -239,10 +243,6 @@ KEY_NOTE = {
     "مفتاح": "Contested only because r0025 records the plural mafātīḥ for a "
               "singular مفتاح — see the Witnesses tab.",
 }
-
-
-def bare(w: str) -> str:
-    return MARKS.sub("", w)
 
 
 # --- šaddah conformance ------------------------------------------------------
@@ -819,6 +819,11 @@ def main() -> int:
         "schema_version": 1,
         "task": "translit-adjudication",
         "generated_from": "data/data.json + review/translit_words_decisions.json",
+        # The browser cannot call unicodedata, so the pipeline's own notion of an
+        # Arabic mark travels WITH the payload. The headless gate reads it from
+        # here rather than carrying a hand-written copy — that copy was a fourth
+        # definition, and it disagreed with the two it was checking.
+        "mark_class": normalize.mark_class_js(),
         "counts": {"witness": len(witnesses), "homograph": len(homographs),
                    "ortho": len(ortho), "attribution": len(attributions)},
         "strata": {"witness": witnesses, "homograph": homographs, "ortho": ortho,

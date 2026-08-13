@@ -17,7 +17,6 @@ Reads data/data.json; writes review/translit_words.json. Never writes data/.
 from __future__ import annotations
 
 import json
-import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -25,6 +24,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import cluster  # noqa: E402  — reuse the pipeline's Arabic normalizer
+import normalize  # noqa: E402  — the ONE Arabic word/mark definition
 
 DATA = ROOT / "data" / "data.json"
 OUT = ROOT / "review" / "translit_words.json"
@@ -33,7 +33,7 @@ OUT = ROOT / "review" / "translit_words.json"
 # the block ؀-ۿ contains the comma ، (U+060C), so «الاشارات،» keyed separately from
 # «الاشارات»; and excluding the marks splits on a shadda, so «التصوّف» became «التصو».
 # normalize_ar strips the marks afterwards, so they must be matched, not excluded.
-ARABIC = re.compile(r"[\u0621-\u065F\u0670-\u06D3]+")
+ARABIC = normalize.AR_WORD
 
 
 def words_of(title: str) -> list[str]:

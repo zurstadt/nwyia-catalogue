@@ -184,7 +184,13 @@ console.log("\nšaddah proposals");
 {
   // A šaddah card must differ from its word ONLY by inserted combining marks. If a
   // derivation ever changes a letter, this catches it before it reaches the card.
-  const MARKS = /[\u064B-\u0652\u0670\u06D6-\u06DC\u06DF-\u06E4\u06E7\u06E8\u06EA-\u06ED]/g;
+  // The mark class comes from the PAYLOAD, i.e. from the pipeline's own
+  // unicodedata-derived definition. The hand-written copy that stood here was a
+  // FOURTH definition of "mark" in this repo and it disagreed with the two it was
+  // checking — a gate that grades against its own private rule grades nothing.
+  ok(typeof DATA.mark_class === "string" && DATA.mark_class.length > 2,
+     "the payload carries the pipeline's own mark class", String(DATA.mark_class));
+  const MARKS = new RegExp(DATA.mark_class, "g");
   const sh = R.items("ortho").filter(x => String(x.confidence).startsWith("shadda"));
   const bad = sh.filter(x => x.proposed &&
                         x.proposed.replace(MARKS, "") !== x.word.replace(MARKS, ""));

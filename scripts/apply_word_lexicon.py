@@ -32,7 +32,13 @@ DATA = ROOT / "data" / "data.json"
 # Arabic letters and combining marks; not punctuation, not digits. Must stay in
 # step with arabicKey() in app/index.html — a divergence here silently stops words
 # matching between the app and the pipeline.
-ARABIC = re.compile(r"[ء-ٰٟ-ۓ]+")
+# Arabic letters and combining marks; not punctuation, not digits. The class this
+# replaces asserted exactly that and did the opposite — it was a codepoint range
+# that matched the Arabic-Indic digits U+0660–U+0669 and two base letters. One
+# definition now, shared; it still has to stay in step with arabicKey() in
+# app/index.html, since a divergence there silently stops words matching between
+# the app and the pipeline.
+ARABIC = normalize.AR_WORD
 
 
 def words_of(title: str) -> list[str]:

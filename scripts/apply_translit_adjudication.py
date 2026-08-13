@@ -46,8 +46,11 @@ LOG = ROOT / "review" / "translit_adjudication_applied.json"
 # those ids. Cumulative across runs, keyed by the worklist's stable item id.
 KEEPS = ROOT / "review" / "translit_adjudication_keeps.json"
 
-ARABIC = re.compile(r"[ء-ٰٟ-ۓ]+")
-MARKS = re.compile(r"[ً-ٰٟ]")
+# One definition, shared. The local copy of this pair was a codepoint RANGE whose
+# mark class swallowed the Arabic-Indic digits and two base letters; see
+# normalize.AR_WORD.
+ARABIC = normalize.AR_WORD
+bare = normalize.bare
 # A canonical answer must look canonical: Latin letters, digits, or a Latin-script
 # transliteration in the Arabic slot means the annotator typed in the wrong box.
 LATIN = re.compile(r"[A-Za-z0-9]")
@@ -55,11 +58,6 @@ LATIN = re.compile(r"[A-Za-z0-9]")
 
 def words_of(title: str) -> list[str]:
     return [cluster.normalize_ar(w) for w in ARABIC.findall(title or "")]
-
-
-def bare(w: str) -> str:
-    """The surface with vowel/šaddah marks stripped — how the worklist keys words."""
-    return MARKS.sub("", w)
 
 
 def replace_tokens(title: str, word: str, target: str) -> tuple[str, int, list[int]]:
