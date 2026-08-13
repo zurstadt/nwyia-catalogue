@@ -563,6 +563,25 @@ console.log("\nfixture bake — strata the shipped bake cannot exercise");
     const keep = F.R.decisions().find(d => d.id === it.id);
     ok(keep.action === "keep" && keep.target === it.title,
        "a keep exports the title unchanged", JSON.stringify([keep.action, keep.target]));
+
+    // The affordance the ingest could not consume. A typed title used to be
+    // written into the SAME state slot as the enum sentinels, so it exported as
+    // an unrecognized action and was quarantined with a reason naming the wrong
+    // cause. It is now its own answer, with its own axes.
+    const st = F.R.state()[it.id];
+    delete st.disposition; delete st.title; delete st.title_translit;
+    st.disposition = "custom"; st.title = "\u0643\u062A\u0627\u0628 \u0622\u062E\u0631";
+    ok(!F.R.ready(it),
+       "a hand-written title is not ready until its transliteration is given");
+    st.title_translit = "kit\u0101b \u0101\u1E2Bar";
+    ok(F.R.ready(it), "…and is ready once it is");
+    const custom = F.R.decisions().find(d => d.id === it.id);
+    ok(custom.action === "set_title" && custom.target === st.title
+       && custom.target_translit === st.title_translit,
+       "a hand-written title exports as set_title with both sides",
+       JSON.stringify([custom.action, custom.target, custom.target_translit]));
+    ok(custom.was === it.title && custom.tail === it.tail,
+       "…and still carries the from-value the ingest guards on");
   }
 
   // Composition table: every combination of an asymmetric key pair is precomputed.

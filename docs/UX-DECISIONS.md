@@ -118,6 +118,15 @@ Next, hardest first:
    both were verified by hand on a scratch copy but nothing re-checks them.
 5. Source renders above the input, and `kbd-bar` is hidden only in the columns view.
 
+## Every affordance the app renders is consumable
+
+| Decision | Anchor | Why | Guard |
+|---|---|---|---|
+| A typed title lives in its own state slot, not the enum's | `#custom-title` handler, `s.disposition = "custom"` + `s.title` | One slot carried the sentinels `"keep"`/`"strip"` AND arbitrary user text, so no consumer could tell an answer from a value. | `scripts/check_translit_app.js` |
+| A hand-written title asks for its transliteration — but only where the row has one | `axes()`, attribution branch; `#custom-title-translit` | A typed title cannot be trimmed automatically, so without it the row's two sides disagree word-for-word and the composer reads them apart. Where the row has no transliteration there is nothing to desynchronize, and demanding one would leave Confirm dead. | `scripts/check_translit_app.js`, `scripts/test_apply_translit_adjudication.py` |
+| The ingest REFUSES an action it does not implement | `apply_translit_adjudication.py`, `if action not in (…)` | The branch tested only for `keep` and let everything else fall into tail-removal, so an unimplemented action was not rejected but silently mis-executed — and the quarantine reason named a cause that had not occurred. A missing `else` is how an affordance becomes a lie. | `scripts/test_apply_translit_adjudication.py` |
+| `set_title` ASSIGNS, where every other path patches | `apply_translit_adjudication.py`, the `set_title` branch | The lost-update rule (never assign a value the app computed from a pre-run snapshot) does not apply to a value the ANNOTATOR wrote. What does apply is the from-value guard, which is what makes the assignment safe — so it is not optional. | `scripts/test_apply_translit_adjudication.py` |
+
 ## What a ruling's breadth is
 
 | Decision | Anchor | Why | Guard |

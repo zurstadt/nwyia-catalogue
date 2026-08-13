@@ -330,6 +330,121 @@ def case_row_scoped_reading_stays_local() -> list[str]:
     return bad
 
 
+# --- H2: the affordance the ingest could not consume -------------------------
+TAIL = "\u0644\u0627\u0628\u064A \u0639\u0644\u064A"                 # لابي علي
+ATTR_TITLE = f"\u0643\u062A\u0627\u0628 \u0627\u0644\u0645\u0648\u0627\u0642\u0641 {TAIL}"
+TYPED = "\u0643\u062A\u0627\u0628 \u0622\u062E\u0631"               # كتاب آخر
+
+
+def attr_data(*, with_translit: bool = True) -> dict:
+    return {
+        "schema_version": 1,
+        "rows": [{"id": "r7", "title": ATTR_TITLE,
+                  "title_translit": "kit\u0101b al-maw\u0101qif li-Ab\u012B \u02BFAl\u012B"
+                                    if with_translit else "",
+                  "author": "", "author_cluster_id": "c1", "catalog_note": "",
+                  "discrepancy_note": ""}],
+        "clusters": [{"cluster_id": "c1", "canonical_ar": "x",
+                      "canonical_translit": "x", "variants": []}],
+    }
+
+
+def attr(**kw) -> dict:
+    rec = {"id": "r7-attr", "stratum": "attribution", "disposition": "resolved",
+           "row": "r7", "action": "set_title", "target": TYPED,
+           "target_translit": "kit\u0101b \u0101\u1E2Bar", "was": ATTR_TITLE,
+           "tail": TAIL, "tail_translit": "li-Ab\u012B \u02BFAl\u012B",
+           "aligned": True, "note": ""}
+    return {**rec, **kw}
+
+
+def case_set_title_applies() -> list[str]:
+    """A title the annotator wrote by hand is a supported answer, not a fault."""
+    bad = []
+    res = run(export(attr()), data=attr_data(), word_decisions={})
+    if res["quarantine"]:
+        bad.append("a hand-written title was quarantined: "
+                   + "; ".join(q["reason"] for q in res["quarantine"]))
+    r = {x["id"]: x for x in res["updated"]["rows"]}["r7"]
+    if r["title"] != TYPED:
+        bad.append(f"title is {r['title']!r}, expected {TYPED!r}")
+    if r["title_translit"] != "kit\u0101b \u0101\u1E2Bar":
+        bad.append(f"title_translit is {r['title_translit']!r}, not the one given")
+    if TAIL not in (r.get("catalog_note") or ""):
+        bad.append(f"the removed tail was not moved to catalog_note: "
+                   f"{r.get('catalog_note')!r}")
+    if not res["applied"]["attribution"]:
+        bad.append("the application was not reported")
+    return bad
+
+
+def case_set_title_without_translit_is_refused() -> list[str]:
+    """The row already has a transliteration and a typed title cannot be trimmed
+    automatically, so applying one without the other desynchronizes the row."""
+    res = run(export(attr(target_translit=None)), data=attr_data(), word_decisions={})
+    reasons = [q["reason"] for q in res["quarantine"]]
+    if not any("disagreeing" in x for x in reasons):
+        return [f"expected a desync refusal, got {reasons}"]
+    r = {x["id"]: x for x in res["updated"]["rows"]}["r7"]
+    return ([] if r["title"] == ATTR_TITLE
+            else ["the row was edited anyway despite the refusal"])
+
+
+def case_set_title_needs_no_translit_when_the_row_has_none() -> list[str]:
+    """…and where there is nothing to desynchronize, nothing is demanded."""
+    res = run(export(attr(target_translit=None)),
+              data=attr_data(with_translit=False), word_decisions={})
+    if res["quarantine"]:
+        return ["refused a title on a row that carries no transliteration: "
+                + "; ".join(q["reason"] for q in res["quarantine"])]
+    r = {x["id"]: x for x in res["updated"]["rows"]}["r7"]
+    return [] if r["title"] == TYPED else [f"title is {r['title']!r}"]
+
+
+def case_set_title_guards_its_from_value() -> list[str]:
+    """A title written against one reading of the row must not overwrite another."""
+    data = attr_data()
+    data = {**data, "rows": [{**r, "title": "\u0643\u062A\u0627\u0628 \u0645\u062E\u062A\u0644\u0641"}
+                             for r in data["rows"]]}
+    res = run(export(attr()), data=data, word_decisions={})
+    reasons = [q["reason"] for q in res["quarantine"]]
+    return ([] if any("changed under the adjudication" in x for x in reasons)
+            else [f"a stale hand-written title was applied; quarantine says {reasons}"])
+
+
+def case_unknown_action_is_refused_not_guessed() -> list[str]:
+    """The root defect was the missing `else`: anything that was not "keep" fell
+    into the tail-removal path, so an unimplemented action was not rejected but
+    silently mis-executed, and the reason blamed a cause that had not occurred."""
+    bad = []
+    res = run(export(attr(action="frobnicate")), data=attr_data(), word_decisions={})
+    reasons = [q["reason"] for q in res["quarantine"]]
+    if not any("unknown action" in x and "frobnicate" in x for x in reasons):
+        bad.append(f"the unknown action was not named in the refusal: {reasons}")
+    if any("changed under the adjudication" in x for x in reasons):
+        bad.append("the refusal still blames the row for changing")
+    r = {x["id"]: x for x in res["updated"]["rows"]}["r7"]
+    if r["title"] != ATTR_TITLE:
+        bad.append("an unknown action edited the row")
+    return bad
+
+
+def case_strip_tail_still_works() -> list[str]:
+    """The path the fail-loud else must not have broken."""
+    bad = []
+    proposed = ATTR_TITLE[:ATTR_TITLE.index(TAIL)].strip()
+    res = run(export(attr(action="strip_tail", target=proposed,
+                          target_translit="kit\u0101b al-maw\u0101qif")),
+              data=attr_data(), word_decisions={})
+    if res["quarantine"]:
+        bad.append("a strip was quarantined: "
+                   + "; ".join(q["reason"] for q in res["quarantine"]))
+    r = {x["id"]: x for x in res["updated"]["rows"]}["r7"]
+    if r["title"] != proposed:
+        bad.append(f"title is {r['title']!r}, expected {proposed!r}")
+    return bad
+
+
 CASES = [
     ("šaddah fix applies and survives the conservation audit (C1)",
      case_shadda_applies_and_conserves),
@@ -350,6 +465,16 @@ CASES = [
      case_affirmative_reading_settles_both_keys),
     ("a row-scoped reading stays local but still fixes its own rows",
      case_row_scoped_reading_stays_local),
+    ("a hand-written title applies, tail and all", case_set_title_applies),
+    ("a hand-written title with no transliteration is refused, honestly",
+     case_set_title_without_translit_is_refused),
+    ("…and is not demanded where the row has none",
+     case_set_title_needs_no_translit_when_the_row_has_none),
+    ("a hand-written title is guarded on its from-value",
+     case_set_title_guards_its_from_value),
+    ("an unrecognized action is refused, not guessed at",
+     case_unknown_action_is_refused_not_guessed),
+    ("strip_tail still works", case_strip_tail_still_works),
 ]
 
 

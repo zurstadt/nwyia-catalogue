@@ -373,11 +373,20 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
         r = rows.get(rid)
         if r is None:
             reject(d, "row is not in data.json"); continue
-        if d.get("action") == "keep":
+        action = d.get("action")
+        if action == "keep":
             unchanged.append(d["id"])
             keeps[d["id"]] = {"stratum": "attribution", "row": rid,
                               "kept": d.get("was"), "note": d.get("note") or ""}
             continue
+        # Fail loud on anything unrecognized. This branch used to test only for
+        # "keep" and let EVERYTHING else fall into the tail-removal below — so an
+        # action the ingest did not implement was not rejected, it was silently
+        # mis-executed, and the annotator got back a quarantine reason naming a
+        # cause that had not occurred ("the row changed under the adjudication").
+        if action not in ("keep", "strip_tail", "set_title"):
+            reject(d, f"unknown action {action!r} — refusing to guess which of the "
+                      f"implemented ones was meant"); continue
         target = (d.get("target") or "").strip()
         if not target:
             reject(d, "no resulting title recorded"); continue
@@ -385,6 +394,48 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
         tail = (d.get("tail") or "").strip()
         if current == target or cluster.normalize_ar(current) == cluster.normalize_ar(target):
             unchanged.append(d["id"]); continue      # already applied — idempotent
+
+        if action == "set_title":
+            # The one place in this file where ASSIGNING a whole value is right:
+            # the value is the ANNOTATOR's, not a snapshot the app computed, so the
+            # lost-update hazard the tail path guards against does not apply. What
+            # does apply is the from-value guard — without it a title typed against
+            # one reading of the row would overwrite a different one.
+            if LATIN.search(target):
+                reject(d, f"the title you wrote contains Latin characters: "
+                          f"{target!r} — the transliteration goes in the box "
+                          f"below it"); continue
+            was = (d.get("was") or "").strip()
+            if was and cluster.normalize_ar(current) != cluster.normalize_ar(was):
+                reject(d, f"row now reads {current!r}, not the {was!r} this title "
+                          f"was written against — the row changed under the "
+                          f"adjudication"); continue
+            tr = (d.get("target_translit") or "").strip()
+            patch = {"title": target}
+            if (r.get("title_translit") or "").strip():
+                if not tr:
+                    reject(d, "the row carries a title_translit and this hand-"
+                              "written title supplies none — applying it would "
+                              "leave the two sides of the row disagreeing, and a "
+                              "typed title cannot be trimmed automatically")
+                    continue
+                patch["title_translit"] = tr
+            elif tr:
+                patch["title_translit"] = tr
+            # The tail is not deleted, it is MOVED — same rule as strip_tail, since
+            # a hand-written title usually drops it too. Recorded only when the tail
+            # has in fact gone, so a title rewritten for another reason keeps its
+            # catalogue note clean.
+            if tail and tail not in target:
+                patch["catalog_note"] = " ".join(filter(None, [
+                    (r.get("catalog_note") or "").strip(),
+                    f"Title as catalogued ends «{tail}»"
+                    + (f" ({d['tail_translit']})" if d.get("tail_translit") else "")
+                    + "."]))
+            rows[rid] = {**r, **patch}
+            applied["attribution"].append({"id": d["id"], "row": rid, "was": current,
+                                           "now": target, "tail": tail})
+            continue
 
         # Apply this as a REMOVAL against the CURRENT title, never as an assignment
         # of the title the app computed. `target` was rendered from a snapshot taken

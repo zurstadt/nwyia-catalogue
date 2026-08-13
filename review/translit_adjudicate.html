@@ -319,7 +319,15 @@ function touchesTitle(it){
 }
 function axes(it){
   if (it.stratum === "witness") return ["verdict"];
-  if (it.stratum === "attribution") return ["disposition"];
+  if (it.stratum === "attribution"){
+    // A title written by hand is not the enum answer plus nothing: it needs the
+    // title itself, and — only where the row already has one — the transliteration
+    // to go with it, since a hand-written title cannot be trimmed automatically.
+    const s = S[it.id];
+    if (!s || s.disposition !== "custom") return ["disposition"];
+    return it.title_translit ? ["disposition", "title", "title_translit"]
+                             : ["disposition", "title"];
+  }
   if (it.stratum === "homograph") return it.keys.map(k => "key:" + k.key);
   return touchesTitle(it) ? ["form", "translit"] : ["form"];
 }
@@ -543,8 +551,18 @@ function attributionCard(it){
     <h2 class="q">Or write the title you want</h2>
     <input type="text" id="custom-title" class="ar" dir="rtl"
            placeholder="${esc(it.proposed_title)}"
-           value="${esc(s.disposition && s.disposition!=="keep" && s.disposition!=="strip"
-                        ? s.disposition : "")}">
+           value="${esc(s.title || "")}">
+    ${it.title_translit ? `
+      <h2 class="q">…and its transliteration</h2>
+      <p style="font-size:13px;color:var(--muted);margin:0 0 6px">Required, because
+      this row already carries one and the composer reads it word by word: a title
+      you write by hand cannot be trimmed automatically, so leaving this blank
+      would leave the two sides of the row disagreeing. The two enum answers above
+      need nothing here — «keep» writes nothing, and «strip» drops the tail's own
+      words off the end.</p>
+      <input type="text" id="custom-title-translit"
+             placeholder="${esc(it.proposed_translit || it.title_translit)}"
+             value="${esc(s.title_translit || "")}">` : ""}
     ${noteBox(it)}
   </div>`;
 }
@@ -659,11 +677,26 @@ function wire(it){
     save();
     document.getElementById("confirm").disabled = !ready(it);
   };
+  // The typed title lives in `s.title`, NOT in `s.disposition`. That slot carried
+  // the enum sentinels "keep"/"strip" AND arbitrary user text, so no consumer
+  // downstream could tell an answer from a value — and the ingest, which branches
+  // on the enum, quarantined every typed title with a reason that named the wrong
+  // cause ("the row changed under the adjudication"; it had not).
   const ct = document.getElementById("custom-title");
   if (ct) ct.oninput = () => {
     const s = st(it.id);
-    if (ct.value.trim()) { s.disposition = ct.value.trim(); s.confirmed = false; }
-    else if (s.disposition !== "keep" && s.disposition !== "strip") delete s.disposition;
+    if (ct.value.trim()) { s.disposition = "custom"; s.title = ct.value.trim(); }
+    else { if (s.disposition === "custom") delete s.disposition; delete s.title; }
+    s.confirmed = false;
+    save();
+    document.getElementById("confirm").disabled = !ready(it);
+  };
+  const ctt = document.getElementById("custom-title-translit");
+  if (ctt) ctt.oninput = () => {
+    const s = st(it.id);
+    if (ctt.value.trim()) s.title_translit = ctt.value.trim();
+    else delete s.title_translit;
+    s.confirmed = false;
     save();
     document.getElementById("confirm").disabled = !ready(it);
   };
@@ -783,17 +816,19 @@ function decisions(){
         ? (it.compositions[combo.join("|")] ?? null) : null;
     } else if (it.stratum === "attribution"){
       rec.row = it.row;
-      rec.action = s.disposition === "keep"  ? "keep"
-                 : s.disposition === "strip" ? "strip_tail"
-                 : s.disposition            ? "set_title" : null;
-      rec.target = s.disposition === "keep"  ? it.title
-                 : s.disposition === "strip" ? it.proposed_title
-                 : (s.disposition || null);
+      rec.action = s.disposition === "keep"   ? "keep"
+                 : s.disposition === "strip"  ? "strip_tail"
+                 : s.disposition === "custom" ? "set_title" : null;
+      rec.target = s.disposition === "keep"   ? it.title
+                 : s.disposition === "strip"  ? it.proposed_title
+                 : s.disposition === "custom" ? (s.title || null) : null;
       // The trimmed transliteration only travels when the row's two sides are
       // aligned; otherwise the ingest must leave title_translit alone rather than
       // guess which of its words belonged to the tail.
       rec.target_translit = (s.disposition === "strip" && it.aligned)
-                          ? it.proposed_translit : null;
+                          ? it.proposed_translit
+                          : s.disposition === "custom" ? (s.title_translit || null)
+                          : null;
       rec.was = it.title;
       rec.was_translit = it.title_translit;
       rec.tail = it.tail;
