@@ -4,7 +4,9 @@
   "source": "data/data.json",
   "counts": {
     "words": 177,
-    "decided": 177
+    "decided": 180,
+    "varies": 2,
+    "total": 180
   },
   "words": {
     "العطائيه": {
@@ -889,6 +891,21 @@
     },
     "يكون": {
       "translit": "yakūn",
+      "varies": false,
+      "decided": true
+    },
+    "الفرق": {
+      "translit": "",
+      "varies": true,
+      "decided": true
+    },
+    "من": {
+      "translit": "",
+      "varies": true,
+      "decided": true
+    },
+    "بين": {
+      "translit": "bayna",
       "varies": false,
       "decided": true
     }

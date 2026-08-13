@@ -84,7 +84,7 @@ def state_free(v: str) -> str:
 
 
 def build_lexicon(data: dict, decisions: dict, overrides: dict,
-                  decontest: set) -> tuple[dict, set]:
+                  decontest: set) -> tuple[dict, set, set]:
     """The composer's lexicon, with adjudicated words forced in as authoritative.
 
     `overrides` seeds a reading; `decontest` declares a key settled. They used to
@@ -92,6 +92,13 @@ def build_lexicon(data: dict, decisions: dict, overrides: dict,
     made every recorded transliteration a ruling on the key's contest whether or
     not the annotator had ruled on anything. Two arguments now, because they are
     two claims, and the caller gates them on different signals.
+
+    Returns (lexicon, still_contested, context_dependent). The third is the set of
+    keys a human has ruled `varies` — contested because two DIFFERENT WORDS share
+    one consonantal skeleton (من is *min* and *man*), so no corpus-wide reading
+    exists to choose and the row-level stratum decides each occurrence. That is a
+    RULING, not an absence of one, and lumping it in with the unresolved keys makes
+    a permanent linguistic fact read as unfinished work forever.
     """
     lex = {cluster.normalize_ar(w): d["translit"].strip()
            for w, d in decisions.items()
@@ -114,7 +121,10 @@ def build_lexicon(data: dict, decisions: dict, overrides: dict,
     # An adjudicated word wins over anything inferred from the corpus — that is the
     # whole point of having asked.
     lex.update(overrides)
-    return lex, contested - decontest
+    varies = {cluster.normalize_ar(w) for w, d in decisions.items() if d.get("varies")}
+    for k in varies:
+        lex.pop(k, None)               # never composed from one of its readings
+    return lex, contested - decontest - varies, contested & varies
 
 
 def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
@@ -488,7 +498,8 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
 
     # --- 3. homographs -------------------------------------------------------
     data = {**data, "rows": [rows[r["id"]] for r in data["rows"]]}
-    lex, still_contested = build_lexicon(data, word_decisions, overrides, decontest)
+    lex, still_contested, context_dependent = build_lexicon(
+        data, word_decisions, overrides, decontest)
 
     for d in live("homograph"):
         rid = d["id"]
@@ -602,6 +613,10 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
     if default_readings:
         report.append("  readings accepted as offered, so their keys stay open to a "
                       "future ruling: " + "; ".join(default_readings))
+    if context_dependent:
+        report.append("  keys ruled context-dependent (two words, one skeleton — "
+                      "settled per row, never corpus-wide): "
+                      + ", ".join(sorted(context_dependent)))
     if still_contested:
         # Corpus-wide, not per row: the rows above were composed with an adjudicated
         # reading, but the KEY still carries two readings for any future title.
@@ -614,7 +629,7 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
             # itself rather than on a proxy for it: `overrides` is what went
             # corpus-wide, `still_contested` is what the run refused to settle.
             "overrides": overrides, "still_contested": still_contested,
-            "report": report}
+            "context_dependent": context_dependent, "report": report}
 
 
 def main() -> int:

@@ -445,6 +445,28 @@ def case_strip_tail_still_works() -> list[str]:
     return bad
 
 
+def case_context_dependent_key_is_ruled_not_open() -> list[str]:
+    """Some keys are contested because two DIFFERENT WORDS share one consonantal
+    skeleton — من is min (preposition) and man (relative pronoun). No corpus-wide
+    reading exists to pick; the lexicon must stay out and the row-level stratum
+    decides. That is a RULING, and it must stop being reported as an open
+    question, or a permanent linguistic fact reads as unfinished work forever."""
+    bad = []
+    ruled = {CONTESTED: {"translit": "", "varies": True, "decided": True}}
+    res = run(export(), data=contested_data(), word_decisions=ruled)
+    if contested_key() in res["still_contested"]:
+        bad.append(f"{contested_key()!r} is still reported as unresolved")
+    if contested_key() not in res["context_dependent"]:
+        bad.append(f"{contested_key()!r} is not reported as context-dependent: "
+                   f"{sorted(res['context_dependent'])}")
+    if not any("context" in line for line in res["report"]):
+        bad.append("the report does not distinguish the two kinds of open key")
+    # …and it must NOT be silently composed from one of the two readings.
+    if cluster.normalize_ar(CONTESTED) in res["overrides"]:
+        bad.append("a context-dependent key was given a corpus-wide reading")
+    return bad
+
+
 CASES = [
     ("šaddah fix applies and survives the conservation audit (C1)",
      case_shadda_applies_and_conserves),
@@ -475,6 +497,8 @@ CASES = [
     ("an unrecognized action is refused, not guessed at",
      case_unknown_action_is_refused_not_guessed),
     ("strip_tail still works", case_strip_tail_still_works),
+    ("a key ruled context-dependent is not reported as unresolved",
+     case_context_dependent_key_is_ruled_not_open),
 ]
 
 
