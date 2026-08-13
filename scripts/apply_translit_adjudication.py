@@ -83,8 +83,16 @@ def state_free(v: str) -> str:
     return v[:-2] + "ah" if v.endswith("at") else v
 
 
-def build_lexicon(data: dict, decisions: dict, overrides: dict) -> tuple[dict, set]:
-    """The composer's lexicon, with adjudicated words forced in as authoritative."""
+def build_lexicon(data: dict, decisions: dict, overrides: dict,
+                  decontest: set) -> tuple[dict, set]:
+    """The composer's lexicon, with adjudicated words forced in as authoritative.
+
+    `overrides` seeds a reading; `decontest` declares a key settled. They used to
+    be the same set — the function returned `contested - set(overrides)` — which
+    made every recorded transliteration a ruling on the key's contest whether or
+    not the annotator had ruled on anything. Two arguments now, because they are
+    two claims, and the caller gates them on different signals.
+    """
     lex = {cluster.normalize_ar(w): d["translit"].strip()
            for w, d in decisions.items()
            if d.get("decided") and (d.get("translit") or "").strip() and not d.get("varies")}
@@ -106,7 +114,7 @@ def build_lexicon(data: dict, decisions: dict, overrides: dict) -> tuple[dict, s
     # An adjudicated word wins over anything inferred from the corpus — that is the
     # whole point of having asked.
     lex.update(overrides)
-    return lex, contested - set(overrides)
+    return lex, contested - decontest
 
 
 def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
@@ -149,6 +157,13 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
     # Rewrites the Arabic; must run before anything reads a title, or the composer
     # looks the word up under a key the fix has just retired.
     overrides: dict[str, str] = {}
+    # Keys an ANSWER settled, as against readings merely recorded. Kept apart from
+    # `overrides` because the app's own definitions panel promises they are apart:
+    # a šaddah "changes no key and unblocks no title", and a row-scoped ruling
+    # exists precisely because "a corpus-wide rewrite would be the bug".
+    decontest: set[str] = set()
+    scoped_readings: list[str] = []     # recorded, deliberately NOT corpus-wide
+    default_readings: list[str] = []    # accepted as they arrived, so not a ruling
     titles: dict[str, str] = {}
     translits: dict[str, str] = {}
     authors: dict[str, str] = {}
@@ -185,15 +200,35 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
             reject(d, "spelling changed but no transliteration given — the new "
                       "spelling would be an unsettled lexicon key")
             continue
+        # --- the two gates ---------------------------------------------------
+        # A reading goes corpus-wide unless the ruling was authored as row-local.
+        # A KEY is declared settled only by an affirmative answer: a box left as it
+        # arrived records "the corpus's own reading, accepted", which is not a
+        # ruling on a contest and must not close one.
+        source = d.get("translit_source")
+        def record(new_form: str) -> None:
+            if not translit:
+                return
+            if d.get("row_scoped"):
+                scoped_readings.append(f"{word} = {translit}")
+                return
+            overrides[cluster.normalize_ar(new_form)] = translit
+            if source in ("typed", "chosen"):
+                # BOTH keys. The rows still carry the old one, so de-contesting
+                # only the new key left the old one contested forever — the
+                # de-contest under-fired exactly where the spelling changed.
+                decontest.update({cluster.normalize_ar(word),
+                                  cluster.normalize_ar(new_form)})
+            elif source is not None:
+                default_readings.append(f"{cluster.normalize_ar(new_form)} = {translit}")
+
         if target == word:
             unchanged.append(d["id"])
             keeps[d["id"]] = {"stratum": "ortho", "word": word,
                               "kept": target, "note": d.get("note") or ""}
-            if translit:
-                overrides[cluster.normalize_ar(target)] = translit
+            record(target)
             continue
-        if translit:
-            overrides[cluster.normalize_ar(target)] = translit
+        record(target)
         touched, retranslit = [], []
         for rid in d.get("rows") or []:
             r = rows.get(rid)
@@ -402,7 +437,7 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
 
     # --- 3. homographs -------------------------------------------------------
     data = {**data, "rows": [rows[r["id"]] for r in data["rows"]]}
-    lex, still_contested = build_lexicon(data, word_decisions, overrides)
+    lex, still_contested = build_lexicon(data, word_decisions, overrides, decontest)
 
     for d in live("homograph"):
         rid = d["id"]
@@ -502,6 +537,12 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
     report.append(f"  quarantined         : {len(quarantine)}")
     for q in quarantine:
         report.append(f"     {q['id']} [{q['stratum']}]  {q['reason']}")
+    if scoped_readings:
+        report.append("  readings recorded but NOT installed corpus-wide (the card "
+                      "is scoped to named rows): " + "; ".join(scoped_readings))
+    if default_readings:
+        report.append("  readings accepted as offered, so their keys stay open to a "
+                      "future ruling: " + "; ".join(default_readings))
     if still_contested:
         # Corpus-wide, not per row: the rows above were composed with an adjudicated
         # reading, but the KEY still carries two readings for any future title.
@@ -510,7 +551,11 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
 
     return {"updated": updated, "applied": applied, "unchanged": unchanged,
             "quarantine": quarantine, "parked": parked, "keeps": keeps,
-            "still_contested": still_contested, "report": report}
+            # The two gates, returned separately so a test can assert on the claim
+            # itself rather than on a proxy for it: `overrides` is what went
+            # corpus-wide, `still_contested` is what the run refused to settle.
+            "overrides": overrides, "still_contested": still_contested,
+            "report": report}
 
 
 def main() -> int:

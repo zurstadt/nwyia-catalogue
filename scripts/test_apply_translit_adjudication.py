@@ -247,6 +247,89 @@ def case_conservation_covers_authors() -> list[str]:
                   + "; ".join(q["reason"] for q in res["quarantine"])])
 
 
+# --- H3: a reading is not a ruling -------------------------------------------
+# A corpus that genuinely disagrees with itself about one word: the same Arabic
+# key, two transliterations. Only an affirmative answer may close that.
+CONTESTED = "\u0627\u0644\u0641\u0631\u0642"                       # الفرق
+CONTESTED_MARKED = "\u0627\u0644\u0641\u0631\u0652\u0642"        # with a sukūn
+
+
+def contested_data() -> dict:
+    return {
+        "schema_version": 1,
+        "rows": [
+            {"id": "r1", "title": f"\u0643\u062A\u0627\u0628 {CONTESTED}",
+             "title_translit": "kit\u0101b al-farq", "author": "", "catalog_note": "",
+             "author_cluster_id": "c1", "discrepancy_note": ""},
+            {"id": "r2", "title": f"\u0628\u0627\u0628 {CONTESTED}",
+             "title_translit": "b\u0101b al-firaq", "author": "", "catalog_note": "",
+             "author_cluster_id": "c1", "discrepancy_note": ""},
+        ],
+        "clusters": [{"cluster_id": "c1", "canonical_ar": "x",
+                      "canonical_translit": "x", "variants": []}],
+    }
+
+
+def contested_key() -> str:
+    return cluster.normalize_ar(CONTESTED)
+
+
+def h3(**kw) -> dict:
+    return ortho(id="o-h3", word=CONTESTED, target=CONTESTED_MARKED,
+                 translit="al-farq", confidence="shadda", rows=["r1"], **kw)
+
+
+def case_default_reading_does_not_settle_a_key() -> list[str]:
+    """A transliteration box left as it arrived is the corpus's own reading,
+    accepted. The app tells the annotator a mark "changes no key and unblocks no
+    title"; it must not then close a contest they never ruled on."""
+    bad = []
+    res = run(export(h3(translit_source="default")),
+              data=contested_data(), word_decisions={})
+    if contested_key() not in res["still_contested"]:
+        bad.append(f"an accepted default settled {contested_key()!r}; "
+                   f"still contested: {sorted(res['still_contested'])}")
+    if not any("accepted as offered" in line for line in res["report"]):
+        bad.append("the report does not say the key was left open")
+    return bad
+
+
+def case_affirmative_reading_settles_both_keys() -> list[str]:
+    """Typing or picking a reading IS a ruling — and it settles the key the rows
+    carry as well as the one the new spelling introduces. De-contesting only the
+    new key left the old one contested forever, exactly where a spelling changed."""
+    bad = []
+    res = run(export(h3(translit_source="typed")),
+              data=contested_data(), word_decisions={})
+    if contested_key() in res["still_contested"]:
+        bad.append(f"an affirmative ruling left {contested_key()!r} contested")
+    if cluster.normalize_ar(CONTESTED_MARKED) in res["still_contested"]:
+        bad.append("the new spelling's key was left contested")
+    if res["overrides"].get(cluster.normalize_ar(CONTESTED_MARKED)) != "al-farq":
+        bad.append(f"the reading was not installed corpus-wide: {res['overrides']}")
+    return bad
+
+
+def case_row_scoped_reading_stays_local() -> list[str]:
+    """`only_rows` exists because a form can be a fault HERE and correct
+    elsewhere, so a corpus-wide rewrite would be the bug. Its reading must reach
+    the named rows and nothing else — not the lexicon, not the contest."""
+    bad = []
+    res = run(export(h3(translit_source="typed", row_scoped=True)),
+              data=contested_data(), word_decisions={})
+    if res["overrides"]:
+        bad.append(f"a row-scoped ruling went corpus-wide: {res['overrides']}")
+    if contested_key() not in res["still_contested"]:
+        bad.append("a row-scoped ruling settled a corpus-wide key")
+    if not any("NOT installed corpus-wide" in line for line in res["report"]):
+        bad.append("the report does not say the reading was held local")
+    # …but it must still have done its local work.
+    r1 = {r["id"]: r for r in res["updated"]["rows"]}["r1"]
+    if CONTESTED_MARKED not in r1["title"]:
+        bad.append(f"the scoped fix did not reach its own row: {r1['title']!r}")
+    return bad
+
+
 CASES = [
     ("šaddah fix applies and survives the conservation audit (C1)",
      case_shadda_applies_and_conserves),
@@ -261,6 +344,12 @@ CASES = [
      case_name_only_card),
     ("the conservation audit inspects author fields too",
      case_conservation_covers_authors),
+    ("an accepted default reading does not settle a contested key",
+     case_default_reading_does_not_settle_a_key),
+    ("a typed or chosen reading settles both the old and the new key",
+     case_affirmative_reading_settles_both_keys),
+    ("a row-scoped reading stays local but still fixes its own rows",
+     case_row_scoped_reading_stays_local),
 ]
 
 

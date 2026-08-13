@@ -864,6 +864,13 @@ def main() -> int:
             cluster.normalize_ar(o["word"]) != cluster.normalize_ar(o["proposed"]))
         ortho.append({
             **o, "stratum": "ortho", "key_changes": key_changes, "scope": scope,
+            # Whether the RULING is scoped, not whether the item happens to carry
+            # an only_rows list: shadda_items and hamza_items both set that field
+            # mechanically (it means "rows where the fault survives"), so it is
+            # true nearly everywhere and useless as a gate. Only a hand-authored
+            # only_rows expresses "a fault HERE, correct elsewhere" — and only that
+            # must be kept out of the corpus-wide lexicon.
+            "row_scoped": bool(hand and o.get("only_rows")),
             "translit_was": lex.get(key) or (was[0] if len(was) == 1 else None),
             "rows": [{
                 "id": i,

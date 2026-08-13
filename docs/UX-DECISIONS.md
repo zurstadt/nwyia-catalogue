@@ -118,6 +118,16 @@ Next, hardest first:
    both were verified by hand on a scratch copy but nothing re-checks them.
 5. Source renders above the input, and `kbd-bar` is hidden only in the columns view.
 
+## What a ruling's breadth is
+
+| Decision | Anchor | Why | Guard |
+|---|---|---|---|
+| Seeding a reading and settling a key are separate claims with separate gates | `apply_translit_adjudication.py` `record()`; `build_lexicon(…, decontest)` | One field used to do both — the ingest returned `contested - set(overrides)` — so every recorded transliteration ruled on the key's contest whether or not the annotator had ruled on anything, which is the opposite of what the app's own panel promises. | `scripts/test_apply_translit_adjudication.py` |
+| The breadth is a recorded field, never inferred | `rec.row_scoped` from the builder's `hand and only_rows` | `shadda_items` and `hamza_items` set `only_rows` mechanically ("rows where the fault survives"), so the field is true nearly everywhere and useless as a gate. Only a hand-authored `only_rows` means "a fault HERE, correct elsewhere". | `scripts/test_apply_translit_adjudication.py` |
+| How the transliteration was arrived at travels with it | `rec.translit_source`, computed by COMPARISON in `decisions()` | The box is prefilled, so an untouched one is still a real answer and Confirm stays alive — but accepting a default is not the act of ruling on a contest, and only the second may close one. Derived from the item, not from which handler fired. | `scripts/test_apply_translit_adjudication.py` |
+| An affirmative ruling de-contests BOTH keys | `decontest.update({normalize_ar(word), normalize_ar(new_form)})` | The rows still carry the old key. De-contesting only the new one left the old contested forever, exactly where a spelling changed — the gate under-fired as well as over-fired. | `scripts/test_apply_translit_adjudication.py` |
+| The panel states the breadth the code enforces | «How far a transliteration reaches» in the Orthography panel | The panel said a šaddah "changes no key and unblocks no title" while its transliteration did both. Prose and gate are now one statement. | **UNGUARDED** (prose) |
+
 ## What survives a re-cluster
 
 `cluster.py` rebuilds `data/data.json` from the raw extraction plus `authority.json`, so any field it

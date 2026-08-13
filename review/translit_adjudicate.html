@@ -181,6 +181,14 @@ nav.foot .skip{color:var(--muted)}
   <p>Where the corpus records more than one reading for the same word, no default is
   offered and the competing readings appear as one-click choices. The disagreement is
   itself a finding — pick one, or type a third.</p>
+  <p><b>How far a transliteration reaches.</b> On a card that lists no specific rows,
+  the reading you give becomes the corpus-wide reading for that word. On a card scoped
+  to named rows it is written to those rows only, because a form can be a fault here
+  and perfectly correct elsewhere — <span class="ar">بن</span> is right between two
+  names and wrong word-initially, so a corpus-wide rewrite would be the bug. And a box
+  you leave exactly as it arrived is recorded as <i>accepting the corpus's own
+  reading</i>: it fills the row, it does not settle a contested key. To settle one,
+  click a competing reading or type the value.</p>
   <dl>
     <dt><span class="badge clear">clear</span></dt>
     <dd>A real fault: the spelling is wrong by any convention.</dd>
@@ -197,12 +205,23 @@ nav.foot .skip{color:var(--muted)}
     <dd>Same, but WHICH letter carries the mark is not mechanically decidable — the
     consonant occurs more than once outside the article, or the transliteration
     doubles two of them. No proposal is offered; type the form.</dd>
+    <dt><span class="badge hamza">hamza</span></dt>
+    <dd>A word-initial bare ālif that should carry a hamzat-qaṭʿ carrier (أ or إ).
+    The carrier was derived from the vowel the transliteration records. Like the
+    šaddah, it moves no key: <code>normalize_ar</code> folds أ إ آ ٱ back to ا.</dd>
+    <dt><span class="badge hamza-manual">hamza-manual</span></dt>
+    <dd>Same, but no transliteration is aligned to the word, so the vowel that
+    separates qaṭʿ from waṣl is not recoverable. No proposal is offered; type the
+    form — or keep the bare ālif, which is right for hamzat waṣl.</dd>
   </dl>
 
   <h3>What the šaddah does and does not do</h3>
-  <p><b>It does not affect matching.</b> <code>normalize_ar</code> strips every
+  <p><b>The mark does not affect matching.</b> <code>normalize_ar</code> strips every
   combining mark, so القدسيّة and القدسيه are ONE lexicon key — writing the mark
-  changes no key and unblocks no title. What it buys is the reverse check: with the
+  changes no key and unblocks no title. <b>The transliteration beside it is a separate
+  matter</b>, and it is the one with reach: see «How far a transliteration reaches»
+  above. Writing the mark settles nothing on its own; answering the second question
+  affirmatively can. What the mark buys is the reverse check: with the
   mark present, a scan can verify a transliteration's doubling against the Arabic,
   which is how the witness-tab faults were found. The corpus currently writes it on
   16 word types and omits it on the rest; nothing carries a šaddah the
@@ -256,7 +275,7 @@ nav.foot .skip{color:var(--muted)}
   <p style="margin-top:18px"><button id="defs-close">Close</button></p>
 </div></div>
 
-<script type="application/json" id="payload">{"schema_version": 1, "task": "translit-adjudication", "generated_from": "data/data.json + review/translit_words_decisions.json", "mark_class": "[\\u0610-\\u061A\\u0640\\u064B-\\u065F\\u0670\\u06D6-\\u06DC\\u06DF-\\u06E4\\u06E7-\\u06E8\\u06EA-\\u06ED]", "counts": {"witness": 0, "homograph": 0, "ortho": 4, "attribution": 0}, "strata": {"witness": [], "homograph": [], "ortho": [{"id": "o08", "word": "ابي", "proposed": "أبي", "translit": "abī", "reason": "corpus writes أبي in r0134, r0236, r0245 and ابي in r0127, r0244.", "confidence": "house-style", "stratum": "ortho", "key_changes": false, "scope": {"titles": [], "authors": ["r0030", "r0083", "r0150", "r0151", "r0152", "r0153", "r0154", "r0155", "r0182", "r0210", "r0223"], "clusters": ["c004", "c055", "c124"]}, "translit_was": "abī", "rows": []}, {"id": "s-الأئمة", "word": "الأئمة", "proposed": "الأئمّة", "translit": "al-aʾimmah", "translits": ["al-aʾimmah"], "only_rows": ["r0263"], "confidence": "shadda", "reason": "The transliteration geminates (al-aʾimmah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "key_changes": false, "scope": {"titles": ["r0263"], "authors": [], "clusters": []}, "translit_was": "al-aʾimmah", "rows": [{"id": "r0263", "title": "أقوال الأئمة الصوفيّة", "after": "أقوال الأئمّة الصوفيّة", "translit": "aqwāl al-aʾimmah al-ṣūfīyah"}]}, {"id": "s-الأدلة", "word": "الأدلة", "proposed": "الأدلّة", "translit": "al-adillah", "translits": ["al-adillah"], "only_rows": ["r0121"], "confidence": "shadda", "reason": "The transliteration geminates (al-adillah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "key_changes": false, "scope": {"titles": ["r0121"], "authors": [], "clusters": []}, "translit_was": "al-adillah", "rows": [{"id": "r0121", "title": "تبصرة الأدلة", "after": "تبصرة الأدلّة", "translit": "tabṣirat al-adillah"}]}, {"id": "h-الالهي", "word": "الالهي", "proposed": "الإلهي", "translit": "al-ilāhī", "translits": ["al-ilāhī"], "confidence": "hamza", "scope": {"titles": ["r0020"], "authors": [], "clusters": []}, "only_rows": ["r0020"], "reason": "Word-initial bare ālif in 1 title(s).  Derived أ/إ: the transliteration opens with i, and no waṣl signature matches.  Restoring the carrier changes no cluster or lexicon key: normalize_ar folds أ إ آ ٱ back to ا.", "stratum": "ortho", "key_changes": false, "translit_was": "al-ilāhī", "rows": [{"id": "r0020", "title": "كتاب النكات والفوائد في العلم الالهي", "after": "كتاب النكات والفوائد في العلم الإلهي", "translit": "kitāb al-nikāt wa-l-fawāʾid fī al-ʿilm al-ilāhī"}]}], "attribution": []}}</script>
+<script type="application/json" id="payload">{"schema_version": 1, "task": "translit-adjudication", "generated_from": "data/data.json + review/translit_words_decisions.json", "mark_class": "[\\u0610-\\u061A\\u0640\\u064B-\\u065F\\u0670\\u06D6-\\u06DC\\u06DF-\\u06E4\\u06E7-\\u06E8\\u06EA-\\u06ED]", "counts": {"witness": 0, "homograph": 0, "ortho": 4, "attribution": 0}, "strata": {"witness": [], "homograph": [], "ortho": [{"id": "o08", "word": "ابي", "proposed": "أبي", "translit": "abī", "reason": "corpus writes أبي in r0134, r0236, r0245 and ابي in r0127, r0244.", "confidence": "house-style", "stratum": "ortho", "key_changes": false, "scope": {"titles": [], "authors": ["r0030", "r0083", "r0150", "r0151", "r0152", "r0153", "r0154", "r0155", "r0182", "r0210", "r0223"], "clusters": ["c004", "c055", "c124"]}, "row_scoped": false, "translit_was": "abī", "rows": []}, {"id": "s-الأئمة", "word": "الأئمة", "proposed": "الأئمّة", "translit": "al-aʾimmah", "translits": ["al-aʾimmah"], "only_rows": ["r0263"], "confidence": "shadda", "reason": "The transliteration geminates (al-aʾimmah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "key_changes": false, "scope": {"titles": ["r0263"], "authors": [], "clusters": []}, "row_scoped": false, "translit_was": "al-aʾimmah", "rows": [{"id": "r0263", "title": "أقوال الأئمة الصوفيّة", "after": "أقوال الأئمّة الصوفيّة", "translit": "aqwāl al-aʾimmah al-ṣūfīyah"}]}, {"id": "s-الأدلة", "word": "الأدلة", "proposed": "الأدلّة", "translit": "al-adillah", "translits": ["al-adillah"], "only_rows": ["r0121"], "confidence": "shadda", "reason": "The transliteration geminates (al-adillah), so the Arabic should carry a šaddah.  The mark changes no lexicon key and unblocks no title; it makes the transliteration checkable against the Arabic.", "stratum": "ortho", "key_changes": false, "scope": {"titles": ["r0121"], "authors": [], "clusters": []}, "row_scoped": false, "translit_was": "al-adillah", "rows": [{"id": "r0121", "title": "تبصرة الأدلة", "after": "تبصرة الأدلّة", "translit": "tabṣirat al-adillah"}]}, {"id": "h-الالهي", "word": "الالهي", "proposed": "الإلهي", "translit": "al-ilāhī", "translits": ["al-ilāhī"], "confidence": "hamza", "scope": {"titles": ["r0020"], "authors": [], "clusters": []}, "only_rows": ["r0020"], "reason": "Word-initial bare ālif in 1 title(s).  Derived أ/إ: the transliteration opens with i, and no waṣl signature matches.  Restoring the carrier changes no cluster or lexicon key: normalize_ar folds أ إ آ ٱ back to ا.", "stratum": "ortho", "key_changes": false, "row_scoped": false, "translit_was": "al-ilāhī", "rows": [{"id": "r0020", "title": "كتاب النكات والفوائد في العلم الالهي", "after": "كتاب النكات والفوائد في العلم الإلهي", "translit": "kitāb al-nikāt wa-l-fawāʾid fī al-ʿilm al-ilāhī"}]}], "attribution": []}}</script>
 <script>
 "use strict";
 const DATA = JSON.parse(document.getElementById("payload").textContent);
@@ -806,6 +825,22 @@ function decisions(){
       // and cluster names with no title row at all, so the ingest cannot infer the
       // targets from `rows` alone.
       rec.scope = it.scope || null;
+      // Seeding the corpus-wide reading for a word and DECLARING ITS KEY SETTLED
+      // are different claims, and the ingest used to make both off one field. Two
+      // signals travel so it can gate them apart.
+      //
+      // How the transliteration was arrived at, computed by COMPARISON — never
+      // inferred from which handler fired. The box is prefilled from the item, so
+      // an untouched one is still a real answer (the corpus's own reading,
+      // accepted) and Confirm stays alive; but accepting a default is not the same
+      // act as ruling on a contested key, and only the second may settle one.
+      rec.translit_source = s.form === "keep" ? "none"
+                          : s.translit === undefined ? "default"
+                          : (it.translits || []).includes(s.translit) ? "chosen"
+                          : "typed";
+      // Whether the ruling was authored as row-local. A form can be a fault here
+      // and correct elsewhere, so its reading must not become the corpus's.
+      rec.row_scoped = !!it.row_scoped;
       rec.changed = rec.target !== null && rec.target !== it.proposed;
     }
     out.push(rec);

@@ -181,6 +181,14 @@ nav.foot .skip{color:var(--muted)}
   <p>Where the corpus records more than one reading for the same word, no default is
   offered and the competing readings appear as one-click choices. The disagreement is
   itself a finding — pick one, or type a third.</p>
+  <p><b>How far a transliteration reaches.</b> On a card that lists no specific rows,
+  the reading you give becomes the corpus-wide reading for that word. On a card scoped
+  to named rows it is written to those rows only, because a form can be a fault here
+  and perfectly correct elsewhere — <span class="ar">بن</span> is right between two
+  names and wrong word-initially, so a corpus-wide rewrite would be the bug. And a box
+  you leave exactly as it arrived is recorded as <i>accepting the corpus's own
+  reading</i>: it fills the row, it does not settle a contested key. To settle one,
+  click a competing reading or type the value.</p>
   <dl>
     <dt><span class="badge clear">clear</span></dt>
     <dd>A real fault: the spelling is wrong by any convention.</dd>
@@ -197,12 +205,23 @@ nav.foot .skip{color:var(--muted)}
     <dd>Same, but WHICH letter carries the mark is not mechanically decidable — the
     consonant occurs more than once outside the article, or the transliteration
     doubles two of them. No proposal is offered; type the form.</dd>
+    <dt><span class="badge hamza">hamza</span></dt>
+    <dd>A word-initial bare ālif that should carry a hamzat-qaṭʿ carrier (أ or إ).
+    The carrier was derived from the vowel the transliteration records. Like the
+    šaddah, it moves no key: <code>normalize_ar</code> folds أ إ آ ٱ back to ا.</dd>
+    <dt><span class="badge hamza-manual">hamza-manual</span></dt>
+    <dd>Same, but no transliteration is aligned to the word, so the vowel that
+    separates qaṭʿ from waṣl is not recoverable. No proposal is offered; type the
+    form — or keep the bare ālif, which is right for hamzat waṣl.</dd>
   </dl>
 
   <h3>What the šaddah does and does not do</h3>
-  <p><b>It does not affect matching.</b> <code>normalize_ar</code> strips every
+  <p><b>The mark does not affect matching.</b> <code>normalize_ar</code> strips every
   combining mark, so القدسيّة and القدسيه are ONE lexicon key — writing the mark
-  changes no key and unblocks no title. What it buys is the reverse check: with the
+  changes no key and unblocks no title. <b>The transliteration beside it is a separate
+  matter</b>, and it is the one with reach: see «How far a transliteration reaches»
+  above. Writing the mark settles nothing on its own; answering the second question
+  affirmatively can. What the mark buys is the reverse check: with the
   mark present, a scan can verify a transliteration's doubling against the Arabic,
   which is how the witness-tab faults were found. The corpus currently writes it on
   16 word types and omits it on the rest; nothing carries a šaddah the
@@ -806,6 +825,22 @@ function decisions(){
       // and cluster names with no title row at all, so the ingest cannot infer the
       // targets from `rows` alone.
       rec.scope = it.scope || null;
+      // Seeding the corpus-wide reading for a word and DECLARING ITS KEY SETTLED
+      // are different claims, and the ingest used to make both off one field. Two
+      // signals travel so it can gate them apart.
+      //
+      // How the transliteration was arrived at, computed by COMPARISON — never
+      // inferred from which handler fired. The box is prefilled from the item, so
+      // an untouched one is still a real answer (the corpus's own reading,
+      // accepted) and Confirm stays alive; but accepting a default is not the same
+      // act as ruling on a contested key, and only the second may settle one.
+      rec.translit_source = s.form === "keep" ? "none"
+                          : s.translit === undefined ? "default"
+                          : (it.translits || []).includes(s.translit) ? "chosen"
+                          : "typed";
+      // Whether the ruling was authored as row-local. A form can be a fault here
+      // and correct elsewhere, so its reading must not become the corpus's.
+      rec.row_scoped = !!it.row_scoped;
       rec.changed = rec.target !== null && rec.target !== it.proposed;
     }
     out.push(rec);
