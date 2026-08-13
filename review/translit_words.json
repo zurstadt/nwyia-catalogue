@@ -3,7 +3,7 @@
   "generated_from": "data/data.json",
   "counts": {
     "titles_todo": 144,
-    "words_unsettled": 177,
+    "words_unsettled": 176,
     "words_known": 326
   },
   "known_sample": {
@@ -314,6 +314,27 @@
       "more": 0
     },
     {
+      "id": "بابن",
+      "word": "بابن",
+      "titles": 2,
+      "unlocks": 0,
+      "occurrences": [
+        {
+          "row": "r0311",
+          "title": "إفادة المرتاد بالتعريف بابن عباد",
+          "gloss": "… … … … …",
+          "author": "ʿAbd al-Maǧīd al-Zabādī"
+        },
+        {
+          "row": "r0317",
+          "title": "اصطلاحات الصوفية، تعريف بابن عباد",
+          "gloss": "iṣṭilāḥāṭ al-ṣūfīyah … … …",
+          "author": "Ibn ʿAbbād al-Rundī"
+        }
+      ],
+      "more": 0
+    },
+    {
       "id": "تهافت",
       "word": "تهافت",
       "titles": 2,
@@ -363,7 +384,7 @@
       "occurrences": [
         {
           "row": "r0311",
-          "title": "إفادة المرتاد بالتعريف بان عباد",
+          "title": "إفادة المرتاد بالتعريف بابن عباد",
           "gloss": "… … … … …",
           "author": "ʿAbd al-Maǧīd al-Zabādī"
         },
@@ -486,7 +507,7 @@
       "occurrences": [
         {
           "row": "r0311",
-          "title": "إفادة المرتاد بالتعريف بان عباد",
+          "title": "إفادة المرتاد بالتعريف بابن عباد",
           "gloss": "… … … … …",
           "author": "ʿAbd al-Maǧīd al-Zabādī"
         }
@@ -1626,7 +1647,7 @@
       "occurrences": [
         {
           "row": "r0311",
-          "title": "إفادة المرتاد بالتعريف بان عباد",
+          "title": "إفادة المرتاد بالتعريف بابن عباد",
           "gloss": "… … … … …",
           "author": "ʿAbd al-Maǧīd al-Zabādī"
         }
@@ -1844,21 +1865,6 @@
       "more": 0
     },
     {
-      "id": "بابن",
-      "word": "بابن",
-      "titles": 1,
-      "unlocks": 0,
-      "occurrences": [
-        {
-          "row": "r0317",
-          "title": "اصطلاحات الصوفية، تعريف بابن عباد",
-          "gloss": "iṣṭilāḥāṭ al-ṣūfīyah … … …",
-          "author": "Ibn ʿAbbād al-Rundī"
-        }
-      ],
-      "more": 0
-    },
-    {
       "id": "بالتعريف",
       "word": "بالتعريف",
       "titles": 1,
@@ -1866,22 +1872,7 @@
       "occurrences": [
         {
           "row": "r0311",
-          "title": "إفادة المرتاد بالتعريف بان عباد",
-          "gloss": "… … … … …",
-          "author": "ʿAbd al-Maǧīd al-Zabādī"
-        }
-      ],
-      "more": 0
-    },
-    {
-      "id": "بان",
-      "word": "بان",
-      "titles": 1,
-      "unlocks": 0,
-      "occurrences": [
-        {
-          "row": "r0311",
-          "title": "إفادة المرتاد بالتعريف بان عباد",
+          "title": "إفادة المرتاد بالتعريف بابن عباد",
           "gloss": "… … … … …",
           "author": "ʿAbd al-Maǧīd al-Zabādī"
         }

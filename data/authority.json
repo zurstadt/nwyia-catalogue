@@ -4556,6 +4556,7 @@
     },
     "r0122": {
       "title": "كتاب التوحيد",
+      "title_translit": "kitāb al-tawḥīd",
       "catalog_note": "Identified as Kitāb al-Tawḥīd; Cambridge Add. 3651 is its principal witness.",
       "work_url": "https://www.fihrist.org.uk/catalog/manuscript_225",
       "discrepancy_note": "Nwyia's index records the title as «التوحيد»."
@@ -4574,6 +4575,7 @@
     },
     "r0126": {
       "title": "تفسير القرآن العظيم",
+      "title_translit": "tafsīr al-qurʾān al-ʿaẓīm",
       "catalog_note": "Identified as Tafsīr al-Qurʾān al-ʿaẓīm, al-Tustarī's commentary.",
       "pub_status": "published",
       "pub_citation": "Tafsīr al-Qurʾān al-Karīm. Cairo: Dār al-Saʿādah, 1325/1908.",
@@ -4612,6 +4614,7 @@
     },
     "r0134": {
       "title": "حكم أبي مدين",
+      "title_translit": "ḥikam abī madyan",
       "catalog_note": "Identified as the Ḥikam of Abū Madyan Šuʿayb.",
       "discrepancy_note": "Nwyia's index records the title as «حكم»."
     },
@@ -4623,6 +4626,7 @@
     },
     "r0137": {
       "title": "حقائق التفسير",
+      "title_translit": "ḥaqāʾiq al-tafsīr",
       "catalog_note": "Identified as Ḥaqāʾiq al-tafsīr, al-Sulamī's Qurʾān commentary.",
       "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
       "pub_status": "published",
@@ -4678,11 +4682,13 @@
     },
     "r0149": {
       "title": "تأويلات القرآن",
+      "title_translit": "taʾwīlāt al-qurʾān",
       "catalog_note": "Identified as Taʾwīlāt al-Qurʾān (Taʾwīlāt ahl al-sunna), al-Māturīdī's commentary; the four volumes fit its extent.",
       "discrepancy_note": "Nwyia's index records the title as «تأويلات»."
     },
     "r0150": {
       "title": "كتاب المتمنين",
+      "title_translit": "kitāb al-mutamannīn",
       "catalog_note": "Identified as Kitāb al-Mutamannīn, one of Ibn Abī al-Dunyā's monographs.",
       "pub_status": "published",
       "discrepancy_note": "Nwyia's index records the title as «المتمنيين»."
@@ -4693,6 +4699,7 @@
     },
     "r0152": {
       "title": "كتاب الأولياء",
+      "title_translit": "kitāb al-awliyāʾ",
       "catalog_note": "Identified as Kitāb al-Awliyāʾ, one of Ibn Abī al-Dunyā's monographs.",
       "pub_status": "published",
       "discrepancy_note": "Nwyia's index records the title as «الأولياء»."
@@ -4795,6 +4802,7 @@
     },
     "r0173": {
       "title": "حقائق التفسير",
+      "title_translit": "ḥaqāʾiq al-tafsīr",
       "catalog_note": "Identified as Ḥaqāʾiq al-tafsīr, al-Sulamī's Qurʾān commentary.",
       "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
       "pub_status": "published",
@@ -4841,6 +4849,7 @@
     },
     "r0182": {
       "title": "كتاب العظمة",
+      "title_translit": "kitāb al-ʿaẓamah",
       "catalog_note": "Identified as Kitāb al-ʿAẓama, one of Ibn Abī al-Dunyā's monographs.",
       "pub_status": "published",
       "discrepancy_note": "Nwyia's index records the title as «العظمة»."
@@ -4926,6 +4935,7 @@
     },
     "r0200": {
       "title": "كتاب المواقف",
+      "title_translit": "kitāb al-mawāqif",
       "catalog_note": "Identified as Kitāb al-Mawāqif, ed. A. J. Arberry (London, 1935).",
       "work_url": "https://archive.org/details/Niffari",
       "pub_status": "published",
@@ -4967,33 +4977,67 @@
     "r0210": {
       "pub_status": "published"
     },
+    "r0211": {
+      "title_translit": "ʿarāʾis al-bayān"
+    },
+    "r0212": {
+      "title_translit": "maqāmat al-qulūb"
+    },
+    "r0213": {
+      "title_translit": "fawāʾid"
+    },
+    "r0214": {
+      "title_translit": "tafsīr"
+    },
     "r0215": {
+      "title_translit": "tahḏīb al-asrār",
       "pub_status": "published",
       "pub_citation": "Bassām Muḥammad Bārūd (ed.). Tahdhīb al-Asrār. Abu Dhabi: Al-Majmaʿ al-Thaqafī, 1999."
     },
     "r0216": {
+      "title_translit": "tahḏīb al-asrār",
       "pub_status": "published",
       "pub_citation": "Bassām Muḥammad Bārūd (ed.). Tahdhīb al-Asrār. Abu Dhabi: Al-Majmaʿ al-Thaqafī, 1999."
     },
+    "r0217": {
+      "title_translit": "ḫalʿ al-naʿlayn"
+    },
+    "r0218": {
+      "title_translit": "rašḥ al-zalāl fī iṣṭilāḥāṭ al-mašāyiḫ"
+    },
+    "r0219": {
+      "title_translit": "muḫtaṣar fī al-tawbah"
+    },
+    "r0220": {
+      "title_translit": "manāqib maʿrūf al-karḫī"
+    },
     "r0221": {
       "title": "كتاب الصيام",
+      "title_translit": "kitāb al-ṣiyām",
       "catalog_note": "الجزء الاول"
     },
+    "r0222": {
+      "title_translit": "ḏikr al-abdāl"
+    },
     "r0223": {
+      "title_translit": "kitāb al-yaqīn",
       "pub_status": "published"
     },
     "r0224": {
+      "title_translit": "ḥaqāʾiq al-tafsīr",
       "work_url": "https://drive.google.com/open?id=14-6DP0qtqTaGsg2b8yQGqsXhnBabpT2O",
       "pub_status": "published",
       "pub_citation": "Sayyid ʿImrān (ed.). Tafsīr al-Sulamī wa-huwa Ḥaqāʾiq al-Tafsīr, 2 vols. Beirut: Dār al-Kutub al-ʿIlmīyah."
     },
     "r0225": {
+      "title_translit": "ādāb al-ʿibādāt",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed.). “Šaqīq al-Balḫī, Ādāb al-ʿibādāt,” in Trois œuvres inédites de mystiques musulmans. Beyrouth: Dar el-Machreq, 1973.",
       "pub_source": "edition"
     },
     "r0226": {
       "title": "لطائف الاشارات",
+      "title_translit": "laṭāʾif al-išārāt",
       "catalog_note": "Identified as Laṭāʾif al-išārāt, al-Qušayrī's Qurʾān commentary.",
       "pub_status": "published",
       "pub_citation": "al-Qushayrī, Laṭāʾif al-ishārāt (Qurʾān commentary), ed. Ibrāhīm Basyūnī, Cairo: al-Hayʾa al-Miṣriyya al-ʿĀmma li-l-Kitāb, 1981.",
@@ -5001,16 +5045,27 @@
     },
     "r0227": {
       "title": "لطائف الاشارات",
+      "title_translit": "laṭāʾif al-išārāt",
       "catalog_note": "Identified as Laṭāʾif al-išārāt, al-Qušayrī's Qurʾān commentary.",
       "pub_status": "published",
       "pub_citation": "al-Qushayrī, Laṭāʾif al-ishārāt (Qurʾān commentary), ed. Ibrāhīm Basyūnī, Cairo: al-Hayʾa al-Miṣriyya al-ʿĀmma li-l-Kitāb, 1981.",
       "discrepancy_note": "Nwyia's index records the title as «3122 – تفسير»."
+    },
+    "r0228": {
+      "title_translit": "manāqib al-abrār"
+    },
+    "r0229": {
+      "title_translit": "manāqib al-abrār"
+    },
+    "r0230": {
+      "title_translit": "amad al-aqṣā"
     },
     "r0231": {
       "title": "رسالة الزيتونية",
       "catalog_note": "نسختان"
     },
     "r0233": {
+      "title_translit": "kitāb al-maʿrifah",
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
       "pub_status": "published",
       "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. Maqām al-maʿrifa, Osman Yahia RG 413 [Extract from al-Futūḥāt al-Makkiyya].",
@@ -5022,14 +5077,28 @@
       "pub_citation": "Jalāl al-Dīn al-Dawānī, al-Risāla al-Zawrāʾ (printed in several editions)."
     },
     "r0235": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "pub_source": "edition"
     },
     "r0236": {
       "title": "حكم أبي مدين",
+      "title_translit": "ḥikam abī madyan",
       "catalog_note": "Identified as the Ḥikam of Abū Madyan Šuʿayb.",
       "discrepancy_note": "Nwyia's index records the title as «حكم»."
+    },
+    "r0237": {
+      "title_translit": "ḥikam"
+    },
+    "r0238": {
+      "title_translit": "ḥaqāʾiq al-yaqīn wa-zulfat al-tamkīn"
+    },
+    "r0239": {
+      "title_translit": "al-suʾāl ʿan afḍal al-ḏikr"
+    },
+    "r0240": {
+      "title_translit": "suʾāl al-futūḥāt wa-ǧawābuh"
     },
     "r0241": {
       "work_url": "https://ibnarabisociety.org/wp-content/uploads/PDFs/catalogue-of-ibn-arabis-works.pdf",
@@ -5037,21 +5106,30 @@
       "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): R. al-Maḥabba, Osman Yahia RG 390 [Extract from al-Futūḥāt; cf. RG 391 R. fī al-Maḥabba].",
       "pub_source": "bibliography"
     },
+    "r0242": {
+      "title_translit": "ǧawāb ʿan masʾalat al-quwwah al-bayḍāʾ wa-huwa al-ʿaql al-awwal"
+    },
     "r0243": {
       "title": "رسالة",
       "catalog_note": "نص غير مكتمل"
     },
     "r0245": {
       "title": "حكم أبي مدين",
+      "title_translit": "ḥikam abī madyan",
       "catalog_note": "Identified as the Ḥikam of Abū Madyan Šuʿayb.",
       "discrepancy_note": "Nwyia's index records the title as «حكم»."
     },
     "r0246": {
       "title": "كتاب الشفاء والعلل",
+      "title_translit": "kitāb al-šifāʾ wa-l-ʿilal",
       "catalog_note": "مقتطفات"
+    },
+    "r0247": {
+      "title_translit": "farīḍah"
     },
     "r0249": {
       "title": "كتاب الطواسين",
+      "title_translit": "kitāb al-ṭawāsīn",
       "catalog_note": "Identified as Kitāb al-Ṭawāsīn, al-Ḥallāǧ's only surviving book, ed. L. Massignon (Paris, 1913).",
       "work_url": "https://archive.org/details/kitbalawsn00usaiuoft",
       "pub_status": "published",
@@ -5059,38 +5137,54 @@
       "discrepancy_note": "Nwyia's index records the title as «طواسين»."
     },
     "r0250": {
+      "title_translit": "al-laṭāʾif fī tafsīr al-kitāb al-ʿazīz",
       "pub_status": "published",
       "pub_citation": "al-Qushayrī, Laṭāʾif al-ishārāt (Qurʾān commentary), ed. Ibrāhīm Basyūnī, Cairo: al-Hayʾa al-Miṣriyya al-ʿĀmma li-l-Kitāb, 1981."
     },
+    "r0251": {
+      "title_translit": "šurūṭ al-taṣawwuf"
+    },
+    "r0252": {
+      "title_translit": "šurūṭ al-taṣawwuf"
+    },
     "r0253": {
+      "title_translit": "fī ʿilm al-išārāt al-ǧuzʾ al-awwal",
       "pub_status": "published"
     },
     "r0254": {
+      "title_translit": "fī ʿilm al-išārāt al-ǧuzʾ al-ṯānī",
       "pub_status": "published"
     },
     "r0255": {
       "pub_status": "published"
     },
     "r0256": {
+      "title_translit": "mawqif al-mawāqif",
       "work_url": "https://archive.org/details/Niffari",
       "pub_status": "published",
       "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
     },
     "r0257": {
+      "title_translit": "mawqif al-mawāqif",
       "work_url": "https://archive.org/details/Niffari",
       "pub_status": "published",
       "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
     },
     "r0258": {
       "author": "ابن العربي",
+      "title_translit": "al-durr al-maknūn fī asʾilah mā kāna wa-mā yakūn",
       "catalog_note": "Attributed to Ibn al-ʿArabī al-Ṭāʾī (per JF); a divination-genre work (asʾilat mā kāna wa-mā yakūn), not listed among his works in the MIAS catalogue — publication status open.",
       "work_url": "https://www.qalamos.net/receive/DE15Book_manuscript_00015600"
     },
     "r0259": {
       "catalog_note": "No title is recorded for this entry in the Fonds index."
     },
+    "r0260": {
+      "title_translit": "al-ǧawāhir wa-l-durar"
+    },
     "r0261": {
       "title": "كتاب الطواسين",
+      "title_translit": "kitāb al-ṭawāsīn",
       "catalog_note": "Identified as Kitāb al-Ṭawāsīn, al-Ḥallāǧ's only surviving book, ed. L. Massignon (Paris, 1913).",
       "work_url": "https://archive.org/details/kitbalawsn00usaiuoft",
       "pub_status": "published",
@@ -5098,10 +5192,15 @@
       "discrepancy_note": "Nwyia's index records the title as «طواسين»."
     },
     "r0262": {
+      "title_translit": "tafsīr baʿḍ al-ḥikam wa-l-ašʿār",
       "pub_status": "published"
+    },
+    "r0263": {
+      "title_translit": "aqwāl al-aʾimmah al-ṣūfīyah"
     },
     "r0264": {
       "title": "الحكم العطائية",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
@@ -5109,28 +5208,38 @@
       "discrepancy_note": "Nwyia's index records the title as «الحكم»."
     },
     "r0265": {
+      "title_translit": "kitāb al-ḥikam wa-l-ādāb",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "pub_source": "edition"
     },
     "r0266": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "pub_source": "edition"
     },
     "r0267": {
       "title": "الحكم العطائية",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
       "pub_source": "edition",
       "discrepancy_note": "Nwyia's index records the title as «الحكم»."
     },
+    "r0268": {
+      "title_translit": "muqtaṭṭafāt"
+    },
+    "r0269": {
+      "title_translit": "maḥāsin al-maǧālis"
+    },
     "r0270": {
       "author": "النفري",
       "work_url": "https://www.fihrist.org.uk/catalog/manuscript_11794"
     },
     "r0271": {
+      "title_translit": "šarḥ al-mawāqif",
       "work_url": "https://www.fihrist.org.uk/catalog/manuscript_1816",
       "pub_status": "published",
       "pub_citation": "ʿAfīf al-Dīn al-Tilimsānī, Sharḥ Mawāqif al-Niffarī, ed. Jamāl al-Marzūqī, Cairo, 2000 (also ed. ʿĀṣim Ibrāhīm al-Kayyālī, Beirut, 2007)."
@@ -5148,10 +5257,12 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905410"
     },
     "r0276": {
+      "title_translit": "kitāb al-kamālāt al-ilāhīyah fī al-ṣifāt al-muḥammadīyah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905427"
     },
     "r0277": {
       "title": "الحكم العطائية",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90557n",
       "pub_status": "published",
@@ -5160,12 +5271,14 @@
       "discrepancy_note": "Nwyia's index records the title as «الحكم»."
     },
     "r0278": {
+      "title_translit": "al-nafaḥāt al-rabbānīyah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc905605",
       "pub_status": "published",
       "pub_citation": "al-Nafaḥāt al-ilāhiyya, ed. Muḥammad Khwājawī, Tehran, 1996."
     },
     "r0279": {
       "author": "اليافعي",
+      "title_translit": "mirāʾat al-ǧamāl",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90571m",
       "pub_status": "published",
       "pub_citation": "ʿAbd Allāh b. Asʿad al-Yāfiʿī, Mirʾāt al-janān wa-ʿibrat al-yaqẓān, 4 vols., Hyderabad: Dāʾirat al-Maʿārif al-Niẓāmiyya, 1337–39/1918–21."
@@ -5173,23 +5286,31 @@
     "r0280": {
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90575k"
     },
+    "r0281": {
+      "title_translit": "zubdat al-taḥqīq wa-nuzhat al-tawfīq šarḥ al-qūnī nuṣūṣ fī taḥqīq"
+    },
     "r0282": {
+      "title_translit": "tafhīm maʿānī al-ḥurūf wa-laṭāʾif al-maʿānī allatī hiya",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
     },
     "r0283": {
+      "title_translit": "fatwā ṣalāḥ al-amal al-intiẓār al-ajl",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
     },
     "r0284": {
+      "title_translit": "kitāb al-tawšīh wa-l-tawfiyah",
       "work_url": "https://archive.org/details/0868Pdf_201804",
       "pub_status": "published",
       "pub_citation": "Maḥāmadī b. ʿAbd al-Sallām al-Khayyāṭī (ed.), Abū al-Ḥasan al-Ḥarrālī al-Marrākušī (d. 638) fī al-tafsīr, Silsilat Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākušī 1 (Tetouan: n.p., n.d.)."
     },
     "r0285": {
+      "title_translit": "kitāb al-ʿurwah li-l-miftāḥ al-fātiḥ li-l-bāb al-muqaffal",
       "work_url": "https://archive.org/details/0868Pdf_201804",
       "pub_status": "published",
       "pub_citation": "Maḥāmadī b. ʿAbd al-Sallām al-Khayyāṭī (ed.), Abū al-Ḥasan al-Ḥarrālī al-Marrākušī (d. 638) fī al-tafsīr, Silsilat Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākušī 1 (Tetouan: n.p., n.d.)."
     },
     "r0286": {
+      "title_translit": "kitāb al-lamḥah fī maʿrifat al-ḥurūf",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
     },
     "r0287": {
@@ -5198,6 +5319,7 @@
       "pub_citation": "Maḥāmadī b. ʿAbd al-Sallām al-Khayyāṭī (ed.), Abū al-Ḥasan al-Ḥarrālī al-Marrākušī (d. 638) fī al-tafsīr, Silsilat Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākušī 1 (Tetouan: n.p., n.d.)."
     },
     "r0288": {
+      "title_translit": "al-ḥikam",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906081"
     },
     "r0289": {
@@ -5206,19 +5328,27 @@
       "pub_citation": "Maḥāmadī b. ʿAbd al-Sallām al-Khayyāṭī (ed.), Abū al-Ḥasan al-Ḥarrālī al-Marrākušī (d. 638) fī al-tafsīr, Silsilat Turāth Abī al-Ḥasan al-Ḥarrālī al-Marrākušī 1 (Tetouan: n.p., n.d.)."
     },
     "r0290": {
+      "title_translit": "kitāb al-usūs",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc906599"
     },
     "r0291": {
+      "title_translit": "kitāb al-aṣfīr wa-ġayruh",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90660b"
     },
     "r0292": {
+      "title_translit": "kitāb al-aṣfīr wa-ġayruh",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc90660b"
     },
     "r0293": {
+      "title_translit": "kitāb adab al-sulūk",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc30356f"
+    },
+    "r0294": {
+      "title_translit": "ǧafr"
     },
     "r0295": {
       "title": "المنظومة في الطب",
+      "title_translit": "al-manẓūmah fī al-ṭibb",
       "catalog_note": "BnF Arabe 3038 is a majmūʿ of three medical texts, of which Ibn Sīnā's is the third: 1° ff. 1–54 Zād al-musāfir wa-qūt al-ḥāḍir; 2° f. 56v a treatise on the pulse by Muḥammad b. Aḥmad b. al-ʿĀṣ; 3° f. 62 al-Manẓūma fī al-ṭibb by Avicenna. Paper, 70 ff., various 17th-c. hands.",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc309468",
       "discrepancy_note": "Nwyia's index records the title as «Traité médicale»."
@@ -5227,6 +5357,7 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc31125c"
     },
     "r0298": {
+      "title_translit": "al-waḥīd fī sulūk al-tawḥīd",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc31421x"
     },
     "r0299": {
@@ -5240,28 +5371,34 @@
       "discrepancy_note": "Nwyia's index records the title as «Opera»."
     },
     "r0300": {
+      "title_translit": "baḥr al-fawāʾid",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc32885z",
       "pub_status": "published",
       "pub_citation": "Muḥammad Ḥasan Ismāʿīl and Aḥmad Farīd Mizyadī (eds.). Baḥr al-Fawaʾid al-mashhūr bi-Maʿānī al-Akhbār. Beirut: Dār al-Kutub al-ʿIlmīyah, 1999."
     },
     "r0301": {
+      "title_translit": "taʿlīm diyānat al-nuṣarīyah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33187c"
     },
     "r0302": {
+      "title_translit": "šarḥ al-isrāʾ li-ibn ʿarabī",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33572n"
     },
     "r0303": {
+      "title_translit": "kitāb al-dawāʾir",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33572n",
       "pub_status": "published",
       "pub_citation": "Muhyiddin Ibn ʿArabi Society, Catalogue of Ibn ʿArabī's Works (MIAS Archive Report): K. Inshāʾ al-dawāʾir, Osman Yahia RG 289 [Verified A].",
       "pub_source": "bibliography"
     },
     "r0304": {
+      "title_translit": "tahāfut al-tahāfut",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc33586t",
       "pub_status": "published",
       "pub_citation": "al-Ghazālī, Tahāfut al-falāsifa, ed. Maurice Bouyges, Beirut: Imprimerie Catholique, 1927."
     },
     "r0305": {
+      "title_translit": "al-awwal wa-l-ṯāliṯ al-asrār al-arbaʿah",
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc5960x"
     },
     "r0306": {
@@ -5270,15 +5407,56 @@
       "work_url": "https://archivesetmanuscrits.bnf.fr/ark:/12148/cc19984n",
       "discrepancy_note": "Nwyia's index records the title as «تفسير»."
     },
+    "r0307": {
+      "title_translit": "šarḥ fuṣūṣ al-ḥikam"
+    },
+    "r0308": {
+      "title_translit": "al-ḥadāʾiq li-ahl al-ḥaqīqah"
+    },
+    "r0310": {
+      "title_translit": "kitāb al-lawāʾiḥ"
+    },
+    "r0311": {
+      "title": "إفادة المرتاد بالتعريف بابن عباد",
+      "title_translit": "ifādat al-murtād bi-l-taʿrīf bi-ibn ʿabbād",
+      "discrepancy_note": "PDF extraction dropped a bāʾ: the index reads «بان عباد» where the title is «بابن عباد» — Ifādat al-murtād bi-l-taʿrīf bi-Ibn ʿAbbād, al-Zabādī's introduction to Ibn ʿAbbād al-Rundī. Compare r0317, «تعريف بابن عباد»."
+    },
     "r0312": {
+      "title_translit": "ādāb al-ṣūfīyah",
       "pub_status": "published",
       "pub_citation": "Etan Kohlberg (ed.). Jawāmiʿ Ādāb al-Ṣūfīyah of Abū ʿAbd al-Raḥmān al-Sulamī (d. 412/1021). Jerusalem: Jerusalem Academic Press, 1976; repr. Cairo: Dār Jawāmiʿ al-Kalam, 1420/1999; repr. I, 311-408. In Naṣr Allāh Pūrjavādī (I-III) and Muḥammad Sūrī (III) (eds.), Majmūʿah-yi Āthār-i Abū ʿAbd al-Raḥmān al-Sulamī. Bakhshhā-yi az Ḥaqāʾiq al-Tafsīr va Rasāʾil-i Dīgar / Collected Works on Early Sufism, 3 vols. Tehran: Markaz-i Nashr-i Dānishgāhī and Muʾassasah-yi Pazhvahash-i Ḥikmat va Falsafah-yi Īrān and Berlin: Muʾassasah-yi Muṭālaʿāt-i Islāmī and Dānishgāh-i Āzād-i Berlin (Freie Universität Berlin), 1991-2010."
     },
+    "r0313": {
+      "title_translit": "taqyīdāt"
+    },
+    "r0315": {
+      "title_translit": "miʿrāǧ al-taṣawwuf"
+    },
+    "r0316": {
+      "title_translit": "asǧāl"
+    },
+    "r0317": {
+      "title_translit": "iṣṭilāḥāṭ al-ṣūfīyah taʿrīf bi-ibn ʿabbād"
+    },
+    "r0318": {
+      "title_translit": "iṣṭilāḥāṭ al-ṣūfīyah"
+    },
+    "r0319": {
+      "title_translit": "asānīd baʿḍ ṭuruq al-ṣūfīyah"
+    },
+    "r0320": {
+      "title_translit": "kitāb al-minaḥ al-bādiyah"
+    },
     "r0322": {
+      "title_translit": "šarḥ al-taǧalliyāt",
       "pub_status": "published",
       "pub_citation": "Ismāʿīl b. Sawdakīn al-Nūrī, Sharḥ al-Tajalliyāt (on Ibn al-ʿArabī's Kitāb al-Tajalliyāt), ed. Osman Yahya, Tehran, 1988; also ed. Muḥammad Idrīs al-ʿAdlūnī, Casablanca, 2009."
     },
+    "r0323": {
+      "title_translit": "šarḥ qawāʿid ʿiyāḍ"
+    },
     "r0324": {
+      "title_translit": "maǧmūʿ",
       "pub_status": "published"
     },
     "r0325": {
@@ -5289,6 +5467,7 @@
       "pub_citation": "Louis Massignon (ed.). Kitâb al-Ṭawâsîn par Abou al-Moghith al-Hosayn ibn Mansour al-Hallaj al-Baydhawi al-Baghdadi. Texte arabe publié pour la première fois d'aprés les manuscripts de Stamboul et de Londres, avec la version persane d'al-Baqlî.  Paris: Librairie Paul Geuthner, 1913 ; reprint Baghdad: Dār al-Muthannā, 1969."
     },
     "r0326": {
+      "title_translit": "kitāb al-mawāqif",
       "work_url": "https://archive.org/details/Niffari",
       "pub_status": "published",
       "pub_citation": "A. J. Arberry (ed. & tr.). The Mawāqif and Mukhāṭabāt of Muḥammad ibn ʿAbd al-Jabbār al-Niffarī. London: Luzac & Co. (E.J.W. Gibb Memorial, n.s. IX), 1935."
@@ -5298,6 +5477,7 @@
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Sprenger 1169",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069346",
       "pub_status": "published",
@@ -5310,6 +5490,7 @@
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Sprenger 1172",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00013389",
       "pub_status": "published",
@@ -5322,6 +5503,7 @@
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Petermann II 159",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069343",
       "pub_status": "published",
@@ -5334,6 +5516,7 @@
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Wetzstein II 1730",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00064293",
       "pub_status": "published",
@@ -5346,6 +5529,7 @@
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Wetzstein II 1757",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069339",
       "pub_status": "published",
@@ -5358,6 +5542,7 @@
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Wetzstein II 1771",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069342",
       "pub_status": "published",
@@ -5370,6 +5555,7 @@
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Sprenger 1982",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00069344",
       "pub_status": "published",
@@ -5382,6 +5568,7 @@
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Petermann I 275",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00020807",
       "pub_status": "published",
@@ -5394,6 +5581,7 @@
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Landberg 552",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007211",
       "pub_status": "published",
@@ -5406,6 +5594,7 @@
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Landberg 553",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00007212",
       "pub_status": "published",
@@ -5417,6 +5606,7 @@
       "city": "Berlin",
       "library": "Staatsbibliothek zu Berlin",
       "shelfmark": "Landberg 889",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "work_url": "https://www.qalamos.net/receive/DE1Book_manuscript_00058288",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
@@ -5424,11 +5614,19 @@
       "discrepancy_note": "Nwyia recorded this as “Tübingen 889”: it is Berlin SBB Landberg 889, which he consulted in the Tübinger Depot der Preußischen Staatsbibliothek (Berlin’s oriental mss were held there 1945–1968). Copy of Ibn ʿAṭāʾ Allāh, al-Ḥikam al-ʿAṭāʾiyya (Ahlwardt 8690 group)."
     },
     "r0338": {
+      "title_translit": "al-nuṣūṣ fī taʿrīf al-ṭūr al-maḥsūs",
       "pub_status": "published",
       "pub_citation": "al-Nuṣūṣ fī taḥqīq al-ṭawr al-makhṣūṣ, ed. S. J. Āshtiyānī, Tehran, 1342 hş."
     },
     "r0339": {
+      "title_translit": "taʿrīf iṣṭilāḥāṭ al-ṣūfīyah",
       "pub_status": "published"
+    },
+    "r0340": {
+      "title_translit": "šarḥ al-fuṣūṣ"
+    },
+    "r0341": {
+      "title_translit": "mubāyiʿat al-mašāyiḫ ahl al-ḥaqīqah"
     },
     "r0342": {
       "title": "رسالة منازل الأبدال في بيان المقامات والأحوال",
@@ -5439,14 +5637,19 @@
     },
     "r0343": {
       "author": "القونوي",
+      "title_translit": "al-risālah al-hādiyah al-risālah al-mufṣiḥah",
       "author_translit": "Ṣadr al-Dīn al-Qūnawī",
       "work_url": "https://digi.vatlib.it/view/MSS_Vat.ar.1453",
       "discrepancy_note": "Vat.ar.1453 contains al-Qūnawī’s al-Risāla al-Hādiya and al-Risāla al-Mufṣiḥa — his side of the murāsala (correspondence) with Naṣīr al-Dīn al-Ṭūsī. Nwyia recorded the author as «الطوسي- القونوي» (al-Ṭūsī–al-Qūnawī); reattributed to Ṣadr al-Dīn al-Qūnawī (c003) as author of the two contained risālas (cf. r0087 al-Hādiya, r0088 al-Mufṣiḥa). Former one-row composite cluster c116 dissolved."
     },
     "r0344": {
+      "title_translit": "tahāfut al-falāsifah",
       "work_url": "https://digi.vatlib.it/view/MSS_Vat.ar.291",
       "pub_status": "published",
       "pub_citation": "al-Ghazālī, Tahāfut al-falāsifa, ed. Maurice Bouyges, Beirut: Imprimerie Catholique, 1927."
+    },
+    "r0345": {
+      "title_translit": "šarḥ fuṣūṣ al-nuṣūṣ"
     },
     "r0346": {
       "title": "Petites heures de l'office des moines",
@@ -5454,6 +5657,7 @@
     },
     "r0347": {
       "title": "الحكم العطائية",
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah",
       "catalog_note": "Identified as al-Ḥikam al-ʿAṭāʾiyya: the bare title al-Ḥikam under Ibn ʿAṭāʾ Allāh names his aphorisms, edited by Nwyia (Beirut, 1972).",
       "pub_status": "published",
       "pub_citation": "Paul Nwyia (ed. & tr.). Ibn ʿAṭāʾ Allāh (m. 709/1309) et la naissance de la confrérie šāḏilite: édition critique et traduction des Ḥikam. Beyrouth: Dar el-Machreq, 1972.",
@@ -5554,6 +5758,366 @@
     },
     "r0201": {
       "title_translit": "Maqāmat al-qulūb"
+    },
+    "r0122": {
+      "title_translit": "kitāb al-tawḥīd"
+    },
+    "r0126": {
+      "title_translit": "tafsīr al-qurʾān al-ʿaẓīm"
+    },
+    "r0134": {
+      "title_translit": "ḥikam abī madyan"
+    },
+    "r0137": {
+      "title_translit": "ḥaqāʾiq al-tafsīr"
+    },
+    "r0149": {
+      "title_translit": "taʾwīlāt al-qurʾān"
+    },
+    "r0150": {
+      "title_translit": "kitāb al-mutamannīn"
+    },
+    "r0152": {
+      "title_translit": "kitāb al-awliyāʾ"
+    },
+    "r0173": {
+      "title_translit": "ḥaqāʾiq al-tafsīr"
+    },
+    "r0182": {
+      "title_translit": "kitāb al-ʿaẓamah"
+    },
+    "r0200": {
+      "title_translit": "kitāb al-mawāqif"
+    },
+    "r0211": {
+      "title_translit": "ʿarāʾis al-bayān"
+    },
+    "r0212": {
+      "title_translit": "maqāmat al-qulūb"
+    },
+    "r0213": {
+      "title_translit": "fawāʾid"
+    },
+    "r0214": {
+      "title_translit": "tafsīr"
+    },
+    "r0215": {
+      "title_translit": "tahḏīb al-asrār"
+    },
+    "r0216": {
+      "title_translit": "tahḏīb al-asrār"
+    },
+    "r0217": {
+      "title_translit": "ḫalʿ al-naʿlayn"
+    },
+    "r0218": {
+      "title_translit": "rašḥ al-zalāl fī iṣṭilāḥāṭ al-mašāyiḫ"
+    },
+    "r0219": {
+      "title_translit": "muḫtaṣar fī al-tawbah"
+    },
+    "r0220": {
+      "title_translit": "manāqib maʿrūf al-karḫī"
+    },
+    "r0221": {
+      "title_translit": "kitāb al-ṣiyām"
+    },
+    "r0222": {
+      "title_translit": "ḏikr al-abdāl"
+    },
+    "r0223": {
+      "title_translit": "kitāb al-yaqīn"
+    },
+    "r0224": {
+      "title_translit": "ḥaqāʾiq al-tafsīr"
+    },
+    "r0225": {
+      "title_translit": "ādāb al-ʿibādāt"
+    },
+    "r0226": {
+      "title_translit": "laṭāʾif al-išārāt"
+    },
+    "r0227": {
+      "title_translit": "laṭāʾif al-išārāt"
+    },
+    "r0228": {
+      "title_translit": "manāqib al-abrār"
+    },
+    "r0229": {
+      "title_translit": "manāqib al-abrār"
+    },
+    "r0230": {
+      "title_translit": "amad al-aqṣā"
+    },
+    "r0233": {
+      "title_translit": "kitāb al-maʿrifah"
+    },
+    "r0235": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0236": {
+      "title_translit": "ḥikam abī madyan"
+    },
+    "r0237": {
+      "title_translit": "ḥikam"
+    },
+    "r0238": {
+      "title_translit": "ḥaqāʾiq al-yaqīn wa-zulfat al-tamkīn"
+    },
+    "r0239": {
+      "title_translit": "al-suʾāl ʿan afḍal al-ḏikr"
+    },
+    "r0240": {
+      "title_translit": "suʾāl al-futūḥāt wa-ǧawābuh"
+    },
+    "r0242": {
+      "title_translit": "ǧawāb ʿan masʾalat al-quwwah al-bayḍāʾ wa-huwa al-ʿaql al-awwal"
+    },
+    "r0245": {
+      "title_translit": "ḥikam abī madyan"
+    },
+    "r0246": {
+      "title_translit": "kitāb al-šifāʾ wa-l-ʿilal"
+    },
+    "r0247": {
+      "title_translit": "farīḍah"
+    },
+    "r0249": {
+      "title_translit": "kitāb al-ṭawāsīn"
+    },
+    "r0250": {
+      "title_translit": "al-laṭāʾif fī tafsīr al-kitāb al-ʿazīz"
+    },
+    "r0251": {
+      "title_translit": "šurūṭ al-taṣawwuf"
+    },
+    "r0252": {
+      "title_translit": "šurūṭ al-taṣawwuf"
+    },
+    "r0253": {
+      "title_translit": "fī ʿilm al-išārāt al-ǧuzʾ al-awwal"
+    },
+    "r0254": {
+      "title_translit": "fī ʿilm al-išārāt al-ǧuzʾ al-ṯānī"
+    },
+    "r0256": {
+      "title_translit": "mawqif al-mawāqif"
+    },
+    "r0257": {
+      "title_translit": "mawqif al-mawāqif"
+    },
+    "r0258": {
+      "title_translit": "al-durr al-maknūn fī asʾilah mā kāna wa-mā yakūn"
+    },
+    "r0260": {
+      "title_translit": "al-ǧawāhir wa-l-durar"
+    },
+    "r0261": {
+      "title_translit": "kitāb al-ṭawāsīn"
+    },
+    "r0262": {
+      "title_translit": "tafsīr baʿḍ al-ḥikam wa-l-ašʿār"
+    },
+    "r0263": {
+      "title_translit": "aqwāl al-aʾimmah al-ṣūfīyah"
+    },
+    "r0264": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0265": {
+      "title_translit": "kitāb al-ḥikam wa-l-ādāb"
+    },
+    "r0266": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0267": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0268": {
+      "title_translit": "muqtaṭṭafāt"
+    },
+    "r0269": {
+      "title_translit": "maḥāsin al-maǧālis"
+    },
+    "r0271": {
+      "title_translit": "šarḥ al-mawāqif"
+    },
+    "r0276": {
+      "title_translit": "kitāb al-kamālāt al-ilāhīyah fī al-ṣifāt al-muḥammadīyah"
+    },
+    "r0277": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0278": {
+      "title_translit": "al-nafaḥāt al-rabbānīyah"
+    },
+    "r0279": {
+      "title_translit": "mirāʾat al-ǧamāl"
+    },
+    "r0281": {
+      "title_translit": "zubdat al-taḥqīq wa-nuzhat al-tawfīq šarḥ al-qūnī nuṣūṣ fī taḥqīq"
+    },
+    "r0282": {
+      "title_translit": "tafhīm maʿānī al-ḥurūf wa-laṭāʾif al-maʿānī allatī hiya"
+    },
+    "r0283": {
+      "title_translit": "fatwā ṣalāḥ al-amal al-intiẓār al-ajl"
+    },
+    "r0284": {
+      "title_translit": "kitāb al-tawšīh wa-l-tawfiyah"
+    },
+    "r0285": {
+      "title_translit": "kitāb al-ʿurwah li-l-miftāḥ al-fātiḥ li-l-bāb al-muqaffal"
+    },
+    "r0286": {
+      "title_translit": "kitāb al-lamḥah fī maʿrifat al-ḥurūf"
+    },
+    "r0288": {
+      "title_translit": "al-ḥikam"
+    },
+    "r0290": {
+      "title_translit": "kitāb al-usūs"
+    },
+    "r0291": {
+      "title_translit": "kitāb al-aṣfīr wa-ġayruh"
+    },
+    "r0292": {
+      "title_translit": "kitāb al-aṣfīr wa-ġayruh"
+    },
+    "r0293": {
+      "title_translit": "kitāb adab al-sulūk"
+    },
+    "r0294": {
+      "title_translit": "ǧafr"
+    },
+    "r0295": {
+      "title_translit": "al-manẓūmah fī al-ṭibb"
+    },
+    "r0298": {
+      "title_translit": "al-waḥīd fī sulūk al-tawḥīd"
+    },
+    "r0300": {
+      "title_translit": "baḥr al-fawāʾid"
+    },
+    "r0301": {
+      "title_translit": "taʿlīm diyānat al-nuṣarīyah"
+    },
+    "r0302": {
+      "title_translit": "šarḥ al-isrāʾ li-ibn ʿarabī"
+    },
+    "r0303": {
+      "title_translit": "kitāb al-dawāʾir"
+    },
+    "r0304": {
+      "title_translit": "tahāfut al-tahāfut"
+    },
+    "r0305": {
+      "title_translit": "al-awwal wa-l-ṯāliṯ al-asrār al-arbaʿah"
+    },
+    "r0307": {
+      "title_translit": "šarḥ fuṣūṣ al-ḥikam"
+    },
+    "r0308": {
+      "title_translit": "al-ḥadāʾiq li-ahl al-ḥaqīqah"
+    },
+    "r0310": {
+      "title_translit": "kitāb al-lawāʾiḥ"
+    },
+    "r0311": {
+      "title_translit": "ifādat al-murtād bi-l-taʿrīf bi-ibn ʿabbād"
+    },
+    "r0312": {
+      "title_translit": "ādāb al-ṣūfīyah"
+    },
+    "r0313": {
+      "title_translit": "taqyīdāt"
+    },
+    "r0315": {
+      "title_translit": "miʿrāǧ al-taṣawwuf"
+    },
+    "r0316": {
+      "title_translit": "asǧāl"
+    },
+    "r0317": {
+      "title_translit": "iṣṭilāḥāṭ al-ṣūfīyah taʿrīf bi-ibn ʿabbād"
+    },
+    "r0318": {
+      "title_translit": "iṣṭilāḥāṭ al-ṣūfīyah"
+    },
+    "r0319": {
+      "title_translit": "asānīd baʿḍ ṭuruq al-ṣūfīyah"
+    },
+    "r0320": {
+      "title_translit": "kitāb al-minaḥ al-bādiyah"
+    },
+    "r0322": {
+      "title_translit": "šarḥ al-taǧalliyāt"
+    },
+    "r0323": {
+      "title_translit": "šarḥ qawāʿid ʿiyāḍ"
+    },
+    "r0324": {
+      "title_translit": "maǧmūʿ"
+    },
+    "r0326": {
+      "title_translit": "kitāb al-mawāqif"
+    },
+    "r0327": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0328": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0329": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0330": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0331": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0332": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0333": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0334": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0335": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0336": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0337": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
+    },
+    "r0338": {
+      "title_translit": "al-nuṣūṣ fī taʿrīf al-ṭūr al-maḥsūs"
+    },
+    "r0339": {
+      "title_translit": "taʿrīf iṣṭilāḥāṭ al-ṣūfīyah"
+    },
+    "r0340": {
+      "title_translit": "šarḥ al-fuṣūṣ"
+    },
+    "r0341": {
+      "title_translit": "mubāyiʿat al-mašāyiḫ ahl al-ḥaqīqah"
+    },
+    "r0343": {
+      "title_translit": "al-risālah al-hādiyah al-risālah al-mufṣiḥah"
+    },
+    "r0344": {
+      "title_translit": "tahāfut al-falāsifah"
+    },
+    "r0345": {
+      "title_translit": "šarḥ fuṣūṣ al-nuṣūṣ"
+    },
+    "r0347": {
+      "title_translit": "al-ḥikam al-ʿaṭāʾīyah"
     }
   }
 }

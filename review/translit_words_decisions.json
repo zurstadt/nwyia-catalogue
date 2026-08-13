@@ -1,0 +1,896 @@
+{
+  "schema_version": 1,
+  "annotated_date": "2026-08-13",
+  "source": "data/data.json",
+  "counts": {
+    "words": 177,
+    "decided": 177
+  },
+  "words": {
+    "العطائيه": {
+      "translit": "al-ʿaṭāʾīyah",
+      "varies": false,
+      "decided": true
+    },
+    "الاول": {
+      "translit": "al-awwal",
+      "varies": false,
+      "decided": true
+    },
+    "تعريف": {
+      "translit": "taʿrīf",
+      "varies": false,
+      "decided": true
+    },
+    "مدين": {
+      "translit": "madyan",
+      "varies": false,
+      "decided": true
+    },
+    "الاصيفر": {
+      "translit": "al-aṣfīr",
+      "varies": false,
+      "decided": true
+    },
+    "الحروف": {
+      "translit": "al-ḥurūf",
+      "varies": false,
+      "decided": true
+    },
+    "العينيه": {
+      "translit": "al-ʿaynīyah",
+      "varies": false,
+      "decided": true
+    },
+    "المقفل": {
+      "translit": "al-muqaffal",
+      "varies": false,
+      "decided": true
+    },
+    "النصوص": {
+      "translit": "al-nuṣūṣ",
+      "varies": false,
+      "decided": true
+    },
+    "اليقين": {
+      "translit": "al-yaqīn",
+      "varies": false,
+      "decided": true
+    },
+    "تهافت": {
+      "translit": "tahāfut",
+      "varies": false,
+      "decided": true
+    },
+    "شروط": {
+      "translit": "šurūṭ",
+      "varies": false,
+      "decided": true
+    },
+    "عباد": {
+      "translit": "ʿabbād",
+      "varies": false,
+      "decided": true
+    },
+    "لاهل": {
+      "translit": "li-ahl",
+      "varies": false,
+      "decided": true
+    },
+    "موقف": {
+      "translit": "mawqif",
+      "varies": false,
+      "decided": true
+    },
+    "ادب": {
+      "translit": "adab",
+      "varies": false,
+      "decided": true
+    },
+    "اسئيله": {
+      "translit": "asʾilah",
+      "varies": false,
+      "decided": true
+    },
+    "اسانيد": {
+      "translit": "asānīd",
+      "varies": false,
+      "decided": true
+    },
+    "اسجال": {
+      "translit": "asǧāl",
+      "varies": false,
+      "decided": true
+    },
+    "افاده": {
+      "translit": "ifādah",
+      "varies": false,
+      "decided": true
+    },
+    "افضل": {
+      "translit": "afḍal",
+      "varies": false,
+      "decided": true
+    },
+    "الائمه": {
+      "translit": "al-aʾimmah",
+      "varies": false,
+      "decided": true
+    },
+    "الاجل": {
+      "translit": "al-ajl",
+      "varies": false,
+      "decided": true
+    },
+    "الاربعه": {
+      "translit": "al-arbaʿah",
+      "varies": false,
+      "decided": true
+    },
+    "الازل": {
+      "translit": "al-azal",
+      "varies": false,
+      "decided": true
+    },
+    "الاسوس": {
+      "translit": "al-usūs",
+      "varies": false,
+      "decided": true
+    },
+    "الاصطلاح": {
+      "translit": "al-iṣṭilāḥ",
+      "varies": false,
+      "decided": true
+    },
+    "الاقصي": {
+      "translit": "al-aqṣā",
+      "varies": false,
+      "decided": true
+    },
+    "الالهيه": {
+      "translit": "al-ilāhīyah",
+      "varies": false,
+      "decided": true
+    },
+    "الامل": {
+      "translit": "al-amal",
+      "varies": false,
+      "decided": true
+    },
+    "الانتصار": {
+      "translit": "al-intiṣār",
+      "varies": false,
+      "decided": true
+    },
+    "الانس": {
+      "translit": "al-uns",
+      "varies": false,
+      "decided": true
+    },
+    "الايه": {
+      "translit": "al-āyah",
+      "varies": false,
+      "decided": true
+    },
+    "الباب": {
+      "translit": "al-bāb",
+      "varies": false,
+      "decided": true
+    },
+    "الباديه": {
+      "translit": "al-bādiyah",
+      "varies": false,
+      "decided": true
+    },
+    "البيضاء": {
+      "translit": "al-bayḍāʾ",
+      "varies": false,
+      "decided": true
+    },
+    "التجليات": {
+      "translit": "al-taǧalliyāt",
+      "varies": false,
+      "decided": true
+    },
+    "التحقيق": {
+      "translit": "al-taḥqīq",
+      "varies": false,
+      "decided": true
+    },
+    "التمكين": {
+      "translit": "al-tamkīn",
+      "varies": false,
+      "decided": true
+    },
+    "التهافت": {
+      "translit": "al-tahāfut",
+      "varies": false,
+      "decided": true
+    },
+    "التوبه": {
+      "translit": "al-tawbah",
+      "varies": false,
+      "decided": true
+    },
+    "التوشيه": {
+      "translit": "al-tawšīh",
+      "varies": false,
+      "decided": true
+    },
+    "التوفيق": {
+      "translit": "al-tawfīq",
+      "varies": false,
+      "decided": true
+    },
+    "التي": {
+      "translit": "allatī",
+      "varies": false,
+      "decided": true
+    },
+    "الجمال": {
+      "translit": "al-ǧamāl",
+      "varies": false,
+      "decided": true
+    },
+    "الجواهر": {
+      "translit": "al-ǧawāhir",
+      "varies": false,
+      "decided": true
+    },
+    "الحدائق": {
+      "translit": "al-ḥadāʾiq",
+      "varies": false,
+      "decided": true
+    },
+    "الحسن": {
+      "translit": "al-ḥasan",
+      "varies": false,
+      "decided": true
+    },
+    "الخروبي": {
+      "translit": "al-ḫarūbī",
+      "varies": false,
+      "decided": true
+    },
+    "الخلاصه": {
+      "translit": "al-ḫulāsah",
+      "varies": false,
+      "decided": true
+    },
+    "الدر": {
+      "translit": "al-durr",
+      "varies": false,
+      "decided": true
+    },
+    "الدره": {
+      "translit": "al-durrah",
+      "varies": false,
+      "decided": true
+    },
+    "الدوائر": {
+      "translit": "al-dawāʾir",
+      "varies": false,
+      "decided": true
+    },
+    "الذكر": {
+      "translit": "al-ḏikr",
+      "varies": false,
+      "decided": true
+    },
+    "الربانيه": {
+      "translit": "al-rabbānīyah",
+      "varies": false,
+      "decided": true
+    },
+    "الرد": {
+      "translit": "al-radd",
+      "varies": false,
+      "decided": true
+    },
+    "الرضاء": {
+      "translit": "al-riḍāʾ",
+      "varies": false,
+      "decided": true
+    },
+    "الزلال": {
+      "translit": "al-zalāl",
+      "varies": false,
+      "decided": true
+    },
+    "الزوراء": {
+      "translit": "al-zawrāʾ",
+      "varies": false,
+      "decided": true
+    },
+    "الزيتونيه": {
+      "translit": "al-zaytūnīyah",
+      "varies": false,
+      "decided": true
+    },
+    "السؤال": {
+      "translit": "al-suʾāl",
+      "varies": false,
+      "decided": true
+    },
+    "السعاده": {
+      "translit": "al-saʿādah",
+      "varies": false,
+      "decided": true
+    },
+    "الشستري": {
+      "translit": "al-šustarī",
+      "varies": false,
+      "decided": true
+    },
+    "الشطح": {
+      "translit": "al-šaṭḥ",
+      "varies": false,
+      "decided": true
+    },
+    "الشفاء": {
+      "translit": "al-šifāʾ",
+      "varies": false,
+      "decided": true
+    },
+    "الشيخ": {
+      "translit": "al-šayḫ",
+      "varies": false,
+      "decided": true
+    },
+    "الشيوخ": {
+      "translit": "al-šuyūḫ",
+      "varies": false,
+      "decided": true
+    },
+    "الصفات": {
+      "translit": "al-ṣifāt",
+      "varies": false,
+      "decided": true
+    },
+    "الصيام": {
+      "translit": "al-ṣiyām",
+      "varies": false,
+      "decided": true
+    },
+    "الطب": {
+      "translit": "al-ṭibb",
+      "varies": false,
+      "decided": true
+    },
+    "الطور": {
+      "translit": "al-ṭūr",
+      "varies": false,
+      "decided": true
+    },
+    "العروه": {
+      "translit": "al-ʿurwah",
+      "varies": false,
+      "decided": true
+    },
+    "العزيز": {
+      "translit": "al-ʿazīz",
+      "varies": false,
+      "decided": true
+    },
+    "العظمه": {
+      "translit": "al-ʿaẓamah",
+      "varies": false,
+      "decided": true
+    },
+    "العظيم": {
+      "translit": "al-ʿaẓīm",
+      "varies": false,
+      "decided": true
+    },
+    "العقل": {
+      "translit": "al-ʿaql",
+      "varies": false,
+      "decided": true
+    },
+    "الفاتح": {
+      "translit": "al-fātiḥ",
+      "varies": false,
+      "decided": true
+    },
+    "الفتح": {
+      "translit": "al-fatḥ",
+      "varies": false,
+      "decided": true
+    },
+    "الفتوحات": {
+      "translit": "al-futūḥāt",
+      "varies": false,
+      "decided": true
+    },
+    "الفلاسفه": {
+      "translit": "al-falāsifah",
+      "varies": false,
+      "decided": true
+    },
+    "الفهوم": {
+      "translit": "al-fuhūm",
+      "varies": false,
+      "decided": true
+    },
+    "الفوائد": {
+      "translit": "al-fawāʾid",
+      "varies": false,
+      "decided": true
+    },
+    "القوني": {
+      "translit": "al-qūnī",
+      "varies": false,
+      "decided": true
+    },
+    "القوه": {
+      "translit": "al-quwwah",
+      "varies": false,
+      "decided": true
+    },
+    "الكتاب": {
+      "translit": "al-kitāb",
+      "varies": false,
+      "decided": true
+    },
+    "الكرخي": {
+      "translit": "al-karḫī",
+      "varies": false,
+      "decided": true
+    },
+    "الكمالات": {
+      "translit": "al-kamālāt",
+      "varies": false,
+      "decided": true
+    },
+    "الكمل": {
+      "translit": "al-kamal",
+      "varies": false,
+      "decided": true
+    },
+    "اللطائف": {
+      "translit": "al-laṭāʾif",
+      "varies": false,
+      "decided": true
+    },
+    "اللمحه": {
+      "translit": "al-lamḥah",
+      "varies": false,
+      "decided": true
+    },
+    "اللوائح": {
+      "translit": "al-lawāʾiḥ",
+      "varies": false,
+      "decided": true
+    },
+    "المتمنين": {
+      "translit": "al-mutamannīn",
+      "varies": false,
+      "decided": true
+    },
+    "المجالس": {
+      "translit": "al-maǧālis",
+      "varies": false,
+      "decided": true
+    },
+    "المحسوس": {
+      "translit": "al-maḥsūs",
+      "varies": false,
+      "decided": true
+    },
+    "المحمديه": {
+      "translit": "al-muḥammadīyah",
+      "varies": false,
+      "decided": true
+    },
+    "المرتاد": {
+      "translit": "al-murtād",
+      "varies": false,
+      "decided": true
+    },
+    "المرضيه": {
+      "translit": "al-marḍīyah",
+      "varies": false,
+      "decided": true
+    },
+    "المشايح": {
+      "translit": "al-mašāyiḫ",
+      "varies": false,
+      "decided": true
+    },
+    "المضيئه": {
+      "translit": "al-muḍīyah",
+      "varies": false,
+      "decided": true
+    },
+    "المعاني": {
+      "translit": "al-maʿānī",
+      "varies": false,
+      "decided": true
+    },
+    "المكنون": {
+      "translit": "al-maknūn",
+      "varies": false,
+      "decided": true
+    },
+    "المنح": {
+      "translit": "al-minaḥ",
+      "varies": false,
+      "decided": true
+    },
+    "المنزل": {
+      "translit": "al-munazzal",
+      "varies": false,
+      "decided": true
+    },
+    "المنظومه": {
+      "translit": "al-manẓūmah",
+      "varies": false,
+      "decided": true
+    },
+    "النعلين": {
+      "translit": "al-naʿlayn",
+      "varies": false,
+      "decided": true
+    },
+    "النفحات": {
+      "translit": "al-nafaḥāt",
+      "varies": false,
+      "decided": true
+    },
+    "النفري": {
+      "translit": "al-niffarī",
+      "varies": false,
+      "decided": true
+    },
+    "النوري": {
+      "translit": "al-nūrī",
+      "varies": false,
+      "decided": true
+    },
+    "الوحيد": {
+      "translit": "al-waḥīd",
+      "varies": false,
+      "decided": true
+    },
+    "امد": {
+      "translit": "amad",
+      "varies": false,
+      "decided": true
+    },
+    "بابن": {
+      "translit": "bi-ibn",
+      "varies": false,
+      "decided": true
+    },
+    "بالتعريف": {
+      "translit": "bi-l-taʿrīf",
+      "varies": false,
+      "decided": true
+    },
+    "بان": {
+      "translit": "[the text should read: bi-l-taʿrīf bi-ibn ʿabbād -- check the Arabic again, we may have screwed up the extraction of the Arabic]",
+      "varies": false,
+      "decided": true
+    },
+    "بحر": {
+      "translit": "baḥr",
+      "varies": false,
+      "decided": true
+    },
+    "بطن": {
+      "translit": "baṭn",
+      "varies": false,
+      "decided": true
+    },
+    "تاويل": {
+      "translit": "taʾwīl",
+      "varies": false,
+      "decided": true
+    },
+    "تاويلات": {
+      "translit": "taʾwīlāt",
+      "varies": false,
+      "decided": true
+    },
+    "تحقيق": {
+      "translit": "taḥqīq",
+      "varies": false,
+      "decided": true
+    },
+    "تعليم": {
+      "translit": "taʿlīm",
+      "varies": false,
+      "decided": true
+    },
+    "تفهيم": {
+      "translit": "tafhīm",
+      "varies": false,
+      "decided": true
+    },
+    "تقييدات": {
+      "translit": "taqyīdāt",
+      "varies": false,
+      "decided": true
+    },
+    "جفر": {
+      "translit": "ǧafr",
+      "varies": false,
+      "decided": true
+    },
+    "حضره": {
+      "translit": "ḥaḍrat",
+      "varies": false,
+      "decided": true
+    },
+    "خلع": {
+      "translit": "ḫalʿ",
+      "varies": false,
+      "decided": true
+    },
+    "ديانه": {
+      "translit": "diyānah",
+      "varies": false,
+      "decided": true
+    },
+    "رسول": {
+      "translit": "rusūl",
+      "varies": false,
+      "decided": true
+    },
+    "رشح": {
+      "translit": "rašḥ",
+      "varies": false,
+      "decided": true
+    },
+    "زبده": {
+      "translit": "zubdah",
+      "varies": false,
+      "decided": true
+    },
+    "سؤال": {
+      "translit": "suʾāl",
+      "varies": false,
+      "decided": true
+    },
+    "صدر": {
+      "translit": "ṣadr",
+      "varies": false,
+      "decided": true
+    },
+    "صلاح": {
+      "translit": "ṣalāḥ",
+      "varies": false,
+      "decided": true
+    },
+    "طرق": {
+      "translit": "ṭuruq",
+      "varies": false,
+      "decided": true
+    },
+    "طريق": {
+      "translit": "ṭarīq",
+      "varies": false,
+      "decided": true
+    },
+    "طواسين": {
+      "translit": "ṭawāsīn",
+      "varies": false,
+      "decided": true
+    },
+    "عجيبه": {
+      "translit": "ʿaǧībah",
+      "varies": false,
+      "decided": true
+    },
+    "عياض": {
+      "translit": "ʿiyāḍ",
+      "varies": false,
+      "decided": true
+    },
+    "فتوي": {
+      "translit": "fatwā",
+      "varies": false,
+      "decided": true
+    },
+    "فريضه": {
+      "translit": "farīḍah",
+      "varies": false,
+      "decided": true
+    },
+    "فوائد": {
+      "translit": "fawāʾid",
+      "varies": false,
+      "decided": true
+    },
+    "قضائه": {
+      "translit": "qaḍāʾih",
+      "varies": false,
+      "decided": true
+    },
+    "قواعد": {
+      "translit": "qawāʿid",
+      "varies": false,
+      "decided": true
+    },
+    "كان": {
+      "translit": "kāna",
+      "varies": false,
+      "decided": true
+    },
+    "لانتظار": {
+      "translit": "al-intiẓār",
+      "varies": false,
+      "decided": true
+    },
+    "لفهم": {
+      "translit": "li-fahm",
+      "varies": false,
+      "decided": true
+    },
+    "للباب": {
+      "translit": "li-l-bāb",
+      "varies": false,
+      "decided": true
+    },
+    "للمفتاح": {
+      "translit": "li-l-miftāḥ",
+      "varies": false,
+      "decided": true
+    },
+    "مبايعه": {
+      "translit": "mubāyiʿah",
+      "varies": false,
+      "decided": true
+    },
+    "محاسن": {
+      "translit": "maḥāsin",
+      "varies": false,
+      "decided": true
+    },
+    "مختصر": {
+      "translit": "muḫtaṣar",
+      "varies": false,
+      "decided": true
+    },
+    "مرات": {
+      "translit": "mirāʾah",
+      "varies": false,
+      "decided": true
+    },
+    "مساله": {
+      "translit": "masʾalah",
+      "varies": false,
+      "decided": true
+    },
+    "معاني": {
+      "translit": "maʿānī",
+      "varies": false,
+      "decided": true
+    },
+    "معراج": {
+      "translit": "miʿrāǧ",
+      "varies": false,
+      "decided": true
+    },
+    "معرفه": {
+      "translit": "maʿrifah",
+      "varies": false,
+      "decided": true
+    },
+    "معروف": {
+      "translit": "maʿrūf",
+      "varies": false,
+      "decided": true
+    },
+    "معيار": {
+      "translit": "miʿyār",
+      "varies": false,
+      "decided": true
+    },
+    "مقتطفات": {
+      "translit": "muqtaṭṭafāt",
+      "varies": false,
+      "decided": true
+    },
+    "نزل": {
+      "translit": "nazala",
+      "varies": false,
+      "decided": true
+    },
+    "نسب": {
+      "translit": "nasab",
+      "varies": false,
+      "decided": true
+    },
+    "نصوص": {
+      "translit": "nuṣūṣ",
+      "varies": false,
+      "decided": true
+    },
+    "نفحات": {
+      "translit": "nafaḥāt",
+      "varies": false,
+      "decided": true
+    },
+    "هي": {
+      "translit": "hiya",
+      "varies": false,
+      "decided": true
+    },
+    "والاداب": {
+      "translit": "wa-l-ādāb",
+      "varies": false,
+      "decided": true
+    },
+    "والاشعار": {
+      "translit": "wa-l-ašʿār",
+      "varies": false,
+      "decided": true
+    },
+    "والتوفيه": {
+      "translit": "wa-l-tawfiyah",
+      "varies": false,
+      "decided": true
+    },
+    "والثالث": {
+      "translit": "wa-l-ṯāliṯ",
+      "varies": false,
+      "decided": true
+    },
+    "والدرر": {
+      "translit": "wa-l-durar",
+      "varies": false,
+      "decided": true
+    },
+    "والصبر": {
+      "translit": "wa-l-ṣabr",
+      "varies": false,
+      "decided": true
+    },
+    "والعلل": {
+      "translit": "wa-l-ʿilal",
+      "varies": false,
+      "decided": true
+    },
+    "وتحقيق": {
+      "translit": "wa-taḥqīq",
+      "varies": false,
+      "decided": true
+    },
+    "وجوابه": {
+      "translit": "wa-ǧawābuh",
+      "varies": false,
+      "decided": true
+    },
+    "وزلفه": {
+      "translit": "wa-zulfah",
+      "varies": false,
+      "decided": true
+    },
+    "ولطائف": {
+      "translit": "wa-laṭāʾif",
+      "varies": false,
+      "decided": true
+    },
+    "وما": {
+      "translit": "wa-mā",
+      "varies": false,
+      "decided": true
+    },
+    "وماهيته": {
+      "translit": "wa-māhīyatuhū",
+      "varies": false,
+      "decided": true
+    },
+    "وهو": {
+      "translit": "wa-huwa",
+      "varies": false,
+      "decided": true
+    },
+    "يكون": {
+      "translit": "yakūn",
+      "varies": false,
+      "decided": true
+    }
+  }
+}
