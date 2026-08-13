@@ -176,6 +176,77 @@ def case_from_value_guard() -> list[str]:
             else [f"a stale correction was not caught; quarantine says {reasons}"])
 
 
+def case_name_only_card() -> list[str]:
+    """A card whose word sits only in author fields and cluster names.
+
+    It needs no transliteration — a name carries no per-word romanization — and
+    the cluster variants it rewrites must come back de-duplicated: folding two
+    spellings of one name onto the same target used to leave the identical string
+    twice, because the rewrite was positional and never dropped duplicates.
+    """
+    bad = []
+    word, target = "\u0627\u0628\u064A", "\u0623\u0628\u064A"        # ابي -> أبي
+    raw = f"\u0645\u062D\u0645\u062F \u0628\u0646 {word}"            # محمد بن ابي
+    fixed = f"\u0645\u062D\u0645\u062F \u0628\u0646 {target}"
+    data = {
+        "schema_version": 1,
+        "rows": [{"id": "r1", "title": "\u0643\u062A\u0627\u0628",
+                  "title_translit": "kit\u0101b", "author": raw,
+                  "author_cluster_id": "c1", "catalog_note": "",
+                  "discrepancy_note": ""}],
+        "clusters": [{"cluster_id": "c1", "canonical_ar": raw,
+                      "canonical_translit": "x", "variants": [raw, fixed]}],
+    }
+    res = run(export(ortho(id="o-name", word=word, target=target, translit=None,
+                           confidence="hamza", rows=[],
+                           scope={"titles": [], "authors": ["r1"], "clusters": ["c1"]})),
+              data=data, word_decisions={})
+    if res["quarantine"]:
+        bad.append("a name-only card was quarantined: "
+                   + "; ".join(q["reason"] for q in res["quarantine"]))
+    got_rows = {r["id"]: r for r in res["updated"]["rows"]}
+    if got_rows["r1"]["author"] != fixed:
+        bad.append(f"author is {got_rows['r1']['author']!r}, expected {fixed!r}")
+    c = {c["cluster_id"]: c for c in res["updated"]["clusters"]}["c1"]
+    if c["canonical_ar"] != fixed:
+        bad.append(f"canonical_ar is {c['canonical_ar']!r}, expected {fixed!r}")
+    if c["variants"] != [fixed]:
+        bad.append(f"variants is {c['variants']!r}, expected {[fixed]!r} — the two "
+                   f"spellings fold onto one target and must de-duplicate")
+    applied = res["applied"]["ortho"]
+    if not applied or applied[0]["authors"] != ["r1"] or applied[0]["clusters"] != ["c1"]:
+        bad.append(f"the surfaces touched were not reported: {applied}")
+    return bad
+
+
+def case_conservation_covers_authors() -> list[str]:
+    """The conservation audit re-verified TITLES only, so a reverted author edit
+    went unseen where a reverted title edit could not — and an author field is now
+    the only surface some cards touch. Assert it inspects the end state there."""
+    word, target = "\u0627\u0628\u064A", "\u0623\u0628\u064A"
+    raw = f"\u0645\u062D\u0645\u062F \u0628\u0646 {word}"
+    data = {
+        "schema_version": 1,
+        "rows": [{"id": "r1", "title": "\u0643\u062A\u0627\u0628",
+                  "title_translit": "kit\u0101b", "author": raw,
+                  "author_cluster_id": "c1", "catalog_note": "",
+                  "discrepancy_note": ""}],
+        "clusters": [{"cluster_id": "c1", "canonical_ar": raw,
+                      "canonical_translit": "x", "variants": [raw]}],
+    }
+    res = run(export(ortho(id="o-name", word=word, target=target, translit=None,
+                           confidence="hamza", rows=[],
+                           scope={"titles": [], "authors": ["r1"], "clusters": []})),
+              data=data, word_decisions={})
+    row = {r["id"]: r for r in res["updated"]["rows"]}["r1"]
+    if row["author"] != f"\u0645\u062D\u0645\u062F \u0628\u0646 {target}":
+        return [f"author not rewritten: {row['author']!r}"]
+    # A clean run must not accuse itself.
+    return ([] if not res["quarantine"]
+            else ["the audit fired on a successful author fix: "
+                  + "; ".join(q["reason"] for q in res["quarantine"])])
+
+
 CASES = [
     ("šaddah fix applies and survives the conservation audit (C1)",
      case_shadda_applies_and_conserves),
@@ -186,6 +257,10 @@ CASES = [
     ("every stratum's keep is keyed by the decision id (C2)",
      case_keeps_are_keyed_by_decision_id),
     ("an edit is guarded on its from-value", case_from_value_guard),
+    ("a name-only card rewrites authors and de-duplicates cluster variants",
+     case_name_only_card),
+    ("the conservation audit inspects author fields too",
+     case_conservation_covers_authors),
 ]
 
 

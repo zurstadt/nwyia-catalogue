@@ -30,7 +30,14 @@ re-cluster never reverts it. Key properties established this cycle:
   idempotent and never self-erase. `row_overrides` now ~180+ entries.
 - **Atomic, UTF-8 writes** with `.bak` snapshots (`normalize.write_json_atomic`).
 - **Durable cluster metadata.** `full_name`, `dates`, `authorities`,
-  `canonical_*`, `user_confirmed` all round-trip through harvest → cluster.
+  `canonical_*`, `user_confirmed`, `variants` all round-trip through harvest →
+  cluster. `variants` is a *projection* of the row `author` strings that
+  `cluster.py` rebuilds every run, so an orthographic ruling applied to a cluster
+  name used to survive exactly one step and revert. A pinned spelling now wins its
+  normalized key (`cluster.merge_variants`) and is dropped once no row produces
+  that key — so a pin cannot resurrect a name the corpus stopped writing. The cost
+  of the pin: a *wrong* adjudicated variant is sticky, and undoing it means editing
+  `data/authority.json` by hand.
 - **Safeguards:** id-drift abort in harvest; heuristic `n###` ids skip pinned ids;
   `"NA"`/placeholder authors blanked so anonymous works don't seed clusters.
 - **Working rule:** `data/data.json` is the single source of truth; edits are made

@@ -9,9 +9,13 @@ named in the commit message. New deliberate behaviour gets a row in the same com
 
 Guards: `node scripts/test_translit_logic.js` covers the transliteration logic (it lifts the pure
 region out of `app/index.html` and runs against stubs — it never opens a browser or edits the app).
-`python3 scripts/test_normalize.py` covers the pipeline's string metrics. Rows still reading
-**UNGUARDED** are an honest gap, not a formality; the priority list at the end says which to close
-next.
+`python3 scripts/test_normalize.py` covers the pipeline's string metrics and the one Arabic
+word/mark definition. `python3 scripts/test_apply_translit_adjudication.py` covers the adjudication
+ingest against in-memory fixtures, and `python3 scripts/test_cluster.py` the variant merge.
+`node scripts/check_translit_app.js` drives the REAL baked adjudication app — including a hand-built
+fixture payload for the strata that empty out, so an assertion over them cannot pass by skipping.
+Rows still reading **UNGUARDED** are an honest gap, not a formality; the priority list at the end
+says which to close next.
 
 ---
 
@@ -113,6 +117,18 @@ Next, hardest first:
    is pruned. Both are plain Python and belong in a `test_harvest.py` alongside `test_normalize.py`;
    both were verified by hand on a scratch copy but nothing re-checks them.
 5. Source renders above the input, and `kbd-bar` is hidden only in the columns view.
+
+## What survives a re-cluster
+
+`cluster.py` rebuilds `data/data.json` from the raw extraction plus `authority.json`, so any field it
+recomputes is reverted unless harvest pins it. This is where an edit silently disappears.
+
+| Decision | Anchor | Why | Guard |
+|---|---|---|---|
+| Cluster `variants` are pinned through harvest and merged back on the normalized key | `harvest_authority.py` cluster meta block; `cluster.merge_variants()` | `variants` is a projection of the row `author` strings, rebuilt every run — so a ruling applied to a cluster name reverted on the very next step the apply script tells you to run. Keyed on `normalize_ar` so the adjudicated spelling REPLACES the raw one rather than sitting beside it. | `scripts/test_cluster.py` |
+| A pinned variant whose key no longer occurs is dropped, never re-injected | `cluster.merge_variants()`, the `if k in by_key` guard | Without it a pin is unremovable: a name the corpus stopped writing would resurrect on every re-cluster. The cost that remains: a *wrong* pin is sticky, and undoing it means hand-editing `data/authority.json`. | `scripts/test_cluster.py` |
+| The ingest de-duplicates the variants it rewrites | `apply_translit_adjudication.py`, `vs = sorted(set(vs))` | The rewrite was positional, so folding two spellings of one name onto the same target left the identical string twice. | `scripts/test_apply_translit_adjudication.py` |
+| The conservation audit inspects author fields, not titles alone | `apply_translit_adjudication.py`, `fault_stands()` | A reverted author edit went unseen where a reverted title edit could not — and an author field is now the only surface some ortho cards touch. | `scripts/test_apply_translit_adjudication.py` |
 
 ## Kept by ruling
 

@@ -277,6 +277,11 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
             for v in cur["variants"]:
                 nv, h, _ = replace_tokens(v, word, target)
                 vs.append(nv); vhits += h
+            # Dedupe: folding two spellings of one name onto the same target left
+            # the identical string twice in the list. cluster.merge_variants dedupes
+            # on the next run, but the file written HERE is what the app shows and
+            # what harvest reads, so it must already be clean.
+            vs = sorted(set(vs))
             if (hits and can != cur["canonical_ar"]) or (vhits and vs != cur["variants"]):
                 cluster_edits[cid] = {"canonical_ar": can, "variants": vs}
                 cl_touched.append(cid)
@@ -435,10 +440,18 @@ def run(export: dict, *, data: dict, word_decisions: dict) -> dict:
     # word — the naive test fired on every successful mark-only fix, i.e. precisely
     # because the fix had worked. Same shape as the builder's residual filter: the
     # token must still be present AND still differ from what was written.
+    def fault_stands(text: str, word: str, target: str) -> bool:
+        return any(bare(m.group()) == word and m.group() != target
+                   for m in ARABIC.finditer(text or ""))
+
     for a in applied["ortho"]:
-        survived = [rid for rid in a["rows"]
-                    if any(bare(m.group()) == a["word"] and m.group() != a["target"]
-                           for m in ARABIC.finditer(rows[rid].get("title") or ""))]
+        # Author fields as well as titles. The audit covered titles only, so a
+        # reverted author edit went unseen where a reverted title edit could not —
+        # and author fields are now the ONLY surface some cards touch.
+        survived = ([rid for rid in a["rows"]
+                     if fault_stands(rows[rid].get("title"), a["word"], a["target"])]
+                    + [rid for rid in a.get("authors") or []
+                       if fault_stands(rows[rid].get("author"), a["word"], a["target"])])
         if survived:
             # Per-decision, never a whole-run abort: one reverted edit must not sink
             # the batch, and must not strand the KEEP rulings collected alongside it.
@@ -561,7 +574,9 @@ def main() -> int:
     print(f"Wrote {LOG}")
     print(f"Wrote {KEEPS}")
     print("\nThen: harvest_authority.py -> cluster.py, and confirm the composed rows "
-          "in the app (they arrive tinted, as suggestions).")
+          "in the app (they arrive tinted, as suggestions). Run BOTH: cluster.py "
+          "rebuilds every cluster's `variants` from the row author fields, and only "
+          "a harvested pin survives that — see cluster.merge_variants.")
     return 1 if quarantine else 0
 
 

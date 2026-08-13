@@ -101,6 +101,14 @@ def main(argv: list[str]) -> int:
             "authorities": c.get("authorities", []),  # [{source,title,url}, …]
             "user_confirmed": bool(c.get("user_confirmed", False)),
         }
+        # `variants` is REBUILT by cluster.py from the row author strings, so
+        # without this an orthographic ruling applied to a cluster name reverts on
+        # the very next step this script's own instructions tell you to run. Pinned
+        # spellings win their normalized key and are dropped once no row produces
+        # that key — see cluster.merge_variants. Written only when non-empty, like
+        # `category` below, so a no-op harvest adds no keys.
+        if c.get("variants"):
+            clusters_out[cid]["variants"] = [clean(v) for v in c["variants"] if clean(v)]
         # "modern" = outside the manuscript corpus. Written only when set, to
         # match how cluster.py consumes it (an empty value means "unclassified"
         # and is ignored there) — so a no-op harvest doesn't add 100+ empty keys.

@@ -202,6 +202,35 @@ def normalize_ar(s: str) -> str:
     return s
 
 
+def merge_variants(computed: list[str], pinned: list[str]) -> list[str]:
+    """Fold adjudicated cluster-name spellings back into the recomputed list.
+
+    `variants` is a projection of the row `author` strings, rebuilt from scratch
+    on every run — so an orthographic ruling applied to a cluster name survived
+    exactly one step of the documented pipeline (apply -> harvest -> cluster) and
+    then reverted, because harvest had no channel for the field. It has one now,
+    and this is where the pin is honoured.
+
+    Keyed on `normalize_ar`, so a pinned spelling REPLACES the raw spelling of the
+    same name rather than sitting beside it (أبي and ابي fold together). Two
+    guards make the pin safe to keep:
+
+      * a pinned spelling whose key no longer occurs in ANY row is dropped, not
+        re-injected — otherwise a name the corpus stopped writing would resurrect
+        on every re-cluster, and the pin would be unremovable;
+      * the result is de-duplicated by key, which the ingest's positional rewrite
+        was not: folding two spellings onto one target left the same string twice.
+    """
+    by_key: dict[str, str] = {}
+    for v in computed:
+        by_key.setdefault(normalize_ar(v), v)
+    for p in pinned:
+        k = normalize_ar(p)
+        if k in by_key:                  # only for keys the corpus STILL produces
+            by_key[k] = p
+    return sorted(set(by_key.values()))
+
+
 # Orthographic synonym folding (heuristic clustering ONLY — never applied to the
 # authority keys, so it can't disturb adjudicated groupings). Whole-token rewrites
 # unify spellings of the same nisbah/ism that differ only by interchangeable
@@ -400,8 +429,8 @@ def main() -> int:
             "cluster_id": cid,
             "canonical_ar": canonical,
             "canonical_translit": translit,
-            "variants": sorted(set(all_originals)),
-            "count": len(all_originals),
+            "variants": merge_variants(all_originals, meta.get("variants") or []),
+            "count": len(all_originals),          # rows, not variants — unchanged
             "confidence": 1.0,
             "user_confirmed": bool(meta.get("user_confirmed", False)),
         }
